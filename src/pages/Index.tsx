@@ -1,12 +1,51 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React, { useEffect } from 'react';
+import Navbar from '@/components/Navbar';
+import HeroSection from '@/components/HeroSection';
+import FeaturesSection from '@/components/FeaturesSection';
+import PricingSection from '@/components/PricingSection';
+import DetailedFeaturesList from '@/components/DetailedFeaturesList';
+import TestimonialsSection from '@/components/TestimonialsSection';
+import FaqSection from '@/components/FaqSection';
+import ContactSection from '@/components/ContactSection';
+import Footer from '@/components/Footer';
+import ScrollToTop from '@/components/ScrollToTop';
+import FloatingCta from '@/components/FloatingCta';
 
 const Index = () => {
+  useEffect(() => {
+    // Initialize fade-in animations
+    const handleScroll = () => {
+      const elements = document.querySelectorAll('.fade-in-section');
+      elements.forEach(element => {
+        const position = element.getBoundingClientRect();
+        // Check if the element is in the viewport
+        if(position.top < window.innerHeight - 100) {
+          element.classList.add('is-visible');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    // Trigger on initial load
+    setTimeout(handleScroll, 100);
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-white">
+      <Navbar />
+      <HeroSection />
+      <FeaturesSection />
+      <PricingSection />
+      <DetailedFeaturesList />
+      <TestimonialsSection />
+      <FaqSection />
+      <ContactSection />
+      <Footer />
+      <ScrollToTop />
+      <FloatingCta />
     </div>
   );
 };
