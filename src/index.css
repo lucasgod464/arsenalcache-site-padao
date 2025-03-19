@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
@@ -110,20 +109,20 @@
   }
 
   .btn-primary {
-    @apply rounded-full px-6 py-3 bg-gradient-to-r from-arsenal-DEFAULT to-arsenal-dark 
-           text-white font-medium transition-all hover:shadow-lg hover:shadow-arsenal-DEFAULT/20 
+    @apply rounded-full px-6 py-3 bg-blue-500 
+           text-white font-medium transition-all hover:shadow-lg hover:shadow-blue-500/20 
            active:scale-[0.98] transform duration-200;
   }
 
   .btn-accent {
-    @apply rounded-full px-6 py-3 bg-gradient-to-r from-whatsapp-light to-whatsapp-DEFAULT 
-           text-white font-medium transition-all hover:shadow-lg hover:shadow-whatsapp-DEFAULT/20
+    @apply rounded-full px-6 py-3 bg-green-500 
+           text-white font-medium transition-all hover:shadow-lg hover:shadow-green-500/20
            active:scale-[0.98] transform duration-200;
   }
 
   .btn-outline {
-    @apply rounded-full px-6 py-3 border border-arsenal-light/50
-           text-arsenal-dark font-medium transition-all hover:bg-arsenal-light/5
+    @apply rounded-full px-6 py-3 border border-blue-300
+           text-blue-800 font-medium transition-all hover:bg-blue-50
            active:scale-[0.98] transform duration-200;
   }
 
@@ -148,11 +147,11 @@
   }
 
   .cta-gradient {
-    @apply bg-gradient-to-r from-arsenal-DEFAULT/10 to-whatsapp-DEFAULT/10;
+    @apply bg-gradient-to-r from-blue-500/10 to-green-500/10;
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-arsenal-dark to-arsenal-DEFAULT bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-blue-700 to-blue-500 bg-clip-text text-transparent;
   }
 
   .fade-in-section {
