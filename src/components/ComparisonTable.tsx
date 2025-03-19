@@ -30,18 +30,6 @@ const ComparisonTable = () => {
             </TableHeader>
             <TableBody>
               <TableRow>
-                <TableCell className="font-medium">Pagamento único (sem mensalidade)</TableCell>
-                <TableCell className="text-center">
-                  <Check className="h-5 w-5 text-green-600 mx-auto" />
-                </TableCell>
-                <TableCell className="text-center">
-                  <X className="h-5 w-5 text-red-500 mx-auto" />
-                </TableCell>
-                <TableCell className="text-center">
-                  <X className="h-5 w-5 text-red-500 mx-auto" />
-                </TableCell>
-              </TableRow>
-              <TableRow>
                 <TableCell className="font-medium">Usuários ilimitados</TableCell>
                 <TableCell className="text-center">
                   <Check className="h-5 w-5 text-green-600 mx-auto" />
@@ -50,7 +38,7 @@ const ComparisonTable = () => {
                   <X className="h-5 w-5 text-red-500 mx-auto" />
                 </TableCell>
                 <TableCell className="text-center">
-                  <Check className="h-5 w-5 text-green-600 mx-auto" />
+                  <X className="h-5 w-5 text-red-500 mx-auto" />
                 </TableCell>
               </TableRow>
               <TableRow>
@@ -71,7 +59,7 @@ const ComparisonTable = () => {
                   <Check className="h-5 w-5 text-green-600 mx-auto" />
                 </TableCell>
                 <TableCell className="text-center">
-                  <Check className="h-5 w-5 text-green-600 mx-auto" />
+                  <X className="h-5 w-5 text-red-500 mx-auto" />
                 </TableCell>
                 <TableCell className="text-center">
                   <X className="h-5 w-5 text-red-500 mx-auto" />
@@ -95,22 +83,10 @@ const ComparisonTable = () => {
                   <Check className="h-5 w-5 text-green-600 mx-auto" />
                 </TableCell>
                 <TableCell className="text-center">
-                  <Check className="h-5 w-5 text-green-600 mx-auto" />
+                  <X className="h-5 w-5 text-red-500 mx-auto" />
                 </TableCell>
                 <TableCell className="text-center">
                   <X className="h-5 w-5 text-red-500 mx-auto" />
-                </TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell className="font-medium">API para integrações</TableCell>
-                <TableCell className="text-center">
-                  <Check className="h-5 w-5 text-green-600 mx-auto" />
-                </TableCell>
-                <TableCell className="text-center">
-                  <Check className="h-5 w-5 text-green-600 mx-auto" />
-                </TableCell>
-                <TableCell className="text-center">
-                  <Check className="h-5 w-5 text-green-600 mx-auto" />
                 </TableCell>
               </TableRow>
               <TableRow>
@@ -119,7 +95,7 @@ const ComparisonTable = () => {
                   <Check className="h-5 w-5 text-green-600 mx-auto" />
                 </TableCell>
                 <TableCell className="text-center">
-                  <Check className="h-5 w-5 text-green-600 mx-auto" />
+                  <X className="h-5 w-5 text-red-500 mx-auto" />
                 </TableCell>
                 <TableCell className="text-center">
                   <X className="h-5 w-5 text-red-500 mx-auto" />
@@ -143,17 +119,17 @@ const ComparisonTable = () => {
                   <Check className="h-5 w-5 text-green-600 mx-auto" />
                 </TableCell>
                 <TableCell className="text-center">
-                  <Check className="h-5 w-5 text-green-600 mx-auto" />
+                  <X className="h-5 w-5 text-red-500 mx-auto" />
                 </TableCell>
                 <TableCell className="text-center">
-                  <Check className="h-5 w-5 text-green-600 mx-auto" />
+                  <X className="h-5 w-5 text-red-500 mx-auto" />
                 </TableCell>
               </TableRow>
               <TableRow className="bg-blue-50">
                 <TableCell className="font-medium">Custo</TableCell>
-                <TableCell className="text-center font-bold">Pagamento único</TableCell>
-                <TableCell className="text-center">Assinatura mensal</TableCell>
-                <TableCell className="text-center">Assinatura mensal</TableCell>
+                <TableCell className="text-center font-bold text-amber-600">Pagamento único</TableCell>
+                <TableCell className="text-center font-bold text-red-600">R$ 997/mês</TableCell>
+                <TableCell className="text-center font-bold text-blue-600">R$ 197/mês</TableCell>
               </TableRow>
             </TableBody>
           </Table>

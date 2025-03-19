@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button";
 
 const FreeTrial = () => {
   return (
-    <section id="free-trial" className="py-16 px-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+    <section id="free-trial" className="py-16 px-4 bg-gradient-to-r from-blue-800 to-blue-950 text-white">
       <div className="container mx-auto max-w-4xl text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">Experimente o Sistema Golden gratuitamente!</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-6">Experimente o <span className="text-amber-400">Sistema Golden</span> gratuitamente!</h2>
         <p className="text-xl mb-8 max-w-2xl mx-auto">
           Teste todos os recursos premium por 7 dias sem compromisso e descubra como o Sistema Golden pode transformar o atendimento da sua empresa.
         </p>
@@ -21,7 +21,7 @@ const FreeTrial = () => {
           <Button 
             variant="outline" 
             size="lg" 
-            className="bg-transparent border-white text-white hover:bg-white/10 font-semibold text-lg px-8 py-6 h-auto"
+            className="bg-transparent border-amber-400 text-amber-400 hover:bg-amber-400/10 font-semibold text-lg px-8 py-6 h-auto"
             onClick={() => {
               const contactSection = document.getElementById('contato');
               if (contactSection) {

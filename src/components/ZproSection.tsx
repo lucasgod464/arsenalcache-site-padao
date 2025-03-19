@@ -1,7 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { Check, Clock } from 'lucide-react';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const ZproSection = () => {
   const [channelsCount, setChannelsCount] = useState(0);
@@ -63,14 +62,11 @@ const ZproSection = () => {
         </div>
 
         <div className="bg-blue-900/30 rounded-xl p-6 md:p-8 mb-16">
-          <Tabs defaultValue="business" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 mb-8">
-              <TabsTrigger value="business" className="text-lg">Para Empresas</TabsTrigger>
-              <TabsTrigger value="reseller" className="text-lg">Para Revendedores</TabsTrigger>
-            </TabsList>
-            
-            <TabsContent value="business" className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Para Empresas */}
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-amber-400 mb-4">Para Empresas</h3>
+              <div className="space-y-4">
                 <div className="flex items-start gap-4">
                   <div className="bg-blue-800 p-2 rounded-full">
                     <Check className="h-5 w-5 text-amber-400" />
@@ -111,10 +107,12 @@ const ZproSection = () => {
                   </div>
                 </div>
               </div>
-            </TabsContent>
+            </div>
             
-            <TabsContent value="reseller" className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Para Revendedores */}
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-amber-400 mb-4">Para Revendedores</h3>
+              <div className="space-y-4">
                 <div className="flex items-start gap-4">
                   <div className="bg-blue-800 p-2 rounded-full">
                     <Check className="h-5 w-5 text-amber-400" />
@@ -155,8 +153,8 @@ const ZproSection = () => {
                   </div>
                 </div>
               </div>
-            </TabsContent>
-          </Tabs>
+            </div>
+          </div>
         </div>
 
         {/* Implementation Timeline */}

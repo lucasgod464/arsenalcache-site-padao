@@ -8,52 +8,53 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/component
 
 const RoiCalculator = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [employees, setEmployees] = useState(3);
-  const [clients, setClients] = useState(50);
-  const [hoursPerDay, setHoursPerDay] = useState(2);
-  const [avgTicket, setAvgTicket] = useState(100);
+  const [subscriptions, setSubscriptions] = useState(10);
+  const [monthlyValue, setMonthlyValue] = useState(97);
+  const [annualGrowth, setAnnualGrowth] = useState(20);
+  const [costs, setCosts] = useState(200);
 
-  // Calculate ROI
-  const calculateROI = () => {
-    // Time saved per day (hours)
-    const timeSavedPerDay = employees * hoursPerDay;
+  // Calculate subscription ROI
+  const calculateSubscriptionROI = () => {
+    // Monthly revenue from subscriptions
+    const monthlyRevenue = subscriptions * monthlyValue;
     
-    // Assuming average hourly cost of R$25 per employee
-    const hourlyRate = 25;
+    // Annual revenue
+    const annualRevenue = monthlyRevenue * 12;
     
-    // Monthly savings (22 working days)
-    const monthlySavings = timeSavedPerDay * hourlyRate * 22;
+    // Annual net profit (revenue - costs)
+    const annualProfit = annualRevenue - (costs * 12);
     
-    // Increased client capacity (assuming 20% increase with the system)
-    const additionalClients = Math.round(clients * 0.2);
+    // Estimated annual growth in subscribers
+    const newSubscribersYearly = Math.round((subscriptions * annualGrowth) / 100);
     
-    // Additional monthly revenue
-    const additionalRevenue = additionalClients * avgTicket;
+    // Revenue from new subscribers in the next year
+    const growthRevenue = newSubscribersYearly * monthlyValue * 12;
     
-    // Total monthly benefit
-    const totalMonthlyBenefit = monthlySavings + additionalRevenue;
+    // Total subscribers after 1 year
+    const totalSubscribersNextYear = subscriptions + newSubscribersYearly;
     
-    // Annual benefit
-    const annualBenefit = totalMonthlyBenefit * 12;
+    // Next year's projected revenue
+    const nextYearRevenue = totalSubscribersNextYear * monthlyValue * 12;
     
     // System cost (for calculation purposes)
     const systemCost = 3500;
     
-    // ROI percentage (Annual benefit / System cost)
-    const roiPercentage = Math.round((annualBenefit / systemCost) * 100);
+    // ROI percentage (Annual profit / System cost)
+    const roiPercentage = Math.round((annualProfit / systemCost) * 100);
     
     return {
-      timeSavedPerDay,
-      monthlySavings,
-      additionalClients,
-      additionalRevenue,
-      totalMonthlyBenefit,
-      annualBenefit,
+      monthlyRevenue,
+      annualRevenue,
+      annualProfit,
+      newSubscribersYearly,
+      growthRevenue,
+      totalSubscribersNextYear,
+      nextYearRevenue,
       roiPercentage
     };
   };
 
-  const roi = calculateROI();
+  const roi = calculateSubscriptionROI();
 
   return (
     <section id="roi-calculator" className="py-20 px-4 bg-white">
@@ -64,18 +65,18 @@ const RoiCalculator = () => {
               <Calculator className="h-8 w-8 text-blue-700" />
             </div>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Calculadora de ROI</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Calculadora de Lucro com Revenda</h2>
           <p className="text-xl text-gray-600">
-            Descubra quanto sua empresa pode economizar e lucrar com o Sistema Golden
+            Calcule quanto você pode lucrar revendendo o Sistema Golden para seus clientes
           </p>
         </div>
 
-        <div className="bg-white rounded-xl shadow-lg p-6 mb-8">
+        <div className="bg-white rounded-xl shadow-lg p-6 mb-8 border border-blue-100">
           <Collapsible open={isOpen} onOpenChange={setIsOpen}>
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-xl font-semibold">Simule seu retorno sobre investimento</h3>
+              <h3 className="text-xl font-semibold">Simule seu potencial de ganhos</h3>
               <CollapsibleTrigger asChild>
-                <Button variant="outline">
+                <Button variant="outline" className="border-blue-300 text-blue-700">
                   {isOpen ? "Esconder parâmetros" : "Ajustar parâmetros"}
                 </Button>
               </CollapsibleTrigger>
@@ -84,53 +85,56 @@ const RoiCalculator = () => {
             <CollapsibleContent>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 <div className="space-y-3">
-                  <Label htmlFor="employees">Número de atendentes:</Label>
+                  <Label htmlFor="subscriptions">Número de assinantes:</Label>
                   <Input
-                    id="employees"
+                    id="subscriptions"
                     type="number"
                     min="1"
-                    value={employees}
-                    onChange={(e) => setEmployees(parseInt(e.target.value) || 1)}
+                    value={subscriptions}
+                    onChange={(e) => setSubscriptions(parseInt(e.target.value) || 1)}
+                    className="border-blue-200 focus:border-blue-400"
                   />
-                  <p className="text-sm text-gray-500">Quantos colaboradores fazem atendimento ao cliente</p>
+                  <p className="text-sm text-gray-500">Quantos clientes assinam seu serviço mensalmente</p>
                 </div>
 
                 <div className="space-y-3">
-                  <Label htmlFor="clients">Clientes atendidos por mês:</Label>
+                  <Label htmlFor="monthlyValue">Valor mensal por assinatura (R$):</Label>
                   <Input
-                    id="clients"
+                    id="monthlyValue"
                     type="number"
                     min="1"
-                    value={clients}
-                    onChange={(e) => setClients(parseInt(e.target.value) || 1)}
+                    value={monthlyValue}
+                    onChange={(e) => setMonthlyValue(parseInt(e.target.value) || 1)}
+                    className="border-blue-200 focus:border-blue-400"
                   />
-                  <p className="text-sm text-gray-500">Quantidade média de clientes atendidos mensalmente</p>
+                  <p className="text-sm text-gray-500">Quanto você cobra por mês de cada cliente</p>
                 </div>
 
                 <div className="space-y-3">
-                  <Label htmlFor="hours">Horas economizadas por atendente/dia:</Label>
+                  <Label htmlFor="annualGrowth">Crescimento anual estimado (%):</Label>
                   <Input
-                    id="hours"
+                    id="annualGrowth"
                     type="number"
-                    min="0.5"
-                    max="8"
-                    step="0.5"
-                    value={hoursPerDay}
-                    onChange={(e) => setHoursPerDay(parseFloat(e.target.value) || 0.5)}
+                    min="0"
+                    max="100"
+                    value={annualGrowth}
+                    onChange={(e) => setAnnualGrowth(parseInt(e.target.value) || 0)}
+                    className="border-blue-200 focus:border-blue-400"
                   />
-                  <p className="text-sm text-gray-500">Tempo economizado por dia com automação</p>
+                  <p className="text-sm text-gray-500">Estimativa de crescimento anual em número de clientes</p>
                 </div>
 
                 <div className="space-y-3">
-                  <Label htmlFor="ticket">Ticket médio (R$):</Label>
+                  <Label htmlFor="costs">Custos mensais (R$):</Label>
                   <Input
-                    id="ticket"
+                    id="costs"
                     type="number"
-                    min="1"
-                    value={avgTicket}
-                    onChange={(e) => setAvgTicket(parseInt(e.target.value) || 1)}
+                    min="0"
+                    value={costs}
+                    onChange={(e) => setCosts(parseInt(e.target.value) || 0)}
+                    className="border-blue-200 focus:border-blue-400"
                   />
-                  <p className="text-sm text-gray-500">Valor médio gasto por cliente</p>
+                  <p className="text-sm text-gray-500">Seus custos mensais com hospedagem, suporte, etc.</p>
                 </div>
               </div>
             </CollapsibleContent>
@@ -138,41 +142,41 @@ const RoiCalculator = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="bg-blue-50 p-4 rounded-lg text-center">
-              <p className="text-gray-600 mb-1">Economia mensal</p>
-              <p className="text-2xl font-bold text-blue-700">R$ {roi.monthlySavings.toLocaleString()}</p>
+              <p className="text-gray-600 mb-1">Receita mensal</p>
+              <p className="text-2xl font-bold text-blue-700">R$ {roi.monthlyRevenue.toLocaleString()}</p>
             </div>
 
             <div className="bg-green-50 p-4 rounded-lg text-center">
-              <p className="text-gray-600 mb-1">Receita adicional/mês</p>
-              <p className="text-2xl font-bold text-green-700">R$ {roi.additionalRevenue.toLocaleString()}</p>
+              <p className="text-gray-600 mb-1">Lucro anual</p>
+              <p className="text-2xl font-bold text-green-700">R$ {roi.annualProfit.toLocaleString()}</p>
             </div>
 
             <div className="bg-gradient-to-r from-blue-600 to-blue-800 p-4 rounded-lg text-center text-white">
-              <p className="mb-1">ROI anual</p>
+              <p className="mb-1">ROI</p>
               <p className="text-3xl font-bold">{roi.roiPercentage}%</p>
             </div>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-gray-50 p-6 rounded-lg">
-            <h4 className="text-lg font-semibold mb-2">Detalhes do cálculo:</h4>
+          <div className="bg-amber-50 p-6 rounded-lg border border-amber-100">
+            <h4 className="text-lg font-semibold mb-2 text-amber-800">Projeção de crescimento:</h4>
             <ul className="space-y-2 text-gray-700">
-              <li>• {roi.timeSavedPerDay} horas economizadas por dia</li>
-              <li>• {roi.additionalClients} clientes adicionais por mês</li>
-              <li>• R$ {roi.totalMonthlyBenefit.toLocaleString()} de benefício mensal total</li>
-              <li>• R$ {roi.annualBenefit.toLocaleString()} de benefício anual</li>
+              <li>• {roi.newSubscribersYearly} novos assinantes no próximo ano</li>
+              <li>• Total de {roi.totalSubscribersNextYear} assinantes após 12 meses</li>
+              <li>• R$ {roi.growthRevenue.toLocaleString()} de receita adicional com novos assinantes</li>
+              <li>• R$ {roi.nextYearRevenue.toLocaleString()} de receita projetada para o próximo ano</li>
             </ul>
           </div>
 
-          <div className="bg-blue-50 p-6 rounded-lg">
-            <h4 className="text-lg font-semibold mb-2">Benefícios do Sistema Golden:</h4>
+          <div className="bg-blue-50 p-6 rounded-lg border border-blue-100">
+            <h4 className="text-lg font-semibold mb-2 text-blue-800">Benefícios do Sistema Golden para revendedores:</h4>
             <ul className="space-y-2 text-gray-700">
-              <li>• Aumento da produtividade da equipe</li>
-              <li>• Redução do tempo de resposta</li>
-              <li>• Aumento da capacidade de atendimento</li>
-              <li>• Melhor experiência do cliente</li>
-              <li>• Aumento da taxa de conversão</li>
+              <li>• Renda recorrente mensal</li>
+              <li>• Sistema completo e personalizado</li>
+              <li>• Sem limites de usuários ou conexões</li>
+              <li>• Suporte técnico especializado</li>
+              <li>• Implementação rápida (24h)</li>
             </ul>
           </div>
         </div>
