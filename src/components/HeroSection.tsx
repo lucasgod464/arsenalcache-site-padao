@@ -93,12 +93,16 @@ const HeroSection = () => {
             <div className="absolute -top-10 -right-10 w-64 h-64 bg-arsenal-light/20 rounded-full blur-3xl"></div>
             <div className="absolute top-20 -left-10 w-64 h-64 bg-whatsapp-light/20 rounded-full blur-3xl"></div>
             
-            <div className="glass-card rounded-2xl p-1 shadow-2xl relative z-10 animate-float">
-              <img 
-                src="https://placehold.co/600x400/1971C2/FFFFFF?text=Arsenal+Cache+MultiAtendimento" 
-                alt="Arsenal Cache Dashboard" 
-                className="w-full h-auto rounded-2xl shadow-md" 
-              />
+            <div className="glass-card rounded-2xl p-1 shadow-2xl relative z-10 animate-float overflow-hidden">
+              <div className="aspect-w-16 aspect-h-9 w-full">
+                <iframe 
+                  src="https://www.youtube.com/embed/videoseries?list=PL3DgEot3ENf467vxCFk8EcJw7qL9Hr1Mg" 
+                  title="Arsenal Cache MultiAtendimento" 
+                  className="w-full h-full rounded-2xl"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowFullScreen
+                ></iframe>
+              </div>
             </div>
             
             <div className="absolute -bottom-4 right-8 glass-card rounded-xl p-4 shadow-lg max-w-xs">

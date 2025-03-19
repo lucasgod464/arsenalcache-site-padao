@@ -34,7 +34,27 @@ const Index = () => {
     // Trigger on initial load
     setTimeout(handleScroll, 100);
     
-    return () => window.removeEventListener('scroll', handleScroll);
+    // Add aspect ratio support for iframes
+    const style = document.createElement('style');
+    style.textContent = `
+      .aspect-w-16 {
+        position: relative;
+        padding-bottom: 56.25%;
+      }
+      .aspect-w-16 iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    `;
+    document.head.appendChild(style);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.head.removeChild(style);
+    };
   }, []);
 
   return (
