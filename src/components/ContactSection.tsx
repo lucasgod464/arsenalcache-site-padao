@@ -1,10 +1,12 @@
 
 import React, { useState } from 'react';
-import { Check, Phone, Send } from 'lucide-react';
+import { Check, Phone, Send, MessageCircle } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
+import { Button } from "@/components/ui/button";
 
 const ContactSection = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formState, setFormState] = useState({
     name: '',
     email: '',
@@ -19,18 +21,48 @@ const ContactSection = () => {
     setFormState(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Send data to webhook
+      const webhookUrl = "https://construtor.yuccie.pro/webhook-test/0eec6c59-6fea-4e97-adfd-aa57e8745b4f";
+      
+      const response = await fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "no-cors", // Handle CORS restrictions
+        body: JSON.stringify({
+          name: formState.name,
+          email: formState.email,
+          phone: formState.phone,
+          company: formState.company,
+          message: formState.message,
+          timestamp: new Date().toISOString(),
+          source: "website-contact-form"
+        }),
+      });
+
+      // Since we're using no-cors, assume success and show a toast
       setFormState(prev => ({ ...prev, submitted: true }));
       toast({
         title: "Demonstração agendada!",
         description: "Entraremos em contato em breve para confirmar seu horário.",
         variant: "default",
       });
-    }, 1000);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Erro ao enviar",
+        description: "Ocorreu um erro ao enviar sua solicitação. Por favor, tente novamente.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -72,15 +104,25 @@ const ContactSection = () => {
             </div>
             
             <div className="mt-8 flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-whatsapp-DEFAULT flex items-center justify-center">
-                <Phone className="w-6 h-6 text-white" />
+              <div className="flex gap-4">
+                <div className="w-12 h-12 rounded-full bg-whatsapp-DEFAULT flex items-center justify-center">
+                  <Phone className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <p className="text-sm text-gray-600">Fale diretamente conosco</p>
+                  <a href="https://wa.me/5512981156856" className="text-lg font-medium text-arsenal-dark hover:text-arsenal-DEFAULT transition-colors">
+                    +55 (12) 98115-6856
+                  </a>
+                </div>
               </div>
-              <div>
-                <p className="text-sm text-gray-600">Fale diretamente conosco</p>
-                <a href="https://wa.me/5512981156856" className="text-lg font-medium text-arsenal-dark hover:text-arsenal-DEFAULT transition-colors">
-                  +55 (12) 98115-6856
-                </a>
-              </div>
+              
+              <Button 
+                className="bg-whatsapp-DEFAULT hover:bg-whatsapp-DEFAULT/90 text-white"
+                onClick={() => window.open("https://wa.me/5512981156856", "_blank")}
+              >
+                <MessageCircle className="mr-2 h-5 w-5" />
+                Chamar no WhatsApp
+              </Button>
             </div>
           </div>
           
@@ -180,10 +222,15 @@ const ContactSection = () => {
                   
                   <button
                     type="submit"
+                    disabled={isSubmitting}
                     className="w-full btn-primary flex items-center justify-center gap-2"
                   >
-                    <Send className="w-5 h-5" />
-                    Solicitar demonstração
+                    {isSubmitting ? (
+                      <div className="animate-spin h-5 w-5 border-2 border-white border-t-transparent rounded-full mr-2"></div>
+                    ) : (
+                      <Send className="w-5 h-5" />
+                    )}
+                    {isSubmitting ? "Enviando..." : "Agendar demonstração gratuita"}
                   </button>
                 </form>
               </>
