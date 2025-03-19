@@ -1,7 +1,9 @@
 
 import React, { useState } from 'react';
-import { ChevronUp, ChevronDown } from 'lucide-react';
+import { ChevronUp, ChevronDown, HelpCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const faqItems = [
   {
@@ -35,53 +37,43 @@ const faqItems = [
 ];
 
 const FaqSection = () => {
-  const [expandedFaq, setExpandedFaq] = useState(0);
-
-  const toggleFaq = (index: number) => {
-    setExpandedFaq(index === expandedFaq ? -1 : index);
-  };
-
   return (
     <section id="faq" className="hero-gradient py-20 px-4">
-      <div className="container mx-auto">
-        <div className="text-center mb-16 fade-in-section">
-          <span className="inline-block py-1 px-3 rounded-full bg-arsenal-light/20 text-arsenal-dark text-sm font-medium mb-4">
-            Perguntas frequentes
-          </span>
-          <h2 className="section-title">Dúvidas comuns sobre o <span className="text-gradient">MultiAtendimento</span></h2>
-          <p className="section-subtitle">
-            Encontre respostas para as perguntas mais frequentes sobre nosso sistema.
+      <div className="container mx-auto max-w-4xl">
+        <div className="text-center mb-12 fade-in-section">
+          <div className="flex justify-center mb-4">
+            <div className="bg-amber-100 p-3 rounded-full">
+              <HelpCircle className="h-8 w-8 text-amber-600" />
+            </div>
+          </div>
+          <h2 className="section-title mb-4">Perguntas Frequentes</h2>
+          <p className="section-subtitle mb-6">
+            Encontre respostas para as perguntas mais comuns sobre o Sistema Golden
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto">
-          {faqItems.map((faq, index) => (
-            <div 
-              key={index}
-              className={cn(
-                "border border-gray-100 rounded-xl mb-4 overflow-hidden transition-all duration-300 bg-white",
-                expandedFaq === index ? "shadow-md" : ""
-              )}
-            >
-              <button
-                className="w-full flex items-center justify-between p-6 text-left"
-                onClick={() => toggleFaq(index)}
-              >
-                <h3 className="text-lg font-medium">{faq.question}</h3>
-                {expandedFaq === index ? (
-                  <ChevronUp className="w-5 h-5 text-gray-500 flex-shrink-0" />
-                ) : (
-                  <ChevronDown className="w-5 h-5 text-gray-500 flex-shrink-0" />
-                )}
-              </button>
-              
-              {expandedFaq === index && (
-                <div className="px-6 pb-6 animate-accordion-down">
-                  <p className="text-gray-700">{faq.answer}</p>
-                </div>
-              )}
-            </div>
-          ))}
+        <div className="bg-white rounded-xl shadow-lg mb-10">
+          <Accordion type="single" collapsible className="w-full">
+            {faqItems.map((faq, index) => (
+              <AccordionItem key={index} value={`item-${index}`}>
+                <AccordionTrigger className="px-6 py-4 text-lg font-medium hover:no-underline">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-700">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+
+        <div className="text-center">
+          <p className="mb-6 text-lg">
+            Ainda tem dúvidas? Acesse nossa página completa de perguntas frequentes ou entre em contato conosco.
+          </p>
+          <Button size="lg" className="bg-blue-700 hover:bg-blue-800 text-white px-6">
+            Ver todas as perguntas frequentes
+          </Button>
         </div>
       </div>
     </section>

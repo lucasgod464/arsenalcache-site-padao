@@ -12,6 +12,9 @@ import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
 import FloatingCta from '@/components/FloatingCta';
+import ComparisonTable from '@/components/ComparisonTable';
+import RoiCalculator from '@/components/RoiCalculator';
+import FreeTrial from '@/components/FreeTrial';
 
 const Index = () => {
   useEffect(() => {
@@ -40,6 +43,9 @@ const Index = () => {
       <HeroSection />
       <FeaturesSection />
       <ZproSection />
+      <ComparisonTable />
+      <RoiCalculator />
+      <FreeTrial />
       <PricingSection />
       <DetailedFeaturesList />
       <TestimonialsSection />
