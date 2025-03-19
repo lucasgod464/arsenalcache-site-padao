@@ -103,22 +103,27 @@ const ContactSection = () => {
               </div>
             </div>
             
-            <div className="mt-8 flex items-center gap-4">
-              <div className="flex gap-4">
-                <div className="w-12 h-12 rounded-full bg-whatsapp-DEFAULT flex items-center justify-center">
-                  <Phone className="w-6 h-6 text-white" />
+            <div className="mt-8 space-y-4">
+              {/* Telefone com link para WhatsApp melhorado */}
+              <a 
+                href="https://wa.me/5512981156856" 
+                className="phone-link-container"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="phone-icon">
+                  <Phone className="w-5 h-5" />
                 </div>
                 <div>
                   <p className="text-sm text-gray-600">Fale diretamente conosco</p>
-                  <a href="https://wa.me/5512981156856" className="text-lg font-medium text-arsenal-dark hover:text-arsenal-DEFAULT transition-colors">
-                    +55 (12) 98115-6856
-                  </a>
+                  <span className="phone-number">+55 (12) 98115-6856</span>
                 </div>
-              </div>
+              </a>
               
               <Button 
-                className="bg-whatsapp-DEFAULT hover:bg-whatsapp-DEFAULT/90 text-white"
+                className="w-full max-w-xs bg-green-500 hover:bg-green-600 text-white font-medium shadow-lg shadow-green-500/20 hover:shadow-green-500/30"
                 onClick={() => window.open("https://wa.me/5512981156856", "_blank")}
+                size="lg"
               >
                 <MessageCircle className="mr-2 h-5 w-5" />
                 Chamar no WhatsApp
