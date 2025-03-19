@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
-import { Check, Clock } from 'lucide-react';
+import { Check, Clock, Server } from 'lucide-react';
 
 const ZproSection = () => {
   const [channelsCount, setChannelsCount] = useState(0);
@@ -63,7 +62,6 @@ const ZproSection = () => {
 
         <div className="bg-blue-900/30 rounded-xl p-6 md:p-8 mb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Para Empresas */}
             <div className="space-y-6">
               <h3 className="text-2xl font-bold text-amber-400 mb-4">Para Empresas</h3>
               <div className="space-y-4">
@@ -109,7 +107,6 @@ const ZproSection = () => {
               </div>
             </div>
             
-            {/* Para Revendedores */}
             <div className="space-y-6">
               <h3 className="text-2xl font-bold text-amber-400 mb-4">Para Revendedores</h3>
               <div className="space-y-4">
@@ -157,7 +154,41 @@ const ZproSection = () => {
           </div>
         </div>
 
-        {/* Implementation Timeline */}
+        <div className="bg-blue-900/30 rounded-xl p-6 md:p-8 mb-16">
+          <div className="flex flex-col md:flex-row items-center gap-6 mb-6">
+            <div className="bg-blue-800 p-4 rounded-full">
+              <Server className="h-10 w-10 text-amber-400" />
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold mb-2">Requisitos Mínimos do Sistema</h3>
+              <p className="text-xl text-blue-200">
+                Para garantir o melhor desempenho do Sistema Golden, recomendamos os seguintes requisitos:
+              </p>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
+            <div className="bg-blue-900/50 p-6 rounded-xl">
+              <h4 className="text-xl font-semibold text-amber-400 mb-3">Memória (RAM)</h4>
+              <p className="text-blue-100 text-lg">8GB ou mais</p>
+            </div>
+            
+            <div className="bg-blue-900/50 p-6 rounded-xl">
+              <h4 className="text-xl font-semibold text-amber-400 mb-3">Processamento</h4>
+              <p className="text-blue-100 text-lg">4 vCPUs ou mais</p>
+            </div>
+            
+            <div className="bg-blue-900/50 p-6 rounded-xl">
+              <h4 className="text-xl font-semibold text-amber-400 mb-3">Latência</h4>
+              <p className="text-blue-100 text-lg">50ms ou menos</p>
+            </div>
+          </div>
+          
+          <div className="mt-6 text-blue-200 text-center p-4 bg-blue-900/30 rounded-lg">
+            <p className="text-lg">A contratação e gestão da VPS é de responsabilidade do cliente.</p>
+          </div>
+        </div>
+
         <div className="bg-blue-900/30 rounded-xl p-6 md:p-8">
           <div className="flex flex-col md:flex-row items-center gap-6">
             <div className="bg-blue-800 p-4 rounded-full">

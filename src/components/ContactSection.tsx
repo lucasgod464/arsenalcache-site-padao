@@ -77,8 +77,8 @@ const ContactSection = () => {
               </div>
               <div>
                 <p className="text-sm text-gray-600">Fale diretamente conosco</p>
-                <a href="https://wa.me/5511999999999" className="text-lg font-medium text-arsenal-dark hover:text-arsenal-DEFAULT transition-colors">
-                  +55 (11) 99999-9999
+                <a href="https://wa.me/5512981156856" className="text-lg font-medium text-arsenal-dark hover:text-arsenal-DEFAULT transition-colors">
+                  +55 (12) 98115-6856
                 </a>
               </div>
             </div>

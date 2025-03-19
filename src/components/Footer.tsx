@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { MessageCircle, Mail, Phone, MapPin } from 'lucide-react';
 
@@ -127,7 +126,7 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-arsenal-light mt-1 flex-shrink-0" />
-                <span>+55 (11) 99999-9999</span>
+                <span>+55 (12) 98115-6856</span>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-arsenal-light mt-1 flex-shrink-0" />
