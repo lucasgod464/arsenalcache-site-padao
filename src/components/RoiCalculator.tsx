@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Calculator } from 'lucide-react';
 import { Label } from "@/components/ui/label";
@@ -64,7 +65,7 @@ const RoiCalculator = () => {
                 <Button 
                   variant="outline" 
                   size={isMobile ? "sm" : "default"} 
-                  className="border border-dashed border-blue-400 bg-transparent hover:bg-blue-50 text-blue-600 whitespace-nowrap text-sm px-4 py-2 transition-all"
+                  className={`border border-dashed border-blue-400 bg-transparent hover:bg-blue-50 text-blue-600 whitespace-nowrap text-sm transition-all ${isMobile ? 'w-full mt-2 py-1.5' : 'px-4 py-2'}`}
                 >
                   {isOpen ? "Esconder parâmetros" : "Ajustar parâmetros"}
                 </Button>
