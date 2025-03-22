@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound";
 import AdminPanel from "./pages/AdminPanel";
 import LeadsPage from "./pages/LeadsPage";
 import MasterClass from "./pages/MasterClass";
+import CookieBanner from "./components/CookieBanner";
 
 function App() {
   // Create a client
@@ -30,6 +31,7 @@ function App() {
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
+            <CookieBanner />
           </BrowserRouter>
         </TooltipProvider>
       </QueryClientProvider>
