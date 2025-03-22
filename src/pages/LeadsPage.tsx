@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -12,36 +11,39 @@ import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle2, Send, MessageCircle, Users, Shield, Zap, Rocket } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
 import { supabase } from '@/integrations/supabase/client';
-
 const formSchema = z.object({
-  name: z.string().min(2, { message: "Nome deve ter pelo menos 2 caracteres" }),
-  email: z.string().email({ message: "E-mail inválido" }),
-  phone: z.string().min(10, { message: "Telefone deve ter pelo menos 10 dígitos" }),
+  name: z.string().min(2, {
+    message: "Nome deve ter pelo menos 2 caracteres"
+  }),
+  email: z.string().email({
+    message: "E-mail inválido"
+  }),
+  phone: z.string().min(10, {
+    message: "Telefone deve ter pelo menos 10 dígitos"
+  }),
   company: z.string().optional(),
-  message: z.string().optional(),
+  message: z.string().optional()
 });
-
 const LeadsPage = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       const elements = document.querySelectorAll('.fade-in-section');
       elements.forEach(element => {
         const position = element.getBoundingClientRect();
-        if(position.top < window.innerHeight - 100) {
+        if (position.top < window.innerHeight - 100) {
           element.classList.add('is-visible');
         }
       });
     };
-
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Check on initial load
-    
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -49,46 +51,38 @@ const LeadsPage = () => {
       email: "",
       phone: "",
       company: "",
-      message: "",
-    },
+      message: ""
+    }
   });
-
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      const { error } = await supabase
-        .from('demo_requests')
-        .insert([
-          {
-            name: values.name,
-            email: values.email,
-            phone: values.phone,
-            company: values.company || null,
-            message: values.message || null,
-            status: 'pending',
-          }
-        ]);
-
+      const {
+        error
+      } = await supabase.from('demo_requests').insert([{
+        name: values.name,
+        email: values.email,
+        phone: values.phone,
+        company: values.company || null,
+        message: values.message || null,
+        status: 'pending'
+      }]);
       if (error) throw error;
-
       setIsSubmitted(true);
       form.reset();
-      
       toast({
         title: "Formulário enviado com sucesso!",
-        description: "Entraremos em contato em breve.",
+        description: "Entraremos em contato em breve."
       });
     } catch (error) {
       console.error("Erro ao enviar formulário:", error);
       toast({
         title: "Erro ao enviar formulário",
         description: "Ocorreu um erro ao processar sua solicitação. Tente novamente mais tarde.",
-        variant: "destructive",
+        variant: "destructive"
       });
     }
   };
-
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-50 via-white to-amber-50">
+  return <div className="min-h-screen bg-gradient-to-b from-amber-50 via-white to-amber-50">
       <Helmet>
         <title>Sistema Golden | Solicite uma demonstração</title>
         <meta name="description" content="Preencha o formulário para solicitar uma demonstração gratuita do Sistema Golden - a solução completa para WhatsApp profissional." />
@@ -187,12 +181,7 @@ const LeadsPage = () => {
               <div className="mt-8 p-4 bg-amber-50 rounded-lg border-l-4 border-amber-400">
                 <h3 className="font-bold text-lg text-amber-800 mb-2">TESTE GRÁTIS POR 7 DIAS!</h3>
                 <p className="text-amber-700">Experimente todos os recursos premium sem compromisso e transforme seu atendimento hoje mesmo.</p>
-                <Button 
-                  className="mt-3 bg-amber-400 hover:bg-amber-500 text-white"
-                  onClick={() => window.open('https://appgold.suamarca.pro/signup', '_blank')}
-                >
-                  Iniciar teste gratuito
-                </Button>
+                
               </div>
             </div>
           </div>
@@ -208,114 +197,78 @@ const LeadsPage = () => {
               </CardHeader>
               
               <CardContent className="relative z-10">
-                {isSubmitted ? (
-                  <div className="text-center py-8">
+                {isSubmitted ? <div className="text-center py-8">
                     <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-green-100 flex items-center justify-center">
                       <CheckCircle2 className="w-8 h-8 text-green-500" />
                     </div>
                     <h3 className="text-xl font-medium text-gray-900 mb-2">Solicitação recebida!</h3>
                     <p className="text-gray-600 mb-6">Nossa equipe entrará em contato em breve para agendar sua demonstração.</p>
-                    <Button 
-                      onClick={() => setIsSubmitted(false)}
-                      className="bg-amber-400 hover:bg-amber-500 text-white"
-                    >
+                    <Button onClick={() => setIsSubmitted(false)} className="bg-amber-400 hover:bg-amber-500 text-white">
                       Enviar nova solicitação
                     </Button>
-                  </div>
-                ) : (
-                  <Form {...form}>
+                  </div> : <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                      <FormField
-                        control={form.control}
-                        name="name"
-                        render={({ field }) => (
-                          <FormItem>
+                      <FormField control={form.control} name="name" render={({
+                    field
+                  }) => <FormItem>
                             <FormLabel>Nome completo</FormLabel>
                             <FormControl>
                               <Input placeholder="Seu nome completo" {...field} />
                             </FormControl>
                             <FormMessage />
-                          </FormItem>
-                        )}
-                      />
+                          </FormItem>} />
                       
-                      <FormField
-                        control={form.control}
-                        name="email"
-                        render={({ field }) => (
-                          <FormItem>
+                      <FormField control={form.control} name="email" render={({
+                    field
+                  }) => <FormItem>
                             <FormLabel>E-mail</FormLabel>
                             <FormControl>
                               <Input type="email" placeholder="seu@email.com" {...field} />
                             </FormControl>
                             <FormMessage />
-                          </FormItem>
-                        )}
-                      />
+                          </FormItem>} />
                       
-                      <FormField
-                        control={form.control}
-                        name="phone"
-                        render={({ field }) => (
-                          <FormItem>
+                      <FormField control={form.control} name="phone" render={({
+                    field
+                  }) => <FormItem>
                             <FormLabel>Telefone</FormLabel>
                             <FormControl>
                               <Input placeholder="(00) 00000-0000" {...field} />
                             </FormControl>
                             <FormMessage />
-                          </FormItem>
-                        )}
-                      />
+                          </FormItem>} />
                       
-                      <FormField
-                        control={form.control}
-                        name="company"
-                        render={({ field }) => (
-                          <FormItem>
+                      <FormField control={form.control} name="company" render={({
+                    field
+                  }) => <FormItem>
                             <FormLabel>Empresa</FormLabel>
                             <FormControl>
                               <Input placeholder="Nome da sua empresa (opcional)" {...field} />
                             </FormControl>
                             <FormMessage />
-                          </FormItem>
-                        )}
-                      />
+                          </FormItem>} />
                       
-                      <FormField
-                        control={form.control}
-                        name="message"
-                        render={({ field }) => (
-                          <FormItem>
+                      <FormField control={form.control} name="message" render={({
+                    field
+                  }) => <FormItem>
                             <FormLabel>Mensagem (opcional)</FormLabel>
                             <FormControl>
-                              <Textarea 
-                                placeholder="Conte-nos um pouco sobre suas necessidades..." 
-                                className="resize-none" 
-                                {...field} 
-                              />
+                              <Textarea placeholder="Conte-nos um pouco sobre suas necessidades..." className="resize-none" {...field} />
                             </FormControl>
                             <FormMessage />
-                          </FormItem>
-                        )}
-                      />
+                          </FormItem>} />
                       
-                      <Button 
-                        type="submit" 
-                        className="w-full bg-amber-400 hover:bg-amber-500 text-white"
-                      >
+                      <Button type="submit" className="w-full bg-amber-400 hover:bg-amber-500 text-white">
                         <Rocket className="mr-2 h-4 w-4" />
                         Solicitar demonstração
                       </Button>
                     </form>
-                  </Form>
-                )}
+                  </Form>}
               </CardContent>
             </Card>
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default LeadsPage;
