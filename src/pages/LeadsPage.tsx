@@ -103,37 +103,9 @@ const LeadsPage = () => {
               left: 0;
               width: 100%;
               height: 100%;
-            }
-            .fade-in-section {
-              opacity: 0;
-              transform: translateY(20px);
-              transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-            }
-            .fade-in-section.is-visible {
-              opacity: 1;
-              transform: translateY(0);
-            }
-            .text-gradient {
-              background: linear-gradient(90deg, #4a56e2 0%, #00c2ff 100%);
-              -webkit-background-clip: text;
-              -webkit-text-fill-color: transparent;
             }`}
         </style>
       </Helmet>
-
-      {/* Golden System Test Banner */}
-      <div className="bg-yellow-50 border-b border-yellow-200">
-        <div className="container mx-auto px-4 py-3 flex items-center justify-center">
-          <div className="flex items-center space-x-2">
-            <span className="text-gray-700 font-medium">Teste do sistema</span>
-            <img 
-              src="/lovable-uploads/8b9a6a08-95c8-42fe-b5cc-f474e2bb229b.png" 
-              alt="Golden System Logo" 
-              className="h-8" 
-            />
-          </div>
-        </div>
-      </div>
 
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
