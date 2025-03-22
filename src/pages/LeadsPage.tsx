@@ -1,7 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -10,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { ArrowLeft, CheckCircle2, Send, MessageCircle, Users, Rocket, Shield, Zap } from 'lucide-react';
+import { CheckCircle2, Send, MessageCircle, Users, Shield, Zap } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
 import { supabase } from '@/integrations/supabase/client';
 
@@ -109,13 +108,6 @@ const LeadsPage = () => {
       </Helmet>
 
       <div className="container mx-auto px-4 py-12">
-        <div className="mb-8">
-          <Link to="/" className="inline-flex items-center text-arsenal-DEFAULT hover:text-arsenal-dark transition-colors">
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Voltar para a página inicial
-          </Link>
-        </div>
-
         <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           <div className="fade-in-section">
             <div className="inline-block py-1 px-3 rounded-full bg-arsenal-light/20 text-arsenal-dark text-sm font-medium mb-6">
@@ -174,23 +166,6 @@ const LeadsPage = () => {
                 </div>
               </div>
             </div>
-
-            <div className="mt-10 fade-in-section pt-4">
-              <div className="p-6 bg-white/80 backdrop-blur-sm rounded-xl shadow-md border border-gray-100">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Parceiros confiam em nós</h3>
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="h-12 bg-gray-100 rounded-md flex items-center justify-center">
-                    <div className="text-gray-500 text-xs font-medium">Parceiro 1</div>
-                  </div>
-                  <div className="h-12 bg-gray-100 rounded-md flex items-center justify-center">
-                    <div className="text-gray-500 text-xs font-medium">Parceiro 2</div>
-                  </div>
-                  <div className="h-12 bg-gray-100 rounded-md flex items-center justify-center">
-                    <div className="text-gray-500 text-xs font-medium">Parceiro 3</div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
           
           <div className="fade-in-section">
@@ -213,7 +188,7 @@ const LeadsPage = () => {
                     <p className="text-gray-600 mb-6">Nossa equipe entrará em contato em breve para agendar sua demonstração.</p>
                     <Button 
                       onClick={() => setIsSubmitted(false)}
-                      className="bg-arsenal-DEFAULT hover:bg-arsenal-dark"
+                      className="bg-arsenal-DEFAULT hover:bg-arsenal-dark text-white"
                     >
                       Enviar nova solicitação
                     </Button>
@@ -297,9 +272,9 @@ const LeadsPage = () => {
                       
                       <Button 
                         type="submit" 
-                        className="w-full bg-arsenal-DEFAULT hover:bg-arsenal-dark"
+                        className="w-full bg-whatsapp-DEFAULT hover:bg-whatsapp-dark text-white"
                       >
-                        <Send className="mr-2 h-4 w-4" />
+                        <Rocket className="mr-2 h-4 w-4" />
                         Solicitar demonstração
                       </Button>
                     </form>
