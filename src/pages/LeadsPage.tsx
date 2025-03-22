@@ -12,6 +12,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle2, Send, MessageCircle, Users, Shield, Zap, Rocket } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
 import { supabase } from '@/integrations/supabase/client';
+import FreeTrial from '@/components/FreeTrial';
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Nome deve ter pelo menos 2 caracteres" }),
@@ -90,8 +91,8 @@ const LeadsPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-blue-50">
       <Helmet>
-        <title>Arsenal Cache | Solicite uma demonstração</title>
-        <meta name="description" content="Preencha o formulário para solicitar uma demonstração gratuita do Arsenal Cache - a solução completa para WhatsApp profissional." />
+        <title>Sistema Golden | Solicite uma demonstração</title>
+        <meta name="description" content="Preencha o formulário para solicitar uma demonstração gratuita do Sistema Golden - a solução completa para WhatsApp profissional." />
         <style>
           {`.aspect-w-16 {
               position: relative;
@@ -103,19 +104,37 @@ const LeadsPage = () => {
               left: 0;
               width: 100%;
               height: 100%;
+            }
+            .text-gradient {
+              background: linear-gradient(90deg, #F59E0B, #D97706);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+            .fade-in-section {
+              opacity: 0;
+              transform: translateY(20px);
+              transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            }
+            .fade-in-section.is-visible {
+              opacity: 1;
+              transform: translateY(0);
             }`}
         </style>
       </Helmet>
 
+      <div className="bg-amber-500 text-white p-3 text-center">
+        <p className="font-bold">🚀 TESTE GRATUITO: Experimente o Sistema Golden por 7 dias sem compromisso! 🚀</p>
+      </div>
+
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           <div className="fade-in-section">
-            <div className="inline-block py-1 px-3 rounded-full bg-arsenal-light/20 text-arsenal-dark text-sm font-medium mb-6">
+            <div className="inline-block py-1 px-3 rounded-full bg-amber-100 text-amber-800 text-sm font-medium mb-6">
               Solução completa para WhatsApp
             </div>
             
             <h1 className="text-4xl font-bold text-gray-900 mb-6">
-              Arsenal<span className="text-whatsapp-DEFAULT">Cache</span>
+              Sistema<span className="text-amber-500">Golden</span>
               <span className="block text-gradient">Transforme seu Atendimento</span>
             </h1>
             
@@ -126,8 +145,8 @@ const LeadsPage = () => {
               
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <div className="w-10 h-10 rounded-full bg-whatsapp-light/10 flex items-center justify-center mr-3 mt-0.5">
-                    <MessageCircle className="w-5 h-5 text-whatsapp-DEFAULT" />
+                  <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center mr-3 mt-0.5">
+                    <MessageCircle className="w-5 h-5 text-amber-600" />
                   </div>
                   <div>
                     <h3 className="font-medium text-gray-900">Conexões ilimitadas</h3>
@@ -136,8 +155,8 @@ const LeadsPage = () => {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="w-10 h-10 rounded-full bg-arsenal-light/10 flex items-center justify-center mr-3 mt-0.5">
-                    <Users className="w-5 h-5 text-arsenal-DEFAULT" />
+                  <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center mr-3 mt-0.5">
+                    <Users className="w-5 h-5 text-amber-600" />
                   </div>
                   <div>
                     <h3 className="font-medium text-gray-900">Usuários ilimitados</h3>
@@ -146,8 +165,8 @@ const LeadsPage = () => {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="w-10 h-10 rounded-full bg-whatsapp-light/10 flex items-center justify-center mr-3 mt-0.5">
-                    <Shield className="w-5 h-5 text-whatsapp-DEFAULT" />
+                  <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center mr-3 mt-0.5">
+                    <Shield className="w-5 h-5 text-amber-600" />
                   </div>
                   <div>
                     <h3 className="font-medium text-gray-900">Sistema Whitelabel</h3>
@@ -156,8 +175,8 @@ const LeadsPage = () => {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="w-10 h-10 rounded-full bg-arsenal-light/10 flex items-center justify-center mr-3 mt-0.5">
-                    <Zap className="w-5 h-5 text-arsenal-DEFAULT" />
+                  <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center mr-3 mt-0.5">
+                    <Zap className="w-5 h-5 text-amber-600" />
                   </div>
                   <div>
                     <h3 className="font-medium text-gray-900">Atendimento automatizado</h3>
@@ -165,13 +184,24 @@ const LeadsPage = () => {
                   </div>
                 </div>
               </div>
+              
+              <div className="mt-8 p-4 bg-amber-50 rounded-lg border-l-4 border-amber-500">
+                <h3 className="font-bold text-lg text-amber-800 mb-2">TESTE GRÁTIS POR 7 DIAS!</h3>
+                <p className="text-amber-700">Experimente todos os recursos premium sem compromisso e transforme seu atendimento hoje mesmo.</p>
+                <Button 
+                  className="mt-3 bg-amber-500 hover:bg-amber-600 text-white"
+                  onClick={() => window.open('https://appgold.suamarca.pro/signup', '_blank')}
+                >
+                  Iniciar teste gratuito
+                </Button>
+              </div>
             </div>
           </div>
           
           <div className="fade-in-section">
-            <Card className="shadow-xl relative overflow-hidden border-arsenal-light/20">
-              <div className="absolute -top-32 -left-32 w-64 h-64 bg-arsenal-light/10 rounded-full blur-3xl"></div>
-              <div className="absolute -bottom-32 -right-32 w-64 h-64 bg-whatsapp-light/10 rounded-full blur-3xl"></div>
+            <Card className="shadow-xl relative overflow-hidden border-amber-200">
+              <div className="absolute -top-32 -left-32 w-64 h-64 bg-amber-100/50 rounded-full blur-3xl"></div>
+              <div className="absolute -bottom-32 -right-32 w-64 h-64 bg-amber-100/50 rounded-full blur-3xl"></div>
               
               <CardHeader className="text-center pb-4 relative z-10">
                 <CardTitle className="text-2xl">Solicite uma demonstração</CardTitle>
@@ -188,7 +218,7 @@ const LeadsPage = () => {
                     <p className="text-gray-600 mb-6">Nossa equipe entrará em contato em breve para agendar sua demonstração.</p>
                     <Button 
                       onClick={() => setIsSubmitted(false)}
-                      className="bg-arsenal-DEFAULT hover:bg-arsenal-dark text-white"
+                      className="bg-amber-500 hover:bg-amber-600 text-white"
                     >
                       Enviar nova solicitação
                     </Button>
@@ -272,7 +302,7 @@ const LeadsPage = () => {
                       
                       <Button 
                         type="submit" 
-                        className="w-full bg-whatsapp-DEFAULT hover:bg-whatsapp-dark text-white"
+                        className="w-full bg-amber-500 hover:bg-amber-600 text-white"
                       >
                         <Rocket className="mr-2 h-4 w-4" />
                         Solicitar demonstração
@@ -285,6 +315,8 @@ const LeadsPage = () => {
           </div>
         </div>
       </div>
+      
+      <FreeTrial />
     </div>
   );
 };
