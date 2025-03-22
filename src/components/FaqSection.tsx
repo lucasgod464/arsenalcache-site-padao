@@ -1,9 +1,9 @@
-
 import React, { useState } from 'react';
 import { ChevronUp, ChevronDown, HelpCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { useNavigate } from 'react-router-dom';
 
 const faqItems = [
   {
@@ -37,6 +37,18 @@ const faqItems = [
 ];
 
 const FaqSection = () => {
+  const navigate = useNavigate();
+  const [showAll, setShowAll] = useState(false);
+
+  const handleViewAllFaqs = () => {
+    const contactSection = document.getElementById('contato');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+    // Alternative: navigate to a FAQ page if one exists
+    // navigate('/faq');
+  };
+
   return (
     <section id="faq" className="hero-gradient py-20 px-4">
       <div className="container mx-auto max-w-4xl">
@@ -71,7 +83,11 @@ const FaqSection = () => {
           <p className="mb-6 text-lg">
             Ainda tem dúvidas? Acesse nossa página completa de perguntas frequentes ou entre em contato conosco.
           </p>
-          <Button size="lg" className="bg-blue-700 hover:bg-blue-800 text-white px-6">
+          <Button 
+            size="lg" 
+            className="bg-blue-700 hover:bg-blue-800 text-white px-6"
+            onClick={handleViewAllFaqs}
+          >
             Ver todas as perguntas frequentes
           </Button>
         </div>
