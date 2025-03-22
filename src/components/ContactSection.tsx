@@ -46,6 +46,23 @@ const ContactSection = () => {
         }),
       });
 
+      // Save form data to localStorage for the admin panel
+      const localStorageKey = 'demoRequests';
+      const existingRequests = JSON.parse(localStorage.getItem(localStorageKey) || '[]');
+      
+      const newRequest = {
+        id: `req_${Date.now()}`,
+        name: formState.name,
+        email: formState.email,
+        phone: formState.phone,
+        company: formState.company,
+        message: formState.message,
+        status: 'pending',
+        timestamp: new Date().toISOString()
+      };
+      
+      localStorage.setItem(localStorageKey, JSON.stringify([...existingRequests, newRequest]));
+
       // Since we're using no-cors, assume success and show a toast
       setFormState(prev => ({ ...prev, submitted: true }));
       toast({
