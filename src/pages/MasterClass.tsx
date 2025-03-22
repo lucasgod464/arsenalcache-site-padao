@@ -1,15 +1,16 @@
+
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { Button } from "@/components/ui/button";
 import { Download, Timer, Users } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
+
 const MasterClass = () => {
-  const {
-    toast
-  } = useToast();
+  const { toast } = useToast();
   const [showPurchaseButton, setShowPurchaseButton] = useState(false);
   const [peopleWatching, setPeopleWatching] = useState(1057);
   const [isLoading, setIsLoading] = useState(false);
+
   useEffect(() => {
     // Timer to show purchase button after 1 minute
     const timer = setTimeout(() => {
@@ -24,11 +25,13 @@ const MasterClass = () => {
     const peopleInterval = setInterval(() => {
       setPeopleWatching(Math.floor(Math.random() * 200 + 1000));
     }, 5000);
+
     return () => {
       clearTimeout(timer);
       clearInterval(peopleInterval);
     };
   }, [toast]);
+
   const handlePurchase = () => {
     setIsLoading(true);
     toast({
@@ -37,13 +40,13 @@ const MasterClass = () => {
     });
     setTimeout(() => setIsLoading(false), 2000);
   };
-  return <div className="min-h-screen bg-purple-800 text-white flex flex-col items-center justify-start py-12 px-4">
+
+  return (
+    <div className="min-h-screen bg-purple-800 text-white flex flex-col items-center justify-start py-12 px-4">
       <Helmet>
         <title>Sistema Golden | MasterClass Exclusiva</title>
         <meta name="description" content="MasterClass exclusiva do Sistema Golden - Aprenda a alcançar mais de 30K/Mês com nosso software de atendimento via WhatsApp" />
       </Helmet>
-
-      
 
       <div className="text-center max-w-3xl mx-auto space-y-4 mb-10">
         <h1 className="text-3xl md:text-4xl font-bold leading-tight">
@@ -57,7 +60,14 @@ const MasterClass = () => {
       {/* YouTube Video Embed */}
       <div className="w-full max-w-3xl bg-purple-900/50 rounded-lg overflow-hidden shadow-2xl mb-8">
         <div className="aspect-w-16 aspect-h-9 relative">
-          <iframe className="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Sistema Golden MasterClass" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+          <iframe 
+            className="absolute inset-0 w-full h-full" 
+            src="https://www.youtube.com/embed/MWjsCIiyjGg" 
+            title="Sistema Golden MasterClass" 
+            frameBorder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowFullScreen
+          ></iframe>
         </div>
       </div>
 
@@ -65,13 +75,21 @@ const MasterClass = () => {
         <span className="font-bold">{peopleWatching}</span> pessoas assistindo essa apresentação
       </p>
 
-      {showPurchaseButton && <div className="w-full max-w-2xl animate-fade-in">
-          <Button onClick={handlePurchase} disabled={isLoading} className="w-full bg-amber-400 hover:bg-amber-500 text-purple-900 text-xl py-6 h-auto font-bold">
+      {showPurchaseButton && (
+        <div className="w-full max-w-2xl animate-fade-in">
+          <Button 
+            onClick={handlePurchase} 
+            disabled={isLoading} 
+            className="w-full bg-amber-400 hover:bg-amber-500 text-purple-900 text-xl py-6 h-auto font-bold"
+          >
             <Download className="mr-2 h-6 w-6" />
             COMPRAR SISTEMA GOLDEN AGORA!
             <span className="block text-sm font-normal">(oferta por tempo limitado)</span>
           </Button>
-        </div>}
-    </div>;
+        </div>
+      )}
+    </div>
+  );
 };
+
 export default MasterClass;
