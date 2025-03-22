@@ -19,7 +19,8 @@ import {
   X, 
   Phone, 
   Mail,
-  AlertCircle 
+  AlertCircle,
+  RefreshCw
 } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
 import {
@@ -27,6 +28,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { supabase } from "@/integrations/supabase/client";
 
 // Tipo para a solicitação de demonstração
 interface DemoRequest {
@@ -34,75 +36,102 @@ interface DemoRequest {
   name: string;
   email: string;
   phone: string;
-  company: string;
-  message: string;
+  company: string | null;
+  message: string | null;
   status: 'pending' | 'contacted' | 'completed' | 'canceled';
   timestamp: string;
 }
-
-// Dados de exemplo para quando não houver dados no localStorage
-const MOCK_REQUESTS: DemoRequest[] = [
-  {
-    id: "1",
-    name: "João Silva",
-    email: "joao.silva@empresa.com",
-    phone: "(11) 98765-4321",
-    company: "Tech Solutions",
-    message: "Gostaria de uma demonstração para minha equipe de vendas.",
-    status: "pending",
-    timestamp: "2023-09-15T14:30:00"
-  },
-  {
-    id: "2",
-    name: "Maria Oliveira",
-    email: "maria@consultorias.com.br",
-    phone: "(21) 97654-3210",
-    company: "Consultorias Ltda",
-    message: "Preciso de uma solução para meus 10 atendentes.",
-    status: "contacted",
-    timestamp: "2023-09-14T10:15:00"
-  },
-  {
-    id: "3",
-    name: "Pedro Santos",
-    email: "pedro@varejista.com",
-    phone: "(31) 96543-2109",
-    company: "Varejista Nacional",
-    message: "Queremos integrar com nosso ERP atual.",
-    status: "completed",
-    timestamp: "2023-09-12T16:45:00"
-  }
-];
 
 const DemoRequestsTable = () => {
   const { toast } = useToast();
   const [requests, setRequests] = useState<DemoRequest[]>([]);
   const [loading, setLoading] = useState(true);
+  const [refreshing, setRefreshing] = useState(false);
 
-  // Carregar dados do localStorage ou usar os dados mockados
-  useEffect(() => {
-    const localStorageKey = 'demoRequests';
-    const savedRequests = localStorage.getItem(localStorageKey);
-    
-    if (savedRequests) {
-      try {
-        const parsedRequests = JSON.parse(savedRequests);
-        setRequests(parsedRequests);
-      } catch (error) {
-        console.error('Error parsing saved requests:', error);
-        setRequests(MOCK_REQUESTS);
-      }
-    } else {
-      // Se não houver dados no localStorage, use os dados mockados
-      setRequests(MOCK_REQUESTS);
+  // Buscar dados do Supabase
+  const fetchRequests = async () => {
+    try {
+      setRefreshing(true);
+      const { data, error } = await supabase
+        .from('demo_requests')
+        .select('*')
+        .order('timestamp', { ascending: false });
+
+      if (error) throw error;
+      
+      setRequests(data || []);
+    } catch (error) {
+      console.error('Erro ao buscar solicitações:', error);
+      toast({
+        title: "Erro ao carregar dados",
+        description: "Não foi possível carregar as solicitações. Tente novamente.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+      setRefreshing(false);
     }
-    
-    setLoading(false);
+  };
+
+  // Carregar dados do Supabase ao iniciar
+  useEffect(() => {
+    fetchRequests();
   }, []);
 
-  // Salvar as alterações no localStorage
-  const saveToLocalStorage = (updatedRequests: DemoRequest[]) => {
-    localStorage.setItem('demoRequests', JSON.stringify(updatedRequests));
+  // Atualiza o status de uma solicitação
+  const updateStatus = async (id: string, newStatus: DemoRequest['status']) => {
+    try {
+      const { error } = await supabase
+        .from('demo_requests')
+        .update({ status: newStatus })
+        .eq('id', id);
+
+      if (error) throw error;
+      
+      // Atualizar a lista local
+      setRequests(requests.map(req => 
+        req.id === id ? { ...req, status: newStatus } : req
+      ));
+      
+      toast({
+        title: "Status atualizado",
+        description: `A solicitação foi marcada como "${newStatus}".`,
+      });
+    } catch (error) {
+      console.error('Erro ao atualizar status:', error);
+      toast({
+        title: "Erro ao atualizar",
+        description: "Não foi possível atualizar o status. Tente novamente.",
+        variant: "destructive",
+      });
+    }
+  };
+
+  // Remove uma solicitação
+  const deleteRequest = async (id: string) => {
+    try {
+      const { error } = await supabase
+        .from('demo_requests')
+        .delete()
+        .eq('id', id);
+
+      if (error) throw error;
+      
+      // Atualizar a lista local
+      setRequests(requests.filter(req => req.id !== id));
+      
+      toast({
+        title: "Solicitação removida",
+        description: "A solicitação foi removida com sucesso.",
+      });
+    } catch (error) {
+      console.error('Erro ao remover solicitação:', error);
+      toast({
+        title: "Erro ao remover",
+        description: "Não foi possível remover a solicitação. Tente novamente.",
+        variant: "destructive",
+      });
+    }
   };
 
   // Formatação de data
@@ -115,33 +144,6 @@ const DemoRequestsTable = () => {
       hour: '2-digit',
       minute: '2-digit'
     }).format(date);
-  };
-
-  // Atualiza o status de uma solicitação
-  const updateStatus = (id: string, newStatus: DemoRequest['status']) => {
-    const updatedRequests = requests.map(req => 
-      req.id === id ? { ...req, status: newStatus } : req
-    );
-    
-    setRequests(updatedRequests);
-    saveToLocalStorage(updatedRequests);
-    
-    toast({
-      title: "Status atualizado",
-      description: `A solicitação foi marcada como "${newStatus}".`,
-    });
-  };
-
-  // Remove uma solicitação
-  const deleteRequest = (id: string) => {
-    const updatedRequests = requests.filter(req => req.id !== id);
-    setRequests(updatedRequests);
-    saveToLocalStorage(updatedRequests);
-    
-    toast({
-      title: "Solicitação removida",
-      description: "A solicitação foi removida com sucesso.",
-    });
   };
 
   // Renderiza o badge de status com a cor apropriada
@@ -171,6 +173,23 @@ const DemoRequestsTable = () => {
 
   return (
     <div>
+      <div className="flex justify-end mb-4">
+        <Button 
+          variant="outline" 
+          size="sm" 
+          onClick={fetchRequests} 
+          disabled={refreshing}
+          className="flex items-center gap-2"
+        >
+          {refreshing ? (
+            <RefreshCw className="h-4 w-4 animate-spin" />
+          ) : (
+            <RefreshCw className="h-4 w-4" />
+          )}
+          Atualizar
+        </Button>
+      </div>
+      
       <Table>
         <TableCaption>Total de {requests.length} solicitações de demonstração.</TableCaption>
         <TableHeader>

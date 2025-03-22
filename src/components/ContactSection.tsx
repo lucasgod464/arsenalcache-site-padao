@@ -1,8 +1,8 @@
-
 import React, { useState } from 'react';
 import { Check, Phone, Send, MessageCircle } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -26,44 +26,46 @@ const ContactSection = () => {
     setIsSubmitting(true);
     
     try {
-      // Send data to webhook
-      const webhookUrl = "https://construtor.yuccie.pro/webhook-test/0eec6c59-6fea-4e97-adfd-aa57e8745b4f";
-      
-      const response = await fetch(webhookUrl, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        mode: "no-cors", // Handle CORS restrictions
-        body: JSON.stringify({
-          name: formState.name,
-          email: formState.email,
-          phone: formState.phone,
-          company: formState.company,
-          message: formState.message,
-          timestamp: new Date().toISOString(),
-          source: "website-contact-form"
-        }),
-      });
+      // Enviar dados para o Supabase
+      const { error } = await supabase
+        .from('demo_requests')
+        .insert([
+          {
+            name: formState.name,
+            email: formState.email,
+            phone: formState.phone,
+            company: formState.company || null,
+            message: formState.message || null,
+            status: 'pending'
+          }
+        ]);
 
-      // Save form data to localStorage for the admin panel
-      const localStorageKey = 'demoRequests';
-      const existingRequests = JSON.parse(localStorage.getItem(localStorageKey) || '[]');
-      
-      const newRequest = {
-        id: `req_${Date.now()}`,
-        name: formState.name,
-        email: formState.email,
-        phone: formState.phone,
-        company: formState.company,
-        message: formState.message,
-        status: 'pending',
-        timestamp: new Date().toISOString()
-      };
-      
-      localStorage.setItem(localStorageKey, JSON.stringify([...existingRequests, newRequest]));
+      if (error) throw error;
 
-      // Since we're using no-cors, assume success and show a toast
+      // Backup para o webhook (opcional, podemos manter para redundância)
+      try {
+        const webhookUrl = "https://construtor.yuccie.pro/webhook-test/0eec6c59-6fea-4e97-adfd-aa57e8745b4f";
+        
+        await fetch(webhookUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          mode: "no-cors",
+          body: JSON.stringify({
+            name: formState.name,
+            email: formState.email,
+            phone: formState.phone,
+            company: formState.company,
+            message: formState.message,
+            timestamp: new Date().toISOString(),
+            source: "website-contact-form"
+          }),
+        });
+      } catch (webhookError) {
+        console.error("Erro no webhook (não crítico):", webhookError);
+      }
+
       setFormState(prev => ({ ...prev, submitted: true }));
       toast({
         title: "Demonstração agendada!",
@@ -71,7 +73,7 @@ const ContactSection = () => {
         variant: "default",
       });
     } catch (error) {
-      console.error("Error submitting form:", error);
+      console.error("Erro ao enviar formulário:", error);
       toast({
         title: "Erro ao enviar",
         description: "Ocorreu um erro ao enviar sua solicitação. Por favor, tente novamente.",
