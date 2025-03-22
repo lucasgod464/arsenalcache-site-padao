@@ -10,9 +10,11 @@ import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { ArrowLeft, CheckCircle2, Send } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, Send, MessageCircle, Zap, LineChart, Shield } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
 import { supabase } from '@/integrations/supabase/client';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Nome deve ter pelo menos 2 caracteres" }),
@@ -58,8 +60,8 @@ const LeadsPage = () => {
       form.reset();
       
       toast({
-        title: "Formulário enviado com sucesso!",
-        description: "Entraremos em contato em breve.",
+        title: "Solicitação enviada com sucesso!",
+        description: "Nossa equipe entrará em contato em breve.",
       });
     } catch (error) {
       console.error("Erro ao enviar formulário:", error);
@@ -72,81 +74,109 @@ const LeadsPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-blue-50 to-white">
       <Helmet>
-        <title>Sistema Golden | Solicite uma demonstração</title>
-        <meta name="description" content="Preencha o formulário para solicitar uma demonstração gratuita do Sistema Golden - a solução completa para gestão da sua empresa." />
+        <title>Sistema Golden | Solicite uma demonstração personalizada</title>
+        <meta name="description" content="Agende uma demonstração personalizada do Sistema Golden - a plataforma completa de WhatsApp para empresas que buscam resultados." />
       </Helmet>
 
-      <div className="container mx-auto px-4 py-12">
+      <Navbar />
+
+      <div className="container mx-auto px-4 py-12 flex-grow">
         <div className="mb-8">
-          <Link to="/" className="inline-flex items-center text-blue-600 hover:text-blue-800">
+          <Link to="/" className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Voltar para a página inicial
           </Link>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-          <div>
+          <div className="fade-in-section">
+            <span className="inline-block py-1 px-3 rounded-full bg-arsenal-light/20 text-arsenal-dark text-sm font-medium mb-6">
+              Solução completa para WhatsApp
+            </span>
             <h1 className="text-4xl font-bold text-gray-900 mb-6">
               Sistema Golden
-              <span className="block text-blue-600">Transforme sua gestão</span>
+              <span className="block text-gradient bg-gradient-to-r from-blue-600 to-blue-800">Agende uma demonstração exclusiva</span>
             </h1>
             
-            <div className="space-y-6">
-              <p className="text-lg text-gray-700">
-                Preencha o formulário ao lado para solicitar uma demonstração gratuita da nossa solução completa para gestão empresarial.
+            <div className="space-y-6 text-lg text-gray-700">
+              <p>
+                Descubra como o Sistema Golden pode transformar a comunicação da sua empresa e aumentar seus resultados com uma demonstração personalizada.
               </p>
               
-              <div className="space-y-4">
+              <div className="space-y-5 mt-8">
                 <div className="flex items-start">
-                  <CheckCircle2 className="w-6 h-6 text-green-500 mr-3 mt-0.5" />
+                  <div className="w-12 h-12 rounded-full bg-whatsapp-light/10 flex items-center justify-center mr-4">
+                    <MessageCircle className="w-6 h-6 text-whatsapp-DEFAULT" />
+                  </div>
                   <div>
-                    <h3 className="font-medium text-gray-900">Aumente sua produtividade</h3>
-                    <p className="text-gray-600">Reduza em até 40% o tempo gasto em tarefas administrativas</p>
+                    <h3 className="font-medium text-gray-900 text-xl">Conexões ilimitadas</h3>
+                    <p className="text-gray-600">Integre quantos números de WhatsApp precisar sem custos adicionais</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <CheckCircle2 className="w-6 h-6 text-green-500 mr-3 mt-0.5" />
+                  <div className="w-12 h-12 rounded-full bg-arsenal-light/10 flex items-center justify-center mr-4">
+                    <Zap className="w-6 h-6 text-arsenal-DEFAULT" />
+                  </div>
                   <div>
-                    <h3 className="font-medium text-gray-900">Controle financeiro completo</h3>
-                    <p className="text-gray-600">Visualize em tempo real a saúde financeira da sua empresa</p>
+                    <h3 className="font-medium text-gray-900 text-xl">Automação inteligente</h3>
+                    <p className="text-gray-600">Atendimento automatizado 24/7 com chatbots personalizados</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <CheckCircle2 className="w-6 h-6 text-green-500 mr-3 mt-0.5" />
+                  <div className="w-12 h-12 rounded-full bg-whatsapp-light/10 flex items-center justify-center mr-4">
+                    <LineChart className="w-6 h-6 text-whatsapp-DEFAULT" />
+                  </div>
                   <div>
-                    <h3 className="font-medium text-gray-900">Decisões baseadas em dados</h3>
-                    <p className="text-gray-600">Relatórios e dashboards personalizados para sua gestão</p>
+                    <h3 className="font-medium text-gray-900 text-xl">Métricas em tempo real</h3>
+                    <p className="text-gray-600">Relatórios detalhados e dashboards personalizáveis</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <CheckCircle2 className="w-6 h-6 text-green-500 mr-3 mt-0.5" />
+                  <div className="w-12 h-12 rounded-full bg-arsenal-light/10 flex items-center justify-center mr-4">
+                    <Shield className="w-6 h-6 text-arsenal-DEFAULT" />
+                  </div>
                   <div>
-                    <h3 className="font-medium text-gray-900">Suporte personalizado</h3>
-                    <p className="text-gray-600">Equipe dedicada para implementação e treinamento</p>
+                    <h3 className="font-medium text-gray-900 text-xl">100% oficial e seguro</h3>
+                    <p className="text-gray-600">API oficial do WhatsApp Business com dados criptografados</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           
-          <div>
-            <Card className="shadow-lg">
-              <CardHeader className="text-center pb-4">
-                <CardTitle className="text-2xl">Solicite uma demonstração</CardTitle>
-                <CardDescription>Preencha o formulário abaixo para conhecer nossa solução</CardDescription>
+          <div className="fade-in-section">
+            <Card className="shadow-xl border-t-4 border-t-blue-600 overflow-hidden relative">
+              <div className="absolute -top-10 -right-10 w-64 h-64 bg-arsenal-light/20 rounded-full blur-3xl"></div>
+              <div className="absolute top-20 -left-10 w-64 h-64 bg-whatsapp-light/20 rounded-full blur-3xl"></div>
+              
+              <CardHeader className="text-center pb-4 relative z-10">
+                <CardTitle className="text-2xl text-gradient bg-gradient-to-r from-blue-600 to-blue-800">Solicite uma demonstração exclusiva</CardTitle>
+                <CardDescription>Preencha o formulário e nossa equipe entrará em contato</CardDescription>
               </CardHeader>
-              <CardContent>
+              
+              <CardContent className="relative z-10">
                 {isSubmitted ? (
-                  <div className="text-center py-8">
-                    <CheckCircle2 className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                    <h3 className="text-xl font-medium text-gray-900 mb-2">Solicitação recebida!</h3>
-                    <p className="text-gray-600 mb-6">Nossa equipe entrará em contato em breve para agendar sua demonstração.</p>
-                    <Button onClick={() => setIsSubmitted(false)}>Enviar nova solicitação</Button>
+                  <div className="text-center py-10 space-y-4">
+                    <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
+                      <CheckCircle2 className="w-12 h-12 text-green-500" />
+                    </div>
+                    <h3 className="text-2xl font-medium text-gray-900">Solicitação recebida!</h3>
+                    <p className="text-gray-600 mb-6">
+                      Agradecemos seu interesse no Sistema Golden. 
+                      <br />Nossa equipe entrará em contato em breve para agendar sua demonstração personalizada.
+                    </p>
+                    <Button 
+                      size="lg"
+                      onClick={() => setIsSubmitted(false)}
+                      className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white"
+                    >
+                      Enviar nova solicitação
+                    </Button>
                   </div>
                 ) : (
                   <Form {...form}>
@@ -158,7 +188,7 @@ const LeadsPage = () => {
                           <FormItem>
                             <FormLabel>Nome completo</FormLabel>
                             <FormControl>
-                              <Input placeholder="Seu nome completo" {...field} />
+                              <Input placeholder="Seu nome completo" {...field} className="h-12" />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -170,9 +200,9 @@ const LeadsPage = () => {
                         name="email"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>E-mail</FormLabel>
+                            <FormLabel>E-mail profissional</FormLabel>
                             <FormControl>
-                              <Input type="email" placeholder="seu@email.com" {...field} />
+                              <Input type="email" placeholder="seu@empresa.com" {...field} className="h-12" />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -184,9 +214,9 @@ const LeadsPage = () => {
                         name="phone"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Telefone</FormLabel>
+                            <FormLabel>Telefone/WhatsApp</FormLabel>
                             <FormControl>
-                              <Input placeholder="(00) 00000-0000" {...field} />
+                              <Input placeholder="(00) 00000-0000" {...field} className="h-12" />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -200,7 +230,7 @@ const LeadsPage = () => {
                           <FormItem>
                             <FormLabel>Empresa</FormLabel>
                             <FormControl>
-                              <Input placeholder="Nome da sua empresa (opcional)" {...field} />
+                              <Input placeholder="Nome da sua empresa" {...field} className="h-12" />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -212,11 +242,11 @@ const LeadsPage = () => {
                         name="message"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Mensagem (opcional)</FormLabel>
+                            <FormLabel>Como podemos ajudar?</FormLabel>
                             <FormControl>
                               <Textarea 
-                                placeholder="Conte-nos um pouco sobre suas necessidades..." 
-                                className="resize-none" 
+                                placeholder="Conte-nos um pouco sobre suas necessidades e objetivos..." 
+                                className="resize-none min-h-[100px]" 
                                 {...field} 
                               />
                             </FormControl>
@@ -225,10 +255,18 @@ const LeadsPage = () => {
                         )}
                       />
                       
-                      <Button type="submit" className="w-full">
-                        <Send className="mr-2 h-4 w-4" />
+                      <Button 
+                        type="submit" 
+                        className="w-full h-12 mt-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white"
+                      >
+                        <Send className="mr-2 h-5 w-5" />
                         Solicitar demonstração
                       </Button>
+                      
+                      <p className="text-xs text-center text-gray-500 mt-4">
+                        Ao enviar este formulário, você concorda com nossa política de privacidade 
+                        e em receber comunicações sobre nossos produtos e serviços.
+                      </p>
                     </form>
                   </Form>
                 )}
@@ -236,7 +274,44 @@ const LeadsPage = () => {
             </Card>
           </div>
         </div>
+        
+        <div className="max-w-6xl mx-auto mt-20 text-center fade-in-section">
+          <h2 className="text-3xl font-bold mb-8">Empresas que confiam no <span className="text-gradient bg-gradient-to-r from-blue-600 to-blue-800">Sistema Golden</span></h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="bg-white/80 p-6 rounded-lg shadow-md flex items-center justify-center">
+              <span className="text-xl font-medium text-gray-400">Empresa 1</span>
+            </div>
+            <div className="bg-white/80 p-6 rounded-lg shadow-md flex items-center justify-center">
+              <span className="text-xl font-medium text-gray-400">Empresa 2</span>
+            </div>
+            <div className="bg-white/80 p-6 rounded-lg shadow-md flex items-center justify-center">
+              <span className="text-xl font-medium text-gray-400">Empresa 3</span>
+            </div>
+            <div className="bg-white/80 p-6 rounded-lg shadow-md flex items-center justify-center">
+              <span className="text-xl font-medium text-gray-400">Empresa 4</span>
+            </div>
+          </div>
+        </div>
       </div>
+      
+      <Footer />
+      
+      <style jsx>{`
+        .fade-in-section {
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .text-gradient {
+          background-clip: text;
+          -webkit-background-clip: text;
+          color: transparent;
+        }
+      `}</style>
     </div>
   );
 };
