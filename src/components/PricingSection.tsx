@@ -91,14 +91,20 @@ const PricingSection = () => {
               </CardContent>
               <CardFooter className="pt-4 pb-8 flex justify-center">
                 <Button 
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    scrollToSection('contato');
-                  }} 
+                  asChild
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-6 rounded-full transition-all"
                 >
-                  Escolher este plano
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <a 
+                    href="https://www.asaas.com/c/isetiztbovefmj0v" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                    }}
+                  >
+                    Contratar plano essencial
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
                 </Button>
               </CardFooter>
             </Card>
@@ -174,14 +180,20 @@ const PricingSection = () => {
               </CardContent>
               <CardFooter className="pt-4 pb-8 flex justify-center">
                 <Button 
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    scrollToSection('contato');
-                  }} 
+                  asChild
                   className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-medium py-6 rounded-full transition-all shadow-md hover:shadow-lg"
                 >
-                  Escolher este plano
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <a 
+                    href="https://www.asaas.com/c/8fmv6ge3llbfeanu" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                    }}
+                  >
+                    Contratar plano profissional
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
                 </Button>
               </CardFooter>
             </Card>
