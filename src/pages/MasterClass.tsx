@@ -50,7 +50,7 @@ const MasterClass = () => {
 
       <div className="text-center max-w-3xl mx-auto space-y-4 mb-10">
         <h1 className="text-3xl md:text-4xl font-bold leading-tight">
-          Tenha seu Próprio Software de Chatbot e Multiatendimento para WhatsApp e Alcance + de 30K/Mês de Forma Recorrente.
+          DOMINE O MERCADO DE WHATSAPP COM SEU PRÓPRIO SOFTWARE E FATURE +30K MENSAIS COM RECEITA RECORRENTE GARANTIDA!
         </h1>
         <p className="text-purple-200 text-lg">
           Assista o vídeo completo para descobrir como o Sistema Golden pode transformar seu negócio!
