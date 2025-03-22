@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Calculator } from 'lucide-react';
 import { Label } from "@/components/ui/label";
@@ -15,35 +14,17 @@ const RoiCalculator = () => {
   const [costs, setCosts] = useState(200);
   const isMobile = useIsMobile();
 
-  // Calculate subscription ROI
   const calculateSubscriptionROI = () => {
-    // Monthly revenue from subscriptions
     const monthlyRevenue = subscriptions * monthlyValue;
-    
-    // Annual revenue
     const annualRevenue = monthlyRevenue * 12;
-    
-    // Annual net profit (revenue - costs)
     const annualProfit = annualRevenue - (costs * 12);
-    
-    // Estimated annual growth in subscribers
     const newSubscribersYearly = Math.round((subscriptions * annualGrowth) / 100);
-    
-    // Revenue from new subscribers in the next year
     const growthRevenue = newSubscribersYearly * monthlyValue * 12;
-    
-    // Total subscribers after 1 year
     const totalSubscribersNextYear = subscriptions + newSubscribersYearly;
-    
-    // Next year's projected revenue
     const nextYearRevenue = totalSubscribersNextYear * monthlyValue * 12;
-    
-    // System cost (for calculation purposes)
     const systemCost = 3500;
-    
-    // ROI percentage (Annual profit / System cost)
     const roiPercentage = Math.round((annualProfit / systemCost) * 100);
-    
+
     return {
       monthlyRevenue,
       annualRevenue,
@@ -83,7 +64,7 @@ const RoiCalculator = () => {
                 <Button 
                   variant="outline" 
                   size={isMobile ? "sm" : "default"} 
-                  className="border-blue-300 bg-blue-50 hover:bg-blue-100 text-blue-700 whitespace-nowrap text-sm px-4 transition-all"
+                  className="border border-dashed border-blue-400 bg-transparent hover:bg-blue-50 text-blue-600 whitespace-nowrap text-sm px-4 py-2 transition-all"
                 >
                   {isOpen ? "Esconder parâmetros" : "Ajustar parâmetros"}
                 </Button>
