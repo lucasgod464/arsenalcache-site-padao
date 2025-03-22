@@ -59,9 +59,9 @@ const MasterClass = () => {
 
       {/* YouTube Video Embed */}
       <div className="w-full max-w-3xl bg-purple-900/50 rounded-lg overflow-hidden shadow-2xl mb-8">
-        <div className="aspect-w-16 aspect-h-9 relative">
+        <div className="relative pb-[56.25%] h-0">
           <iframe 
-            className="absolute inset-0 w-full h-full" 
+            className="absolute top-0 left-0 w-full h-full" 
             src="https://www.youtube.com/embed/MWjsCIiyjGg" 
             title="Sistema Golden MasterClass" 
             frameBorder="0" 
