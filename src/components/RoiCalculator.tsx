@@ -8,7 +8,7 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/component
 
 const RoiCalculator = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [subscriptions, setSubscriptions] = useState(10);
+  const [subscriptions, setSubscriptions] = useState(15);
   const [monthlyValue, setMonthlyValue] = useState(97);
   const [annualGrowth, setAnnualGrowth] = useState(20);
   const [costs, setCosts] = useState(200);
