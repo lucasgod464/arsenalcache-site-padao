@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { Users } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
-import PricingSection from '@/components/PricingSection';
+import MasterClassPricing from '@/components/MasterClassPricing';
 import FloatingCta from '@/components/FloatingCta';
 
 const MasterClass = () => {
@@ -81,7 +81,7 @@ const MasterClass = () => {
       {showPricing && (
         <div className="w-full">
           <div className="max-w-7xl mx-auto">
-            <PricingSection />
+            <MasterClassPricing />
           </div>
         </div>
       )}
