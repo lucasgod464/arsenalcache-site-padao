@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Check, X, Sparkles, Star, Trophy, ArrowRight } from 'lucide-react';
+import { Check, X, Sparkles, Star, Trophy, ArrowRight, MessageCircle } from 'lucide-react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -31,15 +31,6 @@ const PricingSection = () => {
       "BotMaster ID (Disparador Massivo)", 
       "Uma licença para cada software"
     ]
-  };
-
-  const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
   };
 
   return (
@@ -202,16 +193,19 @@ const PricingSection = () => {
           </div>
         </div>
 
-        <div className="text-center mt-12 max-w-3xl mx-auto">
-          <p className="text-purple-200">
-            Todos os planos incluem instalação, treinamento e suporte técnico. Entre em contato conosco para saber mais ou para uma demonstração personalizada.
-          </p>
+        <div className="text-center mt-8 max-w-3xl mx-auto">
           <Button 
-            onClick={() => scrollToSection('contato')} 
-            className="mt-6 bg-gradient-to-r from-purple-500 to-purple-700 hover:from-purple-600 hover:to-purple-800 text-white font-medium rounded-full px-8 py-3 shadow-md hover:shadow-lg transition-all border border-purple-400/30"
+            asChild
+            className="bg-green-500 hover:bg-green-600 text-white font-medium rounded-full px-8 py-5 shadow-md hover:shadow-lg transition-all border border-green-400/30 flex items-center gap-2"
           >
-            Fale com um especialista
-            <ArrowRight className="ml-2 h-4 w-4" />
+            <a 
+              href="https://api.whatsapp.com/send?phone=5512981156856" 
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MessageCircle className="mr-2 h-5 w-5" />
+              Falar com um consultor no WhatsApp
+            </a>
           </Button>
         </div>
       </div>

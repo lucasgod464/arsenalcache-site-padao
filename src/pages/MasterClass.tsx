@@ -4,10 +4,12 @@ import { Helmet } from 'react-helmet';
 import { Users } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
 import PricingSection from '@/components/PricingSection';
+import FloatingCta from '@/components/FloatingCta';
 
 const MasterClass = () => {
   const { toast } = useToast();
   const [peopleWatching, setPeopleWatching] = useState(1057);
+  const [showPricing, setShowPricing] = useState(false);
 
   useEffect(() => {
     // Random number of people watching (between 1000 and 1200)
@@ -15,10 +17,21 @@ const MasterClass = () => {
       setPeopleWatching(Math.floor(Math.random() * 200 + 1000));
     }, 5000);
 
+    // Show pricing section after 1 minute (60 seconds)
+    const pricingTimer = setTimeout(() => {
+      setShowPricing(true);
+      toast({
+        title: "Preços especiais disponíveis!",
+        description: "Confira nossos planos e preços exclusivos abaixo.",
+        variant: "default",
+      });
+    }, 60000); // 60 seconds = 1 minute
+
     return () => {
       clearInterval(peopleInterval);
+      clearTimeout(pricingTimer);
     };
-  }, []);
+  }, [toast]);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-900 to-purple-950 text-white flex flex-col items-center justify-start py-12 px-4">
@@ -64,12 +77,17 @@ const MasterClass = () => {
         <span className="ml-2">pessoas assistindo essa apresentação</span>
       </div>
 
-      {/* Always show pricing section */}
-      <div className="w-full">
-        <div className="max-w-7xl mx-auto">
-          <PricingSection />
+      {/* Show pricing section conditionally */}
+      {showPricing && (
+        <div className="w-full">
+          <div className="max-w-7xl mx-auto">
+            <PricingSection />
+          </div>
         </div>
-      </div>
+      )}
+      
+      {/* Floating WhatsApp CTA button */}
+      <FloatingCta />
     </div>
   );
 };
