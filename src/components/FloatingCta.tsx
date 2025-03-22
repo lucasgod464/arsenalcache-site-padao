@@ -16,7 +16,8 @@ const FloatingCta = () => {
       <span className="absolute whitespace-nowrap right-0 translate-x-full bg-white text-green-600 py-2 px-4 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 ml-3 transition-opacity duration-300 pointer-events-none">
         Fale conosco no WhatsApp
       </span>
-      <style jsx>{`
+      <style>
+        {`
         .pulse-animation {
           animation: pulse 2s infinite;
           box-shadow: 0 0 0 rgba(0, 230, 64, 0.6);
@@ -33,7 +34,8 @@ const FloatingCta = () => {
             box-shadow: 0 0 0 0 rgba(0, 230, 64, 0);
           }
         }
-      `}</style>
+        `}
+      </style>
     </a>
   );
 };
