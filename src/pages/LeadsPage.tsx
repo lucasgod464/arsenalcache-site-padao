@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { ArrowLeft, CheckCircle2, Send } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, Send, MessageCircle, Users, Rocket, Shield, Zap } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
 import { supabase } from '@/integrations/supabase/client';
 
@@ -25,6 +25,23 @@ const formSchema = z.object({
 const LeadsPage = () => {
   const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const elements = document.querySelectorAll('.fade-in-section');
+      elements.forEach(element => {
+        const position = element.getBoundingClientRect();
+        if(position.top < window.innerHeight - 100) {
+          element.classList.add('is-visible');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check on initial load
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -72,81 +89,134 @@ const LeadsPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-blue-50">
       <Helmet>
-        <title>Sistema Golden | Solicite uma demonstração</title>
-        <meta name="description" content="Preencha o formulário para solicitar uma demonstração gratuita do Sistema Golden - a solução completa para gestão da sua empresa." />
+        <title>Arsenal Cache | Solicite uma demonstração</title>
+        <meta name="description" content="Preencha o formulário para solicitar uma demonstração gratuita do Arsenal Cache - a solução completa para WhatsApp profissional." />
+        <style>
+          {`.aspect-w-16 {
+              position: relative;
+              padding-bottom: 56.25%;
+            }
+            .aspect-w-16 iframe {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            }`}
+        </style>
       </Helmet>
 
       <div className="container mx-auto px-4 py-12">
         <div className="mb-8">
-          <Link to="/" className="inline-flex items-center text-blue-600 hover:text-blue-800">
+          <Link to="/" className="inline-flex items-center text-arsenal-DEFAULT hover:text-arsenal-dark transition-colors">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Voltar para a página inicial
           </Link>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-          <div>
+          <div className="fade-in-section">
+            <div className="inline-block py-1 px-3 rounded-full bg-arsenal-light/20 text-arsenal-dark text-sm font-medium mb-6">
+              Solução completa para WhatsApp
+            </div>
+            
             <h1 className="text-4xl font-bold text-gray-900 mb-6">
-              Sistema Golden
-              <span className="block text-blue-600">Transforme sua gestão</span>
+              Arsenal<span className="text-whatsapp-DEFAULT">Cache</span>
+              <span className="block text-gradient">Transforme seu Atendimento</span>
             </h1>
             
             <div className="space-y-6">
               <p className="text-lg text-gray-700">
-                Preencha o formulário ao lado para solicitar uma demonstração gratuita da nossa solução completa para gestão empresarial.
+                Preencha o formulário ao lado para solicitar uma demonstração gratuita da nossa plataforma whitelabel com usuários e conexões ilimitadas.
               </p>
               
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <CheckCircle2 className="w-6 h-6 text-green-500 mr-3 mt-0.5" />
+                  <div className="w-10 h-10 rounded-full bg-whatsapp-light/10 flex items-center justify-center mr-3 mt-0.5">
+                    <MessageCircle className="w-5 h-5 text-whatsapp-DEFAULT" />
+                  </div>
                   <div>
-                    <h3 className="font-medium text-gray-900">Aumente sua produtividade</h3>
-                    <p className="text-gray-600">Reduza em até 40% o tempo gasto em tarefas administrativas</p>
+                    <h3 className="font-medium text-gray-900">Conexões ilimitadas</h3>
+                    <p className="text-gray-600">Gerencie múltiplos números de WhatsApp em uma única plataforma</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <CheckCircle2 className="w-6 h-6 text-green-500 mr-3 mt-0.5" />
+                  <div className="w-10 h-10 rounded-full bg-arsenal-light/10 flex items-center justify-center mr-3 mt-0.5">
+                    <Users className="w-5 h-5 text-arsenal-DEFAULT" />
+                  </div>
                   <div>
-                    <h3 className="font-medium text-gray-900">Controle financeiro completo</h3>
-                    <p className="text-gray-600">Visualize em tempo real a saúde financeira da sua empresa</p>
+                    <h3 className="font-medium text-gray-900">Usuários ilimitados</h3>
+                    <p className="text-gray-600">Adicione tantos atendentes quanto precisar, sem custos adicionais</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <CheckCircle2 className="w-6 h-6 text-green-500 mr-3 mt-0.5" />
+                  <div className="w-10 h-10 rounded-full bg-whatsapp-light/10 flex items-center justify-center mr-3 mt-0.5">
+                    <Shield className="w-5 h-5 text-whatsapp-DEFAULT" />
+                  </div>
                   <div>
-                    <h3 className="font-medium text-gray-900">Decisões baseadas em dados</h3>
-                    <p className="text-gray-600">Relatórios e dashboards personalizados para sua gestão</p>
+                    <h3 className="font-medium text-gray-900">Sistema Whitelabel</h3>
+                    <p className="text-gray-600">Personalize com sua marca e revenda para seus clientes</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <CheckCircle2 className="w-6 h-6 text-green-500 mr-3 mt-0.5" />
+                  <div className="w-10 h-10 rounded-full bg-arsenal-light/10 flex items-center justify-center mr-3 mt-0.5">
+                    <Zap className="w-5 h-5 text-arsenal-DEFAULT" />
+                  </div>
                   <div>
-                    <h3 className="font-medium text-gray-900">Suporte personalizado</h3>
-                    <p className="text-gray-600">Equipe dedicada para implementação e treinamento</p>
+                    <h3 className="font-medium text-gray-900">Atendimento automatizado</h3>
+                    <p className="text-gray-600">Chatbots e fluxos de atendimento personalizados</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-10 fade-in-section pt-4">
+              <div className="p-6 bg-white/80 backdrop-blur-sm rounded-xl shadow-md border border-gray-100">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">Parceiros confiam em nós</h3>
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="h-12 bg-gray-100 rounded-md flex items-center justify-center">
+                    <div className="text-gray-500 text-xs font-medium">Parceiro 1</div>
+                  </div>
+                  <div className="h-12 bg-gray-100 rounded-md flex items-center justify-center">
+                    <div className="text-gray-500 text-xs font-medium">Parceiro 2</div>
+                  </div>
+                  <div className="h-12 bg-gray-100 rounded-md flex items-center justify-center">
+                    <div className="text-gray-500 text-xs font-medium">Parceiro 3</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           
-          <div>
-            <Card className="shadow-lg">
-              <CardHeader className="text-center pb-4">
+          <div className="fade-in-section">
+            <Card className="shadow-xl relative overflow-hidden border-arsenal-light/20">
+              <div className="absolute -top-32 -left-32 w-64 h-64 bg-arsenal-light/10 rounded-full blur-3xl"></div>
+              <div className="absolute -bottom-32 -right-32 w-64 h-64 bg-whatsapp-light/10 rounded-full blur-3xl"></div>
+              
+              <CardHeader className="text-center pb-4 relative z-10">
                 <CardTitle className="text-2xl">Solicite uma demonstração</CardTitle>
                 <CardDescription>Preencha o formulário abaixo para conhecer nossa solução</CardDescription>
               </CardHeader>
-              <CardContent>
+              
+              <CardContent className="relative z-10">
                 {isSubmitted ? (
                   <div className="text-center py-8">
-                    <CheckCircle2 className="w-16 h-16 text-green-500 mx-auto mb-4" />
+                    <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-green-100 flex items-center justify-center">
+                      <CheckCircle2 className="w-8 h-8 text-green-500" />
+                    </div>
                     <h3 className="text-xl font-medium text-gray-900 mb-2">Solicitação recebida!</h3>
                     <p className="text-gray-600 mb-6">Nossa equipe entrará em contato em breve para agendar sua demonstração.</p>
-                    <Button onClick={() => setIsSubmitted(false)}>Enviar nova solicitação</Button>
+                    <Button 
+                      onClick={() => setIsSubmitted(false)}
+                      className="bg-arsenal-DEFAULT hover:bg-arsenal-dark"
+                    >
+                      Enviar nova solicitação
+                    </Button>
                   </div>
                 ) : (
                   <Form {...form}>
@@ -225,7 +295,10 @@ const LeadsPage = () => {
                         )}
                       />
                       
-                      <Button type="submit" className="w-full">
+                      <Button 
+                        type="submit" 
+                        className="w-full bg-arsenal-DEFAULT hover:bg-arsenal-dark"
+                      >
                         <Send className="mr-2 h-4 w-4" />
                         Solicitar demonstração
                       </Button>
