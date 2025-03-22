@@ -80,7 +80,11 @@ const RoiCalculator = () => {
                 {isMobile ? 'Simule seu potencial de ganhos' : 'Simule seu potencial de ganhos com o Sistema Golden'}
               </h3>
               <CollapsibleTrigger asChild>
-                <Button variant="outline" size={isMobile ? "sm" : "default"} className="border-blue-300 text-blue-700 whitespace-nowrap text-sm">
+                <Button 
+                  variant="outline" 
+                  size={isMobile ? "sm" : "default"} 
+                  className="border-blue-300 bg-blue-50 hover:bg-blue-100 text-blue-700 whitespace-nowrap text-sm px-4 transition-all"
+                >
                   {isOpen ? "Esconder parâmetros" : "Ajustar parâmetros"}
                 </Button>
               </CollapsibleTrigger>
