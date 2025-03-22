@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import AdminPanel from "./pages/AdminPanel";
 import LeadsPage from "./pages/LeadsPage";
+import MasterClass from "./pages/MasterClass";
 
 function App() {
   // Create a client
@@ -25,6 +26,7 @@ function App() {
               <Route path="/" element={<Index />} />
               <Route path="/admin" element={<AdminPanel />} />
               <Route path="/leads" element={<LeadsPage />} />
+              <Route path="/masterclass" element={<MasterClass />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
