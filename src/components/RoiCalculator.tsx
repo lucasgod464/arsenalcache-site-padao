@@ -57,20 +57,37 @@ const RoiCalculator = () => {
 
         <div className="bg-white rounded-xl shadow-lg p-5 mb-6 border border-blue-100">
           <Collapsible open={isOpen} onOpenChange={setIsOpen}>
-            <div className="flex items-center justify-between mb-5">
-              <h3 className="text-lg font-semibold">
-                {isMobile ? 'Simule seu potencial de ganhos' : 'Simule seu potencial de ganhos com o Sistema Golden'}
-              </h3>
-              <CollapsibleTrigger asChild>
-                <Button 
-                  variant="outline" 
-                  size={isMobile ? "sm" : "default"} 
-                  className={`border border-dashed border-blue-400 bg-transparent hover:bg-blue-50 text-blue-600 whitespace-nowrap text-sm transition-all ${isMobile ? 'w-full mt-2 py-1.5' : 'px-4 py-2'}`}
-                >
-                  {isOpen ? "Esconder parâmetros" : "Ajustar parâmetros"}
-                </Button>
-              </CollapsibleTrigger>
-            </div>
+            {isMobile ? (
+              <div className="mb-5">
+                <h3 className="text-lg font-semibold mb-2">
+                  Simule seu potencial de ganhos
+                </h3>
+                <CollapsibleTrigger asChild>
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="border border-dashed border-blue-400 bg-transparent hover:bg-blue-50 text-blue-600 whitespace-nowrap text-sm transition-all w-full py-1.5"
+                  >
+                    {isOpen ? "Esconder parâmetros" : "Ajustar parâmetros"}
+                  </Button>
+                </CollapsibleTrigger>
+              </div>
+            ) : (
+              <div className="flex items-center justify-between mb-5">
+                <h3 className="text-lg font-semibold">
+                  Simule seu potencial de ganhos com o Sistema Golden
+                </h3>
+                <CollapsibleTrigger asChild>
+                  <Button 
+                    variant="outline" 
+                    size="default" 
+                    className="border border-dashed border-blue-400 bg-transparent hover:bg-blue-50 text-blue-600 whitespace-nowrap text-sm transition-all px-4 py-2"
+                  >
+                    {isOpen ? "Esconder parâmetros" : "Ajustar parâmetros"}
+                  </Button>
+                </CollapsibleTrigger>
+              </div>
+            )}
 
             <CollapsibleContent>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
