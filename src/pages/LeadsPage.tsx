@@ -12,7 +12,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle2, Send, MessageCircle, Users, Shield, Zap, Rocket } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
 import { supabase } from '@/integrations/supabase/client';
-import FreeTrial from '@/components/FreeTrial';
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Nome deve ter pelo menos 2 caracteres" }),
@@ -89,7 +88,7 @@ const LeadsPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-blue-50">
+    <div className="min-h-screen bg-gradient-to-b from-amber-50 via-white to-amber-50">
       <Helmet>
         <title>Sistema Golden | Solicite uma demonstração</title>
         <meta name="description" content="Preencha o formulário para solicitar uma demonstração gratuita do Sistema Golden - a solução completa para WhatsApp profissional." />
@@ -106,7 +105,7 @@ const LeadsPage = () => {
               height: 100%;
             }
             .text-gradient {
-              background: linear-gradient(90deg, #F59E0B, #D97706);
+              background: linear-gradient(90deg, #FB9936, #FBB121);
               -webkit-background-clip: text;
               -webkit-text-fill-color: transparent;
             }
@@ -122,7 +121,7 @@ const LeadsPage = () => {
         </style>
       </Helmet>
 
-      <div className="bg-amber-500 text-white p-3 text-center">
+      <div className="bg-amber-400 text-white p-3 text-center">
         <p className="font-bold">🚀 TESTE GRATUITO: Experimente o Sistema Golden por 7 dias sem compromisso! 🚀</p>
       </div>
 
@@ -134,7 +133,7 @@ const LeadsPage = () => {
             </div>
             
             <h1 className="text-4xl font-bold text-gray-900 mb-6">
-              Sistema<span className="text-amber-500">Golden</span>
+              Sistema<span className="text-amber-400">Golden</span>
               <span className="block text-gradient">Transforme seu Atendimento</span>
             </h1>
             
@@ -185,11 +184,11 @@ const LeadsPage = () => {
                 </div>
               </div>
               
-              <div className="mt-8 p-4 bg-amber-50 rounded-lg border-l-4 border-amber-500">
+              <div className="mt-8 p-4 bg-amber-50 rounded-lg border-l-4 border-amber-400">
                 <h3 className="font-bold text-lg text-amber-800 mb-2">TESTE GRÁTIS POR 7 DIAS!</h3>
                 <p className="text-amber-700">Experimente todos os recursos premium sem compromisso e transforme seu atendimento hoje mesmo.</p>
                 <Button 
-                  className="mt-3 bg-amber-500 hover:bg-amber-600 text-white"
+                  className="mt-3 bg-amber-400 hover:bg-amber-500 text-white"
                   onClick={() => window.open('https://appgold.suamarca.pro/signup', '_blank')}
                 >
                   Iniciar teste gratuito
@@ -218,7 +217,7 @@ const LeadsPage = () => {
                     <p className="text-gray-600 mb-6">Nossa equipe entrará em contato em breve para agendar sua demonstração.</p>
                     <Button 
                       onClick={() => setIsSubmitted(false)}
-                      className="bg-amber-500 hover:bg-amber-600 text-white"
+                      className="bg-amber-400 hover:bg-amber-500 text-white"
                     >
                       Enviar nova solicitação
                     </Button>
@@ -302,7 +301,7 @@ const LeadsPage = () => {
                       
                       <Button 
                         type="submit" 
-                        className="w-full bg-amber-500 hover:bg-amber-600 text-white"
+                        className="w-full bg-amber-400 hover:bg-amber-500 text-white"
                       >
                         <Rocket className="mr-2 h-4 w-4" />
                         Solicitar demonstração
@@ -315,8 +314,6 @@ const LeadsPage = () => {
           </div>
         </div>
       </div>
-      
-      <FreeTrial />
     </div>
   );
 };
