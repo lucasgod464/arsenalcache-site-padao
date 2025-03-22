@@ -5,7 +5,7 @@ import { MessageCircle } from 'lucide-react';
 const FloatingCta = () => {
   return (
     <a
-      href="https://wa.me/5512981156856"
+      href="https://api.whatsapp.com/send?phone=5512981156856"
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-8 left-8 bg-green-500 hover:bg-green-600 text-white p-5 rounded-full shadow-xl transition-all duration-300 z-50 border-4 border-white hover:scale-110 pulse-animation group"
