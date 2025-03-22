@@ -43,14 +43,14 @@ const PricingSection = () => {
   };
 
   return (
-    <section id="precos" className="py-20 px-4 bg-gradient-to-b from-white to-blue-50">
+    <section id="precos" className="py-10 px-4 bg-purple-900 bg-opacity-30 backdrop-blur-sm rounded-xl">
       <div className="container mx-auto">
-        <div className="text-center mb-16 fade-in-section">
-          <Badge variant="outline" className="bg-blue-100 text-blue-700 border-blue-200 mb-4">
+        <div className="text-center mb-10 fade-in-section">
+          <Badge variant="outline" className="bg-purple-600 text-white border-purple-500 mb-4">
             Planos e preços
           </Badge>
-          <h2 className="section-title">Escolha o plano <span className="text-gradient">ideal para você</span></h2>
-          <p className="section-subtitle max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Escolha o plano <span className="text-amber-400">ideal para você</span></h2>
+          <p className="text-xl text-purple-100 max-w-2xl mx-auto">
             Investimento único com renovação anual acessível. Sem mensalidades absurdas.
           </p>
         </div>
@@ -59,32 +59,32 @@ const PricingSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {/* Plan 1 */}
           <div className="relative fade-in-section">
-            <Card className={`h-full transition-all duration-300 overflow-hidden ${selectedPlan === 1 ? 'ring-2 ring-blue-500 shadow-lg shadow-blue-100' : 'hover:shadow-md'}`} 
+            <Card className={`h-full transition-all duration-300 overflow-hidden bg-purple-900/80 border border-purple-600 text-white ${selectedPlan === 1 ? 'ring-2 ring-amber-400 shadow-lg shadow-amber-400/20' : 'hover:shadow-md'}`} 
                 onClick={() => setSelectedPlan(1)}>
-              <CardHeader className="bg-gradient-to-r from-blue-50 to-indigo-50 pb-6">
+              <CardHeader className="bg-gradient-to-r from-purple-800 to-purple-700 pb-6 border-b border-purple-600">
                 <div className="space-y-1.5">
-                  <Badge className="bg-blue-100 text-blue-700 border-0 mb-2">
+                  <Badge className="bg-amber-400 text-purple-900 border-0 mb-2 font-medium">
                     White Label Básico
                   </Badge>
-                  <CardTitle className="text-2xl font-bold">Plano Essencial</CardTitle>
-                  <CardDescription className="text-gray-600">
+                  <CardTitle className="text-2xl font-bold text-white">Plano Essencial</CardTitle>
+                  <CardDescription className="text-purple-200">
                     Ideal para quem está começando com WhatsApp Business
                   </CardDescription>
                 </div>
                 <div className="mt-4 flex items-baseline">
-                  <span className="text-4xl font-extrabold tracking-tight text-gray-900">R$598,80</span>
-                  <span className="ml-2 text-sm font-medium text-gray-500">ou 12x sem juros</span>
+                  <span className="text-4xl font-extrabold tracking-tight text-white">R$598,80</span>
+                  <span className="ml-2 text-sm font-medium text-purple-200">ou 12x sem juros</span>
                 </div>
-                <div className="text-sm text-gray-600 mt-2">
-                  Renovação anual: <span className="font-semibold">R$400,00</span>
+                <div className="text-sm text-purple-200 mt-2">
+                  Renovação anual: <span className="font-semibold text-amber-400">R$400,00</span>
                 </div>
               </CardHeader>
               <CardContent className="pt-6">
                 <ul className="space-y-3">
                   {planFeatures.common.map((feature, index) => (
                     <li key={index} className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700">{feature}</span>
+                      <Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                      <span className="text-purple-100">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -92,7 +92,7 @@ const PricingSection = () => {
               <CardFooter className="pt-4 pb-8 flex justify-center">
                 <Button 
                   asChild
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-6 rounded-full transition-all"
+                  className="w-full bg-amber-400 hover:bg-amber-500 text-purple-900 font-medium py-6 rounded-full transition-all"
                 >
                   <a 
                     href="https://www.asaas.com/c/isetiztbovefmj0v" 
@@ -120,58 +120,58 @@ const PricingSection = () => {
             </div>
             
             <Card 
-              className={`h-full transition-all duration-300 overflow-hidden ${selectedPlan === 2 ? 'ring-2 ring-green-500 shadow-xl shadow-green-100' : 'hover:shadow-md'}`}
+              className={`h-full transition-all duration-300 overflow-hidden bg-purple-900/80 border border-purple-600 text-white ${selectedPlan === 2 ? 'ring-2 ring-amber-400 shadow-xl shadow-amber-400/20' : 'hover:shadow-md'}`}
               onClick={() => setSelectedPlan(2)}
             >
-              <CardHeader className="bg-gradient-to-r from-green-50 to-emerald-50 pb-6">
+              <CardHeader className="bg-gradient-to-r from-purple-800 to-purple-700 pb-6 border-b border-purple-600">
                 <div className="space-y-1.5">
-                  <Badge className="bg-green-100 text-green-700 border-0 mb-2">
+                  <Badge className="bg-amber-400 text-purple-900 border-0 mb-2 font-medium">
                     White Label Premium
                   </Badge>
-                  <CardTitle className="text-2xl font-bold flex items-center gap-2">
+                  <CardTitle className="text-2xl font-bold flex items-center gap-2 text-white">
                     Plano Profissional
-                    <Sparkles className="h-5 w-5 text-amber-500" />
+                    <Sparkles className="h-5 w-5 text-amber-400" />
                   </CardTitle>
-                  <CardDescription className="text-gray-600">
+                  <CardDescription className="text-purple-200">
                     Solução completa com ferramentas premium
                   </CardDescription>
                 </div>
                 <div className="mt-4 flex items-baseline">
-                  <span className="text-4xl font-extrabold tracking-tight text-gray-900">R$698,80</span>
-                  <span className="ml-2 text-sm font-medium text-gray-500">ou 12x sem juros</span>
+                  <span className="text-4xl font-extrabold tracking-tight text-white">R$698,80</span>
+                  <span className="ml-2 text-sm font-medium text-purple-200">ou 12x sem juros</span>
                 </div>
               </CardHeader>
               <CardContent className="pt-6">
-                <h4 className="font-semibold mb-4 text-blue-800 flex items-center">
-                  <Trophy className="h-5 w-5 text-amber-500 mr-2" />
+                <h4 className="font-semibold mb-4 text-amber-400 flex items-center">
+                  <Trophy className="h-5 w-5 text-amber-400 mr-2" />
                   Tudo do plano básico mais:
                 </h4>
                 <ul className="space-y-3 mb-6">
                   {planFeatures.plan2Additional.map((feature, index) => (
                     <li key={index} className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700">{feature}</span>
+                      <Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                      <span className="text-purple-100">{feature}</span>
                     </li>
                   ))}
                 </ul>
                 
-                <div className="mt-4 pt-4 border-t border-gray-100">
-                  <h4 className="font-semibold mb-4 text-blue-800">Conexões adicionais:</h4>
+                <div className="mt-4 pt-4 border-t border-purple-700">
+                  <h4 className="font-semibold mb-4 text-amber-400">Conexões adicionais:</h4>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700">API oficial WhatsApp (ilimitada)</span>
+                      <Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                      <span className="text-purple-100">API oficial WhatsApp (ilimitada)</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700">Instagram (conexões ilimitadas)</span>
+                      <Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                      <span className="text-purple-100">Instagram (conexões ilimitadas)</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700">Facebook (conexões ilimitadas)</span>
+                      <Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                      <span className="text-purple-100">Facebook (conexões ilimitadas)</span>
                     </li>
                     <li className="mt-3">
-                      <Badge variant="outline" className="w-full justify-center py-2 bg-gray-50 text-gray-700 border-gray-200">
+                      <Badge variant="outline" className="w-full justify-center py-2 bg-purple-800 text-purple-100 border-purple-600">
                         R$260,00/mês - Sem taxa de renovação anual
                       </Badge>
                     </li>
@@ -181,7 +181,7 @@ const PricingSection = () => {
               <CardFooter className="pt-4 pb-8 flex justify-center">
                 <Button 
                   asChild
-                  className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-medium py-6 rounded-full transition-all shadow-md hover:shadow-lg"
+                  className="w-full bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-purple-900 font-medium py-6 rounded-full transition-all shadow-md hover:shadow-lg"
                 >
                   <a 
                     href="https://www.asaas.com/c/8fmv6ge3llbfeanu" 
@@ -201,12 +201,12 @@ const PricingSection = () => {
         </div>
 
         <div className="text-center mt-12 max-w-3xl mx-auto">
-          <p className="text-gray-600">
+          <p className="text-purple-200">
             Todos os planos incluem instalação, treinamento e suporte técnico. Entre em contato conosco para saber mais ou para uma demonstração personalizada.
           </p>
           <Button 
             onClick={() => scrollToSection('contato')} 
-            className="mt-6 bg-gradient-to-r from-blue-600 to-blue-800 text-white font-medium rounded-full px-8 py-3 shadow-md hover:shadow-lg transition-all"
+            className="mt-6 bg-gradient-to-r from-purple-500 to-purple-700 hover:from-purple-600 hover:to-purple-800 text-white font-medium rounded-full px-8 py-3 shadow-md hover:shadow-lg transition-all border border-purple-400"
           >
             Fale com um especialista
             <ArrowRight className="ml-2 h-4 w-4" />
