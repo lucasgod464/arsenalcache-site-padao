@@ -43,9 +43,9 @@ const PricingSection = () => {
   };
 
   return (
-    <section id="precos" className="py-10 px-4 bg-purple-900 bg-opacity-30 backdrop-blur-sm rounded-xl">
+    <section id="precos" className="py-10 px-4 bg-purple-900/90 backdrop-blur-sm rounded-xl border border-purple-500 shadow-xl mt-8">
       <div className="container mx-auto">
-        <div className="text-center mb-10 fade-in-section">
+        <div className="text-center mb-10">
           <Badge variant="outline" className="bg-purple-600 text-white border-purple-500 mb-4">
             Planos e preços
           </Badge>
@@ -58,9 +58,11 @@ const PricingSection = () => {
         {/* Pricing cards - mobile & desktop view */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {/* Plan 1 */}
-          <div className="relative fade-in-section">
-            <Card className={`h-full transition-all duration-300 overflow-hidden bg-purple-900/80 border border-purple-600 text-white ${selectedPlan === 1 ? 'ring-2 ring-amber-400 shadow-lg shadow-amber-400/20' : 'hover:shadow-md'}`} 
-                onClick={() => setSelectedPlan(1)}>
+          <div className="relative">
+            <Card 
+              className={`h-full transition-all duration-300 overflow-hidden bg-purple-800/90 border border-purple-500 text-white ${selectedPlan === 1 ? 'ring-2 ring-amber-400 shadow-lg shadow-amber-400/20' : 'hover:shadow-md'}`} 
+              onClick={() => setSelectedPlan(1)}
+            >
               <CardHeader className="bg-gradient-to-r from-purple-800 to-purple-700 pb-6 border-b border-purple-600">
                 <div className="space-y-1.5">
                   <Badge className="bg-amber-400 text-purple-900 border-0 mb-2 font-medium">
@@ -111,7 +113,7 @@ const PricingSection = () => {
           </div>
           
           {/* Plan 2 */}
-          <div className="relative fade-in-section">
+          <div className="relative">
             {/* Popular ribbon */}
             <div className="absolute -top-4 -right-4 z-10 rotate-12">
               <div className="bg-gradient-to-r from-amber-500 to-amber-600 text-white text-xs font-bold px-6 py-1 rounded-full shadow-lg flex items-center gap-1">
@@ -120,7 +122,7 @@ const PricingSection = () => {
             </div>
             
             <Card 
-              className={`h-full transition-all duration-300 overflow-hidden bg-purple-900/80 border border-purple-600 text-white ${selectedPlan === 2 ? 'ring-2 ring-amber-400 shadow-xl shadow-amber-400/20' : 'hover:shadow-md'}`}
+              className={`h-full transition-all duration-300 overflow-hidden bg-purple-800/90 border border-purple-500 text-white ${selectedPlan === 2 ? 'ring-2 ring-amber-400 shadow-xl shadow-amber-400/20' : 'hover:shadow-md'}`}
               onClick={() => setSelectedPlan(2)}
             >
               <CardHeader className="bg-gradient-to-r from-purple-800 to-purple-700 pb-6 border-b border-purple-600">
@@ -171,7 +173,7 @@ const PricingSection = () => {
                       <span className="text-purple-100">Facebook (conexões ilimitadas)</span>
                     </li>
                     <li className="mt-3">
-                      <Badge variant="outline" className="w-full justify-center py-2 bg-purple-800 text-purple-100 border-purple-600">
+                      <Badge variant="outline" className="w-full justify-center py-2 bg-purple-700 text-purple-100 border-purple-600">
                         R$260,00/mês - Sem taxa de renovação anual
                       </Badge>
                     </li>

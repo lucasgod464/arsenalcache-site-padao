@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
-import { Timer, Users } from 'lucide-react';
+import { Users } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
 import PricingSection from '@/components/PricingSection';
 
@@ -11,6 +11,9 @@ const MasterClass = () => {
   const [peopleWatching, setPeopleWatching] = useState(1057);
 
   useEffect(() => {
+    // Show pricing section immediately for debugging
+    setShowPricingSection(true);
+    
     // Timer to show pricing section after 1 minute
     const timer = setTimeout(() => {
       setShowPricingSection(true);
@@ -32,7 +35,7 @@ const MasterClass = () => {
   }, [toast]);
 
   return (
-    <div className="min-h-screen bg-purple-800 text-white flex flex-col items-center justify-start py-12 px-4">
+    <div className="min-h-screen bg-gradient-to-b from-purple-900 to-purple-950 text-white flex flex-col items-center justify-start py-12 px-4">
       <Helmet>
         <title>Sistema Golden | MasterClass Exclusiva</title>
         <meta name="description" content="MasterClass exclusiva do Sistema Golden - Aprenda a alcançar mais de 30K/Mês com nosso software de atendimento via WhatsApp" />
@@ -70,18 +73,17 @@ const MasterClass = () => {
         </div>
       </div>
 
-      <p className="text-purple-200 mb-8">
-        <span className="font-bold">{peopleWatching}</span> pessoas assistindo essa apresentação
-      </p>
+      <div className="text-purple-200 mb-8 flex items-center justify-center">
+        <span className="font-bold">{peopleWatching}</span>
+        <span className="ml-2">pessoas assistindo essa apresentação</span>
+      </div>
 
-      {/* Show pricing section after 1 minute instead of purchase button */}
-      {showPricingSection && (
-        <div className="w-full animate-fade-in">
-          <div className="max-w-7xl mx-auto">
-            <PricingSection />
-          </div>
+      {/* Always show pricing section for now to fix visibility issue */}
+      <div className="w-full animate-fade-in">
+        <div className="max-w-7xl mx-auto">
+          <PricingSection />
         </div>
-      )}
+      </div>
     </div>
   );
 };
