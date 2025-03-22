@@ -7,32 +7,18 @@ import PricingSection from '@/components/PricingSection';
 
 const MasterClass = () => {
   const { toast } = useToast();
-  const [showPricingSection, setShowPricingSection] = useState(false);
   const [peopleWatching, setPeopleWatching] = useState(1057);
 
   useEffect(() => {
-    // Show pricing section immediately for debugging
-    setShowPricingSection(true);
-    
-    // Timer to show pricing section after 1 minute
-    const timer = setTimeout(() => {
-      setShowPricingSection(true);
-      toast({
-        title: "Acesso Liberado!",
-        description: "Os planos de assinatura do Sistema Golden estão disponíveis agora!"
-      });
-    }, 60000); // 60000ms = 1 minute
-
     // Random number of people watching (between 1000 and 1200)
     const peopleInterval = setInterval(() => {
       setPeopleWatching(Math.floor(Math.random() * 200 + 1000));
     }, 5000);
 
     return () => {
-      clearTimeout(timer);
       clearInterval(peopleInterval);
     };
-  }, [toast]);
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-900 to-purple-950 text-white flex flex-col items-center justify-start py-12 px-4">
@@ -78,8 +64,8 @@ const MasterClass = () => {
         <span className="ml-2">pessoas assistindo essa apresentação</span>
       </div>
 
-      {/* Always show pricing section for now to fix visibility issue */}
-      <div className="w-full animate-fade-in">
+      {/* Always show pricing section */}
+      <div className="w-full">
         <div className="max-w-7xl mx-auto">
           <PricingSection />
         </div>

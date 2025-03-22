@@ -43,7 +43,7 @@ const PricingSection = () => {
   };
 
   return (
-    <section id="precos" className="py-10 px-4 bg-purple-900/90 backdrop-blur-sm rounded-xl border border-purple-500 shadow-xl mt-8">
+    <section id="precos" className="py-10 px-4 bg-purple-900/30 backdrop-blur-sm rounded-xl border border-purple-500/50 shadow-xl mt-8">
       <div className="container mx-auto">
         <div className="text-center mb-10">
           <Badge variant="outline" className="bg-purple-600 text-white border-purple-500 mb-4">
@@ -60,10 +60,10 @@ const PricingSection = () => {
           {/* Plan 1 */}
           <div className="relative">
             <Card 
-              className={`h-full transition-all duration-300 overflow-hidden bg-purple-800/90 border border-purple-500 text-white ${selectedPlan === 1 ? 'ring-2 ring-amber-400 shadow-lg shadow-amber-400/20' : 'hover:shadow-md'}`} 
+              className={`h-full transition-all duration-300 overflow-hidden bg-gradient-to-br from-purple-800 to-purple-900 border border-purple-500/70 text-white ${selectedPlan === 1 ? 'ring-2 ring-amber-400 shadow-lg shadow-amber-400/20' : 'hover:shadow-md'}`} 
               onClick={() => setSelectedPlan(1)}
             >
-              <CardHeader className="bg-gradient-to-r from-purple-800 to-purple-700 pb-6 border-b border-purple-600">
+              <CardHeader className="bg-gradient-to-r from-purple-800 to-purple-700 pb-6 border-b border-purple-600/50">
                 <div className="space-y-1.5">
                   <Badge className="bg-amber-400 text-purple-900 border-0 mb-2 font-medium">
                     White Label Básico
@@ -122,10 +122,10 @@ const PricingSection = () => {
             </div>
             
             <Card 
-              className={`h-full transition-all duration-300 overflow-hidden bg-purple-800/90 border border-purple-500 text-white ${selectedPlan === 2 ? 'ring-2 ring-amber-400 shadow-xl shadow-amber-400/20' : 'hover:shadow-md'}`}
+              className={`h-full transition-all duration-300 overflow-hidden bg-gradient-to-br from-purple-800 to-purple-900 border border-purple-500/70 text-white ${selectedPlan === 2 ? 'ring-2 ring-amber-400 shadow-xl shadow-amber-400/20' : 'hover:shadow-md'}`}
               onClick={() => setSelectedPlan(2)}
             >
-              <CardHeader className="bg-gradient-to-r from-purple-800 to-purple-700 pb-6 border-b border-purple-600">
+              <CardHeader className="bg-gradient-to-r from-purple-800 to-purple-700 pb-6 border-b border-purple-600/50">
                 <div className="space-y-1.5">
                   <Badge className="bg-amber-400 text-purple-900 border-0 mb-2 font-medium">
                     White Label Premium
@@ -157,7 +157,7 @@ const PricingSection = () => {
                   ))}
                 </ul>
                 
-                <div className="mt-4 pt-4 border-t border-purple-700">
+                <div className="mt-4 pt-4 border-t border-purple-700/50">
                   <h4 className="font-semibold mb-4 text-amber-400">Conexões adicionais:</h4>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-2">
@@ -173,7 +173,7 @@ const PricingSection = () => {
                       <span className="text-purple-100">Facebook (conexões ilimitadas)</span>
                     </li>
                     <li className="mt-3">
-                      <Badge variant="outline" className="w-full justify-center py-2 bg-purple-700 text-purple-100 border-purple-600">
+                      <Badge variant="outline" className="w-full justify-center py-2 bg-purple-700/70 text-purple-100 border-purple-600/50">
                         R$260,00/mês - Sem taxa de renovação anual
                       </Badge>
                     </li>
@@ -208,7 +208,7 @@ const PricingSection = () => {
           </p>
           <Button 
             onClick={() => scrollToSection('contato')} 
-            className="mt-6 bg-gradient-to-r from-purple-500 to-purple-700 hover:from-purple-600 hover:to-purple-800 text-white font-medium rounded-full px-8 py-3 shadow-md hover:shadow-lg transition-all border border-purple-400"
+            className="mt-6 bg-gradient-to-r from-purple-500 to-purple-700 hover:from-purple-600 hover:to-purple-800 text-white font-medium rounded-full px-8 py-3 shadow-md hover:shadow-lg transition-all border border-purple-400/30"
           >
             Fale com um especialista
             <ArrowRight className="ml-2 h-4 w-4" />
