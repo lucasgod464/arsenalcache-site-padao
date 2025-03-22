@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import {
   Table,
@@ -58,7 +59,13 @@ const DemoRequestsTable = () => {
 
       if (error) throw error;
       
-      setRequests(data || []);
+      // Garantir que o status está entre os tipos válidos
+      const typedData = (data || []).map(item => ({
+        ...item,
+        status: (item.status as 'pending' | 'contacted' | 'completed' | 'canceled') || 'pending'
+      }));
+      
+      setRequests(typedData);
     } catch (error) {
       console.error('Erro ao buscar solicitações:', error);
       toast({
