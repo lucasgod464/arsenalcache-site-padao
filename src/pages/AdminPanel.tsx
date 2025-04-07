@@ -17,7 +17,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowLeft, FileText, Search, Trash2, User, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import DemoRequestsTable from '@/components/DemoRequestsTable';
-import { Helmet } from 'react-helmet';
 
 const AdminPanel = () => {
   const { toast } = useToast();
@@ -63,10 +62,6 @@ const AdminPanel = () => {
   if (!isAuthenticated) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
-        <Helmet>
-          <title>Sistema Golden | Painel Administrativo</title>
-          <meta name="description" content="Painel Administrativo do Sistema Golden - Gerencie solicitações de demonstração e usuários." />
-        </Helmet>
         <Card className="w-full max-w-md">
           <CardHeader className="space-y-1">
             <CardTitle className="text-2xl font-bold">Painel Administrativo</CardTitle>
@@ -101,10 +96,6 @@ const AdminPanel = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Helmet>
-        <title>Sistema Golden | Painel Administrativo</title>
-        <meta name="description" content="Painel Administrativo do Sistema Golden - Gerencie solicitações de demonstração e usuários." />
-      </Helmet>
       <div className="container mx-auto px-4 py-6">
         <header className="flex justify-between items-center mb-8">
           <div className="flex items-center space-x-4">
