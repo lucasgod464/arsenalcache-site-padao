@@ -41,7 +41,7 @@ const AdminPanel = () => {
         throw new Error('Erro ao verificar credenciais');
       }
       
-      // Verificar senha usando bcrypt
+      // Verificar senha usando bcrypt ou comparação direta (para senhas não hashificadas)
       const isPasswordValid = data.password_hash === password || 
                              (data.password_hash.startsWith('$2a$') && 
                               bcrypt.compareSync(password, data.password_hash));
