@@ -14,6 +14,7 @@ import ScrollToTop from '@/components/ScrollToTop';
 import FloatingCta from '@/components/FloatingCta';
 import RoiCalculator from '@/components/RoiCalculator';
 import FreeTrial from '@/components/FreeTrial';
+import { Helmet } from 'react-helmet';
 
 const Index = () => {
   useEffect(() => {
@@ -58,6 +59,10 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Sistema Golden | Software de Atendimento via WhatsApp</title>
+        <meta name="description" content="Sistema Golden - Plataforma completa de multiatendimento para WhatsApp com recursos avançados de automação e gestão para empresas e revendedores." />
+      </Helmet>
       <Navbar />
       <HeroSection />
       <FeaturesSection />
