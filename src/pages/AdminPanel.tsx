@@ -17,106 +17,35 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowLeft, FileText, Search, Trash2, User, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import DemoRequestsTable from '@/components/DemoRequestsTable';
-import { supabase } from '@/integrations/supabase/client';
-import bcrypt from 'bcryptjs';
 
 const AdminPanel = () => {
   const { toast } = useToast();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const [loginError, setLoginError] = useState('');
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsLoading(true);
-    setLoginError('');
-    
-    try {
-      // Buscar hash da senha no banco de dados
-      const { data, error } = await supabase
-        .from('admin_credentials')
-        .select('password_hash')
-        .single();
-      
-      if (error) {
-        console.error('Erro ao buscar credenciais:', error);
-        setLoginError('Erro ao verificar credenciais. Verifique o console para detalhes.');
-        toast({
-          title: "Erro ao verificar credenciais",
-          description: "Não foi possível buscar as informações de login.",
-          variant: "destructive",
-        });
-        return;
-      }
-      
-      // Se não encontrou dados, use uma senha padrão para desenvolvimento
-      if (!data) {
-        const isDefaultPassword = password === 'admin123';
-        if (isDefaultPassword) {
-          setIsAuthenticated(true);
-          localStorage.setItem('adminAuthenticated', 'true');
-          toast({
-            title: "Login bem-sucedido (modo desenvolvimento)",
-            description: "Bem-vindo ao painel administrativo.",
-          });
-        } else {
-          setLoginError('Senha incorreta. Tente novamente.');
-          toast({
-            title: "Erro de autenticação",
-            description: "Senha incorreta. Tente novamente.",
-            variant: "destructive",
-          });
-        }
-        return;
-      }
-      
-      // Verificar senha usando bcrypt ou comparação direta (para senhas não hashificadas)
-      let isPasswordValid = false;
-      
-      if (data.password_hash === password) {
-        // Senha armazenada sem hash
-        isPasswordValid = true;
-      } else if (data.password_hash.startsWith('$2')) {
-        // Senha armazenada com hash bcrypt
-        try {
-          isPasswordValid = bcrypt.compareSync(password, data.password_hash);
-        } catch (e) {
-          console.error('Erro ao verificar hash bcrypt:', e);
-        }
-      }
-      
-      if (isPasswordValid) {
-        setIsAuthenticated(true);
-        toast({
-          title: "Login bem-sucedido",
-          description: "Bem-vindo ao painel administrativo.",
-        });
-        // Salvar no localStorage para persistir login
-        localStorage.setItem('adminAuthenticated', 'true');
-      } else {
-        setLoginError('Senha incorreta. Tente novamente.');
-        toast({
-          title: "Erro de autenticação",
-          description: "Senha incorreta. Tente novamente.",
-          variant: "destructive",
-        });
-      }
-    } catch (error) {
-      console.error('Erro de autenticação:', error);
-      setLoginError('Erro no servidor. Tente novamente mais tarde.');
+    // Simple authentication for demo purposes
+    // In a real app, use proper authentication
+    if (password === 'admin123') {
+      setIsAuthenticated(true);
       toast({
-        title: "Erro no servidor",
-        description: "Não foi possível verificar suas credenciais. Tente novamente.",
+        title: "Login bem-sucedido",
+        description: "Bem-vindo ao painel administrativo.",
+      });
+      // Save to localStorage to persist login
+      localStorage.setItem('adminAuthenticated', 'true');
+    } else {
+      toast({
+        title: "Erro de autenticação",
+        description: "Senha incorreta. Tente novamente.",
         variant: "destructive",
       });
-    } finally {
-      setIsLoading(false);
     }
   };
 
   useEffect(() => {
-    // Verificar se o usuário já está autenticado
+    // Check if user is already authenticated
     const isAuth = localStorage.getItem('adminAuthenticated') === 'true';
     setIsAuthenticated(isAuth);
   }, []);
@@ -150,19 +79,9 @@ const AdminPanel = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  disabled={isLoading}
-                  className={loginError ? "border-red-500" : ""}
                 />
-                {loginError && (
-                  <p className="text-sm text-red-500">{loginError}</p>
-                )}
-                <p className="text-xs text-gray-400 mt-1">
-                  Senha padrão: admin123 (para desenvolvimento)
-                </p>
               </div>
-              <Button type="submit" className="w-full" disabled={isLoading}>
-                {isLoading ? "Verificando..." : "Acessar Painel"}
-              </Button>
+              <Button type="submit" className="w-full">Acessar Painel</Button>
               <div className="text-center mt-4">
                 <Link to="/" className="text-sm text-gray-500 hover:text-gray-700">
                   Voltar para o site principal
