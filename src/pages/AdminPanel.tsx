@@ -25,10 +25,12 @@ const AdminPanel = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [loginError, setLoginError] = useState('');
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
+    setLoginError('');
     
     try {
       // Buscar hash da senha no banco de dados
@@ -38,13 +40,51 @@ const AdminPanel = () => {
         .single();
       
       if (error) {
-        throw new Error('Erro ao verificar credenciais');
+        console.error('Erro ao buscar credenciais:', error);
+        setLoginError('Erro ao verificar credenciais. Verifique o console para detalhes.');
+        toast({
+          title: "Erro ao verificar credenciais",
+          description: "Não foi possível buscar as informações de login.",
+          variant: "destructive",
+        });
+        return;
+      }
+      
+      // Se não encontrou dados, use uma senha padrão para desenvolvimento
+      if (!data) {
+        const isDefaultPassword = password === 'admin123';
+        if (isDefaultPassword) {
+          setIsAuthenticated(true);
+          localStorage.setItem('adminAuthenticated', 'true');
+          toast({
+            title: "Login bem-sucedido (modo desenvolvimento)",
+            description: "Bem-vindo ao painel administrativo.",
+          });
+        } else {
+          setLoginError('Senha incorreta. Tente novamente.');
+          toast({
+            title: "Erro de autenticação",
+            description: "Senha incorreta. Tente novamente.",
+            variant: "destructive",
+          });
+        }
+        return;
       }
       
       // Verificar senha usando bcrypt ou comparação direta (para senhas não hashificadas)
-      const isPasswordValid = data.password_hash === password || 
-                             (data.password_hash.startsWith('$2a$') && 
-                              bcrypt.compareSync(password, data.password_hash));
+      let isPasswordValid = false;
+      
+      if (data.password_hash === password) {
+        // Senha armazenada sem hash
+        isPasswordValid = true;
+      } else if (data.password_hash.startsWith('$2')) {
+        // Senha armazenada com hash bcrypt
+        try {
+          isPasswordValid = bcrypt.compareSync(password, data.password_hash);
+        } catch (e) {
+          console.error('Erro ao verificar hash bcrypt:', e);
+        }
+      }
       
       if (isPasswordValid) {
         setIsAuthenticated(true);
@@ -55,6 +95,7 @@ const AdminPanel = () => {
         // Salvar no localStorage para persistir login
         localStorage.setItem('adminAuthenticated', 'true');
       } else {
+        setLoginError('Senha incorreta. Tente novamente.');
         toast({
           title: "Erro de autenticação",
           description: "Senha incorreta. Tente novamente.",
@@ -63,6 +104,7 @@ const AdminPanel = () => {
       }
     } catch (error) {
       console.error('Erro de autenticação:', error);
+      setLoginError('Erro no servidor. Tente novamente mais tarde.');
       toast({
         title: "Erro no servidor",
         description: "Não foi possível verificar suas credenciais. Tente novamente.",
@@ -109,7 +151,14 @@ const AdminPanel = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   required
                   disabled={isLoading}
+                  className={loginError ? "border-red-500" : ""}
                 />
+                {loginError && (
+                  <p className="text-sm text-red-500">{loginError}</p>
+                )}
+                <p className="text-xs text-gray-400 mt-1">
+                  Senha padrão: admin123 (para desenvolvimento)
+                </p>
               </div>
               <Button type="submit" className="w-full" disabled={isLoading}>
                 {isLoading ? "Verificando..." : "Acessar Painel"}
