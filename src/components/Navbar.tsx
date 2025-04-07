@@ -1,8 +1,17 @@
 
 import React, { useEffect, useState } from 'react';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+import { 
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -71,6 +80,39 @@ const Navbar = () => {
             >
               FAQ
             </button>
+            
+            {/* Admin dropdown */}
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="bg-transparent hover:bg-gray-100 p-2">Áreas Golden</NavigationMenuTrigger>
+                  <NavigationMenuContent className="bg-white p-2 rounded-md shadow-lg w-56">
+                    <ul className="space-y-2 p-2">
+                      <li>
+                        <Link to="/" className="block px-4 py-2 hover:bg-gray-100 rounded-md">
+                          Página Inicial
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/golden-admin" className="block px-4 py-2 hover:bg-gray-100 rounded-md">
+                          Golden Admin
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/golden-leads" className="block px-4 py-2 hover:bg-gray-100 rounded-md">
+                          Golden Leads
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/golden-masterclass" className="block px-4 py-2 hover:bg-gray-100 rounded-md">
+                          Golden Masterclass
+                        </Link>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
@@ -122,6 +164,29 @@ const Navbar = () => {
               >
                 FAQ
               </button>
+              
+              {/* Mobile dropdown items */}
+              <div className="border-t border-gray-200 pt-4">
+                <p className="text-sm text-gray-500 mb-2">Áreas Golden:</p>
+                <ul className="space-y-2">
+                  <li>
+                    <Link to="/golden-admin" className="block py-2 hover:text-arsenal-DEFAULT">
+                      Golden Admin
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/golden-leads" className="block py-2 hover:text-arsenal-DEFAULT">
+                      Golden Leads
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/golden-masterclass" className="block py-2 hover:text-arsenal-DEFAULT">
+                      Golden Masterclass
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              
               <Button 
                 variant="default" 
                 className="gap-2 bg-arsenal-DEFAULT hover:bg-arsenal-dark"

@@ -25,9 +25,9 @@ function App() {
           <BrowserRouter basename="/">
             <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/admin" element={<AdminPanel />} />
-              <Route path="/leads" element={<LeadsPage />} />
-              <Route path="/masterclass" element={<MasterClass />} />
+              <Route path="/golden-admin" element={<AdminPanel />} />
+              <Route path="/golden-leads" element={<LeadsPage />} />
+              <Route path="/golden-masterclass" element={<MasterClass />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
