@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { MessageCircle, Server, Wrench, Zap } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 
 const DiamondHero = () => {
@@ -18,117 +17,45 @@ const DiamondHero = () => {
       <div className="absolute bottom-10 left-10 w-80 h-80 bg-indigo-200 rounded-full opacity-30 blur-3xl"></div>
       
       <div className="container mx-auto max-w-7xl relative z-10">
-        <div className="text-center mb-6">
-          <span className="inline-block py-1 px-4 rounded-full bg-blue-600 text-white text-sm font-medium mb-2">
-            SISTEMA DIAMOND
-          </span>
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-blue-900">
-            A Solução Premium para <span className="bg-gradient-to-r from-blue-700 to-indigo-600 bg-clip-text text-transparent">WhatsApp Business</span>
-          </h1>
-        </div>
-        
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div className="fade-in-section">
-            <div className="rounded-xl overflow-hidden shadow-2xl mb-6">
-              <div className="aspect-w-16 aspect-h-9 w-full">
-                <iframe 
-                  src="https://www.youtube.com/embed/videoseries?list=PL3DgEot3ENf467vxCFk8EcJw7qL9Hr1Mg" 
-                  title="Sistema Diamond - Planos de Conexões" 
-                  className="w-full h-80"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </div>
-          
+            <h1 className="text-5xl md:text-6xl font-extrabold mb-4">
+              Transforme seu <span className="text-blue-600">Atendimento</span> com WhatsApp Profissional
+            </h1>
+            
             <p className="text-gray-700 text-lg mb-8">
-              Planos personalizados para atender às suas necessidades, com suporte dedicado, instalação profissional e benefícios exclusivos.
+              Uma plataforma whitelabel com usuários e conexões ilimitadas. 
+              Personalize com sua marca, automatize atendimentos e revenda 
+              sem limitações.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
-                onClick={() => scrollToSection('planos')}
+                onClick={() => {}}
                 className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-6 rounded-full h-auto"
               >
-                Ver planos disponíveis
+                Agendar demonstração grátis
               </Button>
               <Button 
-                onClick={() => scrollToSection('contato')}
+                onClick={() => scrollToSection('planos')}
                 variant="outline"
                 className="border-blue-400 text-blue-700 hover:bg-blue-50 font-semibold px-8 py-6 rounded-full h-auto"
               >
-                Falar com um consultor
+                Ver planos e preços
               </Button>
             </div>
           </div>
           
-          <div className="relative fade-in-section">            
-            <div className="glass-card rounded-2xl p-8 shadow-2xl relative z-10 bg-white/80 backdrop-blur">
-              <h3 className="text-2xl font-bold mb-4 text-blue-800">Sistema Diamond</h3>
-              <p className="text-gray-700 mb-6">
-                Solução avançada para WhatsApp com softwares premium inclusos:
-              </p>
-              
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg">
-                  <div className="bg-blue-600 text-white p-2 rounded-full">
-                    <Server className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">Evolution API</h4>
-                    <p className="text-sm text-gray-600">Gerenciamento avançado de API</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-3 p-3 bg-indigo-50 rounded-lg">
-                  <div className="bg-indigo-600 text-white p-2 rounded-full">
-                    <Zap className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">n8n</h4>
-                    <p className="text-sm text-gray-600">Automação de processos e fluxos</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg">
-                  <div className="bg-blue-600 text-white p-2 rounded-full">
-                    <Wrench className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">Typebot</h4>
-                    <p className="text-sm text-gray-600">Chatbots conversacionais</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div className="flex flex-col items-center text-center">
-                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-2">
-                  <MessageCircle className="w-6 h-6 text-blue-600" />
-                </div>
-                <span className="text-sm text-gray-600">30 a 430 Conexões</span>
-              </div>
-              
-              <div className="flex flex-col items-center text-center">
-                <div className="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center mb-2">
-                  <Server className="w-6 h-6 text-indigo-600" />
-                </div>
-                <span className="text-sm text-gray-600">Servidores Premium</span>
-              </div>
-              
-              <div className="flex flex-col items-center text-center">
-                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-2">
-                  <Wrench className="w-6 h-6 text-blue-600" />
-                </div>
-                <span className="text-sm text-gray-600">Softwares Inclusos</span>
-              </div>
-              
-              <div className="flex flex-col items-center text-center">
-                <div className="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center mb-2">
-                  <Zap className="w-6 h-6 text-indigo-600" />
-                </div>
-                <span className="text-sm text-gray-600">Suporte Dedicado</span>
+          <div className="relative fade-in-section">
+            <div className="rounded-xl overflow-hidden shadow-2xl mb-6">
+              <div className="aspect-w-16 aspect-h-9 w-full">
+                <iframe 
+                  src="https://www.youtube.com/embed/videoseries?list=PL3DgEot3ENf467vxCFk8EcJw7qL9Hr1Mg" 
+                  title="Sistema Diamond - Atendimento com WhatsApp" 
+                  className="w-full h-80"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowFullScreen
+                ></iframe>
               </div>
             </div>
           </div>
