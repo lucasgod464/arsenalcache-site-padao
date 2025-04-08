@@ -1,6 +1,6 @@
 
-import React, { useState } from 'react';
-import { Check, ChevronDown, ChevronUp, Zap, LucideIcon, Star } from 'lucide-react';
+import React from 'react';
+import { Check, Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface FeatureCategory {
@@ -93,12 +93,6 @@ const featureCategories: FeatureCategory[] = [
 ];
 
 const DetailedFeaturesList = () => {
-  const [expandedCategory, setExpandedCategory] = useState(0);
-
-  const toggleCategory = (index: number) => {
-    setExpandedCategory(index === expandedCategory ? -1 : index);
-  };
-
   return (
     <section id="funcionalidades" className="py-24 px-4 bg-gradient-to-b from-white to-blue-50">
       <div className="container mx-auto max-w-7xl">
@@ -120,53 +114,32 @@ const DetailedFeaturesList = () => {
           {featureCategories.map((category, categoryIndex) => (
             <div 
               key={categoryIndex}
-              className={cn(
-                "border border-gray-100 rounded-xl overflow-hidden transition-all duration-300 bg-white hover:shadow-xl",
-                expandedCategory === categoryIndex ? "shadow-xl" : "shadow-md"
-              )}
+              className="border border-gray-100 rounded-xl overflow-hidden transition-all duration-300 bg-white shadow-md hover:shadow-xl"
             >
-              <button
-                className={cn(
-                  "w-full px-6 py-6 text-left transition-colors",
-                  expandedCategory === categoryIndex ? "bg-gradient-to-r from-blue-50 to-indigo-50" : "bg-white hover:bg-blue-50"
-                )}
-                onClick={() => toggleCategory(categoryIndex)}
-              >
+              <div className="px-6 py-6 bg-gradient-to-r from-blue-50 to-indigo-50">
                 <div className="flex items-start gap-4">
-                  <div className={cn(
-                    "flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl",
-                    expandedCategory === categoryIndex ? "bg-gradient-to-r from-blue-100 to-indigo-100" : "bg-blue-50"
-                  )}>
+                  <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-r from-blue-100 to-indigo-100">
                     {category.icon}
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl font-semibold text-gray-900">{category.name}</h3>
                     <p className="text-gray-600 mt-1">{category.description}</p>
-                    <div className="flex items-center text-blue-600 mt-2 text-sm font-medium">
-                      {expandedCategory === categoryIndex ? (
-                        <>Ver menos <ChevronUp className="w-4 h-4 ml-1" /></>
-                      ) : (
-                        <>Ver recursos <ChevronDown className="w-4 h-4 ml-1" /></>
-                      )}
-                    </div>
                   </div>
                 </div>
-              </button>
+              </div>
               
-              {expandedCategory === categoryIndex && (
-                <div className="px-6 pb-6 pt-2 animate-accordion-down bg-white">
-                  <div className="grid grid-cols-1 gap-y-3 border-t border-gray-100 pt-4 mt-2">
-                    {category.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center gap-3 p-2 hover:bg-blue-50 rounded-lg transition-colors">
-                        <div className="bg-gradient-to-r from-blue-100 to-indigo-100 rounded-full p-1 flex-shrink-0">
-                          <Check className="w-4 h-4 text-blue-600" />
-                        </div>
-                        <span className="text-gray-700 font-medium">{feature}</span>
+              <div className="px-6 pb-6 pt-4 bg-white">
+                <div className="grid grid-cols-1 gap-y-3 border-t border-gray-100 pt-4">
+                  {category.features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-center gap-3 p-2 hover:bg-blue-50 rounded-lg transition-colors">
+                      <div className="bg-gradient-to-r from-blue-100 to-indigo-100 rounded-full p-1 flex-shrink-0">
+                        <Check className="w-4 h-4 text-blue-600" />
                       </div>
-                    ))}
-                  </div>
+                      <span className="text-gray-700 font-medium">{feature}</span>
+                    </div>
+                  ))}
                 </div>
-              )}
+              </div>
             </div>
           ))}
         </div>
