@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Check, MessageCircle, Server, Zap, BadgeCheck, Star, AlertTriangle } from 'lucide-react';
+import { Check, MessageCircle, Server, Zap, BadgeCheck, Star, AlertTriangle, DollarSign } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -35,7 +35,7 @@ const DiamondPlans = () => {
       description: "Perfeito para quem busca economia e eficiência.",
       buttonText: "Contratar plano de 30 conexões",
       popular: true,
-      whatsappMessage: "Olá! Estou interessado no plano de 30 conexões do Sistema Diamond. Pode me dar mais informações?"
+      whatsappMessage: "Olá! Estou interessado no plano de 30 conexões do Sistema Diamond com 1 ano grátis. Pode me dar mais informações?"
     },
     {
       id: "70-connections",
@@ -52,8 +52,8 @@ const DiamondPlans = () => {
       id: "130-connections",
       name: "130 Conexões",
       installationPrice: "R$ 1.998,80",
-      monthlyPrice: "R$ 1.400,00",
-      regularPrice: "",
+      monthlyPrice: "R$ 700,00 no 1º mês", // Updated price as requested
+      regularPrice: "R$ 1.400,00 após",
       highlight: "Alta capacidade para grandes operações",
       description: "Plano completo perfeito para quem precisa de alta capacidade.",
       buttonText: "Contratar plano de 130 conexões",
@@ -63,8 +63,8 @@ const DiamondPlans = () => {
       id: "430-connections",
       name: "430 Conexões",
       installationPrice: "R$ 1.998,80",
-      monthlyPrice: "R$ 3.500,00",
-      regularPrice: "",
+      monthlyPrice: "R$ 2.200,00 no 1º mês", // Updated price as requested
+      regularPrice: "R$ 4.200,00 após",
       highlight: "Máxima capacidade para operações robustas",
       description: "Nosso plano mais robusto, ideal para grandes operações.",
       buttonText: "Contratar plano de 430 conexões",
@@ -204,14 +204,21 @@ const DiamondPlans = () => {
                     </div>
                   </div>
                   <div className="mt-3 pt-3 border-t border-blue-100">
-                    <div className="text-lg font-semibold text-gray-900">
-                      {plan.monthlyPrice}
-                    </div>
-                    {plan.regularPrice && (
-                      <div className="text-sm text-gray-600 mt-1">
-                        {plan.regularPrice}
+                    {/* Enhanced monthly price display with better visibility */}
+                    <div className="bg-blue-50 p-3 rounded-lg border border-blue-200">
+                      <div className="flex items-center justify-center mb-1">
+                        <DollarSign className="w-4 h-4 text-blue-600 mr-1" />
+                        <span className="text-blue-700 font-semibold text-sm uppercase">Mensalidade</span>
                       </div>
-                    )}
+                      <div className="text-xl font-bold text-blue-800">
+                        {plan.monthlyPrice}
+                      </div>
+                      {plan.regularPrice && (
+                        <div className="text-sm text-blue-600 mt-1 font-medium">
+                          {plan.regularPrice}
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </CardHeader>
                 <CardContent className="pt-6">
