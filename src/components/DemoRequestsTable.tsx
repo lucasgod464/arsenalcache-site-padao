@@ -20,7 +20,8 @@ import {
   Phone, 
   Mail,
   AlertCircle,
-  RefreshCw
+  RefreshCw,
+  Filter
 } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
 import {
@@ -29,6 +30,13 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { supabase } from "@/integrations/supabase/client";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 // Tipo para a solicitação de demonstração
 interface DemoRequest {
@@ -40,29 +48,43 @@ interface DemoRequest {
   message: string | null;
   status: 'pending' | 'contacted' | 'completed' | 'canceled';
   timestamp: string;
+  system: 'golden' | 'diamond' | null;
 }
 
-const DemoRequestsTable = () => {
+interface DemoRequestsTableProps {
+  defaultSystem?: 'golden' | 'diamond' | 'all';
+}
+
+const DemoRequestsTable = ({ defaultSystem = 'all' }: DemoRequestsTableProps) => {
   const { toast } = useToast();
   const [requests, setRequests] = useState<DemoRequest[]>([]);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
+  const [systemFilter, setSystemFilter] = useState<'golden' | 'diamond' | 'all'>(defaultSystem);
 
   // Buscar dados do Supabase
   const fetchRequests = async () => {
     try {
       setRefreshing(true);
-      const { data, error } = await supabase
+      let query = supabase
         .from('demo_requests')
         .select('*')
         .order('timestamp', { ascending: false });
+      
+      // Aplicar filtro por sistema se não for 'all'
+      if (systemFilter !== 'all') {
+        query = query.eq('system', systemFilter);
+      }
+
+      const { data, error } = await query;
 
       if (error) throw error;
       
       // Garantir que o status está entre os tipos válidos
       const typedData = (data || []).map(item => ({
         ...item,
-        status: (item.status as 'pending' | 'contacted' | 'completed' | 'canceled') || 'pending'
+        status: (item.status as 'pending' | 'contacted' | 'completed' | 'canceled') || 'pending',
+        system: (item.system as 'golden' | 'diamond') || null
       }));
       
       setRequests(typedData);
@@ -82,7 +104,7 @@ const DemoRequestsTable = () => {
   // Carregar dados do Supabase ao iniciar
   useEffect(() => {
     fetchRequests();
-  }, []);
+  }, [systemFilter]);
 
   // Atualiza o status de uma solicitação
   const updateStatus = async (id: string, newStatus: DemoRequest['status']) => {
@@ -168,6 +190,18 @@ const DemoRequestsTable = () => {
     }
   };
 
+  // Renderiza o badge do sistema
+  const renderSystemBadge = (system: DemoRequest['system']) => {
+    switch (system) {
+      case 'golden':
+        return <Badge variant="outline" className="bg-amber-50 text-amber-700 border-amber-200">Golden</Badge>;
+      case 'diamond':
+        return <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">Diamond</Badge>;
+      default:
+        return <Badge variant="outline" className="bg-gray-50 text-gray-700 border-gray-200">Não especificado</Badge>;
+    }
+  };
+
   if (loading) {
     return (
       <div className="py-10 text-center">
@@ -179,7 +213,24 @@ const DemoRequestsTable = () => {
 
   return (
     <div>
-      <div className="flex justify-end mb-4">
+      <div className="flex justify-between items-center mb-4">
+        <div className="flex items-center gap-2">
+          <Filter className="h-4 w-4 text-gray-500" />
+          <span className="text-sm text-gray-500 mr-2">Filtrar por sistema:</span>
+          <Select 
+            value={systemFilter} 
+            onValueChange={(value) => setSystemFilter(value as 'golden' | 'diamond' | 'all')}
+          >
+            <SelectTrigger className="w-[180px]">
+              <SelectValue placeholder="Selecione o sistema" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">Todos os sistemas</SelectItem>
+              <SelectItem value="golden">Sistema Golden</SelectItem>
+              <SelectItem value="diamond">Sistema Diamond</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
         <Button 
           variant="outline" 
           size="sm" 
@@ -204,6 +255,7 @@ const DemoRequestsTable = () => {
             <TableHead>Empresa</TableHead>
             <TableHead>Contato</TableHead>
             <TableHead>Data</TableHead>
+            <TableHead>Sistema</TableHead>
             <TableHead>Status</TableHead>
             <TableHead className="text-right">Ações</TableHead>
           </TableRow>
@@ -211,7 +263,7 @@ const DemoRequestsTable = () => {
         <TableBody>
           {requests.length === 0 ? (
             <TableRow>
-              <TableCell colSpan={6} className="text-center py-10">
+              <TableCell colSpan={7} className="text-center py-10">
                 <div className="flex flex-col items-center justify-center text-gray-500">
                   <AlertCircle className="w-10 h-10 mb-3 text-gray-400" />
                   <p className="text-lg font-medium">Nenhuma solicitação encontrada</p>
@@ -235,6 +287,7 @@ const DemoRequestsTable = () => {
                   </div>
                 </TableCell>
                 <TableCell>{formatDate(request.timestamp)}</TableCell>
+                <TableCell>{renderSystemBadge(request.system)}</TableCell>
                 <TableCell>{renderStatusBadge(request.status)}</TableCell>
                 <TableCell className="text-right">
                   <div className="flex justify-end gap-2">

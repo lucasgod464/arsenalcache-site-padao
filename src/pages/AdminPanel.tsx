@@ -14,7 +14,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ArrowLeft, FileText, Search, Trash2, User, Users } from 'lucide-react';
+import { ArrowLeft, FileText, Search, Trash2, User, Users, BarChart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import DemoRequestsTable from '@/components/DemoRequestsTable';
 
@@ -22,6 +22,7 @@ const AdminPanel = () => {
   const { toast } = useToast();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState('');
+  const [activeSystemTab, setActiveSystemTab] = useState<'golden' | 'diamond' | 'all'>('all');
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -103,10 +104,28 @@ const AdminPanel = () => {
               <ArrowLeft className="w-5 h-5 mr-2" />
               <span>Voltar ao site</span>
             </Link>
-            <h1 className="text-2xl font-bold">Painel Administrativo | Sistema Golden</h1>
+            <h1 className="text-2xl font-bold">Painel Administrativo | Sistemas Golden & Diamond</h1>
           </div>
           <Button variant="outline" onClick={handleLogout}>Sair</Button>
         </header>
+
+        {/* Sistema Tabs */}
+        <Tabs defaultValue="all" className="w-full mb-8" onValueChange={(value) => setActiveSystemTab(value as 'golden' | 'diamond' | 'all')}>
+          <TabsList className="grid w-full max-w-md grid-cols-3">
+            <TabsTrigger value="all" className="flex items-center gap-2">
+              <BarChart className="w-4 h-4" />
+              Todos os Sistemas
+            </TabsTrigger>
+            <TabsTrigger value="golden" className="flex items-center gap-2">
+              <BarChart className="w-4 h-4" />
+              Sistema Golden
+            </TabsTrigger>
+            <TabsTrigger value="diamond" className="flex items-center gap-2">
+              <BarChart className="w-4 h-4" />
+              Sistema Diamond
+            </TabsTrigger>
+          </TabsList>
+        </Tabs>
 
         <Tabs defaultValue="solicitacoes" className="w-full">
           <TabsList className="grid w-full max-w-md grid-cols-2 mb-8">
@@ -124,7 +143,13 @@ const AdminPanel = () => {
             <Card>
               <CardHeader>
                 <div className="flex justify-between items-center">
-                  <CardTitle>Solicitações de Demonstração</CardTitle>
+                  <CardTitle>
+                    {activeSystemTab === 'all' 
+                      ? 'Solicitações de Demonstração (Todos os Sistemas)' 
+                      : activeSystemTab === 'golden' 
+                        ? 'Solicitações de Demonstração (Sistema Golden)' 
+                        : 'Solicitações de Demonstração (Sistema Diamond)'}
+                  </CardTitle>
                   <div className="flex gap-2">
                     <div className="relative w-64">
                       <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-gray-500" />
@@ -138,11 +163,11 @@ const AdminPanel = () => {
                   </div>
                 </div>
                 <CardDescription>
-                  Lista de todas as solicitações de demonstração gratuita recebidas pelo formulário.
+                  Lista de todas as solicitações de demonstração recebidas pelo formulário.
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <DemoRequestsTable />
+                <DemoRequestsTable defaultSystem={activeSystemTab} />
               </CardContent>
             </Card>
           </TabsContent>
