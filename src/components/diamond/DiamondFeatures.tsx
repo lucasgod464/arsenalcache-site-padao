@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { 
-  Server, Shield, Zap, Tool, Clock, Users, 
+  Server, Shield, Zap, Wrench, Clock, Users, 
   RefreshCw, BarChart, Laptop, Database
 } from 'lucide-react';
 
@@ -26,7 +26,7 @@ const DiamondFeatures = () => {
       color: "bg-blue-600"
     },
     {
-      icon: <Tool className="w-12 h-12 text-white" />,
+      icon: <Wrench className="w-12 h-12 text-white" />,
       title: "Suporte Técnico",
       description: "Suporte dedicado e técnico para resolver qualquer problema e garantir funcionamento perfeito.",
       color: "bg-indigo-600"

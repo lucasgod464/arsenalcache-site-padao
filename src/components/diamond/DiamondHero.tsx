@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { MessageCircle, Server, Tool, Zap } from 'lucide-react';
+import { MessageCircle, Server, Wrench, Zap } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 
 const DiamondHero = () => {
@@ -63,7 +63,7 @@ const DiamondHero = () => {
               
               <div className="flex flex-col items-center text-center">
                 <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-2">
-                  <Tool className="w-6 h-6 text-blue-600" />
+                  <Wrench className="w-6 h-6 text-blue-600" />
                 </div>
                 <span className="text-sm text-gray-600">Softwares Inclusos</span>
               </div>
@@ -110,7 +110,7 @@ const DiamondHero = () => {
                 
                 <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg">
                   <div className="bg-blue-600 text-white p-2 rounded-full">
-                    <Tool className="w-5 h-5" />
+                    <Wrench className="w-5 h-5" />
                   </div>
                   <div>
                     <h4 className="font-semibold">Typebot</h4>
