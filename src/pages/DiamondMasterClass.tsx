@@ -2,14 +2,14 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { Users } from 'lucide-react';
-import { useToast } from "@/components/ui/use-toast";
-import DiamondMasterClassPricing from '@/components/DiamondMasterClassPricing';
+import { useToast } from "@/hooks/use-toast";
+import DiamondPlans from '@/components/diamond/DiamondPlans';
 import FloatingCta from '@/components/FloatingCta';
 
 const DiamondMasterClass = () => {
   const { toast } = useToast();
   const [peopleWatching, setPeopleWatching] = useState(987);
-  const [showPricing, setShowPricing] = useState(false);
+  const [showPlans, setShowPlans] = useState(false);
 
   useEffect(() => {
     // Random number of people watching (between 900 and 1100)
@@ -17,19 +17,19 @@ const DiamondMasterClass = () => {
       setPeopleWatching(Math.floor(Math.random() * 200 + 900));
     }, 5000);
 
-    // Show pricing section after 1 minute (60 seconds)
-    const pricingTimer = setTimeout(() => {
-      setShowPricing(true);
+    // Show Diamond plans section after 1 minute (60 seconds)
+    const plansTimer = setTimeout(() => {
+      setShowPlans(true);
       toast({
-        title: "Preços especiais disponíveis!",
-        description: "Confira nossos planos e preços exclusivos abaixo.",
+        title: "Planos especiais disponíveis!",
+        description: "Confira nossos planos e preços exclusivos do Sistema Diamond abaixo.",
         variant: "default",
       });
     }, 60000); // 60 seconds = 1 minute
 
     return () => {
       clearInterval(peopleInterval);
-      clearTimeout(pricingTimer);
+      clearTimeout(plansTimer);
     };
   }, [toast]);
 
@@ -78,11 +78,11 @@ const DiamondMasterClass = () => {
         <span>pessoas assistindo essa apresentação</span>
       </div>
 
-      {/* Show pricing section conditionally */}
-      {showPricing && (
-        <div className="w-full">
+      {/* Show Diamond plans section conditionally */}
+      {showPlans && (
+        <div className="w-full bg-white">
           <div className="max-w-7xl mx-auto">
-            <DiamondMasterClassPricing />
+            <DiamondPlans />
           </div>
         </div>
       )}
