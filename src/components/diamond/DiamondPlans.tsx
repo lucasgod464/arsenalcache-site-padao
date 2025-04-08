@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Check, MessageCircle, Server, Zap, BadgeCheck, Star, AlertTriangle, DollarSign } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -52,7 +51,7 @@ const DiamondPlans = () => {
       id: "130-connections",
       name: "130 Conexões",
       installationPrice: "R$ 1.998,80",
-      monthlyPrice: "R$ 700,00 no 1º mês", // Updated price as requested
+      monthlyPrice: "R$ 700,00 no 1º mês",
       regularPrice: "R$ 1.400,00 após",
       highlight: "Alta capacidade para grandes operações",
       description: "Plano completo perfeito para quem precisa de alta capacidade.",
@@ -63,7 +62,7 @@ const DiamondPlans = () => {
       id: "430-connections",
       name: "430 Conexões",
       installationPrice: "R$ 1.998,80",
-      monthlyPrice: "R$ 2.200,00 no 1º mês", // Updated price as requested
+      monthlyPrice: "R$ 2.200,00 no 1º mês",
       regularPrice: "R$ 4.200,00 após",
       highlight: "Máxima capacidade para operações robustas",
       description: "Nosso plano mais robusto, ideal para grandes operações.",
@@ -166,7 +165,6 @@ const DiamondPlans = () => {
                     </li>
                   </ul>
                   
-                  {/* Added migration notice below the list as requested */}
                   <div className="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-lg flex items-start gap-3">
                     <AlertTriangle className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
                     <p className="text-amber-800 text-sm">
@@ -204,21 +202,20 @@ const DiamondPlans = () => {
                     </div>
                   </div>
                   <div className="mt-3 pt-3 border-t border-blue-100">
-                    {/* Enhanced monthly price display with better visibility */}
-                    <div className="bg-blue-50 p-3 rounded-lg border border-blue-200">
-                      <div className="flex items-center justify-center mb-1">
-                        <DollarSign className="w-4 h-4 text-blue-600 mr-1" />
-                        <span className="text-blue-700 font-semibold text-sm uppercase">Mensalidade</span>
-                      </div>
-                      <div className="text-xl font-bold text-blue-800">
-                        {plan.monthlyPrice}
-                      </div>
-                      {plan.regularPrice && (
-                        <div className="text-sm text-blue-600 mt-1 font-medium">
-                          {plan.regularPrice}
-                        </div>
-                      )}
+                    <div className="flex items-center gap-2 mb-2">
+                      <Badge className="bg-blue-100 text-blue-700 border-blue-200">
+                        <DollarSign className="w-3.5 h-3.5 mr-1" />
+                        Mensalidade
+                      </Badge>
                     </div>
+                    <div className="text-xl font-bold text-blue-800">
+                      {plan.monthlyPrice}
+                    </div>
+                    {plan.regularPrice && (
+                      <div className="text-sm text-blue-600 mt-1 font-medium">
+                        {plan.regularPrice}
+                      </div>
+                    )}
                   </div>
                 </CardHeader>
                 <CardContent className="pt-6">
