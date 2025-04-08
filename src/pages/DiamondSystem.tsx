@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import Navbar from '@/components/Navbar';
 import DiamondHero from '@/components/diamond/DiamondHero';
+import DiamondAbout from '@/components/diamond/DiamondAbout';
 import DiamondFeatures from '@/components/diamond/DiamondFeatures';
 import DiamondPlans from '@/components/diamond/DiamondPlans';
 import DiamondTestimonials from '@/components/diamond/DiamondTestimonials';
@@ -45,6 +46,7 @@ const DiamondSystem = () => {
       <Navbar />
       <DiamondHero />
       <DiamondFeatures />
+      <DiamondAbout />
       <DiamondPlans />
       <DiamondTestimonials />
       <DiamondFaq />
