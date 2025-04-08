@@ -1,12 +1,12 @@
 
 import React, { useState } from 'react';
-import { Check, MessageCircle, Server, Zap, BadgeCheck } from 'lucide-react';
+import { Check, MessageCircle, Server, Zap, BadgeCheck, Star } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 const DiamondPlans = () => {
-  const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
+  const [selectedPlan, setSelectedPlan] = useState<string | null>("30-connections");
   
   const commonBenefits = [
     "Suporte dedicado e técnico",
@@ -34,6 +34,7 @@ const DiamondPlans = () => {
       highlight: "Mensalidade grátis no primeiro ano",
       description: "Perfeito para quem busca economia e eficiência.",
       buttonText: "Contratar plano de 30 conexões",
+      popular: true,
       whatsappMessage: "Olá! Estou interessado no plano de 30 conexões do Sistema Diamond. Pode me dar mais informações?"
     },
     {
@@ -45,7 +46,6 @@ const DiamondPlans = () => {
       highlight: "Ideal para empresas em crescimento",
       description: "Perfeito para quem precisa de mais conexões e quer um serviço robusto.",
       buttonText: "Contratar plano de 70 conexões",
-      popular: true,
       whatsappMessage: "Olá! Estou interessado no plano de 70 conexões do Sistema Diamond. Pode me dar mais informações?"
     },
     {
@@ -75,7 +75,7 @@ const DiamondPlans = () => {
   return (
     <section id="planos" className="py-20 px-4 bg-gradient-to-b from-white to-blue-50">
       <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <Badge variant="outline" className="bg-blue-100 text-blue-800 border-blue-200 mb-4">
             Planos e preços
           </Badge>
@@ -86,18 +86,94 @@ const DiamondPlans = () => {
             Planos personalizados com instalação profissional e benefícios exclusivos para seu negócio.
           </p>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {plans.map((plan) => (
-            <div key={plan.id} className="relative">
-              {plan.popular && (
-                <div className="absolute -top-4 -right-4 z-10 rotate-12">
-                  <div className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-xs font-bold px-6 py-1 rounded-full shadow-lg flex items-center gap-1">
-                    <BadgeCheck className="h-3 w-3" /> POPULAR <BadgeCheck className="h-3 w-3" />
-                  </div>
+        
+        {/* Featured 30 Connections Plan */}
+        <div className="mb-12 max-w-4xl mx-auto">
+          <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-1 shadow-xl">
+            <div className="bg-white rounded-xl p-6 relative overflow-hidden">
+              <div className="absolute top-0 right-0">
+                <div className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white text-sm font-bold py-1 px-12 -mr-10 mt-5 transform rotate-45 shadow-md">
+                  DESTAQUE
                 </div>
-              )}
+              </div>
               
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                <div>
+                  <div className="flex items-center mb-3">
+                    <Badge className="bg-blue-100 text-blue-800 border-0 mr-2">ECONOMIA</Badge>
+                    <Badge className="bg-green-100 text-green-800 border-0">1º ANO GRÁTIS</Badge>
+                  </div>
+                  
+                  <h3 className="text-2xl md:text-3xl font-bold text-blue-900 mb-2">
+                    Plano de 30 Conexões
+                  </h3>
+                  
+                  <p className="text-lg text-gray-600 mb-4">
+                    Investimento único de <span className="font-bold text-blue-700">R$ 1.998,80</span> com primeiro ano <span className="font-bold text-green-600">sem mensalidades!</span>
+                  </p>
+                  
+                  <div className="flex flex-col gap-3 mb-6">
+                    <div className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700">Feche apenas 2 revendas de R$ 90/mês e pague a sua mensalidade futura!</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700">Softwares premium inclusos (n8n, Redis, Evolution API, Dify, Typebot)</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700">Suporte técnico exclusivo e monitoramento constante</span>
+                    </div>
+                  </div>
+                  
+                  <Button 
+                    asChild
+                    className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-medium py-5 px-8 rounded-full"
+                  >
+                    <a 
+                      href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá! Estou interessado no plano de 30 conexões do Sistema Diamond com 1 ano grátis. Pode me dar mais informações?"
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
+                      Quero o plano com 1º ano grátis!
+                    </a>
+                  </Button>
+                </div>
+                
+                <div className="bg-blue-50 p-5 rounded-xl border border-blue-100">
+                  <h4 className="text-lg font-semibold mb-3 text-blue-800">Por que escolher este plano?</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2">
+                      <Star className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700">Mensalidade grátis durante o primeiro ano</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Star className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700">Perfeito para iniciar seu negócio com baixo investimento</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Star className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700">Após 1 ano, apenas R$ 570,00/mês (custo de apenas R$ 19,00 por conexão)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Star className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700">Revenda para seus clientes por valores mais altos</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Star className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700">Implantação em apenas 24 horas</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {plans.slice(1).map((plan) => (
+            <div key={plan.id} className="relative">
               <Card 
                 className={`h-full overflow-hidden border border-blue-100 hover:border-blue-300 transition-all duration-300 ${
                   selectedPlan === plan.id ? 'ring-2 ring-blue-500 shadow-lg' : 'hover:shadow-md'

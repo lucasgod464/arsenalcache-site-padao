@@ -8,6 +8,7 @@ import DiamondFeatures from '@/components/diamond/DiamondFeatures';
 import DiamondPlans from '@/components/diamond/DiamondPlans';
 import DiamondTestimonials from '@/components/diamond/DiamondTestimonials';
 import DiamondFaq from '@/components/diamond/DiamondFaq';
+import RoiCalculator from '@/components/RoiCalculator';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
@@ -48,6 +49,7 @@ const DiamondSystem = () => {
       <DiamondFeatures />
       <DiamondAbout />
       <DiamondPlans />
+      <RoiCalculator />
       <DiamondTestimonials />
       <DiamondFaq />
       <ContactSection />

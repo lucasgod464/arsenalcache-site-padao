@@ -18,14 +18,29 @@ const DiamondHero = () => {
       <div className="absolute bottom-10 left-10 w-80 h-80 bg-indigo-200 rounded-full opacity-30 blur-3xl"></div>
       
       <div className="container mx-auto max-w-7xl relative z-10">
+        <div className="text-center mb-4">
+          <span className="inline-block py-1 px-4 rounded-full bg-blue-600 text-white text-sm font-medium mb-2">
+            SISTEMA DIAMOND
+          </span>
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-blue-900">
+            A Solução Premium para <span className="bg-gradient-to-r from-blue-700 to-indigo-600 bg-clip-text text-transparent">WhatsApp Business</span>
+          </h1>
+        </div>
+        
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div className="fade-in-section">
-            <span className="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-800 text-sm font-medium mb-6">
-              Sistema Diamond Premium
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Expanda seu <span className="bg-gradient-to-r from-blue-700 to-indigo-600 bg-clip-text text-transparent">Atendimento</span> com Planos de Conexões
-            </h1>
+            <div className="rounded-xl overflow-hidden shadow-2xl mb-6">
+              <div className="aspect-w-16 aspect-h-9 w-full">
+                <iframe 
+                  src="https://www.youtube.com/embed/videoseries?list=PL3DgEot3ENf467vxCFk8EcJw7qL9Hr1Mg" 
+                  title="Sistema Diamond - Planos de Conexões" 
+                  className="w-full h-80"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+          
             <p className="text-gray-700 text-lg mb-8">
               Planos personalizados para atender às suas necessidades, com suporte dedicado, instalação profissional e benefícios exclusivos.
             </p>
@@ -45,42 +60,9 @@ const DiamondHero = () => {
                 Falar com um consultor
               </Button>
             </div>
-            
-            <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div className="flex flex-col items-center text-center">
-                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-2">
-                  <MessageCircle className="w-6 h-6 text-blue-600" />
-                </div>
-                <span className="text-sm text-gray-600">30 a 430 Conexões</span>
-              </div>
-              
-              <div className="flex flex-col items-center text-center">
-                <div className="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center mb-2">
-                  <Server className="w-6 h-6 text-indigo-600" />
-                </div>
-                <span className="text-sm text-gray-600">Servidores Premium</span>
-              </div>
-              
-              <div className="flex flex-col items-center text-center">
-                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-2">
-                  <Wrench className="w-6 h-6 text-blue-600" />
-                </div>
-                <span className="text-sm text-gray-600">Softwares Inclusos</span>
-              </div>
-              
-              <div className="flex flex-col items-center text-center">
-                <div className="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center mb-2">
-                  <Zap className="w-6 h-6 text-indigo-600" />
-                </div>
-                <span className="text-sm text-gray-600">Suporte Dedicado</span>
-              </div>
-            </div>
           </div>
           
-          <div className="relative fade-in-section hidden lg:block">
-            <div className="absolute -top-10 -right-10 w-64 h-64 bg-blue-100 rounded-full opacity-60 blur-3xl"></div>
-            <div className="absolute top-20 -left-10 w-64 h-64 bg-indigo-100 rounded-full opacity-60 blur-3xl"></div>
-            
+          <div className="relative fade-in-section">            
             <div className="glass-card rounded-2xl p-8 shadow-2xl relative z-10 bg-white/80 backdrop-blur">
               <h3 className="text-2xl font-bold mb-4 text-blue-800">Sistema Diamond</h3>
               <p className="text-gray-700 mb-6">
@@ -117,6 +99,36 @@ const DiamondHero = () => {
                     <p className="text-sm text-gray-600">Chatbots conversacionais</p>
                   </div>
                 </div>
+              </div>
+            </div>
+            
+            <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-2">
+                  <MessageCircle className="w-6 h-6 text-blue-600" />
+                </div>
+                <span className="text-sm text-gray-600">30 a 430 Conexões</span>
+              </div>
+              
+              <div className="flex flex-col items-center text-center">
+                <div className="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center mb-2">
+                  <Server className="w-6 h-6 text-indigo-600" />
+                </div>
+                <span className="text-sm text-gray-600">Servidores Premium</span>
+              </div>
+              
+              <div className="flex flex-col items-center text-center">
+                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-2">
+                  <Wrench className="w-6 h-6 text-blue-600" />
+                </div>
+                <span className="text-sm text-gray-600">Softwares Inclusos</span>
+              </div>
+              
+              <div className="flex flex-col items-center text-center">
+                <div className="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center mb-2">
+                  <Zap className="w-6 h-6 text-indigo-600" />
+                </div>
+                <span className="text-sm text-gray-600">Suporte Dedicado</span>
               </div>
             </div>
           </div>

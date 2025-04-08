@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Calculator } from 'lucide-react';
+import { Calculator, Diamond } from 'lucide-react';
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -23,7 +23,7 @@ const RoiCalculator = () => {
     const growthRevenue = newSubscribersYearly * monthlyValue * 12;
     const totalSubscribersNextYear = subscriptions + newSubscribersYearly;
     const nextYearRevenue = totalSubscribersNextYear * monthlyValue * 12;
-    const systemCost = 3500;
+    const systemCost = 1998.80;
     const roiPercentage = Math.round((annualProfit / systemCost) * 100);
 
     return {
@@ -41,17 +41,17 @@ const RoiCalculator = () => {
   const roi = calculateSubscriptionROI();
 
   return (
-    <section id="roi-calculator" className="py-16 px-4 bg-white">
+    <section id="roi-calculator" className="py-16 px-4 bg-gradient-to-b from-blue-50 to-white">
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-10 fade-in-section">
           <div className="flex justify-center mb-4">
             <div className="bg-blue-100 p-3 rounded-full">
-              <Calculator className="h-7 w-7 text-blue-700" />
+              <Diamond className="h-7 w-7 text-blue-700" />
             </div>
           </div>
           <h2 className="text-2xl md:text-4xl font-bold mb-3">Calculadora de Lucro com Revenda</h2>
           <p className="text-lg text-gray-600">
-            Calcule quanto você pode lucrar revendendo o Sistema Golden
+            Calcule quanto você pode lucrar revendendo o Sistema Diamond
           </p>
         </div>
 
@@ -75,7 +75,7 @@ const RoiCalculator = () => {
             ) : (
               <div className="flex items-center justify-between mb-5">
                 <h3 className="text-lg font-semibold">
-                  Simule seu potencial de ganhos com o Sistema Golden
+                  Simule seu potencial de ganhos com o Sistema Diamond
                 </h3>
                 <CollapsibleTrigger asChild>
                   <Button 
@@ -178,11 +178,11 @@ const RoiCalculator = () => {
             </div>
 
             <div className="bg-blue-50 p-5 rounded-lg border border-blue-100">
-              <h4 className="text-lg font-semibold mb-2 text-blue-800">Benefícios do Sistema Golden para revendedores:</h4>
+              <h4 className="text-lg font-semibold mb-2 text-blue-800">Benefícios do Sistema Diamond para revendedores:</h4>
               <ul className="space-y-2 text-gray-700">
                 <li>• Renda recorrente mensal</li>
                 <li>• Sistema completo e personalizado</li>
-                <li>• Sem limites de usuários ou conexões</li>
+                <li>• Softwares premium inclusos</li>
                 <li>• Suporte técnico especializado</li>
                 <li>• Implementação rápida (24h)</li>
               </ul>
