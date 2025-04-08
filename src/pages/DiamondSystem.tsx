@@ -42,7 +42,8 @@ const DiamondSystem = () => {
       <Helmet>
         <title>Sistema Diamond | Planos de Conexões para WhatsApp</title>
         <meta name="description" content="Sistema Diamond oferece planos de conexões para WhatsApp com diferentes capacidades e benefícios. Conheça nossos planos e escolha o ideal para seu negócio." />
-        <style>{`
+        <style>
+          {`
           .fade-in-section {
             opacity: 0;
             transform: translateY(20px);
@@ -77,7 +78,8 @@ const DiamondSystem = () => {
             background-size: 200% 100%;
             animation: shimmer 3s infinite;
           }
-        `}</style>
+          `}
+        </style>
       </Helmet>
       
       <Navbar />
