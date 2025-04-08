@@ -16,13 +16,13 @@ import FloatingCta from '@/components/FloatingCta';
 
 const DiamondSystem = () => {
   useEffect(() => {
-    // Initialize fade-in animations
+    // Initialize fade-in animations with better visibility
     const handleScroll = () => {
       const elements = document.querySelectorAll('.fade-in-section');
       elements.forEach(element => {
         const position = element.getBoundingClientRect();
         // Check if the element is in the viewport
-        if(position.top < window.innerHeight - 100) {
+        if(position.top < window.innerHeight - 50) {
           element.classList.add('is-visible');
         }
       });

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ChevronRight, MessageSquare, Zap, BarChart3, ShieldCheck, Rocket, Server } from 'lucide-react';
@@ -51,8 +50,7 @@ const DiamondHero = () => {
               Transforme seu <br/>
               Atendimento com<br/>
               <span className="relative inline-block">
-                <span className="bg-blue-600 text-white px-3 py-1 rounded-md shadow-lg">WhatsApp</span>
-                <span className="absolute -bottom-2 left-0 w-full h-2 bg-blue-200/70 -rotate-1"></span>
+                <span className="text-black font-bold">WhatsApp</span>
               </span><br/>
               Profissional
             </h1>

@@ -35,14 +35,14 @@ const DiamondAbout = () => {
 
   return (
     <section id="sobre-diamond" className="py-24 px-4 relative overflow-hidden">
-      {/* Enhanced solid background instead of gradient for better visibility */}
-      <div className="absolute inset-0 bg-blue-900 -z-10"></div>
+      {/* Solid background with better visibility */}
+      <div className="absolute inset-0 bg-blue-900 opacity-100 -z-10"></div>
       <div className="absolute top-0 right-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4yKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==')] opacity-30 -z-10"></div>
-      <div className="absolute top-40 right-20 w-80 h-80 bg-blue-400/30 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 left-40 w-64 h-64 bg-indigo-400/30 rounded-full blur-3xl"></div>
+      <div className="absolute top-40 right-20 w-80 h-80 bg-blue-400 opacity-30 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 left-40 w-64 h-64 bg-indigo-400 opacity-30 rounded-full blur-3xl"></div>
       
       <div className="container mx-auto max-w-7xl relative z-10">
-        <div className="text-center mb-16 fade-in-section">
+        <div className="text-center mb-16 fade-in-section bg-blue-800/90 p-10 rounded-2xl shadow-2xl border border-blue-700">
           <div className="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-blue-50 font-medium mb-4 shadow-lg shadow-blue-900/20 border border-white/20">
             <Zap className="w-4 h-4 mr-2 text-blue-200" /> 
             Conheça nossa plataforma
@@ -51,14 +51,14 @@ const DiamondAbout = () => {
           <h2 className="text-5xl md:text-7xl font-extrabold mb-8 text-white drop-shadow-md">
             O que é o <span className="relative inline-block">
               <span className="relative z-10 bg-gradient-to-r from-blue-200 via-white to-indigo-200 bg-clip-text text-transparent font-extrabold">Sistema Diamond</span>
-              <span className="absolute -bottom-1 left-0 w-full h-3 bg-gradient-to-r from-blue-500/60 to-indigo-500/60 -rotate-1 rounded-lg"></span>
+              <span className="absolute -bottom-1 left-0 w-full h-3 bg-gradient-to-r from-blue-500 to-indigo-500 -rotate-1 rounded-lg"></span>
             </span>?
           </h2>
           
           <p className="text-xl md:text-2xl text-white max-w-4xl mx-auto leading-relaxed">
-            O Sistema Diamond é uma <span className="font-semibold text-white bg-blue-500/30 px-2 py-1 rounded">solução empresarial completa</span> que 
+            O Sistema Diamond é uma <span className="font-semibold text-white bg-blue-500/70 px-2 py-1 rounded">solução empresarial completa</span> que 
             transforma seu WhatsApp em uma 
-            <span className="font-semibold text-white bg-blue-500/30 px-2 py-1 rounded mx-1">poderosa ferramenta</span> de relacionamento, 
+            <span className="font-semibold text-white bg-blue-500/70 px-2 py-1 rounded mx-1">poderosa ferramenta</span> de relacionamento, 
             automação e vendas, com infraestrutura robusta e alta escalabilidade.
           </p>
         </div>
