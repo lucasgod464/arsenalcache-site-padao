@@ -66,7 +66,7 @@ const DiamondHero = () => {
             <div className="glass-card rounded-2xl p-8 shadow-2xl relative z-10 bg-white/80 backdrop-blur">
               <h3 className="text-2xl font-bold mb-4 text-blue-800">Sistema Diamond</h3>
               <p className="text-gray-700 mb-6">
-                Solução completa para gerenciamento de conexões WhatsApp com softwares premium inclusos:
+                Solução avançada para WhatsApp com softwares premium inclusos:
               </p>
               
               <div className="space-y-4">

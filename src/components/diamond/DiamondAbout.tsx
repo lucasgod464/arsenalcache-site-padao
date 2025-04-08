@@ -36,11 +36,11 @@ const DiamondAbout = () => {
       <div className="container mx-auto">
         <div className="text-center mb-16 fade-in-section">
           <span className="inline-block py-1 px-3 rounded-full bg-blue-500 text-blue-50 text-sm font-medium mb-4">
-            Infraestrutura premium
+            Transforme seu WhatsApp
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">O que é o <span className="text-blue-200">Sistema Diamond</span>?</h2>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            O Sistema Diamond é uma plataforma de conexões para WhatsApp com infraestrutura robusta, softwares premium inclusos e suporte técnico dedicado.
+            O Sistema Diamond é uma solução empresarial completa que transforma seu WhatsApp em uma poderosa ferramenta de relacionamento, automação e vendas, com infraestrutura robusta e alta escalabilidade.
           </p>
         </div>
 
@@ -81,8 +81,8 @@ const DiamondAbout = () => {
                     <Check className="h-5 w-5 text-blue-200" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">Softwares Premium</h3>
-                    <p className="text-blue-100">Tenha acesso a ferramentas como n8n, Redis, Evolution API, Dify e Typebot.</p>
+                    <h3 className="text-xl font-semibold mb-2">Automação Completa</h3>
+                    <p className="text-blue-100">Automatize atendimentos, vendas e processos com ferramentas premium já inclusas no pacote.</p>
                   </div>
                 </div>
                 
@@ -109,15 +109,15 @@ const DiamondAbout = () => {
             </div>
             
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-blue-200 mb-4">Para Empreendedores</h3>
+              <h3 className="text-2xl font-bold text-blue-200 mb-4">Diferenciais Exclusivos</h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
                   <div className="bg-blue-700 p-2 rounded-full">
                     <Check className="h-5 w-5 text-blue-200" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">Crescimento escalável</h3>
-                    <p className="text-blue-100">Comece com um plano básico e faça upgrade conforme seu negócio cresce.</p>
+                    <h3 className="text-xl font-semibold mb-2">Pacote Completo de Softwares</h3>
+                    <p className="text-blue-100">Evolution API, n8n, Typebot, Redis e mais, tudo já configurado e pronto para uso.</p>
                   </div>
                 </div>
                 
@@ -126,8 +126,8 @@ const DiamondAbout = () => {
                     <Check className="h-5 w-5 text-blue-200" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">Monitoramento constante</h3>
-                    <p className="text-blue-100">Sistemas de monitoramento em tempo real para garantir estabilidade e desempenho.</p>
+                    <h3 className="text-xl font-semibold mb-2">Alta Disponibilidade</h3>
+                    <p className="text-blue-100">Infraestrutura em nuvem de alto desempenho com monitoramento 24/7 e backup automático.</p>
                   </div>
                 </div>
                 
@@ -136,8 +136,8 @@ const DiamondAbout = () => {
                     <Check className="h-5 w-5 text-blue-200" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">Segurança avançada</h3>
-                    <p className="text-blue-100">Configurações robustas de segurança para proteger suas conexões e dados.</p>
+                    <h3 className="text-xl font-semibold mb-2">Implementação Rápida</h3>
+                    <p className="text-blue-100">Seu sistema funcionando em até 24 horas, sem complicações técnicas para você.</p>
                   </div>
                 </div>
                 
@@ -146,8 +146,8 @@ const DiamondAbout = () => {
                     <Check className="h-5 w-5 text-blue-200" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">Atualizações recorrentes</h3>
-                    <p className="text-blue-100">Mantenha-se sempre atualizado com as últimas versões e melhorias dos softwares.</p>
+                    <h3 className="text-xl font-semibold mb-2">Escalabilidade Garantida</h3>
+                    <p className="text-blue-100">Comece com o plano básico e escale facilmente conforme seu negócio cresce.</p>
                   </div>
                 </div>
               </div>
@@ -161,10 +161,10 @@ const DiamondAbout = () => {
               <Database className="h-10 w-10 text-blue-200" />
             </div>
             <div>
-              <h3 className="text-2xl font-bold mb-2">Implantação Rápida e Segura</h3>
+              <h3 className="text-2xl font-bold mb-2">Sistema Poderoso e Completo</h3>
               <p className="text-xl text-blue-100">
-                Instalação completa do Sistema Diamond em apenas <span className="text-blue-200 font-bold">24 horas</span>, 
-                com configuração e instruções inclusas para um início imediato.
+                O Sistema Diamond unifica gerenciamento de conexões, automação de processos e chatbots inteligentes em uma única solução, 
+                pronta para uso em <span className="text-blue-200 font-bold">24 horas</span>, sem necessidade de conhecimento técnico.
               </p>
             </div>
           </div>
