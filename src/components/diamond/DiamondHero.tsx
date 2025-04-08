@@ -18,36 +18,36 @@ const DiamondHero = () => {
       <div className="absolute -top-20 left-1/4 w-72 h-72 bg-indigo-100 rounded-full opacity-30 blur-3xl"></div>
       <div className="absolute bottom-10 left-10 w-80 h-80 bg-indigo-200 rounded-full opacity-30 blur-3xl"></div>
       
-      {/* Stats Section */}
-      <div className="container mx-auto max-w-6xl relative z-10 mb-12">
+      {/* Stats Section - Made thinner */}
+      <div className="container mx-auto max-w-6xl relative z-10 mb-8">
         <div className="bg-blue-600 rounded-2xl shadow-xl overflow-hidden">
           <div className="grid grid-cols-2 md:grid-cols-4">
-            <div className="stat-item border-r border-b md:border-b-0 border-blue-500 p-6 text-center">
+            <div className="stat-item border-r border-b md:border-b-0 border-blue-500 p-4 text-center">
               <div className="flex flex-col items-center">
-                <Server className="w-8 h-8 text-white mb-2" />
-                <div className="text-4xl font-bold text-white mb-1">430+</div>
-                <div className="text-blue-100">Conexões disponíveis</div>
+                <Server className="w-6 h-6 text-white mb-1" />
+                <div className="text-3xl font-bold text-white mb-0.5">430+</div>
+                <div className="text-blue-100 text-sm">Conexões disponíveis</div>
               </div>
             </div>
-            <div className="stat-item border-b md:border-b-0 md:border-r border-blue-500 p-6 text-center">
+            <div className="stat-item border-b md:border-b-0 md:border-r border-blue-500 p-4 text-center">
               <div className="flex flex-col items-center">
-                <Users className="w-8 h-8 text-white mb-2" />
-                <div className="text-4xl font-bold text-white mb-1">5+</div>
-                <div className="text-blue-100">Softwares inclusos</div>
+                <Users className="w-6 h-6 text-white mb-1" />
+                <div className="text-3xl font-bold text-white mb-0.5">5+</div>
+                <div className="text-blue-100 text-sm">Softwares inclusos</div>
               </div>
             </div>
-            <div className="stat-item border-r md:border-r border-blue-500 p-6 text-center">
+            <div className="stat-item border-r md:border-r border-blue-500 p-4 text-center">
               <div className="flex flex-col items-center">
-                <Clock className="w-8 h-8 text-white mb-2" />
-                <div className="text-4xl font-bold text-white mb-1">24/7</div>
-                <div className="text-blue-100">Monitoramento constante</div>
+                <Clock className="w-6 h-6 text-white mb-1" />
+                <div className="text-3xl font-bold text-white mb-0.5">24/7</div>
+                <div className="text-blue-100 text-sm">Monitoramento constante</div>
               </div>
             </div>
-            <div className="stat-item p-6 text-center">
+            <div className="stat-item p-4 text-center">
               <div className="flex flex-col items-center">
-                <Laptop className="w-8 h-8 text-white mb-2" />
-                <div className="text-4xl font-bold text-white mb-1">100%</div>
-                <div className="text-blue-100">Suporte especializado</div>
+                <Laptop className="w-6 h-6 text-white mb-1" />
+                <div className="text-3xl font-bold text-white mb-0.5">100%</div>
+                <div className="text-blue-100 text-sm">Suporte especializado</div>
               </div>
             </div>
           </div>
