@@ -92,9 +92,9 @@ const DiamondHero = () => {
               </div>
             </div>
             
-            {/* Redesigned Feature quick list with better styling to match the provided image */}
+            {/* Changed "Principais recursos" to "Bônus exclusivos" as requested */}
             <div className="bg-white mt-8 p-6 rounded-xl border border-blue-100 shadow-lg">
-              <div className="text-center mb-4 font-bold text-blue-800 text-lg">Principais recursos:</div>
+              <div className="text-center mb-4 font-bold text-blue-800 text-lg">Bônus exclusivos:</div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex items-center p-3 bg-blue-50 rounded-lg border border-blue-100 transition-all duration-300 hover:bg-blue-100">
                   <ChevronRight className="w-5 h-5 text-blue-500 mr-2" />
