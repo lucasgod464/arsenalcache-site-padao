@@ -1,0 +1,205 @@
+
+import React, { useState } from 'react';
+import { Check, MessageCircle, Server, Zap, BadgeCheck } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+
+const DiamondPlans = () => {
+  const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
+  
+  const commonBenefits = [
+    "Suporte dedicado e técnico",
+    "Instalação em servidores premium",
+    "Atualizações recorrentes",
+    "Monitoramento do sistema",
+    "Configurações de segurança avançadas"
+  ];
+  
+  const includedSoftware = [
+    "n8n",
+    "Redis",
+    "Evolution API",
+    "Dify",
+    "Typebot"
+  ];
+  
+  const plans = [
+    {
+      id: "30-connections",
+      name: "30 Conexões",
+      installationPrice: "R$ 1.998,80",
+      monthlyPrice: "Grátis no 1º ano",
+      regularPrice: "R$ 570,00 após 1 ano",
+      highlight: "Mensalidade grátis no primeiro ano",
+      description: "Perfeito para quem busca economia e eficiência.",
+      buttonText: "Contratar plano de 30 conexões",
+      whatsappMessage: "Olá! Estou interessado no plano de 30 conexões do Sistema Diamond. Pode me dar mais informações?"
+    },
+    {
+      id: "70-connections",
+      name: "70 Conexões",
+      installationPrice: "R$ 1.998,80",
+      monthlyPrice: "R$ 445,00 no 1º mês",
+      regularPrice: "R$ 900,00 após",
+      highlight: "Ideal para empresas em crescimento",
+      description: "Perfeito para quem precisa de mais conexões e quer um serviço robusto.",
+      buttonText: "Contratar plano de 70 conexões",
+      popular: true,
+      whatsappMessage: "Olá! Estou interessado no plano de 70 conexões do Sistema Diamond. Pode me dar mais informações?"
+    },
+    {
+      id: "130-connections",
+      name: "130 Conexões",
+      installationPrice: "R$ 1.998,80",
+      monthlyPrice: "R$ 1.400,00",
+      regularPrice: "",
+      highlight: "Alta capacidade para grandes operações",
+      description: "Plano completo perfeito para quem precisa de alta capacidade.",
+      buttonText: "Contratar plano de 130 conexões",
+      whatsappMessage: "Olá! Estou interessado no plano de 130 conexões do Sistema Diamond. Pode me dar mais informações?"
+    },
+    {
+      id: "430-connections",
+      name: "430 Conexões",
+      installationPrice: "R$ 1.998,80",
+      monthlyPrice: "R$ 3.500,00",
+      regularPrice: "",
+      highlight: "Máxima capacidade para operações robustas",
+      description: "Nosso plano mais robusto, ideal para grandes operações.",
+      buttonText: "Contratar plano de 430 conexões",
+      whatsappMessage: "Olá! Estou interessado no plano de 430 conexões do Sistema Diamond. Pode me dar mais informações?"
+    }
+  ];
+
+  return (
+    <section id="planos" className="py-20 px-4 bg-gradient-to-b from-white to-blue-50">
+      <div className="container mx-auto max-w-7xl">
+        <div className="text-center mb-16">
+          <Badge variant="outline" className="bg-blue-100 text-blue-800 border-blue-200 mb-4">
+            Planos e preços
+          </Badge>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Escolha o plano <span className="text-blue-600">ideal para você</span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Planos personalizados com instalação profissional e benefícios exclusivos para seu negócio.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {plans.map((plan) => (
+            <div key={plan.id} className="relative">
+              {plan.popular && (
+                <div className="absolute -top-4 -right-4 z-10 rotate-12">
+                  <div className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-xs font-bold px-6 py-1 rounded-full shadow-lg flex items-center gap-1">
+                    <BadgeCheck className="h-3 w-3" /> POPULAR <BadgeCheck className="h-3 w-3" />
+                  </div>
+                </div>
+              )}
+              
+              <Card 
+                className={`h-full overflow-hidden border border-blue-100 hover:border-blue-300 transition-all duration-300 ${
+                  selectedPlan === plan.id ? 'ring-2 ring-blue-500 shadow-lg' : 'hover:shadow-md'
+                }`}
+                onClick={() => setSelectedPlan(plan.id)}
+              >
+                <CardHeader className="pb-6 bg-gradient-to-r from-blue-50 to-blue-100/50 border-b border-blue-100">
+                  <CardTitle className="text-xl font-bold text-blue-800">
+                    {plan.name}
+                  </CardTitle>
+                  <CardDescription className="text-blue-600">
+                    {plan.highlight}
+                  </CardDescription>
+                  <div className="mt-4">
+                    <div className="text-3xl font-bold text-gray-900">
+                      {plan.installationPrice}
+                    </div>
+                    <div className="text-sm text-gray-600 mt-1">
+                      Instalação (até 12x sem juros)
+                    </div>
+                  </div>
+                  <div className="mt-3 pt-3 border-t border-blue-100">
+                    <div className="text-lg font-semibold text-gray-900">
+                      {plan.monthlyPrice}
+                    </div>
+                    {plan.regularPrice && (
+                      <div className="text-sm text-gray-600 mt-1">
+                        {plan.regularPrice}
+                      </div>
+                    )}
+                  </div>
+                </CardHeader>
+                <CardContent className="pt-6">
+                  <p className="mb-4 text-gray-700">{plan.description}</p>
+                  
+                  <div className="mt-6">
+                    <h4 className="font-semibold mb-3 text-blue-800 flex items-center">
+                      <Server className="h-4 w-4 text-blue-500 mr-2" />
+                      Softwares inclusos:
+                    </h4>
+                    <ul className="space-y-2 mb-6">
+                      {includedSoftware.map((software, index) => (
+                        <li key={index} className="flex items-start gap-2">
+                          <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                          <span className="text-gray-700">{software}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div className="mt-4">
+                    <h4 className="font-semibold mb-3 text-blue-800 flex items-center">
+                      <Zap className="h-4 w-4 text-blue-500 mr-2" />
+                      Benefícios exclusivos:
+                    </h4>
+                    <ul className="space-y-2">
+                      {commonBenefits.map((benefit, index) => (
+                        <li key={index} className="flex items-start gap-2">
+                          <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                          <span className="text-gray-700">{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </CardContent>
+                <CardFooter className="pt-4 pb-8">
+                  <Button 
+                    asChild
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-5 rounded-full"
+                  >
+                    <a 
+                      href={`https://api.whatsapp.com/send?phone=5512981156856&text=${encodeURIComponent(plan.whatsappMessage)}`}
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
+                      {plan.buttonText}
+                    </a>
+                  </Button>
+                </CardFooter>
+              </Card>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <Button 
+            asChild
+            className="bg-green-500 hover:bg-green-600 text-white font-medium rounded-full px-8 py-5 shadow-md hover:shadow-lg flex items-center gap-2"
+          >
+            <a 
+              href="https://api.whatsapp.com/send?phone=5512981156856" 
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MessageCircle className="mr-2 h-5 w-5" />
+              Falar com um consultor no WhatsApp
+            </a>
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default DiamondPlans;
