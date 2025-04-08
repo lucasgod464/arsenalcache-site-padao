@@ -38,7 +38,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-// Tipo para a solicitação de demonstração
+// Updated interface to include the system property
 interface DemoRequest {
   id: string;
   name: string;
@@ -80,11 +80,11 @@ const DemoRequestsTable = ({ defaultSystem = 'all' }: DemoRequestsTableProps) =>
 
       if (error) throw error;
       
-      // Garantir que o status está entre os tipos válidos
+      // Garantir que o status e system estão entre os tipos válidos
       const typedData = (data || []).map(item => ({
         ...item,
         status: (item.status as 'pending' | 'contacted' | 'completed' | 'canceled') || 'pending',
-        system: (item.system as 'golden' | 'diamond') || null
+        system: (item.system as 'golden' | 'diamond' | null)
       }));
       
       setRequests(typedData);
