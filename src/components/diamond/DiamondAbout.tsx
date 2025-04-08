@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Check, Database, Server, Zap, Shield, Cloud } from 'lucide-react';
+import { Check, Database, Server, Zap, Shield, Cloud, ArrowRight } from 'lucide-react';
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 
