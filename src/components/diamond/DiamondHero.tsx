@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ChevronRight, MessageSquare, Zap, BarChart3, ShieldCheck, Rocket, Server } from 'lucide-react';
@@ -49,9 +50,7 @@ const DiamondHero = () => {
             <h1 className="text-5xl md:text-6xl font-extrabold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-indigo-600">
               Transforme seu <br/>
               Atendimento com<br/>
-              <span className="relative inline-block">
-                <span className="text-black font-bold">WhatsApp</span>
-              </span><br/>
+              <span className="text-black">WhatsApp</span><br/>
               Profissional
             </h1>
             
@@ -115,25 +114,25 @@ const DiamondHero = () => {
               </div>
             </div>
             
-            {/* Feature quick list */}
-            <div className="bg-white/80 backdrop-blur-sm mt-8 p-4 rounded-xl border border-blue-100 shadow-md">
-              <div className="text-center mb-3 font-semibold text-blue-800">Principais recursos:</div>
-              <div className="grid grid-cols-2 gap-3">
-                <div className="flex items-center">
-                  <ChevronRight className="w-4 h-4 text-blue-500" />
-                  <span className="text-sm">Evolution API</span>
+            {/* Enhanced Feature quick list with better styling */}
+            <div className="bg-white mt-8 p-6 rounded-xl border border-blue-100 shadow-lg">
+              <div className="text-center mb-4 font-bold text-blue-800 text-lg">Principais recursos:</div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="flex items-center p-3 bg-blue-50 rounded-lg border border-blue-100 transition-all duration-300 hover:bg-blue-100">
+                  <ChevronRight className="w-5 h-5 text-blue-500 mr-2" />
+                  <span className="font-medium">Evolution API</span>
                 </div>
-                <div className="flex items-center">
-                  <ChevronRight className="w-4 h-4 text-blue-500" />
-                  <span className="text-sm">Redis</span>
+                <div className="flex items-center p-3 bg-blue-50 rounded-lg border border-blue-100 transition-all duration-300 hover:bg-blue-100">
+                  <ChevronRight className="w-5 h-5 text-blue-500 mr-2" />
+                  <span className="font-medium">Redis</span>
                 </div>
-                <div className="flex items-center">
-                  <ChevronRight className="w-4 h-4 text-blue-500" />
-                  <span className="text-sm">Typebot</span>
+                <div className="flex items-center p-3 bg-blue-50 rounded-lg border border-blue-100 transition-all duration-300 hover:bg-blue-100">
+                  <ChevronRight className="w-5 h-5 text-blue-500 mr-2" />
+                  <span className="font-medium">Typebot</span>
                 </div>
-                <div className="flex items-center">
-                  <ChevronRight className="w-4 h-4 text-blue-500" />
-                  <span className="text-sm">n8n</span>
+                <div className="flex items-center p-3 bg-blue-50 rounded-lg border border-blue-100 transition-all duration-300 hover:bg-blue-100">
+                  <ChevronRight className="w-5 h-5 text-blue-500 mr-2" />
+                  <span className="font-medium">n8n</span>
                 </div>
               </div>
             </div>

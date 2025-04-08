@@ -38,7 +38,7 @@ const DiamondSystem = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <div className="min-h-screen bg-white">
       <Helmet>
         <title>Sistema Diamond | Planos de Conexões para WhatsApp</title>
         <meta name="description" content="Sistema Diamond oferece planos de conexões para WhatsApp com diferentes capacidades e benefícios. Conheça nossos planos e escolha o ideal para seu negócio." />

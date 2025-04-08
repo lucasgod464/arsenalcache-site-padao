@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Check, MessageCircle, Server, Zap, BadgeCheck, Star } from 'lucide-react';
+import { Check, MessageCircle, Server, Zap, BadgeCheck, Star, AlertTriangle } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -97,6 +97,14 @@ const DiamondPlans = () => {
                 </div>
               </div>
               
+              {/* Migration Notice Alert */}
+              <div className="mb-6 p-4 bg-amber-50 border border-amber-200 rounded-lg flex items-start gap-3">
+                <AlertTriangle className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
+                <p className="text-amber-800 text-sm">
+                  <span className="font-semibold">Observação:</span> Normalmente, nossos clientes migram para o plano de 70 conexões após 3 a 4 meses de uso, conforme o crescimento do negócio.
+                </p>
+              </div>
+              
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
                 <div>
                   <div className="flex items-center mb-3">
@@ -154,7 +162,7 @@ const DiamondPlans = () => {
                     </li>
                     <li className="flex items-start gap-2">
                       <Star className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700">Após 1 ano, apenas R$ 570,00/mês (custo de apenas R$ 19,00 por conexão)</span>
+                      <span className="text-gray-700">Após 1 ano, apenas R$ 570,00/mês</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Star className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
