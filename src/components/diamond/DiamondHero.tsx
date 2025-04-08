@@ -18,7 +18,7 @@ const DiamondHero = () => {
       <div className="absolute bottom-10 left-10 w-80 h-80 bg-indigo-200 rounded-full opacity-30 blur-3xl"></div>
       
       <div className="container mx-auto max-w-7xl relative z-10">
-        <div className="text-center mb-4">
+        <div className="text-center mb-6">
           <span className="inline-block py-1 px-4 rounded-full bg-blue-600 text-white text-sm font-medium mb-2">
             SISTEMA DIAMOND
           </span>
