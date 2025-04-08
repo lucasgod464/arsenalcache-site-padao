@@ -19,28 +19,6 @@ const DiamondHero = () => {
       <div className="absolute bottom-10 left-10 w-80 h-80 bg-indigo-200 rounded-full opacity-30 blur-3xl"></div>
       
       <div className="container mx-auto max-w-7xl relative z-10">
-        {/* Stats band at the top */}
-        <div className="mb-16 p-4 bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-blue-100 fade-in-section">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div className="flex flex-col items-center">
-              <div className="text-3xl font-bold text-blue-600 mb-1">430+</div>
-              <div className="text-gray-600 text-sm">Conexões Disponíveis</div>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="text-3xl font-bold text-blue-600 mb-1">24/7</div>
-              <div className="text-gray-600 text-sm">Monitoramento</div>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="text-3xl font-bold text-blue-600 mb-1">5+</div>
-              <div className="text-gray-600 text-sm">Softwares Inclusos</div>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="text-3xl font-bold text-blue-600 mb-1">100%</div>
-              <div className="text-gray-600 text-sm">Suporte Técnico</div>
-            </div>
-          </div>
-        </div>
-      
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="fade-in-section">
             <div className="inline-flex items-center bg-blue-100 rounded-full px-4 py-2 text-blue-700 font-medium mb-6 animate-pulse">
