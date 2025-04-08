@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import Navbar from '@/components/Navbar';
@@ -17,12 +16,10 @@ import DetailedFeaturesList from '@/components/DetailedFeaturesList';
 
 const DiamondSystem = () => {
   useEffect(() => {
-    // Initialize fade-in animations with better visibility
     const handleScroll = () => {
       const elements = document.querySelectorAll('.fade-in-section');
       elements.forEach(element => {
         const position = element.getBoundingClientRect();
-        // Check if the element is in the viewport
         if(position.top < window.innerHeight - 50) {
           element.classList.add('is-visible');
         }
@@ -30,7 +27,6 @@ const DiamondSystem = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    // Trigger on initial load
     setTimeout(handleScroll, 100);
     
     return () => {
@@ -88,9 +84,9 @@ const DiamondSystem = () => {
       
       <Navbar />
       <DiamondHero />
-      <DetailedFeaturesList />
-      <DiamondAbout />
       <DiamondFeatures />
+      <DiamondAbout />
+      <DetailedFeaturesList />
       <DiamondPlans />
       <RoiCalculator />
       <DiamondTestimonials />
