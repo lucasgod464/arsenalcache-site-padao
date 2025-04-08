@@ -1,38 +1,10 @@
 
-import React, { useState, useEffect } from 'react';
-import { Check, Database, Server, Zap, Shield, Cloud, Users, BarChart, ArrowRight } from 'lucide-react';
+import React from 'react';
+import { Check, Database, Server, Zap, Shield, Cloud } from 'lucide-react';
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 
 const DiamondAbout = () => {
-  const [channelsCount, setChannelsCount] = useState(0);
-  const [subscribersCount, setSubscribersCount] = useState(0);
-  const [messagesCount, setMessagesCount] = useState(0);
-
-  useEffect(() => {
-    const animateNumber = (from, to, setter, duration = 1500) => {
-      const startTime = Date.now();
-      const updateNumber = () => {
-        const currentTime = Date.now();
-        const elapsedTime = currentTime - startTime;
-        if (elapsedTime < duration) {
-          const progress = elapsedTime / duration;
-          const currentValue = Math.floor(from + progress * (to - from));
-          setter(currentValue);
-          requestAnimationFrame(updateNumber);
-        } else {
-          setter(to);
-        }
-      };
-      requestAnimationFrame(updateNumber);
-    };
-
-    // Start animations with a slight delay between each
-    setTimeout(() => animateNumber(0, 28450, setChannelsCount), 300);
-    setTimeout(() => animateNumber(0, 1320, setSubscribersCount), 500);
-    setTimeout(() => animateNumber(0, 280, setMessagesCount), 700);
-  }, []);
-
   return (
     <section id="sobre-diamond" className="py-24 px-4 relative overflow-hidden">
       {/* Solid background with better visibility */}
@@ -61,36 +33,6 @@ const DiamondAbout = () => {
             <span className="font-semibold text-white bg-blue-500/70 px-2 py-1 rounded mx-1">poderosa ferramenta</span> de relacionamento, 
             automação e vendas, com infraestrutura robusta e alta escalabilidade.
           </p>
-        </div>
-
-        {/* Stats cards with improved visuals and 3D effects */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-8 rounded-xl text-center border border-white/20 shadow-xl transform transition-all duration-300 hover:-translate-y-2 hover:shadow-blue-500/30 relative overflow-hidden group">
-            <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="mb-4 mx-auto bg-gradient-to-br from-blue-300/40 to-blue-200/40 rounded-full w-16 h-16 flex items-center justify-center">
-              <Cloud className="h-8 w-8 text-white" />
-            </div>
-            <div className="text-3xl md:text-5xl font-bold text-white mb-2">+ {channelsCount.toLocaleString()}</div>
-            <div className="text-blue-100 font-medium">Conexões gerenciadas</div>
-          </div>
-          
-          <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-8 rounded-xl text-center border border-white/20 shadow-xl transform transition-all duration-300 hover:-translate-y-2 hover:shadow-blue-500/30 relative overflow-hidden group">
-            <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="mb-4 mx-auto bg-gradient-to-br from-blue-300/40 to-blue-200/40 rounded-full w-16 h-16 flex items-center justify-center">
-              <Users className="h-8 w-8 text-white" />
-            </div>
-            <div className="text-3xl md:text-5xl font-bold text-white mb-2">+ {subscribersCount.toLocaleString()}</div>
-            <div className="text-blue-100 font-medium">Clientes atendidos</div>
-          </div>
-          
-          <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-8 rounded-xl text-center border border-white/20 shadow-xl transform transition-all duration-300 hover:-translate-y-2 hover:shadow-blue-500/30 relative overflow-hidden group">
-            <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="mb-4 mx-auto bg-gradient-to-br from-blue-300/40 to-blue-200/40 rounded-full w-16 h-16 flex items-center justify-center">
-              <BarChart className="h-8 w-8 text-white" />
-            </div>
-            <div className="text-3xl md:text-5xl font-bold text-white mb-2">+ {messagesCount} k</div>
-            <div className="text-blue-100 font-medium">Mensagens processadas por dia</div>
-          </div>
         </div>
 
         {/* Feature grids with enhanced visuals - more solid background */}

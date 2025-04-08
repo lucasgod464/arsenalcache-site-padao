@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Check, ChevronDown, ChevronUp } from 'lucide-react';
+import { Check, ChevronDown, ChevronUp, Zap } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const featureCategories = [
@@ -88,14 +88,18 @@ const DetailedFeaturesList = () => {
 
   return (
     <section id="funcionalidades" className="features-gradient py-20 px-4">
-      <div className="container mx-auto">
+      <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16 fade-in-section">
-          <span className="inline-block py-1 px-3 rounded-full bg-arsenal-light/20 text-arsenal-dark text-sm font-medium mb-4">
-            Funcionalidades completas
-          </span>
-          <h2 className="section-title">Tudo que você vai <span className="text-gradient">ter acesso</span></h2>
-          <p className="section-subtitle">
-            Explore todas as poderosas funcionalidades inclusas no MultiAtendimento da Arsenal Cache.
+          <div className="inline-flex items-center bg-blue-100 rounded-full px-4 py-2 text-blue-700 font-medium mb-4">
+            <Zap className="w-4 h-4 mr-2" /> Recursos Exclusivos
+          </div>
+          
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-indigo-600">
+            Tudo que você vai ter acesso
+          </h2>
+          
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+            Explore todas as poderosas funcionalidades inclusas no Sistema Diamond.
           </p>
         </div>
 

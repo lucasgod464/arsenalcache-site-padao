@@ -88,9 +88,9 @@ const DiamondSystem = () => {
       
       <Navbar />
       <DiamondHero />
+      <DetailedFeaturesList />
       <DiamondAbout />
       <DiamondFeatures />
-      <DetailedFeaturesList />
       <DiamondPlans />
       <RoiCalculator />
       <DiamondTestimonials />
