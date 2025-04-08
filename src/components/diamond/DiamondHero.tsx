@@ -114,7 +114,7 @@ const DiamondHero = () => {
               </div>
             </div>
             
-            {/* Enhanced Feature quick list with better styling */}
+            {/* Redesigned Feature quick list with better styling to match the provided image */}
             <div className="bg-white mt-8 p-6 rounded-xl border border-blue-100 shadow-lg">
               <div className="text-center mb-4 font-bold text-blue-800 text-lg">Principais recursos:</div>
               <div className="grid grid-cols-2 gap-4">

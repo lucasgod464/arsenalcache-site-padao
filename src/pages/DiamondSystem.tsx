@@ -13,6 +13,7 @@ import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
 import FloatingCta from '@/components/FloatingCta';
+import DetailedFeaturesList from '@/components/DetailedFeaturesList';
 
 const DiamondSystem = () => {
   useEffect(() => {
@@ -78,6 +79,9 @@ const DiamondSystem = () => {
             background-size: 200% 100%;
             animation: shimmer 3s infinite;
           }
+          .features-gradient {
+            background: linear-gradient(to bottom, #f0f4ff, #ffffff);
+          }
           `}
         </style>
       </Helmet>
@@ -86,6 +90,7 @@ const DiamondSystem = () => {
       <DiamondHero />
       <DiamondAbout />
       <DiamondFeatures />
+      <DetailedFeaturesList />
       <DiamondPlans />
       <RoiCalculator />
       <DiamondTestimonials />
