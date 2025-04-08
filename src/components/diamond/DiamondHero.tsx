@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { ChevronRight, MessageSquare, Zap, BarChart3, ShieldCheck, Rocket, Server } from 'lucide-react';
+import { ChevronRight, MessageSquare, Zap, BarChart3, ShieldCheck, Rocket, Server, Laptop, Users, Clock } from 'lucide-react';
 
 const DiamondHero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -12,11 +12,47 @@ const DiamondHero = () => {
   };
 
   return (
-    <section className="py-24 lg:py-32 px-4 relative overflow-hidden bg-gradient-to-b from-blue-100 via-blue-50 to-white">
+    <section className="pt-24 lg:pt-32 pb-24 lg:pb-32 px-4 relative overflow-hidden bg-gradient-to-b from-blue-100 via-blue-50 to-white">
       {/* Enhanced background elements */}
       <div className="absolute top-20 right-10 w-64 h-64 bg-blue-200 rounded-full opacity-20 blur-3xl animate-pulse"></div>
       <div className="absolute -top-20 left-1/4 w-72 h-72 bg-indigo-100 rounded-full opacity-30 blur-3xl"></div>
       <div className="absolute bottom-10 left-10 w-80 h-80 bg-indigo-200 rounded-full opacity-30 blur-3xl"></div>
+      
+      {/* Stats Section */}
+      <div className="container mx-auto max-w-6xl relative z-10 mb-12">
+        <div className="bg-blue-600 rounded-2xl shadow-xl overflow-hidden">
+          <div className="grid grid-cols-2 md:grid-cols-4">
+            <div className="stat-item border-r border-b md:border-b-0 border-blue-500 p-6 text-center">
+              <div className="flex flex-col items-center">
+                <Server className="w-8 h-8 text-white mb-2" />
+                <div className="text-4xl font-bold text-white mb-1">430+</div>
+                <div className="text-blue-100">Conexões disponíveis</div>
+              </div>
+            </div>
+            <div className="stat-item border-b md:border-b-0 md:border-r border-blue-500 p-6 text-center">
+              <div className="flex flex-col items-center">
+                <Users className="w-8 h-8 text-white mb-2" />
+                <div className="text-4xl font-bold text-white mb-1">5+</div>
+                <div className="text-blue-100">Softwares inclusos</div>
+              </div>
+            </div>
+            <div className="stat-item border-r md:border-r border-blue-500 p-6 text-center">
+              <div className="flex flex-col items-center">
+                <Clock className="w-8 h-8 text-white mb-2" />
+                <div className="text-4xl font-bold text-white mb-1">24/7</div>
+                <div className="text-blue-100">Monitoramento constante</div>
+              </div>
+            </div>
+            <div className="stat-item p-6 text-center">
+              <div className="flex flex-col items-center">
+                <Laptop className="w-8 h-8 text-white mb-2" />
+                <div className="text-4xl font-bold text-white mb-1">100%</div>
+                <div className="text-blue-100">Suporte especializado</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       
       <div className="container mx-auto max-w-7xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -92,7 +128,7 @@ const DiamondHero = () => {
               </div>
             </div>
             
-            {/* Changed "Principais recursos" to "Bônus exclusivos" as requested */}
+            {/* Bônus exclusivos */}
             <div className="bg-white mt-8 p-6 rounded-xl border border-blue-100 shadow-lg">
               <div className="text-center mb-4 font-bold text-blue-800 text-lg">Bônus exclusivos:</div>
               <div className="grid grid-cols-2 gap-4">
