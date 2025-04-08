@@ -50,8 +50,8 @@ const DiamondHero = () => {
             <h1 className="text-5xl md:text-6xl font-extrabold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-indigo-600">
               Transforme seu <br/>
               Atendimento com<br/>
-              <span className="relative">
-                WhatsApp
+              <span className="relative inline-block">
+                <span className="bg-gradient-to-r from-green-500 to-blue-600 text-white px-2 py-1 rounded-md">WhatsApp</span>
                 <span className="absolute -bottom-2 left-0 w-full h-2 bg-blue-200/70 -rotate-1"></span>
               </span><br/>
               Profissional

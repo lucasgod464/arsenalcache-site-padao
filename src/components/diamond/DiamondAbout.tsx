@@ -36,77 +36,78 @@ const DiamondAbout = () => {
   return (
     <section id="sobre-diamond" className="py-24 px-4 relative overflow-hidden">
       {/* Enhanced background with deeper gradients and patterns */}
-      <div className="absolute inset-0 bg-gradient-to-b from-indigo-900 via-blue-800 to-blue-900 -z-10"></div>
-      <div className="absolute top-0 right-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==')] opacity-15 -z-10"></div>
-      <div className="absolute top-40 right-20 w-80 h-80 bg-blue-500/30 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 left-40 w-64 h-64 bg-indigo-500/30 rounded-full blur-3xl"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-800 via-blue-700 to-blue-900 -z-10"></div>
+      <div className="absolute top-0 right-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4yKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==')] opacity-30 -z-10"></div>
+      <div className="absolute top-40 right-20 w-80 h-80 bg-blue-400/30 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 left-40 w-64 h-64 bg-indigo-400/30 rounded-full blur-3xl"></div>
       
       <div className="container mx-auto max-w-7xl relative z-10">
         <div className="text-center mb-16 fade-in-section">
-          <div className="inline-flex items-center bg-gradient-to-r from-blue-600/40 to-blue-400/40 backdrop-blur-sm rounded-full px-4 py-2 text-blue-50 font-medium mb-4 shadow-lg shadow-blue-900/20 border border-blue-400/20">
+          <div className="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-blue-50 font-medium mb-4 shadow-lg shadow-blue-900/20 border border-white/20">
             <Zap className="w-4 h-4 mr-2 text-blue-200" /> 
             Conheça nossa plataforma
           </div>
           
-          <h2 className="text-4xl md:text-6xl font-bold mb-8 text-white drop-shadow-md">
+          <h2 className="text-5xl md:text-7xl font-extrabold mb-8 text-white drop-shadow-md">
             O que é o <span className="relative inline-block">
-              <span className="relative z-10 bg-gradient-to-r from-blue-200 to-indigo-200 bg-clip-text text-transparent font-extrabold">Sistema Diamond</span>
-              <span className="absolute -bottom-2 left-0 w-full h-3 bg-gradient-to-r from-blue-500/60 to-indigo-500/60 -rotate-1 rounded-lg"></span>
+              <span className="relative z-10 bg-gradient-to-r from-blue-200 via-white to-indigo-200 bg-clip-text text-transparent font-extrabold">Sistema Diamond</span>
+              <span className="absolute -bottom-1 left-0 w-full h-3 bg-gradient-to-r from-blue-500/60 to-indigo-500/60 -rotate-1 rounded-lg"></span>
             </span>?
           </h2>
           
-          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-            O Sistema Diamond é uma solução empresarial completa que transforma seu WhatsApp em uma 
-            <span className="font-semibold text-white px-1">poderosa ferramenta</span> de relacionamento, 
+          <p className="text-xl md:text-2xl text-white max-w-4xl mx-auto leading-relaxed">
+            O Sistema Diamond é uma <span className="font-semibold text-white bg-blue-500/30 px-2 py-1 rounded">solução empresarial completa</span> que 
+            transforma seu WhatsApp em uma 
+            <span className="font-semibold text-white bg-blue-500/30 px-2 py-1 rounded mx-1">poderosa ferramenta</span> de relacionamento, 
             automação e vendas, com infraestrutura robusta e alta escalabilidade.
           </p>
         </div>
 
         {/* Stats cards with improved visuals and 3D effects */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <div className="bg-gradient-to-br from-blue-700 to-indigo-800 p-8 rounded-xl text-center border border-blue-400/20 shadow-xl transform transition-all duration-300 hover:-translate-y-2 hover:shadow-blue-500/10 relative overflow-hidden group">
-            <div className="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="mb-4 mx-auto bg-gradient-to-br from-blue-500/40 to-blue-400/40 rounded-full w-16 h-16 flex items-center justify-center">
-              <Cloud className="h-8 w-8 text-blue-100" />
+          <div className="bg-gradient-to-br from-blue-600 to-indigo-700 p-8 rounded-xl text-center border border-white/20 shadow-xl transform transition-all duration-300 hover:-translate-y-2 hover:shadow-blue-500/30 relative overflow-hidden group">
+            <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="mb-4 mx-auto bg-gradient-to-br from-blue-400/40 to-blue-300/40 rounded-full w-16 h-16 flex items-center justify-center">
+              <Cloud className="h-8 w-8 text-white" />
             </div>
             <div className="text-3xl md:text-5xl font-bold text-white mb-2">+ {channelsCount.toLocaleString()}</div>
-            <div className="text-blue-200 font-medium">Conexões gerenciadas</div>
+            <div className="text-blue-100 font-medium">Conexões gerenciadas</div>
           </div>
           
-          <div className="bg-gradient-to-br from-blue-700 to-indigo-800 p-8 rounded-xl text-center border border-blue-400/20 shadow-xl transform transition-all duration-300 hover:-translate-y-2 hover:shadow-blue-500/10 relative overflow-hidden group">
-            <div className="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="mb-4 mx-auto bg-gradient-to-br from-blue-500/40 to-blue-400/40 rounded-full w-16 h-16 flex items-center justify-center">
-              <Users className="h-8 w-8 text-blue-100" />
+          <div className="bg-gradient-to-br from-blue-600 to-indigo-700 p-8 rounded-xl text-center border border-white/20 shadow-xl transform transition-all duration-300 hover:-translate-y-2 hover:shadow-blue-500/30 relative overflow-hidden group">
+            <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="mb-4 mx-auto bg-gradient-to-br from-blue-400/40 to-blue-300/40 rounded-full w-16 h-16 flex items-center justify-center">
+              <Users className="h-8 w-8 text-white" />
             </div>
             <div className="text-3xl md:text-5xl font-bold text-white mb-2">+ {subscribersCount.toLocaleString()}</div>
-            <div className="text-blue-200 font-medium">Clientes atendidos</div>
+            <div className="text-blue-100 font-medium">Clientes atendidos</div>
           </div>
           
-          <div className="bg-gradient-to-br from-blue-700 to-indigo-800 p-8 rounded-xl text-center border border-blue-400/20 shadow-xl transform transition-all duration-300 hover:-translate-y-2 hover:shadow-blue-500/10 relative overflow-hidden group">
-            <div className="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="mb-4 mx-auto bg-gradient-to-br from-blue-500/40 to-blue-400/40 rounded-full w-16 h-16 flex items-center justify-center">
-              <BarChart className="h-8 w-8 text-blue-100" />
+          <div className="bg-gradient-to-br from-blue-600 to-indigo-700 p-8 rounded-xl text-center border border-white/20 shadow-xl transform transition-all duration-300 hover:-translate-y-2 hover:shadow-blue-500/30 relative overflow-hidden group">
+            <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="mb-4 mx-auto bg-gradient-to-br from-blue-400/40 to-blue-300/40 rounded-full w-16 h-16 flex items-center justify-center">
+              <BarChart className="h-8 w-8 text-white" />
             </div>
             <div className="text-3xl md:text-5xl font-bold text-white mb-2">+ {messagesCount} k</div>
-            <div className="text-blue-200 font-medium">Mensagens processadas por dia</div>
+            <div className="text-blue-100 font-medium">Mensagens processadas por dia</div>
           </div>
         </div>
 
         {/* Feature grids with enhanced visuals */}
-        <div className="bg-gradient-to-r from-blue-900/80 to-indigo-900/80 backdrop-blur-xl rounded-2xl p-8 mb-16 border border-blue-400/20 shadow-xl">
+        <div className="bg-gradient-to-r from-blue-700/80 to-indigo-700/80 backdrop-blur-xl rounded-2xl p-8 mb-16 border border-white/20 shadow-xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-8">
               <div>
                 <h3 className="text-2xl font-bold text-white mb-2 flex items-center">
-                  <Shield className="h-6 w-6 mr-2 text-blue-300" />
+                  <Shield className="h-6 w-6 mr-2 text-blue-200" />
                   Para Empresas
                 </h3>
-                <Separator className="bg-blue-400/30 my-3" />
+                <Separator className="bg-white/30 my-3" />
               </div>
               
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="bg-gradient-to-br from-blue-500 to-indigo-500 p-2 rounded-full shadow-md shadow-blue-900/20">
+                  <div className="bg-gradient-to-br from-blue-400 to-indigo-400 p-2 rounded-full shadow-md shadow-blue-900/20">
                     <Check className="h-5 w-5 text-white" />
                   </div>
                   <div>
@@ -116,7 +117,7 @@ const DiamondAbout = () => {
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <div className="bg-gradient-to-br from-blue-500 to-indigo-500 p-2 rounded-full shadow-md shadow-blue-900/20">
+                  <div className="bg-gradient-to-br from-blue-400 to-indigo-400 p-2 rounded-full shadow-md shadow-blue-900/20">
                     <Check className="h-5 w-5 text-white" />
                   </div>
                   <div>
@@ -126,7 +127,7 @@ const DiamondAbout = () => {
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <div className="bg-gradient-to-br from-blue-500 to-indigo-500 p-2 rounded-full shadow-md shadow-blue-900/20">
+                  <div className="bg-gradient-to-br from-blue-400 to-indigo-400 p-2 rounded-full shadow-md shadow-blue-900/20">
                     <Check className="h-5 w-5 text-white" />
                   </div>
                   <div>
@@ -136,7 +137,7 @@ const DiamondAbout = () => {
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <div className="bg-gradient-to-br from-blue-500 to-indigo-500 p-2 rounded-full shadow-md shadow-blue-900/20">
+                  <div className="bg-gradient-to-br from-blue-400 to-indigo-400 p-2 rounded-full shadow-md shadow-blue-900/20">
                     <Check className="h-5 w-5 text-white" />
                   </div>
                   <div>
@@ -150,15 +151,15 @@ const DiamondAbout = () => {
             <div className="space-y-8">
               <div>
                 <h3 className="text-2xl font-bold text-white mb-2 flex items-center">
-                  <Server className="h-6 w-6 mr-2 text-blue-300" />
+                  <Server className="h-6 w-6 mr-2 text-blue-200" />
                   Diferenciais Exclusivos
                 </h3>
-                <Separator className="bg-blue-400/30 my-3" />
+                <Separator className="bg-white/30 my-3" />
               </div>
               
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="bg-gradient-to-br from-blue-500 to-indigo-500 p-2 rounded-full shadow-md shadow-blue-900/20">
+                  <div className="bg-gradient-to-br from-blue-400 to-indigo-400 p-2 rounded-full shadow-md shadow-blue-900/20">
                     <Check className="h-5 w-5 text-white" />
                   </div>
                   <div>
@@ -168,7 +169,7 @@ const DiamondAbout = () => {
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <div className="bg-gradient-to-br from-blue-500 to-indigo-500 p-2 rounded-full shadow-md shadow-blue-900/20">
+                  <div className="bg-gradient-to-br from-blue-400 to-indigo-400 p-2 rounded-full shadow-md shadow-blue-900/20">
                     <Check className="h-5 w-5 text-white" />
                   </div>
                   <div>
@@ -178,7 +179,7 @@ const DiamondAbout = () => {
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <div className="bg-gradient-to-br from-blue-500 to-indigo-500 p-2 rounded-full shadow-md shadow-blue-900/20">
+                  <div className="bg-gradient-to-br from-blue-400 to-indigo-400 p-2 rounded-full shadow-md shadow-blue-900/20">
                     <Check className="h-5 w-5 text-white" />
                   </div>
                   <div>
@@ -188,7 +189,7 @@ const DiamondAbout = () => {
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <div className="bg-gradient-to-br from-blue-500 to-indigo-500 p-2 rounded-full shadow-md shadow-blue-900/20">
+                  <div className="bg-gradient-to-br from-blue-400 to-indigo-400 p-2 rounded-full shadow-md shadow-blue-900/20">
                     <Check className="h-5 w-5 text-white" />
                   </div>
                   <div>
@@ -202,19 +203,19 @@ const DiamondAbout = () => {
         </div>
 
         {/* Bottom highlight section with enhanced call-to-action */}
-        <div className="bg-gradient-to-r from-blue-700/80 to-indigo-700/80 backdrop-blur-xl rounded-2xl p-8 border border-blue-400/20 shadow-xl">
+        <div className="bg-gradient-to-r from-blue-600/80 to-indigo-600/80 backdrop-blur-xl rounded-2xl p-8 border border-white/20 shadow-xl">
           <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
-            <div className="bg-gradient-to-br from-blue-500 to-indigo-600 p-6 rounded-full shadow-lg">
+            <div className="bg-gradient-to-br from-blue-400 to-indigo-500 p-6 rounded-full shadow-lg glow-animation">
               <Database className="h-12 w-12 text-white" />
             </div>
             <div className="flex-1">
               <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white">Sistema Poderoso e Completo</h3>
               <p className="text-xl text-blue-100 mb-6">
                 O Sistema Diamond unifica gerenciamento de conexões, automação de processos e chatbots inteligentes em uma única solução, 
-                pronta para uso em <span className="text-white font-bold">24 horas</span>, sem necessidade de conhecimento técnico.
+                pronta para uso em <span className="text-white font-bold bg-blue-500/30 px-2 rounded">24 horas</span>, sem necessidade de conhecimento técnico.
               </p>
               <Button 
-                className="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white px-6 py-6 h-auto rounded-full shadow-lg shadow-blue-900/30 transition-all duration-300 hover:-translate-y-1 group"
+                className="bg-gradient-to-r from-white to-blue-100 hover:from-white hover:to-blue-200 text-blue-800 px-6 py-6 h-auto rounded-full shadow-lg shadow-blue-900/30 transition-all duration-300 hover:-translate-y-1 group"
                 onClick={() => {
                   const plansSection = document.getElementById('planos');
                   if (plansSection) {
@@ -229,6 +230,18 @@ const DiamondAbout = () => {
           </div>
         </div>
       </div>
+
+      {/* Add a custom animation for the glow effect */}
+      <style jsx>{`
+        @keyframes glow {
+          0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+          70% { box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); }
+          100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+        }
+        .glow-animation {
+          animation: glow 2s infinite;
+        }
+      `}</style>
     </section>
   );
 };

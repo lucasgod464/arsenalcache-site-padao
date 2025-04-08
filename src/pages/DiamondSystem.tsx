@@ -60,13 +60,30 @@ const DiamondSystem = () => {
           .float-animation {
             animation: float 4s ease-in-out infinite;
           }
+          @keyframes pulse-bg {
+            0% { background-color: rgba(59, 130, 246, 0.1); }
+            50% { background-color: rgba(59, 130, 246, 0.2); }
+            100% { background-color: rgba(59, 130, 246, 0.1); }
+          }
+          .pulse-bg {
+            animation: pulse-bg 3s ease-in-out infinite;
+          }
+          @keyframes shimmer {
+            0% { background-position: -100% 0; }
+            100% { background-position: 100% 0; }
+          }
+          .shimmer {
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 3s infinite;
+          }
         `}</style>
       </Helmet>
       
       <Navbar />
       <DiamondHero />
-      <DiamondFeatures />
       <DiamondAbout />
+      <DiamondFeatures />
       <DiamondPlans />
       <RoiCalculator />
       <DiamondTestimonials />
