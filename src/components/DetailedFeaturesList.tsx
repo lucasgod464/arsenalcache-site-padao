@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Check, ChevronDown, ChevronUp, Zap, LucideIcon } from 'lucide-react';
+import { Check, ChevronDown, ChevronUp, Zap, LucideIcon, Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface FeatureCategory {
@@ -104,7 +104,7 @@ const DetailedFeaturesList = () => {
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16 fade-in-section">
           <div className="inline-flex items-center bg-blue-100 rounded-full px-4 py-2 text-blue-700 font-medium mb-4">
-            <Zap className="w-4 h-4 mr-2" /> Recursos Exclusivos
+            <Star className="w-4 h-4 mr-2" /> Funcionalidades Poderosas
           </div>
           
           <h2 className="text-4xl md:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-indigo-600">
@@ -112,30 +112,30 @@ const DetailedFeaturesList = () => {
           </h2>
           
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-            Explore todas as poderosas funcionalidades inclusas no Sistema Diamond.
+            Explore todas as poderosas funcionalidades inclusas no Sistema Diamond para transformar seu negócio.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {featureCategories.map((category, categoryIndex) => (
             <div 
               key={categoryIndex}
               className={cn(
-                "border border-gray-100 rounded-xl overflow-hidden transition-all duration-300 bg-white",
-                expandedCategory === categoryIndex ? "shadow-lg" : "shadow-md"
+                "border border-gray-100 rounded-xl overflow-hidden transition-all duration-300 bg-white hover:shadow-xl",
+                expandedCategory === categoryIndex ? "shadow-xl" : "shadow-md"
               )}
             >
               <button
                 className={cn(
                   "w-full px-6 py-6 text-left transition-colors",
-                  expandedCategory === categoryIndex ? "bg-blue-50" : "bg-white"
+                  expandedCategory === categoryIndex ? "bg-gradient-to-r from-blue-50 to-indigo-50" : "bg-white hover:bg-blue-50"
                 )}
                 onClick={() => toggleCategory(categoryIndex)}
               >
                 <div className="flex items-start gap-4">
                   <div className={cn(
                     "flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl",
-                    expandedCategory === categoryIndex ? "bg-white" : "bg-blue-50"
+                    expandedCategory === categoryIndex ? "bg-gradient-to-r from-blue-100 to-indigo-100" : "bg-blue-50"
                   )}>
                     {category.icon}
                   </div>
@@ -157,11 +157,11 @@ const DetailedFeaturesList = () => {
                 <div className="px-6 pb-6 pt-2 animate-accordion-down bg-white">
                   <div className="grid grid-cols-1 gap-y-3 border-t border-gray-100 pt-4 mt-2">
                     {category.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center gap-3">
-                        <div className="bg-blue-100 rounded-full p-1 flex-shrink-0">
+                      <div key={featureIndex} className="flex items-center gap-3 p-2 hover:bg-blue-50 rounded-lg transition-colors">
+                        <div className="bg-gradient-to-r from-blue-100 to-indigo-100 rounded-full p-1 flex-shrink-0">
                           <Check className="w-4 h-4 text-blue-600" />
                         </div>
-                        <span className="text-gray-700">{feature}</span>
+                        <span className="text-gray-700 font-medium">{feature}</span>
                       </div>
                     ))}
                   </div>

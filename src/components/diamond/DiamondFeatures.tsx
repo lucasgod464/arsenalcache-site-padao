@@ -83,42 +83,6 @@ const DiamondFeatures = () => {
             </div>
           ))}
         </div>
-        
-        <div className="mt-24 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-10 shadow-xl">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-white">
-            <div className="text-center">
-              <div className="flex flex-col items-center">
-                <Server className="w-10 h-10 text-blue-200 mb-3" />
-                <h4 className="text-4xl font-bold mb-2">430+</h4>
-                <p className="text-blue-100">Conexões disponíveis</p>
-              </div>
-            </div>
-            
-            <div className="text-center md:border-x border-blue-500/50 px-4">
-              <div className="flex flex-col items-center">
-                <Users className="w-10 h-10 text-blue-200 mb-3" />
-                <h4 className="text-4xl font-bold mb-2">5+</h4>
-                <p className="text-blue-100">Softwares inclusos</p>
-              </div>
-            </div>
-            
-            <div className="text-center md:border-r border-blue-500/50 px-4">
-              <div className="flex flex-col items-center">
-                <RefreshCw className="w-10 h-10 text-blue-200 mb-3" />
-                <h4 className="text-4xl font-bold mb-2">24/7</h4>
-                <p className="text-blue-100">Monitoramento constante</p>
-              </div>
-            </div>
-            
-            <div className="text-center">
-              <div className="flex flex-col items-center">
-                <Laptop className="w-10 h-10 text-blue-200 mb-3" />
-                <h4 className="text-4xl font-bold mb-2">100%</h4>
-                <p className="text-blue-100">Suporte especializado</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
