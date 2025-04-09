@@ -68,7 +68,8 @@ const DiamondLeadsPage = () => {
         phone: values.phone,
         company: values.company || null,
         message: values.message || null,
-        status: 'pending'
+        status: 'pending',
+        system: 'diamond' // Setting system to diamond explicitly
       }]);
       
       if (error) throw error;
