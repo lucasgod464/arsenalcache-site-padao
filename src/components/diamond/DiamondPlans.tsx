@@ -42,6 +42,7 @@ const DiamondPlans = () => {
       id: "70-connections",
       name: "70 Conexões",
       installationPrice: "R$ 1.998,80",
+      monthlyInstallment: "R$ 166,56",
       monthlyPrice: "R$ 445,00 no 1º mês",
       regularPrice: "R$ 900,00 após",
       highlight: "Ideal para empresas em crescimento",
@@ -53,6 +54,7 @@ const DiamondPlans = () => {
       id: "130-connections",
       name: "130 Conexões",
       installationPrice: "R$ 1.998,80",
+      monthlyInstallment: "R$ 166,56",
       monthlyPrice: "R$ 700,00 no 1º mês",
       regularPrice: "R$ 1.400,00 após",
       highlight: "Alta capacidade para grandes operações",
@@ -64,6 +66,7 @@ const DiamondPlans = () => {
       id: "430-connections",
       name: "430 Conexões",
       installationPrice: "R$ 1.998,80",
+      monthlyInstallment: "R$ 166,56",
       monthlyPrice: "R$ 2.200,00 no 1º mês",
       regularPrice: "R$ 4.200,00 após",
       highlight: "Máxima capacidade para operações robustas",
@@ -199,10 +202,13 @@ const DiamondPlans = () => {
                   </CardDescription>
                   <div className="mt-4">
                     <div className="text-3xl font-bold text-gray-900">
-                      {plan.installationPrice}
+                      {plan.monthlyInstallment}
                     </div>
                     <div className="text-sm text-gray-600 mt-1">
-                      Instalação (até 12x sem juros)
+                      em 12x sem juros (instalação)
+                    </div>
+                    <div className="text-sm text-gray-500 mt-1">
+                      <span className="font-medium">Valor total: {plan.installationPrice}</span>
                     </div>
                   </div>
                   <div className="mt-3 pt-3 border-t border-blue-100">
