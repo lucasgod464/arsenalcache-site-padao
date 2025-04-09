@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Check, MessageCircle, Server, Zap, BadgeCheck, Star, AlertTriangle, DollarSign } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -28,6 +29,7 @@ const DiamondPlans = () => {
       id: "30-connections",
       name: "30 Conexões",
       installationPrice: "R$ 1.998,80",
+      monthlyInstallment: "R$ 166,56",
       monthlyPrice: "Grátis no 1º ano",
       regularPrice: "R$ 570,00 após 1 ano",
       highlight: "Mensalidade grátis no primeiro ano",
@@ -108,7 +110,9 @@ const DiamondPlans = () => {
                   </h3>
                   
                   <p className="text-lg text-gray-600 mb-4">
-                    Investimento único de <span className="font-bold text-blue-700">R$ 1.998,80</span> com primeiro ano <span className="font-bold text-green-600">sem mensalidades!</span>
+                    <span className="font-bold text-blue-700 text-2xl">R$ 166,56</span>
+                    <span className="text-sm ml-2">em 12x sem juros</span>
+                    <span className="block text-sm mt-1">Investimento único de <span className="font-medium">R$ 1.998,80</span> com primeiro ano <span className="font-bold text-green-600">sem mensalidades!</span></span>
                   </p>
                   
                   <div className="flex flex-col gap-3 mb-6">
