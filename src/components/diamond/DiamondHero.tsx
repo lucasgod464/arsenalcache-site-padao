@@ -118,7 +118,7 @@ const DiamondHero = () => {
               <div className="rounded-xl overflow-hidden shadow-2xl relative z-10 border-4 border-white">
                 <div className="aspect-w-16 aspect-h-9 w-full">
                   <iframe 
-                    src="https://www.youtube.com/embed/videoseries?list=PL3DgEot3ENf467vxCFk8EcJw7qL9Hr1Mg" 
+                    src="https://www.youtube.com/embed/3eHP_ApNx9E" 
                     title="Sistema Diamond - Atendimento com WhatsApp" 
                     className="w-full h-80 lg:h-[400px]"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
