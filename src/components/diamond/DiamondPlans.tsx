@@ -28,10 +28,10 @@ const DiamondPlans = () => {
     {
       id: "30-connections",
       name: "30 Conexões",
-      installationPrice: "R$ 1.998,80",
-      monthlyInstallment: "R$ 166,56",
+      installationPrice: "R$ 1.476,00",
+      monthlyInstallment: "R$ 123,00",
       monthlyPrice: "Grátis no 1º ano",
-      regularPrice: "R$ 570,00 após 1 ano",
+      regularPrice: "R$ 260,00 após 1 ano",
       highlight: "Mensalidade grátis no primeiro ano",
       description: "Perfeito para quem busca economia e eficiência.",
       buttonText: "Contratar plano de 30 conexões",
@@ -41,8 +41,8 @@ const DiamondPlans = () => {
     {
       id: "70-connections",
       name: "70 Conexões",
-      installationPrice: "R$ 1.998,80",
-      monthlyInstallment: "R$ 166,56",
+      installationPrice: "R$ 1.476,00",
+      monthlyInstallment: "R$ 123,00",
       monthlyPrice: "R$ 445,00 no 1º mês",
       regularPrice: "R$ 900,00 após",
       highlight: "Ideal para empresas em crescimento",
@@ -53,8 +53,8 @@ const DiamondPlans = () => {
     {
       id: "130-connections",
       name: "130 Conexões",
-      installationPrice: "R$ 1.998,80",
-      monthlyInstallment: "R$ 166,56",
+      installationPrice: "R$ 1.476,00",
+      monthlyInstallment: "R$ 123,00",
       monthlyPrice: "R$ 700,00 no 1º mês",
       regularPrice: "R$ 1.400,00 após",
       highlight: "Alta capacidade para grandes operações",
@@ -65,8 +65,8 @@ const DiamondPlans = () => {
     {
       id: "430-connections",
       name: "430 Conexões",
-      installationPrice: "R$ 1.998,80",
-      monthlyInstallment: "R$ 166,56",
+      installationPrice: "R$ 1.476,00",
+      monthlyInstallment: "R$ 123,00",
       monthlyPrice: "R$ 2.200,00 no 1º mês",
       regularPrice: "R$ 4.200,00 após",
       highlight: "Máxima capacidade para operações robustas",
@@ -113,9 +113,9 @@ const DiamondPlans = () => {
                   </h3>
                   
                   <p className="text-lg text-gray-600 mb-4">
-                    <span className="font-bold text-blue-700 text-2xl">R$ 166,56</span>
+                    <span className="font-bold text-blue-700 text-2xl">R$ 123,00</span>
                     <span className="text-sm ml-2">em 12x sem juros</span>
-                    <span className="block text-sm mt-1">Investimento único de <span className="font-medium">R$ 1.998,80</span> com primeiro ano <span className="font-bold text-green-600">sem mensalidades!</span></span>
+                    <span className="block text-sm mt-1">Investimento único de <span className="font-medium">R$ 1.476,00</span> com primeiro ano <span className="font-bold text-green-600">sem mensalidades!</span></span>
                   </p>
                   
                   <div className="flex flex-col gap-3 mb-6">
@@ -160,7 +160,7 @@ const DiamondPlans = () => {
                     </li>
                     <li className="flex items-start gap-2">
                       <Star className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700">Após 1 ano, apenas R$ 570,00/mês</span>
+                      <span className="text-gray-700">Após 1 ano, apenas R$ 260,00/mês</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Star className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
