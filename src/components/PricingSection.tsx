@@ -27,12 +27,6 @@ const PricingSection = () => {
     "Uma licença para cada software"
   ];
   
-  const additionalConnections = [
-    "API oficial WhatsApp (ilimitada)", 
-    "Instagram (conexões ilimitadas)", 
-    "Facebook (conexões ilimitadas)"
-  ];
-
   return (
     <section id="precos" className="py-10 px-4 bg-white border-t border-gray-100 shadow-inner mt-8">
       <div className="container mx-auto">
@@ -111,14 +105,22 @@ const PricingSection = () => {
                 
                 <div>
                   <h4 className="font-semibold mb-4 text-blue-600">Conexões adicionais (opcionais):</h4>
-                  <ul className="space-y-3">
-                    {additionalConnections.map((connection, index) => (
-                      <li key={index} className="flex items-start gap-2">
+                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                    <ul className="space-y-3">
+                      <li className="flex items-start gap-2">
                         <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-600">{connection}</span>
+                        <span className="text-gray-600">API oficial WhatsApp (ilimitada)</span>
                       </li>
-                    ))}
-                  </ul>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-600">Instagram (conexões ilimitadas)</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-600">Facebook (conexões ilimitadas)</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
