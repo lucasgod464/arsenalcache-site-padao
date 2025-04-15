@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Check, ArrowRight, MessageCircle, Star, Trophy } from 'lucide-react';
 import { Badge } from "@/components/ui/badge";
@@ -121,7 +122,7 @@ const PricingSection = () => {
                     <div className="bg-white p-4 rounded-lg border border-gray-200 text-center">
                       <p className="text-gray-700 font-semibold mb-2">Valor mensal:</p>
                       <p className="text-2xl font-bold text-blue-600">R$260,00</p>
-                      <p className="text-sm text-gray-500">Sem taxa de renovação</p>
+                      <p className="text-sm text-gray-500">Conexões ilimitadas</p>
                     </div>
                   </div>
                 </div>
