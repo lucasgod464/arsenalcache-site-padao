@@ -47,7 +47,7 @@ const PricingSection = () => {
         </div>
 
         {/* Professional Plan */}
-        <div className="max-w-4xl mx-auto relative">
+        <div className="max-w-3xl mx-auto relative">
           {/* Popular ribbon */}
           <div className="absolute -top-4 -right-4 z-10 rotate-12">
             <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white text-xs font-bold px-6 py-1 rounded-full shadow-lg flex items-center gap-1">
@@ -70,36 +70,33 @@ const PricingSection = () => {
                 </CardDescription>
               </div>
               <div className="mt-4 flex items-baseline">
-                <span className="text-4xl font-extrabold tracking-tight text-gray-900">R$1.476,00</span>
-                <span className="ml-2 text-sm font-medium text-gray-500">ou 12x R$123,00 sem juros</span>
+                <span className="text-4xl font-extrabold tracking-tight text-gray-900">R$698,80</span>
+                <span className="ml-2 text-sm font-medium text-gray-500">ou 12x R$58,23 sem juros</span>
               </div>
               <div className="flex flex-wrap gap-2 mt-3">
-                <Badge variant="outline" className="bg-gray-50 text-gray-600 border-gray-200">
-                  Mensalidade: R$260,00
-                </Badge>
                 <Badge variant="outline" className="bg-green-50 text-green-600 border-green-200">
                   Sem taxa de renovação anual pagando a mensalidade
                 </Badge>
               </div>
             </CardHeader>
             
-            <CardContent className="pt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <h4 className="font-semibold mb-4 text-blue-600 flex items-center">
-                  <Trophy className="h-5 w-5 text-blue-500 mr-2" />
-                  Recursos principais:
-                </h4>
-                <ul className="space-y-3">
-                  {mainFeatures.map((feature, index) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-600">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              
+            <CardContent className="pt-6">
               <div className="space-y-6">
+                <div>
+                  <h4 className="font-semibold mb-4 text-blue-600 flex items-center">
+                    <Trophy className="h-5 w-5 text-blue-500 mr-2" />
+                    Recursos principais:
+                  </h4>
+                  <ul className="space-y-3">
+                    {mainFeatures.map((feature, index) => (
+                      <li key={index} className="flex items-start gap-2">
+                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-600">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
                 <div>
                   <h4 className="font-semibold mb-4 text-blue-600">Softwares premium inclusos:</h4>
                   <ul className="space-y-3">
@@ -124,22 +121,42 @@ const PricingSection = () => {
                   </ul>
                 </div>
                 
-                <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
-                  <h4 className="font-semibold mb-3 text-blue-600">Renovação anual:</h4>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-600">R$400,00 (apenas se não pagar a mensalidade)</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-600">Inclui atualizações e suporte humano</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-600 font-medium">Isenção da taxa ao pagar a mensalidade</span>
-                    </li>
-                  </ul>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                    <h4 className="font-semibold mb-3 text-blue-600">Renovação anual:</h4>
+                    <ul className="space-y-2">
+                      <li className="flex items-start gap-2">
+                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-600">R$400,00 (apenas se não pagar a mensalidade)</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-600">Inclui atualizações e suporte humano</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-600 font-medium">Isenção da taxa ao pagar a mensalidade</span>
+                      </li>
+                    </ul>
+                  </div>
+                  
+                  <div className="bg-green-50 p-4 rounded-lg border border-green-100">
+                    <h4 className="font-semibold mb-3 text-blue-600">Mensalidade:</h4>
+                    <ul className="space-y-2">
+                      <li className="flex items-start gap-2">
+                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-600">R$260,00 por mês</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-600">Suporte contínuo e acesso a atualizações</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-600 font-medium">Elimina a taxa de renovação anual</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </CardContent>
