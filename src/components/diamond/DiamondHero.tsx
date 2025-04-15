@@ -58,7 +58,7 @@ const DiamondHero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="fade-in-section">
             <div className="inline-flex items-center bg-blue-100 rounded-full px-4 py-2 text-blue-700 font-medium mb-6 animate-pulse">
-              <Zap className="w-4 h-4 mr-2" /> Sistema Diamond
+              <Zap className="w-4 h-4 mr-2" /> WhatTicket Profissional
             </div>
             
             <h1 className="text-5xl md:text-6xl font-extrabold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-indigo-600">

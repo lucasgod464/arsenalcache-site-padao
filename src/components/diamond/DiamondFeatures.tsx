@@ -57,7 +57,7 @@ const DiamondFeatures = () => {
             Potencialize suas Conexões
           </h2>
           <p className="text-lg text-gray-600">
-            O Sistema Diamond oferece uma infraestrutura robusta e ferramentas avançadas para maximizar o desempenho do seu atendimento.
+            O WhatTicket Profissional oferece uma infraestrutura robusta e ferramentas avançadas para maximizar o desempenho do seu atendimento.
           </p>
         </div>
         

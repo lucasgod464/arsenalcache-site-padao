@@ -57,7 +57,7 @@ const DiamondFaq = () => {
             Tire suas <span className="text-blue-600">dúvidas</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Encontre respostas para as perguntas mais comuns sobre o Sistema Diamond e nossos planos de conexões.
+            Encontre respostas para as perguntas mais comuns sobre o WhatTicket Profissional e nossos planos de conexões.
           </p>
         </div>
 

@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Check, Clock, Server } from 'lucide-react';
 
@@ -37,9 +38,9 @@ const ZproSection = () => {
           <span className="inline-block py-1 px-3 rounded-full bg-blue-800 text-blue-200 text-sm font-medium mb-4">
             Plataforma completa
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">O que é o <span className="text-amber-400">Sistema Golden</span>?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">O que é o <span className="text-amber-400">WhatTicket Profissional</span>?</h2>
           <p className="text-xl text-blue-200 max-w-3xl mx-auto">
-            O Sistema Golden é uma plataforma de multiatendimento para WhatsApp com recursos avançados de automação e gestão para empresas e revendedores.
+            O WhatTicket Profissional é uma plataforma de multiatendimento para WhatsApp com recursos avançados de automação e gestão para empresas e revendedores.
           </p>
         </div>
 
@@ -162,7 +163,7 @@ const ZproSection = () => {
             <div>
               <h3 className="text-2xl font-bold mb-2">Requisitos Mínimos do Sistema</h3>
               <p className="text-xl text-blue-200">
-                Para garantir o melhor desempenho do Sistema Golden, recomendamos os seguintes requisitos:
+                Para garantir o melhor desempenho do WhatTicket Profissional, recomendamos os seguintes requisitos:
               </p>
             </div>
           </div>
@@ -197,7 +198,7 @@ const ZproSection = () => {
             <div>
               <h3 className="text-2xl font-bold mb-2">Implementação Rápida</h3>
               <p className="text-xl text-blue-200">
-                Instalação completa do Sistema Golden em apenas <span className="text-amber-400 font-bold">24 horas</span>, 
+                Instalação completa do WhatTicket Profissional em apenas <span className="text-amber-400 font-bold">24 horas</span>, 
                 com configuração e treinamento inclusos.
               </p>
             </div>

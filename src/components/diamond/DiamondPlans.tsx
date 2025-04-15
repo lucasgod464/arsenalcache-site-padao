@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Check, MessageCircle, Server, Zap, BadgeCheck, Star, AlertTriangle, DollarSign } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -36,7 +35,7 @@ const DiamondPlans = () => {
       description: "Perfeito para quem busca economia e eficiência.",
       buttonText: "Contratar plano de 30 conexões",
       popular: true,
-      whatsappMessage: "Olá! Estou interessado no plano de 30 conexões do Sistema Diamond com 1 ano grátis. Pode me dar mais informações?"
+      whatsappMessage: "Olá! Estou interessado no plano de 30 conexões do WhatTicket Profissional com 1 ano grátis. Pode me dar mais informações?"
     },
     {
       id: "70-connections",
@@ -48,7 +47,7 @@ const DiamondPlans = () => {
       highlight: "Ideal para empresas em crescimento",
       description: "Perfeito para quem precisa de mais conexões e quer um serviço robusto.",
       buttonText: "Contratar plano de 70 conexões",
-      whatsappMessage: "Olá! Estou interessado no plano de 70 conexões do Sistema Diamond. Pode me dar mais informações?"
+      whatsappMessage: "Olá! Estou interessado no plano de 70 conexões do WhatTicket Profissional. Pode me dar mais informações?"
     },
     {
       id: "130-connections",
@@ -60,7 +59,7 @@ const DiamondPlans = () => {
       highlight: "Alta capacidade para grandes operações",
       description: "Plano completo perfeito para quem precisa de alta capacidade.",
       buttonText: "Contratar plano de 130 conexões",
-      whatsappMessage: "Olá! Estou interessado no plano de 130 conexões do Sistema Diamond. Pode me dar mais informações?"
+      whatsappMessage: "Olá! Estou interessado no plano de 130 conexões do WhatTicket Profissional. Pode me dar mais informações?"
     },
     {
       id: "430-connections",
@@ -72,7 +71,7 @@ const DiamondPlans = () => {
       highlight: "Máxima capacidade para operações robustas",
       description: "Nosso plano mais robusto, ideal para grandes operações.",
       buttonText: "Contratar plano de 430 conexões",
-      whatsappMessage: "Olá! Estou interessado no plano de 430 conexões do Sistema Diamond. Pode me dar mais informações?"
+      whatsappMessage: "Olá! Estou interessado no plano de 430 conexões do WhatTicket Profissional. Pode me dar mais informações?"
     }
   ];
 
@@ -138,7 +137,7 @@ const DiamondPlans = () => {
                     className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-medium py-5 px-8 rounded-full"
                   >
                     <a 
-                      href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá! Estou interessado no plano de 30 conexões do Sistema Diamond com 1 ano grátis. Pode me dar mais informações?"
+                      href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá! Estou interessado no plano de 30 conexões do WhatTicket Profissional com 1 ano grátis. Pode me dar mais informações?"
                       target="_blank" 
                       rel="noopener noreferrer"
                     >
