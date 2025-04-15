@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Check, ArrowRight, MessageCircle, Star, Trophy } from 'lucide-react';
 import { Badge } from "@/components/ui/badge";
@@ -73,56 +72,56 @@ const PricingSection = () => {
             </CardHeader>
             
             <CardContent className="pt-6">
-              <div className="space-y-6">
+              <div className="space-y-4">
                 <div>
-                  <h4 className="font-semibold mb-4 text-blue-600 flex items-center">
+                  <h4 className="font-semibold mb-3 text-blue-600 flex items-center">
                     <Trophy className="h-5 w-5 text-blue-500 mr-2" />
                     Recursos principais:
                   </h4>
-                  <ul className="space-y-3">
+                  <ul className="grid grid-cols-2 gap-2">
                     {mainFeatures.map((feature, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-600">{feature}</span>
+                        <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-gray-600">{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 
                 <div>
-                  <h4 className="font-semibold mb-4 text-blue-600">Softwares premium inclusos:</h4>
-                  <ul className="space-y-3">
+                  <h4 className="font-semibold mb-3 text-blue-600">Softwares premium inclusos:</h4>
+                  <ul className="grid grid-cols-2 gap-2">
                     {premiumSoftware.map((software, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-600">{software}</span>
+                        <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-gray-600">{software}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 
                 <div>
-                  <h4 className="font-semibold mb-4 text-blue-600">Conexões adicionais (opcionais):</h4>
+                  <h4 className="font-semibold mb-3 text-blue-600">Conexões adicionais (opcionais):</h4>
                   <div className="bg-blue-50 p-4 rounded-lg border border-blue-100 space-y-4">
-                    <ul className="space-y-3">
+                    <ul className="grid grid-cols-2 gap-2">
                       <li className="flex items-start gap-2">
-                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-600">API oficial WhatsApp (ilimitada)</span>
+                        <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-gray-600">API oficial WhatsApp (ilimitada)</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-600">Instagram (conexões ilimitadas)</span>
+                        <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-gray-600">Instagram (conexões ilimitadas)</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-600">Facebook (conexões ilimitadas)</span>
+                        <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-gray-600">Facebook (conexões ilimitadas)</span>
                       </li>
                     </ul>
                     
-                    <div className="bg-white p-4 rounded-lg border border-gray-200 text-center">
-                      <p className="text-gray-700 font-semibold mb-2">Valor mensal:</p>
-                      <p className="text-2xl font-bold text-blue-600">R$260,00</p>
-                      <p className="text-sm text-gray-500">Conexões ilimitadas</p>
+                    <div className="bg-white p-3 rounded-lg border border-gray-200 text-center">
+                      <p className="text-gray-700 font-semibold mb-1">Valor mensal:</p>
+                      <p className="text-xl font-bold text-blue-600">R$260,00</p>
+                      <p className="text-xs text-gray-500">Conexões ilimitadas</p>
                     </div>
                   </div>
                 </div>
@@ -132,16 +131,16 @@ const PricingSection = () => {
                     <h4 className="font-semibold mb-3 text-blue-600">Renovação anual:</h4>
                     <ul className="space-y-2">
                       <li className="flex items-start gap-2">
-                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-600">R$400,00 (apenas se não pagar a mensalidade)</span>
+                        <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-gray-600">R$400,00 (apenas se não pagar a mensalidade)</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-600">Inclui atualizações e suporte humano</span>
+                        <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-gray-600">Inclui atualizações e suporte humano</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-600 font-medium">Isenção da taxa ao pagar a mensalidade</span>
+                        <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-gray-600 font-medium">Isenção da taxa ao pagar a mensalidade</span>
                       </li>
                     </ul>
                   </div>
