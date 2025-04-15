@@ -28,8 +28,8 @@ const PricingSection = () => {
   ];
   
   const additionalConnections = [
-    "API oficial WhatsApp (ilimitada)", 
-    "Instagram (conexões ilimitadas)", 
+    "API oficial WhatsApp (ilimitada)",
+    "Instagram (conexões ilimitadas)",
     "Facebook (conexões ilimitadas)"
   ];
 
@@ -70,8 +70,8 @@ const PricingSection = () => {
                 </CardDescription>
               </div>
               <div className="mt-4 flex items-baseline">
-                <span className="text-4xl font-extrabold tracking-tight text-gray-900">R$1.476,00</span>
-                <span className="ml-2 text-sm font-medium text-gray-500">ou 12x R$123,00 sem juros</span>
+                <span className="text-4xl font-extrabold tracking-tight text-gray-900">R$698,80</span>
+                <span className="ml-2 text-sm font-medium text-gray-500">ou 12x sem juros</span>
               </div>
               <div className="flex flex-wrap gap-2 mt-3">
                 <Badge variant="outline" className="bg-gray-50 text-gray-600 border-gray-200">
@@ -113,7 +113,7 @@ const PricingSection = () => {
                 </div>
                 
                 <div>
-                  <h4 className="font-semibold mb-4 text-blue-600">Conexões adicionais (opcionais):</h4>
+                  <h4 className="font-semibold mb-4 text-blue-600">Conexões adicionais:</h4>
                   <ul className="space-y-3">
                     {additionalConnections.map((connection, index) => (
                       <li key={index} className="flex items-start gap-2">
