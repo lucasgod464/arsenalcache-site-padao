@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Check, ArrowRight, MessageCircle, Star, Trophy } from 'lucide-react';
 import { Badge } from "@/components/ui/badge";
@@ -78,7 +79,7 @@ const PricingSection = () => {
                     <Trophy className="h-5 w-5 text-blue-500 mr-2" />
                     Recursos principais:
                   </h4>
-                  <ul className="grid grid-cols-2 gap-2">
+                  <ul className="space-y-2">
                     {mainFeatures.map((feature, index) => (
                       <li key={index} className="flex items-start gap-2">
                         <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
@@ -90,7 +91,7 @@ const PricingSection = () => {
                 
                 <div>
                   <h4 className="font-semibold mb-3 text-blue-600">Softwares premium inclusos:</h4>
-                  <ul className="grid grid-cols-2 gap-2">
+                  <ul className="space-y-2">
                     {premiumSoftware.map((software, index) => (
                       <li key={index} className="flex items-start gap-2">
                         <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
@@ -103,7 +104,7 @@ const PricingSection = () => {
                 <div>
                   <h4 className="font-semibold mb-3 text-blue-600">Conexões adicionais (opcionais):</h4>
                   <div className="bg-blue-50 p-4 rounded-lg border border-blue-100 space-y-4">
-                    <ul className="grid grid-cols-2 gap-2">
+                    <ul className="space-y-2">
                       <li className="flex items-start gap-2">
                         <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
                         <span className="text-sm text-gray-600">API oficial WhatsApp (ilimitada)</span>
@@ -126,24 +127,22 @@ const PricingSection = () => {
                   </div>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
-                    <h4 className="font-semibold mb-3 text-blue-600">Renovação anual:</h4>
-                    <ul className="space-y-2">
-                      <li className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-gray-600">R$400,00 (apenas se não pagar a mensalidade)</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-gray-600">Inclui atualizações e suporte humano</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-gray-600 font-medium">Isenção da taxa ao pagar a mensalidade</span>
-                      </li>
-                    </ul>
-                  </div>
+                <div>
+                  <h4 className="font-semibold mb-3 text-blue-600">Renovação anual:</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-gray-600">R$400,00 (apenas se não pagar a mensalidade)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-gray-600">Inclui atualizações e suporte humano</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-gray-600 font-medium">Isenção da taxa ao pagar a mensalidade</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </CardContent>
