@@ -1,10 +1,9 @@
-
 import React from 'react';
 import { Check, ArrowRight, MessageCircle, Star, Trophy } from 'lucide-react';
 import { MessageSquare, SmartphoneIcon, Globe } from 'lucide-react';
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 
 const PricingSection = () => {
@@ -42,13 +41,15 @@ const PricingSection = () => {
   return (
     <section id="precos" className="py-10 px-4 bg-white border-t border-gray-100 shadow-inner mt-8">
       <div className="container mx-auto">
-        <div className="text-center mb-10">
+        <div className="text-center mb-12">
           <Badge variant="outline" className="bg-blue-600 text-white border-blue-500 mb-4">
-            Planos e preços
+            Planos e Preços
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">A solução <span className="text-blue-600">completa para você</span></h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Planos <span className="text-blue-600">WhatTicket Profissional</span>
+          </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Investimento único com renovação anual acessível. Sem mensalidades absurdas.
+            Escolha o plano ideal para transformar o atendimento da sua empresa com o WhatTicket Profissional
           </p>
         </div>
 
@@ -189,7 +190,6 @@ const PricingSection = () => {
           </Card>
         </div>
 
-        {/* VPS Systems Section */}
         <div className="max-w-3xl mx-auto mt-16 pt-6 border-t border-gray-200">
           <div className="text-center mb-8">
             <Badge variant="outline" className="bg-blue-600 text-white border-blue-500 mb-4">
