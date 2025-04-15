@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Check, ArrowRight, MessageCircle, Star, Trophy } from 'lucide-react';
+import { Check, ArrowRight, MessageCircle, Star, Trophy, WhatsApp, Instagram, Facebook } from 'lucide-react';
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -40,7 +39,7 @@ const PricingSection = () => {
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto relative">
+        <div className="max-w-xl mx-auto relative">
           <div className="absolute -top-4 -right-4 z-10 rotate-12">
             <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white text-xs font-bold px-6 py-1 rounded-full shadow-lg flex items-center gap-1">
               <Star className="h-3 w-3 fill-white" /> RECOMENDADO <Star className="h-3 w-3 fill-white" />
@@ -103,25 +102,25 @@ const PricingSection = () => {
                 
                 <div>
                   <h4 className="font-semibold mb-3 text-blue-600">Conexões adicionais (opcionais):</h4>
-                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-100 space-y-4">
-                    <ul className="space-y-2">
-                      <li className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                    <ul className="space-y-2 mb-4">
+                      <li className="flex items-center gap-2">
+                        <WhatsApp className="w-5 h-5 text-green-500 flex-shrink-0" />
                         <span className="text-sm text-gray-600">API oficial WhatsApp (ilimitada)</span>
                       </li>
-                      <li className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <li className="flex items-center gap-2">
+                        <Instagram className="w-5 h-5 text-pink-500 flex-shrink-0" />
                         <span className="text-sm text-gray-600">Instagram (conexões ilimitadas)</span>
                       </li>
-                      <li className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <li className="flex items-center gap-2">
+                        <Facebook className="w-5 h-5 text-blue-600 flex-shrink-0" />
                         <span className="text-sm text-gray-600">Facebook (conexões ilimitadas)</span>
                       </li>
                     </ul>
                     
                     <div className="bg-white p-3 rounded-lg border border-gray-200 text-center">
-                      <p className="text-gray-700 font-semibold mb-1">Valor mensal:</p>
-                      <p className="text-xl font-bold text-blue-600">R$260,00</p>
+                      <p className="text-gray-700 font-medium mb-1">Valor mensal:</p>
+                      <p className="text-2xl font-bold text-blue-600">R$260,00</p>
                       <p className="text-xs text-gray-500">Conexões ilimitadas</p>
                     </div>
                   </div>
