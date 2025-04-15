@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Check, ArrowRight, MessageCircle, Star, Trophy } from 'lucide-react';
 import { MessageSquare, SmartphoneIcon, Globe } from 'lucide-react';
@@ -26,6 +27,16 @@ const PricingSection = () => {
     "WaDefender (Verificador de Força de Conta)", 
     "BotMaster ID (Disparador Massivo)", 
     "Uma licença para cada software"
+  ];
+  
+  const vpsSystems = [
+    "n8n",
+    "redis",
+    "evolution API",
+    "dify",
+    "typebot",
+    "supabase",
+    "postgres"
   ];
   
   return (
@@ -175,6 +186,71 @@ const PricingSection = () => {
                 </a>
               </Button>
             </CardFooter>
+          </Card>
+        </div>
+
+        {/* VPS Systems Section */}
+        <div className="max-w-3xl mx-auto mt-16 pt-6 border-t border-gray-200">
+          <div className="text-center mb-8">
+            <Badge variant="outline" className="bg-blue-600 text-white border-blue-500 mb-4">
+              Sistemas em VPS
+            </Badge>
+            <h3 className="text-2xl font-bold mb-3">Soluções avançadas em <span className="text-blue-600">servidores dedicados</span></h3>
+            <p className="text-lg text-gray-600 max-w-xl mx-auto">
+              Instalação e configuração de sistemas profissionais em VPS
+            </p>
+          </div>
+          
+          <Card className="bg-gradient-to-br from-white to-blue-50 border border-blue-100 shadow-lg">
+            <CardContent className="pt-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="font-semibold mb-4 text-blue-600 flex items-center">
+                    <Trophy className="h-5 w-5 text-blue-500 mr-2" />
+                    Sistemas disponíveis:
+                  </h4>
+                  <ul className="space-y-3 border-l-2 border-blue-100 pl-3">
+                    {vpsSystems.map((system, index) => (
+                      <li key={index} className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-gray-600">{system}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div className="bg-white p-6 rounded-lg shadow-inner border border-blue-100">
+                  <p className="text-sm text-gray-500 mb-2">Valor por instalação:</p>
+                  <p className="text-xl font-bold text-gray-700 mb-4">R$99,90</p>
+                  
+                  <Separator className="my-4" />
+                  
+                  <div className="bg-blue-50 p-4 rounded-lg">
+                    <p className="text-sm text-gray-600 mb-1">Pacote completo (todos os sistemas):</p>
+                    <div className="flex items-center gap-2">
+                      <span className="text-2xl font-bold text-blue-700">R$199,90</span>
+                      <Badge className="bg-blue-100 text-blue-700 border-0">
+                        Economize R$499,40
+                      </Badge>
+                    </div>
+                  </div>
+                  
+                  <Button 
+                    asChild
+                    className="w-full mt-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium py-5 rounded-full"
+                  >
+                    <a 
+                      href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20quero%20saber%20mais%20sobre%20as%20soluções%20em%20VPS" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Contratar pacote VPS
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </CardContent>
           </Card>
         </div>
 
