@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Check, ArrowRight, MessageCircle, Star, Trophy } from 'lucide-react';
-import { MessageSquare, Smartphone, Globe } from 'lucide-react';
+import { WhatsApp, Instagram, Facebook } from 'lucide-react';
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -113,19 +113,19 @@ const PricingSection = () => {
                     <ul className="space-y-3 mb-4">
                       <li className="flex items-center gap-2.5">
                         <div className="bg-green-500 rounded-full p-1.5">
-                          <MessageSquare className="w-4 h-4 text-white flex-shrink-0" />
+                          <WhatsApp className="w-4 h-4 text-white flex-shrink-0" />
                         </div>
                         <span className="text-sm text-gray-700">API oficial WhatsApp (ilimitada)</span>
                       </li>
                       <li className="flex items-center gap-2.5">
                         <div className="bg-pink-500 rounded-full p-1.5">
-                          <Smartphone className="w-4 h-4 text-white flex-shrink-0" />
+                          <Instagram className="w-4 h-4 text-white flex-shrink-0" />
                         </div>
                         <span className="text-sm text-gray-700">Instagram (conexões ilimitadas)</span>
                       </li>
                       <li className="flex items-center gap-2.5">
                         <div className="bg-blue-600 rounded-full p-1.5">
-                          <Globe className="w-4 h-4 text-white flex-shrink-0" />
+                          <Facebook className="w-4 h-4 text-white flex-shrink-0" />
                         </div>
                         <span className="text-sm text-gray-700">Facebook (conexões ilimitadas)</span>
                       </li>
