@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ChevronRight, MessageSquare, Zap, BarChart3, ShieldCheck, Rocket, Server, Laptop, Users, Clock } from 'lucide-react';
@@ -13,12 +12,10 @@ const DiamondHero = () => {
 
   return (
     <section className="pt-24 lg:pt-32 pb-24 lg:pb-32 px-4 relative overflow-hidden bg-gradient-to-b from-blue-100 via-blue-50 to-white">
-      {/* Enhanced background elements */}
       <div className="absolute top-20 right-10 w-64 h-64 bg-blue-200 rounded-full opacity-20 blur-3xl animate-pulse"></div>
       <div className="absolute -top-20 left-1/4 w-72 h-72 bg-indigo-100 rounded-full opacity-30 blur-3xl"></div>
       <div className="absolute bottom-10 left-10 w-80 h-80 bg-indigo-200 rounded-full opacity-30 blur-3xl"></div>
       
-      {/* Stats Section - Made thinner */}
       <div className="container mx-auto max-w-6xl relative z-10 mb-8">
         <div className="bg-blue-600 rounded-2xl shadow-xl overflow-hidden">
           <div className="grid grid-cols-2 md:grid-cols-4">
@@ -92,7 +89,6 @@ const DiamondHero = () => {
               </Button>
             </div>
             
-            {/* Feature badges instead of trust badges */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-8">
               <div className="flex items-center gap-2 bg-blue-50 p-2 rounded-lg border border-blue-100">
                 <ShieldCheck className="w-4 h-4 text-blue-500" />
@@ -110,7 +106,6 @@ const DiamondHero = () => {
           </div>
           
           <div className="relative fade-in-section float-animation">
-            {/* Video with decorative elements */}
             <div className="relative">
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-100 rounded-full z-0 animate-pulse"></div>
               <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-indigo-100 rounded-full z-0 animate-pulse"></div>
@@ -118,7 +113,7 @@ const DiamondHero = () => {
               <div className="rounded-xl overflow-hidden shadow-2xl relative z-10 border-4 border-white">
                 <div className="aspect-w-16 aspect-h-9 w-full">
                   <iframe 
-                    src="https://www.youtube.com/embed/3eHP_ApNx9E" 
+                    src="https://www.youtube.com/embed/ED3y3CfQYSU" 
                     title="Sistema Diamond - Atendimento com WhatsApp" 
                     className="w-full h-80 lg:h-[400px]"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -128,7 +123,6 @@ const DiamondHero = () => {
               </div>
             </div>
             
-            {/* Bônus exclusivos */}
             <div className="bg-white mt-8 p-6 rounded-xl border border-blue-100 shadow-lg">
               <div className="text-center mb-4 font-bold text-blue-800 text-lg">Bônus exclusivos:</div>
               <div className="grid grid-cols-2 gap-4">
