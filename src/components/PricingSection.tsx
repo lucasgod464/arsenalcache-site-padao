@@ -144,24 +144,6 @@ const PricingSection = () => {
                       </li>
                     </ul>
                   </div>
-                  
-                  <div className="bg-green-50 p-4 rounded-lg border border-green-100">
-                    <h4 className="font-semibold mb-3 text-blue-600">Mensalidade:</h4>
-                    <ul className="space-y-2">
-                      <li className="flex items-start gap-2">
-                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-600">R$260,00 por mês</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-600">Suporte contínuo e acesso a atualizações</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-600 font-medium">Elimina a taxa de renovação anual</span>
-                      </li>
-                    </ul>
-                  </div>
                 </div>
               </div>
             </CardContent>
