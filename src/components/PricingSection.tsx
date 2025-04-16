@@ -45,10 +45,10 @@ const PricingSection = () => {
                 </CardDescription>
               </div>
               <div className="mt-4 flex items-baseline justify-center">
-                <span className="text-sm text-gray-500 mr-2">R$698,80</span>
+                
                 <div className="flex flex-col items-center">
                   <span className="text-4xl font-extrabold tracking-tight text-blue-700"> R$58,23 </span>
-                  <span className="text-sm text-gray-500">12x sem juros</span>
+                  <span className="text-sm text-gray-500">12x sem juros ou R$698,80 a vista</span>
                 </div>
               </div>
               <div className="flex flex-wrap gap-2 mt-3 justify-center">
