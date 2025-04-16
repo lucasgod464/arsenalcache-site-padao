@@ -5,41 +5,11 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-
 const PricingSection = () => {
-  const mainFeatures = [
-    "Instalação pela nossa equipe", 
-    "Atualizações pelo nossa equipe", 
-    "Suporte humano", 
-    "Usuários ilimitados", 
-    "Conexões ilimitadas de WhatsApp", 
-    "Sua logo no sistema", 
-    "Cores personalizadas", 
-    "Nome do sistema personalizado", 
-    "Revenda de assinaturas ilimitadas", 
-    "Suporte individual no WhatsApp"
-  ];
-  
-  const premiumSoftware = [
-    "Advanced filter (Gerador & Filtro de Números)", 
-    "WaHammer (Aquecedor de WhatsApp)", 
-    "WaDefender (Verificador de Força de Conta)", 
-    "BotMaster ID (Disparador Massivo)", 
-    "Uma licença para cada software"
-  ];
-  
-  const vpsSystems = [
-    "n8n",
-    "redis",
-    "evolution API",
-    "dify",
-    "typebot",
-    "supabase",
-    "postgres"
-  ];
-  
-  return (
-    <section id="precos" className="py-10 px-4 bg-white border-t border-gray-100 shadow-inner mt-8">
+  const mainFeatures = ["Instalação pela nossa equipe", "Atualizações pelo nossa equipe", "Suporte humano", "Usuários ilimitados", "Conexões ilimitadas de WhatsApp", "Sua logo no sistema", "Cores personalizadas", "Nome do sistema personalizado", "Revenda de assinaturas ilimitadas", "Suporte individual no WhatsApp"];
+  const premiumSoftware = ["Advanced filter (Gerador & Filtro de Números)", "WaHammer (Aquecedor de WhatsApp)", "WaDefender (Verificador de Força de Conta)", "BotMaster ID (Disparador Massivo)", "Uma licença para cada software"];
+  const vpsSystems = ["n8n", "redis", "evolution API", "dify", "typebot", "supabase", "postgres"];
+  return <section id="precos" className="py-10 px-4 bg-white border-t border-gray-100 shadow-inner mt-8">
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <Badge variant="outline" className="bg-blue-600 text-white border-blue-500 mb-4">
@@ -77,8 +47,8 @@ const PricingSection = () => {
               <div className="mt-4 flex items-baseline justify-center">
                 <span className="text-sm text-gray-500 mr-2">R$698,80</span>
                 <div className="flex flex-col items-center">
-                  <span className="text-4xl font-extrabold tracking-tight text-blue-700">12x R$58,23</span>
-                  <span className="text-sm text-gray-500">sem juros</span>
+                  <span className="text-4xl font-extrabold tracking-tight text-blue-700"> R$58,23 </span>
+                  <span className="text-sm text-gray-500">12x sem juros</span>
                 </div>
               </div>
               <div className="flex flex-wrap gap-2 mt-3 justify-center">
@@ -96,12 +66,10 @@ const PricingSection = () => {
                     Recursos principais:
                   </h4>
                   <ul className="space-y-2.5 border-l-2 border-blue-100 pl-3">
-                    {mainFeatures.map((feature, index) => (
-                      <li key={index} className="flex items-start gap-2">
+                    {mainFeatures.map((feature, index) => <li key={index} className="flex items-start gap-2">
                         <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
                         <span className="text-sm text-gray-600">{feature}</span>
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                 </div>
                 
@@ -110,12 +78,10 @@ const PricingSection = () => {
                 <div>
                   <h4 className="font-semibold mb-3 text-blue-600">Softwares premium inclusos:</h4>
                   <ul className="space-y-2.5 border-l-2 border-blue-100 pl-3">
-                    {premiumSoftware.map((software, index) => (
-                      <li key={index} className="flex items-start gap-2">
+                    {premiumSoftware.map((software, index) => <li key={index} className="flex items-start gap-2">
                         <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
                         <span className="text-sm text-gray-600">{software}</span>
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                 </div>
                 
@@ -176,15 +142,8 @@ const PricingSection = () => {
             </CardContent>
             
             <CardFooter className="pt-4 pb-8 flex justify-center">
-              <Button 
-                asChild
-                className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium py-6 rounded-full transition-all shadow-md hover:shadow-lg"
-              >
-                <a 
-                  href="https://www.asaas.com/c/8fmv6ge3llbfeanu" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                >
+              <Button asChild className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium py-6 rounded-full transition-all shadow-md hover:shadow-lg">
+                <a href="https://www.asaas.com/c/8fmv6ge3llbfeanu" target="_blank" rel="noopener noreferrer">
                   Contratar plano profissional
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
@@ -213,12 +172,10 @@ const PricingSection = () => {
                     Sistemas disponíveis:
                   </h4>
                   <ul className="space-y-3 border-l-2 border-blue-100 pl-3">
-                    {vpsSystems.map((system, index) => (
-                      <li key={index} className="flex items-start gap-2">
+                    {vpsSystems.map((system, index) => <li key={index} className="flex items-start gap-2">
                         <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
                         <span className="text-sm text-gray-600">{system}</span>
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                 </div>
                 
@@ -238,15 +195,8 @@ const PricingSection = () => {
                     </div>
                   </div>
                   
-                  <Button 
-                    asChild
-                    className="w-full mt-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium py-5 rounded-full"
-                  >
-                    <a 
-                      href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20quero%20saber%20mais%20sobre%20as%20soluções%20em%20VPS" 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                  <Button asChild className="w-full mt-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium py-5 rounded-full">
+                    <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20quero%20saber%20mais%20sobre%20as%20soluções%20em%20VPS" target="_blank" rel="noopener noreferrer">
                       Contratar pacote VPS
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </a>
@@ -258,23 +208,14 @@ const PricingSection = () => {
         </div>
 
         <div className="text-center mt-8 max-w-3xl mx-auto">
-          <Button 
-            asChild
-            className="bg-green-500 hover:bg-green-600 text-white font-medium rounded-full px-8 py-5 shadow-md hover:shadow-lg transition-all border border-green-400/30 flex items-center gap-2"
-          >
-            <a 
-              href="https://api.whatsapp.com/send?phone=5512981156856" 
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+          <Button asChild className="bg-green-500 hover:bg-green-600 text-white font-medium rounded-full px-8 py-5 shadow-md hover:shadow-lg transition-all border border-green-400/30 flex items-center gap-2">
+            <a href="https://api.whatsapp.com/send?phone=5512981156856" target="_blank" rel="noopener noreferrer">
               <MessageCircle className="mr-2 h-5 w-5" />
               Falar com um consultor no WhatsApp
             </a>
           </Button>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default PricingSection;
