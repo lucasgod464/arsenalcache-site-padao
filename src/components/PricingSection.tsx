@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Check, ArrowRight, MessageCircle, Star, Trophy } from 'lucide-react';
 import { MessageSquare, SmartphoneIcon, Globe } from 'lucide-react';
@@ -83,7 +84,7 @@ const PricingSection = () => {
               </div>
               <div className="flex flex-wrap gap-2 mt-3 justify-center">
                 <Badge variant="outline" className="bg-green-50 text-green-600 border-green-200">
-                  Investimento único com suporte vitalício
+                  Economize e comece a lucrar imediatamente
                 </Badge>
               </div>
             </CardHeader>
