@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Check, ArrowRight, MessageCircle, Star, Trophy } from 'lucide-react';
 import { MessageSquare, SmartphoneIcon, Globe } from 'lucide-react';
@@ -61,7 +62,7 @@ const PricingSection = () => {
           </div>
           
           <Card className="h-full transition-all duration-300 overflow-hidden bg-white border-gray-200 hover:shadow-md ring-2 ring-blue-500 shadow-xl shadow-blue-200">
-            <CardHeader className="bg-gradient-to-r from-blue-50 to-blue-100 pb-6 border-b border-gray-100">
+            <CardHeader className="bg-gradient-to-r from-blue-50 to-blue-100/50 pb-6 border-b border-gray-100">
               <div className="space-y-1.5">
                 <Badge className="bg-blue-100 text-blue-700 border-0 mb-2 font-medium">
                   White Label Premium
@@ -80,7 +81,7 @@ const PricingSection = () => {
               </div>
               <div className="flex flex-wrap gap-2 mt-3 justify-center">
                 <Badge variant="outline" className="bg-green-50 text-green-600 border-green-200">
-                  Sem taxa de renovação anual pagando a mensalidade
+                  Investimento único com suporte vitalício
                 </Badge>
               </div>
             </CardHeader>
@@ -157,7 +158,7 @@ const PricingSection = () => {
                   <ul className="space-y-2.5 border-l-2 border-blue-100 pl-3">
                     <li className="flex items-start gap-2">
                       <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-gray-600">R$400,00 (apenas se não pagar a mensalidade)</span>
+                      <span className="text-sm text-gray-600">R$400,00 para manutenção do sistema</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
@@ -165,7 +166,7 @@ const PricingSection = () => {
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-gray-600 font-medium">Isenção da taxa ao pagar a mensalidade</span>
+                      <span className="text-sm text-gray-600 font-medium">Garantia de funcionamento contínuo</span>
                     </li>
                   </ul>
                 </div>
