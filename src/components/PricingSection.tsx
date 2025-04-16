@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Check, ArrowRight, MessageCircle, Star, Trophy } from 'lucide-react';
 import { MessageSquare, SmartphoneIcon, Globe } from 'lucide-react';
@@ -75,10 +76,8 @@ const PricingSection = () => {
                 </CardDescription>
               </div>
               <div className="mt-4 flex items-baseline justify-center">
-                <div className="flex flex-col items-center">
-                  <span className="text-2xl font-bold text-blue-700">12x R$58,23 <span className="text-sm text-gray-500">sem juros</span></span>
-                  <span className="text-sm text-gray-500 mt-1">Valor total: <span className="line-through text-xs">R$698,80</span></span>
-                </div>
+                <span className="text-4xl font-extrabold tracking-tight text-blue-700">R$698,80</span>
+                <span className="ml-2 text-sm font-medium text-gray-500">ou 12x R$58,23 sem juros</span>
               </div>
               <div className="flex flex-wrap gap-2 mt-3 justify-center">
                 <Badge variant="outline" className="bg-green-50 text-green-600 border-green-200">
