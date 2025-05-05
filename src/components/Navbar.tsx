@@ -1,8 +1,22 @@
 
 import React, { useEffect, useState } from 'react';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from '@/components/ui/navigation-menu';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,13 +60,73 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <button 
-              onClick={() => scrollToSection('sistema-golden')}
-              className="text-gray-700 hover:text-arsenal-DEFAULT transition-colors"
-            >
-              Recursos
-            </button>
+          <nav className="hidden md:flex items-center space-x-6">
+            <NavigationMenu className="z-50">
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-gray-700 hover:text-arsenal-DEFAULT transition-colors bg-transparent">
+                    Produtos
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="bg-white p-2 rounded-md shadow-lg">
+                    <div className="grid grid-cols-2 gap-3 p-4 w-[450px]">
+                      <Button variant="ghost" className="justify-start" onClick={() => scrollToSection('sistema-golden')}>
+                        <div className="text-left">
+                          <div className="font-medium">Whaticket Profissional</div>
+                          <div className="text-xs text-muted-foreground">Multiatendimento completo</div>
+                        </div>
+                      </Button>
+                      <Button variant="ghost" className="justify-start" onClick={() => scrollToSection('funcionalidades')}>
+                        <div className="text-left">
+                          <div className="font-medium">Chatbot Inteligente</div>
+                          <div className="text-xs text-muted-foreground">Automatize seu atendimento</div>
+                        </div>
+                      </Button>
+                      <Button variant="ghost" className="justify-start">
+                        <div className="text-left">
+                          <div className="font-medium">Whitelabel</div>
+                          <div className="text-xs text-muted-foreground">Personalização completa</div>
+                        </div>
+                      </Button>
+                      <Button variant="ghost" className="justify-start">
+                        <div className="text-left">
+                          <div className="font-medium">API Integração</div>
+                          <div className="text-xs text-muted-foreground">Conecte seus sistemas</div>
+                        </div>
+                      </Button>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-gray-700 hover:text-arsenal-DEFAULT transition-colors bg-transparent">
+                    Soluções
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="bg-white p-2 rounded-md shadow-lg">
+                    <div className="grid gap-3 p-4 w-[350px]">
+                      <Button variant="ghost" className="justify-start" onClick={() => scrollToSection('sistema-golden')}>
+                        <div className="text-left">
+                          <div className="font-medium">Para Empresas</div>
+                          <div className="text-xs text-muted-foreground">Atendimento empresarial</div>
+                        </div>
+                      </Button>
+                      <Button variant="ghost" className="justify-start">
+                        <div className="text-left">
+                          <div className="font-medium">Para Revendedores</div>
+                          <div className="text-xs text-muted-foreground">Faça sua carteira de clientes</div>
+                        </div>
+                      </Button>
+                      <Button variant="ghost" className="justify-start" onClick={() => scrollToSection('precos')}>
+                        <div className="text-left">
+                          <div className="font-medium">Planos Personalizados</div>
+                          <div className="text-xs text-muted-foreground">Atendemos sua necessidade</div>
+                        </div>
+                      </Button>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+
             <button 
               onClick={() => scrollToSection('precos')}
               className="text-gray-700 hover:text-arsenal-DEFAULT transition-colors"
@@ -98,27 +172,64 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden bg-white absolute top-full left-0 right-0 shadow-lg animate-fade-in py-4">
             <div className="flex flex-col space-y-4 px-6">
-              <button 
-                onClick={() => scrollToSection('sistema-golden')}
-                className="text-gray-700 hover:text-arsenal-DEFAULT py-2 transition-colors"
-              >
-                Recursos
-              </button>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <button className="flex items-center justify-between w-full text-left py-2">
+                    <span>Produtos</span>
+                    <ChevronDown size={16} />
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-full">
+                  <DropdownMenuItem onClick={() => scrollToSection('sistema-golden')}>
+                    Whaticket Profissional
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => scrollToSection('funcionalidades')}>
+                    Chatbot Inteligente
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    Whitelabel
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    API Integração
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+              
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <button className="flex items-center justify-between w-full text-left py-2">
+                    <span>Soluções</span>
+                    <ChevronDown size={16} />
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-full">
+                  <DropdownMenuItem onClick={() => scrollToSection('sistema-golden')}>
+                    Para Empresas
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    Para Revendedores
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => scrollToSection('precos')}>
+                    Planos Personalizados
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+              
               <button 
                 onClick={() => scrollToSection('precos')}
-                className="text-gray-700 hover:text-arsenal-DEFAULT py-2 transition-colors"
+                className="text-gray-700 hover:text-arsenal-DEFAULT py-2 transition-colors text-left"
               >
                 Planos e Preços
               </button>
               <button 
                 onClick={() => scrollToSection('funcionalidades')}
-                className="text-gray-700 hover:text-arsenal-DEFAULT py-2 transition-colors"
+                className="text-gray-700 hover:text-arsenal-DEFAULT py-2 transition-colors text-left"
               >
                 Funcionalidades
               </button>
               <button 
                 onClick={() => scrollToSection('faq')}
-                className="text-gray-700 hover:text-arsenal-DEFAULT py-2 transition-colors"
+                className="text-gray-700 hover:text-arsenal-DEFAULT py-2 transition-colors text-left"
               >
                 FAQ
               </button>
@@ -140,3 +251,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
