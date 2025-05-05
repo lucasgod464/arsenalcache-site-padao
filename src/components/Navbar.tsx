@@ -66,6 +66,12 @@ const Navbar = () => {
               Funcionalidades
             </button>
             <button 
+              onClick={() => scrollToSection('ia-conecta')}
+              className="text-gray-700 hover:text-arsenal-DEFAULT transition-colors"
+            >
+              IA Conecta
+            </button>
+            <button 
               onClick={() => scrollToSection('faq')}
               className="text-gray-700 hover:text-arsenal-DEFAULT transition-colors"
             >
@@ -115,6 +121,12 @@ const Navbar = () => {
                 className="text-gray-700 hover:text-arsenal-DEFAULT py-2 transition-colors"
               >
                 Funcionalidades
+              </button>
+              <button 
+                onClick={() => scrollToSection('ia-conecta')}
+                className="text-gray-700 hover:text-arsenal-DEFAULT py-2 transition-colors"
+              >
+                IA Conecta
               </button>
               <button 
                 onClick={() => scrollToSection('faq')}
