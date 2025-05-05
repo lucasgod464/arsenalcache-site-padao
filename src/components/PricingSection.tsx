@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Check, ArrowRight, MessageCircle, Star, Trophy, Server, Cpu, HardDrive, Database, Network } from 'lucide-react';
+import { Check, X, ArrowRight, MessageCircle, Star, Trophy, Server, Cpu, HardDrive, Database, Network } from 'lucide-react';
 import { MessageSquare, SmartphoneIcon, Globe, Sparkles, BrainCircuit, Zap } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -10,151 +9,155 @@ import { Separator } from "@/components/ui/separator";
 const PricingSection = () => {
   const mainFeatures = ["Instalação pela nossa equipe", "Atualizações pelo nossa equipe", "Suporte humano", "Usuários ilimitados", "Conexões ilimitadas de WhatsApp", "Sua logo no sistema", "Cores personalizadas", "Nome do sistema personalizado", "Revenda de assinaturas ilimitadas", "Suporte individual no WhatsApp"];
   
-  const vpsOptions = [{
-    name: "VPS 6GB",
-    price: "119.90",
-    specs: [{
-      icon: <Server className="w-4 h-4 text-blue-500" />,
-      text: "6GB RAM"
+  const vpsOptions = [
+    {
+      name: "VPS 6GB",
+      price: "119.90",
+      specs: [{
+        icon: <Server className="w-4 h-4 text-blue-500" />,
+        text: "6GB RAM"
+      }, {
+        icon: <Cpu className="w-4 h-4 text-blue-500" />,
+        text: "2 vCPU"
+      }, {
+        icon: <HardDrive className="w-4 h-4 text-blue-500" />,
+        text: "100 GB NVMe"
+      }, {
+        icon: <Network className="w-4 h-4 text-blue-500" />,
+        text: "1 IPV4"
+      }, {
+        icon: <Database className="w-4 h-4 text-blue-500" />,
+        text: "Servidor no Brasil"
+      }],
+      clients: "Até 20 clientes",
+      connections: "Até 500 conexões"
     }, {
-      icon: <Cpu className="w-4 h-4 text-blue-500" />,
-      text: "2 vCPU"
+      name: "VPS 8GB",
+      price: "139.90",
+      specs: [{
+        icon: <Server className="w-4 h-4 text-blue-500" />,
+        text: "8GB RAM"
+      }, {
+        icon: <Cpu className="w-4 h-4 text-blue-500" />,
+        text: "2 vCPU"
+      }, {
+        icon: <HardDrive className="w-4 h-4 text-blue-500" />,
+        text: "120 GB NVMe"
+      }, {
+        icon: <Network className="w-4 h-4 text-blue-500" />,
+        text: "1 IPV4"
+      }, {
+        icon: <Database className="w-4 h-4 text-blue-500" />,
+        text: "Servidor no Brasil"
+      }],
+      clients: "Até 40 clientes",
+      connections: "Até 1000 conexões"
     }, {
-      icon: <HardDrive className="w-4 h-4 text-blue-500" />,
-      text: "100 GB NVMe"
+      name: "VPS 16GB",
+      price: "249.90",
+      specs: [{
+        icon: <Server className="w-4 h-4 text-blue-500" />,
+        text: "16GB RAM"
+      }, {
+        icon: <Cpu className="w-4 h-4 text-blue-500" />,
+        text: "6 vCPU"
+      }, {
+        icon: <HardDrive className="w-4 h-4 text-blue-500" />,
+        text: "200 GB NVMe"
+      }, {
+        icon: <Network className="w-4 h-4 text-blue-500" />,
+        text: "1 IPV4"
+      }, {
+        icon: <Database className="w-4 h-4 text-blue-500" />,
+        text: "Servidor no Brasil"
+      }],
+      clients: "Até 100 clientes",
+      connections: "Até 3000 conexões"
     }, {
-      icon: <Network className="w-4 h-4 text-blue-500" />,
-      text: "1 IPV4"
-    }, {
-      icon: <Database className="w-4 h-4 text-blue-500" />,
-      text: "Servidor no Brasil"
-    }],
-    clients: "Até 20 clientes",
-    connections: "Até 500 conexões"
-  }, {
-    name: "VPS 8GB",
-    price: "139.90",
-    specs: [{
-      icon: <Server className="w-4 h-4 text-blue-500" />,
-      text: "8GB RAM"
-    }, {
-      icon: <Cpu className="w-4 h-4 text-blue-500" />,
-      text: "2 vCPU"
-    }, {
-      icon: <HardDrive className="w-4 h-4 text-blue-500" />,
-      text: "120 GB NVMe"
-    }, {
-      icon: <Network className="w-4 h-4 text-blue-500" />,
-      text: "1 IPV4"
-    }, {
-      icon: <Database className="w-4 h-4 text-blue-500" />,
-      text: "Servidor no Brasil"
-    }],
-    clients: "Até 40 clientes",
-    connections: "Até 1000 conexões"
-  }, {
-    name: "VPS 16GB",
-    price: "249.90",
-    specs: [{
-      icon: <Server className="w-4 h-4 text-blue-500" />,
-      text: "16GB RAM"
-    }, {
-      icon: <Cpu className="w-4 h-4 text-blue-500" />,
-      text: "6 vCPU"
-    }, {
-      icon: <HardDrive className="w-4 h-4 text-blue-500" />,
-      text: "200 GB NVMe"
-    }, {
-      icon: <Network className="w-4 h-4 text-blue-500" />,
-      text: "1 IPV4"
-    }, {
-      icon: <Database className="w-4 h-4 text-blue-500" />,
-      text: "Servidor no Brasil"
-    }],
-    clients: "Até 100 clientes",
-    connections: "Até 3000 conexões"
-  }, {
-    name: "VPS 32GB",
-    price: "399.90",
-    specs: [{
-      icon: <Server className="w-4 h-4 text-blue-500" />,
-      text: "32GB RAM"
-    }, {
-      icon: <Cpu className="w-4 h-4 text-blue-500" />,
-      text: "6 vCPU"
-    }, {
-      icon: <HardDrive className="w-4 h-4 text-blue-500" />,
-      text: "250 GB NVMe"
-    }, {
-      icon: <Network className="w-4 h-4 text-blue-500" />,
-      text: "1 IPV4"
-    }, {
-      icon: <Database className="w-4 h-4 text-blue-500" />,
-      text: "Servidor no Brasil"
-    }],
-    clients: "Até 250 clientes",
-    connections: "Até 7500 conexões"
-  }];
+      name: "VPS 32GB",
+      price: "399.90",
+      specs: [{
+        icon: <Server className="w-4 h-4 text-blue-500" />,
+        text: "32GB RAM"
+      }, {
+        icon: <Cpu className="w-4 h-4 text-blue-500" />,
+        text: "6 vCPU"
+      }, {
+        icon: <HardDrive className="w-4 h-4 text-blue-500" />,
+        text: "250 GB NVMe"
+      }, {
+        icon: <Network className="w-4 h-4 text-blue-500" />,
+        text: "1 IPV4"
+      }, {
+        icon: <Database className="w-4 h-4 text-blue-500" />,
+        text: "Servidor no Brasil"
+      }],
+      clients: "Até 250 clientes",
+      connections: "Até 7500 conexões"
+    }
+  ];
   
-  const dedicatedServers = [{
-    name: "Pro 1",
-    location: "São Paulo - Dedicado 1",
-    price: "2.900.00",
-    specs: [{
-      title: "Processador",
-      details: "2x Intel(R) Xeon(R) CPU E5-2673 v3 @ 2.40GHz"
+  const dedicatedServers = [
+    {
+      name: "Pro 1",
+      location: "São Paulo - Dedicado 1",
+      price: "2.900.00",
+      specs: [{
+        title: "Processador",
+        details: "2x Intel(R) Xeon(R) CPU E5-2673 v3 @ 2.40GHz"
+      }, {
+        title: "Cores",
+        details: "24 (Totais)"
+      }, {
+        title: "Threads",
+        details: "48 (Totais)"
+      }, {
+        title: "Memória RAM",
+        details: "64 GB DDR4"
+      }, {
+        title: "Discos",
+        details: "1x 1TB NVMe"
+      }, {
+        title: "IPs",
+        details: "5 IPV4 + 16 IPV6"
+      }, {
+        title: "Datacenter",
+        details: "Ascenty SP4"
+      }],
+      extras: ["Link 1 GBPs ilimitado(FUP)", "Proteção DDOS Inclusa", "FTP Backup 200GB Incluso", "1 IPV4 Dedicado Incluso", "Uptime superior à 99,9%"],
+      clients: "Até 500 clientes",
+      connections: "Até 15000 conexões"
     }, {
-      title: "Cores",
-      details: "24 (Totais)"
-    }, {
-      title: "Threads",
-      details: "48 (Totais)"
-    }, {
-      title: "Memória RAM",
-      details: "64 GB DDR4"
-    }, {
-      title: "Discos",
-      details: "1x 1TB NVMe"
-    }, {
-      title: "IPs",
-      details: "5 IPV4 + 16 IPV6"
-    }, {
-      title: "Datacenter",
-      details: "Ascenty SP4"
-    }],
-    extras: ["Link 1 GBPs ilimitado(FUP)", "Proteção DDOS Inclusa", "FTP Backup 200GB Incluso", "1 IPV4 Dedicado Incluso", "Uptime superior à 99,9%"],
-    clients: "Até 500 clientes",
-    connections: "Até 15000 conexões"
-  }, {
-    name: "Pro 2",
-    location: "São Paulo - Dedicado 2",
-    price: "3.900.00",
-    specs: [{
-      title: "Processador",
-      details: "2x Intel(R) Xeon(R) CPU E5-2673 v3 @ 2.40GHz"
-    }, {
-      title: "Cores",
-      details: "24 (Totais)"
-    }, {
-      title: "Threads",
-      details: "48 (Totais)"
-    }, {
-      title: "Memória RAM",
-      details: "128 GB DDR4"
-    }, {
-      title: "Discos",
-      details: "1x 1TB NVMe"
-    }, {
-      title: "IPs",
-      details: "5 IPV4 + 16 IPV6"
-    }, {
-      title: "Datacenter",
-      details: "Ascenty SP4"
-    }],
-    extras: ["Link 1 GBPs ilimitado(FUP)", "Proteção DDOS Inclusa", "FTP Backup 200GB Incluso", "1 IPV4 Dedicado Incluso", "Uptime superior à 99,9%"],
-    clients: "Até 1000 clientes",
-    connections: "Até 30000 conexões"
-  }];
+      name: "Pro 2",
+      location: "São Paulo - Dedicado 2",
+      price: "3.900.00",
+      specs: [{
+        title: "Processador",
+        details: "2x Intel(R) Xeon(R) CPU E5-2673 v3 @ 2.40GHz"
+      }, {
+        title: "Cores",
+        details: "24 (Totais)"
+      }, {
+        title: "Threads",
+        details: "48 (Totais)"
+      }, {
+        title: "Memória RAM",
+        details: "128 GB DDR4"
+      }, {
+        title: "Discos",
+        details: "1x 1TB NVMe"
+      }, {
+        title: "IPs",
+        details: "5 IPV4 + 16 IPV6"
+      }, {
+        title: "Datacenter",
+        details: "Ascenty SP4"
+      }],
+      extras: ["Link 1 GBPs ilimitado(FUP)", "Proteção DDOS Inclusa", "FTP Backup 200GB Incluso", "1 IPV4 Dedicado Incluso", "Uptime superior à 99,9%"],
+      clients: "Até 1000 clientes",
+      connections: "Até 30000 conexões"
+    }
+  ];
   
   const premiumBenefits = ["Monitoramento 24/7 de todos os sistemas", "Relatórios semanais de desempenho", "Otimizações proativas de performance", "Escalonamento automático de recursos", "Migração e configuração especializada", "Suporte técnico prioritário", "Backup diário automatizado"];
   
