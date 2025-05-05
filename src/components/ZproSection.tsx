@@ -1,15 +1,16 @@
+
 import React, { useState, useEffect } from 'react';
 import { Check, Clock, Server } from 'lucide-react';
 
 const ZproSection = () => {
   return (
-    <section id="sistema-golden" className="bg-blue-950 py-20 px-4 text-white">
+    <section id="ia-conecta-solucao" className="bg-blue-950 py-20 px-4 text-white">
       <div className="container mx-auto">
         <div className="text-center mb-16 fade-in-section">
           <span className="inline-block py-1 px-3 rounded-full bg-blue-800 text-blue-200 text-sm font-medium mb-4">
             Plataforma completa
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">O que é o <span className="text-amber-400">Whaticket Profissional</span>?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">IA Conecta - <span className="text-amber-400">Solução de IA Sem Limites</span></h2>
           <p className="text-xl text-blue-200 max-w-3xl mx-auto">
             O Whaticket Profissional é uma plataforma avançada de multiatendimento para WhatsApp com recursos de automação, CRM integrado e gestão completa para empresas e revendedores que desejam escalar seus negócios.
           </p>
