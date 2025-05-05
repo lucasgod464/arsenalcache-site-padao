@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Check, X, ArrowRight, MessageCircle, Star, Trophy, Server, Cpu, HardDrive, Database, Network } from 'lucide-react';
 import { MessageSquare, SmartphoneIcon, Globe, Sparkles, BrainCircuit, Zap } from 'lucide-react';
@@ -204,149 +205,6 @@ const PricingSection = () => {
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Escolha o plano ideal para transformar o atendimento da sua empresa com o Whaticket Profissional
           </p>
-        </div>
-
-        {/* O que é o Whaticket Profissional? - Seção melhorada */}
-        <div className="max-w-5xl mx-auto mb-16 bg-gradient-to-br from-blue-900 to-blue-800 rounded-xl overflow-hidden shadow-xl">
-          <div className="px-6 py-8 md:px-10 md:py-12">
-            <div className="text-center mb-8">
-              <Badge className="bg-amber-400 text-blue-900 mb-4">
-                Plataforma completa
-              </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                O que é o <span className="text-amber-400">Whaticket Profissional?</span>
-              </h2>
-              <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-                O Whaticket Profissional é uma plataforma avançada de atendimento multicanal que integra WhatsApp, Instagram e Facebook, 
-                permitindo automação completa, gestão eficiente e personalização total para empresas e revendedores.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div className="bg-blue-800/50 p-6 rounded-lg border border-blue-700 text-center backdrop-blur-sm">
-                <div className="text-amber-400 text-4xl font-bold mb-2">+ 31.250</div>
-                <div className="text-blue-100">Canais conectados</div>
-              </div>
-              <div className="bg-blue-800/50 p-6 rounded-lg border border-blue-700 text-center backdrop-blur-sm">
-                <div className="text-amber-400 text-4xl font-bold mb-2">+ 1.536</div>
-                <div className="text-blue-100">Assinantes</div>
-              </div>
-              <div className="bg-blue-800/50 p-6 rounded-lg border border-blue-700 text-center backdrop-blur-sm">
-                <div className="text-amber-400 text-4xl font-bold mb-2">+ 350 k</div>
-                <div className="text-blue-100">Mensagens processadas por dia</div>
-              </div>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-bold text-amber-400 mb-4">Para Empresas</h3>
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-3">
-                    <div className="bg-blue-600 rounded-full p-1.5 mt-0.5">
-                      <Check className="w-4 h-4 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-white">Multiatendimento</h4>
-                      <p className="text-blue-200">Gerencie múltiplos atendimentos simultaneamente com eficiência e organização, criando filas e distribuindo automaticamente os contatos.</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="bg-blue-600 rounded-full p-1.5 mt-0.5">
-                      <Check className="w-4 h-4 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-white">Automação de mensagens</h4>
-                      <p className="text-blue-200">Configure respostas automáticas e fluxos de conversação personalizados para otimizar o atendimento e aumentar a conversão.</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="bg-blue-600 rounded-full p-1.5 mt-0.5">
-                      <Check className="w-4 h-4 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-white">Integração multicanal</h4>
-                      <p className="text-blue-200">Conecte WhatsApp, Instagram e Facebook em uma única plataforma de gerenciamento de mensagens.</p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-amber-400 mb-4">Para Revendedores</h3>
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-3">
-                    <div className="bg-blue-600 rounded-full p-1.5 mt-0.5">
-                      <Check className="w-4 h-4 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-white">Whitelabel completo</h4>
-                      <p className="text-blue-200">Personalize o sistema com sua marca, logo, cores e identidade visual para oferecer uma solução com sua assinatura.</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="bg-blue-600 rounded-full p-1.5 mt-0.5">
-                      <Check className="w-4 h-4 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-white">Gestão de clientes</h4>
-                      <p className="text-blue-200">Administre todos os seus clientes em um único painel de controle, com relatórios detalhados e métricas de desempenho.</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="bg-blue-600 rounded-full p-1.5 mt-0.5">
-                      <Check className="w-4 h-4 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-white">Suporte humano</h4>
-                      <p className="text-blue-200">Ofereça suporte exclusivo para seus clientes com sua própria equipe, aumentando a fidelização e a satisfação.</p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Requisitos Mínimos do Sistema - Seção melhorada */}
-        <div className="max-w-5xl mx-auto mb-16 bg-gradient-to-br from-blue-900 to-blue-800 rounded-xl overflow-hidden shadow-xl">
-          <div className="px-6 py-8 md:px-10 md:py-12">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="bg-blue-700 p-4 rounded-full">
-                <Server className="w-8 h-8 text-amber-400" />
-              </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-white">
-                Requisitos Mínimos do Sistema
-              </h2>
-            </div>
-            
-            <p className="text-lg text-blue-100 mb-8 max-w-3xl">
-              Para garantir o melhor desempenho do Whaticket Profissional, recomendamos os seguintes requisitos:
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4">
-              <div className="bg-blue-800/50 p-6 rounded-lg border border-blue-700 backdrop-blur-sm">
-                <h3 className="text-amber-400 text-xl font-bold mb-3">Memória (RAM)</h3>
-                <p className="text-white text-xl">8GB ou mais</p>
-                <p className="text-blue-200 mt-2">Recomendamos 16GB para operações de médio porte</p>
-              </div>
-              <div className="bg-blue-800/50 p-6 rounded-lg border border-blue-700 backdrop-blur-sm">
-                <h3 className="text-amber-400 text-xl font-bold mb-3">Processamento</h3>
-                <p className="text-white text-xl">4 vCPUs ou mais</p>
-                <p className="text-blue-200 mt-2">Para garantir resposta rápida e múltiplas conexões</p>
-              </div>
-              <div className="bg-blue-800/50 p-6 rounded-lg border border-blue-700 backdrop-blur-sm">
-                <h3 className="text-amber-400 text-xl font-bold mb-3">Latência</h3>
-                <p className="text-white text-xl">50ms ou menos</p>
-                <p className="text-blue-200 mt-2">Essencial para comunicação em tempo real</p>
-              </div>
-            </div>
-            
-            <div className="bg-blue-700/50 p-5 rounded-lg mt-6 text-center">
-              <p className="text-blue-100 font-medium">
-                Nossa equipe cuida de toda a instalação e configuração do sistema em servidores otimizados, 
-                garantindo o máximo desempenho para sua operação.
-              </p>
-            </div>
-          </div>
         </div>
 
         <div className="max-w-md mx-auto relative">
@@ -865,7 +723,7 @@ const PricingSection = () => {
               </CardContent>
               <CardFooter className="pt-2 pb-6 px-6">
                 <Button asChild className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white py-6 rounded-lg transition-all shadow-md hover:shadow-xl">
-                  <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20tenho%20interesse%20no%20serviço%20de%20IA%20Conecta%20Ilimitada" target="_blank" rel="noopener noreferrer">
+                  <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20tenho%20interesse%20no%20serviço%20de%20IA%20Conecta%20Ilimitado" target="_blank" rel="noopener noreferrer">
                     Contratar IA Ilimitada
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
