@@ -1,10 +1,9 @@
-
 import React, { useState, useEffect } from 'react';
 import { Check, Clock, Server } from 'lucide-react';
 
 const ZproSection = () => {
   return (
-    <section id="ia-conecta" className="bg-blue-950 py-20 px-4 text-white">
+    <section id="sistema-golden" className="bg-blue-950 py-20 px-4 text-white">
       <div className="container mx-auto">
         <div className="text-center mb-16 fade-in-section">
           <span className="inline-block py-1 px-3 rounded-full bg-blue-800 text-blue-200 text-sm font-medium mb-4">
@@ -110,16 +109,15 @@ const ZproSection = () => {
           </div>
         </div>
 
-        <div id="inteligencia-artificial" className="bg-blue-900/30 rounded-xl p-6 md:p-8 mb-16">
+        <div className="bg-blue-900/30 rounded-xl p-6 md:p-8 mb-16">
           <div className="flex flex-col md:flex-row items-center gap-6 mb-6">
             <div className="bg-blue-800 p-4 rounded-full">
               <Server className="h-10 w-10 text-amber-400" />
             </div>
             <div>
-              <h3 className="text-2xl font-bold mb-2">Inteligência Artificial Ilimitada</h3>
+              <h3 className="text-2xl font-bold mb-2">Requisitos Mínimos do Sistema</h3>
               <p className="text-xl text-blue-200">
-                IA Conecta - Solução de IA Sem Limites<br />
-                Acesso completo à tecnologia de IA avançada por um valor fixo mensal, sem surpresas na sua fatura
+                Para garantir o melhor desempenho do Whaticket Profissional, recomendamos os seguintes requisitos técnicos:
               </p>
             </div>
           </div>

@@ -41,7 +41,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <a href="/" className="text-2xl font-display font-bold text-arsenal-dark">
-              IA<span className="text-whatsapp-DEFAULT">Conecta</span>
+              Arsenal<span className="text-whatsapp-DEFAULT">Cache</span>
             </a>
           </div>
 
@@ -52,12 +52,6 @@ const Navbar = () => {
               className="text-gray-700 hover:text-arsenal-DEFAULT transition-colors"
             >
               Recursos
-            </button>
-            <button 
-              onClick={() => scrollToSection('inteligencia-artificial')}
-              className="text-gray-700 hover:text-arsenal-DEFAULT transition-colors"
-            >
-              IA Conecta
             </button>
             <button 
               onClick={() => scrollToSection('precos')}
@@ -109,12 +103,6 @@ const Navbar = () => {
                 className="text-gray-700 hover:text-arsenal-DEFAULT py-2 transition-colors"
               >
                 Recursos
-              </button>
-              <button 
-                onClick={() => scrollToSection('inteligencia-artificial')}
-                className="text-gray-700 hover:text-arsenal-DEFAULT py-2 transition-colors"
-              >
-                IA Conecta
               </button>
               <button 
                 onClick={() => scrollToSection('precos')}
