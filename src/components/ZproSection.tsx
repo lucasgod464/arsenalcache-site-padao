@@ -1,36 +1,7 @@
-
 import React, { useState, useEffect } from 'react';
 import { Check, Clock, Server } from 'lucide-react';
 
 const ZproSection = () => {
-  const [channelsCount, setChannelsCount] = useState(0);
-  const [subscribersCount, setSubscribersCount] = useState(0);
-  const [messagesCount, setMessagesCount] = useState(0);
-
-  useEffect(() => {
-    const animateNumber = (from, to, setter, duration = 1500) => {
-      const startTime = Date.now();
-      const updateNumber = () => {
-        const currentTime = Date.now();
-        const elapsedTime = currentTime - startTime;
-        if (elapsedTime < duration) {
-          const progress = elapsedTime / duration;
-          const currentValue = Math.floor(from + progress * (to - from));
-          setter(currentValue);
-          requestAnimationFrame(updateNumber);
-        } else {
-          setter(to);
-        }
-      };
-      requestAnimationFrame(updateNumber);
-    };
-
-    // Start animations with a slight delay between each
-    setTimeout(() => animateNumber(0, 31250, setChannelsCount), 300);
-    setTimeout(() => animateNumber(0, 1536, setSubscribersCount), 500);
-    setTimeout(() => animateNumber(0, 350, setMessagesCount), 700);
-  }, []);
-
   return (
     <section id="sistema-golden" className="bg-blue-950 py-20 px-4 text-white">
       <div className="container mx-auto">
@@ -42,23 +13,6 @@ const ZproSection = () => {
           <p className="text-xl text-blue-200 max-w-3xl mx-auto">
             O Whaticket Profissional é uma plataforma avançada de multiatendimento para WhatsApp com recursos de automação, CRM integrado e gestão completa para empresas e revendedores que desejam escalar seus negócios.
           </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <div className="bg-blue-900/50 p-8 rounded-xl text-center">
-            <div className="text-3xl md:text-4xl font-bold text-amber-400 mb-2">+ {channelsCount.toLocaleString()}</div>
-            <div className="text-blue-200">Canais conectados</div>
-          </div>
-          
-          <div className="bg-blue-900/50 p-8 rounded-xl text-center">
-            <div className="text-3xl md:text-4xl font-bold text-amber-400 mb-2">+ {subscribersCount.toLocaleString()}</div>
-            <div className="text-blue-200">Assinantes</div>
-          </div>
-          
-          <div className="bg-blue-900/50 p-8 rounded-xl text-center">
-            <div className="text-3xl md:text-4xl font-bold text-amber-400 mb-2">+ {messagesCount} k</div>
-            <div className="text-blue-200">Mensagens processadas por dia</div>
-          </div>
         </div>
 
         <div className="bg-blue-900/30 rounded-xl p-6 md:p-8 mb-16">
