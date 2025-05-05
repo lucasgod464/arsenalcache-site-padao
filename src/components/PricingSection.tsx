@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Check, X, ArrowRight, MessageCircle, Star, Trophy, Server, Cpu, HardDrive, Database, Network } from 'lucide-react';
 import { MessageSquare, SmartphoneIcon, Globe, Sparkles, BrainCircuit, Zap } from 'lucide-react';
@@ -19,7 +18,7 @@ const PricingSection = () => {
         text: "6GB RAM"
       }, {
         icon: <Cpu className="w-4 h-4 text-blue-500" />,
-        text: "2 vCPU"
+        text: "4 vCPU"
       }, {
         icon: <HardDrive className="w-4 h-4 text-blue-500" />,
         text: "100 GB NVMe"
@@ -40,7 +39,7 @@ const PricingSection = () => {
         text: "8GB RAM"
       }, {
         icon: <Cpu className="w-4 h-4 text-blue-500" />,
-        text: "2 vCPU"
+        text: "4 vCPU"
       }, {
         icon: <HardDrive className="w-4 h-4 text-blue-500" />,
         text: "120 GB NVMe"
@@ -723,7 +722,7 @@ const PricingSection = () => {
               </CardContent>
               <CardFooter className="pt-2 pb-6 px-6">
                 <Button asChild className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white py-6 rounded-lg transition-all shadow-md hover:shadow-xl">
-                  <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20tenho%20interesse%20no%20serviço%20de%20IA%20Conecta%20Ilimitado" target="_blank" rel="noopener noreferrer">
+                  <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20tenho%20interesse%20no%20serviço%20de%20IA%20Conecta%20Ilimitada" target="_blank" rel="noopener noreferrer">
                     Contratar IA Ilimitada
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
