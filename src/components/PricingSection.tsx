@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Check, ArrowRight, MessageCircle, Star, Trophy, Server, Cpu, HardDrive, Database, Network } from 'lucide-react';
 import { MessageSquare, SmartphoneIcon, Globe } from 'lucide-react';
@@ -494,6 +493,91 @@ const PricingSection = () => {
           </div>
         </div>
 
+        {/* Nova seção: Cotação Personalizada */}
+        <div className="max-w-5xl mx-auto mt-16 pt-6 border-t border-gray-200">
+          <div className="text-center mb-8">
+            <Badge variant="outline" className="bg-blue-600 text-white border-blue-500 mb-4">
+              Solução Personalizada
+            </Badge>
+            <h3 className="text-2xl font-bold mb-3">Precisa de uma <span className="text-blue-600">configuração especial?</span></h3>
+            <p className="text-lg text-gray-600 max-w-xl mx-auto">
+              Entre em contato para uma cotação personalizada de acordo com suas necessidades específicas
+            </p>
+          </div>
+          
+          <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-8 rounded-2xl shadow-xl max-w-3xl mx-auto text-white">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="text-xl font-bold mb-4 flex items-center gap-2">
+                  <Server className="h-6 w-6 text-blue-200" /> 
+                  Servidores customizados
+                </h4>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-blue-300 flex-shrink-0 mt-0.5" />
+                    <span>Especificações sob medida</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-blue-300 flex-shrink-0 mt-0.5" />
+                    <span>Escalabilidade conforme demanda</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-blue-300 flex-shrink-0 mt-0.5" />
+                    <span>Configurações para alto tráfego</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-blue-300 flex-shrink-0 mt-0.5" />
+                    <span>Grandes operações corporativas</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-xl font-bold mb-4 flex items-center gap-2">
+                  <Network className="h-6 w-6 text-blue-200" /> 
+                  Suporte especializado
+                </h4>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-blue-300 flex-shrink-0 mt-0.5" />
+                    <span>Consultoria técnica dedicada</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-blue-300 flex-shrink-0 mt-0.5" />
+                    <span>Migração e configuração personalizada</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-blue-300 flex-shrink-0 mt-0.5" />
+                    <span>Soluções de redundância avançada</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-blue-300 flex-shrink-0 mt-0.5" />
+                    <span>Monitoramento 24/7 especializado</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="mt-6 text-center">
+              <p className="mb-5 text-blue-100">
+                Nossa equipe está pronta para desenvolver uma solução sob medida para seu negócio, 
+                independentemente do tamanho ou complexidade do seu projeto.
+              </p>
+              <Button 
+                asChild
+                className="bg-white hover:bg-blue-50 text-blue-700 font-medium py-6 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all border-2 border-blue-300"
+              >
+                <a 
+                  href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20preciso%20de%20uma%20cotação%20personalizada%20para%20servidores" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  Solicitar cotação personalizada
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+
         <div className="text-center mt-12 max-w-3xl mx-auto">
           <Button asChild className="bg-green-500 hover:bg-green-600 text-white font-medium rounded-full px-8 py-5 shadow-md hover:shadow-lg transition-all border border-green-400/30 flex items-center gap-2">
             <a href="https://api.whatsapp.com/send?phone=5512981156856" target="_blank" rel="noopener noreferrer">
@@ -506,4 +590,3 @@ const PricingSection = () => {
     </section>;
 };
 export default PricingSection;
-
