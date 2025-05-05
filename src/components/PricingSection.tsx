@@ -13,7 +13,7 @@ const PricingSection = () => {
   const vpsOptions = [
     {
       name: "VPS 6GB",
-      price: "159.90",
+      price: "149.90",
       specs: [{
         icon: <Server className="w-4 h-4 text-blue-500" />,
         text: "6GB RAM"
@@ -34,7 +34,7 @@ const PricingSection = () => {
       connections: "Até 18 conexões"
     }, {
       name: "VPS 8GB",
-      price: "179.90",
+      price: "169.90",
       specs: [{
         icon: <Server className="w-4 h-4 text-blue-500" />,
         text: "8GB RAM"
@@ -55,7 +55,7 @@ const PricingSection = () => {
       connections: "Até 26 conexões"
     }, {
       name: "VPS 16GB",
-      price: "289.90",
+      price: "279.90",
       specs: [{
         icon: <Server className="w-4 h-4 text-blue-500" />,
         text: "16GB RAM"
@@ -76,7 +76,7 @@ const PricingSection = () => {
       connections: "Até 34 conexões"
     }, {
       name: "VPS 32GB",
-      price: "439.90",
+      price: "429.90",
       specs: [{
         icon: <Server className="w-4 h-4 text-blue-500" />,
         text: "32GB RAM"
