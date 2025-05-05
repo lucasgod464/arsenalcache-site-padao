@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Check, ArrowRight, MessageCircle, Star, Trophy } from 'lucide-react';
 import { MessageSquare, SmartphoneIcon, Globe } from 'lucide-react';
@@ -6,11 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-
 const PricingSection = () => {
   const mainFeatures = ["Instalação pela nossa equipe", "Atualizações pelo nossa equipe", "Suporte humano", "Usuários ilimitados", "Conexões ilimitadas de WhatsApp", "Sua logo no sistema", "Cores personalizadas", "Nome do sistema personalizado", "Revenda de assinaturas ilimitadas", "Suporte individual no WhatsApp"];
   const vpsSystems = ["n8n", "redis", "evolution API", "dify", "typebot", "supabase", "postgres"];
-  
   return <section id="precos" className="py-10 px-4 bg-white border-t border-gray-100 shadow-inner mt-8">
       <div className="container mx-auto">
         <div className="text-center mb-12">
@@ -49,8 +46,8 @@ const PricingSection = () => {
               <div className="mt-4 flex items-baseline justify-center">
                 <div className="flex flex-col items-center">
                   <div className="flex items-baseline">
-                    <span className="text-4xl font-extrabold tracking-tight text-blue-700">R$58,23</span>
-                    <span className="ml-2 text-lg text-gray-600">12x sem juros</span>
+                    <span className="text-4xl font-extrabold tracking-tight text-blue-700">R$56,00</span>
+                    <span className="ml-2 text-lg text-gray-600">7x sem juros</span>
                   </div>
                   <span className="text-sm text-gray-500">ou R$392,00 a vista</span>
                 </div>
@@ -210,5 +207,4 @@ const PricingSection = () => {
       </div>
     </section>;
 };
-
 export default PricingSection;
