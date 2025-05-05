@@ -1,13 +1,71 @@
+
 import React from 'react';
-import { Check, ArrowRight, MessageCircle, Star, Trophy } from 'lucide-react';
+import { Check, ArrowRight, MessageCircle, Star, Trophy, Server, Cpu, HardDrive, Database, Network } from 'lucide-react';
 import { MessageSquare, SmartphoneIcon, Globe } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+
 const PricingSection = () => {
   const mainFeatures = ["Instalação pela nossa equipe", "Atualizações pelo nossa equipe", "Suporte humano", "Usuários ilimitados", "Conexões ilimitadas de WhatsApp", "Sua logo no sistema", "Cores personalizadas", "Nome do sistema personalizado", "Revenda de assinaturas ilimitadas", "Suporte individual no WhatsApp"];
   const vpsSystems = ["n8n", "redis", "evolution API", "dify", "typebot", "supabase", "postgres"];
+  
+  const vpsOptions = [
+    {
+      name: "VPS 6GB",
+      price: "119.90",
+      specs: [
+        { icon: <Server className="w-4 h-4 text-blue-500" />, text: "6GB RAM" },
+        { icon: <Cpu className="w-4 h-4 text-blue-500" />, text: "2 vCPU" },
+        { icon: <HardDrive className="w-4 h-4 text-blue-500" />, text: "100 GB NVMe" },
+        { icon: <Network className="w-4 h-4 text-blue-500" />, text: "1 IPV4" },
+        { icon: <Database className="w-4 h-4 text-blue-500" />, text: "Servidor no Brasil" }
+      ],
+      clients: "Até 20 clientes",
+      connections: "Até 500 conexões"
+    },
+    {
+      name: "VPS 8GB",
+      price: "139.90",
+      specs: [
+        { icon: <Server className="w-4 h-4 text-blue-500" />, text: "8GB RAM" },
+        { icon: <Cpu className="w-4 h-4 text-blue-500" />, text: "2 vCPU" },
+        { icon: <HardDrive className="w-4 h-4 text-blue-500" />, text: "120 GB NVMe" },
+        { icon: <Network className="w-4 h-4 text-blue-500" />, text: "1 IPV4" },
+        { icon: <Database className="w-4 h-4 text-blue-500" />, text: "Servidor no Brasil" }
+      ],
+      clients: "Até 40 clientes",
+      connections: "Até 1000 conexões"
+    },
+    {
+      name: "VPS 16GB",
+      price: "249.90",
+      specs: [
+        { icon: <Server className="w-4 h-4 text-blue-500" />, text: "16GB RAM" },
+        { icon: <Cpu className="w-4 h-4 text-blue-500" />, text: "6 vCPU" },
+        { icon: <HardDrive className="w-4 h-4 text-blue-500" />, text: "200 GB NVMe" },
+        { icon: <Network className="w-4 h-4 text-blue-500" />, text: "1 IPV4" },
+        { icon: <Database className="w-4 h-4 text-blue-500" />, text: "Servidor no Brasil" }
+      ],
+      clients: "Até 100 clientes",
+      connections: "Até 3000 conexões"
+    },
+    {
+      name: "VPS 32GB",
+      price: "399.90",
+      specs: [
+        { icon: <Server className="w-4 h-4 text-blue-500" />, text: "32GB RAM" },
+        { icon: <Cpu className="w-4 h-4 text-blue-500" />, text: "6 vCPU" },
+        { icon: <HardDrive className="w-4 h-4 text-blue-500" />, text: "250 GB NVMe" },
+        { icon: <Network className="w-4 h-4 text-blue-500" />, text: "1 IPV4" },
+        { icon: <Database className="w-4 h-4 text-blue-500" />, text: "Servidor no Brasil" }
+      ],
+      clients: "Até 250 clientes",
+      connections: "Até 7500 conexões"
+    }
+  ];
+  
   return <section id="precos" className="py-10 px-4 bg-white border-t border-gray-100 shadow-inner mt-8">
       <div className="container mx-auto">
         <div className="text-center mb-12">
@@ -141,59 +199,89 @@ const PricingSection = () => {
           </Card>
         </div>
 
-        <div className="max-w-3xl mx-auto mt-16 pt-6 border-t border-gray-200">
+        <div className="max-w-5xl mx-auto mt-16 pt-6 border-t border-gray-200">
           <div className="text-center mb-8">
             <Badge variant="outline" className="bg-blue-600 text-white border-blue-500 mb-4">
-              Sistemas em VPS
+              Servidores Otimizados
             </Badge>
-            <h3 className="text-2xl font-bold mb-3">Soluções avançadas em <span className="text-blue-600">servidores dedicados</span></h3>
+            <h3 className="text-2xl font-bold mb-3">VPS <span className="text-blue-600">Dedicadas e Otimizadas</span></h3>
             <p className="text-lg text-gray-600 max-w-xl mx-auto">
-              Instalação e configuração de sistemas profissionais em VPS
+              Servidores dedicados e otimizados para o máximo desempenho do seu sistema
             </p>
           </div>
           
-          <Card className="bg-gradient-to-br from-white to-blue-50 border border-blue-100 shadow-lg">
-            <CardContent className="pt-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="font-semibold mb-4 text-blue-600 flex items-center">
-                    <Trophy className="h-5 w-5 text-blue-500 mr-2" />
-                    Sistemas disponíveis:
-                  </h4>
-                  <ul className="space-y-3 border-l-2 border-blue-100 pl-3">
-                    {vpsSystems.map((system, index) => <li key={index} className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-gray-600">{system}</span>
-                      </li>)}
-                  </ul>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+            {vpsOptions.map((vps, index) => (
+              <Card key={index} className="border border-blue-100 hover:shadow-md transition-all bg-white">
+                <CardHeader className="bg-gradient-to-r from-blue-50 to-blue-100/30 pb-4 border-b border-blue-50">
+                  <CardTitle className="text-xl font-bold text-blue-700">{vps.name}</CardTitle>
+                  <div className="mt-2">
+                    <div className="flex items-baseline">
+                      <span className="text-3xl font-bold text-gray-800">R${vps.price}</span>
+                      <span className="ml-2 text-sm text-gray-500">BRL/mês</span>
+                    </div>
+                  </div>
+                </CardHeader>
                 
-                <div className="bg-white p-6 rounded-lg shadow-inner border border-blue-100">
-                  <p className="text-sm text-gray-500 mb-2">Valor por instalação:</p>
-                  <p className="text-xl font-bold text-gray-700 mb-4">R$99,90</p>
+                <CardContent className="pt-4">
+                  <ul className="space-y-3">
+                    {vps.specs.map((spec, i) => (
+                      <li key={i} className="flex items-center gap-3">
+                        {spec.icon}
+                        <span className="text-sm text-gray-600">{spec.text}</span>
+                      </li>
+                    ))}
+                  </ul>
                   
                   <Separator className="my-4" />
                   
-                  <div className="bg-blue-50 p-4 rounded-lg">
-                    <p className="text-sm text-gray-600 mb-1">Pacote completo (todos os sistemas):</p>
-                    <div className="flex items-center gap-2">
-                      <span className="text-2xl font-bold text-blue-700">R$199,90</span>
-                      <Badge className="bg-blue-100 text-blue-700 border-0">
-                        Economize R$499,40
-                      </Badge>
+                  <div className="space-y-3">
+                    <div className="bg-green-50 p-3 rounded-md border border-green-100">
+                      <p className="text-sm font-medium text-green-700 flex items-center">
+                        <Database className="w-4 h-4 mr-2" />
+                        Capacidade: {vps.clients}
+                      </p>
                     </div>
+                    
+                    <div className="bg-blue-50 p-3 rounded-md border border-blue-100">
+                      <p className="text-sm font-medium text-blue-700 flex items-center">
+                        <Network className="w-4 h-4 mr-2" />
+                        Suporta: {vps.connections}
+                      </p>
+                    </div>
+                    
+                    <Button asChild className="w-full mt-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white">
+                      <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20tenho%20interesse%20na%20VPS%20{vps.name}" target="_blank" rel="noopener noreferrer">
+                        Contratar {vps.name}
+                      </a>
+                    </Button>
                   </div>
-                  
-                  <Button asChild className="w-full mt-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium py-5 rounded-full">
-                    <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20quero%20saber%20mais%20sobre%20as%20soluções%20em%20VPS" target="_blank" rel="noopener noreferrer">
-                      Contratar pacote VPS
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          
+          <div className="text-center mt-8 bg-blue-50 p-6 rounded-lg border border-blue-100 max-w-3xl mx-auto">
+            <h4 className="text-xl font-semibold text-gray-800 mb-2">VPS Totalmente Otimizada</h4>
+            <p className="text-gray-600 mb-4">
+              Nossas VPS são especialmente configuradas para o WhatTicket, garantindo o máximo de desempenho e estabilidade para o seu negócio.
+            </p>
+            
+            <ul className="text-left space-y-2 mb-6 max-w-md mx-auto">
+              {vpsSystems.map((system, index) => (
+                <li key={index} className="flex items-start gap-2">
+                  <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-sm text-gray-600">Sistema {system} pré-instalado e configurado</span>
+                </li>
+              ))}
+            </ul>
+            
+            <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white">
+              <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20quero%20mais%20informações%20sobre%20as%20VPS%20otimizadas" target="_blank" rel="noopener noreferrer">
+                Falar com especialista em servidores
+              </a>
+            </Button>
+          </div>
         </div>
 
         <div className="text-center mt-8 max-w-3xl mx-auto">
