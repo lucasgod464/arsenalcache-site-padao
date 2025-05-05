@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Check, X, ArrowRight, MessageCircle, Star, Trophy, Server, Cpu, HardDrive, Database, Network } from 'lucide-react';
 import { MessageSquare, SmartphoneIcon, Globe, Sparkles, BrainCircuit, Zap } from 'lucide-react';
@@ -12,7 +13,7 @@ const PricingSection = () => {
   const vpsOptions = [
     {
       name: "VPS 6GB",
-      price: "139.90",
+      price: "159.90",
       specs: [{
         icon: <Server className="w-4 h-4 text-blue-500" />,
         text: "6GB RAM"
@@ -33,7 +34,7 @@ const PricingSection = () => {
       connections: "Até 18 conexões"
     }, {
       name: "VPS 8GB",
-      price: "159.90",
+      price: "179.90",
       specs: [{
         icon: <Server className="w-4 h-4 text-blue-500" />,
         text: "8GB RAM"
@@ -54,7 +55,7 @@ const PricingSection = () => {
       connections: "Até 26 conexões"
     }, {
       name: "VPS 16GB",
-      price: "269.90",
+      price: "289.90",
       specs: [{
         icon: <Server className="w-4 h-4 text-blue-500" />,
         text: "16GB RAM"
@@ -75,7 +76,7 @@ const PricingSection = () => {
       connections: "Até 34 conexões"
     }, {
       name: "VPS 32GB",
-      price: "419.90",
+      price: "439.90",
       specs: [{
         icon: <Server className="w-4 h-4 text-blue-500" />,
         text: "32GB RAM"
@@ -192,7 +193,8 @@ const PricingSection = () => {
     }
   };
 
-  return <section id="precos" className="py-10 px-4 bg-white border-t border-gray-100 shadow-inner mt-8">
+  return (
+    <section id="precos" className="py-10 px-4 bg-white border-t border-gray-100 shadow-inner mt-8">
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <Badge variant="outline" className="bg-blue-600 text-white border-blue-500 mb-4">
@@ -338,7 +340,8 @@ const PricingSection = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-            {vpsOptions.map((vps, index) => <Card key={index} className="border border-blue-100 hover:shadow-md transition-all bg-white">
+            {vpsOptions.map((vps, index) => (
+              <Card key={index} className="border border-blue-100 hover:shadow-md transition-all bg-white">
                 <CardHeader className="bg-gradient-to-r from-blue-50 to-blue-100/30 pb-4 border-b border-blue-50">
                   <CardTitle className="text-xl font-bold text-blue-700">{vps.name}</CardTitle>
                   <div className="mt-2">
@@ -351,10 +354,12 @@ const PricingSection = () => {
                 
                 <CardContent className="pt-4">
                   <ul className="space-y-3">
-                    {vps.specs.map((spec, i) => <li key={i} className="flex items-center gap-3">
+                    {vps.specs.map((spec, i) => (
+                      <li key={i} className="flex items-center gap-3">
                         {spec.icon}
                         <span className="text-sm text-gray-600">{spec.text}</span>
-                      </li>)}
+                      </li>
+                    ))}
                   </ul>
                   
                   <Separator className="my-4" />
@@ -375,13 +380,14 @@ const PricingSection = () => {
                     </div>
                     
                     <Button asChild className="w-full mt-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white">
-                      <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20tenho%20interesse%20na%20VPS%20{vps.name}" target="_blank" rel="noopener noreferrer">
+                      <a href={`https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20tenho%20interesse%20na%20VPS%20${vps.name}`} target="_blank" rel="noopener noreferrer">
                         Contratar {vps.name}
                       </a>
                     </Button>
                   </div>
                 </CardContent>
-              </Card>)}
+              </Card>
+            ))}
           </div>
           
           {/* Personalização de Sistemas section */}
@@ -453,7 +459,8 @@ const PricingSection = () => {
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
-            {dedicatedServers.map((server, index) => <Card key={index} className="border border-blue-200 hover:shadow-xl transition-all bg-gradient-to-br from-white to-blue-50">
+            {dedicatedServers.map((server, index) => (
+              <Card key={index} className="border border-blue-200 hover:shadow-xl transition-all bg-gradient-to-br from-white to-blue-50">
                 <CardHeader className="bg-gradient-to-r from-blue-700 to-blue-600 pb-6 text-white">
                   <div className="space-y-1.5">
                     <Badge className="bg-blue-400 text-blue-900 border-0 mb-2 font-medium">
@@ -480,9 +487,11 @@ const PricingSection = () => {
                     <div>
                       <h4 className="font-semibold mb-3 text-blue-700 text-lg">Especificações:</h4>
                       <ul className="space-y-3 border-l-2 border-blue-200 pl-4">
-                        {server.specs.map((spec, i) => <li key={i} className="text-sm text-gray-700">
+                        {server.specs.map((spec, i) => (
+                          <li key={i} className="text-sm text-gray-700">
                             <span className="font-semibold">{spec.title}:</span> {spec.details}
-                          </li>)}
+                          </li>
+                        ))}
                       </ul>
                       
                       <div className="mt-6 space-y-3">
@@ -511,10 +520,12 @@ const PricingSection = () => {
                     <div>
                       <h4 className="font-semibold mb-3 text-blue-700 text-lg">Benefícios inclusos:</h4>
                       <ul className="space-y-2 mb-6">
-                        {server.extras.map((extra, i) => <li key={i} className="flex items-start gap-2">
+                        {server.extras.map((extra, i) => (
+                          <li key={i} className="flex items-start gap-2">
                             <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
                             <span className="text-sm text-gray-700">{extra}</span>
-                          </li>)}
+                          </li>
+                        ))}
                       </ul>
                       
                       <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-4 rounded-lg text-white mt-4">
@@ -523,10 +534,12 @@ const PricingSection = () => {
                           Benefícios Premium:
                         </h4>
                         <ul className="space-y-2">
-                          {premiumBenefits.slice(0, 5).map((benefit, i) => <li key={i} className="flex items-start gap-2">
+                          {premiumBenefits.slice(0, 5).map((benefit, i) => (
+                            <li key={i} className="flex items-start gap-2">
                               <Check className="w-4 h-4 text-blue-200 flex-shrink-0 mt-0.5" />
                               <span className="text-sm text-blue-50">{benefit}</span>
-                            </li>)}
+                            </li>
+                          ))}
                         </ul>
                       </div>
                       
@@ -539,7 +552,8 @@ const PricingSection = () => {
                     </div>
                   </div>
                 </CardContent>
-              </Card>)}
+              </Card>
+            ))}
           </div>
           
           <div className="text-center mt-12 bg-gradient-to-r from-blue-50 to-blue-100 p-8 rounded-xl border border-blue-200 max-w-4xl mx-auto shadow-md">
@@ -553,22 +567,39 @@ const PricingSection = () => {
               <div className="bg-white p-6 rounded-lg border border-blue-200 shadow-sm">
                 <h5 className="text-xl font-semibold text-blue-700 mb-3">Monitoramento Proativo</h5>
                 <ul className="text-left space-y-3">
-                  {premiumBenefits.slice(0, 3).map((benefit, index) => <li key={index} className="flex items-start gap-2">
+                  {premiumBenefits.slice(0, 3).map((benefit, index) => (
+                    <li key={index} className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
                       <span className="text-gray-700">{benefit}</span>
-                    </li>)}
+                    </li>
+                  ))}
                 </ul>
               </div>
               
               <div className="bg-white p-6 rounded-lg border border-blue-200 shadow-sm">
                 <h5 className="text-xl font-semibold text-blue-700 mb-3">Relatórios e Análises</h5>
                 <ul className="text-left space-y-3">
-                  {premiumBenefits.slice(3, 7).map((benefit, index) => <li key={index} className="flex items-start gap-2">
+                  {premiumBenefits.slice(3, 7).map((benefit, index) => (
+                    <li key={index} className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
                       <span className="text-gray-700">{benefit}</span>
-                    </li>)}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
             
-            <Button asChild className="bg-blue-700 hover:bg-blue-800 text-white text-lg py-6
+            <Button asChild className="bg-blue-700 hover:bg-blue-800 text-white text-lg py-6">
+              <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20de%20gerenciamento%20de%20servidores" target="_blank" rel="noopener noreferrer">
+                Fale com nossa equipe de especialistas
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default PricingSection;
