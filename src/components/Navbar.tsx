@@ -1,8 +1,16 @@
 
 import React, { useEffect, useState } from 'react';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,7 +49,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <a href="/" className="text-2xl font-display font-bold text-arsenal-dark">
-              Arsenal<span className="text-whatsapp-DEFAULT">Cache</span>
+              IA<span className="text-whatsapp-DEFAULT">Conecta</span>
             </a>
           </div>
 
