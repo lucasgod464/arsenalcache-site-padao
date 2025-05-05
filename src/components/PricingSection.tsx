@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Check, X, ArrowRight, MessageCircle, Star, Trophy, Server, Cpu, HardDrive, Database, Network } from 'lucide-react';
 import { MessageSquare, SmartphoneIcon, Globe, Sparkles, BrainCircuit, Zap } from 'lucide-react';
@@ -595,6 +594,144 @@ const PricingSection = () => {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>
+          </div>
+        </div>
+
+        {/* Seção IA Conecta */}
+        <div id="ia-conecta" className="max-w-5xl mx-auto mt-16 pt-6 border-t border-gray-200">
+          <div className="text-center mb-8">
+            <Badge variant="outline" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white border-0 mb-4">
+              Inteligência Artificial
+            </Badge>
+            <h3 className="text-2xl font-bold mb-3">IA <span className="text-gradient bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">Conecta</span></h3>
+            <p className="text-lg text-gray-600 max-w-xl mx-auto">
+              Nossa solução de IA exclusiva para atendimento e automação com WhatsApp
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
+            <Card className="border border-blue-200 hover:shadow-lg transition-all bg-white">
+              <CardHeader className="bg-gradient-to-r from-blue-500 to-blue-600 text-white">
+                <Badge className="bg-white/20 text-white border-0 mb-2 font-medium self-start">
+                  Nosso Serviço
+                </Badge>
+                <CardTitle className="text-2xl font-bold text-white">
+                  {aiComparisonData.ourService.name}
+                </CardTitle>
+                <div className="mt-2">
+                  <div className="flex items-baseline">
+                    <span className="text-3xl font-bold text-white">{aiComparisonData.ourService.price}</span>
+                  </div>
+                </div>
+              </CardHeader>
+              
+              <CardContent className="pt-6">
+                <ul className="space-y-3">
+                  {aiComparisonData.ourService.features.map((feature, index) => (
+                    <li key={index} className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                
+                <div className="mt-6">
+                  <Button asChild className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white">
+                    <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20tenho%20interesse%20na%20IA%20Conecta" target="_blank" rel="noopener noreferrer">
+                      Contratar IA Conecta
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card className="border border-gray-200 hover:shadow-lg transition-all bg-white">
+              <CardHeader className="bg-gradient-to-r from-gray-700 to-gray-800 text-white">
+                <Badge className="bg-white/20 text-white border-0 mb-2 font-medium self-start">
+                  Comparação
+                </Badge>
+                <CardTitle className="text-2xl font-bold text-white">
+                  {aiComparisonData.competitor.name}
+                </CardTitle>
+                <div className="mt-2">
+                  <div className="flex items-baseline">
+                    <span className="text-3xl font-bold text-white">{aiComparisonData.competitor.price}</span>
+                  </div>
+                </div>
+              </CardHeader>
+              
+              <CardContent className="pt-6">
+                <ul className="space-y-3">
+                  {aiComparisonData.competitor.features.map((feature, index) => (
+                    <li key={index} className="flex items-start gap-2">
+                      <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                
+                <div className="mt-6">
+                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <p className="text-sm text-gray-600 italic">
+                      * Valor estimado com base em uso corporativo médio.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+          
+          <div className="mt-10 bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-lg border border-blue-100">
+            <h4 className="text-xl font-semibold text-blue-700 mb-4 flex items-center gap-2">
+              <BrainCircuit className="w-6 h-6 text-purple-600" />
+              Por que escolher a IA Conecta?
+            </h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm">
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="bg-blue-100 p-2 rounded-full">
+                    <Zap className="w-5 h-5 text-blue-600" />
+                  </div>
+                  <h5 className="font-medium text-blue-800">Personalização Total</h5>
+                </div>
+                <p className="text-sm text-gray-600">
+                  Treinada com seus dados específicos para oferecer respostas precisas e personalizadas para seu negócio.
+                </p>
+              </div>
+              
+              <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm">
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="bg-purple-100 p-2 rounded-full">
+                    <MessageSquare className="w-5 h-5 text-purple-600" />
+                  </div>
+                  <h5 className="font-medium text-blue-800">Integração Nativa</h5>
+                </div>
+                <p className="text-sm text-gray-600">
+                  Conecta-se perfeitamente com o WhatsApp e todas as plataformas Whaticket sem configuração complexa.
+                </p>
+              </div>
+              
+              <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm">
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="bg-green-100 p-2 rounded-full">
+                    <Network className="w-5 h-5 text-green-600" />
+                  </div>
+                  <h5 className="font-medium text-blue-800">Custo Previsível</h5>
+                </div>
+                <p className="text-sm text-gray-600">
+                  Valor fixo mensal sem surpresas ou cobranças extras pelo volume de uso ou número de mensagens.
+                </p>
+              </div>
+            </div>
+            
+            <div className="mt-8 text-center">
+              <Button asChild className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white">
+                <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20gostaria%20de%20uma%20demonstração%20da%20IA%20Conecta" target="_blank" rel="noopener noreferrer">
+                  Agendar demonstração gratuita
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
