@@ -140,6 +140,20 @@ const ZproSection = () => {
           </div>
         </div>
 
+        <div id="ia-conecta" className="bg-blue-900/30 rounded-xl p-6 md:p-8 mb-16">
+          <div className="text-center mb-8">
+            <span className="inline-block py-1 px-3 rounded-full bg-purple-600 text-white text-sm font-medium mb-4">
+              Inteligência Artificial Ilimitada
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <span className="text-purple-400">IA Conecta</span> - Solução de IA Sem Limites
+            </h2>
+            <p className="text-xl text-blue-200 max-w-3xl mx-auto">
+              Acesso completo à tecnologia de IA avançada por um valor fixo mensal, sem surpresas na sua fatura
+            </p>
+          </div>
+        </div>
+
         <div className="bg-blue-900/30 rounded-xl p-6 md:p-8">
           <div className="flex flex-col md:flex-row items-center gap-6">
             <div className="bg-blue-800 p-4 rounded-full">
