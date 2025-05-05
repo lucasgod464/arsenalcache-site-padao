@@ -247,7 +247,7 @@ const PricingSection = () => {
               <div className="space-y-5">
                 <div>
                   <h4 className="font-semibold mb-3 text-blue-600 flex items-center">
-                    <Trophy className="h-5 w-5 text-blue-500 mr-2" />
+                    <Trophy className="h-5 w-5 text-blue-500" />
                     Recursos principais:
                   </h4>
                   <ul className="space-y-2.5 border-l-2 border-blue-100 pl-3">
@@ -384,7 +384,7 @@ const PricingSection = () => {
               </Card>)}
           </div>
           
-          {/* Substituição da seção "VPS Totalmente Otimizada" por "Personalização de Sistemas" */}
+          {/* Personalização de Sistemas section */}
           <div className="text-center mt-8 bg-gradient-to-br from-blue-100 to-blue-50 p-6 rounded-lg border border-blue-200 max-w-3xl mx-auto shadow-sm">
             <h4 className="text-xl font-semibold text-gray-800 mb-2 flex items-center justify-center gap-2">
               <Sparkles className="h-5 w-5 text-blue-600" /> 
