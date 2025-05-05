@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Check, ArrowRight, MessageCircle, Star, Trophy } from 'lucide-react';
 import { MessageSquare, SmartphoneIcon, Globe } from 'lucide-react';
@@ -5,10 +6,11 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+
 const PricingSection = () => {
   const mainFeatures = ["Instalação pela nossa equipe", "Atualizações pelo nossa equipe", "Suporte humano", "Usuários ilimitados", "Conexões ilimitadas de WhatsApp", "Sua logo no sistema", "Cores personalizadas", "Nome do sistema personalizado", "Revenda de assinaturas ilimitadas", "Suporte individual no WhatsApp"];
-  const premiumSoftware = ["Advanced filter (Gerador & Filtro de Números)", "WaHammer (Aquecedor de WhatsApp)", "WaDefender (Verificador de Força de Conta)", "BotMaster ID (Disparador Massivo)", "Uma licença para cada software"];
   const vpsSystems = ["n8n", "redis", "evolution API", "dify", "typebot", "supabase", "postgres"];
+  
   return <section id="precos" className="py-10 px-4 bg-white border-t border-gray-100 shadow-inner mt-8">
       <div className="container mx-auto">
         <div className="text-center mb-12">
@@ -37,18 +39,20 @@ const PricingSection = () => {
                   White Label Premium
                 </Badge>
                 <CardTitle className="text-2xl font-bold flex items-center gap-2 text-gray-800">
-                  Plano Profissional
+                  Plano Start
                   <Star className="h-5 w-5 text-blue-500" />
                 </CardTitle>
                 <CardDescription className="text-gray-600">
-                  Solução completa com ferramentas premium
+                  Solução completa para seu negócio
                 </CardDescription>
               </div>
               <div className="mt-4 flex items-baseline justify-center">
-                
                 <div className="flex flex-col items-center">
-                  <span className="text-4xl font-extrabold tracking-tight text-blue-700">12x R$49,90</span>
-                  <span className="text-sm text-gray-500">ou R$598,80 a vista</span>
+                  <div className="flex items-baseline">
+                    <span className="text-4xl font-extrabold tracking-tight text-blue-700">R$58,23</span>
+                    <span className="ml-2 text-lg text-gray-600">12x sem juros</span>
+                  </div>
+                  <span className="text-sm text-gray-500">ou R$392,00 a vista</span>
                 </div>
               </div>
               <div className="flex flex-wrap gap-2 mt-3 justify-center">
@@ -69,18 +73,6 @@ const PricingSection = () => {
                     {mainFeatures.map((feature, index) => <li key={index} className="flex items-start gap-2">
                         <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
                         <span className="text-sm text-gray-600">{feature}</span>
-                      </li>)}
-                  </ul>
-                </div>
-                
-                <Separator className="bg-gray-100" />
-                
-                <div>
-                  <h4 className="font-semibold mb-3 text-blue-600">Softwares premium inclusos:</h4>
-                  <ul className="space-y-2.5 border-l-2 border-blue-100 pl-3">
-                    {premiumSoftware.map((software, index) => <li key={index} className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-gray-600">{software}</span>
                       </li>)}
                   </ul>
                 </div>
@@ -126,7 +118,7 @@ const PricingSection = () => {
                   <ul className="space-y-2.5 border-l-2 border-blue-100 pl-3">
                     <li className="flex items-start gap-2">
                       <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-gray-600">R$400,00 para manutenção do sistema</span>
+                      <span className="text-sm text-gray-600">R$300,00 para manutenção do sistema</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
@@ -144,7 +136,7 @@ const PricingSection = () => {
             <CardFooter className="pt-4 pb-8 flex justify-center">
               <Button asChild className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium py-6 rounded-full transition-all shadow-md hover:shadow-lg">
                 <a href="https://www.asaas.com/c/8fmv6ge3llbfeanu" target="_blank" rel="noopener noreferrer">
-                  Contratar plano profissional
+                  Contratar plano start
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </Button>
@@ -218,4 +210,5 @@ const PricingSection = () => {
       </div>
     </section>;
 };
+
 export default PricingSection;
