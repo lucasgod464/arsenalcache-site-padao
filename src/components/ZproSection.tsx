@@ -1,9 +1,10 @@
+
 import React, { useState, useEffect } from 'react';
 import { Check, Clock, Server } from 'lucide-react';
 
 const ZproSection = () => {
   return (
-    <section id="sistema-golden" className="bg-blue-950 py-20 px-4 text-white">
+    <section id="ia-conecta" className="bg-blue-950 py-20 px-4 text-white">
       <div className="container mx-auto">
         <div className="text-center mb-16 fade-in-section">
           <span className="inline-block py-1 px-3 rounded-full bg-blue-800 text-blue-200 text-sm font-medium mb-4">
