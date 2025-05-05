@@ -110,15 +110,16 @@ const ZproSection = () => {
           </div>
         </div>
 
-        <div className="bg-blue-900/30 rounded-xl p-6 md:p-8 mb-16">
+        <div id="inteligencia-artificial" className="bg-blue-900/30 rounded-xl p-6 md:p-8 mb-16">
           <div className="flex flex-col md:flex-row items-center gap-6 mb-6">
             <div className="bg-blue-800 p-4 rounded-full">
               <Server className="h-10 w-10 text-amber-400" />
             </div>
             <div>
-              <h3 className="text-2xl font-bold mb-2">Requisitos Mínimos do Sistema</h3>
+              <h3 className="text-2xl font-bold mb-2">Inteligência Artificial Ilimitada</h3>
               <p className="text-xl text-blue-200">
-                Para garantir o melhor desempenho do Whaticket Profissional, recomendamos os seguintes requisitos técnicos:
+                IA Conecta - Solução de IA Sem Limites<br />
+                Acesso completo à tecnologia de IA avançada por um valor fixo mensal, sem surpresas na sua fatura
               </p>
             </div>
           </div>
