@@ -54,7 +54,7 @@ const Navbar = () => {
               Recursos
             </button>
             <button 
-              onClick={() => scrollToSection('ia-conecta-solucao')}
+              onClick={() => scrollToSection('ia-conecta')}
               className="text-gray-700 hover:text-arsenal-DEFAULT transition-colors"
             >
               IA Conecta
@@ -111,7 +111,7 @@ const Navbar = () => {
                 Recursos
               </button>
               <button 
-                onClick={() => scrollToSection('ia-conecta-solucao')}
+                onClick={() => scrollToSection('ia-conecta')}
                 className="text-gray-700 hover:text-arsenal-DEFAULT py-2 transition-colors"
               >
                 IA Conecta
