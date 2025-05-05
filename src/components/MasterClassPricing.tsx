@@ -121,7 +121,7 @@ const MasterClassPricing = () => {
                     White Label Premium
                   </Badge>
                   <CardTitle className="text-2xl font-bold flex items-center gap-2 text-white">
-                    Plano Profissional
+                    Plano Start
                     <Sparkles className="h-5 w-5 text-amber-400" />
                   </CardTitle>
                   <CardDescription className="text-purple-200">
@@ -183,7 +183,7 @@ const MasterClassPricing = () => {
                       e.stopPropagation();
                     }}
                   >
-                    Contratar plano profissional
+                    Contratar plano start
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
