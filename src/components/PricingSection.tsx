@@ -13,13 +13,13 @@ const PricingSection = () => {
   const vpsOptions = [
     {
       name: "VPS 6GB",
-      price: "159.90",
+      price: "119.90",
       specs: [{
         icon: <Server className="w-4 h-4 text-blue-500" />,
         text: "6GB RAM"
       }, {
         icon: <Cpu className="w-4 h-4 text-blue-500" />,
-        text: "4 vCPU"
+        text: "2 vCPU"
       }, {
         icon: <HardDrive className="w-4 h-4 text-blue-500" />,
         text: "100 GB NVMe"
@@ -30,17 +30,17 @@ const PricingSection = () => {
         icon: <Database className="w-4 h-4 text-blue-500" />,
         text: "Servidor no Brasil"
       }],
-      clients: "Até 15 clientes",
-      connections: "Até 18 conexões"
+      clients: "Até 20 clientes",
+      connections: "Até 500 conexões"
     }, {
       name: "VPS 8GB",
-      price: "179.90",
+      price: "139.90",
       specs: [{
         icon: <Server className="w-4 h-4 text-blue-500" />,
         text: "8GB RAM"
       }, {
         icon: <Cpu className="w-4 h-4 text-blue-500" />,
-        text: "4 vCPU"
+        text: "2 vCPU"
       }, {
         icon: <HardDrive className="w-4 h-4 text-blue-500" />,
         text: "120 GB NVMe"
@@ -51,11 +51,11 @@ const PricingSection = () => {
         icon: <Database className="w-4 h-4 text-blue-500" />,
         text: "Servidor no Brasil"
       }],
-      clients: "Até 20 clientes",
-      connections: "Até 26 conexões"
+      clients: "Até 40 clientes",
+      connections: "Até 1000 conexões"
     }, {
       name: "VPS 16GB",
-      price: "289.90",
+      price: "249.90",
       specs: [{
         icon: <Server className="w-4 h-4 text-blue-500" />,
         text: "16GB RAM"
@@ -72,11 +72,11 @@ const PricingSection = () => {
         icon: <Database className="w-4 h-4 text-blue-500" />,
         text: "Servidor no Brasil"
       }],
-      clients: "Até 40 clientes",
-      connections: "Até 34 conexões"
+      clients: "Até 100 clientes",
+      connections: "Até 3000 conexões"
     }, {
       name: "VPS 32GB",
-      price: "439.90",
+      price: "399.90",
       specs: [{
         icon: <Server className="w-4 h-4 text-blue-500" />,
         text: "32GB RAM"
@@ -93,8 +93,8 @@ const PricingSection = () => {
         icon: <Database className="w-4 h-4 text-blue-500" />,
         text: "Servidor no Brasil"
       }],
-      clients: "Até 60 clientes",
-      connections: "Até 45 conexões"
+      clients: "Até 250 clientes",
+      connections: "Até 7500 conexões"
     }
   ];
   
@@ -193,8 +193,7 @@ const PricingSection = () => {
     }
   };
 
-  return (
-    <section id="precos" className="py-10 px-4 bg-white border-t border-gray-100 shadow-inner mt-8">
+  return <section id="precos" className="py-10 px-4 bg-white border-t border-gray-100 shadow-inner mt-8">
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <Badge variant="outline" className="bg-blue-600 text-white border-blue-500 mb-4">
@@ -340,8 +339,7 @@ const PricingSection = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-            {vpsOptions.map((vps, index) => (
-              <Card key={index} className="border border-blue-100 hover:shadow-md transition-all bg-white">
+            {vpsOptions.map((vps, index) => <Card key={index} className="border border-blue-100 hover:shadow-md transition-all bg-white">
                 <CardHeader className="bg-gradient-to-r from-blue-50 to-blue-100/30 pb-4 border-b border-blue-50">
                   <CardTitle className="text-xl font-bold text-blue-700">{vps.name}</CardTitle>
                   <div className="mt-2">
@@ -354,12 +352,10 @@ const PricingSection = () => {
                 
                 <CardContent className="pt-4">
                   <ul className="space-y-3">
-                    {vps.specs.map((spec, i) => (
-                      <li key={i} className="flex items-center gap-3">
+                    {vps.specs.map((spec, i) => <li key={i} className="flex items-center gap-3">
                         {spec.icon}
                         <span className="text-sm text-gray-600">{spec.text}</span>
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                   
                   <Separator className="my-4" />
@@ -380,14 +376,13 @@ const PricingSection = () => {
                     </div>
                     
                     <Button asChild className="w-full mt-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white">
-                      <a href={`https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20tenho%20interesse%20na%20VPS%20${vps.name}`} target="_blank" rel="noopener noreferrer">
+                      <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20tenho%20interesse%20na%20VPS%20{vps.name}" target="_blank" rel="noopener noreferrer">
                         Contratar {vps.name}
                       </a>
                     </Button>
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
           
           {/* Personalização de Sistemas section */}
@@ -459,8 +454,7 @@ const PricingSection = () => {
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
-            {dedicatedServers.map((server, index) => (
-              <Card key={index} className="border border-blue-200 hover:shadow-xl transition-all bg-gradient-to-br from-white to-blue-50">
+            {dedicatedServers.map((server, index) => <Card key={index} className="border border-blue-200 hover:shadow-xl transition-all bg-gradient-to-br from-white to-blue-50">
                 <CardHeader className="bg-gradient-to-r from-blue-700 to-blue-600 pb-6 text-white">
                   <div className="space-y-1.5">
                     <Badge className="bg-blue-400 text-blue-900 border-0 mb-2 font-medium">
@@ -487,11 +481,9 @@ const PricingSection = () => {
                     <div>
                       <h4 className="font-semibold mb-3 text-blue-700 text-lg">Especificações:</h4>
                       <ul className="space-y-3 border-l-2 border-blue-200 pl-4">
-                        {server.specs.map((spec, i) => (
-                          <li key={i} className="text-sm text-gray-700">
+                        {server.specs.map((spec, i) => <li key={i} className="text-sm text-gray-700">
                             <span className="font-semibold">{spec.title}:</span> {spec.details}
-                          </li>
-                        ))}
+                          </li>)}
                       </ul>
                       
                       <div className="mt-6 space-y-3">
@@ -520,12 +512,10 @@ const PricingSection = () => {
                     <div>
                       <h4 className="font-semibold mb-3 text-blue-700 text-lg">Benefícios inclusos:</h4>
                       <ul className="space-y-2 mb-6">
-                        {server.extras.map((extra, i) => (
-                          <li key={i} className="flex items-start gap-2">
+                        {server.extras.map((extra, i) => <li key={i} className="flex items-start gap-2">
                             <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
                             <span className="text-sm text-gray-700">{extra}</span>
-                          </li>
-                        ))}
+                          </li>)}
                       </ul>
                       
                       <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-4 rounded-lg text-white mt-4">
@@ -534,12 +524,10 @@ const PricingSection = () => {
                           Benefícios Premium:
                         </h4>
                         <ul className="space-y-2">
-                          {premiumBenefits.slice(0, 5).map((benefit, i) => (
-                            <li key={i} className="flex items-start gap-2">
+                          {premiumBenefits.slice(0, 5).map((benefit, i) => <li key={i} className="flex items-start gap-2">
                               <Check className="w-4 h-4 text-blue-200 flex-shrink-0 mt-0.5" />
                               <span className="text-sm text-blue-50">{benefit}</span>
-                            </li>
-                          ))}
+                            </li>)}
                         </ul>
                       </div>
                       
@@ -552,8 +540,7 @@ const PricingSection = () => {
                     </div>
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
           
           <div className="text-center mt-12 bg-gradient-to-r from-blue-50 to-blue-100 p-8 rounded-xl border border-blue-200 max-w-4xl mx-auto shadow-md">
@@ -567,39 +554,282 @@ const PricingSection = () => {
               <div className="bg-white p-6 rounded-lg border border-blue-200 shadow-sm">
                 <h5 className="text-xl font-semibold text-blue-700 mb-3">Monitoramento Proativo</h5>
                 <ul className="text-left space-y-3">
-                  {premiumBenefits.slice(0, 3).map((benefit, index) => (
-                    <li key={index} className="flex items-start gap-2">
+                  {premiumBenefits.slice(0, 3).map((benefit, index) => <li key={index} className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
                       <span className="text-gray-700">{benefit}</span>
-                    </li>
-                  ))}
+                    </li>)}
                 </ul>
               </div>
               
               <div className="bg-white p-6 rounded-lg border border-blue-200 shadow-sm">
                 <h5 className="text-xl font-semibold text-blue-700 mb-3">Relatórios e Análises</h5>
                 <ul className="text-left space-y-3">
-                  {premiumBenefits.slice(3, 7).map((benefit, index) => (
-                    <li key={index} className="flex items-start gap-2">
+                  {premiumBenefits.slice(3, 7).map((benefit, index) => <li key={index} className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
                       <span className="text-gray-700">{benefit}</span>
-                    </li>
-                  ))}
+                    </li>)}
                 </ul>
               </div>
             </div>
             
-            <Button asChild className="bg-blue-700 hover:bg-blue-800 text-white text-lg py-6">
-              <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20de%20gerenciamento%20de%20servidores" target="_blank" rel="noopener noreferrer">
-                Fale com nossa equipe de especialistas
-                <ArrowRight className="ml-2 h-4 w-4" />
+            <Button asChild className="bg-blue-700 hover:bg-blue-800 text-white text-lg py-6 px-8 rounded-lg shadow-lg">
+              <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20quero%20informações%20sobre%20os%20servidores%20dedicados%20premium" target="_blank" rel="noopener noreferrer">
+                Falar com consultor especializado
               </a>
             </Button>
           </div>
         </div>
+
+        {/* Nova seção: Cotação Personalizada */}
+        <div className="max-w-5xl mx-auto mt-16 pt-6 border-t border-gray-200">
+          <div className="text-center mb-8">
+            <Badge variant="outline" className="bg-blue-600 text-white border-blue-500 mb-4">
+              Solução Personalizada
+            </Badge>
+            <h3 className="text-2xl font-bold mb-3">Precisa de uma <span className="text-blue-600">configuração especial?</span></h3>
+            <p className="text-lg text-gray-600 max-w-xl mx-auto">
+              Entre em contato para uma cotação personalizada de acordo com suas necessidades específicas
+            </p>
+          </div>
+          
+          <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-8 rounded-2xl shadow-xl max-w-3xl mx-auto text-white">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="text-xl font-bold mb-4 flex items-center gap-2">
+                  <Server className="h-6 w-6 text-blue-200" /> 
+                  Servidores customizados
+                </h4>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-blue-300 flex-shrink-0 mt-0.5" />
+                    <span>Especificações sob medida</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-blue-300 flex-shrink-0 mt-0.5" />
+                    <span>Escalabilidade conforme demanda</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-blue-300 flex-shrink-0 mt-0.5" />
+                    <span>Configurações para alto tráfego</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-blue-300 flex-shrink-0 mt-0.5" />
+                    <span>Grandes operações corporativas</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-xl font-bold mb-4 flex items-center gap-2">
+                  <Network className="h-6 w-6 text-blue-200" /> 
+                  Suporte especializado
+                </h4>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-blue-300 flex-shrink-0 mt-0.5" />
+                    <span>Consultoria técnica dedicada</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-blue-300 flex-shrink-0 mt-0.5" />
+                    <span>Migração e configuração personalizada</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-blue-300 flex-shrink-0 mt-0.5" />
+                    <span>Soluções de redundância avançada</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-blue-300 flex-shrink-0 mt-0.5" />
+                    <span>Monitoramento 24/7 especializado</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="mt-6 text-center">
+              <p className="mb-5 text-blue-100">
+                Nossa equipe está pronta para desenvolver uma solução sob medida para seu negócio, 
+                independentemente do tamanho ou complexidade do seu projeto.
+              </p>
+              <Button asChild className="bg-white hover:bg-blue-50 text-blue-700 font-medium py-6 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all border-2 border-blue-300">
+                <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20preciso%20de%20uma%20cotação%20personalizada%20para%20servidores" target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  Solicitar cotação personalizada
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* IA Ilimitada Section - MOVIDA para depois da seção de Solução Personalizada */}
+        <div className="max-w-5xl mx-auto mt-16 pt-8 border-t border-gray-200">
+          <div className="text-center mb-8">
+            <Badge variant="outline" className="bg-purple-600 text-white border-purple-500 mb-4">
+              Inteligência Artificial Ilimitada
+            </Badge>
+            <h3 className="text-2xl font-bold mb-3">
+              <span className="text-purple-600">IA Conecta</span> - Solução de IA Sem Limites
+            </h3>
+            <p className="text-lg text-gray-600 max-w-xl mx-auto">
+              Acesso completo à tecnologia de IA avançada por um valor fixo mensal, sem surpresas na sua fatura
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-10">
+            {/* Nossa solução de IA */}
+            <Card className="bg-gradient-to-br from-purple-50 to-blue-50 border border-purple-200 shadow-lg hover:shadow-xl transition-all">
+              <CardHeader className="bg-gradient-to-r from-purple-600 to-blue-600 text-white pb-6">
+                <div className="space-y-1.5">
+                  <Badge className="bg-white text-purple-700 border-0 mb-2">
+                    Nossa Solução
+                  </Badge>
+                  <CardTitle className="text-2xl font-bold flex items-center gap-2">
+                    {aiComparisonData.ourService.name}
+                    <BrainCircuit className="h-5 w-5 text-purple-200" />
+                  </CardTitle>
+                  <div className="mt-4">
+                    <div className="flex items-baseline">
+                      <span className="text-4xl font-extrabold tracking-tight">{aiComparisonData.ourService.price}</span>
+                    </div>
+                    <p className="text-sm text-purple-100 mt-2">Preço fixo sem surpresas</p>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="font-semibold mb-3 text-purple-700 flex items-center gap-2">
+                      <Trophy className="h-5 w-5 text-purple-600" />
+                      Vantagens exclusivas:
+                    </h4>
+                    <ul className="space-y-2.5">
+                      {aiComparisonData.ourService.features.map((feature, index) => (
+                        <li key={index} className="flex items-start gap-2">
+                          <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                          <span className="text-gray-700">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="bg-white p-4 rounded-lg border border-purple-100 shadow-sm">
+                    <h5 className="font-medium text-purple-700 mb-2 flex items-center gap-2">
+                      <Zap className="h-4 w-4" />
+                      Economia real e previsibilidade
+                    </h5>
+                    <p className="text-gray-600 text-sm">
+                      Com nossa solução de valor fixo, você economiza até 80% em comparação com APIs de IA tradicionais,
+                      além de ter previsibilidade total de custos independente do volume de uso.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+              <CardFooter className="pt-2 pb-6 px-6">
+                <Button asChild className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white py-6 rounded-lg transition-all shadow-md hover:shadow-xl">
+                  <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20tenho%20interesse%20no%20serviço%20de%20IA%20Conecta%20Ilimitado" target="_blank" rel="noopener noreferrer">
+                    Contratar IA Ilimitada
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </CardFooter>
+            </Card>
+            
+            {/* Comparação com GPT-4 */}
+            <Card className="bg-white border border-gray-200 shadow-md">
+              <CardHeader className="bg-gradient-to-r from-gray-100 to-gray-200 pb-6">
+                <div className="space-y-1.5">
+                  <Badge className="bg-gray-700 text-white border-0 mb-2">
+                    Concorrente
+                  </Badge>
+                  <CardTitle className="text-2xl font-bold flex items-center gap-2 text-gray-800">
+                    {aiComparisonData.competitor.name}
+                  </CardTitle>
+                  <div className="mt-4">
+                    <div className="flex items-baseline">
+                      <span className="text-4xl font-extrabold tracking-tight text-gray-800">{aiComparisonData.competitor.price}</span>
+                    </div>
+                    <p className="text-sm text-gray-500 mt-2">*Custo estimado para uso empresarial médio</p>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="font-semibold mb-3 text-gray-700">
+                      Limitações:
+                    </h4>
+                    <ul className="space-y-2.5">
+                      {aiComparisonData.competitor.features.map((feature, index) => (
+                        <li key={index} className="flex items-start gap-2">
+                          {index < 4 ? 
+                            <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" /> : 
+                            <Check className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
+                          }
+                          <span className="text-gray-600">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <h5 className="font-medium text-gray-700 mb-2">
+                      Custos imprevisíveis
+                    </h5>
+                    <p className="text-gray-600 text-sm">
+                      Com cobrança por token, os custos aumentam proporcionalmente ao uso, 
+                      tornando difícil prever gastos mensais e podendo resultar em faturas 
+                      surpreendentemente altas.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+          
+          <div className="text-center mt-10 bg-gradient-to-br from-purple-100 to-blue-50 p-8 rounded-xl border border-purple-200 max-w-4xl mx-auto shadow-md">
+            <h4 className="text-2xl font-bold text-purple-800 mb-4">Compare e economize com nossa solução de IA ilimitada</h4>
+            <p className="text-gray-700 mb-6">
+              Por apenas <span className="font-bold text-purple-700">R$1.000,00/mês</span>, tenha acesso ilimitado à tecnologia de IA avançada,
+              sem preocupações com contadores de tokens ou custos crescentes. Uma solução completa que se integra perfeitamente
+              ao seu Whaticket, potencializando seu atendimento com inteligência artificial sem limites.
+            </p>
+            
+            <div className="bg-white p-6 rounded-lg border border-purple-200 shadow-sm mb-8">
+              <h5 className="text-xl font-semibold text-purple-700 mb-4">Simulação de economia</h5>
+              
+              <div className="grid grid-cols-2 gap-4 mb-4">
+                <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                  <h6 className="font-medium text-gray-700 mb-2">Com GPT-4</h6>
+                  <p className="text-sm text-gray-600 mb-2">1.000.000 tokens/mês</p>
+                  <p className="text-2xl font-bold text-red-600">R$5.000,00</p>
+                </div>
+                
+                <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+                  <h6 className="font-medium text-green-700 mb-2">Com IA Conecta</h6>
+                  <p className="text-sm text-green-600 mb-2">Tokens ilimitados</p>
+                  <p className="text-2xl font-bold text-green-600">R$1.000,00</p>
+                </div>
+              </div>
+              
+              <p className="text-green-600 font-bold text-lg">Sua economia: R$4.000,00/mês</p>
+            </div>
+            
+            <Button asChild className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white py-6 px-10 text-lg rounded-lg shadow-xl hover:shadow-2xl transition-all">
+              <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20quero%20saber%20mais%20sobre%20a%20solução%20de%20IA%20ilimitada" target="_blank" rel="noopener noreferrer">
+                <BrainCircuit className="mr-2 h-5 w-5" />
+                Falar com especialista em IA
+              </a>
+            </Button>
+          </div>
+        </div>
+
+        <div className="text-center mt-12 max-w-3xl mx-auto">
+          <Button asChild className="bg-green-500 hover:bg-green-600 text-white font-medium rounded-full px-8 py-5 shadow-md hover:shadow-lg transition-all border border-green-400/30 flex items-center gap-2">
+            <a href="https://api.whatsapp.com/send?phone=5512981156856" target="_blank" rel="noopener noreferrer">
+              <MessageCircle className="mr-2 h-5 w-5" />
+              Falar com um consultor no WhatsApp
+            </a>
+          </Button>
+        </div>
       </div>
-    </section>
-  );
+    </section>;
 };
 
 export default PricingSection;
