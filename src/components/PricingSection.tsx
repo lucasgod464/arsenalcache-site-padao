@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Check, X, ArrowRight, MessageCircle, Star, Trophy, Server, Cpu, HardDrive, Database, Network } from 'lucide-react';
 import { MessageSquare, SmartphoneIcon, Globe, Sparkles, BrainCircuit, Zap } from 'lucide-react';
@@ -8,6 +9,32 @@ import { Separator } from "@/components/ui/separator";
 
 const PricingSection = () => {
   const mainFeatures = ["Instalação pela nossa equipe", "Atualizações pelo nossa equipe", "Suporte humano", "Usuários ilimitados", "Conexões ilimitadas de WhatsApp", "Sua logo no sistema", "Cores personalizadas", "Nome do sistema personalizado", "Revenda de assinaturas ilimitadas", "Suporte individual no WhatsApp"];
+  
+  const systemRequirements = [
+    "Sistema operacional Linux (Ubuntu 20.04 ou superior recomendado)",
+    "CPU: 2 núcleos ou superior",
+    "Memória RAM: 2GB mínimo (4GB ou mais recomendado)",
+    "Armazenamento: 20GB mínimo de espaço livre",
+    "Conexão com internet estável",
+    "Domínio próprio (opcional, mas recomendado)"
+  ];
+  
+  const whaticketInfo = {
+    title: "O que é o Whaticket Profissional?",
+    description: "O Whaticket Profissional é uma plataforma completa para gestão de atendimentos via WhatsApp e outras redes sociais. Desenvolvido para empresas de todos os tamanhos, permite centralizar comunicações, automatizar respostas, gerenciar múltiplos atendentes e muito mais.",
+    benefits: [
+      "Sistema completo de multi-atendimento para WhatsApp",
+      "Integração com Instagram, Facebook e outras plataformas",
+      "Chatbot inteligente para automação de respostas",
+      "Relatórios e métricas detalhados de atendimento",
+      "Transferência de atendimentos entre departamentos",
+      "Modelos de mensagens prontos para uso",
+      "Sistema de filas inteligente",
+      "Possibilidade de personalização completa",
+      "Interface intuitiva e fácil de usar",
+      "Suporte técnico especializado"
+    ]
+  };
   
   const vpsOptions = [
     {
@@ -167,7 +194,7 @@ const PricingSection = () => {
       price: "R$1.000,00/mês",
       features: [
         "Acesso ilimitado à API de IA avançada",
-        "Integração nativa com WhatsTicket",
+        "Integração nativa com Whaticket",
         "Sem limite de tokens ou mensagens",
         "Treinamento personalizado com seus dados",
         "Múltiplas integrações simultâneas",
@@ -199,11 +226,86 @@ const PricingSection = () => {
             Planos e Preços
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Planos <span className="text-blue-600">WhatTicket Profissional</span>
+            Planos <span className="text-blue-600">Whaticket Profissional</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Escolha o plano ideal para transformar o atendimento da sua empresa com o WhatTicket Profissional
+            Escolha o plano ideal para transformar o atendimento da sua empresa com o Whaticket Profissional
           </p>
+        </div>
+
+        {/* Seção "O que é o Whaticket Profissional?" */}
+        <div className="max-w-5xl mx-auto mb-16">
+          <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-8 rounded-xl border border-blue-200 shadow-sm">
+            <h3 className="text-2xl font-bold text-blue-700 mb-4">{whaticketInfo.title}</h3>
+            <p className="text-lg text-gray-700 mb-6">{whaticketInfo.description}</p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h4 className="font-semibold text-blue-600 mb-3 flex items-center gap-2">
+                  <Trophy className="h-5 w-5" /> 
+                  Principais benefícios:
+                </h4>
+                <ul className="space-y-2.5">
+                  {whaticketInfo.benefits.slice(0, 5).map((benefit, index) => (
+                    <li key={index} className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700">{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-semibold text-blue-600 mb-3 flex items-center gap-2">
+                  <Star className="h-5 w-5" /> 
+                  Recursos avançados:
+                </h4>
+                <ul className="space-y-2.5">
+                  {whaticketInfo.benefits.slice(5, 10).map((benefit, index) => (
+                    <li key={index} className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700">{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Requisitos Mínimos do Sistema */}
+        <div className="max-w-5xl mx-auto mb-16">
+          <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
+            <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+              <Server className="h-5 w-5 text-blue-600" /> 
+              Requisitos Mínimos do Sistema
+            </h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <ul className="space-y-3">
+                {systemRequirements.slice(0, 3).map((requirement, index) => (
+                  <li key={index} className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700">{requirement}</span>
+                  </li>
+                ))}
+              </ul>
+              <ul className="space-y-3">
+                {systemRequirements.slice(3).map((requirement, index) => (
+                  <li key={index} className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700">{requirement}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div className="mt-6 bg-blue-50 p-4 rounded-md border border-blue-100">
+              <p className="text-gray-700 text-center">
+                Nossa equipe oferece assistência completa para configuração e otimização do seu servidor,
+                garantindo desempenho máximo para o seu Whaticket.
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="max-w-md mx-auto relative">
@@ -787,7 +889,7 @@ const PricingSection = () => {
             <p className="text-gray-700 mb-6">
               Por apenas <span className="font-bold text-purple-700">R$1.000,00/mês</span>, tenha acesso ilimitado à tecnologia de IA avançada,
               sem preocupações com contadores de tokens ou custos crescentes. Uma solução completa que se integra perfeitamente
-              ao seu WhatTicket, potencializando seu atendimento com inteligência artificial sem limites.
+              ao seu Whaticket, potencializando seu atendimento com inteligência artificial sem limites.
             </p>
             
             <div className="bg-white p-6 rounded-lg border border-purple-200 shadow-sm mb-8">
@@ -832,3 +934,4 @@ const PricingSection = () => {
 };
 
 export default PricingSection;
+
