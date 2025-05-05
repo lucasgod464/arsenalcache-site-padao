@@ -1,13 +1,15 @@
+
 import React from 'react';
 import { Check, ArrowRight, MessageCircle, Star, Trophy, Server, Cpu, HardDrive, Database, Network } from 'lucide-react';
-import { MessageSquare, SmartphoneIcon, Globe } from 'lucide-react';
+import { MessageSquare, SmartphoneIcon, Globe, Sparkles, BrainCircuit, Zap } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+
 const PricingSection = () => {
   const mainFeatures = ["Instalação pela nossa equipe", "Atualizações pelo nossa equipe", "Suporte humano", "Usuários ilimitados", "Conexões ilimitadas de WhatsApp", "Sua logo no sistema", "Cores personalizadas", "Nome do sistema personalizado", "Revenda de assinaturas ilimitadas", "Suporte individual no WhatsApp"];
-  const vpsSystems = ["n8n", "redis", "evolution API", "dify", "typebot", "supabase", "postgres"];
+  
   const vpsOptions = [{
     name: "VPS 6GB",
     price: "119.90",
@@ -93,6 +95,7 @@ const PricingSection = () => {
     clients: "Até 250 clientes",
     connections: "Até 7500 conexões"
   }];
+  
   const dedicatedServers = [{
     name: "Pro 1",
     location: "São Paulo - Dedicado 1",
@@ -152,7 +155,40 @@ const PricingSection = () => {
     clients: "Até 1000 clientes",
     connections: "Até 30000 conexões"
   }];
+  
   const premiumBenefits = ["Monitoramento 24/7 de todos os sistemas", "Relatórios semanais de desempenho", "Otimizações proativas de performance", "Escalonamento automático de recursos", "Migração e configuração especializada", "Suporte técnico prioritário", "Backup diário automatizado"];
+  
+  const aiComparisonData = {
+    ourService: {
+      name: "IA Conecta Ilimitado",
+      price: "R$1.000,00/mês",
+      features: [
+        "Acesso ilimitado à API de IA avançada",
+        "Integração nativa com WhatsTicket",
+        "Sem limite de tokens ou mensagens",
+        "Treinamento personalizado com seus dados",
+        "Múltiplas integrações simultâneas",
+        "Suporte técnico especializado",
+        "Escalabilidade garantida",
+        "Sem custo adicional por volume"
+      ]
+    },
+    competitor: {
+      name: "OpenAI GPT-4",
+      price: "~R$5.000,00/mês*",
+      features: [
+        "Cobrança por token (aproximadamente R$0,03 por 1K tokens)",
+        "Limite de uso baseado em crédito",
+        "Integração manual necessária",
+        "Sem personalização com seus dados",
+        "Limites de requisições por minuto",
+        "Suporte genérico",
+        "Custos crescentes com o uso",
+        "Preço variável baseado em consumo"
+      ]
+    }
+  };
+
   return <section id="precos" className="py-10 px-4 bg-white border-t border-gray-100 shadow-inner mt-8">
       <div className="container mx-auto">
         <div className="text-center mb-12">
@@ -286,6 +322,7 @@ const PricingSection = () => {
           </Card>
         </div>
 
+        {/* VPS Cards Section */}
         <div className="max-w-5xl mx-auto mt-16 pt-6 border-t border-gray-200">
           <div className="text-center mb-8">
             <Badge variant="outline" className="bg-blue-600 text-white border-blue-500 mb-4">
@@ -344,22 +381,219 @@ const PricingSection = () => {
               </Card>)}
           </div>
           
-          <div className="text-center mt-8 bg-blue-50 p-6 rounded-lg border border-blue-100 max-w-3xl mx-auto">
-            <h4 className="text-xl font-semibold text-gray-800 mb-2">VPS Totalmente Otimizada</h4>
+          {/* Substituição da seção "VPS Totalmente Otimizada" por "Personalização de Sistemas" */}
+          <div className="text-center mt-8 bg-gradient-to-br from-blue-100 to-blue-50 p-6 rounded-lg border border-blue-200 max-w-3xl mx-auto shadow-sm">
+            <h4 className="text-xl font-semibold text-gray-800 mb-2 flex items-center justify-center gap-2">
+              <Sparkles className="h-5 w-5 text-blue-600" /> 
+              Personalização de Sistemas
+            </h4>
             <p className="text-gray-600 mb-4">
-              Nossas VPS são especialmente configuradas para o WhatTicket, garantindo o máximo de desempenho e estabilidade para o seu negócio.
+              Nossa equipe de especialistas pode personalizar e implementar soluções específicas para o seu negócio, garantindo o máximo de eficiência e performance.
             </p>
             
-            <ul className="text-left space-y-2 mb-6 max-w-md mx-auto">
-              {vpsSystems.map((system, index) => <li key={index} className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-gray-600">Sistema {system} pré-instalado e configurado</span>
-                </li>)}
-            </ul>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm">
+                <h5 className="font-medium text-blue-700 mb-2">Implementações Sob Demanda</h5>
+                <ul className="text-left space-y-2">
+                  <li className="flex items-start gap-2">
+                    <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-gray-600">Sistemas personalizados para seu fluxo de trabalho</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-gray-600">Integrações com ferramentas específicas</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-gray-600">Desenvolvimento de funcionalidades exclusivas</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm">
+                <h5 className="font-medium text-blue-700 mb-2">Benefícios Exclusivos</h5>
+                <ul className="text-left space-y-2">
+                  <li className="flex items-start gap-2">
+                    <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-gray-600">Consultoria técnica especializada</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-gray-600">Suporte prioritário para implementações</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-gray-600">Manutenção e atualização personalizada</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
             
             <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white">
-              <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20quero%20mais%20informações%20sobre%20as%20VPS%20otimizadas" target="_blank" rel="noopener noreferrer">
-                Falar com especialista em servidores
+              <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20gostaria%20de%20uma%20cotação%20para%20personalização%20de%20sistemas" target="_blank" rel="noopener noreferrer">
+                Solicitar cotação para personalização
+              </a>
+            </Button>
+          </div>
+        </div>
+
+        {/* IA Ilimitada Section */}
+        <div className="max-w-5xl mx-auto mt-16 pt-8 border-t border-gray-200">
+          <div className="text-center mb-8">
+            <Badge variant="outline" className="bg-purple-600 text-white border-purple-500 mb-4">
+              Inteligência Artificial Ilimitada
+            </Badge>
+            <h3 className="text-2xl font-bold mb-3">
+              <span className="text-purple-600">IA Conecta</span> - Solução de IA Sem Limites
+            </h3>
+            <p className="text-lg text-gray-600 max-w-xl mx-auto">
+              Acesso completo à tecnologia de IA avançada por um valor fixo mensal, sem surpresas na sua fatura
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-10">
+            {/* Nossa solução de IA */}
+            <Card className="bg-gradient-to-br from-purple-50 to-blue-50 border border-purple-200 shadow-lg hover:shadow-xl transition-all">
+              <CardHeader className="bg-gradient-to-r from-purple-600 to-blue-600 text-white pb-6">
+                <div className="space-y-1.5">
+                  <Badge className="bg-white text-purple-700 border-0 mb-2">
+                    Nossa Solução
+                  </Badge>
+                  <CardTitle className="text-2xl font-bold flex items-center gap-2">
+                    {aiComparisonData.ourService.name}
+                    <BrainCircuit className="h-5 w-5 text-purple-200" />
+                  </CardTitle>
+                  <div className="mt-4">
+                    <div className="flex items-baseline">
+                      <span className="text-4xl font-extrabold tracking-tight">{aiComparisonData.ourService.price}</span>
+                    </div>
+                    <p className="text-sm text-purple-100 mt-2">Preço fixo sem surpresas</p>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="font-semibold mb-3 text-purple-700 flex items-center gap-2">
+                      <Trophy className="h-5 w-5 text-purple-600" />
+                      Vantagens exclusivas:
+                    </h4>
+                    <ul className="space-y-2.5">
+                      {aiComparisonData.ourService.features.map((feature, index) => (
+                        <li key={index} className="flex items-start gap-2">
+                          <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                          <span className="text-gray-700">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="bg-white p-4 rounded-lg border border-purple-100 shadow-sm">
+                    <h5 className="font-medium text-purple-700 mb-2 flex items-center gap-2">
+                      <Zap className="h-4 w-4" />
+                      Economia real e previsibilidade
+                    </h5>
+                    <p className="text-gray-600 text-sm">
+                      Com nossa solução de valor fixo, você economiza até 80% em comparação com APIs de IA tradicionais,
+                      além de ter previsibilidade total de custos independente do volume de uso.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+              <CardFooter className="pt-2 pb-6 px-6">
+                <Button asChild className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white py-6 rounded-lg transition-all shadow-md hover:shadow-xl">
+                  <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20tenho%20interesse%20no%20serviço%20de%20IA%20Conecta%20Ilimitado" target="_blank" rel="noopener noreferrer">
+                    Contratar IA Ilimitada
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </CardFooter>
+            </Card>
+            
+            {/* Comparação com GPT-4 */}
+            <Card className="bg-white border border-gray-200 shadow-md">
+              <CardHeader className="bg-gradient-to-r from-gray-100 to-gray-200 pb-6">
+                <div className="space-y-1.5">
+                  <Badge className="bg-gray-700 text-white border-0 mb-2">
+                    Concorrente
+                  </Badge>
+                  <CardTitle className="text-2xl font-bold flex items-center gap-2 text-gray-800">
+                    {aiComparisonData.competitor.name}
+                  </CardTitle>
+                  <div className="mt-4">
+                    <div className="flex items-baseline">
+                      <span className="text-4xl font-extrabold tracking-tight text-gray-800">{aiComparisonData.competitor.price}</span>
+                    </div>
+                    <p className="text-sm text-gray-500 mt-2">*Custo estimado para uso empresarial médio</p>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="font-semibold mb-3 text-gray-700">
+                      Limitações:
+                    </h4>
+                    <ul className="space-y-2.5">
+                      {aiComparisonData.competitor.features.map((feature, index) => (
+                        <li key={index} className="flex items-start gap-2">
+                          {index < 4 ? 
+                            <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" /> : 
+                            <Check className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
+                          }
+                          <span className="text-gray-600">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <h5 className="font-medium text-gray-700 mb-2">
+                      Custos imprevisíveis
+                    </h5>
+                    <p className="text-gray-600 text-sm">
+                      Com cobrança por token, os custos aumentam proporcionalmente ao uso, 
+                      tornando difícil prever gastos mensais e podendo resultar em faturas 
+                      surpreendentemente altas.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+          
+          <div className="text-center mt-10 bg-gradient-to-br from-purple-100 to-blue-50 p-8 rounded-xl border border-purple-200 max-w-4xl mx-auto shadow-md">
+            <h4 className="text-2xl font-bold text-purple-800 mb-4">Compare e economize com nossa solução de IA ilimitada</h4>
+            <p className="text-gray-700 mb-6">
+              Por apenas <span className="font-bold text-purple-700">R$1.000,00/mês</span>, tenha acesso ilimitado à tecnologia de IA avançada,
+              sem preocupações com contadores de tokens ou custos crescentes. Uma solução completa que se integra perfeitamente
+              ao seu WhatTicket, potencializando seu atendimento com inteligência artificial sem limites.
+            </p>
+            
+            <div className="bg-white p-6 rounded-lg border border-purple-200 shadow-sm mb-8">
+              <h5 className="text-xl font-semibold text-purple-700 mb-4">Simulação de economia</h5>
+              
+              <div className="grid grid-cols-2 gap-4 mb-4">
+                <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                  <h6 className="font-medium text-gray-700 mb-2">Com GPT-4</h6>
+                  <p className="text-sm text-gray-600 mb-2">1.000.000 tokens/mês</p>
+                  <p className="text-2xl font-bold text-red-600">R$5.000,00</p>
+                </div>
+                
+                <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+                  <h6 className="font-medium text-green-700 mb-2">Com IA Conecta</h6>
+                  <p className="text-sm text-green-600 mb-2">Tokens ilimitados</p>
+                  <p className="text-2xl font-bold text-green-600">R$1.000,00</p>
+                </div>
+              </div>
+              
+              <p className="text-green-600 font-bold text-lg">Sua economia: R$4.000,00/mês</p>
+            </div>
+            
+            <Button asChild className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white py-6 px-10 text-lg rounded-lg shadow-xl hover:shadow-2xl transition-all">
+              <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20quero%20saber%20mais%20sobre%20a%20solução%20de%20IA%20ilimitada" target="_blank" rel="noopener noreferrer">
+                <BrainCircuit className="mr-2 h-5 w-5" />
+                Falar com especialista em IA
               </a>
             </Button>
           </div>
@@ -584,10 +818,14 @@ const PricingSection = () => {
 
         <div className="text-center mt-12 max-w-3xl mx-auto">
           <Button asChild className="bg-green-500 hover:bg-green-600 text-white font-medium rounded-full px-8 py-5 shadow-md hover:shadow-lg transition-all border border-green-400/30 flex items-center gap-2">
-            
+            <a href="https://api.whatsapp.com/send?phone=5512981156856" target="_blank" rel="noopener noreferrer">
+              <MessageCircle className="mr-2 h-5 w-5" />
+              Falar com um consultor no WhatsApp
+            </a>
           </Button>
         </div>
       </div>
     </section>;
 };
+
 export default PricingSection;
