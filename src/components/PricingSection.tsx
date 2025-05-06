@@ -12,7 +12,7 @@ const PricingSection = () => {
   const vpsOptions = [
     {
       name: "VPS 6GB",
-      price: "119.90",
+      price: "149.90",
       specs: [{
         icon: <Server className="w-4 h-4 text-blue-500" />,
         text: "6GB RAM"
@@ -29,11 +29,11 @@ const PricingSection = () => {
         icon: <Database className="w-4 h-4 text-blue-500" />,
         text: "Servidor no Brasil"
       }],
-      clients: "Até 20 clientes",
-      connections: "Até 500 conexões"
+      clients: "Até 15 clientes",
+      connections: "Até 18 conexões"
     }, {
       name: "VPS 8GB",
-      price: "139.90",
+      price: "169.90",
       specs: [{
         icon: <Server className="w-4 h-4 text-blue-500" />,
         text: "8GB RAM"
@@ -50,11 +50,11 @@ const PricingSection = () => {
         icon: <Database className="w-4 h-4 text-blue-500" />,
         text: "Servidor no Brasil"
       }],
-      clients: "Até 40 clientes",
-      connections: "Até 1000 conexões"
+      clients: "Até 20 clientes",
+      connections: "Até 26 conexões"
     }, {
       name: "VPS 16GB",
-      price: "249.90",
+      price: "279.90",
       specs: [{
         icon: <Server className="w-4 h-4 text-blue-500" />,
         text: "16GB RAM"
@@ -71,11 +71,11 @@ const PricingSection = () => {
         icon: <Database className="w-4 h-4 text-blue-500" />,
         text: "Servidor no Brasil"
       }],
-      clients: "Até 100 clientes",
-      connections: "Até 3000 conexões"
+      clients: "Até 40 clientes",
+      connections: "Até 34 conexões"
     }, {
       name: "VPS 32GB",
-      price: "399.90",
+      price: "429.90",
       specs: [{
         icon: <Server className="w-4 h-4 text-blue-500" />,
         text: "32GB RAM"
@@ -92,8 +92,8 @@ const PricingSection = () => {
         icon: <Database className="w-4 h-4 text-blue-500" />,
         text: "Servidor no Brasil"
       }],
-      clients: "Até 250 clientes",
-      connections: "Até 7500 conexões"
+      clients: "Até 60 clientes",
+      connections: "Até 45 conexões"
     }
   ];
   
@@ -647,7 +647,7 @@ const PricingSection = () => {
                 Nossa equipe está pronta para desenvolver uma solução sob medida para seu negócio, 
                 independentemente do tamanho ou complexidade do seu projeto.
               </p>
-              <Button asChild className="bg-white hover:bg-blue-50 text-blue-700 font-medium py-6 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all border-2 border-blue-300">
+              <Button asChild className="bg-white hover:bg-blue-50 text-blue-700 font-medium py-6 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all border border-blue-300">
                 <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20preciso%20de%20uma%20cotação%20personalizada%20para%20servidores" target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="mr-2 h-5 w-5" />
                   Solicitar cotação personalizada
