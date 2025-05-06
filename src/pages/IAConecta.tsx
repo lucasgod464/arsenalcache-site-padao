@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CircuitBoard, Connection, DatabaseZap, MicrochipIcon, Network, Plug, ServerCog } from "lucide-react";
+import { CircuitBoard, DatabaseZap, MicrochipIcon, Network, Plug, ServerCog } from "lucide-react";
 import ScrollToTop from "@/components/ScrollToTop";
 import FloatingCta from "@/components/FloatingCta";
 
@@ -94,7 +94,7 @@ const IAConecta = () => {
 
             <Card className="border border-gray-200 hover:border-arsenal-light transition-all hover:shadow-md">
               <CardHeader>
-                <Connection className="h-10 w-10 text-arsenal-DEFAULT mb-2" />
+                <Network className="h-10 w-10 text-arsenal-DEFAULT mb-2" />
                 <CardTitle>Análise de Sentimentos</CardTitle>
                 <CardDescription>
                   Entenda as emoções dos seus clientes e personalize o atendimento em tempo real
@@ -503,3 +503,4 @@ const IAConecta = () => {
 };
 
 export default IAConecta;
+
