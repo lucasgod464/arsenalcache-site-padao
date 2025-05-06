@@ -17,6 +17,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,10 +38,16 @@ const Navbar = () => {
   };
 
   const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-      setIsOpen(false);
+    // Verifica se está na página inicial
+    if (window.location.pathname === '/') {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+        setIsOpen(false);
+      }
+    } else {
+      // Se não estiver na página inicial, redireciona para a página inicial com âncora
+      window.location.href = `/#${sectionId}`;
     }
   };
 
@@ -54,9 +61,9 @@ const Navbar = () => {
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <a href="/" className="text-2xl font-display font-bold text-arsenal-dark">
+            <Link to="/" className="text-2xl font-display font-bold text-arsenal-dark">
               Arsenal<span className="text-whatsapp-DEFAULT">Cache</span>
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -81,12 +88,14 @@ const Navbar = () => {
                           <div className="text-xs text-muted-foreground">Automatize seu atendimento</div>
                         </div>
                       </Button>
-                      <Button variant="ghost" className="justify-start">
-                        <div className="text-left">
-                          <div className="font-medium">Whitelabel</div>
-                          <div className="text-xs text-muted-foreground">Personalização completa</div>
-                        </div>
-                      </Button>
+                      <Link to="/ia-conecta" className="w-full">
+                        <Button variant="ghost" className="justify-start w-full">
+                          <div className="text-left">
+                            <div className="font-medium">IA Conecta</div>
+                            <div className="text-xs text-muted-foreground">Solução de IA Sem Limites</div>
+                          </div>
+                        </Button>
+                      </Link>
                       <Button variant="ghost" className="justify-start">
                         <div className="text-left">
                           <div className="font-medium">API Integração</div>
@@ -139,6 +148,9 @@ const Navbar = () => {
             >
               Funcionalidades
             </button>
+            <Link to="/ia-conecta" className="text-gray-700 hover:text-arsenal-DEFAULT transition-colors">
+              IA Conecta
+            </Link>
             <button 
               onClick={() => scrollToSection('faq')}
               className="text-gray-700 hover:text-arsenal-DEFAULT transition-colors"
@@ -187,7 +199,9 @@ const Navbar = () => {
                     Chatbot Inteligente
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    Whitelabel
+                    <Link to="/ia-conecta" className="w-full block">
+                      IA Conecta
+                    </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
                     API Integração
@@ -227,6 +241,12 @@ const Navbar = () => {
               >
                 Funcionalidades
               </button>
+              <Link 
+                to="/ia-conecta"
+                className="text-gray-700 hover:text-arsenal-DEFAULT py-2 transition-colors text-left"
+              >
+                IA Conecta
+              </Link>
               <button 
                 onClick={() => scrollToSection('faq')}
                 className="text-gray-700 hover:text-arsenal-DEFAULT py-2 transition-colors text-left"
@@ -251,4 +271,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
