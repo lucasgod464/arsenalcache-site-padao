@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Check, X, ArrowRight, MessageCircle, Star, Trophy, Server, Cpu, HardDrive, Database, Network } from 'lucide-react';
 import { MessageSquare, SmartphoneIcon, Globe, Sparkles, BrainCircuit, Zap } from 'lucide-react';
@@ -447,7 +446,7 @@ const PricingSection = () => {
             <Badge variant="outline" className="bg-blue-800 text-white border-blue-700 mb-4">
               Crescimento Profissional
             </Badge>
-            <h3 className="text-2xl font-bold mb-3">Servidores <span className="text-blue-700">Dedicados Premium</span></h3>
+            <h3 className="text-2xl font-bold mb-3">Plano de <span className="text-blue-700">Crescimento Profissional</span></h3>
             <p className="text-lg text-gray-600 max-w-xl mx-auto">
               Servidores de alta performance para empresas que precisam de máximo desempenho e escalabilidade
             </p>
@@ -723,7 +722,7 @@ const PricingSection = () => {
               </CardContent>
               <CardFooter className="pt-2 pb-6 px-6">
                 <Button asChild className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white py-6 rounded-lg transition-all shadow-md hover:shadow-xl">
-                  <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20tenho%20interesse%20no%20serviço%20de%20IA%20Conecta%20Ilimitado" target="_blank" rel="noopener noreferrer">
+                  <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20tenho%20interesse%20no%20serviço%20de%20IA%20Conecta%20Ilimitada" target="_blank" rel="noopener noreferrer">
                     Contratar IA Ilimitada
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
