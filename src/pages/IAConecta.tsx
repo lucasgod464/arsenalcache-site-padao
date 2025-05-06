@@ -152,29 +152,63 @@ const IAConecta = () => {
             </Card>
           </div>
 
-          {/* Comparison Section */}
-          <div className="mt-16 text-center">
-            <h3 className="text-2xl font-bold mb-6">Compare e economize com nossa solução de IA ilimitada</h3>
-            <p className="max-w-3xl mx-auto text-lg mb-12">
-              Por apenas R$1.000,00/mês, tenha acesso ilimitado à tecnologia de IA avançada, sem preocupações com contadores de tokens ou custos crescentes. Uma solução completa que se integra perfeitamente ao seu Whaticket, potencializando seu atendimento com inteligência artificial sem limites.
-            </p>
-
-            <div className="bg-gray-50 rounded-xl p-8 max-w-3xl mx-auto">
-              <h4 className="text-xl font-bold mb-6">Simulação de economia</h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-white p-6 rounded-lg shadow">
-                  <p className="font-medium">Com GPT-4</p>
-                  <p className="text-sm text-gray-600 mb-2">1.000.000 tokens/mês</p>
-                  <p className="text-2xl font-bold text-red-600">R$5.000,00</p>
-                </div>
-                <div className="bg-white p-6 rounded-lg shadow border-2 border-purple-600">
-                  <p className="font-medium">Com IA Conecta</p>
-                  <p className="text-sm text-gray-600 mb-2">Tokens ilimitados</p>
-                  <p className="text-2xl font-bold text-green-600">R$1.000,00</p>
-                </div>
+          {/* Comparison Section - IMPROVED */}
+          <div className="mt-16 relative">
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-white to-purple-50 rounded-3xl"></div>
+            <div className="relative px-6 py-12 md:py-16 rounded-3xl">
+              <div className="text-center mb-10">
+                <h3 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-purple-800">
+                  Compare e economize com nossa solução de IA ilimitada
+                </h3>
+                <p className="max-w-3xl mx-auto text-lg mb-10 text-gray-700">
+                  Por apenas <span className="font-bold text-purple-600">R$1.000,00/mês</span>, tenha acesso ilimitado à tecnologia de IA avançada, 
+                  sem preocupações com contadores de tokens ou custos crescentes.
+                </p>
+                <div className="h-1 w-32 bg-gradient-to-r from-purple-400 to-purple-600 mx-auto rounded-full mb-10"></div>
               </div>
-              <div className="mt-8 bg-green-50 p-4 rounded-lg inline-block">
-                <p className="text-xl font-bold text-green-700">Sua economia: R$4.000,00/mês</p>
+
+              <div className="bg-white shadow-xl rounded-2xl p-8 md:p-12 max-w-4xl mx-auto border border-purple-100">
+                <h4 className="text-2xl font-bold mb-8 text-center text-gray-800">Simulação de economia</h4>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="bg-white p-8 rounded-xl shadow-lg border border-red-200 transform transition-all hover:scale-105">
+                    <div className="text-center">
+                      <div className="mb-3 inline-flex items-center justify-center rounded-full bg-red-100 p-2">
+                        <X className="h-6 w-6 text-red-600" />
+                      </div>
+                      <p className="font-semibold text-lg">Com GPT-4</p>
+                      <p className="text-sm text-gray-500 mb-3">1.000.000 tokens/mês</p>
+                      <div className="h-px w-full bg-gray-200 my-4"></div>
+                      <p className="text-3xl font-bold text-red-600">R$5.000,00</p>
+                      <p className="text-sm text-gray-500 mt-1">custo variável por uso</p>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-white p-8 rounded-xl shadow-lg border-2 border-purple-400 transform transition-all hover:scale-105">
+                    <div className="text-center">
+                      <div className="mb-3 inline-flex items-center justify-center rounded-full bg-purple-100 p-2">
+                        <Check className="h-6 w-6 text-purple-600" />
+                      </div>
+                      <p className="font-semibold text-lg">Com IA Conecta</p>
+                      <p className="text-sm text-gray-500 mb-3">Tokens ilimitados</p>
+                      <div className="h-px w-full bg-gray-200 my-4"></div>
+                      <p className="text-3xl font-bold text-purple-600">R$1.000,00</p>
+                      <p className="text-sm text-gray-500 mt-1">preço fixo mensal</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="flex justify-center mt-10">
+                  <div className="px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 rounded-lg shadow-lg animate-pulse-soft">
+                    <p className="text-xl font-bold text-white">Sua economia: R$4.000,00/mês</p>
+                  </div>
+                </div>
+                
+                <div className="mt-10 text-center">
+                  <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 text-lg">
+                    Quero economizar agora
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
