@@ -15,24 +15,24 @@ const IAConecta = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-blue-50 via-white to-blue-50">
+      <section className="pt-32 pb-20 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-purple-50 via-white to-purple-50">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-200 px-3 py-1 text-sm">
+              <Badge className="bg-purple-100 text-purple-700 hover:bg-purple-200 px-3 py-1 text-sm">
                 Tecnologia Avançada
               </Badge>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900">
-                IA Conecta <span className="text-arsenal-DEFAULT">Solução de IA</span> Sem Limites
+                IA Conecta <span className="text-purple-600">Solução de IA</span> Sem Limites
               </h1>
               <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
                 Acesso completo à tecnologia de IA avançada por um valor fixo mensal, sem surpresas na sua fatura.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-arsenal-DEFAULT hover:bg-arsenal-dark">
+                <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white">
                   Começar agora
                 </Button>
-                <Button size="lg" variant="outline" className="bg-white border-arsenal-DEFAULT text-arsenal-DEFAULT hover:bg-arsenal-light/20">
+                <Button size="lg" variant="outline" className="border-purple-600 text-purple-600 hover:bg-purple-50">
                   Agendar demonstração
                 </Button>
               </div>
@@ -52,7 +52,7 @@ const IAConecta = () => {
       <section className="py-20 px-4 md:px-6 lg:px-8 bg-white">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-200 px-3 py-1 text-sm mb-4">
+            <Badge className="bg-purple-100 text-purple-700 hover:bg-purple-200 px-3 py-1 text-sm mb-4">
               Inteligência Artificial Ilimitada
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -62,8 +62,8 @@ const IAConecta = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             {/* IA Conecta Card */}
-            <Card className="border-2 border-arsenal-DEFAULT overflow-hidden relative">
-              <div className="absolute top-0 left-0 right-0 bg-arsenal-DEFAULT text-white text-center py-1 text-xs font-medium">
+            <Card className="border-2 border-purple-600 overflow-hidden relative">
+              <div className="absolute top-0 left-0 right-0 bg-purple-600 text-white text-center py-1 text-xs font-medium">
                 NOSSA SOLUÇÃO
               </div>
               <CardHeader className="bg-gray-50 pb-6 pt-8">
@@ -103,7 +103,7 @@ const IAConecta = () => {
                     Com nossa solução de valor fixo, você economiza até 80% em comparação com APIs de IA tradicionais, além de ter previsibilidade total de custos independente do volume de uso.
                   </p>
                 </div>
-                <Button className="w-full mt-6 bg-arsenal-DEFAULT hover:bg-arsenal-dark">
+                <Button className="w-full mt-6 bg-purple-600 hover:bg-purple-700 text-white">
                   Contratar IA Ilimitada
                 </Button>
               </CardContent>
@@ -167,7 +167,7 @@ const IAConecta = () => {
                   <p className="text-sm text-gray-600 mb-2">1.000.000 tokens/mês</p>
                   <p className="text-2xl font-bold text-red-600">R$5.000,00</p>
                 </div>
-                <div className="bg-white p-6 rounded-lg shadow border-2 border-arsenal-DEFAULT">
+                <div className="bg-white p-6 rounded-lg shadow border-2 border-purple-600">
                   <p className="font-medium">Com IA Conecta</p>
                   <p className="text-sm text-gray-600 mb-2">Tokens ilimitados</p>
                   <p className="text-2xl font-bold text-green-600">R$1.000,00</p>
@@ -605,7 +605,7 @@ const IAConecta = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 md:px-6 lg:px-8 bg-arsenal-DEFAULT">
+      <section className="py-20 px-4 md:px-6 lg:px-8 bg-purple-600">
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -616,7 +616,7 @@ const IAConecta = () => {
               seus atendimentos e impulsionar seus resultados
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-arsenal-DEFAULT hover:bg-gray-100">
+              <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100">
                 Começar gratuitamente
               </Button>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
