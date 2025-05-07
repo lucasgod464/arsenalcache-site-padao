@@ -119,8 +119,8 @@ const PricingSection = () => {
       details: "Ascenty SP4"
     }],
     extras: ["Link 1 GBPs ilimitado(FUP)", "Proteção DDOS Inclusa", "FTP Backup 200GB Incluso", "1 IPV4 Dedicado Incluso", "Uptime superior à 99,9%"],
-    clients: "Até 180 clientes",
-    connections: "Até 100 conexões"
+    clients: "Até 500 clientes",
+    connections: "Até 15000 conexões"
   }, {
     name: "Pro 2",
     location: "São Paulo - Dedicado 2",
@@ -148,10 +148,10 @@ const PricingSection = () => {
       details: "Ascenty SP4"
     }],
     extras: ["Link 1 GBPs ilimitado(FUP)", "Proteção DDOS Inclusa", "FTP Backup 200GB Incluso", "1 IPV4 Dedicado Incluso", "Uptime superior à 99,9%"],
-    clients: "Até 360 clientes",
-    connections: "Até 230 conexões"
+    clients: "Até 1000 clientes",
+    connections: "Até 30000 conexões"
   }];
-  const premiumBenefits = ["Monitoramento 24/7 de todos os sistemas", "Otimizações proativas de performance", "Escalonamento automático de recursos", "Suporte técnico prioritário", "Backup diário automatizado"];
+  const premiumBenefits = ["Monitoramento 24/7 de todos os sistemas", "Relatórios semanais de desempenho", "Otimizações proativas de performance", "Escalonamento automático de recursos", "Migração e configuração especializada", "Suporte técnico prioritário", "Backup diário automatizado"];
   const aiComparisonData = {
     ourService: {
       name: "IA Conecta Ilimitado",
@@ -334,14 +334,14 @@ const PricingSection = () => {
                   <div className="space-y-3">
                     <div className="bg-green-50 p-3 rounded-md border border-green-100">
                       <p className="text-sm font-medium text-green-700 flex items-center">
-                        <Database className="w-4 h-4" />
+                        <Database className="w-4 h-4 mr-2" />
                         Capacidade: {vps.clients}
                       </p>
                     </div>
                     
                     <div className="bg-blue-50 p-3 rounded-md border border-blue-100">
                       <p className="text-sm font-medium text-blue-700 flex items-center">
-                        <Network className="w-4 h-4" />
+                        <Network className="w-4 h-4 mr-2" />
                         Suporta: {vps.connections}
                       </p>
                     </div>
@@ -490,25 +490,9 @@ const PricingSection = () => {
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              <div className="bg-white p-6 rounded-lg border border-blue-200 shadow-sm">
-                <h5 className="text-xl font-semibold text-blue-700 mb-3">Monitoramento Proativo</h5>
-                <ul className="text-left space-y-3">
-                  {premiumBenefits.slice(0, 3).map((benefit, index) => <li key={index} className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700">{benefit}</span>
-                    </li>)}
-                </ul>
-              </div>
               
-              <div className="bg-white p-6 rounded-lg border border-blue-200 shadow-sm">
-                <h5 className="text-xl font-semibold text-blue-700 mb-3">Relatórios e Análises</h5>
-                <ul className="text-left space-y-3">
-                  {premiumBenefits.slice(3, 7).map((benefit, index) => <li key={index} className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700">{benefit}</span>
-                    </li>)}
-                </ul>
-              </div>
+              
+              
             </div>
             
             <Button asChild className="bg-blue-700 hover:bg-blue-800 text-white text-lg py-6 px-8 rounded-lg shadow-lg">
