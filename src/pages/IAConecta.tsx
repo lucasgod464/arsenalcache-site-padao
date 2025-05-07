@@ -1,11 +1,10 @@
-
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CircuitBoard, DatabaseZap, MicrochipIcon, Network, Plug, ServerCog, Check, X } from "lucide-react";
+import { CircuitBoard, DatabaseZap, MicrochipIcon, Network, Plug, ServerCog, Check, X, MessagesSquare } from "lucide-react";
 import ScrollToTop from "@/components/ScrollToTop";
 import FloatingCta from "@/components/FloatingCta";
 
@@ -29,10 +28,10 @@ const IAConecta = () => {
                 Acesso completo à tecnologia de IA avançada por um valor fixo mensal, sem surpresas na sua fatura.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white">
+                <Button size="lg" variant="purple" className="text-white">
                   Começar agora
                 </Button>
-                <Button size="lg" variant="outline" className="border-purple-600 text-purple-600 hover:bg-purple-50">
+                <Button size="lg" variant="purpleOutline">
                   Agendar demonstração
                 </Button>
               </div>
@@ -103,7 +102,7 @@ const IAConecta = () => {
                     Com nossa solução de valor fixo, você economiza até 80% em comparação com APIs de IA tradicionais, além de ter previsibilidade total de custos independente do volume de uso.
                   </p>
                 </div>
-                <Button className="w-full mt-6 bg-purple-600 hover:bg-purple-700 text-white">
+                <Button className="w-full mt-6" variant="purple">
                   Contratar IA Ilimitada
                 </Button>
               </CardContent>
@@ -152,63 +151,53 @@ const IAConecta = () => {
             </Card>
           </div>
 
-          {/* Comparison Section - IMPROVED */}
-          <div className="mt-16 relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-white to-purple-50 rounded-3xl"></div>
-            <div className="relative px-6 py-12 md:py-16 rounded-3xl">
-              <div className="text-center mb-10">
-                <h3 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-purple-800">
-                  Compare e economize com nossa solução de IA ilimitada
-                </h3>
-                <p className="max-w-3xl mx-auto text-lg mb-10 text-gray-700">
-                  Por apenas <span className="font-bold text-purple-600">R$1.000,00/mês</span>, tenha acesso ilimitado à tecnologia de IA avançada, 
-                  sem preocupações com contadores de tokens ou custos crescentes.
-                </p>
-                <div className="h-1 w-32 bg-gradient-to-r from-purple-400 to-purple-600 mx-auto rounded-full mb-10"></div>
+          {/* Comparison Section - UPDATED to match the image */}
+          <div className="mt-16 px-4 py-12 bg-purple-50 rounded-3xl">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold text-purple-800 mb-4">
+                Compare e economize com nossa solução de IA ilimitada
+              </h2>
+              <p className="text-lg text-gray-700 max-w-4xl mx-auto mb-8">
+                Por apenas <span className="font-bold text-purple-600">R$1.000,00/mês</span>, tenha acesso ilimitado à tecnologia de IA avançada, 
+                sem preocupações com contadores de tokens ou custos crescentes. Uma solução completa que se integra perfeitamente ao seu
+                Whaticket, potencializando seu atendimento com inteligência artificial sem limites.
+              </p>
+            </div>
+            
+            <div className="bg-white rounded-xl p-8 shadow-md max-w-4xl mx-auto">
+              <h3 className="text-2xl font-semibold text-center text-purple-700 mb-8">Simulação de economia</h3>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="bg-white p-6 rounded-xl border border-red-200 shadow-md">
+                  <div className="text-center">
+                    <p className="font-semibold text-lg mb-1">Com GPT-4</p>
+                    <p className="text-sm text-gray-500 mb-4">1.000.000 tokens/mês</p>
+                    <div className="h-px w-full bg-gray-100 my-4"></div>
+                    <p className="text-3xl font-bold text-red-500">R$5.000,00</p>
+                    <p className="text-sm text-gray-500 mt-1">custo variável por uso</p>
+                  </div>
+                </div>
+                
+                <div className="bg-white p-6 rounded-xl border-2 border-green-400 shadow-md">
+                  <div className="text-center">
+                    <p className="font-semibold text-lg mb-1">Com IA Conecta</p>
+                    <p className="text-sm text-gray-500 mb-4">Tokens ilimitados</p>
+                    <div className="h-px w-full bg-gray-100 my-4"></div>
+                    <p className="text-3xl font-bold text-green-500">R$1.000,00</p>
+                    <p className="text-sm text-gray-500 mt-1">preço fixo mensal</p>
+                  </div>
+                </div>
               </div>
-
-              <div className="bg-white shadow-xl rounded-2xl p-8 md:p-12 max-w-4xl mx-auto border border-purple-100">
-                <h4 className="text-2xl font-bold mb-8 text-center text-gray-800">Simulação de economia</h4>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="bg-white p-8 rounded-xl shadow-lg border border-red-200 transform transition-all hover:scale-105">
-                    <div className="text-center">
-                      <div className="mb-3 inline-flex items-center justify-center rounded-full bg-red-100 p-2">
-                        <X className="h-6 w-6 text-red-600" />
-                      </div>
-                      <p className="font-semibold text-lg">Com GPT-4</p>
-                      <p className="text-sm text-gray-500 mb-3">1.000.000 tokens/mês</p>
-                      <div className="h-px w-full bg-gray-200 my-4"></div>
-                      <p className="text-3xl font-bold text-red-600">R$5.000,00</p>
-                      <p className="text-sm text-gray-500 mt-1">custo variável por uso</p>
-                    </div>
-                  </div>
-                  
-                  <div className="bg-white p-8 rounded-xl shadow-lg border-2 border-purple-400 transform transition-all hover:scale-105">
-                    <div className="text-center">
-                      <div className="mb-3 inline-flex items-center justify-center rounded-full bg-purple-100 p-2">
-                        <Check className="h-6 w-6 text-purple-600" />
-                      </div>
-                      <p className="font-semibold text-lg">Com IA Conecta</p>
-                      <p className="text-sm text-gray-500 mb-3">Tokens ilimitados</p>
-                      <div className="h-px w-full bg-gray-200 my-4"></div>
-                      <p className="text-3xl font-bold text-purple-600">R$1.000,00</p>
-                      <p className="text-sm text-gray-500 mt-1">preço fixo mensal</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="flex justify-center mt-10">
-                  <div className="px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 rounded-lg shadow-lg animate-pulse-soft">
-                    <p className="text-xl font-bold text-white">Sua economia: R$4.000,00/mês</p>
-                  </div>
-                </div>
-                
-                <div className="mt-10 text-center">
-                  <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 text-lg">
-                    Quero economizar agora
-                  </Button>
-                </div>
+              
+              <div className="text-center mt-8 p-4 bg-green-50 rounded-lg">
+                <p className="text-xl font-bold text-green-600">Sua economia: R$4.000,00/mês</p>
+              </div>
+              
+              <div className="mt-10 text-center">
+                <Button size="lg" variant="purple" className="px-10">
+                  <MessagesSquare className="mr-2" />
+                  Falar com especialista em IA
+                </Button>
               </div>
             </div>
           </div>
@@ -443,81 +432,31 @@ const IAConecta = () => {
         </div>
       </section>
 
-      {/* Planos e Preços */}
+      {/* Planos e Preços - UPDATED */}
       <section className="py-20 px-4 md:px-6 lg:px-8">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-200 px-3 py-1 text-sm mb-4">
-              Planos Flexíveis
+            <Badge className="bg-purple-100 text-purple-700 hover:bg-purple-200 px-3 py-1 text-sm mb-4">
+              Plano Único
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Escolha o plano ideal para seu negócio
+              Solução de IA ilimitada com preço fixo
             </h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              Soluções para empresas de todos os tamanhos, desde pequenos negócios até grandes corporações
+              Acesso ilimitado à inteligência artificial avançada por um valor mensal fixo
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="border border-gray-200 overflow-hidden">
-              <CardHeader className="bg-gray-50 pb-8">
-                <CardTitle className="text-xl">IA Conecta Básico</CardTitle>
-                <CardDescription className="mt-2">Ideal para pequenos negócios</CardDescription>
-                <div className="mt-4">
-                  <span className="text-4xl font-bold">R$149,90</span>
-                  <span className="text-gray-500">/mês</span>
-                </div>
-              </CardHeader>
-              <CardContent className="pt-8">
-                <ul className="space-y-4">
-                  <li className="flex items-start">
-                    <div className="mr-2 mt-1 bg-green-100 p-1 rounded-full">
-                      <svg className="h-3 w-3 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <span>Até 1.000 interações por mês</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="mr-2 mt-1 bg-green-100 p-1 rounded-full">
-                      <svg className="h-3 w-3 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <span>2 modelos de IA disponíveis</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="mr-2 mt-1 bg-green-100 p-1 rounded-full">
-                      <svg className="h-3 w-3 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <span>Integração com WhatsApp</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="mr-2 mt-1 bg-green-100 p-1 rounded-full">
-                      <svg className="h-3 w-3 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <span>Suporte via e-mail</span>
-                  </li>
-                </ul>
-                <Button className="w-full mt-8 bg-arsenal-DEFAULT hover:bg-arsenal-dark">
-                  Começar agora
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-arsenal-DEFAULT overflow-hidden relative">
-              <div className="absolute top-0 left-0 right-0 bg-arsenal-DEFAULT text-white text-center py-1 text-xs font-medium">
-                MAIS POPULAR
+          <div className="flex justify-center">
+            <Card className="border-2 border-purple-600 overflow-hidden relative max-w-lg w-full">
+              <div className="absolute top-0 left-0 right-0 bg-purple-600 text-white text-center py-1 text-xs font-medium">
+                PLANO COMPLETO
               </div>
               <CardHeader className="bg-gray-50 pb-8 pt-8">
-                <CardTitle className="text-xl">IA Conecta Pro</CardTitle>
-                <CardDescription className="mt-2">Para empresas em crescimento</CardDescription>
+                <CardTitle className="text-xl">IA Conecta Ilimitado</CardTitle>
+                <CardDescription className="mt-2">Integração perfeita com Whaticket</CardDescription>
                 <div className="mt-4">
-                  <span className="text-4xl font-bold">R$299,90</span>
+                  <span className="text-4xl font-bold">R$1.000,00</span>
                   <span className="text-gray-500">/mês</span>
                 </div>
               </CardHeader>
@@ -525,112 +464,43 @@ const IAConecta = () => {
                 <ul className="space-y-4">
                   <li className="flex items-start">
                     <div className="mr-2 mt-1 bg-green-100 p-1 rounded-full">
-                      <svg className="h-3 w-3 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
+                      <Check className="h-3 w-3 text-green-500" />
                     </div>
-                    <span>Até 5.000 interações por mês</span>
+                    <span>Uso ilimitado (sem cobrança por token)</span>
                   </li>
                   <li className="flex items-start">
                     <div className="mr-2 mt-1 bg-green-100 p-1 rounded-full">
-                      <svg className="h-3 w-3 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
+                      <Check className="h-3 w-3 text-green-500" />
                     </div>
-                    <span>Todos os modelos de IA</span>
+                    <span>Integração nativa com Whaticket</span>
                   </li>
                   <li className="flex items-start">
                     <div className="mr-2 mt-1 bg-green-100 p-1 rounded-full">
-                      <svg className="h-3 w-3 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
+                      <Check className="h-3 w-3 text-green-500" />
                     </div>
-                    <span>Integrações múltiplas (WhatsApp, Instagram, etc)</span>
+                    <span>Treinamento com sua base de dados</span>
                   </li>
                   <li className="flex items-start">
                     <div className="mr-2 mt-1 bg-green-100 p-1 rounded-full">
-                      <svg className="h-3 w-3 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
+                      <Check className="h-3 w-3 text-green-500" />
                     </div>
-                    <span>Personalização de fluxos conversacionais</span>
+                    <span>Suporte técnico especializado</span>
                   </li>
                   <li className="flex items-start">
                     <div className="mr-2 mt-1 bg-green-100 p-1 rounded-full">
-                      <svg className="h-3 w-3 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
+                      <Check className="h-3 w-3 text-green-500" />
                     </div>
-                    <span>Suporte prioritário</span>
+                    <span>Atualizações e melhorias contínuas</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="mr-2 mt-1 bg-green-100 p-1 rounded-full">
+                      <Check className="h-3 w-3 text-green-500" />
+                    </div>
+                    <span>Consultoria de implementação</span>
                   </li>
                 </ul>
-                <Button className="w-full mt-8 bg-arsenal-DEFAULT hover:bg-arsenal-dark">
-                  Escolher Pro
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="border border-gray-200 overflow-hidden">
-              <CardHeader className="bg-gray-50 pb-8">
-                <CardTitle className="text-xl">IA Conecta Enterprise</CardTitle>
-                <CardDescription className="mt-2">Para grandes empresas</CardDescription>
-                <div className="mt-4">
-                  <span className="text-4xl font-bold">Personalizado</span>
-                </div>
-              </CardHeader>
-              <CardContent className="pt-8">
-                <ul className="space-y-4">
-                  <li className="flex items-start">
-                    <div className="mr-2 mt-1 bg-green-100 p-1 rounded-full">
-                      <svg className="h-3 w-3 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <span>Volume ilimitado de interações</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="mr-2 mt-1 bg-green-100 p-1 rounded-full">
-                      <svg className="h-3 w-3 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <span>Modelos de IA personalizados</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="mr-2 mt-1 bg-green-100 p-1 rounded-full">
-                      <svg className="h-3 w-3 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <span>Integrações com sistemas corporativos</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="mr-2 mt-1 bg-green-100 p-1 rounded-full">
-                      <svg className="h-3 w-3 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <span>API dedicada</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="mr-2 mt-1 bg-green-100 p-1 rounded-full">
-                      <svg className="h-3 w-3 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <span>Gerente de conta dedicado</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="mr-2 mt-1 bg-green-100 p-1 rounded-full">
-                      <svg className="h-3 w-3 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <span>SLA garantido</span>
-                  </li>
-                </ul>
-                <Button variant="outline" className="w-full mt-8 border-arsenal-DEFAULT text-arsenal-DEFAULT hover:bg-arsenal-light/10">
-                  Fale com especialista
+                <Button variant="purple" className="w-full mt-8">
+                  Contratar agora
                 </Button>
               </CardContent>
             </Card>
