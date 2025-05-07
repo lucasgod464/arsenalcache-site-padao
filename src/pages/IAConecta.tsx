@@ -1,3 +1,4 @@
+
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -79,8 +80,7 @@ const IAConecta = () => {
                 <p className="font-semibold mb-4">Vantagens exclusivas:</p>
                 <ul className="space-y-3">
                   {[
-                    "Acesso ilimitado à API de IA avançada",
-                    "Integração nativa com Whaticket",
+                    "Acesso ilimitado à API Ollama avançada",
                     "Sem limite de tokens ou mensagens",
                     "Treinamento personalizado com seus dados",
                     "Múltiplas integrações simultâneas",
@@ -158,9 +158,9 @@ const IAConecta = () => {
                 Compare e economize com nossa solução de IA ilimitada
               </h2>
               <p className="text-lg text-gray-700 max-w-4xl mx-auto mb-8">
-                Por apenas <span className="font-bold text-purple-600">R$1.000,00/mês</span>, tenha acesso ilimitado à tecnologia de IA avançada, 
-                sem preocupações com contadores de tokens ou custos crescentes. Uma solução completa que se integra perfeitamente ao seu
-                Whaticket, potencializando seu atendimento com inteligência artificial sem limites.
+                Por apenas <span className="font-bold text-purple-600">R$1.000,00/mês</span>, tenha acesso ilimitado à tecnologia de IA avançada da Ollama, 
+                sem preocupações com contadores de tokens ou custos crescentes. Uma solução completa que potencializa seu
+                atendimento com inteligência artificial sem limites.
               </p>
             </div>
             
@@ -454,7 +454,7 @@ const IAConecta = () => {
               </div>
               <CardHeader className="bg-gray-50 pb-8 pt-8">
                 <CardTitle className="text-xl">IA Conecta Ilimitado</CardTitle>
-                <CardDescription className="mt-2">Integração perfeita com Whaticket</CardDescription>
+                <CardDescription className="mt-2">Acesso à API da Ollama</CardDescription>
                 <div className="mt-4">
                   <span className="text-4xl font-bold">R$1.000,00</span>
                   <span className="text-gray-500">/mês</span>
@@ -472,7 +472,7 @@ const IAConecta = () => {
                     <div className="mr-2 mt-1 bg-green-100 p-1 rounded-full">
                       <Check className="h-3 w-3 text-green-500" />
                     </div>
-                    <span>Integração nativa com Whaticket</span>
+                    <span>API mais avançada da Ollama</span>
                   </li>
                   <li className="flex items-start">
                     <div className="mr-2 mt-1 bg-green-100 p-1 rounded-full">
