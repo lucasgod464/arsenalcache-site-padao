@@ -5,193 +5,165 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-
 const PricingSection = () => {
   const mainFeatures = ["Instalação pela nossa equipe", "Atualizações pelo nossa equipe", "Suporte humano", "Usuários ilimitados", "Conexões ilimitadas de WhatsApp", "Sua logo no sistema", "Cores personalizadas", "Nome do sistema personalizado", "Revenda de assinaturas ilimitadas", "Suporte individual no WhatsApp"];
-  
-  const vpsOptions = [
-    {
-      name: "VPS 6GB",
-      price: "149.90",
-      specs: [{
-        icon: <Server className="w-4 h-4 text-blue-500" />,
-        text: "6GB RAM"
-      }, {
-        icon: <Cpu className="w-4 h-4 text-blue-500" />,
-        text: "2 vCPU"
-      }, {
-        icon: <HardDrive className="w-4 h-4 text-blue-500" />,
-        text: "100 GB NVMe"
-      }, {
-        icon: <Network className="w-4 h-4 text-blue-500" />,
-        text: "1 IPV4"
-      }, {
-        icon: <Database className="w-4 h-4 text-blue-500" />,
-        text: "Servidor no Brasil"
-      }],
-      clients: "Até 15 clientes",
-      connections: "Até 18 conexões"
+  const vpsOptions = [{
+    name: "VPS 6GB",
+    price: "149.90",
+    specs: [{
+      icon: <Server className="w-4 h-4 text-blue-500" />,
+      text: "6GB RAM"
     }, {
-      name: "VPS 8GB",
-      price: "169.90",
-      specs: [{
-        icon: <Server className="w-4 h-4 text-blue-500" />,
-        text: "8GB RAM"
-      }, {
-        icon: <Cpu className="w-4 h-4 text-blue-500" />,
-        text: "2 vCPU"
-      }, {
-        icon: <HardDrive className="w-4 h-4 text-blue-500" />,
-        text: "120 GB NVMe"
-      }, {
-        icon: <Network className="w-4 h-4 text-blue-500" />,
-        text: "1 IPV4"
-      }, {
-        icon: <Database className="w-4 h-4 text-blue-500" />,
-        text: "Servidor no Brasil"
-      }],
-      clients: "Até 20 clientes",
-      connections: "Até 26 conexões"
+      icon: <Cpu className="w-4 h-4 text-blue-500" />,
+      text: "2 vCPU"
     }, {
-      name: "VPS 16GB",
-      price: "279.90",
-      specs: [{
-        icon: <Server className="w-4 h-4 text-blue-500" />,
-        text: "16GB RAM"
-      }, {
-        icon: <Cpu className="w-4 h-4 text-blue-500" />,
-        text: "6 vCPU"
-      }, {
-        icon: <HardDrive className="w-4 h-4 text-blue-500" />,
-        text: "200 GB NVMe"
-      }, {
-        icon: <Network className="w-4 h-4 text-blue-500" />,
-        text: "1 IPV4"
-      }, {
-        icon: <Database className="w-4 h-4 text-blue-500" />,
-        text: "Servidor no Brasil"
-      }],
-      clients: "Até 40 clientes",
-      connections: "Até 34 conexões"
+      icon: <HardDrive className="w-4 h-4 text-blue-500" />,
+      text: "100 GB NVMe"
     }, {
-      name: "VPS 32GB",
-      price: "429.90",
-      specs: [{
-        icon: <Server className="w-4 h-4 text-blue-500" />,
-        text: "32GB RAM"
-      }, {
-        icon: <Cpu className="w-4 h-4 text-blue-500" />,
-        text: "6 vCPU"
-      }, {
-        icon: <HardDrive className="w-4 h-4 text-blue-500" />,
-        text: "250 GB NVMe"
-      }, {
-        icon: <Network className="w-4 h-4 text-blue-500" />,
-        text: "1 IPV4"
-      }, {
-        icon: <Database className="w-4 h-4 text-blue-500" />,
-        text: "Servidor no Brasil"
-      }],
-      clients: "Até 60 clientes",
-      connections: "Até 45 conexões"
-    }
-  ];
-  
-  const dedicatedServers = [
-    {
-      name: "Pro 1",
-      location: "São Paulo - Dedicado 1",
-      price: "2.900.00",
-      specs: [{
-        title: "Processador",
-        details: "2x Intel(R) Xeon(R) CPU E5-2673 v3 @ 2.40GHz"
-      }, {
-        title: "Cores",
-        details: "24 (Totais)"
-      }, {
-        title: "Threads",
-        details: "48 (Totais)"
-      }, {
-        title: "Memória RAM",
-        details: "64 GB DDR4"
-      }, {
-        title: "Discos",
-        details: "1x 1TB NVMe"
-      }, {
-        title: "IPs",
-        details: "5 IPV4 + 16 IPV6"
-      }, {
-        title: "Datacenter",
-        details: "Ascenty SP4"
-      }],
-      extras: ["Link 1 GBPs ilimitado(FUP)", "Proteção DDOS Inclusa", "FTP Backup 200GB Incluso", "1 IPV4 Dedicado Incluso", "Uptime superior à 99,9%"],
-      clients: "Até 500 clientes",
-      connections: "Até 15000 conexões"
+      icon: <Network className="w-4 h-4 text-blue-500" />,
+      text: "1 IPV4"
     }, {
-      name: "Pro 2",
-      location: "São Paulo - Dedicado 2",
-      price: "3.900.00",
-      specs: [{
-        title: "Processador",
-        details: "2x Intel(R) Xeon(R) CPU E5-2673 v3 @ 2.40GHz"
-      }, {
-        title: "Cores",
-        details: "24 (Totais)"
-      }, {
-        title: "Threads",
-        details: "48 (Totais)"
-      }, {
-        title: "Memória RAM",
-        details: "128 GB DDR4"
-      }, {
-        title: "Discos",
-        details: "1x 1TB NVMe"
-      }, {
-        title: "IPs",
-        details: "5 IPV4 + 16 IPV6"
-      }, {
-        title: "Datacenter",
-        details: "Ascenty SP4"
-      }],
-      extras: ["Link 1 GBPs ilimitado(FUP)", "Proteção DDOS Inclusa", "FTP Backup 200GB Incluso", "1 IPV4 Dedicado Incluso", "Uptime superior à 99,9%"],
-      clients: "Até 1000 clientes",
-      connections: "Até 30000 conexões"
-    }
-  ];
-  
+      icon: <Database className="w-4 h-4 text-blue-500" />,
+      text: "Servidor no Brasil"
+    }],
+    clients: "Até 15 clientes",
+    connections: "Até 18 conexões"
+  }, {
+    name: "VPS 8GB",
+    price: "169.90",
+    specs: [{
+      icon: <Server className="w-4 h-4 text-blue-500" />,
+      text: "8GB RAM"
+    }, {
+      icon: <Cpu className="w-4 h-4 text-blue-500" />,
+      text: "2 vCPU"
+    }, {
+      icon: <HardDrive className="w-4 h-4 text-blue-500" />,
+      text: "120 GB NVMe"
+    }, {
+      icon: <Network className="w-4 h-4 text-blue-500" />,
+      text: "1 IPV4"
+    }, {
+      icon: <Database className="w-4 h-4 text-blue-500" />,
+      text: "Servidor no Brasil"
+    }],
+    clients: "Até 20 clientes",
+    connections: "Até 26 conexões"
+  }, {
+    name: "VPS 16GB",
+    price: "279.90",
+    specs: [{
+      icon: <Server className="w-4 h-4 text-blue-500" />,
+      text: "16GB RAM"
+    }, {
+      icon: <Cpu className="w-4 h-4 text-blue-500" />,
+      text: "6 vCPU"
+    }, {
+      icon: <HardDrive className="w-4 h-4 text-blue-500" />,
+      text: "200 GB NVMe"
+    }, {
+      icon: <Network className="w-4 h-4 text-blue-500" />,
+      text: "1 IPV4"
+    }, {
+      icon: <Database className="w-4 h-4 text-blue-500" />,
+      text: "Servidor no Brasil"
+    }],
+    clients: "Até 40 clientes",
+    connections: "Até 34 conexões"
+  }, {
+    name: "VPS 32GB",
+    price: "429.90",
+    specs: [{
+      icon: <Server className="w-4 h-4 text-blue-500" />,
+      text: "32GB RAM"
+    }, {
+      icon: <Cpu className="w-4 h-4 text-blue-500" />,
+      text: "6 vCPU"
+    }, {
+      icon: <HardDrive className="w-4 h-4 text-blue-500" />,
+      text: "250 GB NVMe"
+    }, {
+      icon: <Network className="w-4 h-4 text-blue-500" />,
+      text: "1 IPV4"
+    }, {
+      icon: <Database className="w-4 h-4 text-blue-500" />,
+      text: "Servidor no Brasil"
+    }],
+    clients: "Até 60 clientes",
+    connections: "Até 45 conexões"
+  }];
+  const dedicatedServers = [{
+    name: "Pro 1",
+    location: "São Paulo - Dedicado 1",
+    price: "2.900.00",
+    specs: [{
+      title: "Processador",
+      details: "2x Intel(R) Xeon(R) CPU E5-2673 v3 @ 2.40GHz"
+    }, {
+      title: "Cores",
+      details: "24 (Totais)"
+    }, {
+      title: "Threads",
+      details: "48 (Totais)"
+    }, {
+      title: "Memória RAM",
+      details: "64 GB DDR4"
+    }, {
+      title: "Discos",
+      details: "1x 1TB NVMe"
+    }, {
+      title: "IPs",
+      details: "5 IPV4 + 16 IPV6"
+    }, {
+      title: "Datacenter",
+      details: "Ascenty SP4"
+    }],
+    extras: ["Link 1 GBPs ilimitado(FUP)", "Proteção DDOS Inclusa", "FTP Backup 200GB Incluso", "1 IPV4 Dedicado Incluso", "Uptime superior à 99,9%"],
+    clients: "Até 500 clientes",
+    connections: "Até 15000 conexões"
+  }, {
+    name: "Pro 2",
+    location: "São Paulo - Dedicado 2",
+    price: "3.900.00",
+    specs: [{
+      title: "Processador",
+      details: "2x Intel(R) Xeon(R) CPU E5-2673 v3 @ 2.40GHz"
+    }, {
+      title: "Cores",
+      details: "24 (Totais)"
+    }, {
+      title: "Threads",
+      details: "48 (Totais)"
+    }, {
+      title: "Memória RAM",
+      details: "128 GB DDR4"
+    }, {
+      title: "Discos",
+      details: "1x 1TB NVMe"
+    }, {
+      title: "IPs",
+      details: "5 IPV4 + 16 IPV6"
+    }, {
+      title: "Datacenter",
+      details: "Ascenty SP4"
+    }],
+    extras: ["Link 1 GBPs ilimitado(FUP)", "Proteção DDOS Inclusa", "FTP Backup 200GB Incluso", "1 IPV4 Dedicado Incluso", "Uptime superior à 99,9%"],
+    clients: "Até 1000 clientes",
+    connections: "Até 30000 conexões"
+  }];
   const premiumBenefits = ["Monitoramento 24/7 de todos os sistemas", "Relatórios semanais de desempenho", "Otimizações proativas de performance", "Escalonamento automático de recursos", "Migração e configuração especializada", "Suporte técnico prioritário", "Backup diário automatizado"];
-  
   const aiComparisonData = {
     ourService: {
       name: "IA Conecta Ilimitado",
       price: "R$1.000,00/mês",
-      features: [
-        "Acesso ilimitado à API de IA avançada",
-        "Integração nativa com Whaticket",
-        "Sem limite de tokens ou mensagens",
-        "Treinamento personalizado com seus dados",
-        "Múltiplas integrações simultâneas",
-        "Suporte técnico especializado",
-        "Escalabilidade garantida",
-        "Sem custo adicional por volume"
-      ]
+      features: ["Acesso ilimitado à API de IA avançada", "Integração nativa com Whaticket", "Sem limite de tokens ou mensagens", "Treinamento personalizado com seus dados", "Múltiplas integrações simultâneas", "Suporte técnico especializado", "Escalabilidade garantida", "Sem custo adicional por volume"]
     },
     competitor: {
       name: "OpenAI GPT-4",
       price: "~R$5.000,00/mês*",
-      features: [
-        "Cobrança por token (aproximadamente R$0,03 por 1K tokens)",
-        "Limite de uso baseado em crédito",
-        "Integração manual necessária",
-        "Sem personalização com seus dados",
-        "Limites de requisições por minuto",
-        "Suporte genérico",
-        "Custos crescentes com o uso",
-        "Preço variável baseado em consumo"
-      ]
+      features: ["Cobrança por token (aproximadamente R$0,03 por 1K tokens)", "Limite de uso baseado em crédito", "Integração manual necessária", "Sem personalização com seus dados", "Limites de requisições por minuto", "Suporte genérico", "Custos crescentes com o uso", "Preço variável baseado em consumo"]
     }
   };
-
   return <section id="precos" className="py-10 px-4 bg-white border-t border-gray-100 shadow-inner mt-8">
       <div className="container mx-auto">
         <div className="text-center mb-12">
@@ -395,41 +367,9 @@ const PricingSection = () => {
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-              <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm">
-                <h5 className="font-medium text-blue-700 mb-2">Implementações Sob Demanda</h5>
-                <ul className="text-left space-y-2">
-                  <li className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-gray-600">Sistemas personalizados para seu fluxo de trabalho</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-gray-600">Integrações com ferramentas específicas</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-gray-600">Desenvolvimento de funcionalidades exclusivas</span>
-                  </li>
-                </ul>
-              </div>
               
-              <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm">
-                <h5 className="font-medium text-blue-700 mb-2">Benefícios Exclusivos</h5>
-                <ul className="text-left space-y-2">
-                  <li className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-gray-600">Consultoria técnica especializada</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-gray-600">Suporte prioritário para implementações</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-gray-600">Manutenção e atualização personalizada</span>
-                  </li>
-                </ul>
-              </div>
+              
+              
             </div>
             
             <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white">
@@ -699,12 +639,10 @@ const PricingSection = () => {
                       Vantagens exclusivas:
                     </h4>
                     <ul className="space-y-2.5">
-                      {aiComparisonData.ourService.features.map((feature, index) => (
-                        <li key={index} className="flex items-start gap-2">
+                      {aiComparisonData.ourService.features.map((feature, index) => <li key={index} className="flex items-start gap-2">
                           <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
                           <span className="text-gray-700">{feature}</span>
-                        </li>
-                      ))}
+                        </li>)}
                     </ul>
                   </div>
 
@@ -755,15 +693,10 @@ const PricingSection = () => {
                       Limitações:
                     </h4>
                     <ul className="space-y-2.5">
-                      {aiComparisonData.competitor.features.map((feature, index) => (
-                        <li key={index} className="flex items-start gap-2">
-                          {index < 4 ? 
-                            <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" /> : 
-                            <Check className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
-                          }
+                      {aiComparisonData.competitor.features.map((feature, index) => <li key={index} className="flex items-start gap-2">
+                          {index < 4 ? <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" /> : <Check className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />}
                           <span className="text-gray-600">{feature}</span>
-                        </li>
-                      ))}
+                        </li>)}
                     </ul>
                   </div>
 
@@ -830,5 +763,4 @@ const PricingSection = () => {
       </div>
     </section>;
 };
-
 export default PricingSection;
