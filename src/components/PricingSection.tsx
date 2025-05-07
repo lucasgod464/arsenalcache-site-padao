@@ -119,8 +119,8 @@ const PricingSection = () => {
       details: "Ascenty SP4"
     }],
     extras: ["Link 1 GBPs ilimitado(FUP)", "Proteção DDOS Inclusa", "FTP Backup 200GB Incluso", "1 IPV4 Dedicado Incluso", "Uptime superior à 99,9%"],
-    clients: "Até 500 clientes",
-    connections: "Até 15000 conexões"
+    clients: "Até 180 clientes",
+    connections: "Até 100 conexões"
   }, {
     name: "Pro 2",
     location: "São Paulo - Dedicado 2",
@@ -148,10 +148,10 @@ const PricingSection = () => {
       details: "Ascenty SP4"
     }],
     extras: ["Link 1 GBPs ilimitado(FUP)", "Proteção DDOS Inclusa", "FTP Backup 200GB Incluso", "1 IPV4 Dedicado Incluso", "Uptime superior à 99,9%"],
-    clients: "Até 1000 clientes",
-    connections: "Até 30000 conexões"
+    clients: "Até 360 clientes",
+    connections: "Até 230 conexões"
   }];
-  const premiumBenefits = ["Monitoramento 24/7 de todos os sistemas", "Relatórios semanais de desempenho", "Otimizações proativas de performance", "Escalonamento automático de recursos", "Migração e configuração especializada", "Suporte técnico prioritário", "Backup diário automatizado"];
+  const premiumBenefits = ["Monitoramento 24/7 de todos os sistemas", "Otimizações proativas de performance", "Escalonamento automático de recursos", "Suporte técnico prioritário", "Backup diário automatizado"];
   const aiComparisonData = {
     ourService: {
       name: "IA Conecta Ilimitado",
@@ -334,14 +334,14 @@ const PricingSection = () => {
                   <div className="space-y-3">
                     <div className="bg-green-50 p-3 rounded-md border border-green-100">
                       <p className="text-sm font-medium text-green-700 flex items-center">
-                        <Database className="w-4 h-4 mr-2" />
+                        <Database className="w-4 h-4" />
                         Capacidade: {vps.clients}
                       </p>
                     </div>
                     
                     <div className="bg-blue-50 p-3 rounded-md border border-blue-100">
                       <p className="text-sm font-medium text-blue-700 flex items-center">
-                        <Network className="w-4 h-4 mr-2" />
+                        <Network className="w-4 h-4" />
                         Suporta: {vps.connections}
                       </p>
                     </div>
