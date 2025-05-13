@@ -7,75 +7,75 @@ import { Badge } from "@/components/ui/badge";
 
 const ConversionCta = () => {
   return (
-    <section className="py-16 px-4 bg-gradient-to-tr from-purple-900 to-blue-900 text-white">
+    <section className="py-16 px-4 bg-gradient-to-tr from-blue-900 to-blue-800 text-white">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold">
-            Conheça nossos <span className="text-purple-300">planos de IA</span>
+            Conheça nossos <span className="text-blue-200">planos de IA</span>
           </h2>
           
-          <p className="text-lg text-purple-100 mt-4 max-w-3xl mx-auto">
+          <p className="text-lg text-blue-100 mt-4 max-w-3xl mx-auto">
             Tenha acesso aos modelos de IA mais avançados do mercado com previsibilidade de custos e sem surpresas na sua fatura
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Plano Fixo */}
-          <Card className="bg-white/10 backdrop-blur-lg border-purple-300/20 p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
+          <Card className="bg-white/10 backdrop-blur-lg border-blue-300/20 p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
             <div className="space-y-6">
               <div className="flex items-center justify-between">
-                <h3 className="text-2xl font-bold text-purple-100">Plano Empresarial</h3>
-                <Badge variant="purple">Mais popular</Badge>
+                <h3 className="text-2xl font-bold text-blue-100">Plano Empresarial</h3>
+                <Badge variant="default" className="bg-blue-600 hover:bg-blue-700">Mais popular</Badge>
               </div>
               
-              <div className="border-t border-purple-700/50 my-2"></div>
+              <div className="border-t border-blue-700/50 my-2"></div>
               
               <div className="flex items-baseline">
                 <span className="text-4xl font-extrabold tracking-tight text-white">R$1.000</span>
-                <span className="ml-2 text-sm font-medium text-purple-200">/mês</span>
+                <span className="ml-2 text-sm font-medium text-blue-200">/mês</span>
               </div>
               
               <div className="space-y-3 pt-4">
                 <div className="flex items-center gap-3">
-                  <div className="bg-purple-800/50 rounded-full p-1">
-                    <Check className="w-5 h-5 text-purple-300" />
+                  <div className="bg-blue-800/50 rounded-full p-1">
+                    <Check className="w-5 h-5 text-blue-300" />
                   </div>
-                  <span className="text-purple-100">Uso completamente ilimitado</span>
+                  <span className="text-blue-100">Uso completamente ilimitado</span>
                 </div>
                 
                 <div className="flex items-center gap-3">
-                  <div className="bg-purple-800/50 rounded-full p-1">
-                    <Check className="w-5 h-5 text-purple-300" />
+                  <div className="bg-blue-800/50 rounded-full p-1">
+                    <Check className="w-5 h-5 text-blue-300" />
                   </div>
-                  <span className="text-purple-100">Acesso a modelos avançados</span>
+                  <span className="text-blue-100">Acesso a modelos avançados</span>
                 </div>
                 
                 <div className="flex items-center gap-3">
-                  <div className="bg-purple-800/50 rounded-full p-1">
-                    <Check className="w-5 h-5 text-purple-300" />
+                  <div className="bg-blue-800/50 rounded-full p-1">
+                    <Check className="w-5 h-5 text-blue-300" />
                   </div>
-                  <span className="text-purple-100">Previsibilidade total de custos</span>
+                  <span className="text-blue-100">Previsibilidade total de custos</span>
                 </div>
                 
                 <div className="flex items-center gap-3">
-                  <div className="bg-purple-800/50 rounded-full p-1">
-                    <Check className="w-5 h-5 text-purple-300" />
+                  <div className="bg-blue-800/50 rounded-full p-1">
+                    <Check className="w-5 h-5 text-blue-300" />
                   </div>
-                  <span className="text-purple-100">Suporte técnico especializado</span>
+                  <span className="text-blue-100">Suporte técnico especializado</span>
                 </div>
                 
                 <div className="flex items-center gap-3">
-                  <div className="bg-purple-800/50 rounded-full p-1">
-                    <Check className="w-5 h-5 text-purple-300" />
+                  <div className="bg-blue-800/50 rounded-full p-1">
+                    <Check className="w-5 h-5 text-blue-300" />
                   </div>
-                  <span className="text-purple-100">Sem contagem de tokens</span>
+                  <span className="text-blue-100">Sem contagem de tokens</span>
                 </div>
               </div>
               
               <Button 
-                variant="purple" 
+                variant="default" 
                 size="lg" 
-                className="w-full"
+                className="w-full bg-blue-500 hover:bg-blue-600"
                 asChild
               >
                 <a href="https://wa.me/5512981156856?text=Olá,%20tenho%20interesse%20no%20plano%20empresarial%20de%20R$1.000/mês" 
@@ -90,67 +90,67 @@ const ConversionCta = () => {
           </Card>
           
           {/* Plano Personalizado */}
-          <Card className="bg-gradient-to-br from-purple-800 to-blue-800 border border-purple-400/30 p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
+          <Card className="bg-gradient-to-br from-blue-700 to-blue-900 border border-blue-400/30 p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
             <div className="space-y-6">
               <div className="flex items-center justify-between">
                 <h3 className="text-2xl font-bold text-white">Plano Personalizado</h3>
-                <div className="bg-purple-700/70 p-1 rounded-full">
+                <div className="bg-blue-600/70 p-1 rounded-full">
                   <Sparkles className="h-5 w-5 text-amber-300" />
                 </div>
               </div>
               
-              <div className="border-t border-purple-500/50 my-2"></div>
+              <div className="border-t border-blue-500/50 my-2"></div>
               
               <div className="flex items-baseline">
                 <span className="text-4xl font-extrabold tracking-tight text-white">Sob consulta</span>
               </div>
               
-              <p className="text-purple-200 mt-2">
+              <p className="text-blue-200 mt-2">
                 Plano personalizado de acordo com as necessidades específicas do seu negócio
               </p>
               
               <div className="space-y-3 pt-4">
                 <div className="flex items-center gap-3">
-                  <div className="bg-purple-700/50 rounded-full p-1">
-                    <Check className="w-5 h-5 text-purple-200" />
+                  <div className="bg-blue-600/50 rounded-full p-1">
+                    <Check className="w-5 h-5 text-blue-200" />
                   </div>
-                  <span className="text-purple-100">Modelos de IA personalizados</span>
+                  <span className="text-blue-100">Modelos de IA personalizados</span>
                 </div>
                 
                 <div className="flex items-center gap-3">
-                  <div className="bg-purple-700/50 rounded-full p-1">
-                    <Check className="w-5 h-5 text-purple-200" />
+                  <div className="bg-blue-600/50 rounded-full p-1">
+                    <Check className="w-5 h-5 text-blue-200" />
                   </div>
-                  <span className="text-purple-100">Integrações sob medida</span>
+                  <span className="text-blue-100">Integrações sob medida</span>
                 </div>
                 
                 <div className="flex items-center gap-3">
-                  <div className="bg-purple-700/50 rounded-full p-1">
-                    <Check className="w-5 h-5 text-purple-200" />
+                  <div className="bg-blue-600/50 rounded-full p-1">
+                    <Check className="w-5 h-5 text-blue-200" />
                   </div>
-                  <span className="text-purple-100">Treinamento especializado</span>
+                  <span className="text-blue-100">Treinamento especializado</span>
                 </div>
                 
                 <div className="flex items-center gap-3">
-                  <div className="bg-purple-700/50 rounded-full p-1">
-                    <Check className="w-5 h-5 text-purple-200" />
+                  <div className="bg-blue-600/50 rounded-full p-1">
+                    <Check className="w-5 h-5 text-blue-200" />
                   </div>
-                  <span className="text-purple-100">Acesso prioritário ao suporte</span>
+                  <span className="text-blue-100">Acesso prioritário ao suporte</span>
                 </div>
                 
                 <div className="flex items-center gap-3">
-                  <div className="bg-purple-700/50 rounded-full p-1">
-                    <Check className="w-5 h-5 text-purple-200" />
+                  <div className="bg-blue-600/50 rounded-full p-1">
+                    <Check className="w-5 h-5 text-blue-200" />
                   </div>
-                  <span className="text-purple-100">Soluções enterprise</span>
+                  <span className="text-blue-100">Soluções enterprise</span>
                 </div>
               </div>
               
               <div className="flex gap-4 mt-4">
                 <Button 
-                  variant="purpleOutline" 
+                  variant="outline" 
                   size="lg" 
-                  className="w-full bg-purple-700/40 border-purple-300/30 text-white hover:bg-purple-700/60"
+                  className="w-full bg-blue-700/40 border-blue-300/30 text-white hover:bg-blue-700/60"
                   asChild
                 >
                   <a href="https://wa.me/5512981156856?text=Olá,%20gostaria%20de%20agendar%20uma%20demonstração%20do%20sistema" 
@@ -161,9 +161,9 @@ const ConversionCta = () => {
                 </Button>
                 
                 <Button 
-                  variant="purple" 
+                  variant="default" 
                   size="lg" 
-                  className="w-full"
+                  className="w-full bg-blue-500 hover:bg-blue-600"
                   asChild
                 >
                   <a href="https://wa.me/5512981156856?text=Olá,%20gostaria%20de%20conhecer%20mais%20sobre%20os%20planos%20personalizados" 
