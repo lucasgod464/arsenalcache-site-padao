@@ -465,8 +465,8 @@ const PricingSection = () => {
                 <div className="mt-4 flex items-baseline justify-center">
                   <div className="flex flex-col items-center">
                     <div className="flex items-baseline">
-                      <span className="text-4xl font-extrabold tracking-tight text-white">R$128,00</span>
-                      <span className="ml-2 text-lg text-blue-200">7x sem juros</span>
+                      <span className="text-4xl font-extrabold tracking-tight text-white">R$54,00</span>
+                      <span className="ml-2 text-lg text-blue-200">11x sem juros</span>
                     </div>
                     <span className="text-sm text-blue-300">ou R$896,00 a vista</span>
                   </div>
