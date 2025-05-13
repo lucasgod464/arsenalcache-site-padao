@@ -93,28 +93,28 @@ const IAConecta = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Gemma3 Card */}
+            {/* Llama 4 Card (substituindo Gemma 3) */}
             <Card className="border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-              <div className="h-2 bg-gradient-to-r from-yellow-500 to-yellow-700 w-full"></div>
+              <div className="h-2 bg-gradient-to-r from-blue-500 to-blue-700 w-full"></div>
               <CardHeader className="pb-2">
                 <div className="flex justify-between items-center mb-2">
-                  <Badge className="bg-yellow-100 text-yellow-700">Google</Badge>
-                  <Zap className="text-yellow-600 h-6 w-6" />
+                  <Badge className="bg-blue-100 text-blue-700">Meta</Badge>
+                  <Brain className="text-blue-600 h-6 w-6" />
                 </div>
-                <CardTitle className="text-xl font-semibold">Gemma 3</CardTitle>
+                <CardTitle className="text-xl font-semibold">Llama 4</CardTitle>
                 <CardDescription>
-                  A evolução do modelo compacto do Google
+                  O mais avançado modelo de IA da Meta
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2">
                   <li className="flex items-center">
                     <Check className="h-4 w-4 text-green-500 mr-2" />
-                    <span className="text-sm">27B parâmetros (versão grande)</span>
+                    <span className="text-sm">8B a 405B parâmetros (versões variadas)</span>
                   </li>
                   <li className="flex items-center">
                     <Check className="h-4 w-4 text-green-500 mr-2" />
-                    <span className="text-sm">Suporte multimodal (texto e imagem)</span>
+                    <span className="text-sm">Suporte multimodal completo</span>
                   </li>
                   <li className="flex items-center">
                     <Check className="h-4 w-4 text-green-500 mr-2" />
@@ -122,7 +122,7 @@ const IAConecta = () => {
                   </li>
                   <li className="flex items-center">
                     <Check className="h-4 w-4 text-green-500 mr-2" />
-                    <span className="text-sm">Otimizado para dispositivos locais</span>
+                    <span className="text-sm">Performance de nível empresarial</span>
                   </li>
                 </ul>
               </CardContent>
@@ -220,14 +220,90 @@ const IAConecta = () => {
             </DialogDescription>
           </DialogHeader>
           
-          <Tabs defaultValue="google">
+          <Tabs defaultValue="meta">
             <TabsList className="grid grid-cols-2 md:grid-cols-5 gap-2">
-              <TabsTrigger value="google">Google</TabsTrigger>
+              <TabsTrigger value="meta">Meta</TabsTrigger>
               <TabsTrigger value="microsoft">Microsoft</TabsTrigger>
               <TabsTrigger value="mistral">Mistral</TabsTrigger>
               <TabsTrigger value="qwen">Qwen</TabsTrigger>
               <TabsTrigger value="deepseek">DeepSeek</TabsTrigger>
             </TabsList>
+            
+            {/* Meta (Llama) Models Tab */}
+            <TabsContent value="meta" className="mt-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <Card className="border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                  <div className="h-2 bg-gradient-to-r from-blue-500 to-blue-700 w-full"></div>
+                  <CardHeader className="pb-2">
+                    <div className="flex justify-between items-center mb-2">
+                      <Badge className="bg-blue-100 text-blue-700">Nova Geração</Badge>
+                      <Brain className="text-blue-600 h-6 w-6" />
+                    </div>
+                    <CardTitle className="text-xl font-semibold">Llama 4</CardTitle>
+                    <CardDescription>
+                      O mais avançado modelo da Meta
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      <p className="text-sm text-gray-700">
+                        Última geração do modelo Llama com capacidades multimodais ampliadas e desempenho 
+                        competitivo com os melhores modelos disponíveis no mercado.
+                      </p>
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className="bg-blue-50 p-2 rounded">
+                          <span className="text-xs font-medium text-blue-700">Variantes:</span> 
+                          <ul className="text-xs list-disc pl-4 mt-1 space-y-1">
+                            <li>Llama 4 8B</li>
+                            <li>Llama 4 90B</li>
+                            <li>Llama 4 405B (MoE)</li>
+                          </ul>
+                        </div>
+                        <div className="bg-blue-50 p-2 rounded">
+                          <span className="text-xs font-medium text-blue-700">Contexto:</span>
+                          <p className="text-xs">Até 128K tokens</p>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                  <div className="h-2 bg-gradient-to-r from-blue-400 to-blue-600 w-full"></div>
+                  <CardHeader className="pb-2">
+                    <div className="flex justify-between items-center mb-2">
+                      <Badge className="bg-blue-100 text-blue-700">Estabelecido</Badge>
+                      <Bot className="text-blue-600 h-6 w-6" />
+                    </div>
+                    <CardTitle className="text-xl font-semibold">Llama 3.3</CardTitle>
+                    <CardDescription>
+                      Evolução da consagrada família Llama
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      <p className="text-sm text-gray-700">
+                        Versão aprimorada do Llama 3 com melhorias significativas em desempenho e 
+                        capacidade multilíngue. Excelente para uma ampla gama de tarefas de NLP.
+                      </p>
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className="bg-blue-50 p-2 rounded">
+                          <span className="text-xs font-medium text-blue-700">Variantes:</span> 
+                          <ul className="text-xs list-disc pl-4 mt-1 space-y-1">
+                            <li>Llama 3.3 8B</li>
+                            <li>Llama 3.3 70B</li>
+                          </ul>
+                        </div>
+                        <div className="bg-blue-50 p-2 rounded">
+                          <span className="text-xs font-medium text-blue-700">Contexto:</span>
+                          <p className="text-xs">Até 128K tokens</p>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </TabsContent>
             
             <TabsContent value="google" className="mt-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -642,7 +718,7 @@ const IAConecta = () => {
         </DialogContent>
       </Dialog>
 
-      {/* Casos de Uso - Nova seção */}
+      {/* Casos de Uso - Seção mantida conforme solicitado */}
       <section className="py-24 px-4 md:px-6 lg:px-8 bg-white">
         <div className="container mx-auto">
           <div className="text-center mb-16">
