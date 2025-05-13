@@ -299,7 +299,9 @@ const PricingSection = () => {
           <div className="relative">
             <div className="absolute -top-4 -right-4 z-10 rotate-12">
               <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white text-xs font-bold px-6 py-1 rounded-full shadow-lg flex items-center gap-1">
-                <Star className="h-3 w-3 fill-white" /> RECOMENDADO <Star className="h-3 w-3 fill-white" />
+                <Star className="h-3 w-3 fill-white" /> 
+                RECOMENDADO 
+                <Star className="h-3 w-3 fill-white" />
               </div>
             </div>
             
