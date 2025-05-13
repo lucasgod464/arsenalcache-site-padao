@@ -346,7 +346,7 @@ const PricingSection = () => {
                           <div className="bg-blue-500 rounded-full p-1.5">
                             <Box className="w-4 h-4 text-white flex-shrink-0" />
                           </div>
-                          <span className="text-sm text-gray-700 font-medium">Template n8n agente IA com 5 modelos</span>
+                          <span className="text-sm text-gray-700 font-medium">Workflow n8n Agente IA com 5 Modelos Disponíveis</span>
                         </li>
                         <li className="flex items-center gap-2.5">
                           <div className="bg-blue-500 rounded-full p-1.5">
@@ -370,7 +370,7 @@ const PricingSection = () => {
                     <ul className="space-y-2.5 border-l-2 border-blue-100 pl-3">
                       <li className="flex items-start gap-2">
                         <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-gray-600">AVISO DE FATURA VENCIDA - ASAAS</span>
+                        <span className="text-sm text-gray-600">Aviso de Fatura Vencida  - ASAAS</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
