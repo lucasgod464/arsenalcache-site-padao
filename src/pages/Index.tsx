@@ -14,6 +14,7 @@ import ScrollToTop from '@/components/ScrollToTop';
 import FloatingCta from '@/components/FloatingCta';
 import RoiCalculator from '@/components/RoiCalculator';
 import FreeTrial from '@/components/FreeTrial';
+import TransformeSection from '@/components/TransformeSection';
 
 const Index = () => {
   useEffect(() => {
@@ -61,6 +62,7 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <FeaturesSection />
+      <TransformeSection />
       <ZproSection />
       <RoiCalculator />
       <FreeTrial />
