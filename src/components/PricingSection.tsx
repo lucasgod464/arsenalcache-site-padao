@@ -346,7 +346,7 @@ const PricingSection = () => {
                           <div className="bg-blue-500 rounded-full p-1.5">
                             <Box className="w-4 h-4 text-white flex-shrink-0" />
                           </div>
-                          <span className="text-sm text-gray-700 font-medium">Workflow n8n Agente IA com 5 Modelos Disponíveis</span>
+                          <span className="text-sm text-gray-700 font-medium">Workflow N8N Agente IA com 5 Modelos Disponíveis</span>
                         </li>
                         <li className="flex items-center gap-2.5">
                           <div className="bg-blue-500 rounded-full p-1.5">
@@ -378,7 +378,7 @@ const PricingSection = () => {
                       </li>
                       <li className="flex items-start gap-2">
                         <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-gray-600">Template de backup dos templates n8n automáticos</span>
+                        <span className="text-sm text-gray-600">Template de Backup dos Workflow N8N Automáticos</span>
                       </li>
                     </ul>
                   </div>
@@ -428,7 +428,7 @@ const PricingSection = () => {
                       </li>
                       <li className="flex items-start gap-2">
                         <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-gray-600">Inclui atualizações, templates e suporte</span>
+                        <span className="text-sm text-gray-600">Inclui atualizações, workflow e suporte</span>
                       </li>
                     </ul>
                   </div>
@@ -496,7 +496,7 @@ const PricingSection = () => {
                           <div className="bg-blue-600 rounded-full p-1.5">
                             <FileCode className="w-4 h-4 text-white flex-shrink-0" />
                           </div>
-                          <span className="text-sm text-blue-100">n8n - Plataforma de automação</span>
+                          <span className="text-sm text-blue-100">N8N - Plataforma de automação</span>
                         </li>
                         <li className="flex items-center gap-2.5">
                           <div className="bg-blue-600 rounded-full p-1.5">
@@ -595,11 +595,11 @@ const PricingSection = () => {
                     <ul className="space-y-2.5 border-l-2 border-blue-700 pl-3">
                       <li className="flex items-start gap-2">
                         <Check className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-blue-100">R$500,00 para manutenção do sistema</span>
+                        <span className="text-sm text-blue-100">R$400,00 para manutenção do sistema</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <Check className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-blue-100">Inclui upgrades, templates e suporte prioritário</span>
+                        <span className="text-sm text-blue-100">Inclui upgrades, workflow e suporte</span>
                       </li>
                     </ul>
                   </div>
