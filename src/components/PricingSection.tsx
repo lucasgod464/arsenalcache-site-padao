@@ -344,12 +344,6 @@ const PricingSection = () => {
                       <ul className="space-y-3">
                         <li className="flex items-center gap-2.5">
                           <div className="bg-blue-500 rounded-full p-1.5">
-                            <Box className="w-4 h-4 text-white flex-shrink-0" />
-                          </div>
-                          <span className="text-sm text-gray-700 font-medium">Workflow N8N Agente IA com 5 Modelos Disponíveis</span>
-                        </li>
-                        <li className="flex items-center gap-2.5">
-                          <div className="bg-blue-500 rounded-full p-1.5">
                             <FileCode className="w-4 h-4 text-white flex-shrink-0" />
                           </div>
                           <span className="text-sm text-gray-700">Página premium de Teste Grátis + Automação Workflow n8n</span>
@@ -365,12 +359,16 @@ const PricingSection = () => {
                     
                     <h4 className="font-semibold mb-3 text-blue-600 flex items-center">
                       <FileCode className="h-5 w-5 text-blue-500 mr-2" />
-                      Templates n8n inclusos:
+                      Workflow N8N Inclusos:
                     </h4>
                     <ul className="space-y-2.5 border-l-2 border-blue-100 pl-3">
                       <li className="flex items-start gap-2">
                         <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-gray-600">Aviso de Fatura Vencida  - ASAAS</span>
+                        <span className="text-sm text-gray-600">Workflow N8N Agente IA com 5 Modelos Disponíveis</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-gray-600">Aviso de Fatura Vencida - ASAAS</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
