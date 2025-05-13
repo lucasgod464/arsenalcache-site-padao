@@ -22,11 +22,12 @@ const ModelsDialog = ({ open, onOpenChange }: ModelsDialogProps) => {
         </DialogHeader>
         
         <Tabs defaultValue="meta">
-          <TabsList className="grid grid-cols-2 md:grid-cols-5 gap-2">
+          <TabsList className="grid grid-cols-2 md:grid-cols-6 gap-2">
             <TabsTrigger value="meta">Meta</TabsTrigger>
             <TabsTrigger value="microsoft">Microsoft</TabsTrigger>
             <TabsTrigger value="mistral">Mistral</TabsTrigger>
             <TabsTrigger value="qwen">Qwen</TabsTrigger>
+            <TabsTrigger value="gemma">Gemma</TabsTrigger>
             <TabsTrigger value="deepseek">DeepSeek</TabsTrigger>
           </TabsList>
           
@@ -199,6 +200,77 @@ const ModelsDialog = ({ open, onOpenChange }: ModelsDialogProps) => {
                       <div className="bg-yellow-50 p-2 rounded">
                         <span className="text-xs font-medium text-yellow-700">Contexto:</span>
                         <p className="text-xs">Até 128K tokens</p>
+                      </div>
+                    </div>
+                  </div>
+                }
+              />
+            </div>
+          </TabsContent>
+
+          {/* Nova aba Gemma */}
+          <TabsContent value="gemma" className="mt-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <ModelDetailsCard
+                title="Gemma 3"
+                description="Modelo de última geração do Google"
+                badge={{ 
+                  text: "Google", 
+                  className: "bg-red-100 text-red-700" 
+                }}
+                icon={<Brain className="text-red-600 h-6 w-6" />}
+                headerColor="bg-gradient-to-r from-red-500 to-red-700"
+                details={
+                  <div className="space-y-4">
+                    <p className="text-sm text-gray-700">
+                      Modelo de linguagem de última geração do Google, com desempenho excepcional 
+                      em raciocínio, compreensão de contexto e tarefas multimodais.
+                    </p>
+                    <div className="grid grid-cols-2 gap-2">
+                      <div className="bg-red-50 p-2 rounded">
+                        <span className="text-xs font-medium text-red-700">Variantes:</span>
+                        <ul className="text-xs list-disc pl-4 mt-1 space-y-1">
+                          <li>Gemma 3 9B</li>
+                          <li>Gemma 3 27B</li>
+                          <li>Gemma 3 Ultra 36B</li>
+                        </ul>
+                      </div>
+                      <div className="bg-red-50 p-2 rounded">
+                        <span className="text-xs font-medium text-red-700">Contexto:</span>
+                        <p className="text-xs">Até 128K tokens</p>
+                      </div>
+                    </div>
+                  </div>
+                }
+              />
+
+              <ModelDetailsCard
+                title="Gemma 2"
+                description="Modelo versátil e eficiente do Google"
+                badge={{ 
+                  text: "Eficiente", 
+                  className: "bg-orange-100 text-orange-700" 
+                }}
+                icon={<Bot className="text-orange-600 h-6 w-6" />}
+                headerColor="bg-gradient-to-r from-orange-500 to-orange-700"
+                details={
+                  <div className="space-y-4">
+                    <p className="text-sm text-gray-700">
+                      Versão leve e versátil do modelo Gemma, projetada para eficiência e facilidade
+                      de implantação em diversos ambientes computacionais.
+                    </p>
+                    <div className="grid grid-cols-2 gap-2">
+                      <div className="bg-orange-50 p-2 rounded">
+                        <span className="text-xs font-medium text-orange-700">Variantes:</span>
+                        <ul className="text-xs list-disc pl-4 mt-1 space-y-1">
+                          <li>Gemma 2 2B</li>
+                          <li>Gemma 2 7B</li>
+                          <li>Gemma 2 270M</li>
+                        </ul>
+                      </div>
+                      <div className="bg-orange-50 p-2 rounded">
+                        <span className="text-xs font-medium text-orange-700">Contexto:</span>
+                        <p className="text-xs">Até 8K tokens</p>
                       </div>
                     </div>
                   </div>

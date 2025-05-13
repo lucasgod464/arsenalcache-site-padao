@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Brain, BookOpen, Sparkles, Grid3x3 } from "lucide-react";
+import { Brain, BookOpen, Sparkles, Grid3x3, Bot } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import ModelCard from "./ModelCard";
@@ -26,7 +26,7 @@ const ModelsSection = ({ onShowAllModels }: ModelsSectionProps) => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Llama 4 Card */}
           <ModelCard
             title="Llama 4"
@@ -39,6 +39,21 @@ const ModelsSection = ({ onShowAllModels }: ModelsSectionProps) => {
               "Suporte multimodal completo",
               "128K tokens de contexto",
               "Performance de nível empresarial"
+            ]}
+          />
+
+          {/* Gemma 3 Card */}
+          <ModelCard
+            title="Gemma 3"
+            description="Modelo de última geração do Google"
+            badge="Google"
+            badgeColor="from-red-500 to-red-700"
+            icon={<Bot className="text-red-600 h-6 w-6" />}
+            features={[
+              "9B a 36B parâmetros",
+              "Processamento de texto e imagem",
+              "Até 128K tokens de contexto",
+              "Excelente em raciocínio e compreensão"
             ]}
           />
 
