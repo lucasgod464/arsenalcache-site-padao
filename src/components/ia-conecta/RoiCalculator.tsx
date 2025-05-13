@@ -1,268 +1,195 @@
 
 import React, { useState } from 'react';
-import { Calculator, TrendingUp, DollarSign, FileText } from 'lucide-react';
+import { Calculator, Diamond } from 'lucide-react';
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Slider } from "@/components/ui/slider";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { 
-  Select, 
-  SelectContent, 
-  SelectItem, 
-  SelectTrigger, 
-  SelectValue 
-} from "@/components/ui/select";
-import {
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from "@/components/ui/chart";
-import { Bar, BarChart, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Tooltip } from 'recharts';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { useIsMobile } from "@/hooks/use-mobile";
 
-// Preços reais do ChatGPT/OpenAI (em USD por 1000 tokens)
-const modelPrices = {
-  'gpt-3.5-turbo': { input: 0.0005, output: 0.0015 },
-  'gpt-4o': { input: 0.01, output: 0.03 },
-  'gpt-4': { input: 0.03, output: 0.06 }
-};
-
-// Taxa de câmbio média USD para BRL
-const exchangeRate = 5.5;
-
 const RoiCalculator = () => {
-  const [usuariosIA, setUsuariosIA] = useState(40);
-  const [mensagensMedia, setMensagensMedia] = useState(200);
-  const [tokensPorMensagem, setTokensPorMensagem] = useState(1500);
-  const [tokensResposta, setTokensResposta] = useState(2000);
-  const [selectedModel, setSelectedModel] = useState('gpt-4o');
+  const [isOpen, setIsOpen] = useState(false);
+  const [subscriptions, setSubscriptions] = useState(40);
+  const [monthlyValue, setMonthlyValue] = useState(97);
+  const [annualGrowth, setAnnualGrowth] = useState(20);
+  const [costs, setCosts] = useState(200);
   const isMobile = useIsMobile();
-  
-  // Cálculos para OpenAI (cobrado por token com base no modelo selecionado)
-  const tokensEntradaMensal = usuariosIA * mensagensMedia * tokensPorMensagem;
-  const tokensSaidaMensal = usuariosIA * mensagensMedia * tokensResposta;
-  
-  const custoEntradaUSD = (tokensEntradaMensal / 1000) * modelPrices[selectedModel].input;
-  const custoSaidaUSD = (tokensSaidaMensal / 1000) * modelPrices[selectedModel].output;
-  
-  // Conversão para BRL
-  const custoEntradaBRL = custoEntradaUSD * exchangeRate;
-  const custoSaidaBRL = custoSaidaUSD * exchangeRate;
-  
-  // Custo mensal total em BRL
-  const custoMensalOpenAI = custoEntradaBRL + custoSaidaBRL;
-  
-  // Cálculos para IA Conecta (preço fixo)
-  const custoMensalIAConecta = 1000;
-  
-  // Economia
-  const economia = custoMensalOpenAI - custoMensalIAConecta;
-  const economiaPercentual = custoMensalOpenAI > 0 ? ((economia / custoMensalOpenAI) * 100).toFixed(0) : "0";
-  
-  // Dados para o gráfico
-  const data = [
-    { name: 'OpenAI', valor: custoMensalOpenAI, fill: '#ef4444' },
-    { name: 'IA Conecta', valor: custoMensalIAConecta, fill: '#8b5cf6' }
-  ];
+
+  const calculateSubscriptionROI = () => {
+    const monthlyRevenue = subscriptions * monthlyValue;
+    const annualRevenue = monthlyRevenue * 12;
+    const annualProfit = annualRevenue - (costs * 12);
+    const newSubscribersYearly = Math.round((subscriptions * annualGrowth) / 100);
+    const growthRevenue = newSubscribersYearly * monthlyValue * 12;
+    const totalSubscribersNextYear = subscriptions + newSubscribersYearly;
+    const nextYearRevenue = totalSubscribersNextYear * monthlyValue * 12;
+    const systemCost = 1998.80;
+    const roiPercentage = Math.round((annualProfit / systemCost) * 100);
+
+    return {
+      monthlyRevenue,
+      annualRevenue,
+      annualProfit,
+      newSubscribersYearly,
+      growthRevenue,
+      totalSubscribersNextYear,
+      nextYearRevenue,
+      roiPercentage
+    };
+  };
+
+  const roi = calculateSubscriptionROI();
 
   return (
-    <section id="calculadora-roi" className="py-16 px-4 bg-gradient-to-br from-purple-50 to-white">
-      <div className="container mx-auto max-w-5xl">
-        <div className="text-center mb-10">
-          <Badge className="bg-purple-100 text-purple-700 hover:bg-purple-200 px-3 py-1 text-sm mb-4">
-            Calcule sua Economia
-          </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Calculadora de <span className="text-purple-600">Economia com IA</span>
-          </h2>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-            Veja quanto você economiza ao usar nossa solução de IA ilimitada comparada com OpenAI/ChatGPT
-            com preços reais e atualizados
+    <section id="roi-calculator" className="py-16 px-4 bg-gradient-to-b from-blue-50 to-white">
+      <div className="container mx-auto max-w-4xl">
+        <div className="text-center mb-10 fade-in-section">
+          <div className="flex justify-center mb-4">
+            <div className="bg-blue-100 p-3 rounded-full">
+              <Diamond className="h-7 w-7 text-blue-700" />
+            </div>
+          </div>
+          <h2 className="text-2xl md:text-4xl font-bold mb-3">Calculadora de Lucro com Revenda</h2>
+          <p className="text-lg text-gray-600">
+            Calcule quanto você pode lucrar revendendo o Sistema Diamond
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <Card className="shadow-lg border border-purple-100">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-purple-700">
-                <Calculator className="h-5 w-5" /> Parâmetros do Cálculo
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="space-y-2">
-                <div className="flex justify-between">
-                  <Label htmlFor="model">Modelo de IA da OpenAI:</Label>
-                  <span className="font-semibold text-purple-700">{selectedModel}</span>
-                </div>
-                <Select
-                  value={selectedModel}
-                  onValueChange={setSelectedModel}
-                >
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Selecione um modelo" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="gpt-3.5-turbo">GPT-3.5 Turbo</SelectItem>
-                    <SelectItem value="gpt-4o">GPT-4o</SelectItem>
-                    <SelectItem value="gpt-4">GPT-4</SelectItem>
-                  </SelectContent>
-                </Select>
-                <p className="text-xs text-gray-500">
-                  Preços por 1k tokens (entrada/saída): ${modelPrices[selectedModel].input}/${modelPrices[selectedModel].output} USD
-                </p>
+        <div className="bg-white rounded-xl shadow-lg p-5 mb-6 border border-blue-100">
+          <Collapsible open={isOpen} onOpenChange={setIsOpen}>
+            {isMobile ? (
+              <div className="mb-5">
+                <h3 className="text-lg font-semibold mb-2">
+                  Simule seu potencial de ganhos
+                </h3>
+                <CollapsibleTrigger asChild>
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="border border-dashed border-blue-400 bg-transparent hover:bg-blue-50 text-blue-600 whitespace-nowrap text-sm transition-all w-full py-1.5"
+                  >
+                    {isOpen ? "Esconder parâmetros" : "Ajustar parâmetros"}
+                  </Button>
+                </CollapsibleTrigger>
               </div>
+            ) : (
+              <div className="flex items-center justify-between mb-5">
+                <h3 className="text-lg font-semibold">
+                  Simule seu potencial de ganhos com o Sistema Diamond
+                </h3>
+                <CollapsibleTrigger asChild>
+                  <Button 
+                    variant="outline" 
+                    size="default" 
+                    className="border border-dashed border-blue-400 bg-transparent hover:bg-blue-50 text-blue-600 whitespace-nowrap text-sm transition-all px-4 py-2"
+                  >
+                    {isOpen ? "Esconder parâmetros" : "Ajustar parâmetros"}
+                  </Button>
+                </CollapsibleTrigger>
+              </div>
+            )}
 
-              <div className="space-y-2">
-                <div className="flex justify-between">
-                  <Label htmlFor="usuarios">Número de usuários de IA:</Label>
-                  <span className="font-semibold text-purple-700">{usuariosIA}</span>
+            <CollapsibleContent>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <div className="space-y-2">
+                  <Label htmlFor="subscriptions">Número de assinantes:</Label>
+                  <Input
+                    id="subscriptions"
+                    type="number"
+                    min="1"
+                    max="100"
+                    value={subscriptions}
+                    onChange={(e) => setSubscriptions(parseInt(e.target.value) || 1)}
+                    className="border-blue-200 focus:border-blue-400"
+                  />
+                  <p className="text-xs text-gray-500">Quantos clientes assinam seu serviço mensalmente</p>
                 </div>
-                <Slider
-                  id="usuarios"
-                  min={1}
-                  max={100}
-                  step={1}
-                  value={[usuariosIA]}
-                  onValueChange={(value) => setUsuariosIA(value[0])}
-                  className="py-4"
-                />
-              </div>
 
-              <div className="space-y-2">
-                <div className="flex justify-between">
-                  <Label htmlFor="mensagens">Mensagens por usuário/mês:</Label>
-                  <span className="font-semibold text-purple-700">{mensagensMedia}</span>
+                <div className="space-y-2">
+                  <Label htmlFor="monthlyValue">Valor mensal por assinatura (R$):</Label>
+                  <Input
+                    id="monthlyValue"
+                    type="number"
+                    min="1"
+                    value={monthlyValue}
+                    onChange={(e) => setMonthlyValue(parseInt(e.target.value) || 1)}
+                    className="border-blue-200 focus:border-blue-400"
+                  />
+                  <p className="text-xs text-gray-500">Quanto você cobra por mês de cada cliente</p>
                 </div>
-                <Slider
-                  id="mensagens"
-                  min={10}
-                  max={500}
-                  step={10}
-                  value={[mensagensMedia]}
-                  onValueChange={(value) => setMensagensMedia(value[0])}
-                  className="py-4"
-                />
-              </div>
 
-              <div className="space-y-2">
-                <div className="flex justify-between">
-                  <Label htmlFor="tokensEntrada">Tokens médios por prompt:</Label>
-                  <span className="font-semibold text-purple-700">{tokensPorMensagem}</span>
+                <div className="space-y-2">
+                  <Label htmlFor="annualGrowth">Crescimento anual estimado (%):</Label>
+                  <Input
+                    id="annualGrowth"
+                    type="number"
+                    min="0"
+                    max="100"
+                    value={annualGrowth}
+                    onChange={(e) => setAnnualGrowth(parseInt(e.target.value) || 0)}
+                    className="border-blue-200 focus:border-blue-400"
+                  />
+                  <p className="text-xs text-gray-500">Estimativa de crescimento anual em número de clientes</p>
                 </div>
-                <Slider
-                  id="tokensEntrada"
-                  min={500}
-                  max={4000}
-                  step={100}
-                  value={[tokensPorMensagem]}
-                  onValueChange={(value) => setTokensPorMensagem(value[0])}
-                  className="py-4"
-                />
-              </div>
 
-              <div className="space-y-2">
-                <div className="flex justify-between">
-                  <Label htmlFor="tokensSaida">Tokens médios por resposta:</Label>
-                  <span className="font-semibold text-purple-700">{tokensResposta}</span>
+                <div className="space-y-2">
+                  <Label htmlFor="costs">Custos mensais (R$):</Label>
+                  <Input
+                    id="costs"
+                    type="number"
+                    min="0"
+                    value={costs}
+                    onChange={(e) => setCosts(parseInt(e.target.value) || 0)}
+                    className="border-blue-200 focus:border-blue-400"
+                  />
+                  <p className="text-xs text-gray-500">Seus custos mensais com hospedagem, suporte, etc.</p>
                 </div>
-                <Slider
-                  id="tokensSaida"
-                  min={500}
-                  max={4000}
-                  step={100}
-                  value={[tokensResposta]}
-                  onValueChange={(value) => setTokensResposta(value[0])}
-                  className="py-4"
-                />
               </div>
+            </CollapsibleContent>
+          </Collapsible>
 
-              <div className="pt-4 bg-purple-50 p-4 rounded-lg border border-purple-100">
-                <p className="text-sm text-gray-600 mb-2 flex items-center gap-1">
-                  <FileText className="h-4 w-4" /> Resumo do uso mensal:
-                </p>
-                <p className="text-sm text-purple-700">
-                  Entrada: {(tokensEntradaMensal / 1000000).toFixed(2)} milhões de tokens (R$ {custoEntradaBRL.toFixed(2)})
-                </p>
-                <p className="text-sm text-purple-700">
-                  Saída: {(tokensSaidaMensal / 1000000).toFixed(2)} milhões de tokens (R$ {custoSaidaBRL.toFixed(2)})
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div className="bg-blue-50 p-4 rounded-lg text-center">
+              <p className="text-gray-600 text-sm mb-1">Receita mensal</p>
+              <p className="text-xl sm:text-2xl font-bold text-blue-700">R$ {roi.monthlyRevenue.toLocaleString()}</p>
+            </div>
 
-          <Card className="shadow-lg border border-purple-100">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-purple-700">
-                <TrendingUp className="h-5 w-5" /> Comparativo de Custos
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="h-64">
-                <ResponsiveContainer width="100%" height="100%">
-                  <BarChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
-                    <YAxis 
-                      tickFormatter={(value) => `R$${Math.round(value).toLocaleString()}`}
-                    />
-                    <Tooltip 
-                      formatter={(value) => [`R$${Number(value).toLocaleString(undefined, {maximumFractionDigits: 2})}`, "Custo Mensal"]}
-                    />
-                    <Bar dataKey="valor" fill="#8884d8" />
-                  </BarChart>
-                </ResponsiveContainer>
-              </div>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                <div className="bg-red-50 p-4 rounded-lg border border-red-100">
-                  <p className="text-sm text-red-600 mb-1">OpenAI ({selectedModel})</p>
-                  <p className="text-xl font-bold text-red-700">
-                    R$ {custoMensalOpenAI.toLocaleString(undefined, { maximumFractionDigits: 2 })}
-                  </p>
-                  <p className="text-xs text-red-600 mt-1">
-                    Taxa de câmbio: $1 USD = R$ {exchangeRate.toFixed(2)}
-                  </p>
-                </div>
-                
-                <div className="bg-purple-50 p-4 rounded-lg border border-purple-100">
-                  <p className="text-sm text-purple-600 mb-1">IA Conecta (ilimitado)</p>
-                  <p className="text-xl font-bold text-purple-700">
-                    R$ {custoMensalIAConecta.toLocaleString()}
-                  </p>
-                  <p className="text-xs text-purple-600 mt-1">
-                    Preço fixo mensal, sem contagem de tokens
-                  </p>
-                </div>
-              </div>
-              
-              <div className="bg-green-50 p-6 rounded-lg border border-green-200 mt-4">
-                <div className="flex justify-between items-center">
-                  <p className="text-green-800 font-medium">Sua economia mensal:</p>
-                  <p className="text-2xl font-bold text-green-700">
-                    R$ {economia > 0 ? economia.toLocaleString(undefined, { maximumFractionDigits: 2 }) : 0}
-                  </p>
-                </div>
-                
-                {economia > 0 && (
-                  <p className="text-sm text-green-600 mt-2">
-                    Você economiza {economiaPercentual}% usando nossa solução de IA ilimitada!
-                  </p>
-                )}
-              </div>
-              
-              <div className="pt-4 text-center">
-                <Button asChild className="bg-purple-600 hover:bg-purple-700 text-white py-5 px-6">
-                  <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20quero%20saber%20mais%20sobre%20a%20solução%20de%20IA%20ilimitada" target="_blank" rel="noopener noreferrer">
-                    <DollarSign className="mr-2 h-5 w-5" />
-                    Economize agora mesmo
-                  </a>
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
+            <div className="bg-green-50 p-4 rounded-lg text-center">
+              <p className="text-gray-600 text-sm mb-1">Lucro anual</p>
+              <p className="text-xl sm:text-2xl font-bold text-green-700">R$ {roi.annualProfit.toLocaleString()}</p>
+            </div>
+
+            <div className="bg-gradient-to-r from-blue-600 to-blue-800 p-4 rounded-lg text-center text-white">
+              <p className="text-sm mb-1">ROI</p>
+              <p className="text-2xl sm:text-3xl font-bold">{roi.roiPercentage}%</p>
+            </div>
+          </div>
         </div>
+
+        {!isMobile && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div className="bg-amber-50 p-5 rounded-lg border border-amber-100">
+              <h4 className="text-lg font-semibold mb-2 text-amber-800">Projeção de crescimento:</h4>
+              <ul className="space-y-2 text-gray-700">
+                <li>• {roi.newSubscribersYearly} novos assinantes no próximo ano</li>
+                <li>• Total de {roi.totalSubscribersNextYear} assinantes após 12 meses</li>
+                <li>• R$ {roi.growthRevenue.toLocaleString()} de receita adicional com novos assinantes</li>
+                <li>• R$ {roi.nextYearRevenue.toLocaleString()} de receita projetada para o próximo ano</li>
+              </ul>
+            </div>
+
+            <div className="bg-blue-50 p-5 rounded-lg border border-blue-100">
+              <h4 className="text-lg font-semibold mb-2 text-blue-800">Benefícios do Sistema Diamond para revendedores:</h4>
+              <ul className="space-y-2 text-gray-700">
+                <li>• Renda recorrente mensal</li>
+                <li>• Sistema completo e personalizado</li>
+                <li>• Softwares premium inclusos</li>
+                <li>• Suporte técnico especializado</li>
+                <li>• Implementação rápida (24h)</li>
+              </ul>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
