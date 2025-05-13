@@ -798,25 +798,7 @@ const PricingSection = () => {
               </Card>)}
           </div>
           
-          <div className="text-center mt-12 bg-gradient-to-r from-blue-50 to-blue-100 p-8 rounded-xl border border-blue-200 max-w-4xl mx-auto shadow-md">
-            <h4 className="text-2xl font-bold text-blue-800 mb-4">Nosso Time de Especialistas Cuida de Tudo</h4>
-            <p className="text-gray-700 mb-6">
-              Oferecemos um serviço completo de gerenciamento e monitoramento para seus servidores dedicados, 
-              garantindo performance máxima e tranquilidade para seu negócio.
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              
-              
-              
-            </div>
-            
-            <Button asChild className="bg-blue-700 hover:bg-blue-800 text-white text-lg py-6 px-8 rounded-lg shadow-lg">
-              <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20quero%20informações%20sobre%20os%20servidores%20dedicados%20premium" target="_blank" rel="noopener noreferrer">
-                Falar com consultor especializado
-              </a>
-            </Button>
-          </div>
+          
         </div>
 
         {/* Nova seção: Cotação Personalizada */}
