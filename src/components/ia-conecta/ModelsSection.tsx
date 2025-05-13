@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Brain, BookOpen, Sparkles, Grid3x3, Bot, Bar, TrendingUp } from "lucide-react";
+import { Brain, BookOpen, Sparkles, Grid3x3, Bot, BarChart, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import ModelCard from "./ModelCard";
@@ -57,22 +57,7 @@ const ModelsSection = ({ onShowAllModels }: ModelsSectionProps) => {
             ]}
           />
 
-          {/* Gemma 2 Card */}
-          <ModelCard
-            title="Gemma 2"
-            description="Eficiente e acessível da família Google"
-            badge="Google"
-            badgeColor="from-red-600 to-orange-500"
-            icon={<TrendingUp className="text-orange-600 h-6 w-6" />}
-            features={[
-              "2B a 27B parâmetros",
-              "Processamento de texto eficiente",
-              "32K tokens de contexto",
-              "Ótima relação custo-desempenho"
-            ]}
-          />
-
-          {/* Deepseek Card */}
+          {/* DeepSeek Card - Removemos o Gemma 2 e mantemos apenas este e os anteriores */}
           <ModelCard
             title="DeepSeek-V2"
             description="Modelo avançado para pesquisa e raciocínio"
