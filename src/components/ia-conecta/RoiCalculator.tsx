@@ -56,7 +56,7 @@ const RoiCalculator = () => {
   const custoMensalOpenAI = custoEntradaBRL + custoSaidaBRL;
   
   // Custo mensal IA Conecta (preço fixo - ALTERADO PARA R$360)
-  const custoMensalIAConecta = 360;
+  const custoMensalIAConecta = 1000;
   
   // Economia
   const economia = custoMensalOpenAI - custoMensalIAConecta;
