@@ -542,10 +542,7 @@ const PricingSection = () => {
                           <Check className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
                           <span className="text-sm text-blue-100">Implementação e configuração por especialistas</span>
                         </li>
-                        <li className="flex items-start gap-2">
-                          <Check className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                          <span className="text-sm text-blue-100">4 horas de consultoria personalizada</span>
-                        </li>
+                        
                         <li className="flex items-start gap-2">
                           <Check className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
                           <span className="text-sm text-blue-100">Prioridade no suporte técnico</span>
