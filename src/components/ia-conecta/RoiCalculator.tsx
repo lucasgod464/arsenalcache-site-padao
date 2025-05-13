@@ -24,9 +24,10 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 // Preços reais do ChatGPT/OpenAI (em USD por 1000 tokens)
 const modelPrices = {
-  'gpt-3.5-turbo': { input: 0.0005, output: 0.0015 },
   'gpt-4o': { input: 0.01, output: 0.03 },
-  'gpt-4': { input: 0.03, output: 0.06 }
+  'gpt-4': { input: 0.03, output: 0.06 },
+  'gpt-4-turbo': { input: 0.01, output: 0.03 },
+  'gpt-4-vision': { input: 0.01, output: 0.03 }
 };
 
 // Taxa de câmbio média USD para BRL
@@ -104,9 +105,10 @@ const RoiCalculator = () => {
                     <SelectValue placeholder="Selecione um modelo" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="gpt-3.5-turbo">GPT-3.5 Turbo</SelectItem>
                     <SelectItem value="gpt-4o">GPT-4o</SelectItem>
                     <SelectItem value="gpt-4">GPT-4</SelectItem>
+                    <SelectItem value="gpt-4-turbo">GPT-4 Turbo</SelectItem>
+                    <SelectItem value="gpt-4-vision">GPT-4 Vision</SelectItem>
                   </SelectContent>
                 </Select>
                 <p className="text-xs text-gray-500">
