@@ -1,117 +1,180 @@
 
 import React from 'react';
-import { Check, MessageCircle, ArrowRight } from 'lucide-react';
+import { Check, ArrowRight, MessageCircle, Sparkles } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
 const ConversionCta = () => {
   return (
     <section className="py-16 px-4 bg-gradient-to-tr from-purple-900 to-blue-900 text-white">
-      <div className="container mx-auto max-w-5xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-          <div className="space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold">
-              Experimente a plataforma <span className="text-purple-300">sem compromisso</span>
-            </h2>
-            
-            <p className="text-lg text-purple-100">
-              Acesso imediato ao painel de testes com modelos de IA avançados por 7 dias. Veja na prática como nossa solução pode transformar seu negócio.
-            </p>
-            
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <div className="bg-purple-800/50 rounded-full p-1">
-                  <Check className="w-5 h-5 text-purple-300" />
-                </div>
-                <span className="text-purple-100">Acesso a todos os modelos premium</span>
+      <div className="container mx-auto max-w-6xl">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold">
+            Conheça nossos <span className="text-purple-300">planos de IA</span>
+          </h2>
+          
+          <p className="text-lg text-purple-100 mt-4 max-w-3xl mx-auto">
+            Tenha acesso aos modelos de IA mais avançados do mercado com previsibilidade de custos e sem surpresas na sua fatura
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Plano Fixo */}
+          <Card className="bg-white/10 backdrop-blur-lg border-purple-300/20 p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
+            <div className="space-y-6">
+              <div className="flex items-center justify-between">
+                <h3 className="text-2xl font-bold text-purple-100">Plano Empresarial</h3>
+                <Badge variant="purple">Mais popular</Badge>
               </div>
               
-              <div className="flex items-center gap-3">
-                <div className="bg-purple-800/50 rounded-full p-1">
-                  <Check className="w-5 h-5 text-purple-300" />
-                </div>
-                <span className="text-purple-100">Quantidade de solicitações ilimitadas</span>
+              <div className="border-t border-purple-700/50 my-2"></div>
+              
+              <div className="flex items-baseline">
+                <span className="text-4xl font-extrabold tracking-tight text-white">R$1.000</span>
+                <span className="ml-2 text-sm font-medium text-purple-200">/mês</span>
               </div>
               
-              <div className="flex items-center gap-3">
-                <div className="bg-purple-800/50 rounded-full p-1">
-                  <Check className="w-5 h-5 text-purple-300" />
+              <div className="space-y-3 pt-4">
+                <div className="flex items-center gap-3">
+                  <div className="bg-purple-800/50 rounded-full p-1">
+                    <Check className="w-5 h-5 text-purple-300" />
+                  </div>
+                  <span className="text-purple-100">Uso completamente ilimitado</span>
                 </div>
-                <span className="text-purple-100">Integração com até 2 aplicações</span>
+                
+                <div className="flex items-center gap-3">
+                  <div className="bg-purple-800/50 rounded-full p-1">
+                    <Check className="w-5 h-5 text-purple-300" />
+                  </div>
+                  <span className="text-purple-100">Acesso a modelos avançados</span>
+                </div>
+                
+                <div className="flex items-center gap-3">
+                  <div className="bg-purple-800/50 rounded-full p-1">
+                    <Check className="w-5 h-5 text-purple-300" />
+                  </div>
+                  <span className="text-purple-100">Previsibilidade total de custos</span>
+                </div>
+                
+                <div className="flex items-center gap-3">
+                  <div className="bg-purple-800/50 rounded-full p-1">
+                    <Check className="w-5 h-5 text-purple-300" />
+                  </div>
+                  <span className="text-purple-100">Suporte técnico especializado</span>
+                </div>
+                
+                <div className="flex items-center gap-3">
+                  <div className="bg-purple-800/50 rounded-full p-1">
+                    <Check className="w-5 h-5 text-purple-300" />
+                  </div>
+                  <span className="text-purple-100">Sem contagem de tokens</span>
+                </div>
               </div>
               
-              <div className="flex items-center gap-3">
-                <div className="bg-purple-800/50 rounded-full p-1">
-                  <Check className="w-5 h-5 text-purple-300" />
-                </div>
-                <span className="text-purple-100">Suporte técnico durante o período de teste</span>
-              </div>
-            </div>
-            
-            <div className="pt-4">
               <Button 
                 variant="purple" 
                 size="lg" 
-                className="group relative overflow-hidden"
+                className="w-full"
                 asChild
               >
-                <a href="https://wa.me/5512981156856?text=Olá,%20gostaria%20de%20testar%20a%20plataforma%20de%20IA%20Conecta" 
+                <a href="https://wa.me/5512981156856?text=Olá,%20tenho%20interesse%20no%20plano%20empresarial%20de%20R$1.000/mês" 
                    target="_blank" 
-                   rel="noopener noreferrer"
-                >
+                   rel="noopener noreferrer">
                   <MessageCircle className="mr-2 h-5 w-5" />
-                  Solicitar acesso ao teste
-                  <span className="absolute right-4 group-hover:translate-x-1 transition-transform">
-                    <ArrowRight className="h-5 w-5" />
-                  </span>
+                  Contratar plano
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
             </div>
-          </div>
+          </Card>
           
-          <div>
-            <Card className="bg-white/10 backdrop-blur-lg border-purple-300/20 p-6 rounded-xl shadow-xl">
-              <div className="space-y-5">
-                <div className="flex items-start gap-4">
-                  <div className="bg-purple-700 text-purple-100 rounded-full p-3 flex-shrink-0">
-                    <MessageCircle className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-purple-100">Atendimento personalizado</h3>
-                    <p className="text-purple-200 mt-1">
-                      Nossa equipe vai ajudar você a configurar o ambiente ideal para as suas necessidades específicas.
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="border-t border-purple-700/50 my-4"></div>
-                
-                <div className="bg-purple-800/40 p-5 rounded-lg">
-                  <h4 className="font-medium text-purple-200 mb-2">O que esperar do teste:</h4>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2">
-                      <div className="min-w-5 pt-0.5"><ArrowRight className="w-4 h-4 text-purple-300" /></div>
-                      <span className="text-sm">Configuração em menos de 24 horas</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="min-w-5 pt-0.5"><ArrowRight className="w-4 h-4 text-purple-300" /></div>
-                      <span className="text-sm">Tutoria de uso da plataforma</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="min-w-5 pt-0.5"><ArrowRight className="w-4 h-4 text-purple-300" /></div>
-                      <span className="text-sm">Suporte técnico durante todo o período de teste</span>
-                    </li>
-                  </ul>
-                </div>
-                
-                <div className="text-center pt-2">
-                  <p className="text-sm text-purple-300">
-                    "Nossa equipe de suporte está pronta para ajudar você a explorar todo o potencial da nossa plataforma de IA"
-                  </p>
+          {/* Plano Personalizado */}
+          <Card className="bg-gradient-to-br from-purple-800 to-blue-800 border border-purple-400/30 p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
+            <div className="space-y-6">
+              <div className="flex items-center justify-between">
+                <h3 className="text-2xl font-bold text-white">Plano Personalizado</h3>
+                <div className="bg-purple-700/70 p-1 rounded-full">
+                  <Sparkles className="h-5 w-5 text-amber-300" />
                 </div>
               </div>
-            </Card>
-          </div>
+              
+              <div className="border-t border-purple-500/50 my-2"></div>
+              
+              <div className="flex items-baseline">
+                <span className="text-4xl font-extrabold tracking-tight text-white">Sob consulta</span>
+              </div>
+              
+              <p className="text-purple-200 mt-2">
+                Plano personalizado de acordo com as necessidades específicas do seu negócio
+              </p>
+              
+              <div className="space-y-3 pt-4">
+                <div className="flex items-center gap-3">
+                  <div className="bg-purple-700/50 rounded-full p-1">
+                    <Check className="w-5 h-5 text-purple-200" />
+                  </div>
+                  <span className="text-purple-100">Modelos de IA personalizados</span>
+                </div>
+                
+                <div className="flex items-center gap-3">
+                  <div className="bg-purple-700/50 rounded-full p-1">
+                    <Check className="w-5 h-5 text-purple-200" />
+                  </div>
+                  <span className="text-purple-100">Integrações sob medida</span>
+                </div>
+                
+                <div className="flex items-center gap-3">
+                  <div className="bg-purple-700/50 rounded-full p-1">
+                    <Check className="w-5 h-5 text-purple-200" />
+                  </div>
+                  <span className="text-purple-100">Treinamento especializado</span>
+                </div>
+                
+                <div className="flex items-center gap-3">
+                  <div className="bg-purple-700/50 rounded-full p-1">
+                    <Check className="w-5 h-5 text-purple-200" />
+                  </div>
+                  <span className="text-purple-100">Acesso prioritário ao suporte</span>
+                </div>
+                
+                <div className="flex items-center gap-3">
+                  <div className="bg-purple-700/50 rounded-full p-1">
+                    <Check className="w-5 h-5 text-purple-200" />
+                  </div>
+                  <span className="text-purple-100">Soluções enterprise</span>
+                </div>
+              </div>
+              
+              <div className="flex gap-4 mt-4">
+                <Button 
+                  variant="purpleOutline" 
+                  size="lg" 
+                  className="w-full bg-purple-700/40 border-purple-300/30 text-white hover:bg-purple-700/60"
+                  asChild
+                >
+                  <a href="https://wa.me/5512981156856?text=Olá,%20gostaria%20de%20agendar%20uma%20demonstração%20do%20sistema" 
+                     target="_blank" 
+                     rel="noopener noreferrer">
+                    Agendar demonstração
+                  </a>
+                </Button>
+                
+                <Button 
+                  variant="purple" 
+                  size="lg" 
+                  className="w-full"
+                  asChild
+                >
+                  <a href="https://wa.me/5512981156856?text=Olá,%20gostaria%20de%20conhecer%20mais%20sobre%20os%20planos%20personalizados" 
+                     target="_blank" 
+                     rel="noopener noreferrer">
+                    Conhecer planos
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </Card>
         </div>
       </div>
     </section>
