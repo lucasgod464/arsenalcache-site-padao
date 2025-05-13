@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+
 const PricingSection = () => {
   const mainFeatures = ["Instalação pela nossa equipe", "Atualizações pelo nossa equipe", "Suporte humano", "Usuários ilimitados", "Conexões ilimitadas de WhatsApp", "Sua logo no sistema", "Cores personalizadas", "Nome do sistema personalizado", "Revenda de assinaturas ilimitadas", "Suporte individual no WhatsApp"];
   const vpsOptions = [{
@@ -93,7 +94,7 @@ const PricingSection = () => {
     connections: "Até 45 conexões"
   }];
   const dedicatedServers = [{
-    name: "Pro 1",
+    name: "Enterprise v1",
     location: "São Paulo - Dedicado 1",
     price: "2.900.00",
     specs: [{
@@ -122,7 +123,7 @@ const PricingSection = () => {
     clients: "Até 180 clientes",
     connections: "Até 100 conexões"
   }, {
-    name: "Pro 2",
+    name: "Enterprise v2",
     location: "São Paulo - Dedicado 2",
     price: "3.900.00",
     specs: [{
