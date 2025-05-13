@@ -1,43 +1,49 @@
 
-import React, { useState } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import ScrollToTop from "@/components/ScrollToTop";
-import FloatingCta from "@/components/FloatingCta";
-import HeroSection from "@/components/ia-conecta/HeroSection";
-import ModelsSection from "@/components/ia-conecta/ModelsSection";
-import ModelsDialog from "@/components/ia-conecta/ModelsDialog";
-import RoiCalculator from "@/components/ia-conecta/RoiCalculator";
-import ConversionCta from "@/components/ia-conecta/ConversionCta";
+import React, { useEffect } from 'react';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import HeroSection from '@/components/ia-conecta/HeroSection';
+import ModelsSection from '@/components/ia-conecta/ModelsSection';
+import RoiCalculator from '@/components/ia-conecta/RoiCalculator';
+import ComparisonCard from '@/components/ia-conecta/ComparisonCard';
+import TransformeSection from '@/components/ia-conecta/TransformeSection';
+import ConversionCta from '@/components/ia-conecta/ConversionCta';
 
 const IAConecta = () => {
-  const [showAllModels, setShowAllModels] = useState(false);
+  useEffect(() => {
+    // Scroll to top on page load
+    window.scrollTo(0, 0);
+    
+    // Initialize fade-in animations
+    const handleScroll = () => {
+      const elements = document.querySelectorAll('.fade-in-section');
+      elements.forEach(element => {
+        const position = element.getBoundingClientRect();
+        if(position.top < window.innerHeight - 100) {
+          element.classList.add('is-visible');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    // Trigger on initial load
+    setTimeout(handleScroll, 100);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      
-      {/* Hero Section */}
       <HeroSection />
-
-      {/* Modelos disponíveis */}
-      <ModelsSection onShowAllModels={() => setShowAllModels(true)} />
-
-      {/* Calculadora de ROI */}
+      <TransformeSection />
+      <ModelsSection />
       <RoiCalculator />
-      
-      {/* CTA de Alta Conversão - Agora com ID para referência */}
+      <ComparisonCard />
       <ConversionCta />
-
-      {/* Modal de Todos os Modelos */}
-      <ModelsDialog 
-        open={showAllModels} 
-        onOpenChange={setShowAllModels} 
-      />
-
       <Footer />
-      <ScrollToTop />
-      <FloatingCta />
     </div>
   );
 };
