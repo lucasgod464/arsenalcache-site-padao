@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Brain, BookOpen, Sparkles, Grid3x3, Bot, BarChart, TrendingUp } from "lucide-react";
+import { Brain, BookOpen, Sparkles, Grid3x3, Bot, BarChart, Code, Cpu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import ModelCard from "./ModelCard";
@@ -30,12 +30,12 @@ const ModelsSection = ({ onShowAllModels }: ModelsSectionProps) => {
           {/* Llama 4 Card */}
           <ModelCard
             title="Llama 4"
-            description="O mais avançado modelo de IA da Meta"
+            description="O mais avançado modelo da Meta"
             badge="Meta"
             badgeColor="from-blue-500 to-blue-700"
             icon={<Brain className="text-blue-600 h-6 w-6" />}
             features={[
-              "8B a 405B parâmetros (versões variadas)",
+              "8B a 405B parâmetros",
               "Suporte multimodal completo",
               "128K tokens de contexto",
               "Performance de nível empresarial"
@@ -45,30 +45,45 @@ const ModelsSection = ({ onShowAllModels }: ModelsSectionProps) => {
           {/* Gemma 3 Card */}
           <ModelCard
             title="Gemma 3"
-            description="Modelo de última geração do Google"
+            description="Modelo avançado do Google"
             badge="Google"
             badgeColor="from-red-500 to-red-700"
             icon={<Bot className="text-red-600 h-6 w-6" />}
             features={[
               "9B a 36B parâmetros",
               "Processamento de texto e imagem",
-              "Até 128K tokens de contexto",
-              "Excelente em raciocínio e compreensão"
+              "128K tokens de contexto",
+              "Alta eficiência computacional"
             ]}
           />
 
-          {/* DeepSeek Card - Removemos o Gemma 2 e mantemos apenas este e os anteriores */}
+          {/* Mistral Card */}
           <ModelCard
-            title="DeepSeek-V2"
-            description="Modelo avançado para pesquisa e raciocínio"
-            badge="Versátil"
+            title="Mistral"
+            description="Modelo europeu de alto desempenho"
+            badge="Mistral AI"
             badgeColor="from-indigo-500 to-indigo-700"
-            icon={<BookOpen className="text-indigo-600 h-6 w-6" />}
+            icon={<Sparkles className="text-indigo-600 h-6 w-6" />}
             features={[
-              "236B parâmetros (MoE)",
+              "8B a 22B parâmetros",
+              "Domínio em várias línguas",
+              "128K tokens de contexto",
+              "Excelente raciocínio lógico"
+            ]}
+          />
+
+          {/* Qwen 3 Card */}
+          <ModelCard
+            title="Qwen 3"
+            description="Modelo avançado da Alibaba"
+            badge="Alibaba"
+            badgeColor="from-green-500 to-green-700"
+            icon={<Cpu className="text-green-600 h-6 w-6" />}
+            features={[
+              "7B a 72B parâmetros",
+              "Capacidades multimodais",
               "Até 128K tokens de contexto",
-              "Especialista em pesquisa científica",
-              "Excelente em programação e matemática"
+              "Forte em análise de dados"
             ]}
           />
         </div>

@@ -33,7 +33,7 @@ const modelPrices = {
 const exchangeRate = 5.5;
 
 const RoiCalculator = () => {
-  const [usuariosIA, setUsuariosIA] = useState(10);
+  const [usuariosIA, setUsuariosIA] = useState(40);
   const [mensagensMedia, setMensagensMedia] = useState(200);
   const [tokensPorMensagem, setTokensPorMensagem] = useState(1500);
   const [tokensResposta, setTokensResposta] = useState(2000);
@@ -122,7 +122,7 @@ const RoiCalculator = () => {
                 <Slider
                   id="usuarios"
                   min={1}
-                  max={50}
+                  max={100}
                   step={1}
                   value={[usuariosIA]}
                   onValueChange={(value) => setUsuariosIA(value[0])}
