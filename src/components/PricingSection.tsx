@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Check, X, ArrowRight, MessageCircle, Star, Trophy, Server, Cpu, HardDrive, Database, Network } from 'lucide-react';
 import { MessageSquare, SmartphoneIcon, Globe, Sparkles, BrainCircuit, Zap, Box, FileCode, GitBranch, Store, BookOpen, Warehouse } from 'lucide-react';
@@ -619,6 +620,167 @@ const PricingSection = () => {
                 </Button>
               </CardFooter>
             </Card>
+          </div>
+        </div>
+
+        {/* Seção das VPS */}
+        <div className="mt-24 mb-16">
+          <div className="text-center mb-12">
+            <Badge variant="outline" className="bg-blue-600 text-white border-blue-500 mb-4">
+              Opções de Infraestrutura
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Planos <span className="text-blue-600">VPS</span> para Whaticket
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Escolha a melhor opção de servidor para hospedar sua aplicação com desempenho e segurança
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {vpsOptions.map((option, index) => (
+              <Card key={index} className="border-gray-200 hover:shadow-md transition-all duration-300">
+                <CardHeader className="bg-gradient-to-r from-blue-50 to-blue-100/50 pb-4">
+                  <CardTitle className="text-xl font-bold text-gray-800">{option.name}</CardTitle>
+                  <div className="mt-2">
+                    <span className="text-3xl font-extrabold tracking-tight text-blue-700">R${option.price}</span>
+                    <span className="text-sm ml-1 text-gray-600">/mês</span>
+                  </div>
+                </CardHeader>
+                <CardContent className="pt-4">
+                  <p className="text-sm font-medium text-blue-700 mb-3">Especificações:</p>
+                  <ul className="space-y-2">
+                    {option.specs.map((spec, i) => (
+                      <li key={i} className="flex items-center gap-2">
+                        {spec.icon}
+                        <span className="text-sm text-gray-600">{spec.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  <Separator className="my-4" />
+                  
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-green-500" />
+                      <span className="text-sm text-gray-600">{option.clients}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-green-500" />
+                      <span className="text-sm text-gray-600">{option.connections}</span>
+                    </div>
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <Button asChild className="w-full" variant="outline">
+                    <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20tenho%20interesse%20no%20servidor%20VPS.%20Pode%20me%20enviar%20mais%20informações?" target="_blank" rel="noopener noreferrer">
+                      Solicitar VPS
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Seção de Servidores Dedicados */}
+        <div className="mt-24 mb-16">
+          <div className="text-center mb-12">
+            <Badge variant="outline" className="bg-blue-600 text-white border-blue-500 mb-4">
+              Alta Performance
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Servidores <span className="text-blue-600">Dedicados</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Solução premium para empresas que necessitam de máxima performance e disponibilidade
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {dedicatedServers.map((server, index) => (
+              <Card key={index} className="bg-gradient-to-br from-blue-900 to-blue-800 border-blue-700 text-white hover:shadow-xl transition-all duration-300">
+                <CardHeader>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <CardTitle className="text-2xl font-bold text-white">{server.name}</CardTitle>
+                      <CardDescription className="text-blue-200">{server.location}</CardDescription>
+                    </div>
+                    <Badge className="bg-blue-300 text-blue-900">Dedicado</Badge>
+                  </div>
+                  <div className="mt-4">
+                    <span className="text-3xl font-extrabold tracking-tight text-white">R${server.price}</span>
+                    <span className="text-sm ml-1 text-blue-200">/mês</span>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-5">
+                    <div>
+                      <h4 className="font-semibold mb-3 text-blue-300">Especificações:</h4>
+                      <ul className="space-y-2">
+                        {server.specs.map((spec, i) => (
+                          <li key={i} className="grid grid-cols-2 gap-2">
+                            <span className="text-sm font-medium text-blue-200">{spec.title}:</span>
+                            <span className="text-sm text-blue-100">{spec.details}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <Separator className="bg-blue-700/50" />
+                    
+                    <div>
+                      <h4 className="font-semibold mb-3 text-blue-300">Extras inclusos:</h4>
+                      <ul className="space-y-2">
+                        {server.extras.map((extra, i) => (
+                          <li key={i} className="flex items-center gap-2">
+                            <Check className="w-4 h-4 text-green-400" />
+                            <span className="text-sm text-blue-100">{extra}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <Separator className="bg-blue-700/50" />
+                    
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="bg-blue-800/70 p-3 rounded-lg text-center">
+                        <p className="text-sm text-blue-300 mb-1">Capacidade</p>
+                        <p className="font-bold text-white">{server.clients}</p>
+                      </div>
+                      <div className="bg-blue-800/70 p-3 rounded-lg text-center">
+                        <p className="text-sm text-blue-300 mb-1">Suporta</p>
+                        <p className="font-bold text-white">{server.connections}</p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <Button asChild className="w-full bg-blue-400 text-blue-950 hover:bg-blue-300">
+                    <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20tenho%20interesse%20no%20servidor%20dedicado.%20Pode%20me%20enviar%20mais%20informações?" target="_blank" rel="noopener noreferrer">
+                      Solicitar servidor dedicado
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
+          
+          <div className="mt-12 max-w-3xl mx-auto bg-blue-50 p-6 rounded-xl border border-blue-200">
+            <h3 className="text-xl font-bold text-blue-700 mb-4 flex items-center">
+              <Server className="mr-2 h-5 w-5" />
+              Benefícios Premium dos Servidores Dedicados
+            </h3>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {premiumBenefits.map((benefit, index) => (
+                <li key={index} className="flex items-start gap-2">
+                  <Check className="w-4 h-4 text-green-500 mt-1" />
+                  <span className="text-gray-700">{benefit}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
