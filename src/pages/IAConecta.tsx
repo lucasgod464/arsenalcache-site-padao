@@ -8,6 +8,7 @@ import HeroSection from "@/components/ia-conecta/HeroSection";
 import ModelsSection from "@/components/ia-conecta/ModelsSection";
 import ModelsDialog from "@/components/ia-conecta/ModelsDialog";
 import RoiCalculator from "@/components/ia-conecta/RoiCalculator";
+import ConversionCta from "@/components/ia-conecta/ConversionCta";
 
 const IAConecta = () => {
   const [showAllModels, setShowAllModels] = useState(false);
@@ -24,6 +25,9 @@ const IAConecta = () => {
 
       {/* Calculadora de ROI */}
       <RoiCalculator />
+      
+      {/* CTA de Alta Conversão */}
+      <ConversionCta />
 
       {/* Modal de Todos os Modelos */}
       <ModelsDialog 
