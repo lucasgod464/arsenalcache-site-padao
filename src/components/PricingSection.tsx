@@ -789,7 +789,7 @@ const PricingSection = () => {
                       
                       <Button asChild className="w-full mt-6 bg-gradient-to-r from-blue-700 to-blue-800 hover:from-blue-800 hover:to-blue-900 text-white py-6 rounded-md transition-all shadow-md hover:shadow-xl">
                         <a href={`https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20tenho%20interesse%20no%20servidor%20dedicado%20${server.name}`} target="_blank" rel="noopener noreferrer">
-                          Solicitar proposta {server.name}
+                          Solicitar proposta
                           <ArrowRight className="ml-2 h-4 w-4" />
                         </a>
                       </Button>
