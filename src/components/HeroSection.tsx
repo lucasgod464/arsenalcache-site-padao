@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Phone, MessageCircle, Users, Tag, Rocket } from 'lucide-react';
 
@@ -36,7 +37,7 @@ const HeroSection = () => {
               Solução completa para WhatsApp
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Transforme seu <span className="text-gradient">Atendimento</span> com WhatsApp Profissional
+              Revolucione seu <span className="text-gradient">Atendimento</span> com <span className="text-gradient">Whaticket Profissional</span>
             </h1>
             <p className="text-gray-700 text-lg mb-8">
               Uma plataforma whitelabel com usuários e conexões ilimitadas. Personalize com sua marca, automatize atendimentos e revenda sem limitações.
