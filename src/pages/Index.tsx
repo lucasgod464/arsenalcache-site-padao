@@ -2,7 +2,6 @@
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
-import FeaturesSection from '@/components/FeaturesSection';
 import ZproSection from '@/components/ZproSection';
 import PricingSection from '@/components/PricingSection';
 import DetailedFeaturesList from '@/components/DetailedFeaturesList';
@@ -62,7 +61,6 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <TransformeSection />
-      <FeaturesSection />
       <ZproSection />
       <RoiCalculator />
       <FreeTrial />
