@@ -3,6 +3,7 @@ import React from 'react';
 import { Check, ArrowRight, MessageCircle, Sparkles } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 const ConversionCta = () => {
   return (
