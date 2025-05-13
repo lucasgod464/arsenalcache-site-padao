@@ -76,6 +76,88 @@ const IAConecta = () => {
         </div>
       </section>
 
+      {/* Nova Seção: Inteligência Artificial Ilimitada */}
+      <section className="py-24 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-white to-purple-50">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <Badge className="bg-purple-100 text-purple-700 hover:bg-purple-200 px-3 py-1 text-sm mb-4">
+              Revolucionário
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Inteligência Artificial <span className="text-purple-600">Ilimitada</span>
+            </h2>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+              Elimine os custos variáveis de uso de IA. Nosso plano de assinatura oferece uso 
+              ilimitado dos modelos mais avançados por um preço fixo mensal.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white">
+              <CardHeader className="pb-2">
+                <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mb-4">
+                  <Zap className="h-6 w-6 text-purple-600" />
+                </div>
+                <CardTitle className="text-xl font-semibold">Custo Previsível</CardTitle>
+                <CardDescription className="text-gray-600">
+                  Sem surpresas na fatura no final do mês
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-700">
+                  Esqueça os modelos de cobrança por token. Nossa solução oferece um custo fixo mensal, 
+                  independente do seu volume de uso, facilitando o planejamento financeiro.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white">
+              <CardHeader className="pb-2">
+                <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mb-4">
+                  <Bot className="h-6 w-6 text-purple-600" />
+                </div>
+                <CardTitle className="text-xl font-semibold">Modelos Atualizados</CardTitle>
+                <CardDescription className="text-gray-600">
+                  Sempre com os modelos mais recentes
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-700">
+                  À medida que novos modelos são lançados, nossa plataforma é automaticamente 
+                  atualizada, garantindo que você sempre tenha acesso à tecnologia mais recente.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white">
+              <CardHeader className="pb-2">
+                <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mb-4">
+                  <Server className="h-6 w-6 text-purple-600" />
+                </div>
+                <CardTitle className="text-xl font-semibold">Privacidade Total</CardTitle>
+                <CardDescription className="text-gray-600">
+                  Seus dados nunca saem do seu ambiente
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-700">
+                  Diferente das APIs tradicionais, os modelos rodam localmente na sua 
+                  infraestrutura, garantindo privacidade total e conformidade com regulamentações.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="mt-16 text-center">
+            <Button 
+              className="bg-gradient-to-r from-purple-600 to-purple-800 hover:from-purple-700 hover:to-purple-900 text-white py-6 px-10 rounded-lg shadow-lg"
+            >
+              Solicitar Demonstração <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Modelos disponíveis - Nova seção */}
       <section className="py-20 px-4 md:px-6 lg:px-8 bg-white">
         <div className="container mx-auto">
@@ -297,78 +379,6 @@ const IAConecta = () => {
                         <div className="bg-blue-50 p-2 rounded">
                           <span className="text-xs font-medium text-blue-700">Contexto:</span>
                           <p className="text-xs">Até 128K tokens</p>
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </TabsContent>
-            
-            <TabsContent value="google" className="mt-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Card className="border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-                  <div className="h-2 bg-gradient-to-r from-yellow-500 to-yellow-700 w-full"></div>
-                  <CardHeader className="pb-2">
-                    <div className="flex justify-between items-center mb-2">
-                      <Badge className="bg-yellow-100 text-yellow-700">Novo</Badge>
-                      <Zap className="text-yellow-600 h-6 w-6" />
-                    </div>
-                    <CardTitle className="text-xl font-semibold">Gemma 3</CardTitle>
-                    <CardDescription>
-                      A evolução do modelo compacto do Google
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      <p className="text-sm text-gray-700">
-                        Nova geração do modelo Gemma com capacidades multimodais ampliadas, melhor performance
-                        em raciocínio e suporte para código em múltiplas linguagens.
-                      </p>
-                      <div className="grid grid-cols-2 gap-2">
-                        <div className="bg-yellow-50 p-2 rounded">
-                          <span className="text-xs font-medium text-yellow-700">Variantes:</span> 
-                          <ul className="text-xs list-disc pl-4 mt-1 space-y-1">
-                            <li>Gemma 3 nano: 1.8B</li>
-                            <li>Gemma 3 small: 7B</li>
-                            <li>Gemma 3 large: 27B</li>
-                          </ul>
-                        </div>
-                        <div className="bg-yellow-50 p-2 rounded">
-                          <span className="text-xs font-medium text-yellow-700">Contexto:</span>
-                          <p className="text-xs">Até 128K tokens</p>
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-                  <div className="h-2 bg-gradient-to-r from-yellow-400 to-yellow-600 w-full"></div>
-                  <CardHeader className="pb-2">
-                    <div className="flex justify-between items-center mb-2">
-                      <Badge className="bg-yellow-100 text-yellow-700">Estabelecido</Badge>
-                      <Zap className="text-yellow-600 h-6 w-6" />
-                    </div>
-                    <CardTitle className="text-xl font-semibold">Gemma 2</CardTitle>
-                    <CardDescription>
-                      Modelo compacto e eficiente do Google
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      <p className="text-sm text-gray-700">
-                        Foco em eficiência e versatilidade, otimizado para implantações em ambientes com recursos limitados.
-                        Excelente para aplicações embarcadas e dispositivos móveis.
-                      </p>
-                      <div className="grid grid-cols-2 gap-2">
-                        <div className="bg-yellow-50 p-2 rounded">
-                          <span className="text-xs font-medium text-yellow-700">Parâmetros:</span> 
-                          <p className="text-xs">2B e 9B</p>
-                        </div>
-                        <div className="bg-yellow-50 p-2 rounded">
-                          <span className="text-xs font-medium text-yellow-700">Contexto:</span>
-                          <p className="text-xs">8K tokens</p>
                         </div>
                       </div>
                     </div>
