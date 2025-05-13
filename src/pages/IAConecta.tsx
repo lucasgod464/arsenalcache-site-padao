@@ -76,74 +76,6 @@ const IAConecta = () => {
         </div>
       </section>
 
-      {/* Seção "Inteligência Artificial Ilimitada" - Movida da página Index */}
-      <section className="py-20 px-4 md:px-6 lg:px-8 bg-gray-50">
-        <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <Badge className="bg-purple-100 text-purple-700 hover:bg-purple-200 px-3 py-1 text-sm mb-4">
-              O Futuro da IA
-            </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Inteligência Artificial <span className="text-purple-600">Ilimitada</span>
-            </h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              Tenha acesso aos modelos mais avançados de IA, reunidos em uma única plataforma, 
-              por um valor fixo mensal sem surpresas na fatura
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="h-2 bg-gradient-to-r from-purple-500 to-purple-700 w-full"></div>
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Database className="h-5 w-5 text-purple-500 mr-2" />
-                  Infraestrutura Gerenciada
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-700">
-                  Esqueça os custos e a complexidade de configurar e manter servidores GPU. 
-                  Nossa plataforma cuida de tudo para você focar no que importa.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="h-2 bg-gradient-to-r from-blue-500 to-blue-700 w-full"></div>
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Code className="h-5 w-5 text-blue-500 mr-2" />
-                  API Unificada
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-700">
-                  Uma única API para acessar dezenas de modelos de IA diferentes. 
-                  Implemente uma vez e experimente com diferentes modelos sem reescrever código.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="h-2 bg-gradient-to-r from-green-500 to-green-700 w-full"></div>
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Server className="h-5 w-5 text-green-500 mr-2" />
-                  Previsibilidade de Custos
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-700">
-                  Chega de surpresas na fatura no fim do mês. Com nosso modelo de assinatura, 
-                  você sabe exatamente quanto vai gastar, independente do volume de uso.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* Modelos disponíveis - Nova seção */}
       <section className="py-20 px-4 md:px-6 lg:px-8 bg-white">
         <div className="container mx-auto">
@@ -886,4 +818,3 @@ const IAConecta = () => {
 };
 
 export default IAConecta;
-
