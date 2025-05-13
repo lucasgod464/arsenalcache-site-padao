@@ -358,7 +358,7 @@ const PricingSection = () => {
                           <div className="bg-blue-500 rounded-full p-1.5">
                             <Database className="w-4 h-4 text-white flex-shrink-0" />
                           </div>
-                          <span className="text-sm text-gray-700">Página premium cadastro/vendas + criação de cobrança no Asaas</span>
+                          <span className="text-sm text-gray-700">Página Premium cadastro + Workflow n8n Cobrança no Asaas</span>
                         </li>
                       </ul>
                     </div>
