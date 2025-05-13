@@ -175,7 +175,7 @@ const PricingSection = () => {
   };
   
   return (
-    <section id="precos" className="py-10 px-4 bg-white border-t border-gray-100 shadow-inner mt-8">
+    <section id="plans-section" className="py-10 px-4 bg-white border-t border-gray-100 shadow-inner mt-8">
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <Badge variant="outline" className="bg-blue-600 text-white border-blue-500 mb-4">
@@ -572,4 +572,58 @@ const PricingSection = () => {
                         </li>
                         <li className="flex items-center gap-2.5">
                           <div className="bg-pink-500 rounded-full p-1.5">
-                            <SmartphoneIcon className="w-4 h-
+                            <SmartphoneIcon className="w-4 h-4 text-white flex-shrink-0" />
+                          </div>
+                          <span className="text-sm text-blue-100">Instagram (conexões ilimitadas)</span>
+                        </li>
+                        <li className="flex items-center gap-2.5">
+                          <div className="bg-blue-600 rounded-full p-1.5">
+                            <Globe className="w-4 h-4 text-white flex-shrink-0" />
+                          </div>
+                          <span className="text-sm text-blue-100">Facebook (conexões ilimitadas)</span>
+                        </li>
+                      </ul>
+                      
+                      <div className="bg-white p-3 rounded-lg border border-gray-200 text-center shadow-sm">
+                        <p className="text-gray-700 font-medium mb-1">Valor mensal:</p>
+                        <p className="text-2xl font-bold text-blue-600">R$260,00</p>
+                        <p className="text-xs text-gray-500">Conexões ilimitadas</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <Separator className="bg-blue-700" />
+                  
+                  <div>
+                    <h4 className="font-semibold mb-3 text-blue-300">Renovação anual:</h4>
+                    <ul className="space-y-2.5 border-l-2 border-blue-700 pl-3">
+                      <li className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-blue-100">R$500,00 para manutenção do sistema</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-blue-100">Inclui atualizações, configurações e suporte</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+              
+              <CardFooter className="pt-4 pb-8 flex justify-center">
+                <Button asChild className="w-full bg-gradient-to-r from-blue-400 to-blue-500 hover:from-blue-500 hover:to-blue-600 text-white font-medium py-6 rounded-full transition-all shadow-lg hover:shadow-xl border-blue-300 border">
+                  <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20tenho%20interesse%20no%20Plano%20Enterprise.%20Pode%20me%20enviar%20mais%20informações?" target="_blank" rel="noopener noreferrer">
+                    Contratar plano enterprise
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </CardFooter>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default PricingSection;
