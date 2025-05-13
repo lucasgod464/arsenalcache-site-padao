@@ -16,7 +16,10 @@ import {
   Server, 
   Zap,
   Workflow,
-  Grid3x3
+  Grid3x3,
+  Bot,
+  Sparkles,
+  BookOpen
 } from "lucide-react";
 import ScrollToTop from "@/components/ScrollToTop";
 import FloatingCta from "@/components/FloatingCta";
@@ -90,59 +93,59 @@ const IAConecta = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Llama 4 Card */}
+            {/* Gemma3 Card */}
             <Card className="border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-              <div className="h-2 bg-gradient-to-r from-purple-500 to-purple-700 w-full"></div>
+              <div className="h-2 bg-gradient-to-r from-yellow-500 to-yellow-700 w-full"></div>
               <CardHeader className="pb-2">
                 <div className="flex justify-between items-center mb-2">
-                  <Badge className="bg-purple-100 text-purple-700">Em destaque</Badge>
-                  <Brain className="text-purple-600 h-6 w-6" />
+                  <Badge className="bg-yellow-100 text-yellow-700">Google</Badge>
+                  <Zap className="text-yellow-600 h-6 w-6" />
                 </div>
-                <CardTitle className="text-xl font-semibold">Llama 4</CardTitle>
+                <CardTitle className="text-xl font-semibold">Gemma 3</CardTitle>
                 <CardDescription>
-                  Modelo multimodal com arquitetura MoE
+                  A evolução do modelo compacto do Google
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2">
                   <li className="flex items-center">
                     <Check className="h-4 w-4 text-green-500 mr-2" />
-                    <span className="text-sm">Até 400 bilhões de parâmetros</span>
+                    <span className="text-sm">27B parâmetros (versão grande)</span>
                   </li>
                   <li className="flex items-center">
                     <Check className="h-4 w-4 text-green-500 mr-2" />
-                    <span className="text-sm">Processamento de texto e imagens</span>
+                    <span className="text-sm">Suporte multimodal (texto e imagem)</span>
                   </li>
                   <li className="flex items-center">
                     <Check className="h-4 w-4 text-green-500 mr-2" />
-                    <span className="text-sm">Suporte para 12+ idiomas</span>
+                    <span className="text-sm">128K tokens de contexto</span>
                   </li>
                   <li className="flex items-center">
                     <Check className="h-4 w-4 text-green-500 mr-2" />
-                    <span className="text-sm">Janela de contexto extensa</span>
+                    <span className="text-sm">Otimizado para dispositivos locais</span>
                   </li>
                 </ul>
               </CardContent>
             </Card>
 
-            {/* Mistral Card */}
+            {/* Deepseek Card */}
             <Card className="border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-              <div className="h-2 bg-gradient-to-r from-blue-500 to-blue-700 w-full"></div>
+              <div className="h-2 bg-gradient-to-r from-indigo-500 to-indigo-700 w-full"></div>
               <CardHeader className="pb-2">
                 <div className="flex justify-between items-center mb-2">
-                  <Badge className="bg-blue-100 text-blue-700">Avançado</Badge>
-                  <Code className="text-blue-600 h-6 w-6" />
+                  <Badge className="bg-indigo-100 text-indigo-700">Versátil</Badge>
+                  <BookOpen className="text-indigo-600 h-6 w-6" />
                 </div>
-                <CardTitle className="text-xl font-semibold">Mistral</CardTitle>
+                <CardTitle className="text-xl font-semibold">DeepSeek-V2</CardTitle>
                 <CardDescription>
-                  Modelo versátil de alta eficiência
+                  Modelo avançado para pesquisa e raciocínio
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2">
                   <li className="flex items-center">
                     <Check className="h-4 w-4 text-green-500 mr-2" />
-                    <span className="text-sm">3B a 124B de parâmetros</span>
+                    <span className="text-sm">236B parâmetros (MoE)</span>
                   </li>
                   <li className="flex items-center">
                     <Check className="h-4 w-4 text-green-500 mr-2" />
@@ -150,46 +153,46 @@ const IAConecta = () => {
                   </li>
                   <li className="flex items-center">
                     <Check className="h-4 w-4 text-green-500 mr-2" />
-                    <span className="text-sm">Geração avançada de código</span>
+                    <span className="text-sm">Especialista em pesquisa científica</span>
                   </li>
                   <li className="flex items-center">
                     <Check className="h-4 w-4 text-green-500 mr-2" />
-                    <span className="text-sm">Processamento multilíngue</span>
+                    <span className="text-sm">Excelente em programação e matemática</span>
                   </li>
                 </ul>
               </CardContent>
             </Card>
 
-            {/* Phi-3/4 Card */}
+            {/* Phi-4 Card */}
             <Card className="border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
               <div className="h-2 bg-gradient-to-r from-green-500 to-green-700 w-full"></div>
               <CardHeader className="pb-2">
                 <div className="flex justify-between items-center mb-2">
-                  <Badge className="bg-green-100 text-green-700">Eficiente</Badge>
-                  <Database className="text-green-600 h-6 w-6" />
+                  <Badge className="bg-green-100 text-green-700">Microsoft</Badge>
+                  <Sparkles className="text-green-600 h-6 w-6" />
                 </div>
-                <CardTitle className="text-xl font-semibold">Phi-3/4</CardTitle>
+                <CardTitle className="text-xl font-semibold">Phi-4</CardTitle>
                 <CardDescription>
-                  Modelo otimizado para dispositivos
+                  Nova geração de modelo eficiente da Microsoft
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2">
                   <li className="flex items-center">
                     <Check className="h-4 w-4 text-green-500 mr-2" />
-                    <span className="text-sm">3.8B a 42B parâmetros</span>
+                    <span className="text-sm">4B a 104B parâmetros</span>
                   </li>
                   <li className="flex items-center">
                     <Check className="h-4 w-4 text-green-500 mr-2" />
-                    <span className="text-sm">Arquitetura MoE eficiente</span>
+                    <span className="text-sm">Processamento de texto e imagem</span>
                   </li>
                   <li className="flex items-center">
                     <Check className="h-4 w-4 text-green-500 mr-2" />
-                    <span className="text-sm">Até 128K tokens (Phi-3)</span>
+                    <span className="text-sm">Até 128K tokens (versão avançada)</span>
                   </li>
                   <li className="flex items-center">
                     <Check className="h-4 w-4 text-green-500 mr-2" />
-                    <span className="text-sm">Compreensão de imagem</span>
+                    <span className="text-sm">Eficiência sem precedentes</span>
                   </li>
                 </ul>
               </CardContent>
@@ -217,43 +220,47 @@ const IAConecta = () => {
             </DialogDescription>
           </DialogHeader>
           
-          <Tabs defaultValue="llama">
+          <Tabs defaultValue="google">
             <TabsList className="grid grid-cols-2 md:grid-cols-5 gap-2">
-              <TabsTrigger value="llama">Llama</TabsTrigger>
+              <TabsTrigger value="google">Google</TabsTrigger>
+              <TabsTrigger value="microsoft">Microsoft</TabsTrigger>
               <TabsTrigger value="mistral">Mistral</TabsTrigger>
-              <TabsTrigger value="phi">Phi</TabsTrigger>
-              <TabsTrigger value="falcon">Falcon</TabsTrigger>
-              <TabsTrigger value="other">Outros</TabsTrigger>
+              <TabsTrigger value="qwen">Qwen</TabsTrigger>
+              <TabsTrigger value="deepseek">DeepSeek</TabsTrigger>
             </TabsList>
             
-            <TabsContent value="llama" className="mt-6">
+            <TabsContent value="google" className="mt-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Card className="border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-                  <div className="h-2 bg-gradient-to-r from-purple-500 to-purple-700 w-full"></div>
+                  <div className="h-2 bg-gradient-to-r from-yellow-500 to-yellow-700 w-full"></div>
                   <CardHeader className="pb-2">
                     <div className="flex justify-between items-center mb-2">
-                      <Badge className="bg-purple-100 text-purple-700">Novo</Badge>
-                      <Brain className="text-purple-600 h-6 w-6" />
+                      <Badge className="bg-yellow-100 text-yellow-700">Novo</Badge>
+                      <Zap className="text-yellow-600 h-6 w-6" />
                     </div>
-                    <CardTitle className="text-xl font-semibold">Llama 4</CardTitle>
+                    <CardTitle className="text-xl font-semibold">Gemma 3</CardTitle>
                     <CardDescription>
-                      Modelo multimodal com arquitetura MoE
+                      A evolução do modelo compacto do Google
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
                       <p className="text-sm text-gray-700">
-                        Capacidades multimodais nativas processando texto e imagens como entrada. 
-                        Suporta mais de 12 idiomas, incluindo Português, com pré-treinamento em cerca de 200 idiomas.
+                        Nova geração do modelo Gemma com capacidades multimodais ampliadas, melhor performance
+                        em raciocínio e suporte para código em múltiplas linguagens.
                       </p>
                       <div className="grid grid-cols-2 gap-2">
-                        <div className="bg-purple-50 p-2 rounded">
-                          <span className="text-xs font-medium text-purple-700">Scout:</span> 
-                          <p className="text-xs">109B parâmetros (17B ativos)</p>
+                        <div className="bg-yellow-50 p-2 rounded">
+                          <span className="text-xs font-medium text-yellow-700">Variantes:</span> 
+                          <ul className="text-xs list-disc pl-4 mt-1 space-y-1">
+                            <li>Gemma 3 nano: 1.8B</li>
+                            <li>Gemma 3 small: 7B</li>
+                            <li>Gemma 3 large: 27B</li>
+                          </ul>
                         </div>
-                        <div className="bg-purple-50 p-2 rounded">
-                          <span className="text-xs font-medium text-purple-700">Maverick:</span>
-                          <p className="text-xs">400B parâmetros (17B ativos)</p>
+                        <div className="bg-yellow-50 p-2 rounded">
+                          <span className="text-xs font-medium text-yellow-700">Contexto:</span>
+                          <p className="text-xs">Até 128K tokens</p>
                         </div>
                       </div>
                     </div>
@@ -261,29 +268,113 @@ const IAConecta = () => {
                 </Card>
 
                 <Card className="border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-                  <div className="h-2 bg-gradient-to-r from-purple-400 to-purple-600 w-full"></div>
+                  <div className="h-2 bg-gradient-to-r from-yellow-400 to-yellow-600 w-full"></div>
                   <CardHeader className="pb-2">
                     <div className="flex justify-between items-center mb-2">
-                      <Badge className="bg-purple-100 text-purple-700">Avançado</Badge>
-                      <Brain className="text-purple-600 h-6 w-6" />
+                      <Badge className="bg-yellow-100 text-yellow-700">Estabelecido</Badge>
+                      <Zap className="text-yellow-600 h-6 w-6" />
                     </div>
-                    <CardTitle className="text-xl font-semibold">Llama 3</CardTitle>
+                    <CardTitle className="text-xl font-semibold">Gemma 2</CardTitle>
                     <CardDescription>
-                      Base sólida para diversas aplicações
+                      Modelo compacto e eficiente do Google
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
                       <p className="text-sm text-gray-700">
-                        Impressionante gama de tamanhos, com capacidade multilíngue, geração de código e conteúdo longo.
+                        Foco em eficiência e versatilidade, otimizado para implantações em ambientes com recursos limitados.
+                        Excelente para aplicações embarcadas e dispositivos móveis.
                       </p>
                       <div className="grid grid-cols-2 gap-2">
-                        <div className="bg-purple-50 p-2 rounded">
-                          <span className="text-xs font-medium text-purple-700">Parâmetros:</span> 
-                          <p className="text-xs">1B a 405B</p>
+                        <div className="bg-yellow-50 p-2 rounded">
+                          <span className="text-xs font-medium text-yellow-700">Parâmetros:</span> 
+                          <p className="text-xs">2B e 9B</p>
                         </div>
-                        <div className="bg-purple-50 p-2 rounded">
-                          <span className="text-xs font-medium text-purple-700">Contexto:</span>
+                        <div className="bg-yellow-50 p-2 rounded">
+                          <span className="text-xs font-medium text-yellow-700">Contexto:</span>
+                          <p className="text-xs">8K tokens</p>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </TabsContent>
+            
+            <TabsContent value="microsoft" className="mt-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <Card className="border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                  <div className="h-2 bg-gradient-to-r from-green-500 to-green-700 w-full"></div>
+                  <CardHeader className="pb-2">
+                    <div className="flex justify-between items-center mb-2">
+                      <Badge className="bg-green-100 text-green-700">Novo</Badge>
+                      <Sparkles className="text-green-600 h-6 w-6" />
+                    </div>
+                    <CardTitle className="text-xl font-semibold">Phi-4</CardTitle>
+                    <CardDescription>
+                      Nova geração de modelo eficiente da Microsoft
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      <p className="text-sm text-gray-700">
+                        Versão mais avançada da série Phi com arquitetura MoE (Mixture of Experts)
+                        e capacidade multimodal nativa. Ideal para aplicações de produção.
+                      </p>
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className="bg-green-50 p-2 rounded">
+                          <span className="text-xs font-medium text-green-700">Variantes:</span> 
+                          <ul className="text-xs list-disc pl-4 mt-1 space-y-1">
+                            <li>Phi-4 mini: 4B</li>
+                            <li>Phi-4 small: 13B</li>
+                            <li>Phi-4 medium: 28B</li>
+                            <li>Phi-4 large: 104B (MoE)</li>
+                          </ul>
+                        </div>
+                        <div className="bg-green-50 p-2 rounded">
+                          <span className="text-xs font-medium text-green-700">Capacidades:</span>
+                          <ul className="text-xs list-disc pl-4 mt-1 space-y-1">
+                            <li>Visão computacional</li>
+                            <li>Código avançado</li>
+                            <li>Matemática e raciocínio</li>
+                            <li>Contexto até 128K tokens</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                  <div className="h-2 bg-gradient-to-r from-green-400 to-green-600 w-full"></div>
+                  <CardHeader className="pb-2">
+                    <div className="flex justify-between items-center mb-2">
+                      <Badge className="bg-green-100 text-green-700">Eficiente</Badge>
+                      <Database className="text-green-600 h-6 w-6" />
+                    </div>
+                    <CardTitle className="text-xl font-semibold">Phi-3</CardTitle>
+                    <CardDescription>
+                      Modelo compacto com performance excepcional
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      <p className="text-sm text-gray-700">
+                        Conhecido pela eficiência surpreendente em tarefas de raciocínio e geração de código,
+                        apesar de seu tamanho compacto. Ideal para dispositivos de baixa potência.
+                      </p>
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className="bg-green-50 p-2 rounded">
+                          <span className="text-xs font-medium text-green-700">Variantes:</span> 
+                          <ul className="text-xs list-disc pl-4 mt-1 space-y-1">
+                            <li>Phi-3 mini: 3.8B</li>
+                            <li>Phi-3 small: 7B</li>
+                            <li>Phi-3 medium: 14B</li>
+                            <li>Phi-3 MoE: 42B</li>
+                          </ul>
+                        </div>
+                        <div className="bg-green-50 p-2 rounded">
+                          <span className="text-xs font-medium text-green-700">Contexto:</span>
                           <p className="text-xs">Até 128K tokens</p>
                         </div>
                       </div>
@@ -294,160 +385,42 @@ const IAConecta = () => {
             </TabsContent>
             
             <TabsContent value="mistral" className="mt-6">
-              <Card className="border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-                <div className="h-2 bg-gradient-to-r from-blue-500 to-blue-700 w-full"></div>
-                <CardHeader className="pb-2">
-                  <div className="flex justify-between items-center mb-2">
-                    <Badge className="bg-blue-100 text-blue-700">Versátil</Badge>
-                    <Code className="text-blue-600 h-6 w-6" />
-                  </div>
-                  <CardTitle className="text-xl font-semibold">Mistral</CardTitle>
-                  <CardDescription>
-                    Eficiência e complexidade
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <p className="text-sm text-gray-700">
-                      Reconhecido pela capacidade em tarefas complexas, processamento multilíngue, 
-                      geração avançada de código e compreensão de imagem em algumas variantes.
-                    </p>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="bg-blue-50 p-3 rounded">
-                        <span className="text-xs font-medium text-blue-700">Parâmetros:</span> 
-                        <p className="text-xs">3B a 124B</p>
-                      </div>
-                      <div className="bg-blue-50 p-3 rounded">
-                        <span className="text-xs font-medium text-blue-700">Contexto:</span>
-                        <p className="text-xs">32K a 128K tokens</p>
-                      </div>
-                    </div>
-                    <div className="bg-blue-50 p-3 rounded">
-                      <span className="text-xs font-medium text-blue-700">Diferenciais:</span>
-                      <ul className="text-xs list-disc pl-4 mt-1 space-y-1">
-                        <li>Chamadas de função</li>
-                        <li>Processamento em larga escala</li>
-                        <li>Performance em dispositivos limitados</li>
-                      </ul>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-            
-            <TabsContent value="phi" className="mt-6">
-              <Card className="border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-                <div className="h-2 bg-gradient-to-r from-green-500 to-green-700 w-full"></div>
-                <CardHeader className="pb-2">
-                  <div className="flex justify-between items-center mb-2">
-                    <Badge className="bg-green-100 text-green-700">Eficiente</Badge>
-                    <Database className="text-green-600 h-6 w-6" />
-                  </div>
-                  <CardTitle className="text-xl font-semibold">Phi-3.x/4</CardTitle>
-                  <CardDescription>
-                    A eficiência da Microsoft
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <p className="text-sm text-gray-700">
-                      Eficiente com diversas variantes, desde o mini até versões com 
-                      Mixture of Experts (MoE), otimizado para dispositivos com recursos limitados.
-                    </p>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="bg-green-50 p-3 rounded">
-                        <span className="text-xs font-medium text-green-700">Variantes:</span> 
-                        <ul className="text-xs list-disc pl-4 mt-1 space-y-1">
-                          <li>Phi-3 mini: 3.8B</li>
-                          <li>Phi-3 small: 7B</li>
-                          <li>Phi-3 medium: 14B</li>
-                          <li>Phi-3 MoE: 42B</li>
-                        </ul>
-                      </div>
-                      <div className="bg-green-50 p-3 rounded">
-                        <span className="text-xs font-medium text-green-700">Aplicações:</span>
-                        <ul className="text-xs list-disc pl-4 mt-1 space-y-1">
-                          <li>Visão computacional</li>
-                          <li>Programação assistida</li>
-                          <li>Raciocínio matemático</li>
-                          <li>Compreensão de imagem</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-            
-            <TabsContent value="falcon" className="mt-6">
-              <Card className="border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-                <div className="h-2 bg-gradient-to-r from-orange-500 to-orange-700 w-full"></div>
-                <CardHeader className="pb-2">
-                  <div className="flex justify-between items-center mb-2">
-                    <Badge className="bg-orange-100 text-orange-700">Versátil</Badge>
-                    <Server className="text-orange-600 h-6 w-6" />
-                  </div>
-                  <CardTitle className="text-xl font-semibold">Falcon 3</CardTitle>
-                  <CardDescription>
-                    Versatilidade do TII
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <p className="text-sm text-gray-700">
-                      Bom desempenho em geração de texto, código, matemática e aplicações multilíngues,
-                      com excelente suporte para conhecimento científico.
-                    </p>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="bg-orange-50 p-3 rounded">
-                        <span className="text-xs font-medium text-orange-700">Parâmetros:</span> 
-                        <p className="text-xs">1B a 10B</p>
-                      </div>
-                      <div className="bg-orange-50 p-3 rounded">
-                        <span className="text-xs font-medium text-orange-700">Contexto:</span>
-                        <p className="text-xs">8K a 32K tokens</p>
-                      </div>
-                    </div>
-                    <div className="bg-orange-50 p-3 rounded">
-                      <span className="text-xs font-medium text-orange-700">Aplicações notáveis:</span>
-                      <ul className="text-xs list-disc pl-4 mt-1 space-y-1">
-                        <li>Sistemas de conhecimento científico</li>
-                        <li>Resolução de problemas matemáticos</li>
-                        <li>Geração de texto multilíngue</li>
-                      </ul>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-            
-            <TabsContent value="other" className="mt-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Card className="border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-                  <div className="h-2 bg-gradient-to-r from-yellow-500 to-yellow-700 w-full"></div>
+                  <div className="h-2 bg-gradient-to-r from-blue-500 to-blue-700 w-full"></div>
                   <CardHeader className="pb-2">
                     <div className="flex justify-between items-center mb-2">
-                      <Badge className="bg-yellow-100 text-yellow-700">Google</Badge>
-                      <Zap className="text-yellow-600 h-6 w-6" />
+                      <Badge className="bg-blue-100 text-blue-700">Avançado</Badge>
+                      <Code className="text-blue-600 h-6 w-6" />
                     </div>
-                    <CardTitle className="text-xl font-semibold">Gemma 2</CardTitle>
+                    <CardTitle className="text-xl font-semibold">Mistral</CardTitle>
                     <CardDescription>
-                      A oferta do Google
+                      Eficiência e versatilidade
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
                       <p className="text-sm text-gray-700">
-                        Focado em geração de texto, sistemas Q&A, sumarização e geração de código.
+                        O principal modelo da Mistral AI oferece excelente equilíbrio entre 
+                        desempenho e eficiência, com forte capacidade em raciocínio e compreensão.
                       </p>
                       <div className="grid grid-cols-2 gap-2">
-                        <div className="bg-yellow-50 p-2 rounded">
-                          <span className="text-xs font-medium text-yellow-700">Parâmetros:</span> 
-                          <p className="text-xs">2B, 9B e 27B</p>
+                        <div className="bg-blue-50 p-2 rounded">
+                          <span className="text-xs font-medium text-blue-700">Variantes:</span> 
+                          <ul className="text-xs list-disc pl-4 mt-1 space-y-1">
+                            <li>Mistral 7B</li>
+                            <li>Mistral 8x7B</li>
+                            <li>Mistral Large</li>
+                          </ul>
                         </div>
-                        <div className="bg-yellow-50 p-2 rounded">
-                          <span className="text-xs font-medium text-yellow-700">Contexto:</span>
-                          <p className="text-xs">8K tokens</p>
+                        <div className="bg-blue-50 p-2 rounded">
+                          <span className="text-xs font-medium text-blue-700">Capacidades:</span>
+                          <ul className="text-xs list-disc pl-4 mt-1 space-y-1">
+                            <li>Texto multilíngue</li>
+                            <li>Código de alta qualidade</li>
+                            <li>Suporte para ferramentas</li>
+                            <li>Contexto até 128K tokens</li>
+                          </ul>
                         </div>
                       </div>
                     </div>
@@ -455,93 +428,210 @@ const IAConecta = () => {
                 </Card>
 
                 <Card className="border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-                  <div className="h-2 bg-gradient-to-r from-indigo-500 to-indigo-700 w-full"></div>
+                  <div className="h-2 bg-gradient-to-r from-blue-400 to-blue-600 w-full"></div>
                   <CardHeader className="pb-2">
                     <div className="flex justify-between items-center mb-2">
-                      <Badge className="bg-indigo-100 text-indigo-700">Cohere</Badge>
-                      <MessagesSquare className="text-indigo-600 h-6 w-6" />
+                      <Badge className="bg-blue-100 text-blue-700">Compacto</Badge>
+                      <Bot className="text-blue-600 h-6 w-6" />
                     </div>
-                    <CardTitle className="text-xl font-semibold">Command R</CardTitle>
+                    <CardTitle className="text-xl font-semibold">Mistral Small</CardTitle>
                     <CardDescription>
-                      Especialista em Conversação
+                      Versão otimizada para eficiência
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
                       <p className="text-sm text-gray-700">
-                        Forte em aplicações de IA conversacional, RAG e uso de ferramentas externas.
+                        Versão compacta e eficiente do modelo Mistral, ideal para
+                        implantações em dispositivos com recursos limitados ou em ambientes de borda.
+                      </p>
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className="bg-blue-50 p-2 rounded">
+                          <span className="text-xs font-medium text-blue-700">Parâmetros:</span> 
+                          <p className="text-xs">7B parâmetros</p>
+                        </div>
+                        <div className="bg-blue-50 p-2 rounded">
+                          <span className="text-xs font-medium text-blue-700">Contexto:</span>
+                          <p className="text-xs">32K tokens</p>
+                        </div>
+                      </div>
+                      <div className="bg-blue-50 p-2 rounded">
+                        <span className="text-xs font-medium text-blue-700">Aplicações:</span>
+                        <ul className="text-xs list-disc pl-4 mt-1 space-y-1">
+                          <li>Assistentes virtuais leves</li>
+                          <li>Aplicações móveis</li>
+                          <li>Processamento em dispositivos locais</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </TabsContent>
+            
+            <TabsContent value="qwen" className="mt-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <Card className="border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                  <div className="h-2 bg-gradient-to-r from-cyan-500 to-cyan-700 w-full"></div>
+                  <CardHeader className="pb-2">
+                    <div className="flex justify-between items-center mb-2">
+                      <Badge className="bg-cyan-100 text-cyan-700">Novo</Badge>
+                      <Sparkles className="text-cyan-600 h-6 w-6" />
+                    </div>
+                    <CardTitle className="text-xl font-semibold">Qwen 3</CardTitle>
+                    <CardDescription>
+                      Nova geração do modelo da Alibaba
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      <p className="text-sm text-gray-700">
+                        Última geração do modelo multimodal da Alibaba, com melhorias significativas
+                        em compreensão e geração de texto, código e imagens.
+                      </p>
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className="bg-cyan-50 p-2 rounded">
+                          <span className="text-xs font-medium text-cyan-700">Variantes:</span> 
+                          <ul className="text-xs list-disc pl-4 mt-1 space-y-1">
+                            <li>Qwen 3 0.5B</li>
+                            <li>Qwen 3 1.5B</li>
+                            <li>Qwen 3 7B</li>
+                            <li>Qwen 3 72B</li>
+                          </ul>
+                        </div>
+                        <div className="bg-cyan-50 p-2 rounded">
+                          <span className="text-xs font-medium text-cyan-700">Capacidades:</span>
+                          <ul className="text-xs list-disc pl-4 mt-1 space-y-1">
+                            <li>Processamento de imagem</li>
+                            <li>Programação multilíngue</li>
+                            <li>Raciocínio matemático</li>
+                            <li>Contexto até 128K tokens</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                  <div className="h-2 bg-gradient-to-r from-cyan-400 to-cyan-600 w-full"></div>
+                  <CardHeader className="pb-2">
+                    <div className="flex justify-between items-center mb-2">
+                      <Badge className="bg-cyan-100 text-cyan-700">Estabelecido</Badge>
+                      <Database className="text-cyan-600 h-6 w-6" />
+                    </div>
+                    <CardTitle className="text-xl font-semibold">Qwen 2.5</CardTitle>
+                    <CardDescription>
+                      Modelo robusto e versátil
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      <p className="text-sm text-gray-700">
+                        Modelo estável e comprovado com forte desempenho em tarefas de linguagem
+                        natural, geração de código e processamento multimodal.
+                      </p>
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className="bg-cyan-50 p-2 rounded">
+                          <span className="text-xs font-medium text-cyan-700">Variantes:</span> 
+                          <ul className="text-xs list-disc pl-4 mt-1 space-y-1">
+                            <li>Qwen 2.5 0.5B</li>
+                            <li>Qwen 2.5 1.8B</li>
+                            <li>Qwen 2.5 7B</li>
+                            <li>Qwen 2.5 14B</li>
+                            <li>Qwen 2.5 72B</li>
+                          </ul>
+                        </div>
+                        <div className="bg-cyan-50 p-2 rounded">
+                          <span className="text-xs font-medium text-cyan-700">Contexto:</span>
+                          <p className="text-xs">32K a 128K tokens</p>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </TabsContent>
+            
+            <TabsContent value="deepseek" className="mt-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <Card className="border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                  <div className="h-2 bg-gradient-to-r from-indigo-500 to-indigo-700 w-full"></div>
+                  <CardHeader className="pb-2">
+                    <div className="flex justify-between items-center mb-2">
+                      <Badge className="bg-indigo-100 text-indigo-700">Novo</Badge>
+                      <BookOpen className="text-indigo-600 h-6 w-6" />
+                    </div>
+                    <CardTitle className="text-xl font-semibold">DeepSeek-V3</CardTitle>
+                    <CardDescription>
+                      Última geração do modelo de pesquisa
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      <p className="text-sm text-gray-700">
+                        Modelo avançado com foco em pesquisa científica e raciocínio complexo,
+                        capaz de processar dados técnicos e produzir respostas detalhadas.
                       </p>
                       <div className="grid grid-cols-2 gap-2">
                         <div className="bg-indigo-50 p-2 rounded">
                           <span className="text-xs font-medium text-indigo-700">Parâmetros:</span> 
-                          <p className="text-xs">7B, 35B e 104B</p>
+                          <p className="text-xs">236B parâmetros (MoE)</p>
                         </div>
                         <div className="bg-indigo-50 p-2 rounded">
                           <span className="text-xs font-medium text-indigo-700">Contexto:</span>
                           <p className="text-xs">128K tokens</p>
                         </div>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-                  <div className="h-2 bg-gradient-to-r from-cyan-500 to-cyan-700 w-full"></div>
-                  <CardHeader className="pb-2">
-                    <div className="flex justify-between items-center mb-2">
-                      <Badge className="bg-cyan-100 text-cyan-700">BigCode</Badge>
-                      <Code className="text-cyan-600 h-6 w-6" />
-                    </div>
-                    <CardTitle className="text-xl font-semibold">StarCoder2</CardTitle>
-                    <CardDescription>
-                      Especializado em Código
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      <p className="text-sm text-gray-700">
-                        Focado em completude e compreensão de código em múltiplas linguagens de programação.
-                      </p>
-                      <div className="grid grid-cols-2 gap-2">
-                        <div className="bg-cyan-50 p-2 rounded">
-                          <span className="text-xs font-medium text-cyan-700">Parâmetros:</span> 
-                          <p className="text-xs">3B, 7B e 15B</p>
-                        </div>
-                        <div className="bg-cyan-50 p-2 rounded">
-                          <span className="text-xs font-medium text-cyan-700">Contexto:</span>
-                          <p className="text-xs">16K tokens</p>
-                        </div>
+                      <div className="bg-indigo-50 p-2 rounded">
+                        <span className="text-xs font-medium text-indigo-700">Especialidades:</span>
+                        <ul className="text-xs list-disc pl-4 mt-1 space-y-1">
+                          <li>Pesquisa científica avançada</li>
+                          <li>Codificação de alto nível</li>
+                          <li>Matemática e raciocínio</li>
+                          <li>Processamento de dados técnicos</li>
+                        </ul>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
 
                 <Card className="border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-                  <div className="h-2 bg-gradient-to-r from-emerald-500 to-emerald-700 w-full"></div>
+                  <div className="h-2 bg-gradient-to-r from-indigo-400 to-purple-500 w-full"></div>
                   <CardHeader className="pb-2">
                     <div className="flex justify-between items-center mb-2">
-                      <Badge className="bg-emerald-100 text-emerald-700">01.AI</Badge>
-                      <Database className="text-emerald-600 h-6 w-6" />
+                      <Badge className="bg-purple-100 text-purple-700">Especializado</Badge>
+                      <Brain className="text-purple-600 h-6 w-6" />
                     </div>
-                    <CardTitle className="text-xl font-semibold">Yi</CardTitle>
+                    <CardTitle className="text-xl font-semibold">DeepSeek-RI</CardTitle>
                     <CardDescription>
-                      Eficaz em múltiplas tarefas
+                      Especializado em pesquisa científica
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
                       <p className="text-sm text-gray-700">
-                        Particularmente eficaz em texto bilíngue, código e raciocínio matemático.
+                        Modelo projetado especificamente para pesquisa científica e acadêmica,
+                        com vasto conhecimento em diferentes campos e domínios de conhecimento.
                       </p>
                       <div className="grid grid-cols-2 gap-2">
-                        <div className="bg-emerald-50 p-2 rounded">
-                          <span className="text-xs font-medium text-emerald-700">Parâmetros:</span> 
-                          <p className="text-xs">6B, 9B e 34B</p>
+                        <div className="bg-purple-50 p-2 rounded">
+                          <span className="text-xs font-medium text-purple-700">Parâmetros:</span> 
+                          <p className="text-xs">143B parâmetros</p>
                         </div>
-                        <div className="bg-emerald-50 p-2 rounded">
-                          <span className="text-xs font-medium text-emerald-700">Contexto:</span>
-                          <p className="text-xs">4K a 200K tokens</p>
+                        <div className="bg-purple-50 p-2 rounded">
+                          <span className="text-xs font-medium text-purple-700">Contexto:</span>
+                          <p className="text-xs">32K tokens</p>
                         </div>
+                      </div>
+                      <div className="bg-purple-50 p-2 rounded">
+                        <span className="text-xs font-medium text-purple-700">Aplicações:</span>
+                        <ul className="text-xs list-disc pl-4 mt-1 space-y-1">
+                          <li>Assistente de pesquisa acadêmica</li>
+                          <li>Análise de documentos científicos</li>
+                          <li>Raciocínio em campos específicos</li>
+                          <li>Síntese de literatura técnica</li>
+                        </ul>
                       </div>
                     </div>
                   </CardContent>
