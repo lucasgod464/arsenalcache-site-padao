@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Check, X, ArrowRight, MessageCircle, Star, Trophy, Server, Cpu, HardDrive, Database, Network } from 'lucide-react';
-import { MessageSquare, SmartphoneIcon, Globe, Sparkles, BrainCircuit, Zap, Template, N8n, Evolution, Redis, Postgres, Supabase, Minio } from 'lucide-react';
+import { MessageSquare, SmartphoneIcon, Globe, Sparkles, BrainCircuit, Zap, Box, FileCode, GitBranch, Store, BookOpen, Warehouse } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
@@ -349,13 +348,13 @@ const PricingSection = () => {
                       <ul className="space-y-3">
                         <li className="flex items-center gap-2.5">
                           <div className="bg-blue-500 rounded-full p-1.5">
-                            <Template className="w-4 h-4 text-white flex-shrink-0" />
+                            <Box className="w-4 h-4 text-white flex-shrink-0" />
                           </div>
                           <span className="text-sm text-gray-700 font-medium">Template n8n agente IA com 5 modelos</span>
                         </li>
                         <li className="flex items-center gap-2.5">
                           <div className="bg-blue-500 rounded-full p-1.5">
-                            <N8n className="w-4 h-4 text-white flex-shrink-0" />
+                            <FileCode className="w-4 h-4 text-white flex-shrink-0" />
                           </div>
                           <span className="text-sm text-gray-700">Página premium de teste grátis + automação personalizada</span>
                         </li>
@@ -369,7 +368,7 @@ const PricingSection = () => {
                     </div>
                     
                     <h4 className="font-semibold mb-3 text-blue-600 flex items-center">
-                      <N8n className="h-5 w-5 text-blue-500 mr-2" />
+                      <FileCode className="h-5 w-5 text-blue-500 mr-2" />
                       Templates n8n inclusos:
                     </h4>
                     <ul className="space-y-2.5 border-l-2 border-blue-100 pl-3">
@@ -499,37 +498,37 @@ const PricingSection = () => {
                       <ul className="space-y-3">
                         <li className="flex items-center gap-2.5">
                           <div className="bg-blue-600 rounded-full p-1.5">
-                            <N8n className="w-4 h-4 text-white flex-shrink-0" />
+                            <FileCode className="w-4 h-4 text-white flex-shrink-0" />
                           </div>
                           <span className="text-sm text-blue-100">n8n - Plataforma de automação</span>
                         </li>
                         <li className="flex items-center gap-2.5">
                           <div className="bg-blue-600 rounded-full p-1.5">
-                            <Evolution className="w-4 h-4 text-white flex-shrink-0" />
+                            <GitBranch className="w-4 h-4 text-white flex-shrink-0" />
                           </div>
                           <span className="text-sm text-blue-100">Evolution API</span>
                         </li>
                         <li className="flex items-center gap-2.5">
                           <div className="bg-blue-600 rounded-full p-1.5">
-                            <Redis className="w-4 h-4 text-white flex-shrink-0" />
+                            <Store className="w-4 h-4 text-white flex-shrink-0" />
                           </div>
                           <span className="text-sm text-blue-100">Redis - Sistema de cache</span>
                         </li>
                         <li className="flex items-center gap-2.5">
                           <div className="bg-blue-600 rounded-full p-1.5">
-                            <Postgres className="w-4 h-4 text-white flex-shrink-0" />
+                            <Database className="w-4 h-4 text-white flex-shrink-0" />
                           </div>
                           <span className="text-sm text-blue-100">Postgres - Banco de dados</span>
                         </li>
                         <li className="flex items-center gap-2.5">
                           <div className="bg-blue-600 rounded-full p-1.5">
-                            <Supabase className="w-4 h-4 text-white flex-shrink-0" />
+                            <BookOpen className="w-4 h-4 text-white flex-shrink-0" />
                           </div>
                           <span className="text-sm text-blue-100">Supabase - Plataforma Back-end</span>
                         </li>
                         <li className="flex items-center gap-2.5">
                           <div className="bg-blue-600 rounded-full p-1.5">
-                            <Minio className="w-4 h-4 text-white flex-shrink-0" />
+                            <Warehouse className="w-4 h-4 text-white flex-shrink-0" />
                           </div>
                           <span className="text-sm text-blue-100">Minio - Armazenamento</span>
                         </li>
@@ -573,358 +572,4 @@ const PricingSection = () => {
                         </li>
                         <li className="flex items-center gap-2.5">
                           <div className="bg-pink-500 rounded-full p-1.5">
-                            <SmartphoneIcon className="w-4 h-4 text-white flex-shrink-0" />
-                          </div>
-                          <span className="text-sm text-blue-100">Instagram (conexões ilimitadas)</span>
-                        </li>
-                        <li className="flex items-center gap-2.5">
-                          <div className="bg-blue-600 rounded-full p-1.5">
-                            <Globe className="w-4 h-4 text-white flex-shrink-0" />
-                          </div>
-                          <span className="text-sm text-blue-100">Facebook (conexões ilimitadas)</span>
-                        </li>
-                      </ul>
-                      
-                      <div className="bg-blue-900/70 p-3 rounded-lg border border-blue-600 text-center">
-                        <p className="text-blue-200 font-medium mb-1">Valor mensal:</p>
-                        <p className="text-2xl font-bold text-white">R$260,00</p>
-                        <p className="text-xs text-blue-300">Conexões ilimitadas</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <Separator className="bg-blue-700" />
-                  
-                  <div>
-                    <h4 className="font-semibold mb-3 text-blue-300">Renovação anual:</h4>
-                    <ul className="space-y-2.5 border-l-2 border-blue-600 pl-3">
-                      <li className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-blue-100">R$500,00 para manutenção completa</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-blue-100">Inclui manutenção de toda infraestrutura</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </CardContent>
-              
-              <CardFooter className="pt-4 pb-8 flex justify-center">
-                <Button asChild className="w-full bg-blue-400 hover:bg-blue-500 text-blue-900 font-medium py-6 rounded-full transition-all shadow-md hover:shadow-xl">
-                  <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20tenho%20interesse%20no%20Plano%20Enterprise.%20Pode%20me%20enviar%20mais%20informações?" target="_blank" rel="noopener noreferrer">
-                    Contratar plano enterprise
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
-              </CardFooter>
-            </Card>
-          </div>
-        </div>
-
-        <div className="text-center mt-8 max-w-3xl mx-auto">
-          <Button 
-            asChild
-            className="bg-green-500 hover:bg-green-600 text-white font-medium rounded-full px-8 py-5 shadow-md hover:shadow-lg transition-all border border-green-400/30 flex items-center gap-2"
-          >
-            <a 
-              href="https://api.whatsapp.com/send?phone=5512981156856" 
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <MessageCircle className="mr-2 h-5 w-5" />
-              Falar com um consultor no WhatsApp
-            </a>
-          </Button>
-        </div>
-
-        {/* VPS Cards Section */}
-        <div className="max-w-5xl mx-auto mt-16 pt-6 border-t border-gray-200">
-          <div className="text-center mb-8">
-            <Badge variant="outline" className="bg-blue-600 text-white border-blue-500 mb-4">
-              Servidores Otimizados
-            </Badge>
-            <h3 className="text-2xl font-bold mb-3">VPS <span className="text-blue-600">Dedicadas e Otimizadas</span></h3>
-            <p className="text-lg text-gray-600 max-w-xl mx-auto">
-              Servidores dedicados e otimizados para o máximo desempenho do seu sistema
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-            {vpsOptions.map((vps, index) => <Card key={index} className="border border-blue-100 hover:shadow-md transition-all bg-white">
-                <CardHeader className="bg-gradient-to-r from-blue-50 to-blue-100/30 pb-4 border-b border-blue-50">
-                  <CardTitle className="text-xl font-bold text-blue-700">{vps.name}</CardTitle>
-                  <div className="mt-2">
-                    <div className="flex items-baseline">
-                      <span className="text-3xl font-bold text-gray-800">R${vps.price}</span>
-                      <span className="ml-2 text-sm text-gray-500">BRL/mês</span>
-                    </div>
-                  </div>
-                </CardHeader>
-                
-                <CardContent className="pt-4">
-                  <ul className="space-y-3">
-                    {vps.specs.map((spec, i) => <li key={i} className="flex items-center gap-3">
-                        {spec.icon}
-                        <span className="text-sm text-gray-600">{spec.text}</span>
-                      </li>)}
-                  </ul>
-                  
-                  <Separator className="my-4" />
-                  
-                  <div className="space-y-3">
-                    <div className="bg-green-50 p-3 rounded-md border border-green-100">
-                      <p className="text-sm font-medium text-green-700 flex items-center">
-                        <Database className="w-4 h-4" />
-                        Capacidade: {vps.clients}
-                      </p>
-                    </div>
-                    
-                    <div className="bg-blue-50 p-3 rounded-md border border-blue-100">
-                      <p className="text-sm font-medium text-blue-700 flex items-center">
-                        <Network className="w-4 h-4" />
-                        Suporta: {vps.connections}
-                      </p>
-                    </div>
-                    
-                    <Button asChild className="w-full mt-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white">
-                      <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20tenho%20interesse%20na%20VPS%20{vps.name}" target="_blank" rel="noopener noreferrer">
-                        Contratar {vps.name}
-                      </a>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>)}
-          </div>
-          
-          {/* Personalização de Sistemas section */}
-          <div className="text-center mt-8 bg-gradient-to-br from-blue-100 to-blue-50 p-6 rounded-lg border border-blue-200 max-w-3xl mx-auto shadow-sm">
-            <h4 className="text-xl font-semibold text-gray-800 mb-2 flex items-center justify-center gap-2">
-              <Sparkles className="h-5 w-5 text-blue-600" /> 
-              Personalização de Sistemas
-            </h4>
-            <p className="text-gray-600 mb-4">
-              Nossa equipe de especialistas pode personalizar e implementar soluções específicas para o seu negócio, garantindo o máximo de eficiência e performance.
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-              
-              
-              
-            </div>
-            
-            <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white">
-              <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20gostaria%20de%20uma%20cotação%20para%20personalização%20de%20sistemas" target="_blank" rel="noopener noreferrer">
-                Solicitar cotação para personalização
-              </a>
-            </Button>
-          </div>
-        </div>
-
-        {/* Nova seção: Crescimento Profissional - Servidores Dedicados */}
-        <div className="max-w-5xl mx-auto mt-16 pt-6 border-t border-gray-200">
-          <div className="text-center mb-8">
-            <Badge variant="outline" className="bg-blue-800 text-white border-blue-700 mb-4">
-              Crescimento Profissional
-            </Badge>
-            <h3 className="text-2xl font-bold mb-3">Plano de <span className="text-blue-700">Crescimento Profissional</span></h3>
-            <p className="text-lg text-gray-600 max-w-xl mx-auto">
-              Servidores de alta performance para empresas que precisam de máximo desempenho e escalabilidade
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
-            {dedicatedServers.map((server, index) => <Card key={index} className="border border-blue-200 hover:shadow-xl transition-all bg-gradient-to-br from-white to-blue-50">
-                <CardHeader className="bg-gradient-to-r from-blue-700 to-blue-600 pb-6 text-white">
-                  <div className="space-y-1.5">
-                    <Badge className="bg-blue-400 text-blue-900 border-0 mb-2 font-medium">
-                      Servidor Dedicado
-                    </Badge>
-                    <CardTitle className="text-2xl font-bold flex items-center gap-2 text-white">
-                      {server.name}
-                      <Server className="h-5 w-5 text-blue-200" />
-                    </CardTitle>
-                    <CardDescription className="text-blue-100 font-medium">
-                      {server.location}
-                    </CardDescription>
-                  </div>
-                  <div className="mt-4">
-                    <div className="flex items-baseline">
-                      <span className="text-4xl font-extrabold tracking-tight text-white">R${server.price}</span>
-                      <span className="ml-2 text-sm font-medium text-blue-100">BRL/mês</span>
-                    </div>
-                  </div>
-                </CardHeader>
-                
-                <CardContent className="pt-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-semibold mb-3 text-blue-700 text-lg">Especificações:</h4>
-                      <ul className="space-y-3 border-l-2 border-blue-200 pl-4">
-                        {server.specs.map((spec, i) => <li key={i} className="text-sm text-gray-700">
-                            <span className="font-semibold">{spec.title}:</span> {spec.details}
-                          </li>)}
-                      </ul>
-                      
-                      <div className="mt-6 space-y-3">
-                        <div className="bg-blue-100 p-4 rounded-md border border-blue-200">
-                          <p className="text-sm font-semibold text-blue-800 flex items-center gap-2 mb-2">
-                            <Database className="w-4 h-4" />
-                            Capacidade de clientes:
-                          </p>
-                          <div className="bg-white rounded-md p-3 text-center border border-blue-200">
-                            <p className="text-lg font-bold text-blue-700">{server.clients}</p>
-                          </div>
-                        </div>
-                        
-                        <div className="bg-blue-100 p-4 rounded-md border border-blue-200">
-                          <p className="text-sm font-semibold text-blue-800 flex items-center gap-2 mb-2">
-                            <Network className="w-4 h-4" />
-                            Capacidade de conexões:
-                          </p>
-                          <div className="bg-white rounded-md p-3 text-center border border-blue-200">
-                            <p className="text-lg font-bold text-blue-700">{server.connections}</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <h4 className="font-semibold mb-3 text-blue-700 text-lg">Benefícios inclusos:</h4>
-                      <ul className="space-y-2 mb-6">
-                        {server.extras.map((extra, i) => <li key={i} className="flex items-start gap-2">
-                            <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                            <span className="text-sm text-gray-700">{extra}</span>
-                          </li>)}
-                      </ul>
-                      
-                      <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-4 rounded-lg text-white mt-4">
-                        <h4 className="font-semibold mb-3 flex items-center gap-2">
-                          <Trophy className="h-5 w-5" />
-                          Benefícios Premium:
-                        </h4>
-                        <ul className="space-y-2">
-                          {premiumBenefits.slice(0, 5).map((benefit, i) => <li key={i} className="flex items-start gap-2">
-                              <Check className="w-4 h-4 text-blue-200 flex-shrink-0 mt-0.5" />
-                              <span className="text-sm text-blue-50">{benefit}</span>
-                            </li>)}
-                        </ul>
-                      </div>
-                      
-                      <Button asChild className="w-full mt-6 bg-gradient-to-r from-blue-700 to-blue-800 hover:from-blue-800 hover:to-blue-900 text-white py-6 rounded-md transition-all shadow-md hover:shadow-xl">
-                        <a href={`https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20tenho%20interesse%20no%20servidor%20dedicado%20${server.name}`} target="_blank" rel="noopener noreferrer">
-                          Solicitar proposta {server.name}
-                          <ArrowRight className="ml-2 h-4 w-4" />
-                        </a>
-                      </Button>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>)}
-          </div>
-          
-          <div className="text-center mt-12 bg-gradient-to-r from-blue-50 to-blue-100 p-8 rounded-xl border border-blue-200 max-w-4xl mx-auto shadow-md">
-            <h4 className="text-2xl font-bold text-blue-800 mb-4">Nosso Time de Especialistas Cuida de Tudo</h4>
-            <p className="text-gray-700 mb-6">
-              Oferecemos um serviço completo de gerenciamento e monitoramento para seus servidores dedicados, 
-              garantindo performance máxima e tranquilidade para seu negócio.
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              
-              
-              
-            </div>
-            
-            <Button asChild className="bg-blue-700 hover:bg-blue-800 text-white text-lg py-6 px-8 rounded-lg shadow-lg">
-              <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20quero%20informações%20sobre%20os%20servidores%20dedicados%20premium" target="_blank" rel="noopener noreferrer">
-                Falar com consultor especializado
-              </a>
-            </Button>
-          </div>
-        </div>
-
-        {/* Nova seção: Cotação Personalizada */}
-        <div className="max-w-5xl mx-auto mt-16 pt-6 border-t border-gray-200">
-          <div className="text-center mb-8">
-            <Badge variant="outline" className="bg-blue-600 text-white border-blue-500 mb-4">
-              Solução Personalizada
-            </Badge>
-            <h3 className="text-2xl font-bold mb-3">Precisa de uma <span className="text-blue-600">configuração especial?</span></h3>
-            <p className="text-lg text-gray-600 max-w-xl mx-auto">
-              Entre em contato para uma cotação personalizada de acordo com suas necessidades específicas
-            </p>
-          </div>
-          
-          <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-8 rounded-2xl shadow-xl max-w-3xl mx-auto text-white">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h4 className="text-xl font-bold mb-4 flex items-center gap-2">
-                  <Server className="h-6 w-6 text-blue-200" /> 
-                  Servidores customizados
-                </h4>
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-blue-300 flex-shrink-0 mt-0.5" />
-                    <span>Especificações sob medida</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-blue-300 flex-shrink-0 mt-0.5" />
-                    <span>Escalabilidade conforme demanda</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-blue-300 flex-shrink-0 mt-0.5" />
-                    <span>Configurações para alto tráfego</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-blue-300 flex-shrink-0 mt-0.5" />
-                    <span>Grandes operações corporativas</span>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-xl font-bold mb-4 flex items-center gap-2">
-                  <Network className="h-6 w-6 text-blue-200" /> 
-                  Suporte especializado
-                </h4>
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-blue-300 flex-shrink-0 mt-0.5" />
-                    <span>Consultoria técnica dedicada</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-blue-300 flex-shrink-0 mt-0.5" />
-                    <span>Migração e configuração personalizada</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-blue-300 flex-shrink-0 mt-0.5" />
-                    <span>Soluções de redundância avançada</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-blue-300 flex-shrink-0 mt-0.5" />
-                    <span>Monitoramento 24/7 especializado</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="mt-6 text-center">
-              <p className="mb-5 text-blue-100">
-                Nossa equipe está pronta para desenvolver uma solução sob medida para seu negócio, 
-                independentemente do tamanho ou complexidade do seu projeto.
-              </p>
-              <Button asChild className="bg-white hover:bg-blue-50 text-blue-700 font-medium py-6 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all border border-blue-300">
-                <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20preciso%20de%20uma%20cotação%20personalizada%20para%20servidores" target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="mr-2 h-5 w-5" />
-                  Solicitar cotação personalizada
-                </a>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default PricingSection;
+                            <SmartphoneIcon className="w-4 h-
