@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -7,7 +8,6 @@ import { Badge } from "@/components/ui/badge";
 import { 
   Check, 
   X, 
-  MessagesSquare, 
   ArrowRight, 
   Brain, 
   Code, 
@@ -20,7 +20,8 @@ import {
   Sparkles,
   BookOpen,
   Trophy,
-  BrainCircuit
+  BrainCircuit,
+  MessageCircle
 } from "lucide-react";
 import ScrollToTop from "@/components/ScrollToTop";
 import FloatingCta from "@/components/FloatingCta";
