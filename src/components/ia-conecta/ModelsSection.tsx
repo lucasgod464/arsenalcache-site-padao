@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Brain, BookOpen, Sparkles, Grid3x3, Bot } from "lucide-react";
+import { Brain, BookOpen, Sparkles, Grid3x3, Bot, Bar, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import ModelCard from "./ModelCard";
@@ -11,7 +11,7 @@ interface ModelsSectionProps {
 
 const ModelsSection = ({ onShowAllModels }: ModelsSectionProps) => {
   return (
-    <section className="py-20 px-4 md:px-6 lg:px-8 bg-white">
+    <section className="py-20 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-white to-purple-50">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <Badge className="bg-purple-100 text-purple-700 hover:bg-purple-200 px-3 py-1 text-sm mb-4">
@@ -26,7 +26,7 @@ const ModelsSection = ({ onShowAllModels }: ModelsSectionProps) => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {/* Llama 4 Card */}
           <ModelCard
             title="Llama 4"
@@ -57,6 +57,21 @@ const ModelsSection = ({ onShowAllModels }: ModelsSectionProps) => {
             ]}
           />
 
+          {/* Gemma 2 Card */}
+          <ModelCard
+            title="Gemma 2"
+            description="Eficiente e acessível da família Google"
+            badge="Google"
+            badgeColor="from-red-600 to-orange-500"
+            icon={<TrendingUp className="text-orange-600 h-6 w-6" />}
+            features={[
+              "2B a 27B parâmetros",
+              "Processamento de texto eficiente",
+              "32K tokens de contexto",
+              "Ótima relação custo-desempenho"
+            ]}
+          />
+
           {/* Deepseek Card */}
           <ModelCard
             title="DeepSeek-V2"
@@ -71,26 +86,11 @@ const ModelsSection = ({ onShowAllModels }: ModelsSectionProps) => {
               "Excelente em programação e matemática"
             ]}
           />
-
-          {/* Phi-4 Card */}
-          <ModelCard
-            title="Phi-4"
-            description="Nova geração de modelo eficiente da Microsoft"
-            badge="Microsoft"
-            badgeColor="from-green-500 to-green-700"
-            icon={<Sparkles className="text-green-600 h-6 w-6" />}
-            features={[
-              "4B a 104B parâmetros",
-              "Processamento de texto e imagem",
-              "Até 128K tokens (versão avançada)",
-              "Eficiência sem precedentes"
-            ]}
-          />
         </div>
 
         <div className="mt-16 text-center">
           <Button 
-            className="bg-gradient-to-r from-purple-500 to-purple-700 hover:from-purple-600 hover:to-purple-800 text-white py-6 px-10 rounded-lg shadow-lg"
+            className="bg-gradient-to-r from-purple-500 to-purple-700 hover:from-purple-600 hover:to-purple-800 text-white py-6 px-10 rounded-lg shadow-lg transform transition hover:scale-105"
             onClick={onShowAllModels}
           >
             Explorar todos os modelos <Grid3x3 className="ml-2 h-5 w-5" />
