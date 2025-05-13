@@ -39,6 +39,7 @@ const RoiCalculator = () => {
   const [tokensPorMensagem, setTokensPorMensagem] = useState(1500);
   const [tokensResposta, setTokensResposta] = useState(2000);
   const [selectedModel, setSelectedModel] = useState('gpt-4o');
+  const [custoMensalIAConecta, setCustoMensalIAConecta] = useState(360); // Valor padrão R$ 360
   const isMobile = useIsMobile();
   
   // Cálculos para OpenAI (cobrado por token com base no modelo selecionado)
@@ -55,9 +56,6 @@ const RoiCalculator = () => {
   // Custo mensal total em BRL
   const custoMensalOpenAI = custoEntradaBRL + custoSaidaBRL;
   
-  // Custo mensal da IA Conecta (agora com valor padrão de 360)
-  const custoMensalIAConecta = 360;
-  
   // Economia
   const economia = custoMensalOpenAI - custoMensalIAConecta;
   const economiaPercentual = custoMensalOpenAI > 0 ? ((economia / custoMensalOpenAI) * 100).toFixed(0) : "0";
@@ -67,6 +65,11 @@ const RoiCalculator = () => {
     { name: 'OpenAI', valor: custoMensalOpenAI, fill: '#ef4444' },
     { name: 'IA Conecta', valor: custoMensalIAConecta, fill: '#8b5cf6' }
   ];
+
+  // Handler para alterar o valor mensal da IA Conecta
+  const handleCustoMensalChange = (value) => {
+    setCustoMensalIAConecta(Math.min(2000, Math.max(360, value[0])));
+  };
 
   return (
     <section id="calculadora-roi" className="py-16 px-4 bg-gradient-to-br from-purple-50 to-white">
@@ -178,6 +181,25 @@ const RoiCalculator = () => {
                   onValueChange={(value) => setTokensResposta(value[0])}
                   className="py-4"
                 />
+              </div>
+
+              <div className="space-y-2">
+                <div className="flex justify-between">
+                  <Label htmlFor="custoIAConecta">Custo mensal IA Conecta (R$):</Label>
+                  <span className="font-semibold text-purple-700">{custoMensalIAConecta}</span>
+                </div>
+                <Slider
+                  id="custoIAConecta"
+                  min={360}
+                  max={2000}
+                  step={20}
+                  value={[custoMensalIAConecta]}
+                  onValueChange={handleCustoMensalChange}
+                  className="py-4"
+                />
+                <p className="text-xs text-gray-500">
+                  Ajuste o valor mensal da IA Conecta (padrão: R$ 360, máximo: R$ 2.000)
+                </p>
               </div>
 
               <div className="pt-4 bg-purple-50 p-4 rounded-lg border border-purple-100">

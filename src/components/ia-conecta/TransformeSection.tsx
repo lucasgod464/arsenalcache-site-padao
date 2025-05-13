@@ -2,13 +2,13 @@
 import React from 'react';
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Check, MessageSquare, Brain, Zap, LineChart, Users } from 'lucide-react';
+import { Check, MessageSquare, Brain, Zap, LineChart, Users, Sparkles, Star, Award } from 'lucide-react';
 
 const TransformeSection = () => {
   return (
     <section className="py-20 px-4 bg-gradient-to-br from-white to-purple-50">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 fade-in-section">
           <Badge className="bg-purple-100 text-purple-700 hover:bg-purple-200 px-3 py-1 text-sm mb-4">
             Potencialize seu Negócio
           </Badge>
@@ -20,9 +20,9 @@ const TransformeSection = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 fade-in-section">
           {/* Card 1 */}
-          <Card className="group border-purple-100 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+          <Card className="group border-purple-100 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden hover:scale-105">
             <div className="relative h-48 overflow-hidden bg-gradient-to-br from-purple-500 to-indigo-600">
               <div className="absolute inset-0 flex items-center justify-center text-white p-6">
                 <MessageSquare className="w-20 h-20 opacity-30" />
@@ -51,7 +51,7 @@ const TransformeSection = () => {
           </Card>
           
           {/* Card 2 */}
-          <Card className="group border-purple-100 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+          <Card className="group border-purple-100 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden hover:scale-105">
             <div className="relative h-48 overflow-hidden bg-gradient-to-br from-blue-500 to-cyan-600">
               <div className="absolute inset-0 flex items-center justify-center text-white p-6">
                 <Brain className="w-20 h-20 opacity-30" />
@@ -80,7 +80,7 @@ const TransformeSection = () => {
           </Card>
           
           {/* Card 3 */}
-          <Card className="group border-purple-100 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+          <Card className="group border-purple-100 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden hover:scale-105">
             <div className="relative h-48 overflow-hidden bg-gradient-to-br from-amber-500 to-orange-600">
               <div className="absolute inset-0 flex items-center justify-center text-white p-6">
                 <LineChart className="w-20 h-20 opacity-30" />
@@ -109,9 +109,10 @@ const TransformeSection = () => {
           </Card>
         </div>
         
-        <div className="mt-16 p-6 md:p-10 bg-gradient-to-r from-purple-600 to-violet-600 rounded-xl shadow-xl relative overflow-hidden">
+        <div className="mt-16 p-6 md:p-10 bg-gradient-to-r from-purple-600 to-violet-600 rounded-xl shadow-xl relative overflow-hidden fade-in-section">
           <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-white/10 rounded-full"></div>
           <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-white/5 rounded-full"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-purple-500/10 rounded-full filter blur-3xl"></div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative z-10">
             <div>
@@ -131,16 +132,23 @@ const TransformeSection = () => {
                   <Users className="h-5 w-5 text-yellow-300" />
                   <span className="text-white">Foco na experiência</span>
                 </div>
+                <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg">
+                  <Sparkles className="h-5 w-5 text-yellow-300" />
+                  <span className="text-white">Análise avançada</span>
+                </div>
               </div>
             </div>
             
             <div className="bg-white/5 p-6 rounded-xl border border-white/10 backdrop-blur-sm">
-              <h4 className="text-white text-lg font-medium mb-3">Impacto nos Resultados</h4>
+              <h4 className="text-white text-lg font-medium mb-3 flex items-center">
+                <Award className="h-5 w-5 mr-2 text-yellow-300" />
+                Impacto nos Resultados
+              </h4>
               <div className="space-y-4">
                 <div>
                   <div className="flex justify-between text-sm mb-1">
                     <span className="text-purple-100">Satisfação do cliente</span>
-                    <span className="text-white">92%</span>
+                    <span className="text-white font-semibold">92%</span>
                   </div>
                   <div className="w-full bg-white/10 h-2 rounded-full">
                     <div className="bg-gradient-to-r from-purple-300 to-white h-2 rounded-full" style={{ width: '92%' }}></div>
@@ -149,7 +157,7 @@ const TransformeSection = () => {
                 <div>
                   <div className="flex justify-between text-sm mb-1">
                     <span className="text-purple-100">Aumento em vendas</span>
-                    <span className="text-white">68%</span>
+                    <span className="text-white font-semibold">68%</span>
                   </div>
                   <div className="w-full bg-white/10 h-2 rounded-full">
                     <div className="bg-gradient-to-r from-purple-300 to-white h-2 rounded-full" style={{ width: '68%' }}></div>
@@ -158,11 +166,26 @@ const TransformeSection = () => {
                 <div>
                   <div className="flex justify-between text-sm mb-1">
                     <span className="text-purple-100">Eficiência operacional</span>
-                    <span className="text-white">78%</span>
+                    <span className="text-white font-semibold">78%</span>
                   </div>
                   <div className="w-full bg-white/10 h-2 rounded-full">
                     <div className="bg-gradient-to-r from-purple-300 to-white h-2 rounded-full" style={{ width: '78%' }}></div>
                   </div>
+                </div>
+                <div>
+                  <div className="flex justify-between text-sm mb-1">
+                    <span className="text-purple-100">ROI médio</span>
+                    <span className="text-white font-semibold">320%</span>
+                  </div>
+                  <div className="w-full bg-white/10 h-2 rounded-full">
+                    <div className="bg-gradient-to-r from-purple-300 to-white h-2 rounded-full" style={{ width: '100%' }}></div>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-4 pt-4 border-t border-white/10">
+                <div className="flex items-center gap-2">
+                  <Star className="h-5 w-5 text-yellow-300" />
+                  <span className="text-white">Custo fixo mensal a partir de R$ 360</span>
                 </div>
               </div>
             </div>
