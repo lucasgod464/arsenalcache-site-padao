@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -206,7 +207,7 @@ const IAConecta = () => {
         </div>
       </section>
 
-      {/* Modal de Todos os Modelos */}
+      {/* Modal de Todos os Modelos - Reformulado com cards */}
       <Dialog open={showAllModels} onOpenChange={setShowAllModels}>
         <DialogContent className="max-w-6xl h-[80vh] overflow-y-auto">
           <DialogHeader>
@@ -591,7 +592,63 @@ const IAConecta = () => {
               </ul>
             </div>
             
-            {/* Modificação: Seção de Desenvolvimento de Software com n8n */}
+            {/* Desenvolvimento de Software com n8n */}
             <div className="bg-gradient-to-br from-blue-50 to-white p-8 rounded-xl border border-blue-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
               <div className="bg-blue-100 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-6">
-                <Workflow className="h-6 w-6 text-blue-60
+                <Workflow className="h-6 w-6 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Desenvolvimento com n8n</h3>
+              <p className="text-gray-700 mb-4">
+                Integre IA em seus fluxos de trabalho com n8n, automatizando tarefas e acelerando o desenvolvimento de aplicações.
+              </p>
+              <ul className="space-y-2">
+                <li className="flex items-center text-sm">
+                  <Check className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                  <span>Automação sem código</span>
+                </li>
+                <li className="flex items-center text-sm">
+                  <Check className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                  <span>Integração com APIs de IA</span>
+                </li>
+                <li className="flex items-center text-sm">
+                  <Check className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                  <span>Processamento de dados em tempo real</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-gradient-to-br from-green-50 to-white p-8 rounded-xl border border-green-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
+              <div className="bg-green-100 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-6">
+                <Database className="h-6 w-6 text-green-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Análise de Dados</h3>
+              <p className="text-gray-700 mb-4">
+                Transforme grandes volumes de dados em insights acionáveis com modelos de IA especializados em análise e visualização.
+              </p>
+              <ul className="space-y-2">
+                <li className="flex items-center text-sm">
+                  <Check className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                  <span>Processamento de dados não estruturados</span>
+                </li>
+                <li className="flex items-center text-sm">
+                  <Check className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                  <span>Relatórios automatizados</span>
+                </li>
+                <li className="flex items-center text-sm">
+                  <Check className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                  <span>Previsões e tendências</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+      <ScrollToTop />
+      <FloatingCta />
+    </div>
+  );
+};
+
+export default IAConecta;
