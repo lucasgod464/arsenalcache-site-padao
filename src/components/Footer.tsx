@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { MessageCircle, Mail, Phone, MapPin } from 'lucide-react';
+import { MessageCircle, Mail, Phone, MapPin, Building } from 'lucide-react';
 
 const Footer = () => {
   const scrollToSection = (sectionId: string) => {
@@ -140,8 +141,25 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="pt-8 border-t border-gray-800 text-sm text-center">
-          <p>© {new Date().getFullYear()} Arsenal Cache. Todos os direitos reservados.</p>
+        <div className="pt-8 border-t border-gray-800">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <p className="text-sm">© {new Date().getFullYear()} Arsenal Cache. Todos os direitos reservados.</p>
+            </div>
+            <div className="text-sm">
+              <div className="flex items-start gap-3 mb-2">
+                <Building className="w-5 h-5 text-arsenal-light mt-0.5 flex-shrink-0" />
+                <div>
+                  <p><strong>Razão Social:</strong> Yuccie Digital Agencias De Publicidade Ltda</p>
+                  <p><strong>CNPJ:</strong> 44.980.010/0001-06</p>
+                </div>
+              </div>
+              <div className="ml-8">
+                <p><strong>Endereço:</strong> Rua Professora Maria Jose De Oliveira, 128</p>
+                <p>Jardim Nova Michigan, São José dos Campos - SP, CEP: 12.225-430</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

@@ -1,6 +1,13 @@
 
 import React from 'react';
 import { Star } from 'lucide-react';
+import { 
+  Carousel, 
+  CarouselContent, 
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from '@/components/ui/carousel';
 
 const testimonials = [
   {
@@ -20,6 +27,24 @@ const testimonials = [
     role: "E-commerce",
     image: "https://placehold.co/100/333/FFF?text=MO",
     quote: "Conseguimos reduzir o tempo de resposta para nossos clientes em 70% com o sistema. O investimento único sem mensalidades também foi decisivo para nossa escolha."
+  },
+  {
+    name: "Ana Ferreira",
+    role: "Agência de Publicidade",
+    image: "https://placehold.co/100/333/FFF?text=AF",
+    quote: "O Arsenal Cache revolucionou nosso atendimento ao cliente. Nossos tempos de resposta diminuíram e a satisfação dos clientes aumentou significativamente."
+  },
+  {
+    name: "Carlos Mendes",
+    role: "Consultoria Financeira",
+    image: "https://placehold.co/100/333/FFF?text=CM",
+    quote: "A flexibilidade do sistema para adaptação às nossas necessidades foi surpreendente. Conseguimos personalizar tudo conforme nosso fluxo de trabalho."
+  },
+  {
+    name: "Patrícia Sousa",
+    role: "Varejo Online",
+    image: "https://placehold.co/100/333/FFF?text=PS",
+    quote: "O melhor investimento que fizemos para melhorar nosso SAC. A automação de respostas para perguntas frequentes liberou nossa equipe para casos mais complexos."
   }
 ];
 
@@ -37,30 +62,44 @@ const TestimonialsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="feature-card fade-in-section flex flex-col" style={{transitionDelay: `${index * 100}ms`}}>
-              <div className="flex mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                ))}
-              </div>
-              
-              <p className="text-gray-700 mb-6 flex-grow">"{testimonial.quote}"</p>
-              
-              <div className="flex items-center mt-4">
-                <img 
-                  src={testimonial.image} 
-                  alt={testimonial.name} 
-                  className="w-12 h-12 rounded-full mr-4"
-                />
-                <div>
-                  <h4 className="font-semibold">{testimonial.name}</h4>
-                  <p className="text-sm text-gray-600">{testimonial.role}</p>
-                </div>
-              </div>
-            </div>
-          ))}
+        <div className="max-w-5xl mx-auto">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent>
+              {testimonials.map((testimonial, index) => (
+                <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/3">
+                  <div className="feature-card fade-in-section flex flex-col h-full p-6" style={{transitionDelay: `${index * 100}ms`}}>
+                    <div className="flex mb-4">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                      ))}
+                    </div>
+                    
+                    <p className="text-gray-700 mb-6 flex-grow">"{testimonial.quote}"</p>
+                    
+                    <div className="flex items-center mt-4">
+                      <img 
+                        src={testimonial.image} 
+                        alt={testimonial.name} 
+                        className="w-12 h-12 rounded-full mr-4"
+                      />
+                      <div>
+                        <h4 className="font-semibold">{testimonial.name}</h4>
+                        <p className="text-sm text-gray-600">{testimonial.role}</p>
+                      </div>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="lg:-left-16 hidden sm:flex" />
+            <CarouselNext className="lg:-right-16 hidden sm:flex" />
+          </Carousel>
         </div>
       </div>
     </section>
