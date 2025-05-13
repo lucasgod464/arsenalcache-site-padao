@@ -1,6 +1,7 @@
+
 import React from 'react';
 import { Check, X, ArrowRight, MessageCircle, Star, Trophy, Server, Cpu, HardDrive, Database, Network } from 'lucide-react';
-import { MessageSquare, SmartphoneIcon, Globe, Sparkles, BrainCircuit, Zap } from 'lucide-react';
+import { MessageSquare, SmartphoneIcon, Globe, Sparkles, BrainCircuit, Zap, Template, N8n, Evolution, Redis, Postgres, Supabase, Minio } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
@@ -189,123 +190,453 @@ const PricingSection = () => {
           </p>
         </div>
 
-        <div className="max-w-md mx-auto relative">
-          <div className="absolute -top-4 -right-4 z-10 rotate-12">
-            <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white text-xs font-bold px-6 py-1 rounded-full shadow-lg flex items-center gap-1">
-              <Star className="h-3 w-3 fill-white" /> RECOMENDADO <Star className="h-3 w-3 fill-white" />
-            </div>
-          </div>
-          
-          <Card className="h-full transition-all duration-300 overflow-hidden bg-white border-gray-200 hover:shadow-md ring-2 ring-blue-500 shadow-xl shadow-blue-200">
-            <CardHeader className="bg-gradient-to-r from-blue-50 to-blue-100/50 pb-6 border-b border-gray-100">
-              <div className="space-y-1.5">
-                <Badge className="bg-blue-100 text-blue-700 border-0 mb-2 font-medium">
-                  White Label Premium
-                </Badge>
-                <CardTitle className="text-2xl font-bold flex items-center gap-2 text-gray-800">
-                  Plano Start
-                  <Star className="h-5 w-5 text-blue-500" />
-                </CardTitle>
-                <CardDescription className="text-gray-600">
-                  Solução completa para seu negócio
-                </CardDescription>
-              </div>
-              <div className="mt-4 flex items-baseline justify-center">
-                <div className="flex flex-col items-center">
-                  <div className="flex items-baseline">
-                    <span className="text-4xl font-extrabold tracking-tight text-blue-700">R$56,00</span>
-                    <span className="ml-2 text-lg text-gray-600">7x sem juros</span>
+        {/* Planos Start, Pro e Enterprise */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {/* Plano Start */}
+          <div className="relative">
+            <Card className="h-full transition-all duration-300 overflow-hidden bg-white border-gray-200 hover:shadow-md ring-1 ring-blue-500/50 shadow-lg shadow-blue-200/30">
+              <CardHeader className="bg-gradient-to-r from-blue-50 to-blue-100/50 pb-6 border-b border-gray-100">
+                <div className="space-y-1.5">
+                  <Badge className="bg-blue-100 text-blue-700 border-0 mb-2 font-medium">
+                    White Label Premium
+                  </Badge>
+                  <CardTitle className="text-2xl font-bold flex items-center gap-2 text-gray-800">
+                    Plano Start
+                    <Star className="h-5 w-5 text-blue-500" />
+                  </CardTitle>
+                  <CardDescription className="text-gray-600">
+                    Solução completa para seu negócio
+                  </CardDescription>
+                </div>
+                <div className="mt-4 flex items-baseline justify-center">
+                  <div className="flex flex-col items-center">
+                    <div className="flex items-baseline">
+                      <span className="text-4xl font-extrabold tracking-tight text-blue-700">R$56,00</span>
+                      <span className="ml-2 text-lg text-gray-600">7x sem juros</span>
+                    </div>
+                    <span className="text-sm text-gray-500">ou R$392,00 a vista</span>
                   </div>
-                  <span className="text-sm text-gray-500">ou R$392,00 a vista</span>
                 </div>
-              </div>
-              <div className="flex flex-wrap gap-2 mt-3 justify-center">
-                <Badge variant="outline" className="bg-green-50 text-green-600 border-green-200">
-                  Economize e comece a lucrar imediatamente
-                </Badge>
-              </div>
-            </CardHeader>
-            
-            <CardContent className="pt-6">
-              <div className="space-y-5">
-                <div>
-                  <h4 className="font-semibold mb-3 text-blue-600 flex items-center">
-                    <Trophy className="h-5 w-5 text-blue-500" />
-                    Recursos principais:
-                  </h4>
-                  <ul className="space-y-2.5 border-l-2 border-blue-100 pl-3">
-                    {mainFeatures.map((feature, index) => <li key={index} className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-gray-600">{feature}</span>
-                      </li>)}
-                  </ul>
-                </div>
-                
-                <Separator className="bg-gray-100" />
-                
-                <div>
-                  <h4 className="font-semibold mb-3 text-blue-600">Conexões adicionais (opcionais):</h4>
-                  <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-4 rounded-lg border border-blue-100">
-                    <ul className="space-y-3 mb-4">
-                      <li className="flex items-center gap-2.5">
-                        <div className="bg-green-500 rounded-full p-1.5">
-                          <MessageSquare className="w-4 h-4 text-white flex-shrink-0" />
-                        </div>
-                        <span className="text-sm text-gray-700">API oficial WhatsApp (ilimitada)</span>
-                      </li>
-                      <li className="flex items-center gap-2.5">
-                        <div className="bg-pink-500 rounded-full p-1.5">
-                          <SmartphoneIcon className="w-4 h-4 text-white flex-shrink-0" />
-                        </div>
-                        <span className="text-sm text-gray-700">Instagram (conexões ilimitadas)</span>
-                      </li>
-                      <li className="flex items-center gap-2.5">
-                        <div className="bg-blue-600 rounded-full p-1.5">
-                          <Globe className="w-4 h-4 text-white flex-shrink-0" />
-                        </div>
-                        <span className="text-sm text-gray-700">Facebook (conexões ilimitadas)</span>
-                      </li>
+              </CardHeader>
+              
+              <CardContent className="pt-6">
+                <div className="space-y-5">
+                  <div>
+                    <h4 className="font-semibold mb-3 text-blue-600 flex items-center">
+                      <Trophy className="h-5 w-5 text-blue-500" />
+                      Recursos principais:
+                    </h4>
+                    <ul className="space-y-2.5 border-l-2 border-blue-100 pl-3">
+                      {mainFeatures.map((feature, index) => (
+                        <li key={index} className="flex items-start gap-2">
+                          <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-gray-600">{feature}</span>
+                        </li>
+                      ))}
                     </ul>
-                    
-                    <div className="bg-white p-3 rounded-lg border border-gray-200 text-center shadow-sm">
-                      <p className="text-gray-700 font-medium mb-1">Valor mensal:</p>
-                      <p className="text-2xl font-bold text-blue-600">R$260,00</p>
-                      <p className="text-xs text-gray-500">Conexões ilimitadas</p>
+                  </div>
+                  
+                  <Separator className="bg-gray-100" />
+                  
+                  <div>
+                    <h4 className="font-semibold mb-3 text-blue-600">Conexões adicionais (opcionais):</h4>
+                    <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-4 rounded-lg border border-blue-100">
+                      <ul className="space-y-3 mb-4">
+                        <li className="flex items-center gap-2.5">
+                          <div className="bg-green-500 rounded-full p-1.5">
+                            <MessageSquare className="w-4 h-4 text-white flex-shrink-0" />
+                          </div>
+                          <span className="text-sm text-gray-700">API oficial WhatsApp (ilimitada)</span>
+                        </li>
+                        <li className="flex items-center gap-2.5">
+                          <div className="bg-pink-500 rounded-full p-1.5">
+                            <SmartphoneIcon className="w-4 h-4 text-white flex-shrink-0" />
+                          </div>
+                          <span className="text-sm text-gray-700">Instagram (conexões ilimitadas)</span>
+                        </li>
+                        <li className="flex items-center gap-2.5">
+                          <div className="bg-blue-600 rounded-full p-1.5">
+                            <Globe className="w-4 h-4 text-white flex-shrink-0" />
+                          </div>
+                          <span className="text-sm text-gray-700">Facebook (conexões ilimitadas)</span>
+                        </li>
+                      </ul>
+                      
+                      <div className="bg-white p-3 rounded-lg border border-gray-200 text-center shadow-sm">
+                        <p className="text-gray-700 font-medium mb-1">Valor mensal:</p>
+                        <p className="text-2xl font-bold text-blue-600">R$260,00</p>
+                        <p className="text-xs text-gray-500">Conexões ilimitadas</p>
+                      </div>
                     </div>
                   </div>
+                  
+                  <Separator className="bg-gray-100" />
+                  
+                  <div>
+                    <h4 className="font-semibold mb-3 text-blue-600">Renovação anual:</h4>
+                    <ul className="space-y-2.5 border-l-2 border-blue-100 pl-3">
+                      <li className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-gray-600">R$300,00 para manutenção do sistema</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-gray-600">Inclui atualizações e suporte humano</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-                
-                <Separator className="bg-gray-100" />
-                
-                <div>
-                  <h4 className="font-semibold mb-3 text-blue-600">Renovação anual:</h4>
-                  <ul className="space-y-2.5 border-l-2 border-blue-100 pl-3">
-                    <li className="flex items-start gap-2">
-                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-gray-600">R$300,00 para manutenção do sistema</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-gray-600">Inclui atualizações e suporte humano</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-gray-600 font-medium">Garantia de funcionamento contínuo</span>
-                    </li>
-                  </ul>
-                </div>
+              </CardContent>
+              
+              <CardFooter className="pt-4 pb-8 flex justify-center">
+                <Button asChild className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium py-6 rounded-full transition-all shadow-md hover:shadow-lg">
+                  <a href="https://www.asaas.com/c/8fmv6ge3llbfeanu" target="_blank" rel="noopener noreferrer">
+                    Contratar plano start
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </CardFooter>
+            </Card>
+          </div>
+          
+          {/* Plano Pro - NOVO */}
+          <div className="relative">
+            <div className="absolute -top-4 -right-4 z-10 rotate-12">
+              <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white text-xs font-bold px-6 py-1 rounded-full shadow-lg flex items-center gap-1">
+                <Star className="h-3 w-3 fill-white" /> RECOMENDADO <Star className="h-3 w-3 fill-white" />
               </div>
-            </CardContent>
+            </div>
             
-            <CardFooter className="pt-4 pb-8 flex justify-center">
-              <Button asChild className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium py-6 rounded-full transition-all shadow-md hover:shadow-lg">
-                <a href="https://www.asaas.com/c/8fmv6ge3llbfeanu" target="_blank" rel="noopener noreferrer">
-                  Contratar plano start
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </Button>
-            </CardFooter>
-          </Card>
+            <Card className="h-full transition-all duration-300 overflow-hidden bg-white border-gray-200 hover:shadow-md ring-2 ring-blue-500 shadow-xl shadow-blue-200">
+              <CardHeader className="bg-gradient-to-r from-blue-100 to-blue-200/50 pb-6 border-b border-gray-100">
+                <div className="space-y-1.5">
+                  <Badge className="bg-blue-200 text-blue-700 border-0 mb-2 font-medium">
+                    White Label Avançado
+                  </Badge>
+                  <CardTitle className="text-2xl font-bold flex items-center gap-2 text-gray-800">
+                    Plano Pro
+                    <Sparkles className="h-5 w-5 text-blue-500" />
+                  </CardTitle>
+                  <CardDescription className="text-gray-600">
+                    Completo com automação e IA
+                  </CardDescription>
+                </div>
+                <div className="mt-4 flex items-baseline justify-center">
+                  <div className="flex flex-col items-center">
+                    <div className="flex items-baseline">
+                      <span className="text-4xl font-extrabold tracking-tight text-blue-700">R$98,00</span>
+                      <span className="ml-2 text-lg text-gray-600">7x sem juros</span>
+                    </div>
+                    <span className="text-sm text-gray-500">ou R$686,00 a vista</span>
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-2 mt-3 justify-center">
+                  <Badge variant="outline" className="bg-green-50 text-green-600 border-green-200">
+                    Economize com automações
+                  </Badge>
+                </div>
+              </CardHeader>
+              
+              <CardContent className="pt-6">
+                <div className="space-y-5">
+                  <div>
+                    <h4 className="font-semibold mb-3 text-blue-600 flex items-center">
+                      <Trophy className="h-5 w-5 text-blue-500" />
+                      Tudo do plano Start, mais:
+                    </h4>
+                    
+                    <div className="bg-blue-50 p-4 rounded-lg border border-blue-100 mb-4">
+                      <ul className="space-y-3">
+                        <li className="flex items-center gap-2.5">
+                          <div className="bg-blue-500 rounded-full p-1.5">
+                            <Template className="w-4 h-4 text-white flex-shrink-0" />
+                          </div>
+                          <span className="text-sm text-gray-700 font-medium">Template n8n agente IA com 5 modelos</span>
+                        </li>
+                        <li className="flex items-center gap-2.5">
+                          <div className="bg-blue-500 rounded-full p-1.5">
+                            <N8n className="w-4 h-4 text-white flex-shrink-0" />
+                          </div>
+                          <span className="text-sm text-gray-700">Página premium de teste grátis + automação personalizada</span>
+                        </li>
+                        <li className="flex items-center gap-2.5">
+                          <div className="bg-blue-500 rounded-full p-1.5">
+                            <Database className="w-4 h-4 text-white flex-shrink-0" />
+                          </div>
+                          <span className="text-sm text-gray-700">Página premium cadastro/vendas + criação de cobrança no Asaas</span>
+                        </li>
+                      </ul>
+                    </div>
+                    
+                    <h4 className="font-semibold mb-3 text-blue-600 flex items-center">
+                      <N8n className="h-5 w-5 text-blue-500 mr-2" />
+                      Templates n8n inclusos:
+                    </h4>
+                    <ul className="space-y-2.5 border-l-2 border-blue-100 pl-3">
+                      <li className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-gray-600">AVISO DE FATURA VENCIDA - ASAAS</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-gray-600">LEMBRETE/AVISO ANTECEDÊNCIA - ASAAS</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-gray-600">Template de backup dos templates n8n automáticos</span>
+                      </li>
+                    </ul>
+                  </div>
+                  
+                  <Separator className="bg-gray-100" />
+                  
+                  <div>
+                    <h4 className="font-semibold mb-3 text-blue-600">Conexões adicionais (opcionais):</h4>
+                    <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-4 rounded-lg border border-blue-100">
+                      <ul className="space-y-3 mb-4">
+                        <li className="flex items-center gap-2.5">
+                          <div className="bg-green-500 rounded-full p-1.5">
+                            <MessageSquare className="w-4 h-4 text-white flex-shrink-0" />
+                          </div>
+                          <span className="text-sm text-gray-700">API oficial WhatsApp (ilimitada)</span>
+                        </li>
+                        <li className="flex items-center gap-2.5">
+                          <div className="bg-pink-500 rounded-full p-1.5">
+                            <SmartphoneIcon className="w-4 h-4 text-white flex-shrink-0" />
+                          </div>
+                          <span className="text-sm text-gray-700">Instagram (conexões ilimitadas)</span>
+                        </li>
+                        <li className="flex items-center gap-2.5">
+                          <div className="bg-blue-600 rounded-full p-1.5">
+                            <Globe className="w-4 h-4 text-white flex-shrink-0" />
+                          </div>
+                          <span className="text-sm text-gray-700">Facebook (conexões ilimitadas)</span>
+                        </li>
+                      </ul>
+                      
+                      <div className="bg-white p-3 rounded-lg border border-gray-200 text-center shadow-sm">
+                        <p className="text-gray-700 font-medium mb-1">Valor mensal:</p>
+                        <p className="text-2xl font-bold text-blue-600">R$260,00</p>
+                        <p className="text-xs text-gray-500">Conexões ilimitadas</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <Separator className="bg-gray-100" />
+                  
+                  <div>
+                    <h4 className="font-semibold mb-3 text-blue-600">Renovação anual:</h4>
+                    <ul className="space-y-2.5 border-l-2 border-blue-100 pl-3">
+                      <li className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-gray-600">R$400,00 para manutenção do sistema</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-gray-600">Inclui atualizações, templates e suporte</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+              
+              <CardFooter className="pt-4 pb-8 flex justify-center">
+                <Button asChild className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium py-6 rounded-full transition-all shadow-md hover:shadow-lg">
+                  <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20tenho%20interesse%20no%20Plano%20Pro.%20Pode%20me%20enviar%20mais%20informações?" target="_blank" rel="noopener noreferrer">
+                    Contratar plano pro
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </CardFooter>
+            </Card>
+          </div>
+          
+          {/* Plano Enterprise - NOVO */}
+          <div className="relative">
+            <Card className="h-full transition-all duration-300 overflow-hidden bg-gradient-to-br from-blue-900 to-blue-800 border-blue-700 text-white hover:shadow-xl">
+              <CardHeader className="bg-gradient-to-r from-blue-800 to-blue-700 pb-6 border-b border-blue-700/50">
+                <div className="space-y-1.5">
+                  <Badge className="bg-blue-300 text-blue-900 border-0 mb-2 font-medium">
+                    White Label Enterprise
+                  </Badge>
+                  <CardTitle className="text-2xl font-bold flex items-center gap-2 text-white">
+                    Plano Enterprise
+                    <Server className="h-5 w-5 text-blue-300" />
+                  </CardTitle>
+                  <CardDescription className="text-blue-200">
+                    Solução completa de infraestrutura
+                  </CardDescription>
+                </div>
+                <div className="mt-4 flex items-baseline justify-center">
+                  <div className="flex flex-col items-center">
+                    <div className="flex items-baseline">
+                      <span className="text-4xl font-extrabold tracking-tight text-white">R$128,00</span>
+                      <span className="ml-2 text-lg text-blue-200">7x sem juros</span>
+                    </div>
+                    <span className="text-sm text-blue-300">ou R$896,00 a vista</span>
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-2 mt-3 justify-center">
+                  <Badge variant="outline" className="bg-blue-700/50 text-blue-100 border-blue-600">
+                    Infraestrutura completa inclusa
+                  </Badge>
+                </div>
+              </CardHeader>
+              
+              <CardContent className="pt-6">
+                <div className="space-y-5">
+                  <div>
+                    <h4 className="font-semibold mb-3 text-blue-300 flex items-center">
+                      <Trophy className="h-5 w-5 text-blue-300" />
+                      Tudo do plano Pro, mais:
+                    </h4>
+                    
+                    <div className="bg-blue-800/50 p-4 rounded-lg border border-blue-700 mb-4">
+                      <h5 className="text-blue-200 font-medium mb-3 flex items-center">
+                        <Server className="w-4 h-4 mr-2" />
+                        Pacote n8n completo incluso:
+                      </h5>
+                      <ul className="space-y-3">
+                        <li className="flex items-center gap-2.5">
+                          <div className="bg-blue-600 rounded-full p-1.5">
+                            <N8n className="w-4 h-4 text-white flex-shrink-0" />
+                          </div>
+                          <span className="text-sm text-blue-100">n8n - Plataforma de automação</span>
+                        </li>
+                        <li className="flex items-center gap-2.5">
+                          <div className="bg-blue-600 rounded-full p-1.5">
+                            <Evolution className="w-4 h-4 text-white flex-shrink-0" />
+                          </div>
+                          <span className="text-sm text-blue-100">Evolution API</span>
+                        </li>
+                        <li className="flex items-center gap-2.5">
+                          <div className="bg-blue-600 rounded-full p-1.5">
+                            <Redis className="w-4 h-4 text-white flex-shrink-0" />
+                          </div>
+                          <span className="text-sm text-blue-100">Redis - Sistema de cache</span>
+                        </li>
+                        <li className="flex items-center gap-2.5">
+                          <div className="bg-blue-600 rounded-full p-1.5">
+                            <Postgres className="w-4 h-4 text-white flex-shrink-0" />
+                          </div>
+                          <span className="text-sm text-blue-100">Postgres - Banco de dados</span>
+                        </li>
+                        <li className="flex items-center gap-2.5">
+                          <div className="bg-blue-600 rounded-full p-1.5">
+                            <Supabase className="w-4 h-4 text-white flex-shrink-0" />
+                          </div>
+                          <span className="text-sm text-blue-100">Supabase - Plataforma Back-end</span>
+                        </li>
+                        <li className="flex items-center gap-2.5">
+                          <div className="bg-blue-600 rounded-full p-1.5">
+                            <Minio className="w-4 h-4 text-white flex-shrink-0" />
+                          </div>
+                          <span className="text-sm text-blue-100">Minio - Armazenamento</span>
+                        </li>
+                      </ul>
+                    </div>
+                    
+                    <div className="bg-blue-800/50 p-4 rounded-lg border border-blue-700">
+                      <h5 className="text-blue-200 font-medium mb-3">Benefícios Enterprise:</h5>
+                      <ul className="space-y-2.5">
+                        <li className="flex items-start gap-2">
+                          <Check className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-blue-100">Infraestrutura completa em servidores otimizados</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-blue-100">Implementação e configuração por especialistas</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-blue-100">4 horas de consultoria personalizada</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-blue-100">Prioridade no suporte técnico</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <Separator className="bg-blue-700" />
+                  
+                  <div>
+                    <h4 className="font-semibold mb-3 text-blue-300">Conexões adicionais (opcionais):</h4>
+                    <div className="bg-blue-800/50 p-4 rounded-lg border border-blue-700">
+                      <ul className="space-y-3 mb-4">
+                        <li className="flex items-center gap-2.5">
+                          <div className="bg-green-500 rounded-full p-1.5">
+                            <MessageSquare className="w-4 h-4 text-white flex-shrink-0" />
+                          </div>
+                          <span className="text-sm text-blue-100">API oficial WhatsApp (ilimitada)</span>
+                        </li>
+                        <li className="flex items-center gap-2.5">
+                          <div className="bg-pink-500 rounded-full p-1.5">
+                            <SmartphoneIcon className="w-4 h-4 text-white flex-shrink-0" />
+                          </div>
+                          <span className="text-sm text-blue-100">Instagram (conexões ilimitadas)</span>
+                        </li>
+                        <li className="flex items-center gap-2.5">
+                          <div className="bg-blue-600 rounded-full p-1.5">
+                            <Globe className="w-4 h-4 text-white flex-shrink-0" />
+                          </div>
+                          <span className="text-sm text-blue-100">Facebook (conexões ilimitadas)</span>
+                        </li>
+                      </ul>
+                      
+                      <div className="bg-blue-900/70 p-3 rounded-lg border border-blue-600 text-center">
+                        <p className="text-blue-200 font-medium mb-1">Valor mensal:</p>
+                        <p className="text-2xl font-bold text-white">R$260,00</p>
+                        <p className="text-xs text-blue-300">Conexões ilimitadas</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <Separator className="bg-blue-700" />
+                  
+                  <div>
+                    <h4 className="font-semibold mb-3 text-blue-300">Renovação anual:</h4>
+                    <ul className="space-y-2.5 border-l-2 border-blue-600 pl-3">
+                      <li className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-blue-100">R$500,00 para manutenção completa</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-blue-100">Inclui manutenção de toda infraestrutura</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+              
+              <CardFooter className="pt-4 pb-8 flex justify-center">
+                <Button asChild className="w-full bg-blue-400 hover:bg-blue-500 text-blue-900 font-medium py-6 rounded-full transition-all shadow-md hover:shadow-xl">
+                  <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20tenho%20interesse%20no%20Plano%20Enterprise.%20Pode%20me%20enviar%20mais%20informações?" target="_blank" rel="noopener noreferrer">
+                    Contratar plano enterprise
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </CardFooter>
+            </Card>
+          </div>
+        </div>
+
+        <div className="text-center mt-8 max-w-3xl mx-auto">
+          <Button 
+            asChild
+            className="bg-green-500 hover:bg-green-600 text-white font-medium rounded-full px-8 py-5 shadow-md hover:shadow-lg transition-all border border-green-400/30 flex items-center gap-2"
+          >
+            <a 
+              href="https://api.whatsapp.com/send?phone=5512981156856" 
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MessageCircle className="mr-2 h-5 w-5" />
+              Falar com um consultor no WhatsApp
+            </a>
+          </Button>
         </div>
 
         {/* VPS Cards Section */}
