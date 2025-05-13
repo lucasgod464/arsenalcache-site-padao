@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Check, Clock, Server } from 'lucide-react';
-
 const ZproSection = () => {
-  return (
-    <section id="sistema-golden" className="bg-blue-950 py-20 px-4 text-white">
+  return <section id="sistema-golden" className="bg-blue-950 py-20 px-4 text-white">
       <div className="container mx-auto">
         <div className="text-center mb-16 fade-in-section">
           <span className="inline-block py-1 px-3 rounded-full bg-blue-800 text-blue-200 text-sm font-medium mb-4">
@@ -125,12 +123,12 @@ const ZproSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
             <div className="bg-blue-900/50 p-6 rounded-xl">
               <h4 className="text-xl font-semibold text-amber-400 mb-3">Memória (RAM)</h4>
-              <p className="text-blue-100 text-lg">8GB ou mais para operação ideal</p>
+              <p className="text-blue-100 text-lg">6GB ou mais para operação ideal</p>
             </div>
             
             <div className="bg-blue-900/50 p-6 rounded-xl">
               <h4 className="text-xl font-semibold text-amber-400 mb-3">Processamento</h4>
-              <p className="text-blue-100 text-lg">4 vCPUs ou mais para melhor desempenho</p>
+              <p className="text-blue-100 text-lg">2 vCPUs ou mais para melhor desempenho</p>
             </div>
             
             <div className="bg-blue-900/50 p-6 rounded-xl">
@@ -155,8 +153,6 @@ const ZproSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ZproSection;
