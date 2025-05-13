@@ -352,7 +352,7 @@ const PricingSection = () => {
                           <div className="bg-blue-500 rounded-full p-1.5">
                             <FileCode className="w-4 h-4 text-white flex-shrink-0" />
                           </div>
-                          <span className="text-sm text-gray-700">Página premium de teste grátis + Automação Workflow n8n</span>
+                          <span className="text-sm text-gray-700">Página premium de Teste Grátis + Automação Workflow n8n</span>
                         </li>
                         <li className="flex items-center gap-2.5">
                           <div className="bg-blue-500 rounded-full p-1.5">
