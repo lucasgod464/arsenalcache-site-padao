@@ -26,7 +26,7 @@ const IAConecta = () => {
       {/* Calculadora de ROI */}
       <RoiCalculator />
       
-      {/* CTA de Alta Conversão */}
+      {/* CTA de Alta Conversão - Agora com ID para referência */}
       <ConversionCta />
 
       {/* Modal de Todos os Modelos */}

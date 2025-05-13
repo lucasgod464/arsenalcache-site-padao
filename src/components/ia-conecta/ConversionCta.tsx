@@ -6,12 +6,20 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 const ConversionCta = () => {
+  // Função para rolar até a seção de planos
+  const scrollToPlansSection = () => {
+    const plansSection = document.getElementById('plans-section');
+    if (plansSection) {
+      plansSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="py-16 px-4 bg-gradient-to-tr from-purple-700/90 to-purple-600/90 text-white">
+    <section id="plans-section" className="py-16 px-4 bg-gradient-to-tr from-purple-500/90 to-purple-400/90 text-white">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold">
-            Conheça nossos <span className="text-purple-200">planos de IA</span>
+            Conheça nossos <span className="text-purple-100">planos de IA</span>
           </h2>
           
           <p className="text-lg text-purple-100 mt-4 max-w-3xl mx-auto">
@@ -90,7 +98,7 @@ const ConversionCta = () => {
           </Card>
           
           {/* Plano Personalizado */}
-          <Card className="bg-gradient-to-br from-purple-600 to-purple-700 border border-purple-400/30 p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
+          <Card className="bg-gradient-to-br from-purple-500 to-purple-600 border border-purple-400/30 p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
             <div className="space-y-6">
               <div className="flex items-center justify-between">
                 <h3 className="text-2xl font-bold text-white">Plano Personalizado</h3>
@@ -164,14 +172,10 @@ const ConversionCta = () => {
                   variant="purple" 
                   size="lg" 
                   className="w-full"
-                  asChild
+                  onClick={scrollToPlansSection}
                 >
-                  <a href="https://wa.me/5512981156856?text=Olá,%20gostaria%20de%20conhecer%20mais%20sobre%20os%20planos%20personalizados" 
-                     target="_blank" 
-                     rel="noopener noreferrer">
-                    Conhecer planos
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </a>
+                  Conhecer planos
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </div>
             </div>
