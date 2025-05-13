@@ -322,7 +322,7 @@ const PricingSection = () => {
                       <span className="text-4xl font-extrabold tracking-tight text-blue-700">R$55,00</span>
                       <span className="ml-2 text-lg text-gray-600">9x sem juros</span>
                     </div>
-                    <span className="text-sm text-gray-500">ou R$686,00 a vista</span>
+                    <span className="text-sm text-gray-500">ou R$495,00 a vista</span>
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-2 mt-3 justify-center">
