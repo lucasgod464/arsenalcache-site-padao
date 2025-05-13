@@ -9,9 +9,14 @@ import ModelsSection from "@/components/ia-conecta/ModelsSection";
 import ModelsDialog from "@/components/ia-conecta/ModelsDialog";
 import RoiCalculator from "@/components/ia-conecta/RoiCalculator";
 import ConversionCta from "@/components/ia-conecta/ConversionCta";
+import TransformeSection from "@/components/ia-conecta/TransformeSection";
 
 const IAConecta = () => {
   const [showAllModels, setShowAllModels] = useState(false);
+  
+  const handleShowAllModels = () => {
+    setShowAllModels(true);
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -20,13 +25,16 @@ const IAConecta = () => {
       {/* Hero Section */}
       <HeroSection />
 
+      {/* Transforme seu Atendimento - Nova seção */}
+      <TransformeSection />
+
       {/* Modelos disponíveis */}
-      <ModelsSection onShowAllModels={() => setShowAllModels(true)} />
+      <ModelsSection onShowAllModels={handleShowAllModels} />
 
       {/* Calculadora de ROI */}
       <RoiCalculator />
       
-      {/* CTA de Alta Conversão - Agora com ID para referência */}
+      {/* CTA de Alta Conversão */}
       <ConversionCta />
 
       {/* Modal de Todos os Modelos */}
