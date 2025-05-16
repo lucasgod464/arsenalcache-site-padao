@@ -63,6 +63,12 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
+            <button 
+              onClick={() => scrollToSection('precos')}
+              className="text-gray-700 hover:text-arsenal-DEFAULT transition-colors"
+            >
+              Planos e Preços
+            </button>
             <Link 
               to="/servidores" 
               className={cn(
@@ -85,12 +91,6 @@ const Navbar = () => {
             >
               IA Conecta
             </Link>
-            <button 
-              onClick={() => scrollToSection('precos')}
-              className="text-gray-700 hover:text-arsenal-DEFAULT transition-colors"
-            >
-              Planos e Preços
-            </button>
             <button 
               onClick={() => scrollToSection('faq')}
               className="text-gray-700 hover:text-arsenal-DEFAULT transition-colors"
@@ -124,6 +124,12 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden bg-white absolute top-full left-0 right-0 shadow-lg animate-fade-in py-4">
             <div className="flex flex-col space-y-4 px-6">
+              <button 
+                onClick={() => scrollToSection('precos')}
+                className="text-gray-700 hover:text-arsenal-DEFAULT py-2 transition-colors text-left"
+              >
+                Planos e Preços
+              </button>
               <Link 
                 to="/servidores"
                 onClick={() => setIsOpen(false)}
@@ -148,12 +154,6 @@ const Navbar = () => {
               >
                 IA Conecta
               </Link>
-              <button 
-                onClick={() => scrollToSection('precos')}
-                className="text-gray-700 hover:text-arsenal-DEFAULT py-2 transition-colors text-left"
-              >
-                Planos e Preços
-              </button>
               <button 
                 onClick={() => scrollToSection('faq')}
                 className="text-gray-700 hover:text-arsenal-DEFAULT py-2 transition-colors text-left"
