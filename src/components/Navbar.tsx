@@ -17,11 +17,14 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const isIaConecta = location.pathname === '/ia-conecta';
+  const isServidores = location.pathname === '/servidores';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,7 +42,7 @@ const Navbar = () => {
 
   const scrollToSection = (sectionId: string) => {
     // Verifica se está na página inicial
-    if (window.location.pathname === '/') {
+    if (location.pathname === '/') {
       const section = document.getElementById(sectionId);
       if (section) {
         section.scrollIntoView({ behavior: 'smooth' });
@@ -71,7 +74,12 @@ const Navbar = () => {
             <NavigationMenu className="z-50">
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-gray-700 hover:text-arsenal-DEFAULT transition-colors bg-transparent">
+                  <NavigationMenuTrigger 
+                    className={cn(
+                      "text-gray-700 hover:text-arsenal-DEFAULT transition-colors bg-transparent",
+                      (isIaConecta || isServidores) && "text-arsenal-DEFAULT"
+                    )}
+                  >
                     Produtos
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="bg-white p-2 rounded-md shadow-lg">
@@ -89,19 +97,33 @@ const Navbar = () => {
                         </div>
                       </Button>
                       <Link to="/ia-conecta" className="w-full">
-                        <Button variant="ghost" className="justify-start w-full">
+                        <Button 
+                          variant="ghost" 
+                          className={cn(
+                            "justify-start w-full",
+                            isIaConecta && "bg-purple-50"
+                          )}
+                        >
                           <div className="text-left">
                             <div className="font-medium">IA Conecta</div>
                             <div className="text-xs text-muted-foreground">Solução de IA Sem Limites</div>
                           </div>
                         </Button>
                       </Link>
-                      <Button variant="ghost" className="justify-start">
-                        <div className="text-left">
-                          <div className="font-medium">API Integração</div>
-                          <div className="text-xs text-muted-foreground">Conecte seus sistemas</div>
-                        </div>
-                      </Button>
+                      <Link to="/servidores" className="w-full">
+                        <Button 
+                          variant="ghost" 
+                          className={cn(
+                            "justify-start w-full",
+                            isServidores && "bg-blue-50"
+                          )}
+                        >
+                          <div className="text-left">
+                            <div className="font-medium">Servidores</div>
+                            <div className="text-xs text-muted-foreground">VPS e Dedicados</div>
+                          </div>
+                        </Button>
+                      </Link>
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
@@ -148,8 +170,27 @@ const Navbar = () => {
             >
               Funcionalidades
             </button>
-            <Link to="/ia-conecta" className="text-gray-700 hover:text-arsenal-DEFAULT transition-colors">
+            <Link 
+              to="/ia-conecta" 
+              className={cn(
+                "transition-colors",
+                isIaConecta 
+                  ? "text-arsenal-DEFAULT font-medium" 
+                  : "text-gray-700 hover:text-arsenal-DEFAULT"
+              )}
+            >
               IA Conecta
+            </Link>
+            <Link 
+              to="/servidores" 
+              className={cn(
+                "transition-colors",
+                isServidores 
+                  ? "text-arsenal-DEFAULT font-medium" 
+                  : "text-gray-700 hover:text-arsenal-DEFAULT"
+              )}
+            >
+              Servidores
             </Link>
             <button 
               onClick={() => scrollToSection('faq')}
@@ -204,7 +245,9 @@ const Navbar = () => {
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    API Integração
+                    <Link to="/servidores" className="w-full block">
+                      Servidores
+                    </Link>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -243,9 +286,25 @@ const Navbar = () => {
               </button>
               <Link 
                 to="/ia-conecta"
-                className="text-gray-700 hover:text-arsenal-DEFAULT py-2 transition-colors text-left"
+                className={cn(
+                  "py-2 transition-colors text-left",
+                  isIaConecta 
+                    ? "text-arsenal-DEFAULT font-medium" 
+                    : "text-gray-700 hover:text-arsenal-DEFAULT"
+                )}
               >
                 IA Conecta
+              </Link>
+              <Link 
+                to="/servidores"
+                className={cn(
+                  "py-2 transition-colors text-left",
+                  isServidores 
+                    ? "text-arsenal-DEFAULT font-medium" 
+                    : "text-gray-700 hover:text-arsenal-DEFAULT"
+                )}
+              >
+                Servidores
               </Link>
               <button 
                 onClick={() => scrollToSection('faq')}

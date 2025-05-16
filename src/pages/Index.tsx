@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import ZproSection from '@/components/ZproSection';
@@ -18,6 +18,8 @@ import FreeTrial from '@/components/FreeTrial';
 import TransformeSection from '@/components/TransformeSection';
 
 const Index = () => {
+  const location = useLocation();
+  
   useEffect(() => {
     // Initialize fade-in animations
     const handleScroll = () => {
@@ -62,17 +64,17 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       <Navbar />
       
-      {/* Tabs de navegação */}
+      {/* Tabs de navegação - com valor dinâmico baseado na rota atual */}
       <div className="container mx-auto mt-4 mb-8 px-4">
-        <Tabs defaultValue="home" className="w-full flex justify-center">
+        <Tabs defaultValue={location.pathname === '/' ? 'home' : location.pathname.replace('/', '')} className="w-full flex justify-center">
           <TabsList>
             <TabsTrigger value="home" asChild>
               <Link to="/" className="px-4 py-2">Início</Link>
             </TabsTrigger>
-            <TabsTrigger value="servers" asChild>
+            <TabsTrigger value="servidores" asChild>
               <Link to="/servidores" className="px-4 py-2">Servidores</Link>
             </TabsTrigger>
-            <TabsTrigger value="ia" asChild>
+            <TabsTrigger value="ia-conecta" asChild>
               <Link to="/ia-conecta" className="px-4 py-2">IA Conecta</Link>
             </TabsTrigger>
           </TabsList>
