@@ -26,6 +26,9 @@ const PricingSection = () => {
     }, {
       icon: <Database className="w-4 h-4 text-blue-500" />,
       text: "Servidor no Brasil"
+    }, {
+      icon: <Check className="w-4 h-4 text-green-500" />,
+      text: "Uptime superior à 99,9%"
     }],
     clients: "Até 15 clientes",
     connections: "Até 18 conexões"
@@ -47,6 +50,9 @@ const PricingSection = () => {
     }, {
       icon: <Database className="w-4 h-4 text-blue-500" />,
       text: "Servidor no Brasil"
+    }, {
+      icon: <Check className="w-4 h-4 text-green-500" />,
+      text: "Uptime superior à 99,9%"
     }],
     clients: "Até 20 clientes",
     connections: "Até 26 conexões"
@@ -68,6 +74,9 @@ const PricingSection = () => {
     }, {
       icon: <Database className="w-4 h-4 text-blue-500" />,
       text: "Servidor no Brasil"
+    }, {
+      icon: <Check className="w-4 h-4 text-green-500" />,
+      text: "Uptime superior à 99,9%"
     }],
     clients: "Até 40 clientes",
     connections: "Até 34 conexões"
@@ -89,6 +98,9 @@ const PricingSection = () => {
     }, {
       icon: <Database className="w-4 h-4 text-blue-500" />,
       text: "Servidor no Brasil"
+    }, {
+      icon: <Check className="w-4 h-4 text-green-500" />,
+      text: "Uptime superior à 99,9%"
     }],
     clients: "Até 60 clientes",
     connections: "Até 45 conexões"
@@ -606,7 +618,7 @@ const PricingSection = () => {
               
               <CardFooter className="pt-4 pb-8 flex justify-center">
                 <Button asChild className="w-full bg-gradient-to-r from-blue-400 to-blue-500 hover:from-blue-500 hover:to-blue-600 text-blue-900 font-medium py-6 rounded-full transition-all shadow-md hover:shadow-lg">
-                  <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20tenho%20interesse%20no%20Plano%20Enterprise.%20Pode%20me%20enviar%20mais%20informações?" target="_blank" rel="noopener noreferrer">
+                  <a href="https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20tenho%20interesse%20no%20servidor%20dedicado%20${server.name}" target="_blank" rel="noopener noreferrer">
                     Contratar plano enterprise
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
