@@ -12,6 +12,7 @@ import LeadsPage from "./pages/LeadsPage";
 import MasterClass from "./pages/MasterClass";
 import IAConecta from "./pages/IAConecta";
 import Servidores from "./pages/Servidores";
+import PacoteN8N from "./pages/PacoteN8N";
 import CookieBanner from "./components/CookieBanner";
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
               <Route path="/golden-masterclass" element={<MasterClass />} />
               <Route path="/ia-conecta" element={<IAConecta />} />
               <Route path="/servidores" element={<Servidores />} />
+              <Route path="/pacote-n8n" element={<PacoteN8N />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
