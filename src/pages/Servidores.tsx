@@ -1,5 +1,6 @@
-
 import React from 'react';
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Link, useLocation } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
@@ -10,6 +11,8 @@ import { Separator } from "@/components/ui/separator";
 import { Check, ArrowRight, Server, Cpu, HardDrive, Network, Database, Trophy } from 'lucide-react';
 
 const Servidores = () => {
+  const location = useLocation();
+  
   const vpsOptions = [{
     name: "VPS 6GB",
     price: "149.90",
@@ -173,6 +176,27 @@ const Servidores = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
+      
+      {/* Tabs de navegação */}
+      <div className="container mx-auto mt-4 mb-8 px-4">
+        <Tabs 
+          defaultValue="servers" 
+          value={location.pathname === '/' ? 'home' : location.pathname === '/servidores' ? 'servers' : location.pathname === '/ia-conecta' ? 'ia' : 'servers'} 
+          className="w-full flex justify-center"
+        >
+          <TabsList>
+            <TabsTrigger value="home" asChild>
+              <Link to="/" className="px-4 py-2">Início</Link>
+            </TabsTrigger>
+            <TabsTrigger value="servers" asChild>
+              <Link to="/servidores" className="px-4 py-2">Servidores</Link>
+            </TabsTrigger>
+            <TabsTrigger value="ia" asChild>
+              <Link to="/ia-conecta" className="px-4 py-2">IA Conecta</Link>
+            </TabsTrigger>
+          </TabsList>
+        </Tabs>
+      </div>
       
       <main className="container mx-auto py-16 px-4">
         {/* Hero Section */}

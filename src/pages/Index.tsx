@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import ZproSection from '@/components/ZproSection';
@@ -18,6 +18,8 @@ import FreeTrial from '@/components/FreeTrial';
 import TransformeSection from '@/components/TransformeSection';
 
 const Index = () => {
+  const location = useLocation();
+
   useEffect(() => {
     // Initialize fade-in animations
     const handleScroll = () => {
@@ -64,7 +66,11 @@ const Index = () => {
       
       {/* Tabs de navegação */}
       <div className="container mx-auto mt-4 mb-8 px-4">
-        <Tabs defaultValue="home" className="w-full flex justify-center">
+        <Tabs 
+          defaultValue="home" 
+          value={location.pathname === '/' ? 'home' : location.pathname === '/servidores' ? 'servers' : location.pathname === '/ia-conecta' ? 'ia' : 'home'} 
+          className="w-full flex justify-center"
+        >
           <TabsList>
             <TabsTrigger value="home" asChild>
               <Link to="/" className="px-4 py-2">Início</Link>
