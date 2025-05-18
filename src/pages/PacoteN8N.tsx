@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Link, useLocation } from "react-router-dom";
@@ -6,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import FloatingCta from "@/components/FloatingCta";
-import { Server, Database, Box, Cloud, Box as BoxIcon, Cpu, Check, WalletCards } from "lucide-react";
+import { Server, Database, Box, Cloud, Box as BoxIcon, Cpu, Check, WalletCards, HardDrive, Memory, MemoryStick } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -386,6 +385,159 @@ const PacoteN8N = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* VPS Recomendadas */}
+      <section className="py-16 bg-gradient-to-br from-white to-indigo-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-6 text-arsenal-dark">VPS Recomendadas</h2>
+          <p className="text-center text-lg text-gray-700 mb-10 max-w-3xl mx-auto">
+            Para um desempenho ideal do Pacote N8N, recomendamos as seguintes configurações de VPS:
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* VPS 4GB */}
+            <Card className="border-2 border-indigo-100 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+              <div className="h-2 bg-gradient-to-r from-indigo-400 to-blue-400 w-full"></div>
+              <CardHeader className="text-center pb-4">
+                <Badge className="bg-indigo-100 text-indigo-700 mb-2 mx-auto">Iniciante</Badge>
+                <CardTitle className="text-2xl font-bold">VPS 4GB</CardTitle>
+                <div className="mt-2">
+                  <div className="flex items-baseline justify-center">
+                    <span className="text-lg font-medium text-gray-500">R$</span>
+                    <span className="text-4xl font-bold text-indigo-600">89</span>
+                    <span className="text-xl font-semibold text-indigo-600">,90</span>
+                    <span className="text-gray-500 text-sm ml-1">/mês</span>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <MemoryStick className="h-5 w-5 text-indigo-500" />
+                    <span className="font-medium">4 GB RAM</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Cpu className="h-5 w-5 text-indigo-500" />
+                    <span className="font-medium">2 vCPU</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <HardDrive className="h-5 w-5 text-indigo-500" />
+                    <span className="font-medium">30 GB NVMe</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Server className="h-5 w-5 text-indigo-500" />
+                    <span className="font-medium">1 IPV4</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Box className="h-5 w-5 text-indigo-500" />
+                    <span className="font-medium">Servidor no Brasil</span>
+                  </div>
+                </div>
+                
+                <div className="mt-6 bg-indigo-50 rounded-lg p-4 border border-indigo-100">
+                  <h4 className="font-medium text-indigo-700 mb-2">Ideal para:</h4>
+                  <ul className="space-y-1 text-sm">
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
+                      <span>Automações de baixa/média complexidade</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
+                      <span>Até 5 fluxos de trabalho simultâneos</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
+                      <span>Volume moderado de mensagens</span>
+                    </li>
+                  </ul>
+                </div>
+              </CardContent>
+              <CardFooter className="flex justify-center pb-6">
+                <Button className="bg-indigo-600 hover:bg-indigo-700 text-white w-full py-5">
+                  Solicitar Orçamento
+                </Button>
+              </CardFooter>
+            </Card>
+            
+            {/* VPS 6GB */}
+            <Card className="border-2 border-purple-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+              <div className="h-2 bg-gradient-to-r from-purple-500 to-indigo-500 w-full"></div>
+              <CardHeader className="text-center pb-4">
+                <Badge className="bg-purple-100 text-purple-700 mb-2 mx-auto">Recomendado</Badge>
+                <CardTitle className="text-2xl font-bold">VPS 6GB</CardTitle>
+                <div className="mt-2">
+                  <div className="flex items-baseline justify-center">
+                    <span className="text-lg font-medium text-gray-500">R$</span>
+                    <span className="text-4xl font-bold text-purple-600">129</span>
+                    <span className="text-xl font-semibold text-purple-600">,90</span>
+                    <span className="text-gray-500 text-sm ml-1">/mês</span>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <MemoryStick className="h-5 w-5 text-purple-500" />
+                    <span className="font-medium">6 GB RAM</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Cpu className="h-5 w-5 text-purple-500" />
+                    <span className="font-medium">3 vCPU</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <HardDrive className="h-5 w-5 text-purple-500" />
+                    <span className="font-medium">50 GB NVMe</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Server className="h-5 w-5 text-purple-500" />
+                    <span className="font-medium">1 IPV4</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Box className="h-5 w-5 text-purple-500" />
+                    <span className="font-medium">Servidor no Brasil</span>
+                  </div>
+                </div>
+                
+                <div className="mt-6 bg-purple-50 rounded-lg p-4 border border-purple-100">
+                  <h4 className="font-medium text-purple-700 mb-2">Ideal para:</h4>
+                  <ul className="space-y-1 text-sm">
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+                      <span>Automações complexas</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+                      <span>Até 15 fluxos de trabalho simultâneos</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+                      <span>Volume alto de mensagens</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+                      <span>Processamento rápido de solicitações</span>
+                    </li>
+                  </ul>
+                </div>
+              </CardContent>
+              <CardFooter className="flex justify-center pb-6">
+                <Button className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white w-full py-5">
+                  Solicitar Orçamento
+                </Button>
+              </CardFooter>
+            </Card>
+          </div>
+          
+          <div className="mt-10 text-center">
+            <p className="text-gray-700 mb-4">
+              Não encontrou o plano ideal para o seu projeto? Entre em contato para soluções personalizadas.
+            </p>
+            <Button variant="outline" className="border-arsenal-DEFAULT text-arsenal-dark hover:bg-arsenal-light">
+              Solicitar configuração personalizada
+            </Button>
           </div>
         </div>
       </section>
