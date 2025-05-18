@@ -361,7 +361,7 @@ const PacoteN8N = () => {
                 </TableRow>
                 <TableRow>
                   <TableCell className="font-medium">Preço mensal</TableCell>
-                  <TableCell className="text-center font-bold">R$ 299</TableCell>
+                  <TableCell className="text-center font-bold">R$ 119,90</TableCell>
                   <TableCell className="text-center font-bold">R$ 599</TableCell>
                   <TableCell className="text-center font-bold">Consulte</TableCell>
                 </TableRow>
