@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Link, useLocation } from "react-router-dom";
@@ -382,7 +381,7 @@ const PacoteN8N = () => {
         </div>
       </section>
 
-      {/* VPS Recomendadas */}
+      {/* VPS Recomendadas - Nova versão com tabela */}
       <section className="py-16 bg-gradient-to-br from-white to-indigo-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-6 text-arsenal-dark">VPS Recomendadas</h2>
@@ -390,147 +389,123 @@ const PacoteN8N = () => {
             Para um desempenho ideal do Pacote N8N, recomendamos as seguintes configurações de VPS:
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* VPS 4GB */}
-            <Card className="border-2 border-indigo-100 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
-              <div className="h-2 bg-gradient-to-r from-indigo-400 to-blue-400 w-full"></div>
-              <CardHeader className="text-center pb-4">
-                <Badge className="bg-indigo-100 text-indigo-700 mb-2 mx-auto">Iniciante</Badge>
-                <CardTitle className="text-2xl font-bold">VPS 4GB</CardTitle>
-                <div className="mt-2">
-                  <div className="flex items-baseline justify-center">
-                    <span className="text-lg font-medium text-gray-500">R$</span>
-                    <span className="text-4xl font-bold text-indigo-600">89</span>
-                    <span className="text-xl font-semibold text-indigo-600">,90</span>
-                    <span className="text-gray-500 text-sm ml-1">/mês</span>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <MemoryStick className="h-5 w-5 text-indigo-500" />
-                    <span className="font-medium">4 GB RAM</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Cpu className="h-5 w-5 text-indigo-500" />
-                    <span className="font-medium">2 vCPU</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <HardDrive className="h-5 w-5 text-indigo-500" />
-                    <span className="font-medium">30 GB NVMe</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Server className="h-5 w-5 text-indigo-500" />
-                    <span className="font-medium">1 IPV4</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <BoxIcon className="h-5 w-5 text-indigo-500" />
-                    <span className="font-medium">Servidor no Brasil</span>
-                  </div>
-                </div>
-                
-                <div className="mt-6 bg-indigo-50 rounded-lg p-4 border border-indigo-100">
-                  <h4 className="font-medium text-indigo-700 mb-2">Ideal para:</h4>
-                  <ul className="space-y-1 text-sm">
-                    <li className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
-                      <span>Automações de baixa/média complexidade</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
-                      <span>Até 5 fluxos de trabalho simultâneos</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
-                      <span>Volume moderado de mensagens</span>
-                    </li>
-                  </ul>
-                </div>
-              </CardContent>
-              <CardFooter className="flex justify-center pb-6">
-                <Button className="bg-indigo-600 hover:bg-indigo-700 text-white w-full py-5">
-                  Solicitar Orçamento
-                </Button>
-              </CardFooter>
-            </Card>
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white rounded-xl overflow-hidden shadow-xl border border-indigo-100 transform transition-all duration-300 hover:shadow-2xl">
+              <div className="bg-gradient-to-r from-indigo-600 to-purple-600 px-6 py-4">
+                <h3 className="text-xl font-bold text-white">Comparativo de Planos</h3>
+              </div>
+              
+              <div className="overflow-hidden">
+                <Table>
+                  <TableHeader>
+                    <TableRow className="bg-indigo-50/70">
+                      <TableHead className="font-semibold text-indigo-800">Especificações</TableHead>
+                      <TableHead className="font-semibold text-indigo-800">
+                        <div className="flex flex-col">
+                          <span className="text-base">VPS 4GB</span>
+                          <span className="text-xs text-indigo-600">Iniciante</span>
+                        </div>
+                      </TableHead>
+                      <TableHead className="font-semibold text-purple-800">
+                        <div className="flex flex-col">
+                          <span className="text-base">VPS 6GB</span>
+                          <Badge className="w-fit mt-1 bg-purple-100 text-purple-700 border-purple-200">Recomendado</Badge>
+                        </div>
+                      </TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    <TableRow className="hover:bg-indigo-50/50 transition-colors">
+                      <TableCell className="font-medium flex items-center gap-2">
+                        <MemoryStick className="h-5 w-5 text-indigo-500" />
+                        Memória RAM
+                      </TableCell>
+                      <TableCell>4 GB</TableCell>
+                      <TableCell className="font-medium text-purple-800">6 GB</TableCell>
+                    </TableRow>
+                    <TableRow className="hover:bg-indigo-50/50 transition-colors">
+                      <TableCell className="font-medium flex items-center gap-2">
+                        <Cpu className="h-5 w-5 text-indigo-500" />
+                        Processadores
+                      </TableCell>
+                      <TableCell>2 vCPU</TableCell>
+                      <TableCell className="font-medium text-purple-800">3 vCPU</TableCell>
+                    </TableRow>
+                    <TableRow className="hover:bg-indigo-50/50 transition-colors">
+                      <TableCell className="font-medium flex items-center gap-2">
+                        <HardDrive className="h-5 w-5 text-indigo-500" />
+                        Armazenamento
+                      </TableCell>
+                      <TableCell>30 GB NVMe</TableCell>
+                      <TableCell className="font-medium text-purple-800">80 GB NVMe</TableCell>
+                    </TableRow>
+                    <TableRow className="hover:bg-indigo-50/50 transition-colors">
+                      <TableCell className="font-medium flex items-center gap-2">
+                        <Server className="h-5 w-5 text-indigo-500" />
+                        IP Dedicado
+                      </TableCell>
+                      <TableCell>1 IPV4</TableCell>
+                      <TableCell className="font-medium text-purple-800">1 IPV4</TableCell>
+                    </TableRow>
+                    <TableRow className="hover:bg-indigo-50/50 transition-colors">
+                      <TableCell className="font-medium flex items-center gap-2">
+                        <BoxIcon className="h-5 w-5 text-indigo-500" />
+                        Localização
+                      </TableCell>
+                      <TableCell>Brasil</TableCell>
+                      <TableCell className="font-medium text-purple-800">Brasil</TableCell>
+                    </TableRow>
+                    <TableRow className="hover:bg-indigo-50/50 transition-colors">
+                      <TableCell className="font-medium flex items-center gap-2">
+                        <Cloud className="h-5 w-5 text-indigo-500" />
+                        Fluxos de trabalho
+                      </TableCell>
+                      <TableCell>Até 5 simultâneos</TableCell>
+                      <TableCell className="font-medium text-purple-800">Até 15 simultâneos</TableCell>
+                    </TableRow>
+                    <TableRow className="border-t-2 border-indigo-100">
+                      <TableCell className="font-semibold text-indigo-800">Preço mensal</TableCell>
+                      <TableCell>
+                        <div className="flex items-baseline">
+                          <span className="text-sm font-medium text-gray-500">R$</span>
+                          <span className="text-2xl font-bold text-indigo-600">89</span>
+                          <span className="text-lg font-semibold text-indigo-600">,90</span>
+                        </div>
+                      </TableCell>
+                      <TableCell>
+                        <div className="flex items-baseline">
+                          <span className="text-sm font-medium text-gray-500">R$</span>
+                          <span className="text-2xl font-bold text-purple-600">169</span>
+                          <span className="text-lg font-semibold text-purple-600">,90</span>
+                        </div>
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell></TableCell>
+                      <TableCell className="p-4">
+                        <Button className="w-full py-5 bg-indigo-600 hover:bg-indigo-700 text-white">
+                          Solicitar Orçamento
+                        </Button>
+                      </TableCell>
+                      <TableCell className="p-4">
+                        <Button className="w-full py-5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white shadow-lg shadow-purple-200 transition-all hover:shadow-purple-300">
+                          Solicitar Orçamento
+                        </Button>
+                      </TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </div>
+            </div>
             
-            {/* VPS 6GB - Atualizado para 169,90 e 80GB */}
-            <Card className="border-2 border-purple-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
-              <div className="h-2 bg-gradient-to-r from-purple-500 to-indigo-500 w-full"></div>
-              <CardHeader className="text-center pb-4">
-                <Badge className="bg-purple-100 text-purple-700 mb-2 mx-auto">Recomendado</Badge>
-                <CardTitle className="text-2xl font-bold">VPS 6GB</CardTitle>
-                <div className="mt-2">
-                  <div className="flex items-baseline justify-center">
-                    <span className="text-lg font-medium text-gray-500">R$</span>
-                    <span className="text-4xl font-bold text-purple-600">169</span>
-                    <span className="text-xl font-semibold text-purple-600">,90</span>
-                    <span className="text-gray-500 text-sm ml-1">/mês</span>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <MemoryStick className="h-5 w-5 text-purple-500" />
-                    <span className="font-medium">6 GB RAM</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Cpu className="h-5 w-5 text-purple-500" />
-                    <span className="font-medium">3 vCPU</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <HardDrive className="h-5 w-5 text-purple-500" />
-                    <span className="font-medium">80 GB NVMe</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Server className="h-5 w-5 text-purple-500" />
-                    <span className="font-medium">1 IPV4</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <BoxIcon className="h-5 w-5 text-purple-500" />
-                    <span className="font-medium">Servidor no Brasil</span>
-                  </div>
-                </div>
-                
-                <div className="mt-6 bg-purple-50 rounded-lg p-4 border border-purple-100">
-                  <h4 className="font-medium text-purple-700 mb-2">Ideal para:</h4>
-                  <ul className="space-y-1 text-sm">
-                    <li className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
-                      <span>Automações complexas</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
-                      <span>Até 15 fluxos de trabalho simultâneos</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
-                      <span>Volume alto de mensagens</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
-                      <span>Processamento rápido de solicitações</span>
-                    </li>
-                  </ul>
-                </div>
-              </CardContent>
-              <CardFooter className="flex justify-center pb-6">
-                <Button className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white w-full py-5">
-                  Solicitar Orçamento
-                </Button>
-              </CardFooter>
-            </Card>
-          </div>
-          
-          <div className="mt-10 text-center">
-            <p className="text-gray-700 mb-4">
-              Não encontrou o plano ideal para o seu projeto? Entre em contato para soluções personalizadas.
-            </p>
-            <Button variant="outline" className="border-arsenal-DEFAULT text-arsenal-dark hover:bg-arsenal-light">
-              Solicitar configuração personalizada
-            </Button>
+            <div className="mt-10 text-center">
+              <p className="text-gray-700 mb-4">
+                Não encontrou o plano ideal para o seu projeto? Entre em contato para soluções personalizadas.
+              </p>
+              <Button variant="outline" className="border-arsenal-DEFAULT text-arsenal-dark hover:bg-arsenal-light">
+                Solicitar configuração personalizada
+              </Button>
+            </div>
           </div>
         </div>
       </section>
