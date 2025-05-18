@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Link, useLocation } from 'react-router-dom';
@@ -337,49 +338,6 @@ const Servidores = () => {
                 </CardContent>
               </Card>
             ))}
-          </div>
-        </section>
-        
-        {/* Servidores Dedicados - Banner Exclusivo */}
-        <section className="mb-16" id="enterprise-banner">
-          <div className="bg-gradient-to-r from-blue-700 via-blue-800 to-purple-900 rounded-2xl p-8 md:p-12 shadow-xl">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-              <div className="text-white space-y-4 max-w-2xl">
-                <Badge className="bg-purple-500 border-0 text-white mb-2">EXCLUSIVO</Badge>
-                <h2 className="text-3xl md:text-4xl font-bold leading-tight">Plano Enterprise com Servidores Dedicados</h2>
-                <p className="text-lg text-blue-100 mb-4">
-                  Um serviço <span className="font-bold underline decoration-purple-400">exclusivo da Arsenal Cache</span> para clientes que buscam o mais alto nível de performance e segurança para suas operações.
-                </p>
-                <div className="flex flex-wrap gap-4 mt-6">
-                  <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-                    <ShieldCheck className="w-5 h-5 text-purple-300" />
-                    <span className="text-sm font-medium">Suporte dedicado</span>
-                  </div>
-                  <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-                    <Server className="w-5 h-5 text-purple-300" />
-                    <span className="text-sm font-medium">Infraestrutura exclusiva</span>
-                  </div>
-                  <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-                    <Headset className="w-5 h-5 text-purple-300" />
-                    <span className="text-sm font-medium">Atendimento prioritário</span>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 min-w-[300px]">
-                <div className="flex items-center gap-3 mb-4">
-                  <ShieldCheck className="w-8 h-8 text-purple-400" />
-                  <h3 className="text-xl font-bold text-white">Suporte Premium</h3>
-                </div>
-                <ul className="space-y-2">
-                  {exclusiveSupport.map((item, index) => (
-                    <li key={index} className="flex items-center gap-2 text-blue-100">
-                      <Check className="w-4 h-4 text-purple-400 flex-shrink-0" />
-                      <span className="text-sm">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
           </div>
         </section>
         
