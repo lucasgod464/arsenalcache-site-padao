@@ -13,103 +13,105 @@ import { Check, ArrowRight, Server, Cpu, HardDrive, Network, Database, Trophy } 
 const Servidores = () => {
   const location = useLocation();
   
-  const vpsOptions = [{
-    name: "VPS 6GB",
-    price: "149.90",
-    specs: [{
-      icon: <Server className="w-4 h-4 text-blue-500" />,
-      text: "6GB RAM"
+  const vpsOptions = [
+    {
+      name: "VPS 6GB",
+      price: "149.90",
+      specs: [{
+        icon: <Server className="w-4 h-4 text-blue-500" />,
+        text: "6GB RAM"
+      }, {
+        icon: <Cpu className="w-4 h-4 text-blue-500" />,
+        text: "2 vCPU"
+      }, {
+        icon: <HardDrive className="w-4 h-4 text-blue-500" />,
+        text: "100 GB NVMe"
+      }, {
+        icon: <Network className="w-4 h-4 text-blue-500" />,
+        text: "1 IPV4"
+      }, {
+        icon: <Database className="w-4 h-4 text-blue-500" />,
+        text: "Servidor no Brasil"
+      }, {
+        icon: <Check className="w-4 h-4 text-green-500" />,
+        text: "Uptime superior à 99,9%"
+      }],
+      clients: "Até 15 clientes",
+      connections: "Até 18 conexões"
     }, {
-      icon: <Cpu className="w-4 h-4 text-blue-500" />,
-      text: "2 vCPU"
+      name: "VPS 8GB",
+      price: "169.90",
+      specs: [{
+        icon: <Server className="w-4 h-4 text-blue-500" />,
+        text: "8GB RAM"
+      }, {
+        icon: <Cpu className="w-4 h-4 text-blue-500" />,
+        text: "2 vCPU"
+      }, {
+        icon: <HardDrive className="w-4 h-4 text-blue-500" />,
+        text: "120 GB NVMe"
+      }, {
+        icon: <Network className="w-4 h-4 text-blue-500" />,
+        text: "1 IPV4"
+      }, {
+        icon: <Database className="w-4 h-4 text-blue-500" />,
+        text: "Servidor no Brasil"
+      }, {
+        icon: <Check className="w-4 h-4 text-green-500" />,
+        text: "Uptime superior à 99,9%"
+      }],
+      clients: "Até 20 clientes",
+      connections: "Até 26 conexões"
     }, {
-      icon: <HardDrive className="w-4 h-4 text-blue-500" />,
-      text: "100 GB NVMe"
+      name: "VPS 16GB",
+      price: "279.90",
+      specs: [{
+        icon: <Server className="w-4 h-4 text-blue-500" />,
+        text: "16GB RAM"
+      }, {
+        icon: <Cpu className="w-4 h-4 text-blue-500" />,
+        text: "6 vCPU"
+      }, {
+        icon: <HardDrive className="w-4 h-4 text-blue-500" />,
+        text: "200 GB NVMe"
+      }, {
+        icon: <Network className="w-4 h-4 text-blue-500" />,
+        text: "1 IPV4"
+      }, {
+        icon: <Database className="w-4 h-4 text-blue-500" />,
+        text: "Servidor no Brasil"
+      }, {
+        icon: <Check className="w-4 h-4 text-green-500" />,
+        text: "Uptime superior à 99,9%"
+      }],
+      clients: "Até 40 clientes",
+      connections: "Até 34 conexões"
     }, {
-      icon: <Network className="w-4 h-4 text-blue-500" />,
-      text: "1 IPV4"
-    }, {
-      icon: <Database className="w-4 h-4 text-blue-500" />,
-      text: "Servidor no Brasil"
-    }, {
-      icon: <Check className="w-4 h-4 text-green-500" />,
-      text: "Uptime superior à 99,9%"
-    }],
-    clients: "Até 15 clientes",
-    connections: "Até 18 conexões"
-  }, {
-    name: "VPS 8GB",
-    price: "169.90",
-    specs: [{
-      icon: <Server className="w-4 h-4 text-blue-500" />,
-      text: "8GB RAM"
-    }, {
-      icon: <Cpu className="w-4 h-4 text-blue-500" />,
-      text: "2 vCPU"
-    }, {
-      icon: <HardDrive className="w-4 h-4 text-blue-500" />,
-      text: "120 GB NVMe"
-    }, {
-      icon: <Network className="w-4 h-4 text-blue-500" />,
-      text: "1 IPV4"
-    }, {
-      icon: <Database className="w-4 h-4 text-blue-500" />,
-      text: "Servidor no Brasil"
-    }, {
-      icon: <Check className="w-4 h-4 text-green-500" />,
-      text: "Uptime superior à 99,9%"
-    }],
-    clients: "Até 20 clientes",
-    connections: "Até 26 conexões"
-  }, {
-    name: "VPS 16GB",
-    price: "279.90",
-    specs: [{
-      icon: <Server className="w-4 h-4 text-blue-500" />,
-      text: "16GB RAM"
-    }, {
-      icon: <Cpu className="w-4 h-4 text-blue-500" />,
-      text: "6 vCPU"
-    }, {
-      icon: <HardDrive className="w-4 h-4 text-blue-500" />,
-      text: "200 GB NVMe"
-    }, {
-      icon: <Network className="w-4 h-4 text-blue-500" />,
-      text: "1 IPV4"
-    }, {
-      icon: <Database className="w-4 h-4 text-blue-500" />,
-      text: "Servidor no Brasil"
-    }, {
-      icon: <Check className="w-4 h-4 text-green-500" />,
-      text: "Uptime superior à 99,9%"
-    }],
-    clients: "Até 40 clientes",
-    connections: "Até 34 conexões"
-  }, {
-    name: "VPS 32GB",
-    price: "429.90",
-    specs: [{
-      icon: <Server className="w-4 h-4 text-blue-500" />,
-      text: "32GB RAM"
-    }, {
-      icon: <Cpu className="w-4 h-4 text-blue-500" />,
-      text: "6 vCPU"
-    }, {
-      icon: <HardDrive className="w-4 h-4 text-blue-500" />,
-      text: "250 GB NVMe"
-    }, {
-      icon: <Network className="w-4 h-4 text-blue-500" />,
-      text: "1 IPV4"
-    }, {
-      icon: <Database className="w-4 h-4 text-blue-500" />,
-      text: "Servidor no Brasil"
-    }, {
-      icon: <Check className="w-4 h-4 text-green-500" />,
-      text: "Uptime superior à 99,9%"
-    }],
-    clients: "Até 60 clientes",
-    connections: "Até 45 conexões"
-  }];
+      name: "VPS 32GB",
+      price: "429.90",
+      specs: [{
+        icon: <Server className="w-4 h-4 text-blue-500" />,
+        text: "32GB RAM"
+      }, {
+        icon: <Cpu className="w-4 h-4 text-blue-500" />,
+        text: "6 vCPU"
+      }, {
+        icon: <HardDrive className="w-4 h-4 text-blue-500" />,
+        text: "250 GB NVMe"
+      }, {
+        icon: <Network className="w-4 h-4 text-blue-500" />,
+        text: "1 IPV4"
+      }, {
+        icon: <Database className="w-4 h-4 text-blue-500" />,
+        text: "Servidor no Brasil"
+      }, {
+        icon: <Check className="w-4 h-4 text-green-500" />,
+        text: "Uptime superior à 99,9%"
+      }],
+      clients: "Até 60 clientes",
+      connections: "Até 45 conexões"
+    }
+  ];
   
   const dedicatedServers = [{
     name: "Enterprise v1",
@@ -169,6 +171,64 @@ const Servidores = () => {
     extras: ["Link 1 GBPs ilimitado(FUP)", "Proteção DDOS Inclusa", "FTP Backup 200GB Incluso", "1 IPV4 Dedicado Incluso", "Uptime superior à 99,9%"],
     clients: "Até 360 clientes",
     connections: "Até 230 conexões"
+  }, {
+    name: "Enterprise v3",
+    location: "São Paulo - Dedicado 3",
+    price: "4.900.00",
+    specs: [{
+      title: "Processador",
+      details: "2x Intel(R) Xeon(R) CPU E5-2673 v3 @ 2.40GHz"
+    }, {
+      title: "Cores",
+      details: "24 (Totais)"
+    }, {
+      title: "Threads",
+      details: "48 (Totais)"
+    }, {
+      title: "Memória RAM",
+      details: "128 GB DDR4"
+    }, {
+      title: "Discos",
+      details: "1x 2TB NVMe"
+    }, {
+      title: "IPs",
+      details: "5 IPV4 + 16 IPV6"
+    }, {
+      title: "Datacenter",
+      details: "Ascenty SP4"
+    }],
+    extras: ["Link 1 GBPs ilimitado(FUP)", "Proteção DDOS Inclusa", "FTP Backup 200GB Incluso", "1 IPV4 Dedicado Incluso", "Uptime superior à 99,9%"],
+    clients: "Até 500 clientes",
+    connections: "Até 350 conexões"
+  }, {
+    name: "Enterprise v4",
+    location: "São Paulo - Dedicado 4",
+    price: "6.900.00",
+    specs: [{
+      title: "Processador",
+      details: "2x Intel(R) Xeon(R) CPU E5-2673 v3 @ 2.40GHz"
+    }, {
+      title: "Cores",
+      details: "24 (Totais)"
+    }, {
+      title: "Threads",
+      details: "48 (Totais)"
+    }, {
+      title: "Memória RAM",
+      details: "256 GB DDR4"
+    }, {
+      title: "Discos",
+      details: "1x 2TB NVMe"
+    }, {
+      title: "IPs",
+      details: "5 IPV4 + 16 IPV6"
+    }, {
+      title: "Datacenter",
+      details: "Ascenty SP4"
+    }],
+    extras: ["Link 1 GBPs ilimitado(FUP)", "Proteção DDOS Inclusa", "FTP Backup 200GB Incluso", "1 IPV4 Dedicado Incluso", "Uptime superior à 99,9%"],
+    clients: "Até 800 clientes",
+    connections: "Até 500 conexões"
   }];
   
   const premiumBenefits = ["Monitoramento 24/7 de todos os sistemas", "Otimizações proativas de performance", "Escalonamento automático de recursos", "Suporte técnico prioritário", "Backup diário automatizado"];
@@ -282,7 +342,7 @@ const Servidores = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {dedicatedServers.map((server, index) => (
               <Card key={index} className="border border-blue-200 hover:shadow-xl transition-all bg-gradient-to-br from-white to-blue-50">
                 <CardHeader className="bg-gradient-to-r from-blue-700 to-blue-600 pb-6 text-white">
