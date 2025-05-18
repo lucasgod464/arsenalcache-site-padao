@@ -3,13 +3,47 @@ import React from "react";
 import { ArrowRight, Brain } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useToast } from "@/components/ui/use-toast";
 
 const HeroSection = () => {
+  const { toast } = useToast();
+
   // Adicionando a função para rolar até a seção de planos
   const scrollToPlansSection = () => {
     const plansSection = document.getElementById('plans-section');
     if (plansSection) {
       plansSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // Função para enviar dados via webhook quando o usuário clicar para agendar demonstração
+  const handleDemoRequest = async () => {
+    const webhookUrl = "https://construtor.yuccie.pro/webhook-test/0eec6c59-6fea-4e97-adfd-aa57e8745b4f";
+    
+    try {
+      // Enviar dados para o webhook
+      await fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "no-cors",
+        body: JSON.stringify({
+          action: "hero_demo_request",
+          timestamp: new Date().toISOString(),
+          source: "ia-conecta-hero-section"
+        }),
+      });
+      
+      console.log("Solicitação de demonstração da seção hero enviada com sucesso!");
+      
+      toast({
+        title: "Redirecionando para WhatsApp",
+        description: "Você será redirecionado para iniciar uma conversa no WhatsApp.",
+        variant: "default",
+      });
+    } catch (error) {
+      console.error("Erro ao enviar solicitação:", error);
     }
   };
 
@@ -29,13 +63,15 @@ const HeroSection = () => {
               com suporte para os modelos mais avançados como Llama 4, Mistral e mais.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white shadow-lg py-6"
-                asChild>
-                <a href="https://wa.me/5512981156856?text=Olá,%20tenho%20interesse%20no%20IA%20Conecta%20e%20gostaria%20de%20agendar%20uma%20demonstração" 
-                   target="_blank" 
-                   rel="noopener noreferrer">
-                  Agendar demonstração <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white shadow-lg py-6"
+                onClick={() => {
+                  handleDemoRequest();
+                  window.open("https://wa.me/5512981156856?text=Olá,%20tenho%20interesse%20no%20IA%20Conecta%20e%20gostaria%20de%20agendar%20uma%20demonstração", "_blank");
+                }}
+              >
+                Agendar demonstração <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button 
                 size="lg" 

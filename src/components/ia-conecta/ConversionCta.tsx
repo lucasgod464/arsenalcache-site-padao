@@ -4,13 +4,48 @@ import { Check, ArrowRight, MessageCircle, Sparkles } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useToast } from "@/components/ui/use-toast";
 
 const ConversionCta = () => {
+  const { toast } = useToast();
+
   // Função para rolar até a seção de planos
   const scrollToPlansSection = () => {
     const plansSection = document.getElementById('plans-section');
     if (plansSection) {
       plansSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // Função para enviar dados via webhook quando o usuário clicar para agendar demonstração
+  const handleDemoRequest = async (planType: string) => {
+    const webhookUrl = "https://construtor.yuccie.pro/webhook-test/0eec6c59-6fea-4e97-adfd-aa57e8745b4f";
+    
+    try {
+      // Enviar dados para o webhook
+      await fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "no-cors",
+        body: JSON.stringify({
+          action: "demo_request",
+          planType: planType,
+          timestamp: new Date().toISOString(),
+          source: "ia-conecta-page"
+        }),
+      });
+      
+      console.log(`Solicitação de demonstração do plano ${planType} enviada com sucesso!`);
+      
+      toast({
+        title: "Redirecionando para WhatsApp",
+        description: "Você será redirecionado para iniciar uma conversa no WhatsApp.",
+        variant: "default",
+      });
+    } catch (error) {
+      console.error("Erro ao enviar solicitação:", error);
     }
   };
 
@@ -84,15 +119,14 @@ const ConversionCta = () => {
                 variant="purple" 
                 size="lg" 
                 className="w-full"
-                asChild
+                onClick={() => {
+                  handleDemoRequest("empresarial");
+                  window.open("https://wa.me/5512981156856?text=Olá,%20tenho%20interesse%20no%20plano%20empresarial%20de%20R$1.000/mês", "_blank");
+                }}
               >
-                <a href="https://wa.me/5512981156856?text=Olá,%20tenho%20interesse%20no%20plano%20empresarial%20de%20R$1.000/mês" 
-                   target="_blank" 
-                   rel="noopener noreferrer">
-                  <MessageCircle className="mr-2 h-5 w-5" />
-                  Agendar demonstração
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
+                <MessageCircle className="mr-2 h-5 w-5" />
+                Agendar demonstração
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
           </Card>
@@ -159,13 +193,12 @@ const ConversionCta = () => {
                   variant="purpleOutline" 
                   size="lg" 
                   className="w-full text-white border-white/50 hover:bg-purple-600/60"
-                  asChild
+                  onClick={() => {
+                    handleDemoRequest("personalizado");
+                    window.open("https://wa.me/5512981156856?text=Olá,%20gostaria%20de%20agendar%20uma%20demonstração%20do%20sistema", "_blank");
+                  }}
                 >
-                  <a href="https://wa.me/5512981156856?text=Olá,%20gostaria%20de%20agendar%20uma%20demonstração%20do%20sistema" 
-                     target="_blank" 
-                     rel="noopener noreferrer">
-                    Agendar demonstração
-                  </a>
+                  Agendar demonstração
                 </Button>
                 
                 <Button 

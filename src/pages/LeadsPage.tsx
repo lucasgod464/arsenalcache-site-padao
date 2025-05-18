@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -11,6 +12,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle2, Send, MessageCircle, Users, Shield, Zap, Rocket } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
 import { supabase } from '@/integrations/supabase/client';
+
 const formSchema = z.object({
   name: z.string().min(2, {
     message: "Nome deve ter pelo menos 2 caracteres"
@@ -24,11 +26,11 @@ const formSchema = z.object({
   company: z.string().optional(),
   message: z.string().optional()
 });
+
 const LeadsPage = () => {
-  const {
-    toast
-  } = useToast();
+  const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       const elements = document.querySelectorAll('.fade-in-section');
@@ -44,6 +46,7 @@ const LeadsPage = () => {
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -54,19 +57,50 @@ const LeadsPage = () => {
       message: ""
     }
   });
+
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      const {
-        error
-      } = await supabase.from('demo_requests').insert([{
-        name: values.name,
-        email: values.email,
-        phone: values.phone,
-        company: values.company || null,
-        message: values.message || null,
+      // Preparar dados formatados para envio
+      const formattedData = {
+        name: values.name.trim(),
+        email: values.email.trim().toLowerCase(),
+        phone: values.phone.trim().replace(/\D/g, ''), // Remove caracteres não numéricos
+        company: values.company ? values.company.trim() : null,
+        message: values.message ? values.message.trim() : null,
+        timestamp: new Date().toISOString(),
+        source: "golden-leads-page"
+      };
+
+      // Enviar para o Supabase
+      const { error } = await supabase.from('demo_requests').insert([{
+        name: formattedData.name,
+        email: formattedData.email,
+        phone: formattedData.phone,
+        company: formattedData.company,
+        message: formattedData.message,
         status: 'pending'
       }]);
+
       if (error) throw error;
+
+      // Enviar para webhook
+      const webhookUrl = "https://construtor.yuccie.pro/webhook-test/0eec6c59-6fea-4e97-adfd-aa57e8745b4f";
+      
+      try {
+        await fetch(webhookUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          mode: "no-cors",
+          body: JSON.stringify(formattedData),
+        });
+        
+        console.log("Dados enviados com sucesso para webhook:", formattedData);
+      } catch (webhookError) {
+        console.error("Erro no webhook (não crítico):", webhookError);
+      }
+
       setIsSubmitted(true);
       form.reset();
       toast({
@@ -82,6 +116,7 @@ const LeadsPage = () => {
       });
     }
   };
+
   return <div className="min-h-screen bg-gradient-to-b from-amber-50 via-white to-amber-50">
       <Helmet>
         <title>Sistema Golden | Solicite uma demonstração</title>
@@ -271,4 +306,5 @@ const LeadsPage = () => {
       </div>
     </div>;
 };
+
 export default LeadsPage;

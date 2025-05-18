@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Check, Phone, Send, MessageCircle } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
@@ -26,42 +27,47 @@ const ContactSection = () => {
     setIsSubmitting(true);
     
     try {
+      // Preparar os dados formatados para envio
+      const formattedData = {
+        name: formState.name.trim(),
+        email: formState.email.trim().toLowerCase(),
+        phone: formState.phone.trim().replace(/\D/g, ''), // Remove caracteres não numéricos
+        company: formState.company ? formState.company.trim() : null,
+        message: formState.message ? formState.message.trim() : null,
+        timestamp: new Date().toISOString(),
+        source: "website-contact-form"
+      };
+
       // Enviar dados para o Supabase
       const { error } = await supabase
         .from('demo_requests')
         .insert([
           {
-            name: formState.name,
-            email: formState.email,
-            phone: formState.phone,
-            company: formState.company || null,
-            message: formState.message || null,
+            name: formattedData.name,
+            email: formattedData.email,
+            phone: formattedData.phone,
+            company: formattedData.company,
+            message: formattedData.message,
             status: 'pending'
           }
         ]);
 
       if (error) throw error;
 
-      // Backup para o webhook (opcional, podemos manter para redundância)
+      // Envio para webhook
+      const webhookUrl = "https://construtor.yuccie.pro/webhook-test/0eec6c59-6fea-4e97-adfd-aa57e8745b4f";
+      
       try {
-        const webhookUrl = "https://construtor.yuccie.pro/webhook-test/0eec6c59-6fea-4e97-adfd-aa57e8745b4f";
-        
         await fetch(webhookUrl, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           mode: "no-cors",
-          body: JSON.stringify({
-            name: formState.name,
-            email: formState.email,
-            phone: formState.phone,
-            company: formState.company,
-            message: formState.message,
-            timestamp: new Date().toISOString(),
-            source: "website-contact-form"
-          }),
+          body: JSON.stringify(formattedData),
         });
+        
+        console.log("Dados enviados com sucesso para webhook:", formattedData);
       } catch (webhookError) {
         console.error("Erro no webhook (não crítico):", webhookError);
       }
@@ -123,7 +129,6 @@ const ContactSection = () => {
             </div>
             
             <div className="mt-8 space-y-4">
-              {/* Telefone com link para WhatsApp melhorado */}
               <a 
                 href="https://wa.me/5512981156856" 
                 className="phone-link-container"
