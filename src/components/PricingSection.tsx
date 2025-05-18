@@ -711,7 +711,7 @@ const PricingSection = () => {
           </div>
         </div>
 
-        {/* Nova seção: Crescimento Profissional - Servidores Dedicados */}
+        {/* Nova seção: Crescimento Profissional - Chamada para Servidores Dedicados */}
         <div className="max-w-5xl mx-auto mt-16 pt-6 border-t border-gray-200">
           <div className="text-center mb-8">
             <Badge variant="outline" className="bg-blue-800 text-white border-blue-700 mb-4">
@@ -723,97 +723,39 @@ const PricingSection = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
-            {dedicatedServers.map((server, index) => <Card key={index} className="border border-blue-200 hover:shadow-xl transition-all bg-gradient-to-br from-white to-blue-50">
-                <CardHeader className="bg-gradient-to-r from-blue-700 to-blue-600 pb-6 text-white">
-                  <div className="space-y-1.5">
-                    <Badge className="bg-blue-400 text-blue-900 border-0 mb-2 font-medium">
-                      Servidor Dedicado
-                    </Badge>
-                    <CardTitle className="text-2xl font-bold flex items-center gap-2 text-white">
-                      {server.name}
-                      <Server className="h-5 w-5 text-blue-200" />
-                    </CardTitle>
-                    <CardDescription className="text-blue-100 font-medium">
-                      {server.location}
-                    </CardDescription>
-                  </div>
-                  <div className="mt-4">
-                    <div className="flex items-baseline">
-                      <span className="text-4xl font-extrabold tracking-tight text-white">R${server.price}</span>
-                      <span className="ml-2 text-sm font-medium text-blue-100">BRL/mês</span>
-                    </div>
-                  </div>
-                </CardHeader>
-                
-                <CardContent className="pt-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-semibold mb-3 text-blue-700 text-lg">Especificações:</h4>
-                      <ul className="space-y-3 border-l-2 border-blue-200 pl-4">
-                        {server.specs.map((spec, i) => <li key={i} className="text-sm text-gray-700">
-                            <span className="font-semibold">{spec.title}:</span> {spec.details}
-                          </li>)}
-                      </ul>
-                      
-                      <div className="mt-6 space-y-3">
-                        <div className="bg-blue-100 p-4 rounded-md border border-blue-200">
-                          <p className="text-sm font-semibold text-blue-800 flex items-center gap-2 mb-2">
-                            <Database className="w-4 h-4" />
-                            Capacidade de clientes:
-                          </p>
-                          <div className="bg-white rounded-md p-3 text-center border border-blue-200">
-                            <p className="text-lg font-bold text-blue-700">{server.clients}</p>
-                          </div>
-                        </div>
-                        
-                        <div className="bg-blue-100 p-4 rounded-md border border-blue-200">
-                          <p className="text-sm font-semibold text-blue-800 flex items-center gap-2 mb-2">
-                            <Network className="w-4 h-4" />
-                            Capacidade de conexões:
-                          </p>
-                          <div className="bg-white rounded-md p-3 text-center border border-blue-200">
-                            <p className="text-lg font-bold text-blue-700">{server.connections}</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <h4 className="font-semibold mb-3 text-blue-700 text-lg">Benefícios inclusos:</h4>
-                      <ul className="space-y-2 mb-6">
-                        {server.extras.map((extra, i) => <li key={i} className="flex items-start gap-2">
-                            <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                            <span className="text-sm text-gray-700">{extra}</span>
-                          </li>)}
-                      </ul>
-                      
-                      <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-4 rounded-lg text-white mt-4">
-                        <h4 className="font-semibold mb-3 flex items-center gap-2">
-                          <Trophy className="h-5 w-5" />
-                          Benefícios Premium:
-                        </h4>
-                        <ul className="space-y-2">
-                          {premiumBenefits.slice(0, 5).map((benefit, i) => <li key={i} className="flex items-start gap-2">
-                              <Check className="w-4 h-4 text-blue-200 flex-shrink-0 mt-0.5" />
-                              <span className="text-sm text-blue-50">{benefit}</span>
-                            </li>)}
-                        </ul>
-                      </div>
-                      
-                      <Button asChild className="w-full mt-6 bg-gradient-to-r from-blue-700 to-blue-800 hover:from-blue-800 hover:to-blue-900 text-white py-6 rounded-md transition-all shadow-md hover:shadow-xl">
-                        <a href={`https://api.whatsapp.com/send?phone=5512981156856&text=Olá,%20tenho%20interesse%20no%20servidor%20dedicado%20${server.name}`} target="_blank" rel="noopener noreferrer">
-                          Solicitar proposta
-                          <ArrowRight className="ml-2 h-4 w-4" />
-                        </a>
-                      </Button>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>)}
+          <div className="bg-gradient-to-br from-blue-700 via-blue-800 to-purple-900 rounded-2xl p-8 md:p-12 shadow-xl">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+              <div className="text-white space-y-4 max-w-2xl">
+                <Badge className="bg-purple-500 border-0 text-white mb-2">EXCLUSIVO ARSENAL CACHE</Badge>
+                <h2 className="text-3xl md:text-4xl font-bold leading-tight">Servidores Dedicados Para Grandes Operações</h2>
+                <p className="text-lg text-blue-100 mb-4">
+                  Um serviço <span className="font-bold underline decoration-purple-400">exclusivo da Arsenal Cache</span> para clientes que buscam o mais alto nível de performance e segurança para suas operações.
+                </p>
+                <ul className="space-y-2 mt-4">
+                  <li className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-purple-300 flex-shrink-0 mt-0.5" />
+                    <span className="text-blue-50">Suporte técnico exclusivo 24/7</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-purple-300 flex-shrink-0 mt-0.5" />
+                    <span className="text-blue-50">Infraestrutura dedicada de alto desempenho</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-purple-300 flex-shrink-0 mt-0.5" />
+                    <span className="text-blue-50">Capacidade para centenas de clientes</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="flex-shrink-0">
+                <Button asChild variant="purple" size="lg" className="py-6 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all text-base">
+                  <Link to="/servidores#enterprise-dedicated">
+                    Conheça Nossos Servidores Dedicados
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
           </div>
-          
-          
         </div>
 
         {/* Nova seção: Cotação Personalizada */}
