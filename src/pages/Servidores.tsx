@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Link, useLocation } from 'react-router-dom';
@@ -8,7 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Check, ArrowRight, Server, Cpu, HardDrive, Network, Database, Trophy, ShieldCheck, Support } from 'lucide-react';
+import { Check, ArrowRight, Server, Cpu, HardDrive, Network, Database, Trophy, ShieldCheck, Headset } from 'lucide-react';
 
 const Servidores = () => {
   const location = useLocation();
@@ -361,7 +362,7 @@ const Servidores = () => {
                     <span className="text-sm font-medium">Infraestrutura exclusiva</span>
                   </div>
                   <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-                    <Support className="w-5 h-5 text-purple-300" />
+                    <Headset className="w-5 h-5 text-purple-300" />
                     <span className="text-sm font-medium">Atendimento prioritário</span>
                   </div>
                 </div>
@@ -465,7 +466,7 @@ const Servidores = () => {
                       
                       <div className="bg-gradient-to-r from-purple-600 to-purple-700 p-4 rounded-lg text-white mt-4">
                         <h4 className="font-semibold mb-3 flex items-center gap-2">
-                          <Support className="h-5 w-5" />
+                          <Headset className="h-5 w-5" />
                           Suporte Exclusivo Arsenal:
                         </h4>
                         <ul className="space-y-2">
@@ -525,3 +526,4 @@ const Servidores = () => {
 };
 
 export default Servidores;
+
