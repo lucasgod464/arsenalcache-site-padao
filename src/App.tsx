@@ -7,7 +7,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from "react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import AdminPanel from "./pages/AdminPanel";
 import LeadsPage from "./pages/LeadsPage";
 import MasterClass from "./pages/MasterClass";
 import IAConecta from "./pages/IAConecta";
@@ -28,7 +27,6 @@ function App() {
             <ScrollToTop />
             <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/golden-admin" element={<AdminPanel />} />
               <Route path="/golden-leads" element={<LeadsPage />} />
               <Route path="/golden-masterclass" element={<MasterClass />} />
               <Route path="/ia-conecta" element={<IAConecta />} />
