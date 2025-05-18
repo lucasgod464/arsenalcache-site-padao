@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
@@ -18,7 +17,7 @@ import { ArrowLeft, FileText, Search, Trash2, User, Users, BarChart, Webhook, Se
 import { Link } from 'react-router-dom';
 import DemoRequestsTable from '@/components/DemoRequestsTable';
 import { Switch } from "@/components/ui/switch";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Textarea } from "@/components/ui/textarea";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
@@ -64,9 +63,19 @@ const AdminPanel = () => {
   useEffect(() => {
     const savedWebhookSettings = localStorage.getItem('webhookSettings');
     if (savedWebhookSettings) {
-      const parsed = JSON.parse(savedWebhookSettings);
-      setWebhookSettings(parsed);
-      webhookForm.reset(parsed); // Atualizar o formulário
+      try {
+        const parsed = JSON.parse(savedWebhookSettings);
+        // Certifique-se de que todos os campos necessários estejam presentes
+        const safeSettings = {
+          webhook_url: parsed.webhook_url || webhookSettings.webhook_url,
+          webhook_enabled: parsed.webhook_enabled !== undefined ? parsed.webhook_enabled : webhookSettings.webhook_enabled,
+          webhook_test_payload: parsed.webhook_test_payload || webhookSettings.webhook_test_payload
+        };
+        setWebhookSettings(safeSettings);
+        webhookForm.reset(safeSettings); // Atualizar o formulário
+      } catch (error) {
+        console.error("Erro ao analisar as configurações de webhook:", error);
+      }
     }
   }, []);
 
@@ -108,9 +117,16 @@ const AdminPanel = () => {
 
   // Salvar configurações de webhook
   const onSubmitWebhookSettings = (data: z.infer<typeof webhookFormSchema>) => {
+    // Garantir que todos os campos estejam presentes
+    const completeData = {
+      webhook_url: data.webhook_url,
+      webhook_enabled: data.webhook_enabled,
+      webhook_test_payload: data.webhook_test_payload || webhookSettings.webhook_test_payload
+    };
+    
     // Salvar no localStorage
-    localStorage.setItem('webhookSettings', JSON.stringify(data));
-    setWebhookSettings(data);
+    localStorage.setItem('webhookSettings', JSON.stringify(completeData));
+    setWebhookSettings(completeData);
     
     toast({
       title: "Configurações salvas",
