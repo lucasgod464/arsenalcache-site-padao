@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { ChevronUp, ChevronDown, HelpCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -33,6 +34,26 @@ const faqItems = [
   {
     question: "O que acontece após o período de um ano?",
     answer: "Após um ano, você pode optar por renovar o suporte e atualizações por um valor reduzido. O sistema continuará funcionando mesmo sem a renovação, mas você não receberá novas atualizações ou suporte técnico."
+  },
+  {
+    question: "Quais são os requisitos mínimos de servidor para o sistema?",
+    answer: "Recomendamos um servidor com pelo menos 4GB de RAM, 2 vCPUs e 80GB de armazenamento. Para um desempenho ideal, sugerimos 6GB de RAM e 4 vCPUs, especialmente se você planeja gerenciar muitas conexões."
+  },
+  {
+    question: "É possível personalizar o sistema com minha marca?",
+    answer: "Sim, todos os nossos planos incluem personalização completa com sua marca, logo e cores. O sistema pode ser totalmente adaptado para parecer seu próprio produto, ideal para revendedores."
+  },
+  {
+    question: "O sistema funciona com números internacionais?",
+    answer: "Sim, o sistema é compatível com números de WhatsApp de qualquer país. Você pode conectar números nacionais ou internacionais sem restrições."
+  },
+  {
+    question: "Oferecem treinamento para uso do sistema?",
+    answer: "Sim, oferecemos treinamento completo para você e sua equipe, incluindo documentação detalhada, vídeos tutoriais e sessões de treinamento ao vivo para garantir que você aproveite ao máximo todas as funcionalidades."
+  },
+  {
+    question: "É possível integrar o sistema com outras plataformas?",
+    answer: "Sim, nosso sistema oferece APIs e webhooks que permitem integração com diversas plataformas como CRMs, ERPs, sistemas de e-commerce e outras ferramentas de negócios que sua empresa já utiliza."
   }
 ];
 

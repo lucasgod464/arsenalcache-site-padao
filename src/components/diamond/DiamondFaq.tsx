@@ -1,6 +1,12 @@
 
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, HelpCircle } from 'lucide-react';
+import { 
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger 
+} from "@/components/ui/accordion";
+import { HelpCircle } from 'lucide-react';
 
 type FaqItem = {
   question: string;
@@ -8,8 +14,6 @@ type FaqItem = {
 };
 
 const DiamondFaq = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
-  
   const faqItems: FaqItem[] = [
     {
       question: "Quais são os softwares inclusos em todos os planos?",
@@ -34,16 +38,24 @@ const DiamondFaq = () => {
     {
       question: "Posso personalizar os softwares inclusos?",
       answer: "Sim, todos os softwares podem ser customizados de acordo com as necessidades do seu negócio. Nossa equipe pode ajudar com configurações específicas, integrações adicionais e ajustes para otimizar o uso das ferramentas."
+    },
+    {
+      question: "Qual é o tempo médio de instalação dos serviços?",
+      answer: "A instalação completa dos serviços é realizada em até 24 horas após a confirmação do pagamento. Em casos de alta demanda, o prazo máximo é de até 48 horas."
+    },
+    {
+      question: "Os servidores são monitorados?",
+      answer: "Sim, todos os servidores são monitorados 24/7 por nossa equipe técnica. Utilizamos ferramentas avançadas de monitoramento para garantir a estabilidade e o desempenho ideal dos serviços."
+    },
+    {
+      question: "É possível migrar de outro serviço para o de vocês?",
+      answer: "Sim, oferecemos serviço de migração para clientes que já utilizam outras soluções. Nossa equipe técnica realiza todo o processo, garantindo que seus dados sejam transferidos de forma segura e sem interrupção nos atendimentos."
+    },
+    {
+      question: "Oferecem backup dos dados?",
+      answer: "Sim, todos os planos incluem backup automático diário dos dados. Mantemos backups seguros por 7 dias, garantindo que seus dados estejam protegidos contra perdas acidentais."
     }
   ];
-
-  const toggleFaq = (index: number) => {
-    if (openIndex === index) {
-      setOpenIndex(null);
-    } else {
-      setOpenIndex(index);
-    }
-  };
 
   return (
     <section id="faq" className="py-20 px-4 bg-white">
@@ -62,30 +74,22 @@ const DiamondFaq = () => {
         </div>
 
         <div className="space-y-4">
-          {faqItems.map((item, index) => (
-            <div 
-              key={index}
-              className="border border-blue-100 rounded-xl overflow-hidden transition-all duration-300 bg-white shadow-sm hover:shadow-md"
-            >
-              <button
-                className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
-                onClick={() => toggleFaq(index)}
+          <Accordion type="single" collapsible className="w-full">
+            {faqItems.map((item, index) => (
+              <AccordionItem 
+                key={index} 
+                value={`item-${index}`}
+                className="border border-blue-100 rounded-xl overflow-hidden transition-all duration-300 bg-white shadow-sm hover:shadow-md mb-4"
               >
-                <h3 className="text-lg font-semibold text-gray-900">{item.question}</h3>
-                {openIndex === index ? (
-                  <ChevronUp className="w-5 h-5 text-blue-600" />
-                ) : (
-                  <ChevronDown className="w-5 h-5 text-gray-500" />
-                )}
-              </button>
-              
-              {openIndex === index && (
-                <div className="px-6 pb-6 animate-accordion-down">
-                  <p className="text-gray-700">{item.answer}</p>
-                </div>
-              )}
-            </div>
-          ))}
+                <AccordionTrigger className="px-6 py-4 text-lg font-medium hover:no-underline">
+                  {item.question}
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-6 text-gray-700">
+                  {item.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </div>
     </section>
