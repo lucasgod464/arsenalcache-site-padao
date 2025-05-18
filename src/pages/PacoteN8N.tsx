@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const PacoteN8N = () => {
   const location = useLocation();
@@ -67,226 +68,387 @@ const PacoteN8N = () => {
         </div>
       </section>
 
-      {/* Componentes do Pacote */}
-      <section className="py-16">
+      {/* Componentes do Pacote - SEÇÃO MELHORADA */}
+      <section className="py-16 bg-gradient-to-br from-white to-blue-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-arsenal-dark">Componentes do Pacote</h2>
+          <div className="text-center mb-12">
+            <Badge className="mb-4 bg-purple-100 text-purple-800 hover:bg-purple-200 transition-colors">Tecnologias</Badge>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-arsenal-dark">Componentes do Pacote</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Uma infraestrutura completa para automatizar seus processos e impulsionar sua produtividade
+            </p>
+          </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* N8N */}
-            <Card className="border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300">
+            <Card className="group relative overflow-hidden border border-purple-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-blue-50">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="h-2 bg-gradient-to-r from-blue-500 to-purple-500 w-full"></div>
-              <CardHeader>
-                <div className="flex justify-between items-center">
-                  <Badge className="bg-blue-100 text-blue-800">Automação</Badge>
-                  <Server className="h-6 w-6 text-blue-600" />
+              
+              <div className="absolute top-4 right-4">
+                <div className="p-2 rounded-full bg-blue-100 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                  <Server className="h-6 w-6" />
                 </div>
-                <CardTitle className="text-xl mt-3">n8n</CardTitle>
-                <CardDescription>
+              </div>
+              
+              <CardHeader>
+                <Badge className="w-fit bg-blue-100 text-blue-800 group-hover:bg-blue-200 transition-all">Automação</Badge>
+                <CardTitle className="text-2xl mt-4 text-blue-900">n8n</CardTitle>
+                <CardDescription className="text-blue-700">
                   Plataforma de automação de fluxo de trabalho poderosa e extensível
                 </CardDescription>
               </CardHeader>
+              
               <CardContent>
-                <ul className="space-y-2 text-sm">
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>Automação de fluxos de trabalho com interface visual</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>Mais de 200 integrações prontas para uso</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>Execução com base em eventos ou agendamentos</span>
-                  </li>
-                </ul>
+                <Accordion type="single" collapsible className="w-full">
+                  <AccordionItem value="item-1" className="border-b-0">
+                    <AccordionTrigger className="py-2 font-medium text-blue-800 hover:text-blue-600 hover:no-underline">
+                      Recursos principais
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <ul className="space-y-3 mt-2 text-sm">
+                        <li className="flex items-start gap-2">
+                          <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
+                            <Check className="h-3.5 w-3.5 text-green-600" />
+                          </div>
+                          <span className="text-gray-700">Automação de fluxos de trabalho com interface visual intuitiva</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
+                            <Check className="h-3.5 w-3.5 text-green-600" />
+                          </div>
+                          <span className="text-gray-700">Mais de 200 integrações prontas para uso com sistemas populares</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
+                            <Check className="h-3.5 w-3.5 text-green-600" />
+                          </div>
+                          <span className="text-gray-700">Execução com base em eventos, webhooks ou agendamentos personalizados</span>
+                        </li>
+                      </ul>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
               </CardContent>
             </Card>
 
             {/* Evolution API */}
-            <Card className="border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300">
+            <Card className="group relative overflow-hidden border border-green-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-green-50">
+              <div className="absolute inset-0 bg-gradient-to-r from-green-600/5 to-teal-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="h-2 bg-gradient-to-r from-green-500 to-teal-500 w-full"></div>
-              <CardHeader>
-                <div className="flex justify-between items-center">
-                  <Badge className="bg-green-100 text-green-800">Comunicação</Badge>
-                  <Cloud className="h-6 w-6 text-green-600" />
+              
+              <div className="absolute top-4 right-4">
+                <div className="p-2 rounded-full bg-green-100 text-green-600 group-hover:bg-green-600 group-hover:text-white transition-all duration-300">
+                  <Cloud className="h-6 w-6" />
                 </div>
-                <CardTitle className="text-xl mt-3">Evolution API</CardTitle>
-                <CardDescription>
+              </div>
+              
+              <CardHeader>
+                <Badge className="w-fit bg-green-100 text-green-800 group-hover:bg-green-200 transition-all">Comunicação</Badge>
+                <CardTitle className="text-2xl mt-4 text-green-900">Evolution API</CardTitle>
+                <CardDescription className="text-green-700">
                   API robusta para integração com WhatsApp e outros canais
                 </CardDescription>
               </CardHeader>
+              
               <CardContent>
-                <ul className="space-y-2 text-sm">
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>Integração com WhatsApp sem complicações</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>Suporte a múltiplas conexões simultâneas</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>Envio e recebimento de mensagens programaticamente</span>
-                  </li>
-                </ul>
+                <Accordion type="single" collapsible className="w-full">
+                  <AccordionItem value="item-1" className="border-b-0">
+                    <AccordionTrigger className="py-2 font-medium text-green-800 hover:text-green-600 hover:no-underline">
+                      Recursos principais
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <ul className="space-y-3 mt-2 text-sm">
+                        <li className="flex items-start gap-2">
+                          <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
+                            <Check className="h-3.5 w-3.5 text-green-600" />
+                          </div>
+                          <span className="text-gray-700">Integração com WhatsApp sem complicações e sem banimentos</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
+                            <Check className="h-3.5 w-3.5 text-green-600" />
+                          </div>
+                          <span className="text-gray-700">Suporte a múltiplas conexões simultâneas com diferentes números</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
+                            <Check className="h-3.5 w-3.5 text-green-600" />
+                          </div>
+                          <span className="text-gray-700">Envio e recebimento de mensagens, mídia e arquivos programaticamente</span>
+                        </li>
+                      </ul>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
               </CardContent>
             </Card>
 
             {/* Redis */}
-            <Card className="border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300">
+            <Card className="group relative overflow-hidden border border-red-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-red-50">
+              <div className="absolute inset-0 bg-gradient-to-r from-red-600/5 to-orange-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="h-2 bg-gradient-to-r from-red-500 to-orange-500 w-full"></div>
-              <CardHeader>
-                <div className="flex justify-between items-center">
-                  <Badge className="bg-red-100 text-red-800">Cache</Badge>
-                  <Database className="h-6 w-6 text-red-600" />
+              
+              <div className="absolute top-4 right-4">
+                <div className="p-2 rounded-full bg-red-100 text-red-600 group-hover:bg-red-600 group-hover:text-white transition-all duration-300">
+                  <Database className="h-6 w-6" />
                 </div>
-                <CardTitle className="text-xl mt-3">Redis</CardTitle>
-                <CardDescription>
+              </div>
+              
+              <CardHeader>
+                <Badge className="w-fit bg-red-100 text-red-800 group-hover:bg-red-200 transition-all">Cache</Badge>
+                <CardTitle className="text-2xl mt-4 text-red-900">Redis</CardTitle>
+                <CardDescription className="text-red-700">
                   Armazenamento de estrutura de dados em memória de alto desempenho
                 </CardDescription>
               </CardHeader>
+              
               <CardContent>
-                <ul className="space-y-2 text-sm">
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>Cache em memória ultrarrápido</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>Suporte a estruturas de dados complexas</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>Persistência opcional para dados críticos</span>
-                  </li>
-                </ul>
+                <Accordion type="single" collapsible className="w-full">
+                  <AccordionItem value="item-1" className="border-b-0">
+                    <AccordionTrigger className="py-2 font-medium text-red-800 hover:text-red-600 hover:no-underline">
+                      Recursos principais
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <ul className="space-y-3 mt-2 text-sm">
+                        <li className="flex items-start gap-2">
+                          <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
+                            <Check className="h-3.5 w-3.5 text-green-600" />
+                          </div>
+                          <span className="text-gray-700">Cache em memória ultrarrápido para melhorar o desempenho</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
+                            <Check className="h-3.5 w-3.5 text-green-600" />
+                          </div>
+                          <span className="text-gray-700">Suporte a estruturas de dados complexas como listas e hashes</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
+                            <Check className="h-3.5 w-3.5 text-green-600" />
+                          </div>
+                          <span className="text-gray-700">Persistência opcional para dados críticos com recuperação rápida</span>
+                        </li>
+                      </ul>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
               </CardContent>
             </Card>
 
             {/* PostgreSQL */}
-            <Card className="border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300">
+            <Card className="group relative overflow-hidden border border-blue-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-indigo-50">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-indigo-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="h-2 bg-gradient-to-r from-blue-600 to-indigo-600 w-full"></div>
-              <CardHeader>
-                <div className="flex justify-between items-center">
-                  <Badge className="bg-blue-100 text-blue-800">Banco de Dados</Badge>
-                  <Database className="h-6 w-6 text-blue-700" />
+              
+              <div className="absolute top-4 right-4">
+                <div className="p-2 rounded-full bg-blue-100 text-blue-700 group-hover:bg-blue-700 group-hover:text-white transition-all duration-300">
+                  <Database className="h-6 w-6" />
                 </div>
-                <CardTitle className="text-xl mt-3">PostgreSQL</CardTitle>
-                <CardDescription>
+              </div>
+              
+              <CardHeader>
+                <Badge className="w-fit bg-blue-100 text-blue-800 group-hover:bg-blue-200 transition-all">Banco de Dados</Badge>
+                <CardTitle className="text-2xl mt-4 text-blue-900">PostgreSQL</CardTitle>
+                <CardDescription className="text-blue-700">
                   Sistema de banco de dados relacional robusto e confiável
                 </CardDescription>
               </CardHeader>
+              
               <CardContent>
-                <ul className="space-y-2 text-sm">
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>Banco de dados SQL completo e avançado</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>Suporte a transações ACID</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>Extensível com tipos de dados personalizados</span>
-                  </li>
-                </ul>
+                <Accordion type="single" collapsible className="w-full">
+                  <AccordionItem value="item-1" className="border-b-0">
+                    <AccordionTrigger className="py-2 font-medium text-blue-800 hover:text-blue-600 hover:no-underline">
+                      Recursos principais
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <ul className="space-y-3 mt-2 text-sm">
+                        <li className="flex items-start gap-2">
+                          <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
+                            <Check className="h-3.5 w-3.5 text-green-600" />
+                          </div>
+                          <span className="text-gray-700">Banco de dados SQL completo e avançado com suporte a JSON</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
+                            <Check className="h-3.5 w-3.5 text-green-600" />
+                          </div>
+                          <span className="text-gray-700">Suporte a transações ACID para integridade dos dados</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
+                            <Check className="h-3.5 w-3.5 text-green-600" />
+                          </div>
+                          <span className="text-gray-700">Extensível com tipos de dados personalizados e funções</span>
+                        </li>
+                      </ul>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
               </CardContent>
             </Card>
 
             {/* Supabase */}
-            <Card className="border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300">
+            <Card className="group relative overflow-hidden border border-emerald-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-emerald-50">
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/5 to-green-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="h-2 bg-gradient-to-r from-emerald-500 to-green-500 w-full"></div>
-              <CardHeader>
-                <div className="flex justify-between items-center">
-                  <Badge className="bg-emerald-100 text-emerald-800">Backend</Badge>
-                  <Cpu className="h-6 w-6 text-emerald-600" />
+              
+              <div className="absolute top-4 right-4">
+                <div className="p-2 rounded-full bg-emerald-100 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300">
+                  <Cpu className="h-6 w-6" />
                 </div>
-                <CardTitle className="text-xl mt-3">Supabase</CardTitle>
-                <CardDescription>
+              </div>
+              
+              <CardHeader>
+                <Badge className="w-fit bg-emerald-100 text-emerald-800 group-hover:bg-emerald-200 transition-all">Backend</Badge>
+                <CardTitle className="text-2xl mt-4 text-emerald-900">Supabase</CardTitle>
+                <CardDescription className="text-emerald-700">
                   Alternativa de código aberto ao Firebase com recursos avançados
                 </CardDescription>
               </CardHeader>
+              
               <CardContent>
-                <ul className="space-y-2 text-sm">
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>Autenticação, banco de dados e armazenamento</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>APIs RESTful e tempo real</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>Edge Functions para lógica de servidor sem servidor</span>
-                  </li>
-                </ul>
+                <Accordion type="single" collapsible className="w-full">
+                  <AccordionItem value="item-1" className="border-b-0">
+                    <AccordionTrigger className="py-2 font-medium text-emerald-800 hover:text-emerald-600 hover:no-underline">
+                      Recursos principais
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <ul className="space-y-3 mt-2 text-sm">
+                        <li className="flex items-start gap-2">
+                          <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
+                            <Check className="h-3.5 w-3.5 text-green-600" />
+                          </div>
+                          <span className="text-gray-700">Autenticação, banco de dados e armazenamento integrados</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
+                            <Check className="h-3.5 w-3.5 text-green-600" />
+                          </div>
+                          <span className="text-gray-700">APIs RESTful e tempo real para aplicações interativas</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
+                            <Check className="h-3.5 w-3.5 text-green-600" />
+                          </div>
+                          <span className="text-gray-700">Edge Functions para lógica de servidor sem servidor</span>
+                        </li>
+                      </ul>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
               </CardContent>
             </Card>
 
             {/* MinIO */}
-            <Card className="border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300">
+            <Card className="group relative overflow-hidden border border-amber-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-amber-50">
+              <div className="absolute inset-0 bg-gradient-to-r from-yellow-600/5 to-amber-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="h-2 bg-gradient-to-r from-yellow-500 to-amber-500 w-full"></div>
-              <CardHeader>
-                <div className="flex justify-between items-center">
-                  <Badge className="bg-yellow-100 text-yellow-800">Armazenamento</Badge>
-                  <BoxIcon className="h-6 w-6 text-yellow-600" />
+              
+              <div className="absolute top-4 right-4">
+                <div className="p-2 rounded-full bg-amber-100 text-amber-600 group-hover:bg-amber-600 group-hover:text-white transition-all duration-300">
+                  <BoxIcon className="h-6 w-6" />
                 </div>
-                <CardTitle className="text-xl mt-3">MinIO</CardTitle>
-                <CardDescription>
+              </div>
+              
+              <CardHeader>
+                <Badge className="w-fit bg-amber-100 text-amber-800 group-hover:bg-amber-200 transition-all">Armazenamento</Badge>
+                <CardTitle className="text-2xl mt-4 text-amber-900">MinIO</CardTitle>
+                <CardDescription className="text-amber-700">
                   Servidor de armazenamento de objetos de alta performance
                 </CardDescription>
               </CardHeader>
+              
               <CardContent>
-                <ul className="space-y-2 text-sm">
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>Compatível com API Amazon S3</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>Armazenamento escalável e distribuído</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>Proteção de dados com criptografia</span>
-                  </li>
-                </ul>
+                <Accordion type="single" collapsible className="w-full">
+                  <AccordionItem value="item-1" className="border-b-0">
+                    <AccordionTrigger className="py-2 font-medium text-amber-800 hover:text-amber-600 hover:no-underline">
+                      Recursos principais
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <ul className="space-y-3 mt-2 text-sm">
+                        <li className="flex items-start gap-2">
+                          <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
+                            <Check className="h-3.5 w-3.5 text-green-600" />
+                          </div>
+                          <span className="text-gray-700">Compatível com API Amazon S3 para fácil integração</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
+                            <Check className="h-3.5 w-3.5 text-green-600" />
+                          </div>
+                          <span className="text-gray-700">Armazenamento escalável e distribuído para grandes volumes</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
+                            <Check className="h-3.5 w-3.5 text-green-600" />
+                          </div>
+                          <span className="text-gray-700">Proteção de dados com criptografia e políticas de acesso</span>
+                        </li>
+                      </ul>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
               </CardContent>
             </Card>
 
             {/* Portainer */}
-            <Card className="border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 col-span-1 md:col-span-2 lg:col-span-1">
+            <Card className="group relative overflow-hidden border border-cyan-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-cyan-50 col-span-1 md:col-span-2 lg:col-span-3">
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/5 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="h-2 bg-gradient-to-r from-cyan-500 to-blue-500 w-full"></div>
-              <CardHeader>
-                <div className="flex justify-between items-center">
-                  <Badge className="bg-cyan-100 text-cyan-800">Gerenciamento</Badge>
-                  <Box className="h-6 w-6 text-cyan-600" />
+              
+              <div className="absolute top-4 right-4">
+                <div className="p-2 rounded-full bg-cyan-100 text-cyan-600 group-hover:bg-cyan-600 group-hover:text-white transition-all duration-300">
+                  <Box className="h-6 w-6" />
                 </div>
-                <CardTitle className="text-xl mt-3">Portainer</CardTitle>
-                <CardDescription>
+              </div>
+              
+              <CardHeader>
+                <Badge className="w-fit bg-cyan-100 text-cyan-800 group-hover:bg-cyan-200 transition-all">Gerenciamento</Badge>
+                <CardTitle className="text-2xl mt-4 text-cyan-900">Portainer</CardTitle>
+                <CardDescription className="text-cyan-700">
                   Interface gráfica para gerenciamento de contêineres Docker
                 </CardDescription>
               </CardHeader>
+              
               <CardContent>
-                <ul className="space-y-2 text-sm">
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>Gerenciamento visual de contêineres</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>Monitoramento de recursos e logs</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>Controle de acesso baseado em funções</span>
-                  </li>
-                </ul>
+                <div className="grid md:grid-cols-3 gap-6">
+                  <div className="space-y-3">
+                    <h4 className="font-medium text-cyan-800">Gerenciamento Visual</h4>
+                    <ul className="space-y-2 text-sm">
+                      <li className="flex items-start gap-2">
+                        <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
+                          <Check className="h-3.5 w-3.5 text-green-600" />
+                        </div>
+                        <span className="text-gray-700">Interface amigável para gerenciar contêineres Docker sem linha de comando</span>
+                      </li>
+                    </ul>
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <h4 className="font-medium text-cyan-800">Monitoramento</h4>
+                    <ul className="space-y-2 text-sm">
+                      <li className="flex items-start gap-2">
+                        <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
+                          <Check className="h-3.5 w-3.5 text-green-600" />
+                        </div>
+                        <span className="text-gray-700">Monitoramento em tempo real de recursos, logs e eventos do sistema</span>
+                      </li>
+                    </ul>
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <h4 className="font-medium text-cyan-800">Segurança</h4>
+                    <ul className="space-y-2 text-sm">
+                      <li className="flex items-start gap-2">
+                        <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
+                          <Check className="h-3.5 w-3.5 text-green-600" />
+                        </div>
+                        <span className="text-gray-700">Controle de acesso baseado em funções para equipes maiores</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </div>
