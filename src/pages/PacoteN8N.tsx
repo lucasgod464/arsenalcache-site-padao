@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import FloatingCta from "@/components/FloatingCta";
-import { Server, Database, Box, Cloud, Box as BoxIcon, Cpu, Check, WalletCards, HardDrive, Memory, MemoryStick } from "lucide-react";
+import { Server, Database, Box, Cloud, Box as BoxIcon, Cpu, Check, WalletCards, HardDrive, MemoryStick } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -432,7 +432,7 @@ const PacoteN8N = () => {
                     <span className="font-medium">1 IPV4</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Box className="h-5 w-5 text-indigo-500" />
+                    <BoxIcon className="h-5 w-5 text-indigo-500" />
                     <span className="font-medium">Servidor no Brasil</span>
                   </div>
                 </div>
@@ -462,7 +462,7 @@ const PacoteN8N = () => {
               </CardFooter>
             </Card>
             
-            {/* VPS 6GB */}
+            {/* VPS 6GB - Atualizado para 169,90 e 80GB */}
             <Card className="border-2 border-purple-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
               <div className="h-2 bg-gradient-to-r from-purple-500 to-indigo-500 w-full"></div>
               <CardHeader className="text-center pb-4">
@@ -471,7 +471,7 @@ const PacoteN8N = () => {
                 <div className="mt-2">
                   <div className="flex items-baseline justify-center">
                     <span className="text-lg font-medium text-gray-500">R$</span>
-                    <span className="text-4xl font-bold text-purple-600">129</span>
+                    <span className="text-4xl font-bold text-purple-600">169</span>
                     <span className="text-xl font-semibold text-purple-600">,90</span>
                     <span className="text-gray-500 text-sm ml-1">/mês</span>
                   </div>
@@ -489,14 +489,14 @@ const PacoteN8N = () => {
                   </div>
                   <div className="flex items-center gap-3">
                     <HardDrive className="h-5 w-5 text-purple-500" />
-                    <span className="font-medium">50 GB NVMe</span>
+                    <span className="font-medium">80 GB NVMe</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Server className="h-5 w-5 text-purple-500" />
                     <span className="font-medium">1 IPV4</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Box className="h-5 w-5 text-purple-500" />
+                    <BoxIcon className="h-5 w-5 text-purple-500" />
                     <span className="font-medium">Servidor no Brasil</span>
                   </div>
                 </div>
