@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import FloatingCta from "@/components/FloatingCta";
-import { Server, Database, Box, Cloud, Box as BoxIcon, Cpu, Check, DollarSign } from "lucide-react";
+import { Server, Database, Box, Cloud, Box as BoxIcon, Cpu, Check, WalletCards } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -283,210 +283,109 @@ const PacoteN8N = () => {
         </div>
       </section>
 
-      {/* Comparação de Planos */}
-      <section className="py-16 bg-gray-50">
+      {/* Seção de Preço Destaque - Modificada */}
+      <section className="py-16 bg-gradient-to-br from-purple-50 via-blue-50 to-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-arsenal-dark">Planos Disponíveis</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-arsenal-dark">Plano Único Exclusivo</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {/* Plano Básico */}
-            <div className="rounded-xl overflow-hidden bg-white shadow-lg border border-gray-100 hover:shadow-xl hover:border-blue-100 transition-all duration-300 flex flex-col">
-              <div className="bg-gradient-to-r from-blue-400 to-blue-500 p-6 text-white">
-                <h3 className="text-2xl font-bold mb-2">Básico</h3>
-                <p className="opacity-90">Ideal para pequenos projetos</p>
-              </div>
-              <div className="p-6 flex items-center justify-center border-b border-gray-100">
-                <div className="text-center">
-                  <span className="text-4xl font-bold text-arsenal-dark flex items-center justify-center">
-                    <DollarSign className="h-5 w-5 mr-1 text-blue-500" />
-                    <span>119</span>
-                    <span className="text-2xl">,90</span>
-                  </span>
-                  <span className="text-gray-500 mt-1 block">por mês</span>
+          <div className="max-w-3xl mx-auto">
+            <div className="relative overflow-hidden rounded-2xl bg-white border-2 border-purple-300 shadow-2xl hover:shadow-3xl transition-all duration-300">
+              {/* Faixa superior estilizada */}
+              <div className="bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 py-6 px-8 text-white">
+                <div className="flex justify-between items-center">
+                  <div>
+                    <Badge className="bg-white text-purple-700 mb-2">Pagamento Único</Badge>
+                    <h3 className="text-2xl md:text-3xl font-bold">Pacote Completo N8N</h3>
+                    <p className="text-purple-100 mt-1">Para instalação em sua VPS</p>
+                  </div>
+                  <WalletCards className="h-12 w-12 text-purple-200" />
                 </div>
               </div>
-              <div className="p-6 flex-grow">
-                <ul className="space-y-3">
-                  <li className="flex items-center text-sm">
-                    <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
-                    <span>Todas as ferramentas incluídas</span>
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
-                    <span>50GB de armazenamento</span>
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
-                    <span>5 conexões simultâneas</span>
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
-                    <span>Suporte por email</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="p-6 bg-gray-50">
-                <Button className="bg-arsenal-DEFAULT hover:bg-arsenal-dark w-full">Contratar</Button>
-              </div>
-            </div>
-            
-            {/* Plano Profissional */}
-            <div className="rounded-xl overflow-hidden bg-white shadow-lg border border-blue-200 hover:shadow-xl hover:border-blue-300 transition-all duration-300 flex flex-col relative transform scale-105">
-              <div className="absolute top-0 right-0">
-                <Badge className="bg-yellow-400 text-yellow-800 rounded-bl-lg rounded-tr-lg px-3 py-1 font-medium">POPULAR</Badge>
-              </div>
-              <div className="bg-gradient-to-r from-purple-500 to-blue-500 p-6 text-white">
-                <h3 className="text-2xl font-bold mb-2">Profissional</h3>
-                <p className="opacity-90">Para empresas em crescimento</p>
-              </div>
-              <div className="p-6 flex items-center justify-center border-b border-gray-100">
-                <div className="text-center">
-                  <span className="text-4xl font-bold text-arsenal-dark flex items-center justify-center">
-                    <DollarSign className="h-5 w-5 mr-1 text-blue-500" />
-                    <span>599</span>
-                  </span>
-                  <span className="text-gray-500 mt-1 block">por mês</span>
+              
+              {/* Preço destacado */}
+              <div className="flex justify-center -mt-5">
+                <div className="bg-white rounded-full px-8 py-2 shadow-lg border-2 border-purple-200">
+                  <div className="flex items-baseline">
+                    <span className="text-lg font-medium text-purple-800">R$</span>
+                    <span className="text-5xl font-bold text-purple-700 tracking-tight">119</span>
+                    <span className="text-2xl font-bold text-purple-700">,90</span>
+                  </div>
                 </div>
               </div>
-              <div className="p-6 flex-grow">
-                <ul className="space-y-3">
-                  <li className="flex items-center text-sm">
-                    <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
-                    <span>Todas as ferramentas incluídas</span>
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
-                    <span>250GB de armazenamento</span>
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
-                    <span>20 conexões simultâneas</span>
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
-                    <span>Suporte por email e chat</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="p-6 bg-gray-50">
-                <Button className="bg-purple-600 hover:bg-purple-700 w-full">Contratar</Button>
-              </div>
-            </div>
-            
-            {/* Plano Empresarial */}
-            <div className="rounded-xl overflow-hidden bg-white shadow-lg border border-gray-100 hover:shadow-xl hover:border-blue-100 transition-all duration-300 flex flex-col">
-              <div className="bg-gradient-to-r from-gray-700 to-gray-900 p-6 text-white">
-                <h3 className="text-2xl font-bold mb-2">Empresarial</h3>
-                <p className="opacity-90">Solução para grandes empresas</p>
-              </div>
-              <div className="p-6 flex items-center justify-center border-b border-gray-100">
-                <div className="text-center">
-                  <span className="text-2xl font-bold text-arsenal-dark flex items-center justify-center">
-                    Consulte
-                  </span>
-                  <span className="text-gray-500 mt-1 block">preços personalizados</span>
+              
+              {/* Conteúdo do cartão */}
+              <div className="p-8 pt-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <h4 className="text-lg font-semibold text-purple-800 flex items-center gap-2">
+                      <span className="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center text-purple-700">
+                        <Check className="h-4 w-4" />
+                      </span>
+                      Todas as Ferramentas Incluídas
+                    </h4>
+                    <ul className="space-y-2 pl-8">
+                      <li className="flex items-center gap-2 text-gray-700">
+                        <span className="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+                        N8N para automações
+                      </li>
+                      <li className="flex items-center gap-2 text-gray-700">
+                        <span className="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+                        Evolution API para WhatsApp
+                      </li>
+                      <li className="flex items-center gap-2 text-gray-700">
+                        <span className="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+                        Redis para cache rápido
+                      </li>
+                      <li className="flex items-center gap-2 text-gray-700">
+                        <span className="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+                        PostgreSQL para dados
+                      </li>
+                    </ul>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <h4 className="text-lg font-semibold text-purple-800 flex items-center gap-2">
+                      <span className="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center text-purple-700">
+                        <Check className="h-4 w-4" />
+                      </span>
+                      Vantagens Exclusivas
+                    </h4>
+                    <ul className="space-y-2 pl-8">
+                      <li className="flex items-center gap-2 text-gray-700">
+                        <span className="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+                        Pagamento único (sem mensalidades)
+                      </li>
+                      <li className="flex items-center gap-2 text-gray-700">
+                        <span className="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+                        Instalação remota na sua VPS
+                      </li>
+                      <li className="flex items-center gap-2 text-gray-700">
+                        <span className="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+                        Suporte técnico na instalação
+                      </li>
+                      <li className="flex items-center gap-2 text-gray-700">
+                        <span className="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+                        Documentação completa
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div className="bg-purple-50 rounded-xl p-4 mt-6 border border-purple-100">
+                  <h4 className="font-semibold text-purple-800 mb-2">Requisitos para instalação:</h4>
+                  <p className="text-gray-700">Você precisa ter uma VPS (Servidor Privado Virtual) com pelo menos 2GB de RAM, 2 vCPUs e 40GB de espaço em disco. Recomendamos provedores como Digital Ocean, Vultr, Linode ou AWS.</p>
+                </div>
+                
+                <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                  <Button className="bg-purple-600 hover:bg-purple-700 text-white py-6 flex-grow text-lg">
+                    Adquirir Agora
+                  </Button>
+                  <Button variant="outline" className="border-purple-500 text-purple-700 hover:bg-purple-50 py-6 flex-grow text-lg">
+                    Ver demonstração
+                  </Button>
                 </div>
               </div>
-              <div className="p-6 flex-grow">
-                <ul className="space-y-3">
-                  <li className="flex items-center text-sm">
-                    <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
-                    <span>Todas as ferramentas incluídas</span>
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
-                    <span>1TB de armazenamento</span>
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
-                    <span>Conexões ilimitadas</span>
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
-                    <span>Suporte 24/7 Prioritário</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="p-6 bg-gray-50">
-                <Button variant="outline" className="w-full">Fale Conosco</Button>
-              </div>
             </div>
-          </div>
-          
-          <div className="overflow-x-auto mt-16">
-            <h3 className="text-2xl font-bold text-center mb-8 text-arsenal-dark">Detalhes dos Planos</h3>
-            <Table className="w-full border-collapse">
-              <TableHeader>
-                <TableRow>
-                  <TableHead className="w-1/4">Recurso</TableHead>
-                  <TableHead className="w-1/4 text-center">Básico</TableHead>
-                  <TableHead className="w-1/4 text-center">Profissional</TableHead>
-                  <TableHead className="w-1/4 text-center">Empresarial</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                <TableRow>
-                  <TableCell className="font-medium">N8N</TableCell>
-                  <TableCell className="text-center">✓</TableCell>
-                  <TableCell className="text-center">✓</TableCell>
-                  <TableCell className="text-center">✓</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">Evolution API</TableCell>
-                  <TableCell className="text-center">✓</TableCell>
-                  <TableCell className="text-center">✓</TableCell>
-                  <TableCell className="text-center">✓</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">Redis</TableCell>
-                  <TableCell className="text-center">✓</TableCell>
-                  <TableCell className="text-center">✓</TableCell>
-                  <TableCell className="text-center">✓</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">PostgreSQL</TableCell>
-                  <TableCell className="text-center">✓</TableCell>
-                  <TableCell className="text-center">✓</TableCell>
-                  <TableCell className="text-center">✓</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">Supabase</TableCell>
-                  <TableCell className="text-center">✓</TableCell>
-                  <TableCell className="text-center">✓</TableCell>
-                  <TableCell className="text-center">✓</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">MinIO</TableCell>
-                  <TableCell className="text-center">✓</TableCell>
-                  <TableCell className="text-center">✓</TableCell>
-                  <TableCell className="text-center">✓</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">Portainer</TableCell>
-                  <TableCell className="text-center">✓</TableCell>
-                  <TableCell className="text-center">✓</TableCell>
-                  <TableCell className="text-center">✓</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">Armazenamento</TableCell>
-                  <TableCell className="text-center">50GB</TableCell>
-                  <TableCell className="text-center">250GB</TableCell>
-                  <TableCell className="text-center">1TB</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">Conexões simultâneas</TableCell>
-                  <TableCell className="text-center">5</TableCell>
-                  <TableCell className="text-center">20</TableCell>
-                  <TableCell className="text-center">Ilimitadas</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">Suporte técnico</TableCell>
-                  <TableCell className="text-center">Email</TableCell>
-                  <TableCell className="text-center">Email e Chat</TableCell>
-                  <TableCell className="text-center">24/7 Prioritário</TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
           </div>
         </div>
       </section>
