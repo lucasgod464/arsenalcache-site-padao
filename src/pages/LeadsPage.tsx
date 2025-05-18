@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -30,6 +31,10 @@ const LeadsPage = () => {
   const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [webhookStatus, setWebhookStatus] = useState<string | null>(null);
+  const [webhookConfig, setWebhookConfig] = useState({
+    url: '',
+    enabled: false
+  });
   
   useEffect(() => {
     const handleScroll = () => {
@@ -43,6 +48,20 @@ const LeadsPage = () => {
     };
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Check on initial load
+
+    // Carregar configurações de webhook do localStorage
+    const savedConfig = localStorage.getItem('webhookConfig');
+    if (savedConfig) {
+      try {
+        const parsedConfig = JSON.parse(savedConfig);
+        setWebhookConfig({
+          url: parsedConfig.leadsPageWebhookUrl || '',
+          enabled: parsedConfig.leadsPageWebhookEnabled || false
+        });
+      } catch (e) {
+        console.error("Erro ao carregar configurações de webhook:", e);
+      }
+    }
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -88,26 +107,26 @@ const LeadsPage = () => {
         throw supabaseError;
       }
 
-      // Enviar para webhook
-      const webhookUrl = "https://construtor.yuccie.pro/webhook-test/0eec6c59-6fea-4e97-adfd-aa57e8745b4f";
-      
-      setWebhookStatus("sending");
-      
-      try {
-        const webhookResponse = await fetch(webhookUrl, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          mode: "no-cors", // Importante para evitar erros de CORS
-          body: JSON.stringify(formattedData),
-        });
+      // Enviar para webhook se estiver configurado e ativado
+      if (webhookConfig.enabled && webhookConfig.url) {
+        setWebhookStatus("sending");
         
-        console.log("Dados enviados com sucesso para webhook:", formattedData);
-        setWebhookStatus("success");
-      } catch (webhookError) {
-        console.error("Erro no webhook:", webhookError);
-        setWebhookStatus("error");
+        try {
+          await fetch(webhookConfig.url, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            mode: "no-cors", // Importante para evitar erros de CORS
+            body: JSON.stringify(formattedData),
+          });
+          
+          console.log("Dados enviados com sucesso para webhook:", formattedData);
+          setWebhookStatus("success");
+        } catch (webhookError) {
+          console.error("Erro no webhook:", webhookError);
+          setWebhookStatus("error");
+        }
       }
 
       setIsSubmitted(true);

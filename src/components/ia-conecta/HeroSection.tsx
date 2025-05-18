@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { ArrowRight, Brain } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -7,6 +7,26 @@ import { useToast } from "@/components/ui/use-toast";
 
 const HeroSection = () => {
   const { toast } = useToast();
+  const [webhookConfig, setWebhookConfig] = useState({
+    url: '',
+    enabled: false
+  });
+
+  // Carregar configurações de webhook
+  useEffect(() => {
+    const savedConfig = localStorage.getItem('webhookConfig');
+    if (savedConfig) {
+      try {
+        const parsedConfig = JSON.parse(savedConfig);
+        setWebhookConfig({
+          url: parsedConfig.iaConectaWebhookUrl || '',
+          enabled: parsedConfig.iaConectaWebhookEnabled || false
+        });
+      } catch (e) {
+        console.error("Erro ao carregar configurações de webhook:", e);
+      }
+    }
+  }, []);
 
   // Adicionando a função para rolar até a seção de planos
   const scrollToPlansSection = () => {
@@ -18,7 +38,9 @@ const HeroSection = () => {
 
   // Função para enviar dados via webhook quando o usuário clicar para agendar demonstração
   const handleDemoRequest = async () => {
-    const webhookUrl = "https://construtor.yuccie.pro/webhook-test/0eec6c59-6fea-4e97-adfd-aa57e8745b4f";
+    const webhookUrl = webhookConfig.enabled && webhookConfig.url
+      ? webhookConfig.url
+      : "https://construtor.yuccie.pro/webhook-test/0eec6c59-6fea-4e97-adfd-aa57e8745b4f";
     
     try {
       // Enviar dados para o webhook
