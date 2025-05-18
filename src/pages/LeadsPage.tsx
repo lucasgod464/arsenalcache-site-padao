@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -30,7 +29,8 @@ const formSchema = z.object({
 const LeadsPage = () => {
   const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
-
+  const [webhookStatus, setWebhookStatus] = useState<string | null>(null);
+  
   useEffect(() => {
     const handleScroll = () => {
       const elements = document.querySelectorAll('.fade-in-section');
@@ -71,8 +71,10 @@ const LeadsPage = () => {
         source: "golden-leads-page"
       };
 
+      console.log("Dados formatados para envio:", formattedData);
+
       // Enviar para o Supabase
-      const { error } = await supabase.from('demo_requests').insert([{
+      const { error: supabaseError } = await supabase.from('demo_requests').insert([{
         name: formattedData.name,
         email: formattedData.email,
         phone: formattedData.phone,
@@ -81,24 +83,31 @@ const LeadsPage = () => {
         status: 'pending'
       }]);
 
-      if (error) throw error;
+      if (supabaseError) {
+        console.error("Erro ao enviar para Supabase:", supabaseError);
+        throw supabaseError;
+      }
 
       // Enviar para webhook
       const webhookUrl = "https://construtor.yuccie.pro/webhook-test/0eec6c59-6fea-4e97-adfd-aa57e8745b4f";
       
+      setWebhookStatus("sending");
+      
       try {
-        await fetch(webhookUrl, {
+        const webhookResponse = await fetch(webhookUrl, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          mode: "no-cors",
+          mode: "no-cors", // Importante para evitar erros de CORS
           body: JSON.stringify(formattedData),
         });
         
         console.log("Dados enviados com sucesso para webhook:", formattedData);
+        setWebhookStatus("success");
       } catch (webhookError) {
-        console.error("Erro no webhook (não crítico):", webhookError);
+        console.error("Erro no webhook:", webhookError);
+        setWebhookStatus("error");
       }
 
       setIsSubmitted(true);
@@ -361,10 +370,29 @@ const LeadsPage = () => {
                       <Button 
                         type="submit" 
                         className="w-full bg-amber-400 hover:bg-amber-500 text-white glow-button flex items-center justify-center"
+                        disabled={form.formState.isSubmitting}
                       >
-                        <Rocket className="mr-2 h-4 w-4" />
-                        Solicitar demonstração
+                        {form.formState.isSubmitting ? (
+                          <>
+                            <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            Enviando...
+                          </>
+                        ) : (
+                          <>
+                            <Rocket className="mr-2 h-4 w-4" />
+                            Solicitar demonstração
+                          </>
+                        )}
                       </Button>
+
+                      {webhookStatus === 'error' && (
+                        <div className="text-sm text-amber-600 text-center mt-2">
+                          Dados salvos com sucesso, mas ocorreu um erro ao enviar para o webhook externo.
+                        </div>
+                      )}
                     </form>
                   </Form>
                 )}
