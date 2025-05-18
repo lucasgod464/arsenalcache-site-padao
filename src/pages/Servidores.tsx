@@ -342,7 +342,7 @@ const Servidores = () => {
         </section>
         
         {/* Servidores Dedicados - Banner Exclusivo */}
-        <section className="mb-16" id="enterprise-dedicated">
+        <section className="mb-16" id="enterprise-banner">
           <div className="bg-gradient-to-r from-blue-700 via-blue-800 to-purple-900 rounded-2xl p-8 md:p-12 shadow-xl">
             <div className="flex flex-col md:flex-row items-center justify-between gap-8">
               <div className="text-white space-y-4 max-w-2xl">
