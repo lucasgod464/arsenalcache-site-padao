@@ -385,7 +385,7 @@ const Servidores = () => {
         </section>
         
         {/* Dedicated Servers Section */}
-        <section className="pt-8 border-t border-gray-200">
+        <section className="pt-8 border-t border-gray-200" id="dedicated-servers">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold mb-2">Plano de <span className="text-blue-700">Crescimento Profissional</span></h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
