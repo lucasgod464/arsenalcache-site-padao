@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Link, useLocation } from "react-router-dom";
@@ -370,17 +371,9 @@ const PacoteN8N = () => {
                   </div>
                 </div>
                 
-                <div className="bg-purple-50 rounded-xl p-4 mt-6 border border-purple-100">
-                  <h4 className="font-semibold text-purple-800 mb-2">Requisitos para instalação:</h4>
-                  <p className="text-gray-700">Você precisa ter uma VPS (Servidor Privado Virtual) com pelo menos 2GB de RAM, 2 vCPUs e 40GB de espaço em disco. Recomendamos provedores como Digital Ocean, Vultr, Linode ou AWS.</p>
-                </div>
-                
-                <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                <div className="mt-8 flex flex-col sm:flex-row">
                   <Button className="bg-purple-600 hover:bg-purple-700 text-white py-6 flex-grow text-lg">
                     Adquirir Agora
-                  </Button>
-                  <Button variant="outline" className="border-purple-500 text-purple-700 hover:bg-purple-50 py-6 flex-grow text-lg">
-                    Ver demonstração
                   </Button>
                 </div>
               </div>
