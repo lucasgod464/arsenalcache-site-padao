@@ -2,10 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronUp } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useLocation } from 'react-router-dom';
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const { pathname, hash } = useLocation();
 
+  // Efeito para controlar o botão de voltar ao topo
   useEffect(() => {
     const toggleVisibility = () => {
       if (window.pageYOffset > 300) {
@@ -19,6 +22,33 @@ const ScrollToTop = () => {
 
     return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
+
+  // Efeito para rolar para o topo quando a rota mudar
+  useEffect(() => {
+    // Se não houver hash (âncora) na URL, role para o topo
+    if (!hash) {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    } else {
+      // Se houver hash, aguarde a renderização e role para o elemento
+      setTimeout(() => {
+        const element = document.getElementById(hash.substring(1));
+        if (element) {
+          element.scrollIntoView({
+            behavior: 'smooth'
+          });
+        } else {
+          // Se o elemento não for encontrado, role para o topo
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
+    }
+  }, [pathname, hash]);
 
   const scrollToTop = () => {
     window.scrollTo({

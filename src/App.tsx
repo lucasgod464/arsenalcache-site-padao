@@ -14,6 +14,7 @@ import IAConecta from "./pages/IAConecta";
 import Servidores from "./pages/Servidores";
 import PacoteN8N from "./pages/PacoteN8N";
 import CookieBanner from "./components/CookieBanner";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   // Create a client
@@ -23,9 +24,8 @@ function App() {
     <React.StrictMode>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
-          <Toaster />
-          <Sonner />
           <BrowserRouter basename="/">
+            <ScrollToTop />
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/golden-admin" element={<AdminPanel />} />
@@ -37,6 +37,8 @@ function App() {
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
+            <Toaster />
+            <Sonner />
             <CookieBanner />
           </BrowserRouter>
         </TooltipProvider>
