@@ -749,7 +749,7 @@ const PricingSection = () => {
               </div>
               <div className="flex-shrink-0">
                 <Button asChild variant="purple" size="lg" className="py-6 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all text-base">
-                  <Link to="/servidores#enterprise-banner">
+                  <Link to="/servidores">
                     Conheça Nossos Servidores Dedicados
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
