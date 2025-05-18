@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import FloatingCta from "@/components/FloatingCta";
-import { Server, Database, Box, Cloud, Box as BoxIcon, Cpu } from "lucide-react";
+import { Server, Database, Box, Cloud, Box as BoxIcon, Cpu, Check, DollarSign } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -288,7 +288,133 @@ const PacoteN8N = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 text-arsenal-dark">Planos Disponíveis</h2>
           
-          <div className="overflow-x-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            {/* Plano Básico */}
+            <div className="rounded-xl overflow-hidden bg-white shadow-lg border border-gray-100 hover:shadow-xl hover:border-blue-100 transition-all duration-300 flex flex-col">
+              <div className="bg-gradient-to-r from-blue-400 to-blue-500 p-6 text-white">
+                <h3 className="text-2xl font-bold mb-2">Básico</h3>
+                <p className="opacity-90">Ideal para pequenos projetos</p>
+              </div>
+              <div className="p-6 flex items-center justify-center border-b border-gray-100">
+                <div className="text-center">
+                  <span className="text-4xl font-bold text-arsenal-dark flex items-center justify-center">
+                    <DollarSign className="h-5 w-5 mr-1 text-blue-500" />
+                    <span>119</span>
+                    <span className="text-2xl">,90</span>
+                  </span>
+                  <span className="text-gray-500 mt-1 block">por mês</span>
+                </div>
+              </div>
+              <div className="p-6 flex-grow">
+                <ul className="space-y-3">
+                  <li className="flex items-center text-sm">
+                    <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
+                    <span>Todas as ferramentas incluídas</span>
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
+                    <span>50GB de armazenamento</span>
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
+                    <span>5 conexões simultâneas</span>
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
+                    <span>Suporte por email</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="p-6 bg-gray-50">
+                <Button className="bg-arsenal-DEFAULT hover:bg-arsenal-dark w-full">Contratar</Button>
+              </div>
+            </div>
+            
+            {/* Plano Profissional */}
+            <div className="rounded-xl overflow-hidden bg-white shadow-lg border border-blue-200 hover:shadow-xl hover:border-blue-300 transition-all duration-300 flex flex-col relative transform scale-105">
+              <div className="absolute top-0 right-0">
+                <Badge className="bg-yellow-400 text-yellow-800 rounded-bl-lg rounded-tr-lg px-3 py-1 font-medium">POPULAR</Badge>
+              </div>
+              <div className="bg-gradient-to-r from-purple-500 to-blue-500 p-6 text-white">
+                <h3 className="text-2xl font-bold mb-2">Profissional</h3>
+                <p className="opacity-90">Para empresas em crescimento</p>
+              </div>
+              <div className="p-6 flex items-center justify-center border-b border-gray-100">
+                <div className="text-center">
+                  <span className="text-4xl font-bold text-arsenal-dark flex items-center justify-center">
+                    <DollarSign className="h-5 w-5 mr-1 text-blue-500" />
+                    <span>599</span>
+                  </span>
+                  <span className="text-gray-500 mt-1 block">por mês</span>
+                </div>
+              </div>
+              <div className="p-6 flex-grow">
+                <ul className="space-y-3">
+                  <li className="flex items-center text-sm">
+                    <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
+                    <span>Todas as ferramentas incluídas</span>
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
+                    <span>250GB de armazenamento</span>
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
+                    <span>20 conexões simultâneas</span>
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
+                    <span>Suporte por email e chat</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="p-6 bg-gray-50">
+                <Button className="bg-purple-600 hover:bg-purple-700 w-full">Contratar</Button>
+              </div>
+            </div>
+            
+            {/* Plano Empresarial */}
+            <div className="rounded-xl overflow-hidden bg-white shadow-lg border border-gray-100 hover:shadow-xl hover:border-blue-100 transition-all duration-300 flex flex-col">
+              <div className="bg-gradient-to-r from-gray-700 to-gray-900 p-6 text-white">
+                <h3 className="text-2xl font-bold mb-2">Empresarial</h3>
+                <p className="opacity-90">Solução para grandes empresas</p>
+              </div>
+              <div className="p-6 flex items-center justify-center border-b border-gray-100">
+                <div className="text-center">
+                  <span className="text-2xl font-bold text-arsenal-dark flex items-center justify-center">
+                    Consulte
+                  </span>
+                  <span className="text-gray-500 mt-1 block">preços personalizados</span>
+                </div>
+              </div>
+              <div className="p-6 flex-grow">
+                <ul className="space-y-3">
+                  <li className="flex items-center text-sm">
+                    <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
+                    <span>Todas as ferramentas incluídas</span>
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
+                    <span>1TB de armazenamento</span>
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
+                    <span>Conexões ilimitadas</span>
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
+                    <span>Suporte 24/7 Prioritário</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="p-6 bg-gray-50">
+                <Button variant="outline" className="w-full">Fale Conosco</Button>
+              </div>
+            </div>
+          </div>
+          
+          <div className="overflow-x-auto mt-16">
+            <h3 className="text-2xl font-bold text-center mb-8 text-arsenal-dark">Detalhes dos Planos</h3>
             <Table className="w-full border-collapse">
               <TableHeader>
                 <TableRow>
@@ -358,24 +484,6 @@ const PacoteN8N = () => {
                   <TableCell className="text-center">Email</TableCell>
                   <TableCell className="text-center">Email e Chat</TableCell>
                   <TableCell className="text-center">24/7 Prioritário</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">Preço mensal</TableCell>
-                  <TableCell className="text-center font-bold">R$ 119,90</TableCell>
-                  <TableCell className="text-center font-bold">R$ 599</TableCell>
-                  <TableCell className="text-center font-bold">Consulte</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell></TableCell>
-                  <TableCell className="text-center py-4">
-                    <Button className="bg-arsenal-DEFAULT hover:bg-arsenal-dark w-full">Contratar</Button>
-                  </TableCell>
-                  <TableCell className="text-center py-4">
-                    <Button className="bg-arsenal-DEFAULT hover:bg-arsenal-dark w-full">Contratar</Button>
-                  </TableCell>
-                  <TableCell className="text-center py-4">
-                    <Button variant="outline" className="w-full">Fale Conosco</Button>
-                  </TableCell>
                 </TableRow>
               </TableBody>
             </Table>
