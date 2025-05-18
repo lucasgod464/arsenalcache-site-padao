@@ -108,7 +108,7 @@ const PricingSection = () => {
   const dedicatedServers = [{
     name: "Enterprise v1",
     location: "São Paulo - Dedicado 1",
-    price: "2.900.00",
+    price: "2.200.00",
     specs: [{
       title: "Processador",
       details: "2x Intel(R) Xeon(R) CPU E5-2673 v3 @ 2.40GHz"
@@ -137,7 +137,7 @@ const PricingSection = () => {
   }, {
     name: "Enterprise v2",
     location: "São Paulo - Dedicado 2",
-    price: "3.900.00",
+    price: "2.500.00",
     specs: [{
       title: "Processador",
       details: "2x Intel(R) Xeon(R) CPU E5-2673 v3 @ 2.40GHz"

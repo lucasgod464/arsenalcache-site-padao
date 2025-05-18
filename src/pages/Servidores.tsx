@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Link, useLocation } from 'react-router-dom';
@@ -116,7 +117,7 @@ const Servidores = () => {
   const dedicatedServers = [{
     name: "Enterprise v1",
     location: "São Paulo - Dedicado 1",
-    price: "2.900.00",
+    price: "2.200.00",
     specs: [{
       title: "Processador",
       details: "2x Intel(R) Xeon(R) CPU E5-2673 v3 @ 2.40GHz"
@@ -145,7 +146,7 @@ const Servidores = () => {
   }, {
     name: "Enterprise v2",
     location: "São Paulo - Dedicado 2",
-    price: "3.900.00",
+    price: "2.500.00",
     specs: [{
       title: "Processador",
       details: "2x Intel(R) Xeon(R) CPU E5-2673 v3 @ 2.40GHz"
@@ -174,7 +175,7 @@ const Servidores = () => {
   }, {
     name: "Enterprise v3",
     location: "São Paulo - Dedicado 3",
-    price: "4.900.00",
+    price: "2.800.00",
     specs: [{
       title: "Processador",
       details: "2x Intel(R) Xeon(R) CPU E5-2673 v3 @ 2.40GHz"
@@ -203,7 +204,7 @@ const Servidores = () => {
   }, {
     name: "Enterprise v4",
     location: "São Paulo - Dedicado 4",
-    price: "6.900.00",
+    price: "3.200.00",
     specs: [{
       title: "Processador",
       details: "2x Intel(R) Xeon(R) CPU E5-2673 v3 @ 2.40GHz"
