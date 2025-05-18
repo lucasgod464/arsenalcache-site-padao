@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Link, useLocation } from 'react-router-dom';
@@ -9,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Check, ArrowRight, Server, Cpu, HardDrive, Network, Database, Trophy } from 'lucide-react';
+import { Check, ArrowRight, Server, Cpu, HardDrive, Network, Database, Trophy, ShieldCheck, Support } from 'lucide-react';
 
 const Servidores = () => {
   const location = useLocation();
@@ -234,6 +233,14 @@ const Servidores = () => {
   
   const premiumBenefits = ["Monitoramento 24/7 de todos os sistemas", "Otimizações proativas de performance", "Escalonamento automático de recursos", "Suporte técnico prioritário", "Backup diário automatizado"];
 
+  const exclusiveSupport = [
+    "Suporte técnico exclusivo 24/7",
+    "Equipe dedicada para seu servidor",
+    "Monitoramento em tempo real",
+    "Manutenção preventiva",
+    "Resposta prioritária para incidentes"
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -334,6 +341,49 @@ const Servidores = () => {
           </div>
         </section>
         
+        {/* Servidores Dedicados - Banner Exclusivo */}
+        <section className="mb-16">
+          <div className="bg-gradient-to-r from-blue-700 via-blue-800 to-purple-900 rounded-2xl p-8 md:p-12 shadow-xl">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+              <div className="text-white space-y-4 max-w-2xl">
+                <Badge className="bg-purple-500 border-0 text-white mb-2">EXCLUSIVO</Badge>
+                <h2 className="text-3xl md:text-4xl font-bold leading-tight">Plano Enterprise com Servidores Dedicados</h2>
+                <p className="text-lg text-blue-100 mb-4">
+                  Um serviço <span className="font-bold underline decoration-purple-400">exclusivo da Arsenal Cache</span> para clientes que buscam o mais alto nível de performance e segurança para suas operações.
+                </p>
+                <div className="flex flex-wrap gap-4 mt-6">
+                  <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+                    <ShieldCheck className="w-5 h-5 text-purple-300" />
+                    <span className="text-sm font-medium">Suporte dedicado</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+                    <Server className="w-5 h-5 text-purple-300" />
+                    <span className="text-sm font-medium">Infraestrutura exclusiva</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+                    <Support className="w-5 h-5 text-purple-300" />
+                    <span className="text-sm font-medium">Atendimento prioritário</span>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 min-w-[300px]">
+                <div className="flex items-center gap-3 mb-4">
+                  <ShieldCheck className="w-8 h-8 text-purple-400" />
+                  <h3 className="text-xl font-bold text-white">Suporte Premium</h3>
+                </div>
+                <ul className="space-y-2">
+                  {exclusiveSupport.map((item, index) => (
+                    <li key={index} className="flex items-center gap-2 text-blue-100">
+                      <Check className="w-4 h-4 text-purple-400 flex-shrink-0" />
+                      <span className="text-sm">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        
         {/* Dedicated Servers Section */}
         <section className="pt-8 border-t border-gray-200">
           <div className="text-center mb-10">
@@ -348,8 +398,8 @@ const Servidores = () => {
               <Card key={index} className="border border-blue-200 hover:shadow-xl transition-all bg-gradient-to-br from-white to-blue-50">
                 <CardHeader className="bg-gradient-to-r from-blue-700 to-blue-600 pb-6 text-white">
                   <div className="space-y-1.5">
-                    <Badge className="bg-blue-400 text-blue-900 border-0 mb-2 font-medium">
-                      Servidor Dedicado
+                    <Badge className="bg-purple-500 text-white border-0 mb-2 font-medium">
+                      Exclusivo Arsenal Cache
                     </Badge>
                     <CardTitle className="text-2xl font-bold flex items-center gap-2 text-white">
                       {server.name}
@@ -413,18 +463,24 @@ const Servidores = () => {
                         ))}
                       </ul>
                       
-                      <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-4 rounded-lg text-white mt-4">
+                      <div className="bg-gradient-to-r from-purple-600 to-purple-700 p-4 rounded-lg text-white mt-4">
                         <h4 className="font-semibold mb-3 flex items-center gap-2">
-                          <Trophy className="h-5 w-5" />
-                          Benefícios Premium:
+                          <Support className="h-5 w-5" />
+                          Suporte Exclusivo Arsenal:
                         </h4>
                         <ul className="space-y-2">
-                          {premiumBenefits.slice(0, 5).map((benefit, i) => (
-                            <li key={i} className="flex items-start gap-2">
-                              <Check className="w-4 h-4 text-blue-200 flex-shrink-0 mt-0.5" />
-                              <span className="text-sm text-blue-50">{benefit}</span>
-                            </li>
-                          ))}
+                          <li className="flex items-start gap-2">
+                            <Check className="w-4 h-4 text-purple-200 flex-shrink-0 mt-0.5" />
+                            <span className="text-sm text-purple-50">Equipe técnica dedicada 24/7</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <Check className="w-4 h-4 text-purple-200 flex-shrink-0 mt-0.5" />
+                            <span className="text-sm text-purple-50">Monitoramento em tempo real</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <Check className="w-4 h-4 text-purple-200 flex-shrink-0 mt-0.5" />
+                            <span className="text-sm text-purple-50">Resolução prioritária de problemas</span>
+                          </li>
                         </ul>
                       </div>
                       
