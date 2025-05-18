@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Link, useLocation } from 'react-router-dom';
@@ -117,7 +116,7 @@ const Servidores = () => {
   const dedicatedServers = [{
     name: "Enterprise v1",
     location: "São Paulo - Dedicado 1",
-    price: "2.200.00",
+    price: "2.200,00",
     specs: [{
       title: "Processador",
       details: "2x Intel(R) Xeon(R) CPU E5-2673 v3 @ 2.40GHz"
@@ -146,7 +145,7 @@ const Servidores = () => {
   }, {
     name: "Enterprise v2",
     location: "São Paulo - Dedicado 2",
-    price: "2.500.00",
+    price: "2.500,00",
     specs: [{
       title: "Processador",
       details: "2x Intel(R) Xeon(R) CPU E5-2673 v3 @ 2.40GHz"
@@ -175,7 +174,7 @@ const Servidores = () => {
   }, {
     name: "Enterprise v3",
     location: "São Paulo - Dedicado 3",
-    price: "2.800.00",
+    price: "2.800,00",
     specs: [{
       title: "Processador",
       details: "2x Intel(R) Xeon(R) CPU E5-2673 v3 @ 2.40GHz"
@@ -204,7 +203,7 @@ const Servidores = () => {
   }, {
     name: "Enterprise v4",
     location: "São Paulo - Dedicado 4",
-    price: "3.200.00",
+    price: "3.200,00",
     specs: [{
       title: "Processador",
       details: "2x Intel(R) Xeon(R) CPU E5-2673 v3 @ 2.40GHz"
@@ -388,10 +387,13 @@ const Servidores = () => {
         {/* Dedicated Servers Section */}
         <section className="pt-8 border-t border-gray-200">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold mb-2">Servidores <span className="text-blue-700">Dedicados</span></h2>
+            <h2 className="text-3xl font-bold mb-2">Plano de <span className="text-blue-700">Crescimento Profissional</span></h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Máxima performance e escalabilidade para operações de grande porte
+              Servidores dedicados e exclusivos da Arsenal Cache para empresas que precisam de máximo desempenho e escalabilidade
             </p>
+            <Badge className="mt-3 bg-purple-600 text-white border-0">
+              Exclusivo Arsenal Cache
+            </Badge>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -526,4 +528,3 @@ const Servidores = () => {
 };
 
 export default Servidores;
-
