@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Link, useLocation } from "react-router-dom";
@@ -12,21 +11,14 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-
 const PacoteN8N = () => {
   const location = useLocation();
-  
-  return (
-    <div className="min-h-screen bg-white">
+  return <div className="min-h-screen bg-white">
       <Navbar />
       
       {/* Tabs de navegação */}
       <div className="container mx-auto mt-4 mb-8 px-4">
-        <Tabs 
-          defaultValue="n8n" 
-          value={location.pathname === '/' ? 'home' : location.pathname === '/servidores' ? 'servers' : location.pathname === '/ia-conecta' ? 'ia' : location.pathname === '/pacote-n8n' ? 'n8n' : 'n8n'} 
-          className="w-full flex justify-center"
-        >
+        <Tabs defaultValue="n8n" value={location.pathname === '/' ? 'home' : location.pathname === '/servidores' ? 'servers' : location.pathname === '/ia-conecta' ? 'ia' : location.pathname === '/pacote-n8n' ? 'n8n' : 'n8n'} className="w-full flex justify-center">
           <TabsList>
             <TabsTrigger value="home" asChild>
               <Link to="/" className="px-4 py-2">Início</Link>
@@ -51,16 +43,8 @@ const PacoteN8N = () => {
             <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-200 transition-colors">Solução Completa</Badge>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-arsenal-dark">Pacote N8N: Automação e Integração</h1>
             <p className="text-xl text-gray-700 mb-8">Uma solução completa com todas as ferramentas necessárias para automação, integração e gerenciamento de fluxos de trabalho.</p>
-            <Button 
-              size="lg" 
-              className="bg-arsenal-DEFAULT hover:bg-arsenal-dark transition-colors"
-              asChild
-            >
-              <a 
-                href="https://wa.me/5512981156856?text=Olá,%20gostaria%20de%20solicitar%20uma%20demonstração%20do%20pacote%20N8N." 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
+            <Button size="lg" className="bg-arsenal-DEFAULT hover:bg-arsenal-dark transition-colors" asChild>
+              <a href="https://wa.me/5512981156856?text=Olá,%20gostaria%20de%20solicitar%20uma%20demonstração%20do%20pacote%20N8N." target="_blank" rel="noopener noreferrer">
                 Solicitar Demonstração
               </a>
             </Button>
@@ -544,15 +528,8 @@ const PacoteN8N = () => {
                 </div>
                 
                 <div className="mt-8 flex flex-col sm:flex-row">
-                  <Button 
-                    className="bg-purple-600 hover:bg-purple-700 text-white py-6 flex-grow text-lg"
-                    asChild
-                  >
-                    <a 
-                      href="https://wa.me/5512981156856?text=Olá,%20gostaria%20de%20adquirir%20o%20Pacote%20N8N%20por%20R$119,90." 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                    >
+                  <Button className="bg-purple-600 hover:bg-purple-700 text-white py-6 flex-grow text-lg" asChild>
+                    <a href="https://wa.me/5512981156856?text=Olá,%20gostaria%20de%20adquirir%20o%20Pacote%20N8N%20por%20R$119,90." target="_blank" rel="noopener noreferrer">
                       Adquirir Agora
                     </a>
                   </Button>
@@ -657,7 +634,7 @@ const PacoteN8N = () => {
                       <TableCell>
                         <div className="flex items-baseline">
                           <span className="text-sm font-medium text-gray-500">R$</span>
-                          <span className="text-2xl font-bold text-purple-600">169</span>
+                          <span className="text-2xl font-bold text-purple-600">149</span>
                           <span className="text-lg font-semibold text-purple-600">,90</span>
                         </div>
                       </TableCell>
@@ -665,29 +642,15 @@ const PacoteN8N = () => {
                     <TableRow>
                       <TableCell></TableCell>
                       <TableCell className="p-4">
-                        <Button 
-                          className="w-full py-5 bg-indigo-600 hover:bg-indigo-700 text-white"
-                          asChild
-                        >
-                          <a 
-                            href="https://wa.me/5512981156856?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento%20para%20a%20VPS%204GB%20por%20R$89,90/mês" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                          >
+                        <Button className="w-full py-5 bg-indigo-600 hover:bg-indigo-700 text-white" asChild>
+                          <a href="https://wa.me/5512981156856?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento%20para%20a%20VPS%204GB%20por%20R$89,90/mês" target="_blank" rel="noopener noreferrer">
                             Solicitar Orçamento
                           </a>
                         </Button>
                       </TableCell>
                       <TableCell className="p-4">
-                        <Button 
-                          className="w-full py-5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white shadow-lg shadow-purple-200 transition-all hover:shadow-purple-300"
-                          asChild
-                        >
-                          <a 
-                            href="https://wa.me/5512981156856?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento%20para%20a%20VPS%206GB%20por%20R$169,90/mês%20(Recomendada)" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                          >
+                        <Button className="w-full py-5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white shadow-lg shadow-purple-200 transition-all hover:shadow-purple-300" asChild>
+                          <a href="https://wa.me/5512981156856?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento%20para%20a%20VPS%206GB%20por%20R$169,90/mês%20(Recomendada)" target="_blank" rel="noopener noreferrer">
                             Solicitar Orçamento
                           </a>
                         </Button>
@@ -702,16 +665,8 @@ const PacoteN8N = () => {
               <p className="text-gray-700 mb-4">
                 Não encontrou o plano ideal para o seu projeto? Entre em contato para soluções personalizadas.
               </p>
-              <Button 
-                variant="outline" 
-                className="border-arsenal-DEFAULT text-arsenal-dark hover:bg-arsenal-light"
-                asChild
-              >
-                <a 
-                  href="https://wa.me/5512981156856?text=Olá,%20gostaria%20de%20solicitar%20uma%20configuração%20personalizada%20de%20VPS%20para%20o%20pacote%20N8N." 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                >
+              <Button variant="outline" className="border-arsenal-DEFAULT text-arsenal-dark hover:bg-arsenal-light" asChild>
+                <a href="https://wa.me/5512981156856?text=Olá,%20gostaria%20de%20solicitar%20uma%20configuração%20personalizada%20de%20VPS%20para%20o%20pacote%20N8N." target="_blank" rel="noopener noreferrer">
                   Solicitar configuração personalizada
                 </a>
               </Button>
@@ -728,30 +683,13 @@ const PacoteN8N = () => {
             Combine o poder do n8n, Evolution API e outras ferramentas para criar fluxos de trabalho eficientes e escaláveis.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button 
-              size="lg" 
-              className="bg-white text-arsenal-dark hover:bg-gray-200"
-              asChild
-            >
-              <a 
-                href="https://wa.me/5512981156856?text=Olá,%20gostaria%20de%20solicitar%20uma%20demonstração%20do%20pacote%20N8N." 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
+            <Button size="lg" className="bg-white text-arsenal-dark hover:bg-gray-200" asChild>
+              <a href="https://wa.me/5512981156856?text=Olá,%20gostaria%20de%20solicitar%20uma%20demonstração%20do%20pacote%20N8N." target="_blank" rel="noopener noreferrer">
                 Solicitar Demonstração
               </a>
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-white text-white hover:bg-white/10"
-              asChild
-            >
-              <a 
-                href="https://wa.me/5512981156856?text=Olá,%20gostaria%20de%20obter%20a%20documentação%20do%20pacote%20N8N." 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" asChild>
+              <a href="https://wa.me/5512981156856?text=Olá,%20gostaria%20de%20obter%20a%20documentação%20do%20pacote%20N8N." target="_blank" rel="noopener noreferrer">
                 Ver Documentação
               </a>
             </Button>
@@ -762,8 +700,6 @@ const PacoteN8N = () => {
       <Footer />
       <ScrollToTop />
       <FloatingCta />
-    </div>
-  );
+    </div>;
 };
-
 export default PacoteN8N;
