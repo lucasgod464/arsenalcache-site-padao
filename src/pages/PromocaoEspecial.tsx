@@ -14,17 +14,7 @@ import {
   Headphones,
   Star,
   ChevronDown,
-  ChevronUp,
-  Instagram,
-  Facebook,
-  Bot,
-  BarChart3,
-  Calendar,
-  FileText,
-  MessageCircle,
-  Webhook,
-  Database,
-  Send
+  ChevronUp
 } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -66,129 +56,6 @@ const PromocaoEspecial = () => {
     { icon: <Shield className="w-5 h-5" />, text: "Cores personalizadas conforme sua marca" },
     { icon: <Zap className="w-5 h-5" />, text: "Nome do sistema personalizado" },
     { icon: <Headphones className="w-5 h-5" />, text: "Suporte humano personalizado" }
-  ];
-
-  const conexoesAdicionais = [
-    {
-      icon: <Instagram className="w-8 h-8 text-pink-500" />,
-      title: "Instagram Business",
-      description: "Conecte múltiplas contas do Instagram",
-      price: "R$39,90/mês por conexão",
-      features: [
-        "Respostas automáticas no Direct",
-        "Gerenciamento de múltiplas contas",
-        "Relatórios de engajamento",
-        "Integração com CRM"
-      ]
-    },
-    {
-      icon: <Facebook className="w-8 h-8 text-blue-600" />,
-      title: "Facebook Messenger",
-      description: "Integração completa com Facebook",
-      price: "R$39,90/mês por conexão",
-      features: [
-        "Chatbot inteligente",
-        "Respostas automáticas",
-        "Gerenciamento de páginas",
-        "Analytics detalhados"
-      ]
-    },
-    {
-      icon: <Bot className="w-8 h-8 text-purple-500" />,
-      title: "Chatbot IA Premium",
-      description: "Inteligência artificial avançada",
-      price: "R$89,90/mês",
-      features: [
-        "Processamento de linguagem natural",
-        "Respostas contextuais",
-        "Aprendizado contínuo",
-        "Múltiplos idiomas"
-      ]
-    },
-    {
-      icon: <BarChart3 className="w-8 h-8 text-green-600" />,
-      title: "Analytics Avançado",
-      description: "Relatórios detalhados e insights",
-      price: "R$49,90/mês",
-      features: [
-        "Dashboard personalizado",
-        "Métricas em tempo real",
-        "Relatórios automatizados",
-        "Exportação de dados"
-      ]
-    },
-    {
-      icon: <Calendar className="w-8 h-8 text-orange-500" />,
-      title: "Agendamento Inteligente",
-      description: "Sistema de agendamentos integrado",
-      price: "R$29,90/mês",
-      features: [
-        "Calendário sincronizado",
-        "Lembretes automáticos",
-        "Confirmação por WhatsApp",
-        "Integração com Google Calendar"
-      ]
-    },
-    {
-      icon: <FileText className="w-8 h-8 text-indigo-500" />,
-      title: "Gestão de Documentos",
-      description: "Armazenamento e organização",
-      price: "R$34,90/mês",
-      features: [
-        "Upload de arquivos",
-        "Organização automática",
-        "Compartilhamento seguro",
-        "Backup em nuvem"
-      ]
-    },
-    {
-      icon: <MessageCircle className="w-8 h-8 text-teal-500" />,
-      title: "Chat Ao Vivo Premium",
-      description: "Atendimento humanizado aprimorado",
-      price: "R$59,90/mês",
-      features: [
-        "Interface aprimorada",
-        "Transferência entre agentes",
-        "Histórico completo",
-        "Notificações push"
-      ]
-    },
-    {
-      icon: <Webhook className="w-8 h-8 text-yellow-600" />,
-      title: "Integrações Avançadas",
-      description: "APIs e webhooks personalizados",
-      price: "R$79,90/mês",
-      features: [
-        "Webhooks ilimitados",
-        "API personalizada",
-        "Integrações com ERPs",
-        "Sincronização de dados"
-      ]
-    },
-    {
-      icon: <Database className="w-8 h-8 text-red-500" />,
-      title: "CRM Integrado",
-      description: "Gestão completa de clientes",
-      price: "R$69,90/mês",
-      features: [
-        "Base de dados unificada",
-        "Funil de vendas",
-        "Automação de marketing",
-        "Relatórios de conversão"
-      ]
-    },
-    {
-      icon: <Send className="w-8 h-8 text-cyan-500" />,
-      title: "Disparador em Massa",
-      description: "Envios programados e segmentados",
-      price: "R$99,90/mês",
-      features: [
-        "Campanhas segmentadas",
-        "Agendamento avançado",
-        "Templates personalizados",
-        "Controle de envios"
-      ]
-    }
   ];
 
   const vpsOptions = [
@@ -393,7 +260,7 @@ const PromocaoEspecial = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {planoStartFeatures.map((feature, index) => (
               <div key={index} className="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg">
                 <div className="text-blue-600">{feature.icon}</div>
@@ -402,7 +269,68 @@ const PromocaoEspecial = () => {
             ))}
           </div>
 
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Opções de VPS */}
+          <div className="mb-12">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                Escolha sua VPS Dedicada
+              </h3>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Infraestrutura robusta hospedada no Brasil com diferentes capacidades
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {vpsOptions.map((vps, index) => (
+                <Card key={index} className={`relative ${vps.recommended ? 'border-2 border-blue-500 shadow-lg' : ''}`}>
+                  {vps.recommended && (
+                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                      <Badge className="bg-blue-500 text-white px-4 py-1">
+                        Recomendada
+                      </Badge>
+                    </div>
+                  )}
+                  <CardHeader className="text-center">
+                    <CardTitle className="text-2xl font-bold text-gray-900">{vps.name}</CardTitle>
+                    <div className="text-3xl font-bold text-blue-600">{vps.price}</div>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      <div className="flex justify-between items-center p-2 bg-gray-50 rounded">
+                        <span className="font-medium">RAM:</span>
+                        <span className="text-blue-600 font-bold">{vps.specs.ram}</span>
+                      </div>
+                      <div className="flex justify-between items-center p-2 bg-gray-50 rounded">
+                        <span className="font-medium">CPU:</span>
+                        <span className="text-blue-600 font-bold">{vps.specs.cpu}</span>
+                      </div>
+                      <div className="flex justify-between items-center p-2 bg-gray-50 rounded">
+                        <span className="font-medium">Storage:</span>
+                        <span className="text-blue-600 font-bold">{vps.specs.storage}</span>
+                      </div>
+                      <div className="flex justify-between items-center p-2 bg-green-50 rounded">
+                        <span className="font-medium">Conexões:</span>
+                        <span className="text-green-600 font-bold">{vps.specs.connections}</span>
+                      </div>
+                      <div className="flex justify-between items-center p-2 bg-green-50 rounded">
+                        <span className="font-medium">Usuários:</span>
+                        <span className="text-green-600 font-bold">{vps.specs.users}</span>
+                      </div>
+                    </div>
+                    <div className="mt-6">
+                      <div className="text-center text-sm text-gray-600 mb-4">
+                        ✅ Hospedagem no Brasil<br />
+                        ✅ Uptime +99,9%<br />
+                        ✅ IP Dedicado
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
@@ -453,112 +381,6 @@ const PromocaoEspecial = () => {
                 </div>
               </CardContent>
             </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Conexões Adicionais */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Conexões e Recursos Adicionais
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Expanda as funcionalidades do seu sistema com integrações premium
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {conexoesAdicionais.map((conexao, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <CardTitle className="flex items-center space-x-3">
-                    {conexao.icon}
-                    <div>
-                      <div className="text-lg font-bold">{conexao.title}</div>
-                      <div className="text-sm text-gray-600">{conexao.description}</div>
-                    </div>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="text-center mb-4">
-                    <div className="text-2xl font-bold text-blue-600">{conexao.price}</div>
-                  </div>
-                  <ul className="space-y-2">
-                    {conexao.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center space-x-2 text-sm">
-                        <Check className="w-4 h-4 text-green-600 flex-shrink-0" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Opções de VPS */}
-      <section className="py-16 px-4 bg-white">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Escolha sua VPS Dedicada
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Infraestrutura robusta hospedada no Brasil com diferentes capacidades
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {vpsOptions.map((vps, index) => (
-              <Card key={index} className={`relative ${vps.recommended ? 'border-2 border-blue-500 shadow-lg' : ''}`}>
-                {vps.recommended && (
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <Badge className="bg-blue-500 text-white px-4 py-1">
-                      Recomendada
-                    </Badge>
-                  </div>
-                )}
-                <CardHeader className="text-center">
-                  <CardTitle className="text-2xl font-bold text-gray-900">{vps.name}</CardTitle>
-                  <div className="text-3xl font-bold text-blue-600">{vps.price}</div>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center p-2 bg-gray-50 rounded">
-                      <span className="font-medium">RAM:</span>
-                      <span className="text-blue-600 font-bold">{vps.specs.ram}</span>
-                    </div>
-                    <div className="flex justify-between items-center p-2 bg-gray-50 rounded">
-                      <span className="font-medium">CPU:</span>
-                      <span className="text-blue-600 font-bold">{vps.specs.cpu}</span>
-                    </div>
-                    <div className="flex justify-between items-center p-2 bg-gray-50 rounded">
-                      <span className="font-medium">Storage:</span>
-                      <span className="text-blue-600 font-bold">{vps.specs.storage}</span>
-                    </div>
-                    <div className="flex justify-between items-center p-2 bg-green-50 rounded">
-                      <span className="font-medium">Conexões:</span>
-                      <span className="text-green-600 font-bold">{vps.specs.connections}</span>
-                    </div>
-                    <div className="flex justify-between items-center p-2 bg-green-50 rounded">
-                      <span className="font-medium">Usuários:</span>
-                      <span className="text-green-600 font-bold">{vps.specs.users}</span>
-                    </div>
-                  </div>
-                  <div className="mt-6">
-                    <div className="text-center text-sm text-gray-600 mb-4">
-                      ✅ Hospedagem no Brasil<br />
-                      ✅ Uptime +99,9%<br />
-                      ✅ IP Dedicado
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </section>
