@@ -66,8 +66,8 @@ const PromocaoEspecial = () => {
         ram: "8GB",
         cpu: "2 vCPU",
         storage: "120GB NVMe",
-        connections: "Até 50 conexões WhatsApp",
-        users: "Até 100 usuários simultâneos"
+        connections: "Até 26 conexões WhatsApp",
+        users: "Até 20 usuários simultâneos"
       },
       price: "R$169,90/mês",
       recommended: false
@@ -76,10 +76,10 @@ const PromocaoEspecial = () => {
       name: "VPS 16GB",
       specs: {
         ram: "16GB",
-        cpu: "4 vCPU",
-        storage: "240GB NVMe",
-        connections: "Até 150 conexões WhatsApp",
-        users: "Até 300 usuários simultâneos"
+        cpu: "6 vCPU",
+        storage: "200GB NVMe",
+        connections: "Até 34 conexões WhatsApp",
+        users: "Até 40 usuários simultâneos"
       },
       price: "R$289,90/mês",
       recommended: true
@@ -88,10 +88,10 @@ const PromocaoEspecial = () => {
       name: "VPS 32GB",
       specs: {
         ram: "32GB",
-        cpu: "8 vCPU",
-        storage: "480GB NVMe",
-        connections: "Conexões ilimitadas",
-        users: "Usuários ilimitados"
+        cpu: "6 vCPU",
+        storage: "250GB NVMe",
+        connections: "Até 45 conexões WhatsApp",
+        users: "Até 60 usuários simultâneos"
       },
       price: "R$489,90/mês",
       recommended: false
