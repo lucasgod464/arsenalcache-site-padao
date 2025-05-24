@@ -13,6 +13,7 @@ import IAConecta from "./pages/IAConecta";
 import Servidores from "./pages/Servidores";
 import PacoteN8N from "./pages/PacoteN8N";
 import WebhookConfigPage from "./pages/WebhookConfigPage";
+import PromocaoEspecial from "./pages/PromocaoEspecial";
 import CookieBanner from "./components/CookieBanner";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -34,6 +35,7 @@ function App() {
               <Route path="/servidores" element={<Servidores />} />
               <Route path="/pacote-n8n" element={<PacoteN8N />} />
               <Route path="/webhook-config" element={<WebhookConfigPage />} />
+              <Route path="/promocao-especial" element={<PromocaoEspecial />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
