@@ -81,7 +81,7 @@ const PromocaoEspecial = () => {
         connections: "Até 34 conexões WhatsApp",
         users: "Até 40 usuários simultâneos"
       },
-      price: "R$289,90/mês",
+      price: "R$279,90/mês",
       recommended: true
     },
     {
@@ -93,7 +93,7 @@ const PromocaoEspecial = () => {
         connections: "Até 45 conexões WhatsApp",
         users: "Até 60 usuários simultâneos"
       },
-      price: "R$489,90/mês",
+      price: "R$429,90/mês",
       recommended: false
     }
   ];
@@ -135,7 +135,7 @@ const PromocaoEspecial = () => {
     },
     {
       question: "Quantos usuários e conexões posso ter?",
-      answer: "Isso depende da VPS escolhida: VPS 8GB suporta até 100 usuários e 50 conexões WhatsApp, VPS 16GB até 300 usuários e 150 conexões, VPS 32GB oferece usuários e conexões ilimitadas."
+      answer: "Isso depende da VPS escolhida: VPS 8GB suporta até 20 usuários e 26 conexões WhatsApp, VPS 16GB até 40 usuários e 34 conexões, VPS 32GB até 60 usuários e 45 conexões."
     },
     {
       question: "Qual VPS é recomendada para minha empresa?",
