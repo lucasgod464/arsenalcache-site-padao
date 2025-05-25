@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -386,60 +387,6 @@ const PromocaoEspecial = () => {
         </div>
       </section>
 
-      {/* Conexões Opcionais */}
-      <section className="py-16 px-4 bg-white">
-        <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Conexões Opcionais no Sistema
-            </h2>
-            <p className="text-xl text-gray-600">
-              Expanda ainda mais suas possibilidades de atendimento
-            </p>
-          </div>
-
-          <div className="bg-gradient-to-r from-pink-50 via-purple-50 to-blue-50 rounded-2xl p-8 border-2 border-purple-200">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-              <div className="flex items-center space-x-8">
-                <div className="flex items-center space-x-4">
-                  <div className="w-16 h-16 bg-pink-500 rounded-xl flex items-center justify-center">
-                    <Instagram className="w-8 h-8 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900">Instagram</h3>
-                    <p className="text-sm text-gray-600">Conexões ilimitadas</p>
-                  </div>
-                </div>
-                
-                <div className="text-2xl font-bold text-gray-400">+</div>
-                
-                <div className="flex items-center space-x-4">
-                  <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center">
-                    <Facebook className="w-8 h-8 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900">Facebook</h3>
-                    <p className="text-sm text-gray-600">Conexões ilimitadas</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="text-center bg-white rounded-xl p-6 shadow-lg">
-                <div className="text-sm text-gray-600 mb-2">Valor mensal para ambas:</div>
-                <div className="text-4xl font-bold text-blue-600">R$260,00</div>
-                <div className="text-sm text-orange-600 font-medium mt-2">Instagram + Facebook</div>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center mt-8">
-            <p className="text-gray-600 text-sm">
-              * Conexões opcionais podem ser adicionadas ao seu plano a qualquer momento
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Diferenciais */}
       <section className="py-16 px-4 bg-gray-50">
         <div className="container mx-auto max-w-6xl">
@@ -466,8 +413,62 @@ const PromocaoEspecial = () => {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* Conexões Opcionais */}
       <section className="py-16 px-4 bg-white">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Conexões Opcionais no Sistema
+            </h2>
+            <p className="text-xl text-gray-600">
+              Expanda ainda mais suas possibilidades de atendimento
+            </p>
+          </div>
+
+          <div className="bg-gradient-to-r from-pink-50 via-purple-50 to-blue-50 rounded-2xl p-4 md:p-8 border-2 border-purple-200">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8">
+              <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 lg:gap-8 w-full lg:w-auto">
+                <div className="flex items-center space-x-3 sm:space-x-4">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-pink-500 rounded-xl flex items-center justify-center">
+                    <Instagram className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+                  </div>
+                  <div className="text-center sm:text-left">
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900">Instagram</h3>
+                    <p className="text-xs sm:text-sm text-gray-600">Conexões ilimitadas</p>
+                  </div>
+                </div>
+                
+                <div className="text-xl sm:text-2xl font-bold text-gray-400 hidden sm:block">+</div>
+                
+                <div className="flex items-center space-x-3 sm:space-x-4">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-blue-600 rounded-xl flex items-center justify-center">
+                    <Facebook className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+                  </div>
+                  <div className="text-center sm:text-left">
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900">Facebook</h3>
+                    <p className="text-xs sm:text-sm text-gray-600">Conexões ilimitadas</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="text-center bg-white rounded-xl p-4 sm:p-6 shadow-lg w-full sm:w-auto">
+                <div className="text-sm text-gray-600 mb-2">Valor mensal para ambas:</div>
+                <div className="text-3xl sm:text-4xl font-bold text-blue-600">R$260,00</div>
+                <div className="text-sm text-orange-600 font-medium mt-2">Instagram + Facebook</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-8">
+            <p className="text-gray-600 text-sm">
+              * Conexões opcionais podem ser adicionadas ao seu plano a qualquer momento
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 px-4 bg-gray-50">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
