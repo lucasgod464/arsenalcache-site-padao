@@ -1,8 +1,8 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { 
   Check, 
   Clock, 
@@ -16,7 +16,11 @@ import {
   ChevronDown,
   ChevronUp,
   Instagram,
-  Facebook
+  Facebook,
+  Crown,
+  Cpu,
+  HardDrive,
+  Activity
 } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -62,40 +66,76 @@ const PromocaoEspecial = () => {
 
   const vpsOptions = [
     {
-      name: "VPS 8GB",
+      name: "VPS Básica",
+      subtitle: "Ideal para pequenas empresas",
       specs: {
         ram: "8GB",
         cpu: "2 vCPU",
         storage: "120GB NVMe",
-        connections: "Até 26 conexões WhatsApp",
-        users: "Até 20 usuários simultâneos"
+        connections: "26",
+        users: "20",
+        bandwidth: "Ilimitado",
+        uptime: "99.9%"
       },
-      price: "R$169,90/mês",
-      recommended: false
+      price: "R$169,90",
+      originalPrice: "R$299,90",
+      recommended: false,
+      features: [
+        "Hospedagem no Brasil",
+        "IP Dedicado",
+        "SSL Grátis",
+        "Backup Diário",
+        "Suporte 24/7"
+      ]
     },
     {
-      name: "VPS 16GB",
+      name: "VPS Premium",
+      subtitle: "Recomendada para médias empresas",
       specs: {
         ram: "16GB",
         cpu: "6 vCPU",
         storage: "200GB NVMe",
-        connections: "Até 34 conexões WhatsApp",
-        users: "Até 40 usuários simultâneos"
+        connections: "34",
+        users: "40",
+        bandwidth: "Ilimitado",
+        uptime: "99.9%"
       },
-      price: "R$279,90/mês",
-      recommended: true
+      price: "R$279,90",
+      originalPrice: "R$499,90",
+      recommended: true,
+      features: [
+        "Hospedagem no Brasil",
+        "IP Dedicado",
+        "SSL Grátis",
+        "Backup Diário",
+        "Suporte Prioritário 24/7",
+        "Monitoramento Avançado"
+      ]
     },
     {
-      name: "VPS 32GB",
+      name: "VPS Enterprise",
+      subtitle: "Para grandes operações",
       specs: {
         ram: "32GB",
         cpu: "6 vCPU",
         storage: "250GB NVMe",
-        connections: "Até 45 conexões WhatsApp",
-        users: "Até 60 usuários simultâneos"
+        connections: "45",
+        users: "60",
+        bandwidth: "Ilimitado",
+        uptime: "99.9%"
       },
-      price: "R$429,90/mês",
-      recommended: false
+      price: "R$429,90",
+      originalPrice: "R$699,90",
+      recommended: false,
+      features: [
+        "Hospedagem no Brasil",
+        "IP Dedicado",
+        "SSL Grátis",
+        "Backup Diário",
+        "Suporte Dedicado 24/7",
+        "Monitoramento Avançado",
+        "Otimização Personalizada"
+      ]
     }
   ];
 
@@ -150,12 +190,12 @@ const PromocaoEspecial = () => {
 
   const handleWhatsAppContact = () => {
     const message = encodeURIComponent("Olá! Tenho interesse na Promoção Especial: Plano Start + VPS Dedicada. Gostaria de tirar algumas dúvidas.");
-    window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');
+    window.open(`https://wa.me/5512981156856?text=${message}`, '_blank');
   };
 
   const handleContractNow = () => {
     const message = encodeURIComponent("Olá! Quero contratar agora a Promoção Especial: Plano Start + VPS Dedicada por R$99,90!");
-    window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');
+    window.open(`https://wa.me/5512981156856?text=${message}`, '_blank');
   };
 
   return (
@@ -271,7 +311,7 @@ const PromocaoEspecial = () => {
             ))}
           </div>
 
-          {/* Opções de VPS */}
+          {/* Opções de VPS Melhoradas */}
           <div className="mb-12">
             <div className="text-center mb-8">
               <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
@@ -282,53 +322,178 @@ const PromocaoEspecial = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
               {vpsOptions.map((vps, index) => (
-                <Card key={index} className={`relative ${vps.recommended ? 'border-2 border-blue-500 shadow-lg' : ''}`}>
+                <Card key={index} className={`relative overflow-hidden ${vps.recommended 
+                  ? 'border-2 border-blue-500 shadow-2xl scale-105 bg-gradient-to-br from-blue-50 to-indigo-50' 
+                  : 'border border-gray-200 shadow-lg hover:shadow-xl transition-all'}`}>
+                  
                   {vps.recommended && (
-                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                      <Badge className="bg-blue-500 text-white px-4 py-1">
-                        Recomendada
-                      </Badge>
+                    <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-blue-500 to-indigo-500 text-white text-center py-2 text-sm font-bold">
+                      <Crown className="w-4 h-4 inline mr-2" />
+                      MAIS POPULAR
                     </div>
                   )}
-                  <CardHeader className="text-center">
-                    <CardTitle className="text-2xl font-bold text-gray-900">{vps.name}</CardTitle>
-                    <div className="text-3xl font-bold text-blue-600">{vps.price}</div>
+                  
+                  <CardHeader className={`text-center pb-4 ${vps.recommended ? 'pt-12' : 'pt-6'}`}>
+                    <Badge className={`mb-3 self-center ${vps.recommended 
+                      ? 'bg-blue-100 text-blue-800 border-blue-200' 
+                      : 'bg-gray-100 text-gray-700 border-gray-200'}`}>
+                      {vps.subtitle}
+                    </Badge>
+                    <CardTitle className="text-2xl font-bold text-gray-900 mb-2">{vps.name}</CardTitle>
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-center gap-2">
+                        <span className="text-sm text-gray-500 line-through">{vps.originalPrice}</span>
+                        <Badge variant="destructive" className="text-xs">-40%</Badge>
+                      </div>
+                      <div className="text-4xl font-bold text-blue-600">{vps.price}</div>
+                      <p className="text-sm text-gray-500">por mês</p>
+                    </div>
                   </CardHeader>
-                  <CardContent>
-                    <div className="space-y-3">
-                      <div className="flex justify-between items-center p-2 bg-gray-50 rounded">
-                        <span className="font-medium">RAM:</span>
-                        <span className="text-blue-600 font-bold">{vps.specs.ram}</span>
-                      </div>
-                      <div className="flex justify-between items-center p-2 bg-gray-50 rounded">
-                        <span className="font-medium">CPU:</span>
-                        <span className="text-blue-600 font-bold">{vps.specs.cpu}</span>
-                      </div>
-                      <div className="flex justify-between items-center p-2 bg-gray-50 rounded">
-                        <span className="font-medium">Storage:</span>
-                        <span className="text-blue-600 font-bold">{vps.specs.storage}</span>
-                      </div>
-                      <div className="flex justify-between items-center p-2 bg-green-50 rounded">
-                        <span className="font-medium">Conexões:</span>
-                        <span className="text-green-600 font-bold">{vps.specs.connections}</span>
-                      </div>
-                      <div className="flex justify-between items-center p-2 bg-green-50 rounded">
-                        <span className="font-medium">Usuários:</span>
-                        <span className="text-green-600 font-bold">{vps.specs.users}</span>
+                  
+                  <CardContent className="p-6">
+                    {/* Especificações Técnicas */}
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-gray-800 mb-3 flex items-center gap-2">
+                        <Server className="w-4 h-4" />
+                        Especificações
+                      </h4>
+                      <div className="space-y-3">
+                        <div className="flex items-center justify-between p-2 bg-gray-50 rounded-lg">
+                          <div className="flex items-center gap-2">
+                            <Activity className="w-4 h-4 text-blue-500" />
+                            <span className="text-sm font-medium">RAM</span>
+                          </div>
+                          <span className="font-bold text-blue-600">{vps.specs.ram}</span>
+                        </div>
+                        <div className="flex items-center justify-between p-2 bg-gray-50 rounded-lg">
+                          <div className="flex items-center gap-2">
+                            <Cpu className="w-4 h-4 text-green-500" />
+                            <span className="text-sm font-medium">CPU</span>
+                          </div>
+                          <span className="font-bold text-green-600">{vps.specs.cpu}</span>
+                        </div>
+                        <div className="flex items-center justify-between p-2 bg-gray-50 rounded-lg">
+                          <div className="flex items-center gap-2">
+                            <HardDrive className="w-4 h-4 text-purple-500" />
+                            <span className="text-sm font-medium">Storage</span>
+                          </div>
+                          <span className="font-bold text-purple-600">{vps.specs.storage}</span>
+                        </div>
                       </div>
                     </div>
-                    <div className="mt-6">
-                      <div className="text-center text-sm text-gray-600 mb-4">
-                        ✅ Hospedagem no Brasil<br />
-                        ✅ Uptime +99,9%<br />
-                        ✅ IP Dedicado
+
+                    {/* Capacidades */}
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-gray-800 mb-3 flex items-center gap-2">
+                        <Users className="w-4 h-4" />
+                        Capacidades
+                      </h4>
+                      <div className="grid grid-cols-2 gap-3">
+                        <div className="text-center p-3 bg-green-50 rounded-lg border border-green-200">
+                          <div className="text-2xl font-bold text-green-600">{vps.specs.connections}</div>
+                          <div className="text-xs text-green-700">Conexões WhatsApp</div>
+                        </div>
+                        <div className="text-center p-3 bg-blue-50 rounded-lg border border-blue-200">
+                          <div className="text-2xl font-bold text-blue-600">{vps.specs.users}</div>
+                          <div className="text-xs text-blue-700">Usuários simultâneos</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Features */}
+                    <div className="space-y-2">
+                      {vps.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-center gap-2">
+                          <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
+                          <span className="text-sm text-gray-600">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="mt-6 pt-4 border-t border-gray-200">
+                      <div className="flex items-center justify-between text-sm">
+                        <span className="text-gray-600">Uptime garantido:</span>
+                        <span className="font-bold text-green-600">{vps.specs.uptime}</span>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
               ))}
+            </div>
+
+            {/* Tabela Comparativa */}
+            <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
+              <div className="bg-gradient-to-r from-gray-50 to-gray-100 p-6 border-b">
+                <h4 className="text-xl font-bold text-gray-800 text-center">Comparação Detalhada dos Planos VPS</h4>
+              </div>
+              <div className="overflow-x-auto">
+                <Table>
+                  <TableHeader>
+                    <TableRow className="bg-gray-50">
+                      <TableHead className="font-semibold text-gray-700">Especificação</TableHead>
+                      <TableHead className="text-center font-semibold text-gray-700">VPS Básica</TableHead>
+                      <TableHead className="text-center font-semibold text-blue-700 bg-blue-50">VPS Premium</TableHead>
+                      <TableHead className="text-center font-semibold text-gray-700">VPS Enterprise</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    <TableRow>
+                      <TableCell className="font-medium">Memória RAM</TableCell>
+                      <TableCell className="text-center">8GB</TableCell>
+                      <TableCell className="text-center bg-blue-50 font-semibold text-blue-700">16GB</TableCell>
+                      <TableCell className="text-center">32GB</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium">Processador</TableCell>
+                      <TableCell className="text-center">2 vCPU</TableCell>
+                      <TableCell className="text-center bg-blue-50 font-semibold text-blue-700">6 vCPU</TableCell>
+                      <TableCell className="text-center">6 vCPU</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium">Armazenamento</TableCell>
+                      <TableCell className="text-center">120GB NVMe</TableCell>
+                      <TableCell className="text-center bg-blue-50 font-semibold text-blue-700">200GB NVMe</TableCell>
+                      <TableCell className="text-center">250GB NVMe</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium">Conexões WhatsApp</TableCell>
+                      <TableCell className="text-center text-green-600 font-semibold">Até 26</TableCell>
+                      <TableCell className="text-center bg-blue-50 font-bold text-blue-700">Até 34</TableCell>
+                      <TableCell className="text-center text-green-600 font-semibold">Até 45</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium">Usuários Simultâneos</TableCell>
+                      <TableCell className="text-center text-blue-600 font-semibold">Até 20</TableCell>
+                      <TableCell className="text-center bg-blue-50 font-bold text-blue-700">Até 40</TableCell>
+                      <TableCell className="text-center text-blue-600 font-semibold">Até 60</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium">Valor Mensal</TableCell>
+                      <TableCell className="text-center">
+                        <div>
+                          <span className="text-lg font-bold text-blue-600">R$169,90</span>
+                          <div className="text-xs text-gray-500 line-through">R$299,90</div>
+                        </div>
+                      </TableCell>
+                      <TableCell className="text-center bg-blue-50">
+                        <div>
+                          <span className="text-lg font-bold text-blue-700">R$279,90</span>
+                          <div className="text-xs text-gray-500 line-through">R$499,90</div>
+                          <Badge className="mt-1 bg-blue-600 text-white text-xs">RECOMENDADA</Badge>
+                        </div>
+                      </TableCell>
+                      <TableCell className="text-center">
+                        <div>
+                          <span className="text-lg font-bold text-blue-600">R$429,90</span>
+                          <div className="text-xs text-gray-500 line-through">R$699,90</div>
+                        </div>
+                      </TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </div>
             </div>
           </div>
 
@@ -540,7 +705,7 @@ const PromocaoEspecial = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <h3 className="text-lg font-semibold mb-4">Contato</h3>
-              <p className="text-gray-400">WhatsApp: (11) 99999-9999</p>
+              <p className="text-gray-400">WhatsApp: (12) 98115-6856</p>
               <p className="text-gray-400">Email: contato@arsenalcache.com.br</p>
             </div>
             <div>
