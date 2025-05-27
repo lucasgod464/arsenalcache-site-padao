@@ -189,12 +189,12 @@ const PromocaoEspecial = () => {
   ];
 
   const handleWhatsAppContact = () => {
-    const message = encodeURIComponent("Olá! Tenho interesse na Promoção Especial: Plano Start + VPS Dedicada. Gostaria de tirar algumas dúvidas.");
+    const message = encodeURIComponent("Olá! Tenho interesse na Promoção Especial: Plano Start por R$99,90 + VPS Dedicada (a partir de R$169,90/mês). Gostaria de tirar algumas dúvidas.");
     window.open(`https://wa.me/5512981156856?text=${message}`, '_blank');
   };
 
   const handleContractNow = () => {
-    const message = encodeURIComponent("Olá! Quero contratar agora a Promoção Especial: Plano Start + VPS Dedicada por R$99,90!");
+    const message = encodeURIComponent("Olá! Quero contratar agora a Promoção Especial: Plano Start por R$99,90 + VPS Dedicada (mensal a partir de R$169,90)!");
     window.open(`https://wa.me/5512981156856?text=${message}`, '_blank');
   };
 
