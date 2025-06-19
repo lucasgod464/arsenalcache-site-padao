@@ -28,7 +28,10 @@ const MasterClassPricing = () => {
       "Asaas (Gateway de pagamento)"
     ],
     plan2Additional: [
-      "Softwares premium inclusos", 
+      "EFI/Gerencianet (Gateway de pagamento)",
+      "MercadoPago (Gateway de pagamento)", 
+      "Stripe (Gateway de pagamento)", 
+      "Asaas (Gateway de pagamento)",
       "Advanced filter (Gerador & Filtro de Números)", 
       "WaHammer (Aquecedor de WhatsApp)", 
       "WaDefender (Verificador de Força de Conta)", 
