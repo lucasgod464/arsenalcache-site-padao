@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { Check, Phone, Send, MessageCircle } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
-import { supabase } from "@/integrations/supabase/client";
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -38,22 +37,6 @@ const ContactSection = () => {
         source: "website-contact-form"
       };
 
-      // Enviar dados para o Supabase
-      const { error } = await supabase
-        .from('demo_requests')
-        .insert([
-          {
-            name: formattedData.name,
-            email: formattedData.email,
-            phone: formattedData.phone,
-            company: formattedData.company,
-            message: formattedData.message,
-            status: 'pending'
-          }
-        ]);
-
-      if (error) throw error;
-
       // Envio para webhook
       const webhookUrl = "https://construtor.yuccie.pro/webhook-test/0eec6c59-6fea-4e97-adfd-aa57e8745b4f";
       
@@ -69,7 +52,7 @@ const ContactSection = () => {
         
         console.log("Dados enviados com sucesso para webhook:", formattedData);
       } catch (webhookError) {
-        console.error("Erro no webhook (não crítico):", webhookError);
+        console.error("Erro no webhook:", webhookError);
       }
 
       setFormState(prev => ({ ...prev, submitted: true }));

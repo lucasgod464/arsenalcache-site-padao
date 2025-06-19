@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -11,7 +10,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle2, Send, MessageCircle, Users, Shield, Zap, Rocket, Clock, BadgeCheck } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
-import { supabase } from '@/integrations/supabase/client';
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -91,21 +89,6 @@ const LeadsPage = () => {
       };
 
       console.log("Dados formatados para envio:", formattedData);
-
-      // Enviar para o Supabase
-      const { error: supabaseError } = await supabase.from('demo_requests').insert([{
-        name: formattedData.name,
-        email: formattedData.email,
-        phone: formattedData.phone,
-        company: formattedData.company,
-        message: formattedData.message,
-        status: 'pending'
-      }]);
-
-      if (supabaseError) {
-        console.error("Erro ao enviar para Supabase:", supabaseError);
-        throw supabaseError;
-      }
 
       // Enviar para webhook se estiver configurado e ativado
       if (webhookConfig.enabled && webhookConfig.url) {
