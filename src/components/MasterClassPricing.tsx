@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Check, X, Sparkles, Star, Trophy, ArrowRight, MessageCircle } from 'lucide-react';
+import { Check, X, Sparkles, Star, Trophy, ArrowRight, MessageCircle, AlertTriangle } from 'lucide-react';
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -21,7 +21,12 @@ const MasterClassPricing = () => {
       "Revenda de assinaturas ilimitadas", 
       "Suporte individual no WhatsApp"
     ],
-    plan1Additional: [],
+    plan1Additional: [
+      "EFI/Gerencianet (Gateway de pagamento)",
+      "MercadoPago (Gateway de pagamento)", 
+      "Stripe (Gateway de pagamento)", 
+      "Asaas (Gateway de pagamento)"
+    ],
     plan2Additional: [
       "Softwares premium inclusos", 
       "Advanced filter (Gerador & Filtro de Números)", 
@@ -47,7 +52,7 @@ const MasterClassPricing = () => {
 
         {/* Pricing cards - mobile & desktop view */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {/* Plan 1 */}
+          {/* Plan 1 - Profissional */}
           <div className="relative">
             <Card 
               className={`h-full transition-all duration-300 overflow-hidden bg-gradient-to-br from-purple-800 to-purple-900 border border-purple-500/70 text-white ${selectedPlan === 1 ? 'ring-2 ring-amber-400 shadow-lg shadow-amber-400/20' : 'hover:shadow-md'}`} 
@@ -56,11 +61,11 @@ const MasterClassPricing = () => {
               <CardHeader className="bg-gradient-to-r from-purple-800 to-purple-700 pb-6 border-b border-purple-600/50">
                 <div className="space-y-1.5">
                   <Badge className="bg-amber-400 text-purple-900 border-0 mb-2 font-medium">
-                    White Label Básico
+                    White Label Profissional
                   </Badge>
-                  <CardTitle className="text-2xl font-bold text-white">Plano Essencial</CardTitle>
+                  <CardTitle className="text-2xl font-bold text-white">Plano Profissional</CardTitle>
                   <CardDescription className="text-purple-200">
-                    Ideal para quem está começando com WhatsApp Business
+                    Ideal para empresas que precisam de gateways de pagamento
                   </CardDescription>
                 </div>
                 <div className="mt-4 flex items-baseline">
@@ -72,7 +77,7 @@ const MasterClassPricing = () => {
                 </div>
               </CardHeader>
               <CardContent className="pt-6">
-                <ul className="space-y-3">
+                <ul className="space-y-3 mb-6">
                   {planFeatures.common.map((feature, index) => (
                     <li key={index} className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
@@ -80,6 +85,21 @@ const MasterClassPricing = () => {
                     </li>
                   ))}
                 </ul>
+                
+                <div className="mt-4 pt-4 border-t border-purple-700/50">
+                  <h4 className="font-semibold mb-3 text-amber-400 flex items-center">
+                    <Trophy className="h-5 w-5 text-amber-400 mr-2" />
+                    Gateways de pagamento inclusos:
+                  </h4>
+                  <ul className="space-y-3">
+                    {planFeatures.plan1Additional.map((feature, index) => (
+                      <li key={index} className="flex items-start gap-2">
+                        <Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                        <span className="text-purple-100">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </CardContent>
               <CardFooter className="pt-4 pb-8 flex justify-center">
                 <Button 
@@ -94,7 +114,7 @@ const MasterClassPricing = () => {
                       e.stopPropagation();
                     }}
                   >
-                    Contratar plano essencial
+                    Contratar plano profissional
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
@@ -102,7 +122,7 @@ const MasterClassPricing = () => {
             </Card>
           </div>
           
-          {/* Plan 2 */}
+          {/* Plan 2 - Enterprise */}
           <div className="relative">
             {/* Popular ribbon */}
             <div className="absolute -top-4 -right-4 z-10 rotate-12">
@@ -118,14 +138,14 @@ const MasterClassPricing = () => {
               <CardHeader className="bg-gradient-to-r from-purple-800 to-purple-700 pb-6 border-b border-purple-600/50">
                 <div className="space-y-1.5">
                   <Badge className="bg-amber-400 text-purple-900 border-0 mb-2 font-medium">
-                    White Label Premium
+                    White Label Enterprise
                   </Badge>
                   <CardTitle className="text-2xl font-bold flex items-center gap-2 text-white">
-                    Plano Start
+                    Plano Enterprise
                     <Sparkles className="h-5 w-5 text-amber-400" />
                   </CardTitle>
                   <CardDescription className="text-purple-200">
-                    Solução completa com ferramentas premium
+                    Solução completa com ferramentas premium e automação
                   </CardDescription>
                 </div>
                 <div className="mt-4 flex items-baseline">
@@ -134,9 +154,22 @@ const MasterClassPricing = () => {
                 </div>
               </CardHeader>
               <CardContent className="pt-6">
+                {/* Aviso importante sobre N8N */}
+                <div className="mb-6 p-4 bg-red-500/20 border border-red-400/50 rounded-lg">
+                  <div className="flex items-start gap-3">
+                    <AlertTriangle className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <h5 className="font-semibold text-red-200 mb-1">Atenção importante:</h5>
+                      <p className="text-sm text-red-100">
+                        O pacote N8N deve ser instalado em uma VPS separada. Não está incluído na hospedagem principal.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
                 <h4 className="font-semibold mb-4 text-amber-400 flex items-center">
                   <Trophy className="h-5 w-5 text-amber-400 mr-2" />
-                  Tudo do plano básico mais:
+                  Tudo do plano profissional mais:
                 </h4>
                 <ul className="space-y-3 mb-6">
                   {planFeatures.plan2Additional.map((feature, index) => (
@@ -183,7 +216,7 @@ const MasterClassPricing = () => {
                       e.stopPropagation();
                     }}
                   >
-                    Contratar plano start
+                    Contratar plano enterprise
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>

@@ -92,9 +92,9 @@ const Index = () => {
       <PricingSection />
       <DetailedFeaturesList />
       <TestimonialsSection />
+      <RoiCalculator />
       <FaqSection />
       <ContactSection />
-      <RoiCalculator />
       <Footer />
       <ScrollToTop />
       <FloatingCta />
