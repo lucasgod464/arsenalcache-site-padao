@@ -293,7 +293,7 @@ const AdminPanel = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <DemoRequestsTable defaultSystem={activeSystemTab} />
+                <DemoRequestsTable />
               </CardContent>
             </Card>
           </TabsContent>
