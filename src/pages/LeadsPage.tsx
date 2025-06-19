@@ -1,464 +1,396 @@
-import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet';
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { CheckCircle2, Send, MessageCircle, Users, Shield, Zap, Rocket, Clock, BadgeCheck } from 'lucide-react';
-import { useToast } from "@/components/ui/use-toast";
 
-const formSchema = z.object({
-  name: z.string().min(2, {
-    message: "Nome deve ter pelo menos 2 caracteres"
-  }),
-  email: z.string().email({
-    message: "E-mail inválido"
-  }),
-  phone: z.string().min(10, {
-    message: "Telefone deve ter pelo menos 10 dígitos"
-  }),
-  company: z.string().optional(),
-  message: z.string().optional()
-});
+import React, { useState, useEffect } from 'react';
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { 
+  Target, 
+  Users, 
+  TrendingUp, 
+  CheckCircle, 
+  ArrowRight, 
+  Zap,
+  Star,
+  MessageCircle,
+  Shield,
+  Clock
+} from 'lucide-react';
+import { useToast } from "@/components/ui/use-toast";
 
 const LeadsPage = () => {
   const { toast } = useToast();
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [webhookStatus, setWebhookStatus] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [webhookConfig, setWebhookConfig] = useState({
     url: '',
     enabled: false
   });
-  
-  useEffect(() => {
-    const handleScroll = () => {
-      const elements = document.querySelectorAll('.fade-in-section');
-      elements.forEach(element => {
-        const position = element.getBoundingClientRect();
-        if (position.top < window.innerHeight - 100) {
-          element.classList.add('is-visible');
-        }
-      });
-    };
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check on initial load
 
-    // Carregar configurações de webhook do localStorage
+  // Carregar configurações de webhook
+  useEffect(() => {
     const savedConfig = localStorage.getItem('webhookConfig');
     if (savedConfig) {
       try {
         const parsedConfig = JSON.parse(savedConfig);
         setWebhookConfig({
-          url: parsedConfig.leadsPageWebhookUrl || '',
-          enabled: parsedConfig.leadsPageWebhookEnabled || false
+          url: parsedConfig.leadsWebhookUrl || '',
+          enabled: parsedConfig.leadsWebhookEnabled || false
         });
       } catch (e) {
         console.error("Erro ao carregar configurações de webhook:", e);
       }
     }
-
-    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      message: ""
-    }
-  });
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
 
-  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      phone: formData.get('phone') as string,
+      company: formData.get('company') as string,
+      timestamp: new Date().toISOString(),
+      source: "golden-leads-page",
+      system: "golden-leads"
+    };
+
     try {
-      // Preparar dados formatados para envio
-      const formattedData = {
-        name: values.name.trim(),
-        email: values.email.trim().toLowerCase(),
-        phone: values.phone.trim().replace(/\D/g, ''), // Remove caracteres não numéricos
-        company: values.company ? values.company.trim() : null,
-        message: values.message ? values.message.trim() : null,
-        timestamp: new Date().toISOString(),
-        source: "golden-leads-page"
-      };
+      const webhookUrl = webhookConfig.enabled && webhookConfig.url
+        ? webhookConfig.url
+        : "https://construtor.yuccie.pro/webhook-test/0eec6c59-6fea-4e97-adfd-aa57e8745b4f";
 
-      console.log("Dados formatados para envio:", formattedData);
-
-      // Enviar para webhook se estiver configurado e ativado
-      if (webhookConfig.enabled && webhookConfig.url) {
-        setWebhookStatus("sending");
-        
-        try {
-          await fetch(webhookConfig.url, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            mode: "no-cors", // Importante para evitar erros de CORS
-            body: JSON.stringify(formattedData),
-          });
-          
-          console.log("Dados enviados com sucesso para webhook:", formattedData);
-          setWebhookStatus("success");
-        } catch (webhookError) {
-          console.error("Erro no webhook:", webhookError);
-          setWebhookStatus("error");
-        }
-      }
-
-      setIsSubmitted(true);
-      form.reset();
-      toast({
-        title: "Formulário enviado com sucesso!",
-        description: "Entraremos em contato em breve."
+      // Enviar dados para o webhook
+      await fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "no-cors",
+        body: JSON.stringify(data),
       });
+
+      console.log("Dados enviados com sucesso para o webhook:", data);
+      
+      toast({
+        title: "Solicitação enviada!",
+        description: "Entraremos em contato com você em até 24 horas.",
+        variant: "default",
+      });
+
+      // Reset form
+      (e.target as HTMLFormElement).reset();
     } catch (error) {
-      console.error("Erro ao enviar formulário:", error);
+      console.error("Erro ao enviar dados:", error);
       toast({
-        title: "Erro ao enviar formulário",
-        description: "Ocorreu um erro ao processar sua solicitação. Tente novamente mais tarde.",
-        variant: "destructive"
+        title: "Erro ao enviar solicitação",
+        description: "Tente novamente em alguns minutos.",
+        variant: "destructive",
       });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-50 via-white to-amber-50">
-      <Helmet>
-        <title>Sistema Golden | Solicite uma demonstração</title>
-        <meta name="description" content="Preencha o formulário para solicitar uma demonstração gratuita do Sistema Golden - a solução completa para WhatsApp profissional." />
-        <style>
-          {`.aspect-w-16 {
-              position: relative;
-              padding-bottom: 56.25%;
-            }
-            .aspect-w-16 iframe {
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-            }
-            .text-gradient {
-              background: linear-gradient(90deg, #FB9936, #FBB121);
-              -webkit-background-clip: text;
-              -webkit-text-fill-color: transparent;
-            }
-            .fade-in-section {
-              opacity: 0;
-              transform: translateY(20px);
-              transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-            }
-            .fade-in-section.is-visible {
-              opacity: 1;
-              transform: translateY(0);
-            }
-            .glow-button {
-              animation: pulse 2s infinite;
-            }
-            @keyframes pulse {
-              0% {
-                box-shadow: 0 0 0 0 rgba(251, 153, 54, 0.4);
-              }
-              70% {
-                box-shadow: 0 0 0 10px rgba(251, 153, 54, 0);
-              }
-              100% {
-                box-shadow: 0 0 0 0 rgba(251, 153, 54, 0);
-              }
-            }
-            .feature-card {
-              transition: all 0.3s ease;
-            }
-            .feature-card:hover {
-              transform: translateY(-5px);
-            }
-            .hero-gradient {
-              background-image: radial-gradient(circle at top right, rgba(251, 191, 36, 0.1), transparent), 
-                              radial-gradient(circle at bottom left, rgba(251, 153, 54, 0.1), transparent);
-            }`}
-        </style>
-      </Helmet>
-
-      <div className="sticky top-0 z-50 bg-amber-400 text-white p-3 text-center flex items-center justify-center">
-        <Clock className="w-5 h-5 mr-2" />
-        <p className="font-bold text-sm md:text-base">🚀 OFERTA LIMITADA: Experimente o Sistema Golden por 7 dias gratuitamente! 🚀</p>
-      </div>
-
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-          <div className="fade-in-section">
-            <div className="inline-block py-1 px-3 rounded-full bg-amber-100 text-amber-800 text-sm font-medium mb-6">
-              <BadgeCheck className="w-4 h-4 inline mr-1" />
-              Solução completa para WhatsApp
-            </div>
-            
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Sistema<span className="text-amber-400">Golden</span>
-              <span className="block text-gradient">Transforme seu Atendimento</span>
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50">
+      {/* Hero Section */}
+      <div className="pt-20 pb-16 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <Badge className="bg-gradient-to-r from-amber-500 to-orange-500 text-white px-4 py-2 text-sm mb-6">
+              🚀 Sistema Exclusivo Golden Leads
+            </Badge>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 bg-clip-text text-transparent">
+              Golden Leads
             </h1>
-            
-            <div className="space-y-6">
-              <p className="text-lg md:text-xl text-gray-700">
-                O sistema whitelabel definitivo para gerenciar múltiplos atendimentos via WhatsApp de forma profissional e escalável.
-              </p>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="bg-white rounded-lg p-4 shadow-sm border border-amber-100 feature-card">
-                  <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center mr-3 mb-3">
-                    <MessageCircle className="w-5 h-5 text-amber-600" />
-                  </div>
-                  <h3 className="font-medium text-gray-900">Conexões ilimitadas</h3>
-                  <p className="text-gray-600 text-sm">Gerencie múltiplos números sem limites</p>
-                </div>
-                
-                <div className="bg-white rounded-lg p-4 shadow-sm border border-amber-100 feature-card">
-                  <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center mr-3 mb-3">
-                    <Users className="w-5 h-5 text-amber-600" />
-                  </div>
-                  <h3 className="font-medium text-gray-900">Usuários ilimitados</h3>
-                  <p className="text-gray-600 text-sm">Adicione tantos atendentes quanto precisar</p>
-                </div>
-                
-                <div className="bg-white rounded-lg p-4 shadow-sm border border-amber-100 feature-card">
-                  <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center mr-3 mb-3">
-                    <Shield className="w-5 h-5 text-amber-600" />
-                  </div>
-                  <h3 className="font-medium text-gray-900">Sistema Whitelabel</h3>
-                  <p className="text-gray-600 text-sm">Personalize e revenda para seus clientes</p>
-                </div>
-                
-                <div className="bg-white rounded-lg p-4 shadow-sm border border-amber-100 feature-card">
-                  <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center mr-3 mb-3">
-                    <Zap className="w-5 h-5 text-amber-600" />
-                  </div>
-                  <h3 className="font-medium text-gray-900">Automação completa</h3>
-                  <p className="text-gray-600 text-sm">Chatbots e fluxos personalizados</p>
-                </div>
-              </div>
-              
-              <div className="mt-8 p-6 bg-gradient-to-br from-amber-50 to-amber-100 rounded-lg border-l-4 border-amber-400">
-                <div className="flex items-start">
-                  <div className="mr-4 mt-1">
-                    <CheckCircle2 className="w-6 h-6 text-amber-500" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg text-amber-800 mb-2">TESTE GRÁTIS POR 7 DIAS!</h3>
-                    <p className="text-amber-700">Experimente todos os recursos premium sem compromisso e transforme seu atendimento hoje mesmo.</p>
-                    <ul className="mt-4 space-y-2">
-                      <li className="flex items-center">
-                        <BadgeCheck className="w-4 h-4 text-amber-500 mr-2" />
-                        <span className="text-sm text-amber-700">Acesso total às funcionalidades</span>
-                      </li>
-                      <li className="flex items-center">
-                        <BadgeCheck className="w-4 h-4 text-amber-500 mr-2" />
-                        <span className="text-sm text-amber-700">Suporte técnico durante o período de teste</span>
-                      </li>
-                      <li className="flex items-center">
-                        <BadgeCheck className="w-4 h-4 text-amber-500 mr-2" />
-                        <span className="text-sm text-amber-700">Sem compromisso de compra</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+            <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-4xl mx-auto leading-relaxed">
+              O sistema mais avançado de geração e qualificação de leads do mercado. 
+              Transforme visitantes em clientes de forma automatizada e inteligente.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-8 py-6 text-lg shadow-lg"
+                onClick={() => {
+                  const formSection = document.getElementById('demo-form');
+                  if (formSection) {
+                    formSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
+                <Target className="mr-2 h-5 w-5" />
+                Solicitar Demonstração
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="border-amber-500 text-amber-600 hover:bg-amber-50 px-8 py-6 text-lg"
+                asChild
+              >
+                <a href="https://wa.me/5512981156856?text=Olá, gostaria de saber mais sobre o Golden Leads" target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  Falar no WhatsApp
+                </a>
+              </Button>
             </div>
           </div>
-          
-          <div className="fade-in-section">
-            <Card className="shadow-xl relative overflow-hidden border-amber-200">
-              <div className="absolute -top-32 -left-32 w-64 h-64 bg-amber-100/50 rounded-full blur-3xl"></div>
-              <div className="absolute -bottom-32 -right-32 w-64 h-64 bg-amber-100/50 rounded-full blur-3xl"></div>
-              
-              <CardHeader className="text-center pb-4 relative z-10">
-                <CardTitle className="text-2xl font-bold">Solicite uma demonstração</CardTitle>
-                <CardDescription>Preencha o formulário para conhecer nossa solução</CardDescription>
-              </CardHeader>
-              
-              <CardContent className="relative z-10">
-                {isSubmitted ? (
-                  <div className="text-center py-8">
-                    <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-green-100 flex items-center justify-center">
-                      <CheckCircle2 className="w-8 h-8 text-green-500" />
-                    </div>
-                    <h3 className="text-xl font-medium text-gray-900 mb-2">Solicitação recebida!</h3>
-                    <p className="text-gray-600 mb-6">Nossa equipe entrará em contato em breve para agendar sua demonstração.</p>
-                    <Button 
-                      onClick={() => setIsSubmitted(false)} 
-                      className="bg-amber-400 hover:bg-amber-500 text-white"
-                    >
-                      Enviar nova solicitação
-                    </Button>
-                  </div>
-                ) : (
-                  <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                      <FormField 
-                        control={form.control} 
-                        name="name" 
-                        render={({field}) => (
-                          <FormItem>
-                            <FormLabel>Nome completo</FormLabel>
-                            <FormControl>
-                              <Input placeholder="Seu nome completo" {...field} className="border-amber-200 focus:border-amber-400" />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )} 
-                      />
-                      
-                      <FormField 
-                        control={form.control} 
-                        name="email" 
-                        render={({field}) => (
-                          <FormItem>
-                            <FormLabel>E-mail</FormLabel>
-                            <FormControl>
-                              <Input type="email" placeholder="seu@email.com" {...field} className="border-amber-200 focus:border-amber-400" />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )} 
-                      />
-                      
-                      <FormField 
-                        control={form.control} 
-                        name="phone" 
-                        render={({field}) => (
-                          <FormItem>
-                            <FormLabel>Telefone</FormLabel>
-                            <FormControl>
-                              <Input placeholder="(00) 00000-0000" {...field} className="border-amber-200 focus:border-amber-400" />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )} 
-                      />
-                      
-                      <FormField 
-                        control={form.control} 
-                        name="company" 
-                        render={({field}) => (
-                          <FormItem>
-                            <FormLabel>Empresa</FormLabel>
-                            <FormControl>
-                              <Input placeholder="Nome da sua empresa (opcional)" {...field} className="border-amber-200 focus:border-amber-400" />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )} 
-                      />
-                      
-                      <FormField 
-                        control={form.control} 
-                        name="message" 
-                        render={({field}) => (
-                          <FormItem>
-                            <FormLabel>Mensagem (opcional)</FormLabel>
-                            <FormControl>
-                              <Textarea placeholder="Conte-nos um pouco sobre suas necessidades..." className="resize-none border-amber-200 focus:border-amber-400" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )} 
-                      />
-                      
-                      <Button 
-                        type="submit" 
-                        className="w-full bg-amber-400 hover:bg-amber-500 text-white glow-button flex items-center justify-center"
-                        disabled={form.formState.isSubmitting}
-                      >
-                        {form.formState.isSubmitting ? (
-                          <>
-                            <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                            </svg>
-                            Enviando...
-                          </>
-                        ) : (
-                          <>
-                            <Rocket className="mr-2 h-4 w-4" />
-                            Solicitar demonstração
-                          </>
-                        )}
-                      </Button>
+        </div>
+      </div>
 
-                      {webhookStatus === 'error' && (
-                        <div className="text-sm text-amber-600 text-center mt-2">
-                          Dados salvos com sucesso, mas ocorreu um erro ao enviar para o webhook externo.
-                        </div>
-                      )}
-                    </form>
-                  </Form>
-                )}
+      {/* Features Section */}
+      <div className="py-16 px-4 bg-white/50 backdrop-blur-sm">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Por que escolher o <span className="text-amber-600">Golden Leads</span>?
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Uma solução completa que combina inteligência artificial, automação avançada e analytics em tempo real
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="border-amber-200 shadow-lg hover:shadow-xl transition-all duration-300">
+              <CardHeader>
+                <div className="bg-gradient-to-r from-amber-500 to-orange-500 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                  <Zap className="h-6 w-6 text-white" />
+                </div>
+                <CardTitle className="text-amber-700">Captura Inteligente</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Identifique e capture leads qualificados automaticamente com nossa IA avançada que analisa comportamento e intenção de compra.
+                </p>
               </CardContent>
             </Card>
-            
-            {/* Depoimentos de clientes */}
-            <div className="mt-6 bg-white rounded-lg shadow-sm p-5 border border-gray-100">
-              <div className="flex items-center mb-4">
-                <div className="mr-3">
-                  <div className="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center">
-                    <Users className="w-6 h-6 text-amber-600" />
-                  </div>
+
+            <Card className="border-amber-200 shadow-lg hover:shadow-xl transition-all duration-300">
+              <CardHeader>
+                <div className="bg-gradient-to-r from-orange-500 to-red-500 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                  <Users className="h-6 w-6 text-white" />
+                </div>
+                <CardTitle className="text-orange-700">Qualificação Automática</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Sistema de scoring avançado que qualifica leads em tempo real, priorizando aqueles com maior potencial de conversão.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-amber-200 shadow-lg hover:shadow-xl transition-all duration-300">
+              <CardHeader>
+                <div className="bg-gradient-to-r from-red-500 to-pink-500 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                  <TrendingUp className="h-6 w-6 text-white" />
+                </div>
+                <CardTitle className="text-red-700">Analytics Avançado</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Dashboards completos com métricas detalhadas, ROI em tempo real e insights acionáveis para otimizar suas campanhas.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-amber-200 shadow-lg hover:shadow-xl transition-all duration-300">
+              <CardHeader>
+                <div className="bg-gradient-to-r from-purple-500 to-indigo-500 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                  <Shield className="h-6 w-6 text-white" />
+                </div>
+                <CardTitle className="text-purple-700">Integração Total</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Conecta-se perfeitamente com WhatsApp, CRM, e-mail marketing, redes sociais e mais de 200 ferramentas do mercado.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-amber-200 shadow-lg hover:shadow-xl transition-all duration-300">
+              <CardHeader>
+                <div className="bg-gradient-to-r from-green-500 to-teal-500 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                  <Clock className="h-6 w-6 text-white" />
+                </div>
+                <CardTitle className="text-green-700">Automação 24/7</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Trabalha continuamente, capturando e nutrindo leads mesmo quando você não está online, maximizando suas oportunidades.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-amber-200 shadow-lg hover:shadow-xl transition-all duration-300">
+              <CardHeader>
+                <div className="bg-gradient-to-r from-blue-500 to-cyan-500 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                  <Star className="h-6 w-6 text-white" />
+                </div>
+                <CardTitle className="text-blue-700">Suporte Premium</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Equipe dedicada de especialistas para implementação, treinamento e suporte contínuo para garantir seu sucesso.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+
+      {/* Benefits Section */}
+      <div className="py-16 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Resultados que você pode <span className="text-amber-600">esperar</span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="bg-green-100 p-2 rounded-full">
+                  <CheckCircle className="h-6 w-6 text-green-600" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-medium">Empresas confiam no Sistema Golden</h4>
-                  <p className="text-sm text-gray-500">Mais de 300 empresas já transformaram seu atendimento</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Aumento de 300% na geração de leads</h3>
+                  <p className="text-gray-600">Capture mais prospects qualificados com nossa tecnologia avançada</p>
                 </div>
               </div>
-              
-              <div className="flex flex-wrap justify-around gap-2">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-amber-600">97%</div>
-                  <p className="text-xs text-gray-600">Satisfação</p>
+
+              <div className="flex items-start gap-4">
+                <div className="bg-green-100 p-2 rounded-full">
+                  <CheckCircle className="h-6 w-6 text-green-600" />
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-amber-600">40%</div>
-                  <p className="text-xs text-gray-600">Aumento em vendas</p>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Redução de 70% no tempo de qualificação</h3>
+                  <p className="text-gray-600">Automatize o processo e foque apenas nos leads com maior potencial</p>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-amber-600">65%</div>
-                  <p className="text-xs text-gray-600">Redução de tempo</p>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="bg-green-100 p-2 rounded-full">
+                  <CheckCircle className="h-6 w-6 text-green-600" />
                 </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">ROI de até 800% em 90 dias</h3>
+                  <p className="text-gray-600">Investimento que se paga rapidamente com resultados mensuráveis</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="bg-green-100 p-2 rounded-full">
+                  <CheckCircle className="h-6 w-6 text-green-600" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Implementação em menos de 48h</h3>
+                  <p className="text-gray-600">Comece a ver resultados imediatamente com nossa instalação express</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-amber-100 to-orange-100 p-8 rounded-2xl">
+              <div className="text-center">
+                <div className="bg-white p-6 rounded-full w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+                  <Target className="h-12 w-12 text-amber-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Case de Sucesso</h3>
+                <p className="text-gray-700 mb-4">
+                  "Em apenas 60 dias, aumentamos nossa geração de leads em 450% e melhoramos nossa taxa de conversão em 80%. 
+                  O Golden Leads transformou completamente nosso funil de vendas."
+                </p>
+                <p className="text-amber-600 font-semibold">
+                  - CEO, Empresa de Marketing Digital
+                </p>
               </div>
             </div>
           </div>
         </div>
-        
-        {/* Seção informativa adicional */}
-        <div className="max-w-6xl mx-auto mt-16 pt-8 border-t border-gray-200">
-          <div className="text-center mb-10 fade-in-section">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Por que escolher o Sistema Golden?</h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">Nossa plataforma foi desenvolvida para atender todas as necessidades de comunicação da sua empresa com seus clientes via WhatsApp</p>
+      </div>
+
+      {/* Demo Form Section */}
+      <div id="demo-form" className="py-16 px-4 bg-gradient-to-r from-amber-500 to-orange-500">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Solicite uma Demonstração Gratuita
+            </h2>
+            <p className="text-xl text-amber-100 max-w-3xl mx-auto">
+              Veja o Golden Leads em ação e descubra como ele pode transformar seus resultados
+            </p>
           </div>
-          
-          <div className="grid md:grid-cols-3 gap-6 fade-in-section">
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-              <Shield className="w-12 h-12 text-amber-500 mb-4" />
-              <h3 className="text-xl font-medium mb-2">Segurança e Privacidade</h3>
-              <p className="text-gray-600">Seus dados sempre protegidos com criptografia e em conformidade com LGPD.</p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-              <Rocket className="w-12 h-12 text-amber-500 mb-4" />
-              <h3 className="text-xl font-medium mb-2">Implementação Rápida</h3>
-              <p className="text-gray-600">Em apenas 24 horas seu sistema estará pronto para uso com configurações personalizadas.</p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-              <MessageCircle className="w-12 h-12 text-amber-500 mb-4" />
-              <h3 className="text-xl font-medium mb-2">Suporte Exclusivo</h3>
-              <p className="text-gray-600">Equipe dedicada para ajudar você em qualquer questão técnica ou operacional.</p>
-            </div>
-          </div>
+
+          <Card className="shadow-2xl border-0">
+            <CardHeader>
+              <CardTitle className="text-center text-2xl">Agende sua demonstração personalizada</CardTitle>
+              <CardDescription className="text-center text-lg">
+                Preencha os dados abaixo e nossa equipe entrará em contato em até 2 horas
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="name" className="text-lg">Nome completo *</Label>
+                    <Input 
+                      id="name" 
+                      name="name" 
+                      required 
+                      placeholder="Seu nome completo"
+                      className="h-12 text-lg"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="email" className="text-lg">E-mail corporativo *</Label>
+                    <Input 
+                      id="email" 
+                      name="email" 
+                      type="email" 
+                      required 
+                      placeholder="seu@empresa.com"
+                      className="h-12 text-lg"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="phone" className="text-lg">WhatsApp *</Label>
+                    <Input 
+                      id="phone" 
+                      name="phone" 
+                      required 
+                      placeholder="(11) 99999-9999"
+                      className="h-12 text-lg"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="company" className="text-lg">Empresa *</Label>
+                    <Input 
+                      id="company" 
+                      name="company" 
+                      required 
+                      placeholder="Nome da sua empresa"
+                      className="h-12 text-lg"
+                    />
+                  </div>
+                </div>
+
+                <Button 
+                  type="submit" 
+                  className="w-full bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white text-lg py-6 shadow-lg" 
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Enviando..." : "Solicitar Demonstração Gratuita"}
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>
