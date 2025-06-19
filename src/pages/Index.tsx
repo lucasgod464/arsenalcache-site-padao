@@ -88,13 +88,13 @@ const Index = () => {
       <HeroSection />
       <TransformeSection />
       <ZproSection />
-      <RoiCalculator />
       <FreeTrial />
       <PricingSection />
       <DetailedFeaturesList />
       <TestimonialsSection />
       <FaqSection />
       <ContactSection />
+      <RoiCalculator />
       <Footer />
       <ScrollToTop />
       <FloatingCta />
