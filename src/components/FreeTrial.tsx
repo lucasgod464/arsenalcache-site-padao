@@ -14,7 +14,7 @@ const FreeTrial = () => {
           <Button 
             size="lg" 
             className="bg-amber-500 hover:bg-amber-600 text-white font-semibold text-lg px-8 py-6 h-auto"
-            onClick={() => window.open('https://arsenalcache.com.br/testegratis7dias/', '_blank')}
+            onClick={() => window.open('https://teste.suamarca.pro/', '_blank')}
           >
             Iniciar teste gratuito
           </Button>
