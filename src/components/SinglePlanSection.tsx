@@ -11,16 +11,9 @@ import {
   Smartphone,
   Globe,
   Star,
-  Zap,
   Settings,
-  PhoneCall,
-  Mail,
-  Bot,
-  Palette,
   DollarSign,
-  CreditCard,
-  Crown,
-  Quote
+  Crown
 } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -37,63 +30,6 @@ const SinglePlanSection = () => {
     }, 5000);
     return () => clearInterval(interval);
   }, []);
-
-  const testimonials = [
-    {
-      name: "Carlos Silva",
-      company: "TechSolutions",
-      role: "CEO",
-      content: "Reduzi 80% do tempo de resposta e aumentei as vendas em 150%. O ROI foi alcançado em apenas 2 meses!",
-      rating: 5,
-      savings: "R$ 2.800/mês",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face"
-    },
-    {
-      name: "Ana Costa",
-      company: "Digital Marketing Pro",
-      role: "Diretora",
-      content: "Automatizamos 90% dos atendimentos iniciais. Nossa equipe agora foca apenas em vendas qualificadas.",
-      rating: 5,
-      savings: "R$ 3.200/mês",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b4c0?w=80&h=80&fit=crop&crop=face"
-    },
-    {
-      name: "Roberto Lima",
-      company: "E-commerce Plus",
-      role: "Fundador",
-      content: "Sistema pagou por si só em 45 dias. Agora gerencio 500+ conversas simultâneas sem esforço.",
-      rating: 5,
-      savings: "R$ 1.850/mês",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face"
-    },
-    {
-      name: "Mariana Santos",
-      company: "Consultoria MS",
-      role: "Sócia",
-      content: "Consegui automatizar todo meu atendimento inicial. Agora trabalho só com clientes qualificados.",
-      rating: 5,
-      savings: "R$ 1.400/mês",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face"
-    },
-    {
-      name: "João Ferreira",
-      company: "InfoTech",
-      role: "Diretor",
-      content: "Impressionante como conseguimos atender 3x mais clientes com a mesma equipe. Recomendo!",
-      rating: 5,
-      savings: "R$ 2.100/mês",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face"
-    },
-    {
-      name: "Fernanda Oliveira",
-      company: "Beauty Express",
-      role: "Proprietária",
-      content: "Nunca mais perdi um cliente por demora no atendimento. O sistema responde na hora!",
-      rating: 5,
-      savings: "R$ 980/mês",
-      avatar: "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?w=80&h=80&fit=crop&crop=face"
-    }
-  ];
 
   return (
     <section id="precos" className="py-20 px-4 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
@@ -379,45 +315,6 @@ const SinglePlanSection = () => {
           </div>
         </div>
 
-        {/* Testimonials */}
-        <div className="mb-16">
-          <h3 className="text-3xl font-bold text-center mb-8 text-gray-900">
-            🗣️ O que nossos clientes estão dizendo
-          </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-white border-gray-200 shadow-lg hover:shadow-xl transition-shadow">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <img 
-                      src={testimonial.avatar} 
-                      alt={testimonial.name}
-                      className="w-12 h-12 rounded-full object-cover"
-                    />
-                    <div>
-                      <div className="font-bold text-gray-900">{testimonial.name}</div>
-                      <div className="text-sm text-gray-600">{testimonial.role}</div>
-                      <div className="text-sm text-blue-600">{testimonial.company}</div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex mb-3">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  
-                  <Quote className="h-5 w-5 text-gray-400 mb-2" />
-                  <p className="text-gray-700 mb-4 italic">"{testimonial.content}"</p>
-                  
-                  <div className="bg-green-50 rounded-lg p-3 text-center">
-                    <div className="text-green-700 font-bold">Economia: {testimonial.savings}</div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
 
         {/* Garantias */}
         <Card className="border-green-200 bg-gradient-to-r from-green-50 to-emerald-50">
