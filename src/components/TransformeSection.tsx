@@ -66,23 +66,93 @@ const TransformeSection = () => {
       <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-amber-100 opacity-40 blur-3xl translate-x-1/3 translate-y-1/3"></div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-200 px-3 py-1 text-sm mb-4">
-            Transformação Digital
+        <div className="text-center max-w-4xl mx-auto mb-20">
+          <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-200 px-4 py-2 text-sm mb-6">
+            🚀 Transformação Digital Comprovada
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">
-            Transforme seu Atendimento
+          <h2 className="text-5xl md:text-6xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-blue-400">
+            Transforme seu Atendimento em uma Máquina de Resultados
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Soluções inteligentes para otimizar a comunicação com seus clientes e impulsionar os resultados do seu negócio
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed">
+            Mais de <span className="font-bold text-blue-600">5.000 empresas</span> já revolucionaram seus resultados com nossa plataforma inteligente de atendimento
           </p>
+          
+          {/* Estatísticas em Destaque */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">85%</div>
+              <div className="text-gray-600 text-sm">Redução no Tempo de Resposta</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-green-600 mb-2">3x</div>
+              <div className="text-gray-600 text-sm">Aumento nas Conversões</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-2">24/7</div>
+              <div className="text-gray-600 text-sm">Atendimento Automatizado</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-amber-600 mb-2">∞</div>
+              <div className="text-gray-600 text-sm">Usuários e Conexões</div>
+            </div>
+          </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Antes vs Depois */}
+        <div className="mb-20">
+          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-100">
+            <h3 className="text-3xl font-bold text-center mb-12 text-gray-800">
+              Antes vs. Depois do Arsenal Cache
+            </h3>
+            <div className="grid md:grid-cols-2 gap-12">
+              <div className="text-center">
+                <div className="bg-red-50 p-8 rounded-2xl border-2 border-red-200">
+                  <h4 className="text-xl font-bold text-red-700 mb-6">😰 Sem Arsenal Cache</h4>
+                  <ul className="space-y-3 text-left text-gray-700">
+                    <li className="flex items-center"><span className="text-red-500 mr-3">❌</span>Demora para responder clientes</li>
+                    <li className="flex items-center"><span className="text-red-500 mr-3">❌</span>Perda de vendas por lentidão</li>
+                    <li className="flex items-center"><span className="text-red-500 mr-3">❌</span>Equipe sobrecarregada</li>
+                    <li className="flex items-center"><span className="text-red-500 mr-3">❌</span>Custos mensais altos</li>
+                    <li className="flex items-center"><span className="text-red-500 mr-3">❌</span>Clientes insatisfeitos</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="bg-green-50 p-8 rounded-2xl border-2 border-green-200">
+                  <h4 className="text-xl font-bold text-green-700 mb-6">🚀 Com Arsenal Cache</h4>
+                  <ul className="space-y-3 text-left text-gray-700">
+                    <li className="flex items-center"><span className="text-green-500 mr-3">✅</span>Respostas em segundos 24/7</li>
+                    <li className="flex items-center"><span className="text-green-500 mr-3">✅</span>Vendas automáticas mesmo dormindo</li>
+                    <li className="flex items-center"><span className="text-green-500 mr-3">✅</span>Equipe focada no estratégico</li>
+                    <li className="flex items-center"><span className="text-green-500 mr-3">✅</span>Investimento único, sem mensalidades</li>
+                    <li className="flex items-center"><span className="text-green-500 mr-3">✅</span>Clientes encantados e fiéis</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {features.map((feature, index) => <FeatureCard key={index} icon={feature.icon} title={feature.title} description={feature.description} color={feature.color} />)}
         </div>
         
-        
+        {/* Call to Action Melhorado */}
+        <div className="text-center bg-gradient-to-r from-blue-600 to-purple-600 p-12 rounded-3xl shadow-2xl">
+          <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Pronto para Revolucionar seu Atendimento?
+          </h3>
+          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            Junte-se a mais de 5.000 empresas que já transformaram seus resultados
+          </p>
+          <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+            Quero Transformar Meu Negócio Agora
+            <ArrowRight className="ml-2 w-5 h-5" />
+          </Button>
+          <div className="mt-6 text-blue-100 text-sm">
+            ⚡ Instalação em 24h • 🔒 Garantia de 30 dias • 🎯 Suporte especializado
+          </div>
+        </div>
       </div>
     </section>;
 };
