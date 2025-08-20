@@ -67,7 +67,7 @@ const Navbar = () => {
               onClick={() => scrollToSection('precos')}
               className="text-gray-700 hover:text-arsenal-DEFAULT transition-colors"
             >
-              Planos e Preços
+              Whaticket Pro
             </button>
             <Link 
               to="/servidores" 
@@ -128,7 +128,7 @@ const Navbar = () => {
                 onClick={() => scrollToSection('precos')}
                 className="text-gray-700 hover:text-arsenal-DEFAULT py-2 transition-colors text-left"
               >
-                Planos e Preços
+                Whaticket Pro
               </button>
               <Link 
                 to="/servidores"
