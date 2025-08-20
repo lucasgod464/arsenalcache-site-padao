@@ -98,40 +98,6 @@ const TransformeSection = () => {
           </div>
         </div>
         
-        {/* Antes vs Depois */}
-        <div className="mb-20">
-          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-100">
-            <h3 className="text-3xl font-bold text-center mb-12 text-gray-800">
-              Antes vs. Depois do Arsenal Cache
-            </h3>
-            <div className="grid md:grid-cols-2 gap-12">
-              <div className="text-center">
-                <div className="bg-red-50 p-8 rounded-2xl border-2 border-red-200">
-                  <h4 className="text-xl font-bold text-red-700 mb-6">😰 Sem Arsenal Cache</h4>
-                  <ul className="space-y-3 text-left text-gray-700">
-                    <li className="flex items-center"><span className="text-red-500 mr-3">❌</span>Demora para responder clientes</li>
-                    <li className="flex items-center"><span className="text-red-500 mr-3">❌</span>Perda de vendas por lentidão</li>
-                    <li className="flex items-center"><span className="text-red-500 mr-3">❌</span>Equipe sobrecarregada</li>
-                    <li className="flex items-center"><span className="text-red-500 mr-3">❌</span>Custos mensais altos</li>
-                    <li className="flex items-center"><span className="text-red-500 mr-3">❌</span>Clientes insatisfeitos</li>
-                  </ul>
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="bg-green-50 p-8 rounded-2xl border-2 border-green-200">
-                  <h4 className="text-xl font-bold text-green-700 mb-6">🚀 Com Arsenal Cache</h4>
-                  <ul className="space-y-3 text-left text-gray-700">
-                    <li className="flex items-center"><span className="text-green-500 mr-3">✅</span>Respostas em segundos 24/7</li>
-                    <li className="flex items-center"><span className="text-green-500 mr-3">✅</span>Vendas automáticas mesmo dormindo</li>
-                    <li className="flex items-center"><span className="text-green-500 mr-3">✅</span>Equipe focada no estratégico</li>
-                    <li className="flex items-center"><span className="text-green-500 mr-3">✅</span>Investimento único, sem mensalidades</li>
-                    <li className="flex items-center"><span className="text-green-500 mr-3">✅</span>Clientes encantados e fiéis</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {features.map((feature, index) => <FeatureCard key={index} icon={feature.icon} title={feature.title} description={feature.description} color={feature.color} />)}

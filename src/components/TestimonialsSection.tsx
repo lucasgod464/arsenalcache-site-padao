@@ -33,6 +33,49 @@ const testimonials = [{
   quote: "O melhor investimento que fizemos para melhorar nosso SAC. A automação de respostas para perguntas frequentes liberou nossa equipe para casos mais complexos."
 }];
 const TestimonialsSection = () => {
-  return;
+  return (
+    <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
+            O que nossos clientes dizem
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Mais de 5.000 empresas já transformaram seus resultados com nossa plataforma
+          </p>
+        </div>
+        
+        <Carousel className="max-w-5xl mx-auto">
+          <CarouselContent>
+            {testimonials.map((testimonial, index) => (
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full">
+                  <div className="flex items-center mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+                  <p className="text-gray-700 mb-6 italic">"{testimonial.quote}"</p>
+                  <div className="flex items-center">
+                    <img 
+                      src={testimonial.image} 
+                      alt={testimonial.name}
+                      className="w-12 h-12 rounded-full mr-4"
+                    />
+                    <div>
+                      <h4 className="font-semibold text-gray-800">{testimonial.name}</h4>
+                      <p className="text-sm text-gray-600">{testimonial.role}</p>
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      </div>
+    </section>
+  );
 };
 export default TestimonialsSection;

@@ -36,11 +36,27 @@ const HeroSection = () => {
             Solução completa para WhatsApp
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            Revolucione seu <span className="text-gradient">Atendimento</span> com <span className="text-gradient">Whaticket Profissional</span>
+            A Plataforma Definitiva de <span className="text-gradient">WhatsApp Business</span> para Sua Empresa
           </h1>
           <p className="text-gray-700 text-lg mb-8 max-w-3xl mx-auto">
-            Uma plataforma whitelabel com usuários e conexões ilimitadas. Personalize com sua marca, automatize atendimentos e revenda sem limitações.
+            Sistema completo com <strong>usuários ilimitados</strong>, <strong>conexões sem limite</strong> e personalização total. Transforme seu atendimento em uma máquina de vendas 24/7.
           </p>
+          
+          {/* Estatísticas em destaque */}
+          <div className="grid grid-cols-3 md:grid-cols-3 gap-8 mb-8 max-w-2xl mx-auto">
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-1">∞</div>
+              <div className="text-gray-600 text-sm">Usuários</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-green-600 mb-1">∞</div>
+              <div className="text-gray-600 text-sm">Conexões</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-1">24/7</div>
+              <div className="text-gray-600 text-sm">Automação</div>
+            </div>
+          </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <button 
