@@ -5,7 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import ZproSection from '@/components/ZproSection';
-import PricingSection from '@/components/PricingSection';
+import SinglePlanSection from '@/components/SinglePlanSection';
 import DetailedFeaturesList from '@/components/DetailedFeaturesList';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import FaqSection from '@/components/FaqSection';
@@ -89,7 +89,7 @@ const Index = () => {
       <TransformeSection />
       <ZproSection />
       <FreeTrial />
-      <PricingSection />
+      <SinglePlanSection />
       <DetailedFeaturesList />
       <TestimonialsSection />
       <RoiCalculator />
