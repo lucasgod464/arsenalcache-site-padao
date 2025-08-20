@@ -20,22 +20,15 @@ import {
   DollarSign,
   CreditCard,
   Crown,
-  Calculator,
-  Minus,
-  Plus,
-  ArrowRight,
   Quote
 } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Slider } from "@/components/ui/slider";
 
 const SinglePlanSection = () => {
   const [clientCount, setClientCount] = useState(1247);
-  const [attendants, setAttendants] = useState([3]);
-  const [monthlyROI, setMonthlyROI] = useState(0);
 
   // Contador dinâmico de clientes
   useEffect(() => {
@@ -45,24 +38,14 @@ const SinglePlanSection = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Cálculo do ROI
-  useEffect(() => {
-    const attendantCost = 2500; // Custo médio por atendente
-    const currentCost = attendants[0] * attendantCost;
-    const automaticEfficiency = 0.7; // 70% de eficiência com automação
-    const savings = currentCost * automaticEfficiency;
-    const monthlyPlan = 495.90 / 12; // Custo mensal do plano
-    setMonthlyROI(savings - monthlyPlan);
-  }, [attendants]);
-
   const testimonials = [
     {
       name: "Carlos Silva",
       company: "TechSolutions",
       role: "CEO",
-      content: "Reducimos 80% do tempo de resposta e aumentamos as vendas em 150%. O ROI foi alcançado em apenas 2 meses!",
+      content: "Reduzi 80% do tempo de resposta e aumentei as vendas em 150%. O ROI foi alcançado em apenas 2 meses!",
       rating: 5,
-      savings: "R$ 15.000/mês",
+      savings: "R$ 2.800/mês",
       avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face"
     },
     {
@@ -71,17 +54,44 @@ const SinglePlanSection = () => {
       role: "Diretora",
       content: "Automatizamos 90% dos atendimentos iniciais. Nossa equipe agora foca apenas em vendas qualificadas.",
       rating: 5,
-      savings: "R$ 22.000/mês",
+      savings: "R$ 3.200/mês",
       avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b4c0?w=80&h=80&fit=crop&crop=face"
     },
     {
       name: "Roberto Lima",
       company: "E-commerce Plus",
       role: "Fundador",
-      content: "Sistema pagou por si só em 45 dias. Agora gerenciamos 500+ conversas simultâneas sem esforço.",
+      content: "Sistema pagou por si só em 45 dias. Agora gerencio 500+ conversas simultâneas sem esforço.",
       rating: 5,
-      savings: "R$ 8.500/mês",
+      savings: "R$ 1.850/mês",
       avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face"
+    },
+    {
+      name: "Mariana Santos",
+      company: "Consultoria MS",
+      role: "Sócia",
+      content: "Consegui automatizar todo meu atendimento inicial. Agora trabalho só com clientes qualificados.",
+      rating: 5,
+      savings: "R$ 1.400/mês",
+      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face"
+    },
+    {
+      name: "João Ferreira",
+      company: "InfoTech",
+      role: "Diretor",
+      content: "Impressionante como conseguimos atender 3x mais clientes com a mesma equipe. Recomendo!",
+      rating: 5,
+      savings: "R$ 2.100/mês",
+      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face"
+    },
+    {
+      name: "Fernanda Oliveira",
+      company: "Beauty Express",
+      role: "Proprietária",
+      content: "Nunca mais perdi um cliente por demora no atendimento. O sistema responde na hora!",
+      rating: 5,
+      savings: "R$ 980/mês",
+      avatar: "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?w=80&h=80&fit=crop&crop=face"
     }
   ];
 
@@ -178,82 +188,6 @@ const SinglePlanSection = () => {
 
           {/* Coluna Central e Direita - Recursos */}
           <div className="lg:col-span-2 space-y-8">
-            {/* Calculadora de ROI */}
-            <Card className="border-purple-200 bg-gradient-to-r from-purple-50 to-indigo-50">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-purple-700 text-xl">
-                  <Calculator className="h-6 w-6" />
-                  💰 Calcule Sua Economia
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-6">
-                  <div>
-                    <label className="text-sm font-medium text-gray-700 mb-2 block">
-                      Quantos atendentes sua empresa tem?
-                    </label>
-                    <div className="flex items-center gap-4">
-                      <Button 
-                        variant="outline" 
-                        size="sm"
-                        onClick={() => setAttendants([Math.max(1, attendants[0] - 1)])}
-                        className="h-8 w-8 p-0"
-                      >
-                        <Minus className="h-4 w-4" />
-                      </Button>
-                      <Slider
-                        value={attendants}
-                        onValueChange={setAttendants}
-                        max={20}
-                        min={1}
-                        step={1}
-                        className="flex-1"
-                      />
-                      <Button 
-                        variant="outline" 
-                        size="sm"
-                        onClick={() => setAttendants([Math.min(20, attendants[0] + 1)])}
-                        className="h-8 w-8 p-0"
-                      >
-                        <Plus className="h-4 w-4" />
-                      </Button>
-                      <span className="font-bold text-lg w-12 text-center">{attendants[0]}</span>
-                    </div>
-                  </div>
-
-                  <div className="bg-white rounded-xl p-6 border-2 border-purple-200">
-                    <div className="grid md:grid-cols-3 gap-4 text-center">
-                      <div>
-                        <div className="text-sm text-gray-600">Custo Atual Mensal</div>
-                        <div className="text-2xl font-bold text-red-600">
-                          R$ {(attendants[0] * 2500).toLocaleString('pt-BR')}
-                        </div>
-                      </div>
-                      <div>
-                        <div className="text-sm text-gray-600">Com Whaticket Pro</div>
-                        <div className="text-2xl font-bold text-blue-600">
-                          R$ {((attendants[0] * 2500 * 0.3) + (495.90/12)).toLocaleString('pt-BR', {maximumFractionDigits: 0})}
-                        </div>
-                      </div>
-                      <div>
-                        <div className="text-sm text-gray-600">Economia Mensal</div>
-                        <div className="text-2xl font-bold text-green-600">
-                          R$ {monthlyROI.toLocaleString('pt-BR', {maximumFractionDigits: 0})}
-                        </div>
-                      </div>
-                    </div>
-                    <div className="mt-4 text-center">
-                      <div className="text-lg font-bold text-purple-700">
-                        🎯 ROI em {Math.max(1, Math.ceil(495.90 / (monthlyROI > 0 ? monthlyROI : 1000)))} meses
-                      </div>
-                      <div className="text-sm text-gray-600 mt-1">
-                        Economia anual: R$ {(monthlyROI * 12).toLocaleString('pt-BR', {maximumFractionDigits: 0})}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
 
             {/* Conexões Já Incluídas */}
             <Card className="border-green-200 bg-gradient-to-r from-green-50 to-emerald-50">
@@ -450,7 +384,7 @@ const SinglePlanSection = () => {
           <h3 className="text-3xl font-bold text-center mb-8 text-gray-900">
             🗣️ O que nossos clientes estão dizendo
           </h3>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {testimonials.map((testimonial, index) => (
               <Card key={index} className="bg-white border-gray-200 shadow-lg hover:shadow-xl transition-shadow">
                 <CardContent className="p-6">
