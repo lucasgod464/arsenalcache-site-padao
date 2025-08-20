@@ -56,8 +56,8 @@ const Navbar = () => {
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <Link to="/" className="text-2xl font-display font-bold text-arsenal-dark">
-              Arsenal<span className="text-whatsapp-DEFAULT">Cache</span>
+            <Link to="/" className="text-2xl font-display font-bold text-brand-primary">
+              Arsenal<span className="text-brand-secondary">Cache</span>
             </Link>
           </div>
 

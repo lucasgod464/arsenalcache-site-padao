@@ -16,7 +16,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 201 100% 36%;
+    --primary: 212 100% 47%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -33,9 +33,33 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 201 100% 36%;
+    --ring: 212 100% 47%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Design System Colors */
+    --brand-primary: 212 100% 47%;
+    --brand-primary-light: 213 93% 67%;
+    --brand-primary-dark: 212 84% 35%;
+    
+    --brand-secondary: 142 71% 45%;
+    --brand-secondary-light: 142 69% 58%;
+    --brand-secondary-dark: 142 84% 35%;
+    
+    --brand-accent: 45 93% 47%;
+    --brand-accent-light: 45 93% 67%;
+    --brand-accent-dark: 45 84% 35%;
+    
+    --neutral-50: 210 40% 98%;
+    --neutral-100: 210 40% 96%;
+    --neutral-200: 214 32% 91%;
+    --neutral-300: 213 27% 84%;
+    --neutral-400: 215 16% 65%;
+    --neutral-500: 215 20% 46%;
+    --neutral-600: 215 25% 27%;
+    --neutral-700: 215 39% 15%;
+    --neutral-800: 217 33% 10%;
+    --neutral-900: 222 84% 5%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -67,6 +91,11 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
+    
+    --brand-primary: 213 93% 67%;
+    --brand-primary-light: 214 95% 78%;
+    --brand-primary-dark: 212 100% 47%;
+    
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -95,64 +124,110 @@
 }
 
 @layer components {
+  /* Glass Effects */
   .glass-card {
     @apply bg-white/80 backdrop-blur-md shadow-lg border border-white/20;
   }
+  
+  .glass-dark {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10;
+  }
 
+  /* Card Variants */
   .feature-card {
-    @apply p-6 rounded-xl bg-white backdrop-blur-sm shadow-md border border-gray-100 
-           transition-all duration-300 hover:shadow-lg hover:border-arsenal-light/30;
+    @apply p-6 rounded-xl bg-white backdrop-blur-sm shadow-md border border-neutral-200
+           transition-all duration-300 hover:shadow-lg hover:border-brand-primary/30 hover:bg-neutral-50/50;
   }
 
   .pricing-card {
-    @apply p-8 rounded-xl bg-white backdrop-blur-sm shadow-md border border-gray-100 
-           transition-all duration-300 hover:shadow-xl hover:border-arsenal-light/50;
+    @apply p-8 rounded-xl bg-white backdrop-blur-sm shadow-lg border border-neutral-200
+           transition-all duration-300 hover:shadow-xl hover:border-brand-primary/50;
   }
 
+  .info-card {
+    @apply p-6 rounded-xl bg-white/80 backdrop-blur-sm shadow-sm border border-white/20
+           transition-all duration-300 hover:shadow-md hover:bg-white/90;
+  }
+
+  /* Button Variants */
   .btn-primary {
-    @apply rounded-full px-6 py-3 bg-blue-500 
-           text-white font-medium transition-all hover:shadow-lg hover:shadow-blue-500/20 
+    @apply rounded-full px-6 py-3 bg-gradient-to-r from-brand-primary to-brand-primary-dark
+           text-white font-medium transition-all hover:shadow-lg hover:shadow-brand-primary/20 
+           active:scale-[0.98] transform duration-200;
+  }
+
+  .btn-secondary {
+    @apply rounded-full px-6 py-3 bg-gradient-to-r from-brand-secondary to-brand-secondary-dark
+           text-white font-medium transition-all hover:shadow-lg hover:shadow-brand-secondary/20
            active:scale-[0.98] transform duration-200;
   }
 
   .btn-accent {
-    @apply rounded-full px-6 py-3 bg-green-500 
-           text-white font-medium transition-all hover:shadow-lg hover:shadow-green-500/20
+    @apply rounded-full px-6 py-3 bg-gradient-to-r from-brand-accent to-brand-accent-dark
+           text-white font-medium transition-all hover:shadow-lg hover:shadow-brand-accent/20
            active:scale-[0.98] transform duration-200;
   }
 
   .btn-outline {
-    @apply rounded-full px-6 py-3 border border-blue-300
-           text-blue-800 font-medium transition-all hover:bg-blue-50
+    @apply rounded-full px-6 py-3 border-2 border-brand-primary
+           text-brand-primary font-medium transition-all hover:bg-brand-primary hover:text-white
            active:scale-[0.98] transform duration-200;
   }
 
+  .btn-ghost {
+    @apply rounded-full px-6 py-3 text-brand-primary font-medium
+           transition-all hover:bg-brand-primary/10 active:scale-[0.98] transform duration-200;
+  }
+
+  /* Typography */
   .section-title {
-    @apply text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 text-center;
   }
 
   .section-subtitle {
-    @apply text-lg text-gray-600 mb-12 max-w-3xl mx-auto text-center;
+    @apply text-lg md:text-xl text-neutral-600 mb-12 max-w-3xl mx-auto text-center leading-relaxed;
   }
 
-  .check-list-item {
-    @apply flex items-start gap-2 mb-4;
+  .hero-title {
+    @apply text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-neutral-900 mb-6 leading-tight;
   }
 
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-primary via-brand-primary-light to-brand-accent bg-clip-text text-transparent;
+  }
+
+  .gradient-text-secondary {
+    @apply bg-gradient-to-r from-brand-secondary to-brand-secondary-light bg-clip-text text-transparent;
+  }
+
+  .gradient-text-accent {
+    @apply bg-gradient-to-r from-brand-accent to-brand-accent-light bg-clip-text text-transparent;
+  }
+
+  /* Background Gradients */
   .hero-gradient {
-    @apply bg-gradient-to-br from-sky-50 via-white to-sky-50;
+    @apply bg-gradient-to-br from-neutral-50 via-white to-brand-primary/5;
   }
 
-  .features-gradient {
-    @apply bg-gradient-to-br from-white via-sky-50 to-white;
+  .section-gradient {
+    @apply bg-gradient-to-br from-white via-neutral-50 to-white;
   }
 
-  .cta-gradient {
-    @apply bg-gradient-to-r from-blue-500/10 to-green-500/10;
+  .dark-gradient {
+    @apply bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900;
   }
 
-  .text-gradient {
-    @apply bg-gradient-to-r from-blue-700 to-blue-500 bg-clip-text text-transparent;
+  .primary-gradient {
+    @apply bg-gradient-to-br from-brand-primary via-brand-primary-dark to-brand-primary;
+  }
+
+  .accent-gradient {
+    @apply bg-gradient-to-r from-brand-accent/10 to-brand-secondary/10;
+  }
+
+  /* Interactive Elements */
+  .check-list-item {
+    @apply flex items-start gap-3 mb-4;
   }
 
   .fade-in-section {
@@ -162,20 +237,45 @@
   .fade-in-section.is-visible {
     @apply opacity-100 translate-y-0;
   }
-  
-  /* Botão do telefone com estilo mais visível */
+
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  /* Phone Link Component */
   .phone-link-container {
-    @apply relative bg-blue-50 hover:bg-blue-100 px-4 py-3 rounded-lg border border-blue-200 
-           flex items-center gap-3 cursor-pointer transition-all duration-300 
-           hover:shadow-lg hover:shadow-blue-100 w-full max-w-xs;
+    @apply relative bg-brand-primary/5 hover:bg-brand-primary/10 px-4 py-3 rounded-lg 
+           border border-brand-primary/20 flex items-center gap-3 cursor-pointer 
+           transition-all duration-300 hover:shadow-lg hover:shadow-brand-primary/10 w-full max-w-xs;
   }
   
   .phone-link-container .phone-icon {
-    @apply bg-blue-500 text-white p-2 rounded-full;
+    @apply bg-brand-primary text-white p-2 rounded-full;
   }
   
   .phone-number {
-    @apply text-blue-600 font-medium text-lg hover:text-blue-700;
+    @apply text-brand-primary font-medium text-lg hover:text-brand-primary-dark;
+  }
+
+  /* Status and Badge Styles */
+  .status-badge {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium;
+  }
+
+  .status-badge-primary {
+    @apply status-badge bg-brand-primary/10 text-brand-primary border border-brand-primary/20;
+  }
+
+  .status-badge-success {
+    @apply status-badge bg-brand-secondary/10 text-brand-secondary border border-brand-secondary/20;
+  }
+
+  .status-badge-warning {
+    @apply status-badge bg-brand-accent/10 text-brand-accent-dark border border-brand-accent/20;
   }
 }
 
@@ -206,16 +306,16 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: hsl(var(--neutral-100));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: hsl(var(--neutral-400));
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: hsl(var(--neutral-500));
 }
 
 /* Animação de pulso para o botão de WhatsApp */

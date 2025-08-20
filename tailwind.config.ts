@@ -63,27 +63,46 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
+				// Brand Design System
+				brand: {
+					primary: {
+						DEFAULT: 'hsl(var(--brand-primary))',
+						light: 'hsl(var(--brand-primary-light))',
+						dark: 'hsl(var(--brand-primary-dark))'
+					},
+					secondary: {
+						DEFAULT: 'hsl(var(--brand-secondary))',
+						light: 'hsl(var(--brand-secondary-light))',
+						dark: 'hsl(var(--brand-secondary-dark))'
+					},
+					accent: {
+						DEFAULT: 'hsl(var(--brand-accent))',
+						light: 'hsl(var(--brand-accent-light))',
+						dark: 'hsl(var(--brand-accent-dark))'
+					}
+				},
+				neutral: {
+					50: 'hsl(var(--neutral-50))',
+					100: 'hsl(var(--neutral-100))',
+					200: 'hsl(var(--neutral-200))',
+					300: 'hsl(var(--neutral-300))',
+					400: 'hsl(var(--neutral-400))',
+					500: 'hsl(var(--neutral-500))',
+					600: 'hsl(var(--neutral-600))',
+					700: 'hsl(var(--neutral-700))',
+					800: 'hsl(var(--neutral-800))',
+					900: 'hsl(var(--neutral-900))'
+				},
+				// Legacy support (will be migrated)
 				whatsapp: {
 					light: '#25D366',
 					DEFAULT: '#128C7E',
 					dark: '#075E54'
 				},
 				arsenal: {
-					light: '#4DABF7',
-					DEFAULT: '#228BE6',
-					dark: '#1971C2'
-				},
-				purple: {
-					50: '#f5f3ff',
-					100: '#ede9fe',
-					200: '#ddd6fe',
-					300: '#c4b5fd',
-					400: '#a78bfa',
-					500: '#8b5cf6',
-					600: '#7c3aed',
-					700: '#6d28d9',
-					800: '#5b21b6',
-					900: '#4c1d95'
+					light: 'hsl(var(--brand-primary-light))',
+					DEFAULT: 'hsl(var(--brand-primary))',
+					dark: 'hsl(var(--brand-primary-dark))'
 				}
 			},
 			borderRadius: {
