@@ -91,17 +91,6 @@ const Navbar = () => {
             >
               IA Conecta
             </Link>
-            <Link 
-              to="/pacote-n8n" 
-              className={cn(
-                "transition-colors", 
-                isActive('/pacote-n8n') 
-                  ? "text-arsenal-DEFAULT font-medium" 
-                  : "text-gray-700 hover:text-arsenal-DEFAULT"
-              )}
-            >
-              Pacote N8N
-            </Link>
             <button 
               onClick={() => scrollToSection('faq')}
               className="text-gray-700 hover:text-arsenal-DEFAULT transition-colors"
@@ -164,18 +153,6 @@ const Navbar = () => {
                 )}
               >
                 IA Conecta
-              </Link>
-              <Link 
-                to="/pacote-n8n"
-                onClick={() => setIsOpen(false)}
-                className={cn(
-                  "py-2 transition-colors", 
-                  isActive('/pacote-n8n') 
-                    ? "text-arsenal-DEFAULT font-medium" 
-                    : "text-gray-700 hover:text-arsenal-DEFAULT"
-                )}
-              >
-                Pacote N8N
               </Link>
               <button 
                 onClick={() => scrollToSection('faq')}
