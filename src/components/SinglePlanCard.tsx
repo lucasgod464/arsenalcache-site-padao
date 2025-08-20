@@ -23,17 +23,45 @@ const SinglePlanCard = () => {
           </div>
         </CardHeader>
         <CardContent className="space-y-3">
-          <div className="flex items-center gap-3">
-            <div className="w-3 h-3 bg-white rounded-full"></div>
-            <span className="font-medium">WhatsApp ilimitado</span>
-            <Badge variant="secondary" className="bg-white/20 text-white border-0">
-              📱 API WhatsApp oficial
-            </Badge>
+          <div className="grid grid-cols-2 gap-3">
+            <div className="flex items-center gap-2">
+              <Check className="w-4 h-4 text-white" />
+              <span className="text-sm">Sistema Completo Whaticket</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Check className="w-4 h-4 text-white" />
+              <span className="text-sm">Instalação Profissional</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Check className="w-4 h-4 text-white" />
+              <span className="text-sm">Atualizações Automáticas</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Check className="w-4 h-4 text-white" />
+              <span className="text-sm">Monitoramento IA 24/7</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Check className="w-4 h-4 text-white" />
+              <span className="text-sm">Suporte Especializado</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Check className="w-4 h-4 text-white" />
+              <span className="text-sm">Sistema Whitelabel</span>
+            </div>
           </div>
-          <p className="text-sm text-green-100 flex items-center gap-1">
-            <Check className="w-4 h-4" />
-            Conecte quantos números WhatsApp quiser sem custo adicional
-          </p>
+          <div className="mt-4 pt-3 border-t border-green-400/30">
+            <div className="flex items-center gap-3">
+              <div className="w-3 h-3 bg-white rounded-full"></div>
+              <span className="font-medium">WhatsApp ilimitado</span>
+              <Badge variant="secondary" className="bg-white/20 text-white border-0">
+                📱 API WhatsApp oficial
+              </Badge>
+            </div>
+            <p className="text-sm text-green-100 flex items-center gap-1 mt-2">
+              <Check className="w-4 h-4" />
+              Conecte quantos números WhatsApp quiser sem custo adicional
+            </p>
+          </div>
         </CardContent>
       </Card>
 
@@ -64,6 +92,12 @@ const SinglePlanCard = () => {
           <div className="text-center py-4 bg-blue-400/20 rounded-lg">
             <div className="text-2xl font-bold">R$ 260,00/mês</div>
             <div className="text-sm text-blue-100">Conexões ilimitadas de Instagram e Facebook</div>
+          </div>
+          <div className="mt-4 p-3 bg-green-100 rounded-lg border border-green-200">
+            <div className="text-center">
+              <div className="text-lg font-bold text-green-800">Plano Anual: R$ 495,90</div>
+              <div className="text-sm text-green-600">Whaticket Pro - Economia garantida</div>
+            </div>
           </div>
         </CardContent>
       </Card>
