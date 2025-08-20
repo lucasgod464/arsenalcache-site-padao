@@ -11,7 +11,7 @@ import LeadsPage from "./pages/LeadsPage";
 import MasterClass from "./pages/MasterClass";
 import IAConecta from "./pages/IAConecta";
 import Servidores from "./pages/Servidores";
-
+import PacoteN8N from "./pages/PacoteN8N";
 import WebhookConfigPage from "./pages/WebhookConfigPage";
 import PromocaoEspecial from "./pages/PromocaoEspecial";
 import CookieBanner from "./components/CookieBanner";
@@ -33,7 +33,7 @@ function App() {
               <Route path="/golden-masterclass" element={<MasterClass />} />
               <Route path="/ia-conecta" element={<IAConecta />} />
               <Route path="/servidores" element={<Servidores />} />
-              
+              <Route path="/pacote-n8n" element={<PacoteN8N />} />
               <Route path="/webhook-config" element={<WebhookConfigPage />} />
               <Route path="/promocao-especial" element={<PromocaoEspecial />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

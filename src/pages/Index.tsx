@@ -5,7 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import ZproSection from '@/components/ZproSection';
-import SinglePlanCard from '@/components/SinglePlanCard';
+import PricingSection from '@/components/PricingSection';
 import DetailedFeaturesList from '@/components/DetailedFeaturesList';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import FaqSection from '@/components/FaqSection';
@@ -89,19 +89,7 @@ const Index = () => {
       <TransformeSection />
       <ZproSection />
       <FreeTrial />
-      <section id="precos" className="py-16 px-4 bg-gray-50">
-        <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Plano <span className="text-green-600">Whaticket Profissional</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Solução completa de atendimento para transformar seu negócio
-            </p>
-          </div>
-          <SinglePlanCard />
-        </div>
-      </section>
+      <PricingSection />
       <DetailedFeaturesList />
       <TestimonialsSection />
       <RoiCalculator />
