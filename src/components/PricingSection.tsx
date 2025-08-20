@@ -532,12 +532,6 @@ const PricingSection = () => {
                         </li>
                         <li className="flex items-center gap-2.5">
                           <div className="bg-blue-600 rounded-full p-1.5">
-                            <BookOpen className="w-4 h-4 text-white flex-shrink-0" />
-                          </div>
-                          <span className="text-sm text-blue-100">Supabase - Plataforma Back-end</span>
-                        </li>
-                        <li className="flex items-center gap-2.5">
-                          <div className="bg-blue-600 rounded-full p-1.5">
                             <Warehouse className="w-4 h-4 text-white flex-shrink-0" />
                           </div>
                           <span className="text-sm text-blue-100">Minio - Armazenamento</span>

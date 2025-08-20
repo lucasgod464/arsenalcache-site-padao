@@ -272,57 +272,6 @@ const PacoteN8N = () => {
               </CardContent>
             </Card>
 
-            {/* Supabase */}
-            <Card className="group relative overflow-hidden border border-emerald-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-emerald-50">
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/5 to-green-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="h-2 bg-gradient-to-r from-emerald-500 to-green-500 w-full"></div>
-              
-              <div className="absolute top-4 right-4">
-                <div className="p-2 rounded-full bg-emerald-100 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300">
-                  <Cpu className="h-6 w-6" />
-                </div>
-              </div>
-              
-              <CardHeader>
-                <Badge className="w-fit bg-emerald-100 text-emerald-800 group-hover:bg-emerald-200 transition-all">Backend</Badge>
-                <CardTitle className="text-2xl mt-4 text-emerald-900">Supabase</CardTitle>
-                <CardDescription className="text-emerald-700">
-                  Alternativa de código aberto ao Firebase com recursos avançados
-                </CardDescription>
-              </CardHeader>
-              
-              <CardContent>
-                <Accordion type="single" collapsible className="w-full">
-                  <AccordionItem value="item-1" className="border-b-0">
-                    <AccordionTrigger className="py-2 font-medium text-emerald-800 hover:text-emerald-600 hover:no-underline">
-                      Recursos principais
-                    </AccordionTrigger>
-                    <AccordionContent>
-                      <ul className="space-y-3 mt-2 text-sm">
-                        <li className="flex items-start gap-2">
-                          <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
-                            <Check className="h-3.5 w-3.5 text-green-600" />
-                          </div>
-                          <span className="text-gray-700">Autenticação, banco de dados e armazenamento integrados</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
-                            <Check className="h-3.5 w-3.5 text-green-600" />
-                          </div>
-                          <span className="text-gray-700">APIs RESTful e tempo real para aplicações interativas</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
-                            <Check className="h-3.5 w-3.5 text-green-600" />
-                          </div>
-                          <span className="text-gray-700">Edge Functions para lógica de servidor sem servidor</span>
-                        </li>
-                      </ul>
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
-              </CardContent>
-            </Card>
 
             {/* MinIO */}
             <Card className="group relative overflow-hidden border border-amber-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-amber-50">
