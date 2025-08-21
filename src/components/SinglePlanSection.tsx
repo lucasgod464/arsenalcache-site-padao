@@ -123,34 +123,34 @@ const SinglePlanSection = () => {
 
         <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16">
           {/* Coluna da Esquerda - Preço e CTA */}
-          <div className="lg:col-span-1">
-            <Card className="sticky top-8 border-2 border-blue-200 shadow-2xl bg-gradient-to-br from-white to-blue-50">
-              <CardContent className="p-8">
-                <div className="text-center mb-8">
-                  <div className="mb-6">
-                    <Badge className="bg-red-100 text-red-700 px-4 py-2 text-sm font-semibold mb-4">
+          <div className="lg:col-span-1 order-2 lg:order-1">
+            <Card className="lg:sticky lg:top-8 border-2 border-blue-200 shadow-2xl bg-gradient-to-br from-white to-blue-50">
+              <CardContent className="p-6 lg:p-8">
+                <div className="text-center mb-6 lg:mb-8">
+                  <div className="mb-4 lg:mb-6">
+                    <Badge className="bg-red-100 text-red-700 px-3 py-1 lg:px-4 lg:py-2 text-xs lg:text-sm font-semibold mb-3 lg:mb-4">
                       🔥 Oferta Limitada - 50% OFF
                     </Badge>
-                    <div className="text-2xl text-gray-400 line-through mb-2">
+                    <div className="text-xl lg:text-2xl text-gray-400 line-through mb-2">
                       De R$ 997,90
                     </div>
-                    <div className="text-6xl font-bold text-gray-900 mb-2">
+                    <div className="text-4xl lg:text-6xl font-bold text-gray-900 mb-2">
                       R$ 495
-                      <span className="text-2xl text-gray-600">,90</span>
+                      <span className="text-xl lg:text-2xl text-gray-600">,90</span>
                     </div>
-                    <div className="text-lg text-gray-600 mb-4">
+                    <div className="text-base lg:text-lg text-gray-600 mb-3 lg:mb-4">
                       Pagamento anual
                     </div>
-                    <div className="bg-green-100 rounded-lg p-4 mb-6">
-                      <div className="text-green-800 font-bold text-lg mb-1">
+                    <div className="bg-green-100 rounded-lg p-3 lg:p-4 mb-4 lg:mb-6">
+                      <div className="text-green-800 font-bold text-base lg:text-lg mb-1">
                         6x de R$ 82,65
                       </div>
-                      <div className="text-sm text-green-700">
+                      <div className="text-xs lg:text-sm text-green-700">
                         Sem juros no cartão
                       </div>
                     </div>
-                    <div className="bg-blue-100 rounded-lg p-4 mb-6">
-                      <div className="text-sm text-blue-800 font-medium">
+                    <div className="bg-blue-100 rounded-lg p-3 lg:p-4 mb-4 lg:mb-6">
+                      <div className="text-xs lg:text-sm text-blue-800 font-medium">
                         Equivale a apenas R$ 41,32/mês
                       </div>
                       <div className="text-xs text-blue-600 mt-1">
@@ -162,7 +162,7 @@ const SinglePlanSection = () => {
 
                 <Button 
                   size="lg" 
-                  className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 mb-4"
+                  className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-3 lg:py-4 text-base lg:text-lg rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 mb-3 lg:mb-4"
                   asChild
                 >
                   <a href="https://wa.me/5512981156856?text=Olá,%20gostaria%20de%20contratar%20o%20Whaticket%20Pro%20por%20R$495,90%20(6x%20sem%20juros)." target="_blank" rel="noopener noreferrer">
@@ -170,7 +170,7 @@ const SinglePlanSection = () => {
                   </a>
                 </Button>
 
-                <div className="text-center text-sm text-gray-600 space-y-2">
+                <div className="text-center text-xs lg:text-sm text-gray-600 space-y-2">
                   <div className="flex items-center justify-center gap-2">
                     <Shield className="h-4 w-4 text-green-600" />
                     Garantia de 30 dias
@@ -188,7 +188,7 @@ const SinglePlanSection = () => {
           </div>
 
           {/* Coluna Central e Direita - Recursos */}
-          <div className="lg:col-span-2 space-y-8">
+          <div className="lg:col-span-2 space-y-6 lg:space-y-8 order-1 lg:order-2">
 
             {/* Conexões Já Incluídas */}
             <Card className="border-green-200 bg-gradient-to-r from-green-50 to-emerald-50">
@@ -274,8 +274,8 @@ const SinglePlanSection = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-4">
+                <div className="grid md:grid-cols-2 gap-4 lg:gap-6">
+                  <div className="space-y-3 lg:space-y-4">
                     <h4 className="font-bold text-gray-900 flex items-center gap-2">
                       <Users className="h-5 w-5 text-blue-600" />
                       Recursos Ilimitados
