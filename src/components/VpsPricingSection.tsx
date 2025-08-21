@@ -70,12 +70,12 @@ const VpsPricingSection = () => {
   ];
 
   return (
-    <div className="mt-16 mb-16">
+    <div className="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl p-8 mb-16">
       <div className="text-center mb-12">
-        <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-          Escolha Seu <span className="text-brand-accent">Servidor VPS</span>
+        <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+          Escolha Seu <span className="text-orange-600">Servidor VPS</span>
         </h3>
-        <p className="text-neutral-300 text-lg max-w-2xl mx-auto">
+        <p className="text-gray-600 text-lg max-w-2xl mx-auto">
           Servidores dedicados no Brasil com alta performance para seu Whaticket Pro
         </p>
       </div>
@@ -84,25 +84,25 @@ const VpsPricingSection = () => {
         {vpsPlans.map((plan, index) => (
           <Card 
             key={plan.name} 
-            className={`relative bg-white/5 backdrop-blur-sm border-white/10 hover:border-brand-accent/30 transition-all duration-300 ${
-              plan.popular ? 'ring-2 ring-brand-accent/50 scale-105' : ''
+            className={`relative bg-white border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 ${
+              plan.popular ? 'ring-2 ring-orange-500 scale-105 border-orange-300' : ''
             }`}
           >
             {plan.popular && (
               <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                <Badge className="bg-brand-accent text-white px-4 py-1">
+                <Badge className="bg-orange-500 text-white px-4 py-1">
                   Mais Popular
                 </Badge>
               </div>
             )}
             
             <CardHeader className="text-center pb-4">
-              <CardTitle className="text-brand-accent text-xl font-bold mb-2">
+              <CardTitle className="text-orange-600 text-xl font-bold mb-2">
                 {plan.name}
               </CardTitle>
-              <div className="text-white">
+              <div className="text-gray-900">
                 <span className="text-3xl font-bold">R${plan.price}</span>
-                <span className="text-neutral-400 text-sm ml-2">BRL/mês</span>
+                <span className="text-gray-600 text-sm ml-2">BRL/mês</span>
               </div>
             </CardHeader>
 
@@ -111,8 +111,8 @@ const VpsPricingSection = () => {
               <div className="space-y-3">
                 {plan.features.map((feature, idx) => (
                   <div key={idx} className="flex items-center gap-3">
-                    <feature.icon className={`h-4 w-4 ${feature.highlight ? 'text-red-400' : 'text-brand-accent'}`} />
-                    <span className={`text-sm ${feature.highlight ? 'text-red-400' : 'text-neutral-300'}`}>
+                    <feature.icon className={`h-4 w-4 ${feature.highlight ? 'text-red-500' : 'text-orange-600'}`} />
+                    <span className={`text-sm ${feature.highlight ? 'text-red-500' : 'text-gray-700'}`}>
                       {feature.text}
                     </span>
                   </div>
@@ -120,17 +120,17 @@ const VpsPricingSection = () => {
               </div>
 
               {/* Capacity and Support */}
-              <div className="space-y-2 pt-4 border-t border-white/10">
-                <div className="flex items-center gap-2 bg-green-500/10 border border-green-500/20 rounded-lg p-2">
-                  <Users className="h-4 w-4 text-green-400" />
-                  <span className="text-sm text-green-400 font-medium">
+              <div className="space-y-2 pt-4 border-t border-gray-200">
+                <div className="flex items-center gap-2 bg-green-50 border border-green-200 rounded-lg p-2">
+                  <Users className="h-4 w-4 text-green-600" />
+                  <span className="text-sm text-green-700 font-medium">
                     Capacidade: {plan.capacity}
                   </span>
                 </div>
                 
-                <div className="flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-lg p-2">
-                  <Phone className="h-4 w-4 text-blue-400" />
-                  <span className="text-sm text-blue-400 font-medium">
+                <div className="flex items-center gap-2 bg-blue-50 border border-blue-200 rounded-lg p-2">
+                  <Phone className="h-4 w-4 text-blue-600" />
+                  <span className="text-sm text-blue-700 font-medium">
                     Suporta: {plan.support}
                   </span>
                 </div>
@@ -140,8 +140,8 @@ const VpsPricingSection = () => {
               <Button 
                 className={`w-full mt-6 ${
                   plan.popular 
-                    ? 'bg-brand-accent hover:bg-brand-accent/90 text-white' 
-                    : 'bg-white/10 hover:bg-white/20 text-white border border-white/20'
+                    ? 'bg-orange-600 hover:bg-orange-700 text-white' 
+                    : 'bg-gray-100 hover:bg-gray-200 text-gray-900 border border-gray-300'
                 }`}
                 asChild
               >
