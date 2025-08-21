@@ -15,7 +15,7 @@ const MasterClass = () => {
     // Random number of people watching (between 1000 and 1200)
     const peopleInterval = setInterval(() => {
       setPeopleWatching(Math.floor(Math.random() * 200 + 1000));
-    }, 5000);
+    }, 1200);
 
     // Show pricing section after 1 minute (60 seconds)
     const pricingTimer = setTimeout(() => {

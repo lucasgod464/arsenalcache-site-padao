@@ -35,7 +35,7 @@ const SinglePlanSection = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setClientCount(prev => prev + Math.floor(Math.random() * 3));
-    }, 5000);
+    }, 1200);
     return () => clearInterval(interval);
   }, []);
 
