@@ -26,6 +26,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import VpsPricingSection from './VpsPricingSection';
 
 const SinglePlanSection = () => {
   const [clientCount, setClientCount] = useState(1247);
@@ -378,6 +379,9 @@ const SinglePlanSection = () => {
             </Card>
           </div>
         </div>
+
+        {/* VPS Pricing Section */}
+        <VpsPricingSection />
 
         {/* Testimonials */}
         <div className="mb-16">

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Check, Clock, Server } from 'lucide-react';
 import SystemCarousel from './SystemCarousel';
-import VpsPricingSection from './VpsPricingSection';
 
 const ZproSection = () => {
   return <section id="sistema-golden" className="dark-gradient py-24 px-4 text-white relative overflow-hidden">
@@ -38,8 +37,6 @@ const ZproSection = () => {
         </div>
 
         <SystemCarousel />
-
-        <VpsPricingSection />
 
         {/* Call to Action Final */}
         <div className="bg-gradient-to-r from-brand-accent/10 via-brand-accent/5 to-brand-accent/10 glass-dark rounded-2xl p-8 md:p-12 border border-brand-accent/30">
