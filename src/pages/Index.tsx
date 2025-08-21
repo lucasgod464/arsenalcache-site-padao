@@ -4,6 +4,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Link, useLocation } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
+import ComparisonTable from '@/components/ComparisonTable';
 import ZproSection from '@/components/ZproSection';
 import SinglePlanSection from '@/components/SinglePlanSection';
 import DetailedFeaturesList from '@/components/DetailedFeaturesList';
@@ -90,6 +91,7 @@ const Index = () => {
       <ZproSection />
       <FreeTrial />
       <SinglePlanSection />
+      <ComparisonTable />
       <DetailedFeaturesList />
       
       
