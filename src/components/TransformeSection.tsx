@@ -74,7 +74,7 @@ const TransformeSection = () => {
             Transforme seu Atendimento em uma Máquina de Resultados
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed">
-            Mais de <span className="font-bold text-blue-600">5.000 empresas</span> já revolucionaram seus resultados com nossa plataforma inteligente de atendimento
+            Mais de <span className="font-bold text-blue-600">1.200 empresas</span> já revolucionaram seus resultados com nossa plataforma inteligente de atendimento
           </p>
           
           {/* Estatísticas em Destaque */}
@@ -108,9 +108,7 @@ const TransformeSection = () => {
           <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Pronto para Revolucionar seu Atendimento?
           </h3>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Junte-se a mais de 5.000 empresas que já transformaram seus resultados
-          </p>
+          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">Junte-se a mais de 1.200 empresas que já transformaram seus resultados</p>
           <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
             Quero Transformar Meu Negócio Agora
             <ArrowRight className="ml-2 w-5 h-5" />
