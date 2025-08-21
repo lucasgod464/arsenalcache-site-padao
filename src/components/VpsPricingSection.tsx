@@ -70,21 +70,21 @@ const VpsPricingSection = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 lg:p-8 mb-12 lg:mb-16">
-      <div className="text-center mb-8 lg:mb-12">
-        <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 mb-3 lg:mb-4">
+    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-4 md:p-6 lg:p-8 mb-8 lg:mb-12 mx-2 md:mx-0 overflow-x-hidden">
+      <div className="text-center mb-6 lg:mb-8">
+        <h3 className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900 mb-2 lg:mb-3 leading-tight">
           Escolha Seu <span className="text-blue-600">Servidor VPS</span>
         </h3>
-        <p className="text-gray-600 text-base lg:text-lg max-w-2xl mx-auto px-4">
+        <p className="text-sm md:text-base lg:text-lg text-gray-600 max-w-2xl mx-auto px-2">
           Servidores dedicados no Brasil com alta performance para seu Whaticket Pro
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-6">
         {vpsPlans.map((plan, index) => (
           <Card 
             key={plan.name} 
-            className={`relative bg-white border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 ${
+            className={`relative bg-white border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 w-full max-w-none ${
               plan.popular ? 'ring-2 ring-blue-500 lg:scale-105 border-blue-300' : ''
             }`}
           >

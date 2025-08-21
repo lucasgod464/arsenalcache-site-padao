@@ -97,31 +97,33 @@ const SinglePlanSection = () => {
   ];
 
   return (
-    <section id="precos" className="py-20 px-4 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+    <section id="precos" className="py-12 md:py-20 px-4 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 overflow-x-hidden">
       <div className="container mx-auto max-w-7xl">
         {/* Header com Social Proof */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 md:mb-16 px-2">
           <Badge variant="outline" className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white border-0 mb-6 px-6 py-2 text-sm font-semibold animate-pulse">
             <Crown className="h-4 w-4 mr-2" />
             + de {clientCount.toLocaleString('pt-BR')} empresas já automatizaram
           </Badge>
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent leading-tight">
             Whaticket Pro
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-6 md:mb-8 px-2">
             A solução mais completa para transformar seu atendimento em uma máquina de vendas automatizada
           </p>
           
           {/* Rating */}
-          <div className="flex items-center justify-center gap-2 mb-4">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-            ))}
-            <span className="text-gray-600 ml-2">4.9/5 • Baseado em 1,247+ avaliações</span>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 mb-4 px-2">
+            <div className="flex items-center gap-1">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="h-4 w-4 md:h-5 md:w-5 fill-yellow-400 text-yellow-400" />
+              ))}
+            </div>
+            <span className="text-sm md:text-base text-gray-600 text-center">4.9/5 • Baseado em 1,247+ avaliações</span>
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16">
+        <div className="grid lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto mb-12 md:mb-16">
           {/* Coluna da Esquerda - Preço e CTA */}
           <div className="lg:col-span-1 order-2 lg:order-1">
             <Card className="lg:sticky lg:top-8 border-2 border-blue-200 shadow-2xl bg-gradient-to-br from-white to-blue-50">
