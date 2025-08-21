@@ -3,7 +3,6 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Link, useLocation } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import VpsTableSection from '@/components/VpsTableSection';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
@@ -260,9 +259,6 @@ const Servidores = () => {
             Infraestrutura de alta performance para seu sistema Whaticket com o melhor custo-benefício do mercado
           </p>
         </div>
-        
-        {/* VPS Table Section */}
-        <VpsTableSection />
         
         {/* VPS Section */}
         <section className="mb-20">
