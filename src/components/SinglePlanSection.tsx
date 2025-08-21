@@ -125,7 +125,7 @@ const SinglePlanSection = () => {
 
         <div className="grid lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto mb-12 md:mb-16">
           {/* Coluna da Esquerda - Preço e CTA */}
-          <div className="lg:col-span-1 order-2 lg:order-1">
+          <div className="lg:col-span-1 order-1 lg:order-1">
             <Card className="lg:sticky lg:top-8 border-2 border-blue-200 shadow-2xl bg-gradient-to-br from-white to-blue-50">
               <CardContent className="p-6 lg:p-8">
                 <div className="text-center mb-6 lg:mb-8">
@@ -190,7 +190,7 @@ const SinglePlanSection = () => {
           </div>
 
           {/* Coluna Central e Direita - Recursos */}
-          <div className="lg:col-span-2 space-y-6 lg:space-y-8 order-1 lg:order-2">
+          <div className="lg:col-span-2 space-y-6 lg:space-y-8 order-2 lg:order-2">
 
             {/* Conexões Já Incluídas */}
             <Card className="border-green-200 bg-gradient-to-r from-green-50 to-emerald-50">
