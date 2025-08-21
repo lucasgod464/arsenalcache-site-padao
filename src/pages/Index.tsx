@@ -13,7 +13,7 @@ import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
 import FloatingCta from '@/components/FloatingCta';
-import RoiCalculator from '@/components/RoiCalculator';
+
 import FreeTrial from '@/components/FreeTrial';
 import TransformeSection from '@/components/TransformeSection';
 
@@ -92,7 +92,7 @@ const Index = () => {
       <SinglePlanSection />
       <DetailedFeaturesList />
       <TestimonialsSection />
-      <RoiCalculator />
+      
       <FaqSection />
       <ContactSection />
       <Footer />
