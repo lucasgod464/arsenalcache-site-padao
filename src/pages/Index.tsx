@@ -7,7 +7,7 @@ import HeroSection from '@/components/HeroSection';
 import ZproSection from '@/components/ZproSection';
 import SinglePlanSection from '@/components/SinglePlanSection';
 import DetailedFeaturesList from '@/components/DetailedFeaturesList';
-import TestimonialsSection from '@/components/TestimonialsSection';
+
 import FaqSection from '@/components/FaqSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
@@ -91,7 +91,7 @@ const Index = () => {
       <FreeTrial />
       <SinglePlanSection />
       <DetailedFeaturesList />
-      <TestimonialsSection />
+      
       
       <FaqSection />
       <ContactSection />
