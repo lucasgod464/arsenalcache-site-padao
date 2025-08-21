@@ -27,7 +27,6 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import VpsPricingSection from './VpsPricingSection';
-import WhaticketsProTable from './WhaticketsProTable';
 
 const SinglePlanSection = () => {
   const [clientCount, setClientCount] = useState(1247);
@@ -192,8 +191,194 @@ const SinglePlanSection = () => {
 
           {/* Coluna Central e Direita - Recursos */}
           <div className="lg:col-span-2 space-y-6 lg:space-y-8 order-1 lg:order-2">
-            {/* Nova Tabela de Recursos */}
-            <WhaticketsProTable />
+
+            {/* Conexões Já Incluídas */}
+            <Card className="border-green-200 bg-gradient-to-r from-green-50 to-emerald-50">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3 text-green-700 text-xl">
+                  <Check className="h-6 w-6 bg-green-600 text-white rounded-full p-1" />
+                  ✅ Conexões Já Incluídas no Plano
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="bg-white rounded-xl p-6 shadow-sm">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
+                      <MessageCircle className="h-6 w-6 text-white" />
+                    </div>
+                    <div>
+                      <div className="font-bold text-xl text-gray-900">WhatsApp Ilimitado</div>
+                      <div className="text-green-600 font-medium">API oficial do WhatsApp</div>
+                    </div>
+                  </div>
+                  <div className="bg-green-100 rounded-lg p-4">
+                    <div className="text-green-800 font-medium text-center">
+                      ✨ Conecte quantos números WhatsApp quiser • Zero custo adicional
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Conexões Opcionais */}
+            <Card className="border-blue-200 bg-gradient-to-r from-blue-50 to-indigo-50">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3 text-blue-700 text-xl">
+                  <TrendingUp className="h-6 w-6" />
+                  📈 Conexões Adicionais (Opcionais)
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="mb-6">
+                  <p className="text-gray-700 mb-4">Expanda seu alcance com Instagram e Facebook:</p>
+                  
+                  <div className="grid md:grid-cols-2 gap-4 mb-6">
+                    <div className="bg-white rounded-xl p-4 shadow-sm border-l-4 border-purple-500">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                          <Smartphone className="h-5 w-5 text-white" />
+                        </div>
+                        <div>
+                          <div className="font-bold text-gray-900">Instagram</div>
+                          <div className="text-sm text-gray-600">Conexões ilimitadas</div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-white rounded-xl p-4 shadow-sm border-l-4 border-blue-600">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                          <Globe className="h-5 w-5 text-white" />
+                        </div>
+                        <div>
+                          <div className="font-bold text-gray-900">Facebook</div>
+                          <div className="text-sm text-gray-600">Conexões ilimitadas</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white rounded-xl p-6 border-2 border-blue-300 text-center shadow-sm">
+                    <div className="text-3xl font-bold text-blue-600 mb-2">R$ 260,00/mês</div>
+                    <div className="text-blue-700 font-medium">Instagram + Facebook Ilimitado</div>
+                    <div className="text-sm text-gray-600 mt-2">Opcional • Ative quando precisar</div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Recursos Incluídos */}
+            <Card className="border-gray-200 bg-gradient-to-r from-gray-50 to-slate-50">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3 text-gray-700 text-xl">
+                  <Star className="h-6 w-6 text-yellow-500" />
+                  🌟 Tudo Que Está Incluído
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid md:grid-cols-2 gap-4 lg:gap-6">
+                  <div className="space-y-3 lg:space-y-4">
+                    <h4 className="font-bold text-gray-900 flex items-center gap-2">
+                      <Users className="h-5 w-5 text-blue-600" />
+                      Recursos Ilimitados
+                    </h4>
+                    <div className="space-y-3 pl-7">
+                      <div className="flex items-center gap-2">
+                        <Check className="h-4 w-4 text-green-600" />
+                        <span className="text-gray-700">Usuários ilimitados</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Check className="h-4 w-4 text-green-600" />
+                        <span className="text-gray-700">Departamentos ilimitados</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Check className="h-4 w-4 text-green-600" />
+                        <span className="text-gray-700">Atendimentos simultâneos</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Check className="h-4 w-4 text-green-600" />
+                        <span className="text-gray-700">Mensagens por mês</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h4 className="font-bold text-gray-900 flex items-center gap-2">
+                      <Settings className="h-5 w-5 text-blue-600" />
+                      Personalização Total
+                    </h4>
+                    <div className="space-y-3 pl-7">
+                      <div className="flex items-center gap-2">
+                        <Check className="h-4 w-4 text-green-600" />
+                        <span className="text-gray-700">Sua logo no sistema</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Check className="h-4 w-4 text-green-600" />
+                        <span className="text-gray-700">Cores personalizadas</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Check className="h-4 w-4 text-green-600" />
+                        <span className="text-gray-700">Nome personalizado</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Check className="h-4 w-4 text-green-600" />
+                        <span className="text-gray-700">White Label completo</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h4 className="font-bold text-gray-900 flex items-center gap-2">
+                      <HeadphonesIcon className="h-5 w-5 text-blue-600" />
+                      Suporte Premium
+                    </h4>
+                    <div className="space-y-3 pl-7">
+                      <div className="flex items-center gap-2">
+                        <Check className="h-4 w-4 text-green-600" />
+                        <span className="text-gray-700">Instalação pela nossa equipe</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Check className="h-4 w-4 text-green-600" />
+                        <span className="text-gray-700">Atualizações automáticas</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Check className="h-4 w-4 text-green-600" />
+                        <span className="text-gray-700">Suporte humano especializado</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Check className="h-4 w-4 text-green-600" />
+                        <span className="text-gray-700">Suporte via WhatsApp</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h4 className="font-bold text-gray-900 flex items-center gap-2">
+                      <DollarSign className="h-5 w-5 text-blue-600" />
+                      Monetização
+                    </h4>
+                    <div className="space-y-3 pl-7">
+                      <div className="flex items-center gap-2">
+                        <Check className="h-4 w-4 text-green-600" />
+                        <span className="text-gray-700">Revenda de assinaturas</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Check className="h-4 w-4 text-green-600" />
+                        <span className="text-gray-700">Clientes ilimitados</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Check className="h-4 w-4 text-green-600" />
+                        <span className="text-gray-700">Múltiplas empresas</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Check className="h-4 w-4 text-green-600" />
+                        <span className="text-gray-700">Sistema de cobrança</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
 
