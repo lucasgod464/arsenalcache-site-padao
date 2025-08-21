@@ -38,40 +38,6 @@ const ZproSection = () => {
 
         <SystemCarousel />
 
-        {/* Seção de Recursos Técnicos */}
-        <div className="glass-dark rounded-2xl p-8 md:p-12 mb-20 border border-white/20">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 bg-brand-secondary/20 px-4 py-2 rounded-full border border-brand-secondary/30 mb-4">
-              <Server className="h-6 w-6 text-brand-secondary" />
-              <span className="text-brand-secondary font-semibold">Infraestrutura Premium</span>
-            </div>
-            <h3 className="text-3xl font-bold mb-4 text-white">Performance de Nível Enterprise</h3>
-            <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
-              Arquitetura otimizada para <strong className="text-brand-secondary">alta disponibilidade</strong> e 
-              <strong className="text-brand-secondary"> performance máxima</strong>, garantindo que seu Whaticket Pro opere sem falhas.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-brand-secondary/20 to-brand-secondary/10 p-8 rounded-xl border border-brand-secondary/30 hover-lift">
-              <div className="text-4xl font-bold text-brand-secondary mb-2">6GB+</div>
-              <h4 className="text-xl font-semibold text-white mb-3">Memória RAM</h4>
-              <p className="text-neutral-300">Processamento rápido para milhares de conversas simultâneas</p>
-            </div>
-            
-            <div className="bg-gradient-to-br from-brand-primary/20 to-brand-primary/10 p-8 rounded-xl border border-brand-primary/30 hover-lift">
-              <div className="text-4xl font-bold text-brand-primary mb-2">2+ vCPUs</div>
-              <h4 className="text-xl font-semibold text-white mb-3">Processamento</h4>
-              <p className="text-neutral-300">Poder computacional para automações complexas e IA</p>
-            </div>
-            
-            <div className="bg-gradient-to-br from-brand-accent/20 to-brand-accent/10 p-8 rounded-xl border border-brand-accent/30 hover-lift">
-              <div className="text-4xl font-bold text-brand-accent mb-2">&lt;50ms</div>
-              <h4 className="text-xl font-semibold text-white mb-3">Latência</h4>
-              <p className="text-neutral-300">Respostas instantâneas que impressionam seus clientes</p>
-            </div>
-          </div>
-        </div>
 
         {/* Call to Action Final */}
         <div className="bg-gradient-to-r from-brand-accent/10 via-brand-accent/5 to-brand-accent/10 glass-dark rounded-2xl p-8 md:p-12 border border-brand-accent/30">
